@@ -1,27 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const {themes} = require('prism-react-renderer');
+const { themes } = require("prism-react-renderer");
 const lightCodeTheme = themes.okaidia;
 const darkCodeTheme = themes.okaidia;
-
-const redocusaurus = [
-  "redocusaurus",
-  {
-    // Plugin Options for loading OpenAPI files
-    specs: [
-      {
-        spec: "openapi.yaml",
-        route: "/api/",
-      },
-    ],
-    // Theme Options for modifying how redoc renders them
-    theme: {
-      // Change with your site colors
-      primaryColor: "#1890ff",
-    },
-  },
-];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -71,7 +53,6 @@ const config = {
         },
       }),
     ],
-    redocusaurus,
   ],
 
   themeConfig:
@@ -80,10 +61,10 @@ const config = {
       // Replace with your project's social card
       image: "img/mistral-social-banner.jpg",
       docs: {
-      sidebar: {
-        autoCollapseCategories: false,
+        sidebar: {
+          autoCollapseCategories: false,
+        },
       },
-    },
       navbar: {
         title: undefined,
         logo: {
@@ -110,7 +91,7 @@ const config = {
             position: "left",
             activeBaseRegex: "^/(?!api)",
           },
-          { to: "/api/", label: "API", position: "left" },
+          { to: "/api/about", label: "API", position: "left" },
           {
             href: "https://github.com/mistralai/",
             label: "GitHub",
@@ -163,7 +144,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['bash', 'diff', 'json'],
+        additionalLanguages: ["bash", "diff", "json"],
       },
       colorMode: {
         defaultMode: "light",
@@ -171,7 +152,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
     }),
-    plugins: [require.resolve('docusaurus-lunr-search')],
+  plugins: [require.resolve("docusaurus-lunr-search")],
 };
 
 module.exports = config;

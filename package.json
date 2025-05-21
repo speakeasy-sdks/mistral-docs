@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start --host 0.0.0.0 --port 3030",
+    "start": "docusaurus start --host 0.0.0.0 --port 3030 --no-open",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -31,6 +31,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.2.1",
     "@docusaurus/tsconfig": "^3.5.2",
+    "@docusaurus/types": "^3.7.0",
     "@types/react": "^18.3.4",
     "typescript": "^5.5.4"
   },
