@@ -1,13 +1,13 @@
 ---
-sidebar_position: 2.6
+sidebar_position: 2.3
 sidebar_label: files
 ---
 
 # files
 
-## files\_api_routes_list_files
+## GET /v1/files
 
-GET /v1/files
+Operation ID: files_api_routes_list_files
 
 _List Files_
 
@@ -55,9 +55,9 @@ OK
 
 </details>
 
-## files\_api_routes_upload_file
+## POST /v1/files
 
-POST /v1/files
+Operation ID: files_api_routes_upload_file
 
 _Upload File_
 
@@ -119,9 +119,9 @@ OK
 
 </details>
 
-## files\_api_routes_retrieve_file
+## GET /v1/files/\{file\_id\}
 
-GET /v1/files/\{file\_id\}
+Operation ID: files_api_routes_retrieve_file
 
 _Retrieve File_
 
@@ -163,9 +163,9 @@ OK
 
 </details>
 
-## files\_api_routes_delete_file
+## DELETE /v1/files/\{file\_id\}
 
-DELETE /v1/files/\{file\_id\}
+Operation ID: files_api_routes_delete_file
 
 _Delete File_
 
@@ -193,9 +193,9 @@ OK
 
 </details>
 
-## files\_api_routes_download_file
+## GET /v1/files/\{file\_id\}/content
 
-GET /v1/files/\{file\_id\}/content
+Operation ID: files_api_routes_download_file
 
 _Download File_
 
@@ -213,9 +213,9 @@ OK
 
 Type: binary
 
-## files\_api_routes_get_signed_url
+## GET /v1/files/\{file\_id\}/url
 
-GET /v1/files/\{file\_id\}/url
+Operation ID: files_api_routes_get_signed_url
 
 Get Signed Url
 

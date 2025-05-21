@@ -1,13 +1,13 @@
 ---
-sidebar_position: 2.5
+sidebar_position: 2.2
 sidebar_label: models
 ---
 
 # models
 
-## list\_models_v1_models_get
+## GET /v1/models
 
-GET /v1/models
+Operation ID: list_models_v1_models_get
 
 _List Models_
 
@@ -175,9 +175,9 @@ Type: integer
 
 </details>
 
-## retrieve\_model_v1_models__model_id__get
+## GET /v1/models/\{model\_id\}
 
-GET /v1/models/\{model\_id\}
+Operation ID: retrieve_model_v1_models__model_id__get
 
 _Retrieve Model_
 
@@ -341,9 +341,9 @@ Type: integer
 
 </details>
 
-## delete\_model_v1_models__model_id__delete
+## DELETE /v1/models/\{model\_id\}
 
-DELETE /v1/models/\{model\_id\}
+Operation ID: delete_model_v1_models__model_id__delete
 
 _Delete Model_
 
@@ -407,9 +407,9 @@ Type: integer
 
 </details>
 
-## jobs\_api_routes_fine_tuning_update_fine_tuned_model
+## PATCH /v1/fine\_tuning/models/\{model_id\}
 
-PATCH /v1/fine\_tuning/models/\{model_id\}
+Operation ID: jobs_api_routes_fine_tuning_update_fine_tuned_model
 
 _Update Fine Tuned Model_
 
@@ -567,9 +567,9 @@ Type: string
 
 </details>
 
-## jobs\_api_routes_fine_tuning_archive_fine_tuned_model
+## POST /v1/fine\_tuning/models/\{model_id\}/archive
 
-POST /v1/fine\_tuning/models/\{model_id\}/archive
+Operation ID: jobs_api_routes_fine_tuning_archive_fine_tuned_model
 
 _Archive Fine Tuned Model_
 
@@ -599,9 +599,9 @@ OK
 
 </details>
 
-## jobs\_api_routes_fine_tuning_unarchive_fine_tuned_model
+## DELETE /v1/fine\_tuning/models/\{model_id\}/archive
 
-DELETE /v1/fine\_tuning/models/\{model_id\}/archive
+Operation ID: jobs_api_routes_fine_tuning_unarchive_fine_tuned_model
 
 _Unarchive Fine Tuned Model_
 
