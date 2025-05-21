@@ -1,0 +1,84 @@
+---
+sidebar_position: 3.61
+sidebar_label: ContentChunk
+---
+
+# ContentChunk
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>

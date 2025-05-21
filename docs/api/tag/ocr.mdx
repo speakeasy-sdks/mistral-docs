@@ -1,0 +1,194 @@
+---
+sidebar_position: 2.4
+sidebar_label: ocr
+---
+
+# ocr
+
+## ocr\_v1_ocr_post
+
+POST /v1/ocr
+
+OCR
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+</details>
+
+##### id: `string`
+
+##### image\_limit: `integer`
+
+##### image\_min_size: `integer`
+
+##### include\_image_base64: `boolean`
+
+##### model: `string`
+
+##### pages: `array`
+
+Type: integer
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Properties</summary>
+
+##### model: `string`
+
+##### pages: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### dimensions: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### dpi: `integer`
+
+##### height: `integer`
+
+##### width: `integer`
+
+</details>
+
+##### images: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### bottom\_right_x: `integer`
+
+##### bottom\_right_y: `integer`
+
+##### id: `string`
+
+##### image\_base64: `string`
+
+##### top\_left_x: `integer`
+
+##### top\_left_y: `integer`
+
+</details>
+
+##### index: `integer`
+
+##### markdown: `string`
+
+</details>
+
+##### usage\_info: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### doc\_size_bytes: `integer`
+
+##### pages\_processed: `integer`
+
+</details>
+
+</details>
+
+#### 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### loc: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+Type: integer
+
+</details>
+
+##### msg: `string`
+
+##### type: `string`
+
+</details>
+
+</details>

@@ -1,0 +1,180 @@
+---
+sidebar_position: 3.45
+sidebar_label: CompletionDetailedJobOut
+---
+
+# CompletionDetailedJobOut
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### checkpoints: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### metrics: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### train\_loss: `number`
+
+##### valid\_loss: `number`
+
+##### valid\_mean_token_accuracy: `number`
+
+</details>
+
+##### step\_number: `integer`
+
+</details>
+
+##### created\_at: `integer`
+
+##### events: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### data: `map`
+
+Type: any
+
+##### name: `string`
+
+</details>
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### fim\_ratio: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"completion"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### repositories: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>

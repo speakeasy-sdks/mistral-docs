@@ -1,0 +1,120 @@
+---
+sidebar_position: 2.2
+sidebar_label: embeddings
+---
+
+# embeddings
+
+## embeddings\_v1_embeddings_post
+
+POST /v1/embeddings
+
+_Embeddings_
+
+Embeddings
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### input: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+Type: string
+
+</details>
+
+##### model: `string`
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Properties</summary>
+
+##### data: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### embedding: `array`
+
+Type: number
+
+##### index: `integer`
+
+##### object: `string`
+
+</details>
+
+##### id: `string`
+
+##### model: `string`
+
+##### object: `string`
+
+##### usage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### completion\_tokens: `integer`
+
+##### prompt\_tokens: `integer`
+
+##### total\_tokens: `integer`
+
+</details>
+
+</details>
+
+#### 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### loc: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+Type: integer
+
+</details>
+
+##### msg: `string`
+
+##### type: `string`
+
+</details>
+
+</details>

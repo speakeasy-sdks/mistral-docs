@@ -1,0 +1,320 @@
+---
+sidebar_position: 2.0
+sidebar_label: batch
+---
+
+# batch
+
+## jobs\_api_routes_batch_get_batch_jobs
+
+GET /v1/batch/jobs
+
+_Get Batch Jobs_
+
+Get a list of batch jobs for your organization and user.
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### data: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### completed\_at: `integer`
+
+##### completed\_requests: `integer`
+
+##### created\_at: `integer`
+
+##### endpoint: `string`
+
+##### error\_file: `string`
+
+##### errors: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### count: `integer`
+
+##### message: `string`
+
+</details>
+
+##### failed\_requests: `integer`
+
+##### id: `string`
+
+##### input\_files: `array`
+
+Type: string
+
+##### metadata: `map`
+
+Type: any
+
+##### model: `string`
+
+##### object: `"batch"`
+
+##### output\_file: `string`
+
+##### started\_at: `integer`
+
+##### status: `"QUEUED" | "RUNNING" | "SUCCESS" | "FAILED" | "TIMEOUT_EXCEEDED" | "CANCELLATION_REQUESTED" | "CANCELLED"`
+
+##### succeeded\_requests: `integer`
+
+##### total\_requests: `integer`
+
+</details>
+
+##### object: `"list"`
+
+##### total: `integer`
+
+</details>
+
+## jobs\_api_routes_batch_create_batch_job
+
+POST /v1/batch/jobs
+
+_Create Batch Job_
+
+Create a new batch job, it will be queued for processing.
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### endpoint: `"/v1/chat/completions" | "/v1/embeddings" | "/v1/fim/completions" | "/v1/moderations" | "/v1/chat/moderations"`
+
+##### input\_files: `array`
+
+Type: string
+
+##### metadata: `map`
+
+Type: string
+
+##### model: `string`
+
+##### timeout\_hours: `integer`
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### completed\_at: `integer`
+
+##### completed\_requests: `integer`
+
+##### created\_at: `integer`
+
+##### endpoint: `string`
+
+##### error\_file: `string`
+
+##### errors: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### count: `integer`
+
+##### message: `string`
+
+</details>
+
+##### failed\_requests: `integer`
+
+##### id: `string`
+
+##### input\_files: `array`
+
+Type: string
+
+##### metadata: `map`
+
+Type: any
+
+##### model: `string`
+
+##### object: `"batch"`
+
+##### output\_file: `string`
+
+##### started\_at: `integer`
+
+##### status: `"QUEUED" | "RUNNING" | "SUCCESS" | "FAILED" | "TIMEOUT_EXCEEDED" | "CANCELLATION_REQUESTED" | "CANCELLED"`
+
+##### succeeded\_requests: `integer`
+
+##### total\_requests: `integer`
+
+</details>
+
+## jobs\_api_routes_batch_get_batch_job
+
+GET /v1/batch/jobs/\{job\_id\}
+
+_Get Batch Job_
+
+Get a batch job details by its UUID.
+
+### Parameters
+
+#### job\_id \(required\)
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### completed\_at: `integer`
+
+##### completed\_requests: `integer`
+
+##### created\_at: `integer`
+
+##### endpoint: `string`
+
+##### error\_file: `string`
+
+##### errors: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### count: `integer`
+
+##### message: `string`
+
+</details>
+
+##### failed\_requests: `integer`
+
+##### id: `string`
+
+##### input\_files: `array`
+
+Type: string
+
+##### metadata: `map`
+
+Type: any
+
+##### model: `string`
+
+##### object: `"batch"`
+
+##### output\_file: `string`
+
+##### started\_at: `integer`
+
+##### status: `"QUEUED" | "RUNNING" | "SUCCESS" | "FAILED" | "TIMEOUT_EXCEEDED" | "CANCELLATION_REQUESTED" | "CANCELLED"`
+
+##### succeeded\_requests: `integer`
+
+##### total\_requests: `integer`
+
+</details>
+
+## jobs\_api_routes_batch_cancel_batch_job
+
+POST /v1/batch/jobs/\{job\_id\}/cancel
+
+_Cancel Batch Job_
+
+Request the cancellation of a batch job.
+
+### Parameters
+
+#### job\_id \(required\)
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### completed\_at: `integer`
+
+##### completed\_requests: `integer`
+
+##### created\_at: `integer`
+
+##### endpoint: `string`
+
+##### error\_file: `string`
+
+##### errors: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### count: `integer`
+
+##### message: `string`
+
+</details>
+
+##### failed\_requests: `integer`
+
+##### id: `string`
+
+##### input\_files: `array`
+
+Type: string
+
+##### metadata: `map`
+
+Type: any
+
+##### model: `string`
+
+##### object: `"batch"`
+
+##### output\_file: `string`
+
+##### started\_at: `integer`
+
+##### status: `"QUEUED" | "RUNNING" | "SUCCESS" | "FAILED" | "TIMEOUT_EXCEEDED" | "CANCELLATION_REQUESTED" | "CANCELLED"`
+
+##### succeeded\_requests: `integer`
+
+##### total\_requests: `integer`
+
+</details>

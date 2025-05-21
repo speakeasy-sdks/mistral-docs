@@ -1,0 +1,242 @@
+---
+sidebar_position: 2.6
+sidebar_label: files
+---
+
+# files
+
+## files\_api_routes_list_files
+
+GET /v1/files
+
+_List Files_
+
+Returns a list of files that belong to the user's organization.
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### data: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### bytes: `integer`
+
+##### created\_at: `integer`
+
+##### filename: `string`
+
+##### id: `string`
+
+##### num\_lines: `integer`
+
+##### object: `string`
+
+##### purpose: `"fine-tune" | "batch" | "ocr"`
+
+##### sample\_type: `"pretrain" | "instruct" | "batch_request" | "batch_result" | "batch_error"`
+
+##### source: `"upload" | "repository" | "mistral"`
+
+</details>
+
+##### object: `string`
+
+##### total: `integer`
+
+</details>
+
+## files\_api_routes_upload_file
+
+POST /v1/files
+
+_Upload File_
+
+Upload a file that can be used across various endpoints.
+
+The size of individual files can be a maximum of 512 MB. The Fine-tuning API only supports .jsonl files.
+
+Please contact us if you need to increase these storage limits.
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### file: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `binary`
+
+##### fileName: `string`
+
+</details>
+
+##### purpose: `"fine-tune" | "batch" | "ocr"`
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### bytes: `integer`
+
+##### created\_at: `integer`
+
+##### filename: `string`
+
+##### id: `string`
+
+##### num\_lines: `integer`
+
+##### object: `string`
+
+##### purpose: `"fine-tune" | "batch" | "ocr"`
+
+##### sample\_type: `"pretrain" | "instruct" | "batch_request" | "batch_result" | "batch_error"`
+
+##### source: `"upload" | "repository" | "mistral"`
+
+</details>
+
+## files\_api_routes_retrieve_file
+
+GET /v1/files/\{file\_id\}
+
+_Retrieve File_
+
+Returns information about a specific file.
+
+### Parameters
+
+#### file\_id \(required\)
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### bytes: `integer`
+
+##### created\_at: `integer`
+
+##### deleted: `boolean`
+
+##### filename: `string`
+
+##### id: `string`
+
+##### num\_lines: `integer`
+
+##### object: `string`
+
+##### purpose: `"fine-tune" | "batch" | "ocr"`
+
+##### sample\_type: `"pretrain" | "instruct" | "batch_request" | "batch_result" | "batch_error"`
+
+##### source: `"upload" | "repository" | "mistral"`
+
+</details>
+
+## files\_api_routes_delete_file
+
+DELETE /v1/files/\{file\_id\}
+
+_Delete File_
+
+Delete a file.
+
+### Parameters
+
+#### file\_id \(required\)
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### deleted: `boolean`
+
+##### id: `string`
+
+##### object: `string`
+
+</details>
+
+## files\_api_routes_download_file
+
+GET /v1/files/\{file\_id\}/content
+
+_Download File_
+
+Download a file
+
+### Parameters
+
+#### file\_id \(required\)
+
+### Responses
+
+#### 200 \(application/octet-stream\)
+
+OK
+
+Type: binary
+
+## files\_api_routes_get_signed_url
+
+GET /v1/files/\{file\_id\}/url
+
+Get Signed Url
+
+### Parameters
+
+#### file\_id \(required\)
+
+#### expiry
+
+Number of hours before the url becomes invalid. Defaults to 24h
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### url: `string`
+
+</details>

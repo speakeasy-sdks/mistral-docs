@@ -1,0 +1,1844 @@
+---
+sidebar_position: 2.7
+sidebar_label: fine-tuning
+---
+
+# fine-tuning
+
+## jobs\_api_routes_fine_tuning_get_fine_tuning_jobs
+
+GET /v1/fine\_tuning/jobs
+
+_Get Fine Tuning Jobs_
+
+Get a list of fine-tuning jobs for your organization and user.
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### data: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### CompletionJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### created\_at: `integer`
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### fim\_ratio: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"completion"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### repositories: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+##### ClassifierJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### created\_at: `integer`
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"classifier"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+</details>
+
+##### object: `"list"`
+
+##### total: `integer`
+
+</details>
+
+## jobs\_api_routes_fine_tuning_create_fine_tuning_job
+
+POST /v1/fine\_tuning/jobs
+
+_Create Fine Tuning Job_
+
+Create a new fine-tuning job, it will be queued for processing.
+
+### Parameters
+
+#### dry\_run
+
+* If `true` the job is not spawned, instead the query returns a handful of useful metadata
+  for the user to perform sanity checks (see `LegacyJobMetadataOut` response).
+* Otherwise, the job is started and the query returns the job ID along with some of the
+  input parameters (see `JobOut` response).
+
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### classifier\_targets: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### labels: `array`
+
+Type: string
+
+##### loss\_function: `"single_class" | "multi_class"`
+
+##### name: `string`
+
+##### weight: `number`
+
+</details>
+
+##### hyperparameters: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### CompletionTrainingParametersIn: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### fim\_ratio: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### ClassifierTrainingParametersIn: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+</details>
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegration: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### api\_key: `string`
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+</details>
+
+</details>
+
+##### invalid\_sample_skip_percentage: `number`
+
+##### job\_type: `"completion" | "classifier"`
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### repositories: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegration: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### api\_key: `string`
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+</details>
+
+</details>
+
+##### suffix: `string`
+
+##### training\_files: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### file\_id: `string`
+
+##### weight: `number`
+
+</details>
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Union</summary>
+
+##### : `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### CompletionJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### created\_at: `integer`
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### fim\_ratio: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"completion"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### repositories: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+##### ClassifierJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### created\_at: `integer`
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"classifier"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+</details>
+
+##### LegacyJobMetadataOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### deprecated: `boolean`
+
+##### details: `string`
+
+##### epochs: `number`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### object: `"job.metadata"`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+##### training\_steps: `integer`
+
+</details>
+
+</details>
+
+## jobs\_api_routes_fine_tuning_get_fine_tuning_job
+
+GET /v1/fine\_tuning/jobs/\{job_id\}
+
+_Get Fine Tuning Job_
+
+Get a fine-tuned job details by its UUID.
+
+### Parameters
+
+#### job\_id \(required\)
+
+The ID of the job to analyse.
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Union</summary>
+
+##### CompletionDetailedJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### checkpoints: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### metrics: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### train\_loss: `number`
+
+##### valid\_loss: `number`
+
+##### valid\_mean_token_accuracy: `number`
+
+</details>
+
+##### step\_number: `integer`
+
+</details>
+
+##### created\_at: `integer`
+
+##### events: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### data: `map`
+
+Type: any
+
+##### name: `string`
+
+</details>
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### fim\_ratio: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"completion"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### repositories: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+##### ClassifierDetailedJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### checkpoints: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### metrics: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### train\_loss: `number`
+
+##### valid\_loss: `number`
+
+##### valid\_mean_token_accuracy: `number`
+
+</details>
+
+##### step\_number: `integer`
+
+</details>
+
+##### classifier\_targets: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### labels: `array`
+
+Type: string
+
+##### loss\_function: `"single_class" | "multi_class"`
+
+##### name: `string`
+
+##### weight: `number`
+
+</details>
+
+##### created\_at: `integer`
+
+##### events: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### data: `map`
+
+Type: any
+
+##### name: `string`
+
+</details>
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"classifier"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+</details>
+
+## jobs\_api_routes_fine_tuning_cancel_fine_tuning_job
+
+POST /v1/fine\_tuning/jobs/\{job_id\}/cancel
+
+_Cancel Fine Tuning Job_
+
+Request the cancellation of a fine tuning job.
+
+### Parameters
+
+#### job\_id \(required\)
+
+The ID of the job to cancel.
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Union</summary>
+
+##### CompletionDetailedJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### checkpoints: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### metrics: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### train\_loss: `number`
+
+##### valid\_loss: `number`
+
+##### valid\_mean_token_accuracy: `number`
+
+</details>
+
+##### step\_number: `integer`
+
+</details>
+
+##### created\_at: `integer`
+
+##### events: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### data: `map`
+
+Type: any
+
+##### name: `string`
+
+</details>
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### fim\_ratio: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"completion"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### repositories: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+##### ClassifierDetailedJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### checkpoints: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### metrics: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### train\_loss: `number`
+
+##### valid\_loss: `number`
+
+##### valid\_mean_token_accuracy: `number`
+
+</details>
+
+##### step\_number: `integer`
+
+</details>
+
+##### classifier\_targets: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### labels: `array`
+
+Type: string
+
+##### loss\_function: `"single_class" | "multi_class"`
+
+##### name: `string`
+
+##### weight: `number`
+
+</details>
+
+##### created\_at: `integer`
+
+##### events: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### data: `map`
+
+Type: any
+
+##### name: `string`
+
+</details>
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"classifier"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+</details>
+
+## jobs\_api_routes_fine_tuning_start_fine_tuning_job
+
+POST /v1/fine\_tuning/jobs/\{job_id\}/start
+
+_Start Fine Tuning Job_
+
+Request the start of a validated fine tuning job.
+
+### Parameters
+
+#### job\_id \(required\)
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Union</summary>
+
+##### CompletionDetailedJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### checkpoints: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### metrics: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### train\_loss: `number`
+
+##### valid\_loss: `number`
+
+##### valid\_mean_token_accuracy: `number`
+
+</details>
+
+##### step\_number: `integer`
+
+</details>
+
+##### created\_at: `integer`
+
+##### events: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### data: `map`
+
+Type: any
+
+##### name: `string`
+
+</details>
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### fim\_ratio: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"completion"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### repositories: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+##### ClassifierDetailedJobOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### checkpoints: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### metrics: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### train\_loss: `number`
+
+##### valid\_loss: `number`
+
+##### valid\_mean_token_accuracy: `number`
+
+</details>
+
+##### step\_number: `integer`
+
+</details>
+
+##### classifier\_targets: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### labels: `array`
+
+Type: string
+
+##### loss\_function: `"single_class" | "multi_class"`
+
+##### name: `string`
+
+##### weight: `number`
+
+</details>
+
+##### created\_at: `integer`
+
+##### events: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### created\_at: `integer`
+
+##### data: `map`
+
+Type: any
+
+##### name: `string`
+
+</details>
+
+##### fine\_tuned_model: `string`
+
+##### hyperparameters: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### id: `string`
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegrationOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+##### url: `string`
+
+</details>
+
+</details>
+
+##### job\_type: `"classifier"`
+
+##### metadata: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### cost: `number`
+
+##### cost\_currency: `string`
+
+##### data\_tokens: `integer`
+
+##### estimated\_start_time: `integer`
+
+##### expected\_duration_seconds: `integer`
+
+##### train\_tokens: `integer`
+
+##### train\_tokens_per_step: `integer`
+
+</details>
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### modified\_at: `integer`
+
+##### object: `"job"`
+
+##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+
+##### suffix: `string`
+
+##### trained\_tokens: `integer`
+
+##### training\_files: `array`
+
+Type: string
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
+
+</details>

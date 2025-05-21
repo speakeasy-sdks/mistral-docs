@@ -1,0 +1,632 @@
+---
+sidebar_position: 2.5
+sidebar_label: models
+---
+
+# models
+
+## list\_models_v1_models_get
+
+GET /v1/models
+
+_List Models_
+
+List all models available to the user.
+
+### Responses
+
+#### 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Properties</summary>
+
+##### data: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### BaseModelCard: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### aliases: `array`
+
+Type: string
+
+##### capabilities: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### completion\_chat: `boolean`
+
+##### completion\_fim: `boolean`
+
+##### fine\_tuning: `boolean`
+
+##### function\_calling: `boolean`
+
+##### vision: `boolean`
+
+</details>
+
+##### created: `integer`
+
+##### default\_model_temperature: `number`
+
+##### deprecation: `date-time`
+
+##### description: `string`
+
+##### id: `string`
+
+##### max\_context_length: `integer`
+
+##### name: `string`
+
+##### object: `string`
+
+##### owned\_by: `string`
+
+##### type: `"base"`
+
+</details>
+
+##### FTModelCard: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### aliases: `array`
+
+Type: string
+
+##### archived: `boolean`
+
+##### capabilities: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### completion\_chat: `boolean`
+
+##### completion\_fim: `boolean`
+
+##### fine\_tuning: `boolean`
+
+##### function\_calling: `boolean`
+
+##### vision: `boolean`
+
+</details>
+
+##### created: `integer`
+
+##### default\_model_temperature: `number`
+
+##### deprecation: `date-time`
+
+##### description: `string`
+
+##### id: `string`
+
+##### job: `string`
+
+##### max\_context_length: `integer`
+
+##### name: `string`
+
+##### object: `string`
+
+##### owned\_by: `string`
+
+##### root: `string`
+
+##### type: `"fine-tuned"`
+
+</details>
+
+</details>
+
+##### object: `string`
+
+</details>
+
+#### 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### loc: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+Type: integer
+
+</details>
+
+##### msg: `string`
+
+##### type: `string`
+
+</details>
+
+</details>
+
+## retrieve\_model_v1_models__model_id__get
+
+GET /v1/models/\{model\_id\}
+
+_Retrieve Model_
+
+Retrieve a model information.
+
+### Parameters
+
+#### model\_id \(required\)
+
+The ID of the model to retrieve.
+
+### Responses
+
+#### 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Union</summary>
+
+##### BaseModelCard: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### aliases: `array`
+
+Type: string
+
+##### capabilities: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### completion\_chat: `boolean`
+
+##### completion\_fim: `boolean`
+
+##### fine\_tuning: `boolean`
+
+##### function\_calling: `boolean`
+
+##### vision: `boolean`
+
+</details>
+
+##### created: `integer`
+
+##### default\_model_temperature: `number`
+
+##### deprecation: `date-time`
+
+##### description: `string`
+
+##### id: `string`
+
+##### max\_context_length: `integer`
+
+##### name: `string`
+
+##### object: `string`
+
+##### owned\_by: `string`
+
+##### type: `"base"`
+
+</details>
+
+##### FTModelCard: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### aliases: `array`
+
+Type: string
+
+##### archived: `boolean`
+
+##### capabilities: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### completion\_chat: `boolean`
+
+##### completion\_fim: `boolean`
+
+##### fine\_tuning: `boolean`
+
+##### function\_calling: `boolean`
+
+##### vision: `boolean`
+
+</details>
+
+##### created: `integer`
+
+##### default\_model_temperature: `number`
+
+##### deprecation: `date-time`
+
+##### description: `string`
+
+##### id: `string`
+
+##### job: `string`
+
+##### max\_context_length: `integer`
+
+##### name: `string`
+
+##### object: `string`
+
+##### owned\_by: `string`
+
+##### root: `string`
+
+##### type: `"fine-tuned"`
+
+</details>
+
+</details>
+
+#### 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### loc: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+Type: integer
+
+</details>
+
+##### msg: `string`
+
+##### type: `string`
+
+</details>
+
+</details>
+
+## delete\_model_v1_models__model_id__delete
+
+DELETE /v1/models/\{model\_id\}
+
+_Delete Model_
+
+Delete a fine-tuned model.
+
+### Parameters
+
+#### model\_id \(required\)
+
+The ID of the model to delete.
+
+### Responses
+
+#### 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Properties</summary>
+
+##### deleted: `boolean`
+
+##### id: `string`
+
+##### object: `string`
+
+</details>
+
+#### 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### loc: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+Type: integer
+
+</details>
+
+##### msg: `string`
+
+##### type: `string`
+
+</details>
+
+</details>
+
+## jobs\_api_routes_fine_tuning_update_fine_tuned_model
+
+PATCH /v1/fine\_tuning/models/\{model_id\}
+
+_Update Fine Tuned Model_
+
+Update a model name or description.
+
+### Parameters
+
+#### model\_id \(required\)
+
+The ID of the model to update.
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### description: `string`
+
+##### name: `string`
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Union</summary>
+
+##### CompletionFTModelOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### aliases: `array`
+
+Type: string
+
+##### archived: `boolean`
+
+##### capabilities: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### classification: `boolean`
+
+##### completion\_chat: `boolean`
+
+##### completion\_fim: `boolean`
+
+##### fine\_tuning: `boolean`
+
+##### function\_calling: `boolean`
+
+</details>
+
+##### created: `integer`
+
+##### description: `string`
+
+##### id: `string`
+
+##### job: `string`
+
+##### max\_context_length: `integer`
+
+##### model\_type: `"completion"`
+
+##### name: `string`
+
+##### object: `"model"`
+
+##### owned\_by: `string`
+
+##### root: `string`
+
+</details>
+
+##### ClassifierFTModelOut: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### aliases: `array`
+
+Type: string
+
+##### archived: `boolean`
+
+##### capabilities: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### classification: `boolean`
+
+##### completion\_chat: `boolean`
+
+##### completion\_fim: `boolean`
+
+##### fine\_tuning: `boolean`
+
+##### function\_calling: `boolean`
+
+</details>
+
+##### classifier\_targets: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### labels: `array`
+
+Type: string
+
+##### loss\_function: `"single_class" | "multi_class"`
+
+##### name: `string`
+
+##### weight: `number`
+
+</details>
+
+##### created: `integer`
+
+##### description: `string`
+
+##### id: `string`
+
+##### job: `string`
+
+##### max\_context_length: `integer`
+
+##### model\_type: `"classifier"`
+
+##### name: `string`
+
+##### object: `"model"`
+
+##### owned\_by: `string`
+
+##### root: `string`
+
+</details>
+
+</details>
+
+## jobs\_api_routes_fine_tuning_archive_fine_tuned_model
+
+POST /v1/fine\_tuning/models/\{model_id\}/archive
+
+_Archive Fine Tuned Model_
+
+Archive a fine-tuned model.
+
+### Parameters
+
+#### model\_id \(required\)
+
+The ID of the model to archive.
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### archived: `boolean`
+
+##### id: `string`
+
+##### object: `"model"`
+
+</details>
+
+## jobs\_api_routes_fine_tuning_unarchive_fine_tuned_model
+
+DELETE /v1/fine\_tuning/models/\{model_id\}/archive
+
+_Unarchive Fine Tuned Model_
+
+Un-archive a fine-tuned model.
+
+### Parameters
+
+#### model\_id \(required\)
+
+The ID of the model to unarchive.
+
+### Responses
+
+#### 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Properties</summary>
+
+##### archived: `boolean`
+
+##### id: `string`
+
+##### object: `"model"`
+
+</details>

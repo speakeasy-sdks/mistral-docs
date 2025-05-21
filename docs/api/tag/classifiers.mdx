@@ -1,0 +1,1922 @@
+---
+sidebar_position: 2.3
+sidebar_label: classifiers
+---
+
+# classifiers
+
+## moderations\_v1_moderations_post
+
+POST /v1/moderations
+
+Moderations
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### input: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+Type: string
+
+</details>
+
+##### model: `string`
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Properties</summary>
+
+##### id: `string`
+
+##### model: `string`
+
+##### results: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### categories: `map`
+
+Type: boolean
+
+##### category\_scores: `map`
+
+Type: number
+
+</details>
+
+</details>
+
+#### 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### loc: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+Type: integer
+
+</details>
+
+##### msg: `string`
+
+##### type: `string`
+
+</details>
+
+</details>
+
+## chat\_moderations_v1_chat_moderations_post
+
+POST /v1/chat/moderations
+
+Chat Moderations
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### input: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### SystemMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+</details>
+
+##### role: `"system"`
+
+</details>
+
+##### UserMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### role: `"user"`
+
+</details>
+
+##### AssistantMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### prefix: `boolean`
+
+##### role: `"assistant"`
+
+##### tool\_calls: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### function: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### arguments: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### : `map`
+
+Type: any
+
+Type: string
+
+</details>
+
+##### name: `string`
+
+</details>
+
+##### id: `string`
+
+##### index: `integer`
+
+##### type: `"function"`
+
+</details>
+
+</details>
+
+##### ToolMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### name: `string`
+
+##### role: `"tool"`
+
+##### tool\_call_id: `string`
+
+</details>
+
+</details>
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### SystemMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+</details>
+
+##### role: `"system"`
+
+</details>
+
+##### UserMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### role: `"user"`
+
+</details>
+
+##### AssistantMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### prefix: `boolean`
+
+##### role: `"assistant"`
+
+##### tool\_calls: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### function: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### arguments: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### : `map`
+
+Type: any
+
+Type: string
+
+</details>
+
+##### name: `string`
+
+</details>
+
+##### id: `string`
+
+##### index: `integer`
+
+##### type: `"function"`
+
+</details>
+
+</details>
+
+##### ToolMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### name: `string`
+
+##### role: `"tool"`
+
+##### tool\_call_id: `string`
+
+</details>
+
+</details>
+
+</details>
+
+##### model: `string`
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Properties</summary>
+
+##### id: `string`
+
+##### model: `string`
+
+##### results: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### categories: `map`
+
+Type: boolean
+
+##### category\_scores: `map`
+
+Type: number
+
+</details>
+
+</details>
+
+#### 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### loc: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+Type: integer
+
+</details>
+
+##### msg: `string`
+
+##### type: `string`
+
+</details>
+
+</details>
+
+## classifications\_v1_classifications_post
+
+POST /v1/classifications
+
+Classifications
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### input: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+Type: string
+
+</details>
+
+##### model: `string`
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Properties</summary>
+
+##### id: `string`
+
+##### model: `string`
+
+##### results: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### scores: `map`
+
+Type: number
+
+</details>
+
+</details>
+
+#### 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### loc: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+Type: integer
+
+</details>
+
+##### msg: `string`
+
+##### type: `string`
+
+</details>
+
+</details>
+
+## chat\_classifications_v1_chat_classifications_post
+
+POST /v1/chat/classifications
+
+Chat Classifications
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Properties</summary>
+
+##### input: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### InstructRequest: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### messages: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### SystemMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+</details>
+
+##### role: `"system"`
+
+</details>
+
+##### UserMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### role: `"user"`
+
+</details>
+
+##### AssistantMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### prefix: `boolean`
+
+##### role: `"assistant"`
+
+##### tool\_calls: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### function: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### arguments: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### : `map`
+
+Type: any
+
+Type: string
+
+</details>
+
+##### name: `string`
+
+</details>
+
+##### id: `string`
+
+##### index: `integer`
+
+##### type: `"function"`
+
+</details>
+
+</details>
+
+##### ToolMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### name: `string`
+
+##### role: `"tool"`
+
+##### tool\_call_id: `string`
+
+</details>
+
+</details>
+
+</details>
+
+##### : `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### messages: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### SystemMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+</details>
+
+##### role: `"system"`
+
+</details>
+
+##### UserMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### role: `"user"`
+
+</details>
+
+##### AssistantMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### prefix: `boolean`
+
+##### role: `"assistant"`
+
+##### tool\_calls: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### function: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### arguments: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### : `map`
+
+Type: any
+
+Type: string
+
+</details>
+
+##### name: `string`
+
+</details>
+
+##### id: `string`
+
+##### index: `integer`
+
+##### type: `"function"`
+
+</details>
+
+</details>
+
+##### ToolMessage: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### content: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+##### : `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### TextChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### text: `string`
+
+##### type: `"text"`
+
+</details>
+
+##### ImageURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### image\_url: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### ImageURL: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `string`
+
+##### url: `string`
+
+</details>
+
+Type: string
+
+</details>
+
+##### type: `"image_url"`
+
+</details>
+
+##### DocumentURLChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### document\_name: `string`
+
+##### document\_url: `string`
+
+##### type: `"document_url"`
+
+</details>
+
+##### ReferenceChunk: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### reference\_ids: `array`
+
+Type: integer
+
+##### type: `"reference"`
+
+</details>
+
+</details>
+
+</details>
+
+##### name: `string`
+
+##### role: `"tool"`
+
+##### tool\_call_id: `string`
+
+</details>
+
+</details>
+
+</details>
+
+</details>
+
+##### model: `string`
+
+</details>
+
+### Responses
+
+#### 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Properties</summary>
+
+##### id: `string`
+
+##### model: `string`
+
+##### results: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### scores: `map`
+
+Type: number
+
+</details>
+
+</details>
+
+#### 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Properties</summary>
+
+##### detail: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### loc: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+Type: string
+
+Type: integer
+
+</details>
+
+##### msg: `string`
+
+##### type: `string`
+
+</details>
+
+</details>

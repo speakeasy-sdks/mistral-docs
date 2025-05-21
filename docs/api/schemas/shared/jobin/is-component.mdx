@@ -1,0 +1,158 @@
+---
+sidebar_position: 3.39
+sidebar_label: JobIn
+---
+
+# JobIn
+
+<details open>
+
+<summary>Properties</summary>
+
+##### auto\_start: `boolean`
+
+##### classifier\_targets: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### labels: `array`
+
+Type: string
+
+##### loss\_function: `"single_class" | "multi_class"`
+
+##### name: `string`
+
+##### weight: `number`
+
+</details>
+
+##### hyperparameters: `union`
+
+<details open>
+
+<summary>Union</summary>
+
+##### CompletionTrainingParametersIn: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### fim\_ratio: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+##### ClassifierTrainingParametersIn: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### epochs: `number`
+
+##### learning\_rate: `number`
+
+##### seq\_len: `integer`
+
+##### training\_steps: `integer`
+
+##### warmup\_fraction: `number`
+
+##### weight\_decay: `number`
+
+</details>
+
+</details>
+
+##### integrations: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegration: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### api\_key: `string`
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+</details>
+
+</details>
+
+##### invalid\_sample_skip_percentage: `number`
+
+##### job\_type: `"completion" | "classifier"`
+
+##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+
+##### repositories: `array`
+
+<details open>
+
+<summary>Union</summary>
+
+##### WandbIntegration: `object`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### api\_key: `string`
+
+##### name: `string`
+
+##### project: `string`
+
+##### run\_name: `string`
+
+##### type: `"wandb"`
+
+</details>
+
+</details>
+
+##### suffix: `string`
+
+##### training\_files: `array`
+
+<details open>
+
+<summary>Properties</summary>
+
+##### file\_id: `string`
+
+##### weight: `number`
+
+</details>
+
+##### validation\_files: `array`
+
+Type: string
+
+</details>
