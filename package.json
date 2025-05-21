@@ -12,7 +12,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "build-api-docs": "node --experimental-strip-types ../docsmd/packages/chunk-generator/src/cli/cli.ts -s ./openapi.yaml -o ./docs/api"
   },
   "dependencies": {
     "@docusaurus/core": "3.5.2",
