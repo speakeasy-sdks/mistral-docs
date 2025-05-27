@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.4
+sidebar_position: 2.5
 sidebar_label: fine-tuning
 ---
 
@@ -21,19 +21,19 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### data: `array`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### CompletionJobOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -45,7 +45,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -69,13 +69,13 @@ OK
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -97,7 +97,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -125,13 +125,13 @@ OK
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -153,21 +153,17 @@ OK
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
-##### ClassifierJobOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -179,7 +175,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -201,13 +197,13 @@ Type: string
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -229,7 +225,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -259,13 +255,9 @@ Type: string
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
@@ -299,7 +291,7 @@ Create a new fine-tuning job, it will be queued for processing.
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -307,11 +299,9 @@ Create a new fine-tuning job, it will be queued for processing.
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### labels: `array`
-
-Type: string
+##### labels: `Array<string>`
 
 ##### loss\_function: `"single_class" | "multi_class"`
 
@@ -325,13 +315,13 @@ Type: string
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### CompletionTrainingParametersIn: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -349,11 +339,11 @@ Type: string
 
 </details>
 
-##### ClassifierTrainingParametersIn: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -375,13 +365,13 @@ Type: string
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegration: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### api\_key: `string`
 
@@ -407,13 +397,13 @@ Type: string
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegration: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### api\_key: `string`
 
@@ -435,7 +425,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### file\_id: `string`
 
@@ -443,9 +433,7 @@ Type: string
 
 </details>
 
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
@@ -457,19 +445,19 @@ OK
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### : `union`
-
-<details open>
-
-<summary>Union</summary>
-
-##### CompletionJobOut: `object`
+##### `union`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Union Values</summary>
+
+##### `object`
+
+<details open>
+
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -481,7 +469,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -505,13 +493,13 @@ OK
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -533,7 +521,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -561,13 +549,13 @@ OK
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -589,21 +577,17 @@ OK
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
-##### ClassifierJobOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -615,7 +599,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -637,13 +621,13 @@ Type: string
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -665,7 +649,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -695,23 +679,19 @@ Type: string
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
 </details>
 
-##### LegacyJobMetadataOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -763,13 +743,13 @@ OK
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### CompletionDetailedJobOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -777,7 +757,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
@@ -785,7 +765,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### train\_loss: `number`
 
@@ -805,13 +785,11 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
-##### data: `map`
-
-Type: any
+##### data: `Map<any>`
 
 ##### name: `string`
 
@@ -823,7 +801,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -847,13 +825,13 @@ Type: any
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -875,7 +853,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -903,13 +881,13 @@ Type: any
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -931,21 +909,17 @@ Type: any
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
-##### ClassifierDetailedJobOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -953,7 +927,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
@@ -961,7 +935,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### train\_loss: `number`
 
@@ -979,11 +953,9 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### labels: `array`
-
-Type: string
+##### labels: `Array<string>`
 
 ##### loss\_function: `"single_class" | "multi_class"`
 
@@ -999,13 +971,11 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
-##### data: `map`
-
-Type: any
+##### data: `Map<any>`
 
 ##### name: `string`
 
@@ -1017,7 +987,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -1039,13 +1009,13 @@ Type: any
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -1067,7 +1037,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -1097,13 +1067,9 @@ Type: any
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
@@ -1131,13 +1097,13 @@ OK
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### CompletionDetailedJobOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -1145,7 +1111,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
@@ -1153,7 +1119,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### train\_loss: `number`
 
@@ -1173,13 +1139,11 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
-##### data: `map`
-
-Type: any
+##### data: `Map<any>`
 
 ##### name: `string`
 
@@ -1191,7 +1155,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -1215,13 +1179,13 @@ Type: any
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -1243,7 +1207,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -1271,13 +1235,13 @@ Type: any
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -1299,21 +1263,17 @@ Type: any
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
-##### ClassifierDetailedJobOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -1321,7 +1281,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
@@ -1329,7 +1289,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### train\_loss: `number`
 
@@ -1347,11 +1307,9 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### labels: `array`
-
-Type: string
+##### labels: `Array<string>`
 
 ##### loss\_function: `"single_class" | "multi_class"`
 
@@ -1367,13 +1325,11 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
-##### data: `map`
-
-Type: any
+##### data: `Map<any>`
 
 ##### name: `string`
 
@@ -1385,7 +1341,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -1407,13 +1363,13 @@ Type: any
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -1435,7 +1391,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -1465,13 +1421,9 @@ Type: any
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
@@ -1497,13 +1449,13 @@ OK
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### CompletionDetailedJobOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -1511,7 +1463,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
@@ -1519,7 +1471,7 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### train\_loss: `number`
 
@@ -1539,13 +1491,11 @@ OK
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
-##### data: `map`
-
-Type: any
+##### data: `Map<any>`
 
 ##### name: `string`
 
@@ -1557,7 +1507,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -1581,13 +1531,13 @@ Type: any
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -1609,7 +1559,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -1637,13 +1587,13 @@ Type: any
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -1665,21 +1615,17 @@ Type: any
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 
-##### ClassifierDetailedJobOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### auto\_start: `boolean`
 
@@ -1687,7 +1633,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
@@ -1695,7 +1641,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### train\_loss: `number`
 
@@ -1713,11 +1659,9 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### labels: `array`
-
-Type: string
+##### labels: `Array<string>`
 
 ##### loss\_function: `"single_class" | "multi_class"`
 
@@ -1733,13 +1677,11 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### created\_at: `integer`
 
-##### data: `map`
-
-Type: any
+##### data: `Map<any>`
 
 ##### name: `string`
 
@@ -1751,7 +1693,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### epochs: `number`
 
@@ -1773,13 +1715,13 @@ Type: any
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### WandbIntegrationOut: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -1801,7 +1743,7 @@ Type: any
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### cost: `number`
 
@@ -1831,13 +1773,9 @@ Type: any
 
 ##### trained\_tokens: `integer`
 
-##### training\_files: `array`
+##### training\_files: `Array<string>`
 
-Type: string
-
-##### validation\_files: `array`
-
-Type: string
+##### validation\_files: `Array<string>`
 
 </details>
 

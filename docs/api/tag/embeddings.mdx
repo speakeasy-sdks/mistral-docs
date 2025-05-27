@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.7
+sidebar_position: 2.0
 sidebar_label: embeddings
 ---
 
@@ -17,21 +17,9 @@ Embeddings
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### input: `union`
-
-<details open>
-
-<summary>Union</summary>
-
-Type: string
-
-##### : `array`
-
-Type: string
-
-</details>
+##### input: `string | Array<string>`
 
 ##### model: `string`
 
@@ -45,17 +33,15 @@ Successful Response
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### data: `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### embedding: `array`
-
-Type: number
+##### embedding: `Array<number>`
 
 ##### index: `integer`
 
@@ -73,7 +59,7 @@ Type: number
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### completion\_tokens: `integer`
 
@@ -91,25 +77,15 @@ Validation Error
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### detail: `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### loc: `array`
-
-<details open>
-
-<summary>Union</summary>
-
-Type: string
-
-Type: integer
-
-</details>
+##### loc: `Array<string | integer>`
 
 ##### msg: `string`
 

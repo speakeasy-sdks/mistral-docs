@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.6
+sidebar_position: 2.7
 sidebar_label: agents
 ---
 
@@ -15,7 +15,7 @@ Agents Completion
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### agent\_id: `string`
 
@@ -27,27 +27,27 @@ Agents Completion
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### SystemMessage: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### content: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-Type: string
+##### `string`
 
-##### : `array`
+##### `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### text: `string`
 
@@ -61,31 +61,31 @@ Type: string
 
 </details>
 
-##### UserMessage: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### content: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-Type: string
+##### `string`
 
-##### : `array`
-
-<details open>
-
-<summary>Union</summary>
-
-##### TextChunk: `object`
+##### `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Union Values</summary>
+
+##### `object`
+
+<details open>
+
+<summary>Object Properties</summary>
 
 ##### text: `string`
 
@@ -93,23 +93,23 @@ Type: string
 
 </details>
 
-##### ImageURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### image\_url: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### ImageURL: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### detail: `string`
 
@@ -117,7 +117,7 @@ Type: string
 
 </details>
 
-Type: string
+##### `string`
 
 </details>
 
@@ -125,11 +125,11 @@ Type: string
 
 </details>
 
-##### DocumentURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### document\_name: `string`
 
@@ -139,15 +139,13 @@ Type: string
 
 </details>
 
-##### ReferenceChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### reference\_ids: `array`
-
-Type: integer
+##### reference\_ids: `Array<integer>`
 
 ##### type: `"reference"`
 
@@ -161,31 +159,31 @@ Type: integer
 
 </details>
 
-##### AssistantMessage: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### content: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-Type: string
+##### `string`
 
-##### : `array`
-
-<details open>
-
-<summary>Union</summary>
-
-##### TextChunk: `object`
+##### `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Union Values</summary>
+
+##### `object`
+
+<details open>
+
+<summary>Object Properties</summary>
 
 ##### text: `string`
 
@@ -193,23 +191,23 @@ Type: string
 
 </details>
 
-##### ImageURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### image\_url: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### ImageURL: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### detail: `string`
 
@@ -217,7 +215,7 @@ Type: string
 
 </details>
 
-Type: string
+##### `string`
 
 </details>
 
@@ -225,11 +223,11 @@ Type: string
 
 </details>
 
-##### DocumentURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### document\_name: `string`
 
@@ -239,15 +237,13 @@ Type: string
 
 </details>
 
-##### ReferenceChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### reference\_ids: `array`
-
-Type: integer
+##### reference\_ids: `Array<integer>`
 
 ##### type: `"reference"`
 
@@ -265,27 +261,15 @@ Type: integer
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### function: `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### arguments: `union`
-
-<details open>
-
-<summary>Union</summary>
-
-##### : `map`
-
-Type: any
-
-Type: string
-
-</details>
+##### arguments: `Map<any> | string`
 
 ##### name: `string`
 
@@ -301,31 +285,31 @@ Type: string
 
 </details>
 
-##### ToolMessage: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### content: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-Type: string
+##### `string`
 
-##### : `array`
-
-<details open>
-
-<summary>Union</summary>
-
-##### TextChunk: `object`
+##### `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Union Values</summary>
+
+##### `object`
+
+<details open>
+
+<summary>Object Properties</summary>
 
 ##### text: `string`
 
@@ -333,23 +317,23 @@ Type: string
 
 </details>
 
-##### ImageURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### image\_url: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### ImageURL: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### detail: `string`
 
@@ -357,7 +341,7 @@ Type: string
 
 </details>
 
-Type: string
+##### `string`
 
 </details>
 
@@ -365,11 +349,11 @@ Type: string
 
 </details>
 
-##### DocumentURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### document\_name: `string`
 
@@ -379,15 +363,13 @@ Type: string
 
 </details>
 
-##### ReferenceChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### reference\_ids: `array`
-
-Type: integer
+##### reference\_ids: `Array<integer>`
 
 ##### type: `"reference"`
 
@@ -415,7 +397,7 @@ Type: integer
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### content: `string`
 
@@ -431,21 +413,19 @@ Type: integer
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### json\_schema: `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### description: `string`
 
 ##### name: `string`
 
-##### schema\_definition: `map`
-
-Type: any
+##### schema\_definition: `Map<any>`
 
 ##### strict: `boolean`
 
@@ -455,19 +435,7 @@ Type: any
 
 </details>
 
-##### stop: `union`
-
-<details open>
-
-<summary>Union</summary>
-
-Type: string
-
-##### : `array`
-
-Type: string
-
-</details>
+##### stop: `string | Array<string>`
 
 ##### stream: `boolean`
 
@@ -475,19 +443,19 @@ Type: string
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### ToolChoice: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### function: `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### name: `string`
 
@@ -497,7 +465,7 @@ Type: string
 
 </details>
 
-Type: enum
+##### `enum`
 
 </details>
 
@@ -505,21 +473,19 @@ Type: enum
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### function: `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### description: `string`
 
 ##### name: `string`
 
-##### parameters: `map`
-
-Type: any
+##### parameters: `Map<any>`
 
 ##### strict: `boolean`
 
@@ -539,13 +505,13 @@ Successful Response
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### choices: `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### finish\_reason: `"stop" | "length" | "model_length" | "error" | "tool_calls"`
 
@@ -555,27 +521,27 @@ Successful Response
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### content: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-Type: string
+##### `string`
 
-##### : `array`
-
-<details open>
-
-<summary>Union</summary>
-
-##### TextChunk: `object`
+##### `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Union Values</summary>
+
+##### `object`
+
+<details open>
+
+<summary>Object Properties</summary>
 
 ##### text: `string`
 
@@ -583,23 +549,23 @@ Type: string
 
 </details>
 
-##### ImageURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### image\_url: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### ImageURL: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### detail: `string`
 
@@ -607,7 +573,7 @@ Type: string
 
 </details>
 
-Type: string
+##### `string`
 
 </details>
 
@@ -615,11 +581,11 @@ Type: string
 
 </details>
 
-##### DocumentURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### document\_name: `string`
 
@@ -629,15 +595,13 @@ Type: string
 
 </details>
 
-##### ReferenceChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### reference\_ids: `array`
-
-Type: integer
+##### reference\_ids: `Array<integer>`
 
 ##### type: `"reference"`
 
@@ -655,27 +619,15 @@ Type: integer
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### function: `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### arguments: `union`
-
-<details open>
-
-<summary>Union</summary>
-
-##### : `map`
-
-Type: any
-
-Type: string
-
-</details>
+##### arguments: `Map<any> | string`
 
 ##### name: `string`
 
@@ -705,7 +657,7 @@ Type: string
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### completion\_tokens: `integer`
 
@@ -723,25 +675,15 @@ Validation Error
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### detail: `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### loc: `array`
-
-<details open>
-
-<summary>Union</summary>
-
-Type: string
-
-Type: integer
-
-</details>
+##### loc: `Array<string | integer>`
 
 ##### msg: `string`
 

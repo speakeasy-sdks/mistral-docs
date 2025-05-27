@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.1
+sidebar_position: 2.2
 sidebar_label: ocr
 ---
 
@@ -15,19 +15,19 @@ OCR
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### document: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### DocumentURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### document\_name: `string`
 
@@ -37,23 +37,23 @@ OCR
 
 </details>
 
-##### ImageURLChunk: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### image\_url: `union`
 
 <details open>
 
-<summary>Union</summary>
+<summary>Union Values</summary>
 
-##### ImageURL: `object`
+##### `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### detail: `string`
 
@@ -61,7 +61,7 @@ OCR
 
 </details>
 
-Type: string
+##### `string`
 
 </details>
 
@@ -81,9 +81,7 @@ Type: string
 
 ##### model: `string`
 
-##### pages: `array`
-
-Type: integer
+##### pages: `Array<integer>`
 
 </details>
 
@@ -95,7 +93,7 @@ Successful Response
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### model: `string`
 
@@ -103,13 +101,13 @@ Successful Response
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### dimensions: `object`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### dpi: `integer`
 
@@ -123,7 +121,7 @@ Successful Response
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### bottom\_right_x: `integer`
 
@@ -149,7 +147,7 @@ Successful Response
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### doc\_size_bytes: `integer`
 
@@ -165,25 +163,15 @@ Validation Error
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
 ##### detail: `array`
 
 <details open>
 
-<summary>Properties</summary>
+<summary>Object Properties</summary>
 
-##### loc: `array`
-
-<details open>
-
-<summary>Union</summary>
-
-Type: string
-
-Type: integer
-
-</details>
+##### loc: `Array<string | integer>`
 
 ##### msg: `string`
 
