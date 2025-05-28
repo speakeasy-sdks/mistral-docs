@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.4
+sidebar_position: 2.0
 sidebar_label: files
 ---
 
@@ -21,37 +21,118 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### data: `array`
+##### data
+
+Signature:
+
+```
+array
+  FileSchema
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>FileSchema Properties</summary>
 
-##### bytes: `integer`
+##### bytes
 
-##### created\_at: `integer`
+Signature:
 
-##### filename: `string`
+```
+integer
+```
 
-##### id: `string`
+##### created\_at
 
-##### num\_lines: `integer`
+Signature:
 
-##### object: `string`
+```
+integer
+```
 
-##### purpose: `"fine-tune" | "batch" | "ocr"`
+##### filename
 
-##### sample\_type: `"pretrain" | "instruct" | "batch_request" | "batch_result" | "batch_error"`
+Signature:
 
-##### source: `"upload" | "repository" | "mistral"`
+```
+string
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### num\_lines
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
+
+##### purpose
+
+Signature:
+```
+enum
+  fine-tune
+  batch
+  ocr
+```
+
+##### sample\_type
+
+Signature:
+```
+enum
+  pretrain
+  instruct
+  batch_request
+  batch_result
+  batch_error
+```
+
+##### source
+
+Signature:
+```
+enum
+  upload
+  repository
+  mistral
+```
 
 </details>
 
-##### object: `string`
+##### object
 
-##### total: `integer`
+Signature:
+
+```
+string
+```
+
+##### total
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
@@ -71,21 +152,47 @@ Please contact us if you need to increase these storage limits.
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Request Body</summary>
 
-##### file: `object`
+##### file
+
+Signature:
+
+```
+File
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>File Properties</summary>
 
-##### content: `binary`
+##### content
 
-##### fileName: `string`
+Signature:
+
+```
+binary
+```
+
+##### fileName
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### purpose: `"fine-tune" | "batch" | "ocr"`
+##### purpose
+
+Signature:
+```
+enum
+  fine-tune
+  batch
+  ocr
+```
 
 </details>
 
@@ -97,25 +204,87 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### bytes: `integer`
+##### bytes
 
-##### created\_at: `integer`
+Signature:
 
-##### filename: `string`
+```
+integer
+```
 
-##### id: `string`
+##### created\_at
 
-##### num\_lines: `integer`
+Signature:
 
-##### object: `string`
+```
+integer
+```
 
-##### purpose: `"fine-tune" | "batch" | "ocr"`
+##### filename
 
-##### sample\_type: `"pretrain" | "instruct" | "batch_request" | "batch_result" | "batch_error"`
+Signature:
 
-##### source: `"upload" | "repository" | "mistral"`
+```
+string
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### num\_lines
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
+
+##### purpose
+
+Signature:
+```
+enum
+  fine-tune
+  batch
+  ocr
+```
+
+##### sample\_type
+
+Signature:
+```
+enum
+  pretrain
+  instruct
+  batch_request
+  batch_result
+  batch_error
+```
+
+##### source
+
+Signature:
+```
+enum
+  upload
+  repository
+  mistral
+```
 
 </details>
 
@@ -139,27 +308,95 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### bytes: `integer`
+##### bytes
 
-##### created\_at: `integer`
+Signature:
 
-##### deleted: `boolean`
+```
+integer
+```
 
-##### filename: `string`
+##### created\_at
 
-##### id: `string`
+Signature:
 
-##### num\_lines: `integer`
+```
+integer
+```
 
-##### object: `string`
+##### deleted
 
-##### purpose: `"fine-tune" | "batch" | "ocr"`
+Signature:
 
-##### sample\_type: `"pretrain" | "instruct" | "batch_request" | "batch_result" | "batch_error"`
+```
+boolean
+```
 
-##### source: `"upload" | "repository" | "mistral"`
+##### filename
+
+Signature:
+
+```
+string
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### num\_lines
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
+
+##### purpose
+
+Signature:
+```
+enum
+  fine-tune
+  batch
+  ocr
+```
+
+##### sample\_type
+
+Signature:
+```
+enum
+  pretrain
+  instruct
+  batch_request
+  batch_result
+  batch_error
+```
+
+##### source
+
+Signature:
+```
+enum
+  upload
+  repository
+  mistral
+```
 
 </details>
 
@@ -183,13 +420,31 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### deleted: `boolean`
+##### deleted
 
-##### id: `string`
+Signature:
 
-##### object: `string`
+```
+boolean
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
 
 </details>
 
@@ -211,7 +466,11 @@ Download a file
 
 OK
 
-Type: binary
+Signature:
+
+```
+binary
+```
 
 ## GET /v1/files/\{file\_id\}/url
 
@@ -235,8 +494,14 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### url: `string`
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>

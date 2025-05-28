@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.7
+sidebar_position: 2.3
 sidebar_label: agents
 ---
 
@@ -15,483 +15,903 @@ Agents Completion
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Request Body</summary>
 
-##### agent\_id: `string`
+##### agent\_id
 
-##### frequency\_penalty: `number`
+Signature:
 
-##### max\_tokens: `integer`
+```
+string
+```
 
-##### messages: `array`
+##### frequency\_penalty
+
+Signature:
+
+```
+number
+```
+
+##### max\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### messages
+
+Signature:
+
+```
+array
+  union
+    SystemMessage
+    UserMessage
+    AssistantMessage
+    ToolMessage
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>SystemMessage Properties</summary>
 
-##### `object`
+##### content
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
-
-##### content: `union`
-
-<details open>
-
-<summary>Union Values</summary>
-
-##### `string`
-
-##### `array`
+```
+union
+  string
+  array
+    TextChunk
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>TextChunk Properties</summary>
 
-##### text: `string`
+##### text
 
-##### type: `"text"`
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  text
+```
+
+</details>
+
+##### role
+
+Signature:
+```
+enum
+  system
+```
+
+</details>
+
+<details open>
+
+<summary>UserMessage Properties</summary>
+
+##### content
+
+Signature:
+
+```
+union
+  string
+  array
+    union
+      TextChunk
+      ImageURLChunk
+      DocumentURLChunk
+      ReferenceChunk
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  text
+```
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+Signature:
+
+```
+union
+  ImageURL
+  string
+```
+
+<details open>
+
+<summary>ImageURL Properties</summary>
+
+##### detail
+
+Signature:
+
+```
+string
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### type
+
+Signature:
+```
+enum
+  image_url
+```
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+Signature:
+
+```
+string
+```
+
+##### document\_url
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  document_url
+```
+
+</details>
+
+<details open>
+
+<summary>ReferenceChunk Properties</summary>
+
+##### reference\_ids
+
+Signature:
+
+```
+array
+  integer
+```
+
+##### type
+
+Signature:
+```
+enum
+  reference
+```
+
+</details>
+
+##### role
+
+Signature:
+```
+enum
+  user
+```
+
+</details>
+
+<details open>
+
+<summary>AssistantMessage Properties</summary>
+
+##### content
+
+Signature:
+
+```
+union
+  string
+  array
+    union
+      TextChunk
+      ImageURLChunk
+      DocumentURLChunk
+      ReferenceChunk
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  text
+```
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+Signature:
+
+```
+union
+  ImageURL
+  string
+```
+
+<details open>
+
+<summary>ImageURL Properties</summary>
+
+##### detail
+
+Signature:
+
+```
+string
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### type
+
+Signature:
+```
+enum
+  image_url
+```
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+Signature:
+
+```
+string
+```
+
+##### document\_url
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  document_url
+```
+
+</details>
+
+<details open>
+
+<summary>ReferenceChunk Properties</summary>
+
+##### reference\_ids
+
+Signature:
+
+```
+array
+  integer
+```
+
+##### type
+
+Signature:
+```
+enum
+  reference
+```
+
+</details>
+
+##### prefix
+
+Signature:
+
+```
+boolean
+```
+
+##### role
+
+Signature:
+```
+enum
+  assistant
+```
+
+##### tool\_calls
+
+Signature:
+
+```
+array
+  ToolCall
+```
+
+<details open>
+
+<summary>ToolCall Properties</summary>
+
+##### function
+
+Signature:
+
+```
+FunctionCall
+```
+
+<details open>
+
+<summary>FunctionCall Properties</summary>
+
+##### arguments
+
+Signature:
+
+```
+union
+  map
+    any
+  string
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### index
+
+Signature:
+
+```
+integer
+```
+
+##### type
+
+Signature:
+```
+enum
+  function
+```
 
 </details>
 
 </details>
 
-##### role: `"system"`
+<details open>
 
-</details>
+<summary>ToolMessage Properties</summary>
 
-##### `object`
+##### content
+
+Signature:
+
+```
+union
+  string
+  array
+    union
+      TextChunk
+      ImageURLChunk
+      DocumentURLChunk
+      ReferenceChunk
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>TextChunk Properties</summary>
 
-##### content: `union`
+##### text
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  text
+```
+
+</details>
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ImageURLChunk Properties</summary>
 
-##### `string`
+##### image\_url
 
-##### `array`
+Signature:
 
-<details open>
-
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### text: `string`
-
-##### type: `"text"`
-
-</details>
-
-##### `object`
+```
+union
+  ImageURL
+  string
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ImageURL Properties</summary>
 
-##### image\_url: `union`
+##### detail
+
+Signature:
+
+```
+string
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### type
+
+Signature:
+```
+enum
+  image_url
+```
+
+</details>
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>DocumentURLChunk Properties</summary>
 
-##### `object`
+##### document\_name
+
+Signature:
+
+```
+string
+```
+
+##### document\_url
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  document_url
+```
+
+</details>
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ReferenceChunk Properties</summary>
 
-##### detail: `string`
+##### reference\_ids
 
-##### url: `string`
+Signature:
+
+```
+array
+  integer
+```
+
+##### type
+
+Signature:
+```
+enum
+  reference
+```
 
 </details>
 
-##### `string`
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### role
+
+Signature:
+```
+enum
+  tool
+```
+
+##### tool\_call_id
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### type: `"image_url"`
+##### n
 
-</details>
+Signature:
 
-##### `object`
+```
+integer
+```
+
+##### parallel\_tool_calls
+
+Signature:
+
+```
+boolean
+```
+
+##### prediction
+
+Signature:
+
+```
+Prediction
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Prediction Properties</summary>
 
-##### document\_name: `string`
+##### content
 
-##### document\_url: `string`
+Signature:
 
-##### type: `"document_url"`
+```
+string
+```
+
+##### type
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### `object`
+##### presence\_penalty
+
+Signature:
+
+```
+number
+```
+
+##### random\_seed
+
+Signature:
+
+```
+integer
+```
+
+##### response\_format
+
+Signature:
+
+```
+ResponseFormat
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ResponseFormat Properties</summary>
 
-##### reference\_ids: `Array<integer>`
+##### json\_schema
 
-##### type: `"reference"`
+Signature:
 
-</details>
-
-</details>
-
-</details>
-
-##### role: `"user"`
-
-</details>
-
-##### `object`
+```
+JsonSchema
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>JsonSchema Properties</summary>
 
-##### content: `union`
+##### description
+
+Signature:
+
+```
+string
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### schema\_definition
+
+Signature:
+
+```
+map
+  any
+```
+
+##### strict
+
+Signature:
+
+```
+boolean
+```
+
+</details>
+
+##### type
+
+Signature:
+```
+enum
+  text
+  json_object
+  json_schema
+```
+
+</details>
+
+##### stop
+
+Signature:
+
+```
+union
+  string
+  array
+    string
+```
+
+##### stream
+
+Signature:
+
+```
+boolean
+```
+
+##### tool\_choice
+
+Signature:
+
+```
+union
+  ToolChoice
+  enum
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ToolChoice Properties</summary>
 
-##### `string`
+##### function
 
-##### `array`
+Signature:
 
-<details open>
-
-<summary>Union Values</summary>
-
-##### `object`
+```
+FunctionName
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>FunctionName Properties</summary>
 
-##### text: `string`
+##### name
 
-##### type: `"text"`
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### `object`
+##### type
+
+Signature:
+```
+enum
+  function
+```
+
+</details>
+
+##### tools
+
+Signature:
+
+```
+array
+  Tool
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Tool Properties</summary>
 
-##### image\_url: `union`
+##### function
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### detail: `string`
-
-##### url: `string`
-
-</details>
-
-##### `string`
-
-</details>
-
-##### type: `"image_url"`
-
-</details>
-
-##### `object`
+```
+Function
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Function Properties</summary>
 
-##### document\_name: `string`
+##### description
 
-##### document\_url: `string`
+Signature:
 
-##### type: `"document_url"`
+```
+string
+```
 
-</details>
+##### name
 
-##### `object`
+Signature:
 
-<details open>
+```
+string
+```
 
-<summary>Object Properties</summary>
+##### parameters
 
-##### reference\_ids: `Array<integer>`
+Signature:
 
-##### type: `"reference"`
+```
+map
+  any
+```
 
-</details>
+##### strict
 
-</details>
+Signature:
 
-</details>
-
-##### prefix: `boolean`
-
-##### role: `"assistant"`
-
-##### tool\_calls: `array`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### function: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### arguments: `Map<any> | string`
-
-##### name: `string`
+```
+boolean
+```
 
 </details>
 
-##### id: `string`
-
-##### index: `integer`
-
-##### type: `"function"`
-
-</details>
-
-</details>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### content: `union`
-
-<details open>
-
-<summary>Union Values</summary>
-
-##### `string`
-
-##### `array`
-
-<details open>
-
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### text: `string`
-
-##### type: `"text"`
-
-</details>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### image\_url: `union`
-
-<details open>
-
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### detail: `string`
-
-##### url: `string`
-
-</details>
-
-##### `string`
-
-</details>
-
-##### type: `"image_url"`
-
-</details>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### document\_name: `string`
-
-##### document\_url: `string`
-
-##### type: `"document_url"`
-
-</details>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### reference\_ids: `Array<integer>`
-
-##### type: `"reference"`
-
-</details>
-
-</details>
-
-</details>
-
-##### name: `string`
-
-##### role: `"tool"`
-
-##### tool\_call_id: `string`
-
-</details>
-
-</details>
-
-##### n: `integer`
-
-##### parallel\_tool_calls: `boolean`
-
-##### prediction: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### content: `string`
-
-##### type: `string`
-
-</details>
-
-##### presence\_penalty: `number`
-
-##### random\_seed: `integer`
-
-##### response\_format: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### json\_schema: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### description: `string`
-
-##### name: `string`
-
-##### schema\_definition: `Map<any>`
-
-##### strict: `boolean`
-
-</details>
-
-##### type: `"text" | "json_object" | "json_schema"`
-
-</details>
-
-##### stop: `string | Array<string>`
-
-##### stream: `boolean`
-
-##### tool\_choice: `union`
-
-<details open>
-
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### function: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### name: `string`
-
-</details>
-
-##### type: `"function"`
-
-</details>
-
-##### `enum`
-
-</details>
-
-##### tools: `array`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### function: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### description: `string`
-
-##### name: `string`
-
-##### parameters: `Map<any>`
-
-##### strict: `boolean`
-
-</details>
-
-##### type: `"function"`
+##### type
+
+Signature:
+```
+enum
+  function
+```
 
 </details>
 
@@ -505,105 +925,274 @@ Successful Response
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### choices: `array`
+##### choices
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
-
-##### finish\_reason: `"stop" | "length" | "model_length" | "error" | "tool_calls"`
-
-##### index: `integer`
-
-##### message: `object`
+```
+array
+  ChatCompletionChoice
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ChatCompletionChoice Properties</summary>
 
-##### content: `union`
+##### finish\_reason
+
+Signature:
+```
+enum
+  stop
+  length
+  model_length
+  error
+  tool_calls
+```
+
+##### index
+
+Signature:
+
+```
+integer
+```
+
+##### message
+
+Signature:
+
+```
+AssistantMessage
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>AssistantMessage Properties</summary>
 
-##### `string`
+##### content
 
-##### `array`
+Signature:
+
+```
+union
+  string
+  array
+    union
+      TextChunk
+      ImageURLChunk
+      DocumentURLChunk
+      ReferenceChunk
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>TextChunk Properties</summary>
 
-##### `object`
+##### text
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
+```
+string
+```
 
-##### text: `string`
+##### type
 
-##### type: `"text"`
+Signature:
+```
+enum
+  text
+```
 
 </details>
 
-##### `object`
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+Signature:
+
+```
+union
+  ImageURL
+  string
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ImageURL Properties</summary>
 
-##### image\_url: `union`
+##### detail
+
+Signature:
+
+```
+string
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### type
+
+Signature:
+```
+enum
+  image_url
+```
+
+</details>
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>DocumentURLChunk Properties</summary>
 
-##### `object`
+##### document\_name
+
+Signature:
+
+```
+string
+```
+
+##### document\_url
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  document_url
+```
+
+</details>
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ReferenceChunk Properties</summary>
 
-##### detail: `string`
+##### reference\_ids
 
-##### url: `string`
+Signature:
+
+```
+array
+  integer
+```
+
+##### type
+
+Signature:
+```
+enum
+  reference
+```
 
 </details>
 
-##### `string`
+##### prefix
 
-</details>
+Signature:
 
-##### type: `"image_url"`
+```
+boolean
+```
 
-</details>
+##### role
 
-##### `object`
+Signature:
+```
+enum
+  assistant
+```
+
+##### tool\_calls
+
+Signature:
+
+```
+array
+  ToolCall
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ToolCall Properties</summary>
 
-##### document\_name: `string`
+##### function
 
-##### document\_url: `string`
+Signature:
 
-##### type: `"document_url"`
-
-</details>
-
-##### `object`
+```
+FunctionCall
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>FunctionCall Properties</summary>
 
-##### reference\_ids: `Array<integer>`
+##### arguments
 
-##### type: `"reference"`
+Signature:
+
+```
+union
+  map
+    any
+  string
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### index
+
+Signature:
+
+```
+integer
+```
+
+##### type
+
+Signature:
+```
+enum
+  function
+```
 
 </details>
 
@@ -611,59 +1200,73 @@ Successful Response
 
 </details>
 
-##### prefix: `boolean`
+##### created
 
-##### role: `"assistant"`
+Signature:
 
-##### tool\_calls: `array`
+```
+integer
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### model
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
+
+##### usage
+
+Signature:
+
+```
+UsageInfo
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>UsageInfo Properties</summary>
 
-##### function: `object`
+##### completion\_tokens
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
+```
+integer
+```
 
-##### arguments: `Map<any> | string`
+##### prompt\_tokens
 
-##### name: `string`
+Signature:
 
-</details>
+```
+integer
+```
 
-##### id: `string`
+##### total\_tokens
 
-##### index: `integer`
+Signature:
 
-##### type: `"function"`
-
-</details>
-
-</details>
-
-</details>
-
-##### created: `integer`
-
-##### id: `string`
-
-##### model: `string`
-
-##### object: `string`
-
-##### usage: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### completion\_tokens: `integer`
-
-##### prompt\_tokens: `integer`
-
-##### total\_tokens: `integer`
+```
+integer
+```
 
 </details>
 
@@ -675,19 +1278,47 @@ Validation Error
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### detail: `array`
+##### detail
+
+Signature:
+
+```
+array
+  ValidationError
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ValidationError Properties</summary>
 
-##### loc: `Array<string | integer>`
+##### loc
 
-##### msg: `string`
+Signature:
 
-##### type: `string`
+```
+array
+  union
+    string
+    integer
+```
+
+##### msg
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+
+```
+string
+```
 
 </details>
 

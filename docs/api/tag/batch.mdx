@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.6
+sidebar_position: 2.2
 sidebar_label: batch
 ---
 
@@ -21,63 +21,205 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### data: `array`
+##### data
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
-
-##### completed\_at: `integer`
-
-##### completed\_requests: `integer`
-
-##### created\_at: `integer`
-
-##### endpoint: `string`
-
-##### error\_file: `string`
-
-##### errors: `array`
+```
+array
+  BatchJobOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>BatchJobOut Properties</summary>
 
-##### count: `integer`
+##### completed\_at
 
-##### message: `string`
+Signature:
+
+```
+integer
+```
+
+##### completed\_requests
+
+Signature:
+
+```
+integer
+```
+
+##### created\_at
+
+Signature:
+
+```
+integer
+```
+
+##### endpoint
+
+Signature:
+
+```
+string
+```
+
+##### error\_file
+
+Signature:
+
+```
+string
+```
+
+##### errors
+
+Signature:
+
+```
+array
+  BatchError
+```
+
+<details open>
+
+<summary>BatchError Properties</summary>
+
+##### count
+
+Signature:
+
+```
+integer
+```
+
+##### message
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### failed\_requests: `integer`
+##### failed\_requests
 
-##### id: `string`
+Signature:
 
-##### input\_files: `Array<string>`
+```
+integer
+```
 
-##### metadata: `Map<any>`
+##### id
 
-##### model: `string`
+Signature:
 
-##### object: `"batch"`
+```
+string
+```
 
-##### output\_file: `string`
+##### input\_files
 
-##### started\_at: `integer`
+Signature:
 
-##### status: `"QUEUED" | "RUNNING" | "SUCCESS" | "FAILED" | "TIMEOUT_EXCEEDED" | "CANCELLATION_REQUESTED" | "CANCELLED"`
+```
+array
+  string
+```
 
-##### succeeded\_requests: `integer`
+##### metadata
 
-##### total\_requests: `integer`
+Signature:
+
+```
+map
+  any
+```
+
+##### model
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+```
+enum
+  batch
+```
+
+##### output\_file
+
+Signature:
+
+```
+string
+```
+
+##### started\_at
+
+Signature:
+
+```
+integer
+```
+
+##### status
+
+Signature:
+```
+enum
+  QUEUED
+  RUNNING
+  SUCCESS
+  FAILED
+  TIMEOUT_EXCEEDED
+  CANCELLATION_REQUESTED
+  CANCELLED
+```
+
+##### succeeded\_requests
+
+Signature:
+
+```
+integer
+```
+
+##### total\_requests
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-##### object: `"list"`
+##### object
 
-##### total: `integer`
+Signature:
+```
+enum
+  list
+```
+
+##### total
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
@@ -93,17 +235,53 @@ Create a new batch job, it will be queued for processing.
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Request Body</summary>
 
-##### endpoint: `"/v1/chat/completions" | "/v1/embeddings" | "/v1/fim/completions" | "/v1/moderations" | "/v1/chat/moderations"`
+##### endpoint
 
-##### input\_files: `Array<string>`
+Signature:
+```
+enum
+  /v1/chat/completions
+  /v1/embeddings
+  /v1/fim/completions
+  /v1/moderations
+  /v1/chat/moderations
+```
 
-##### metadata: `Map<string>`
+##### input\_files
 
-##### model: `string`
+Signature:
 
-##### timeout\_hours: `integer`
+```
+array
+  string
+```
+
+##### metadata
+
+Signature:
+
+```
+map
+  string
+```
+
+##### model
+
+Signature:
+
+```
+string
+```
+
+##### timeout\_hours
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
@@ -115,51 +293,174 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### completed\_at: `integer`
+##### completed\_at
 
-##### completed\_requests: `integer`
+Signature:
 
-##### created\_at: `integer`
+```
+integer
+```
 
-##### endpoint: `string`
+##### completed\_requests
 
-##### error\_file: `string`
+Signature:
 
-##### errors: `array`
+```
+integer
+```
+
+##### created\_at
+
+Signature:
+
+```
+integer
+```
+
+##### endpoint
+
+Signature:
+
+```
+string
+```
+
+##### error\_file
+
+Signature:
+
+```
+string
+```
+
+##### errors
+
+Signature:
+
+```
+array
+  BatchError
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>BatchError Properties</summary>
 
-##### count: `integer`
+##### count
 
-##### message: `string`
+Signature:
+
+```
+integer
+```
+
+##### message
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### failed\_requests: `integer`
+##### failed\_requests
 
-##### id: `string`
+Signature:
 
-##### input\_files: `Array<string>`
+```
+integer
+```
 
-##### metadata: `Map<any>`
+##### id
 
-##### model: `string`
+Signature:
 
-##### object: `"batch"`
+```
+string
+```
 
-##### output\_file: `string`
+##### input\_files
 
-##### started\_at: `integer`
+Signature:
 
-##### status: `"QUEUED" | "RUNNING" | "SUCCESS" | "FAILED" | "TIMEOUT_EXCEEDED" | "CANCELLATION_REQUESTED" | "CANCELLED"`
+```
+array
+  string
+```
 
-##### succeeded\_requests: `integer`
+##### metadata
 
-##### total\_requests: `integer`
+Signature:
+
+```
+map
+  any
+```
+
+##### model
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+```
+enum
+  batch
+```
+
+##### output\_file
+
+Signature:
+
+```
+string
+```
+
+##### started\_at
+
+Signature:
+
+```
+integer
+```
+
+##### status
+
+Signature:
+```
+enum
+  QUEUED
+  RUNNING
+  SUCCESS
+  FAILED
+  TIMEOUT_EXCEEDED
+  CANCELLATION_REQUESTED
+  CANCELLED
+```
+
+##### succeeded\_requests
+
+Signature:
+
+```
+integer
+```
+
+##### total\_requests
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
@@ -183,51 +484,174 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### completed\_at: `integer`
+##### completed\_at
 
-##### completed\_requests: `integer`
+Signature:
 
-##### created\_at: `integer`
+```
+integer
+```
 
-##### endpoint: `string`
+##### completed\_requests
 
-##### error\_file: `string`
+Signature:
 
-##### errors: `array`
+```
+integer
+```
+
+##### created\_at
+
+Signature:
+
+```
+integer
+```
+
+##### endpoint
+
+Signature:
+
+```
+string
+```
+
+##### error\_file
+
+Signature:
+
+```
+string
+```
+
+##### errors
+
+Signature:
+
+```
+array
+  BatchError
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>BatchError Properties</summary>
 
-##### count: `integer`
+##### count
 
-##### message: `string`
+Signature:
+
+```
+integer
+```
+
+##### message
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### failed\_requests: `integer`
+##### failed\_requests
 
-##### id: `string`
+Signature:
 
-##### input\_files: `Array<string>`
+```
+integer
+```
 
-##### metadata: `Map<any>`
+##### id
 
-##### model: `string`
+Signature:
 
-##### object: `"batch"`
+```
+string
+```
 
-##### output\_file: `string`
+##### input\_files
 
-##### started\_at: `integer`
+Signature:
 
-##### status: `"QUEUED" | "RUNNING" | "SUCCESS" | "FAILED" | "TIMEOUT_EXCEEDED" | "CANCELLATION_REQUESTED" | "CANCELLED"`
+```
+array
+  string
+```
 
-##### succeeded\_requests: `integer`
+##### metadata
 
-##### total\_requests: `integer`
+Signature:
+
+```
+map
+  any
+```
+
+##### model
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+```
+enum
+  batch
+```
+
+##### output\_file
+
+Signature:
+
+```
+string
+```
+
+##### started\_at
+
+Signature:
+
+```
+integer
+```
+
+##### status
+
+Signature:
+```
+enum
+  QUEUED
+  RUNNING
+  SUCCESS
+  FAILED
+  TIMEOUT_EXCEEDED
+  CANCELLATION_REQUESTED
+  CANCELLED
+```
+
+##### succeeded\_requests
+
+Signature:
+
+```
+integer
+```
+
+##### total\_requests
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
@@ -251,50 +675,173 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### completed\_at: `integer`
+##### completed\_at
 
-##### completed\_requests: `integer`
+Signature:
 
-##### created\_at: `integer`
+```
+integer
+```
 
-##### endpoint: `string`
+##### completed\_requests
 
-##### error\_file: `string`
+Signature:
 
-##### errors: `array`
+```
+integer
+```
+
+##### created\_at
+
+Signature:
+
+```
+integer
+```
+
+##### endpoint
+
+Signature:
+
+```
+string
+```
+
+##### error\_file
+
+Signature:
+
+```
+string
+```
+
+##### errors
+
+Signature:
+
+```
+array
+  BatchError
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>BatchError Properties</summary>
 
-##### count: `integer`
+##### count
 
-##### message: `string`
+Signature:
+
+```
+integer
+```
+
+##### message
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### failed\_requests: `integer`
+##### failed\_requests
 
-##### id: `string`
+Signature:
 
-##### input\_files: `Array<string>`
+```
+integer
+```
 
-##### metadata: `Map<any>`
+##### id
 
-##### model: `string`
+Signature:
 
-##### object: `"batch"`
+```
+string
+```
 
-##### output\_file: `string`
+##### input\_files
 
-##### started\_at: `integer`
+Signature:
 
-##### status: `"QUEUED" | "RUNNING" | "SUCCESS" | "FAILED" | "TIMEOUT_EXCEEDED" | "CANCELLATION_REQUESTED" | "CANCELLED"`
+```
+array
+  string
+```
 
-##### succeeded\_requests: `integer`
+##### metadata
 
-##### total\_requests: `integer`
+Signature:
+
+```
+map
+  any
+```
+
+##### model
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+```
+enum
+  batch
+```
+
+##### output\_file
+
+Signature:
+
+```
+string
+```
+
+##### started\_at
+
+Signature:
+
+```
+integer
+```
+
+##### status
+
+Signature:
+```
+enum
+  QUEUED
+  RUNNING
+  SUCCESS
+  FAILED
+  TIMEOUT_EXCEEDED
+  CANCELLATION_REQUESTED
+  CANCELLED
+```
+
+##### succeeded\_requests
+
+Signature:
+
+```
+integer
+```
+
+##### total\_requests
+
+Signature:
+
+```
+integer
+```
 
 </details>

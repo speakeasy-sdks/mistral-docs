@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.3
+sidebar_position: 2.7
 sidebar_label: models
 ---
 
@@ -21,119 +21,348 @@ Successful Response
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### data: `array`
+##### data
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### aliases: `Array<string>`
-
-##### capabilities: `object`
+```
+array
+  union
+    BaseModelCard
+    FTModelCard
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>BaseModelCard Properties</summary>
 
-##### completion\_chat: `boolean`
+##### aliases
 
-##### completion\_fim: `boolean`
+Signature:
 
-##### fine\_tuning: `boolean`
+```
+array
+  string
+```
 
-##### function\_calling: `boolean`
+##### capabilities
 
-##### vision: `boolean`
+Signature:
 
-</details>
-
-##### created: `integer`
-
-##### default\_model_temperature: `number`
-
-##### deprecation: `date-time`
-
-##### description: `string`
-
-##### id: `string`
-
-##### max\_context_length: `integer`
-
-##### name: `string`
-
-##### object: `string`
-
-##### owned\_by: `string`
-
-##### type: `"base"`
-
-</details>
-
-##### `object`
+```
+ModelCapabilities
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ModelCapabilities Properties</summary>
 
-##### aliases: `Array<string>`
+##### completion\_chat
 
-##### archived: `boolean`
+Signature:
 
-##### capabilities: `object`
+```
+boolean
+```
+
+##### completion\_fim
+
+Signature:
+
+```
+boolean
+```
+
+##### fine\_tuning
+
+Signature:
+
+```
+boolean
+```
+
+##### function\_calling
+
+Signature:
+
+```
+boolean
+```
+
+##### vision
+
+Signature:
+
+```
+boolean
+```
+
+</details>
+
+##### created
+
+Signature:
+
+```
+integer
+```
+
+##### default\_model_temperature
+
+Signature:
+
+```
+number
+```
+
+##### deprecation
+
+Signature:
+
+```
+date-time
+```
+
+##### description
+
+Signature:
+
+```
+string
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### max\_context_length
+
+Signature:
+
+```
+integer
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
+
+##### owned\_by
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  base
+```
+
+</details>
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>FTModelCard Properties</summary>
 
-##### completion\_chat: `boolean`
+##### aliases
 
-##### completion\_fim: `boolean`
+Signature:
 
-##### fine\_tuning: `boolean`
+```
+array
+  string
+```
 
-##### function\_calling: `boolean`
+##### archived
 
-##### vision: `boolean`
+Signature:
+
+```
+boolean
+```
+
+##### capabilities
+
+Signature:
+
+```
+ModelCapabilities
+```
+
+<details open>
+
+<summary>ModelCapabilities Properties</summary>
+
+##### completion\_chat
+
+Signature:
+
+```
+boolean
+```
+
+##### completion\_fim
+
+Signature:
+
+```
+boolean
+```
+
+##### fine\_tuning
+
+Signature:
+
+```
+boolean
+```
+
+##### function\_calling
+
+Signature:
+
+```
+boolean
+```
+
+##### vision
+
+Signature:
+
+```
+boolean
+```
 
 </details>
 
-##### created: `integer`
+##### created
 
-##### default\_model_temperature: `number`
+Signature:
 
-##### deprecation: `date-time`
+```
+integer
+```
 
-##### description: `string`
+##### default\_model_temperature
 
-##### id: `string`
+Signature:
 
-##### job: `string`
+```
+number
+```
 
-##### max\_context_length: `integer`
+##### deprecation
 
-##### name: `string`
+Signature:
 
-##### object: `string`
+```
+date-time
+```
 
-##### owned\_by: `string`
+##### description
 
-##### root: `string`
+Signature:
 
-##### type: `"fine-tuned"`
+```
+string
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### job
+
+Signature:
+
+```
+string
+```
+
+##### max\_context_length
+
+Signature:
+
+```
+integer
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
+
+##### owned\_by
+
+Signature:
+
+```
+string
+```
+
+##### root
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  fine-tuned
+```
 
 </details>
 
-</details>
+##### object
 
-##### object: `string`
+Signature:
+
+```
+string
+```
 
 </details>
 
@@ -143,19 +372,47 @@ Validation Error
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### detail: `array`
+##### detail
+
+Signature:
+
+```
+array
+  ValidationError
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ValidationError Properties</summary>
 
-##### loc: `Array<string | integer>`
+##### loc
 
-##### msg: `string`
+Signature:
 
-##### type: `string`
+```
+array
+  union
+    string
+    integer
+```
+
+##### msg
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+
+```
+string
+```
 
 </details>
 
@@ -181,111 +438,333 @@ The ID of the model to retrieve.
 
 Successful Response
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### aliases: `Array<string>`
-
-##### capabilities: `object`
+```
+union
+  BaseModelCard
+  FTModelCard
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>BaseModelCard Properties</summary>
 
-##### completion\_chat: `boolean`
+##### aliases
 
-##### completion\_fim: `boolean`
+Signature:
 
-##### fine\_tuning: `boolean`
+```
+array
+  string
+```
 
-##### function\_calling: `boolean`
+##### capabilities
 
-##### vision: `boolean`
+Signature:
+
+```
+ModelCapabilities
+```
+
+<details open>
+
+<summary>ModelCapabilities Properties</summary>
+
+##### completion\_chat
+
+Signature:
+
+```
+boolean
+```
+
+##### completion\_fim
+
+Signature:
+
+```
+boolean
+```
+
+##### fine\_tuning
+
+Signature:
+
+```
+boolean
+```
+
+##### function\_calling
+
+Signature:
+
+```
+boolean
+```
+
+##### vision
+
+Signature:
+
+```
+boolean
+```
 
 </details>
 
-##### created: `integer`
+##### created
 
-##### default\_model_temperature: `number`
+Signature:
 
-##### deprecation: `date-time`
+```
+integer
+```
 
-##### description: `string`
+##### default\_model_temperature
 
-##### id: `string`
+Signature:
 
-##### max\_context_length: `integer`
+```
+number
+```
 
-##### name: `string`
+##### deprecation
 
-##### object: `string`
+Signature:
 
-##### owned\_by: `string`
+```
+date-time
+```
 
-##### type: `"base"`
+##### description
+
+Signature:
+
+```
+string
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### max\_context_length
+
+Signature:
+
+```
+integer
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
+
+##### owned\_by
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  base
+```
 
 </details>
-
-##### `object`
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>FTModelCard Properties</summary>
 
-##### aliases: `Array<string>`
+##### aliases
 
-##### archived: `boolean`
+Signature:
 
-##### capabilities: `object`
+```
+array
+  string
+```
+
+##### archived
+
+Signature:
+
+```
+boolean
+```
+
+##### capabilities
+
+Signature:
+
+```
+ModelCapabilities
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ModelCapabilities Properties</summary>
 
-##### completion\_chat: `boolean`
+##### completion\_chat
 
-##### completion\_fim: `boolean`
+Signature:
 
-##### fine\_tuning: `boolean`
+```
+boolean
+```
 
-##### function\_calling: `boolean`
+##### completion\_fim
 
-##### vision: `boolean`
+Signature:
+
+```
+boolean
+```
+
+##### fine\_tuning
+
+Signature:
+
+```
+boolean
+```
+
+##### function\_calling
+
+Signature:
+
+```
+boolean
+```
+
+##### vision
+
+Signature:
+
+```
+boolean
+```
 
 </details>
 
-##### created: `integer`
+##### created
 
-##### default\_model_temperature: `number`
+Signature:
 
-##### deprecation: `date-time`
+```
+integer
+```
 
-##### description: `string`
+##### default\_model_temperature
 
-##### id: `string`
+Signature:
 
-##### job: `string`
+```
+number
+```
 
-##### max\_context_length: `integer`
+##### deprecation
 
-##### name: `string`
+Signature:
 
-##### object: `string`
+```
+date-time
+```
 
-##### owned\_by: `string`
+##### description
 
-##### root: `string`
+Signature:
 
-##### type: `"fine-tuned"`
+```
+string
+```
 
-</details>
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### job
+
+Signature:
+
+```
+string
+```
+
+##### max\_context_length
+
+Signature:
+
+```
+integer
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
+
+##### owned\_by
+
+Signature:
+
+```
+string
+```
+
+##### root
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  fine-tuned
+```
 
 </details>
 
@@ -295,19 +774,47 @@ Validation Error
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### detail: `array`
+##### detail
+
+Signature:
+
+```
+array
+  ValidationError
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ValidationError Properties</summary>
 
-##### loc: `Array<string | integer>`
+##### loc
 
-##### msg: `string`
+Signature:
 
-##### type: `string`
+```
+array
+  union
+    string
+    integer
+```
+
+##### msg
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+
+```
+string
+```
 
 </details>
 
@@ -335,13 +842,31 @@ Successful Response
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### deleted: `boolean`
+##### deleted
 
-##### id: `string`
+Signature:
 
-##### object: `string`
+```
+boolean
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
 
 </details>
 
@@ -351,19 +876,47 @@ Validation Error
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### detail: `array`
+##### detail
+
+Signature:
+
+```
+array
+  ValidationError
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ValidationError Properties</summary>
 
-##### loc: `Array<string | integer>`
+##### loc
 
-##### msg: `string`
+Signature:
 
-##### type: `string`
+```
+array
+  union
+    string
+    integer
+```
+
+##### msg
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+
+```
+string
+```
 
 </details>
 
@@ -387,11 +940,23 @@ The ID of the model to update.
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Request Body</summary>
 
-##### description: `string`
+##### description
 
-##### name: `string`
+Signature:
+
+```
+string
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
 
 </details>
 
@@ -401,125 +966,374 @@ The ID of the model to update.
 
 OK
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### aliases: `Array<string>`
-
-##### archived: `boolean`
-
-##### capabilities: `object`
+```
+union
+  CompletionFTModelOut
+  ClassifierFTModelOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionFTModelOut Properties</summary>
 
-##### classification: `boolean`
+##### aliases
 
-##### completion\_chat: `boolean`
+Signature:
 
-##### completion\_fim: `boolean`
+```
+array
+  string
+```
 
-##### fine\_tuning: `boolean`
+##### archived
 
-##### function\_calling: `boolean`
+Signature:
+
+```
+boolean
+```
+
+##### capabilities
+
+Signature:
+
+```
+FTModelCapabilitiesOut
+```
+
+<details open>
+
+<summary>FTModelCapabilitiesOut Properties</summary>
+
+##### classification
+
+Signature:
+
+```
+boolean
+```
+
+##### completion\_chat
+
+Signature:
+
+```
+boolean
+```
+
+##### completion\_fim
+
+Signature:
+
+```
+boolean
+```
+
+##### fine\_tuning
+
+Signature:
+
+```
+boolean
+```
+
+##### function\_calling
+
+Signature:
+
+```
+boolean
+```
 
 </details>
 
-##### created: `integer`
+##### created
 
-##### description: `string`
+Signature:
 
-##### id: `string`
+```
+integer
+```
 
-##### job: `string`
+##### description
 
-##### max\_context_length: `integer`
+Signature:
 
-##### model\_type: `"completion"`
+```
+string
+```
 
-##### name: `string`
+##### id
 
-##### object: `"model"`
+Signature:
 
-##### owned\_by: `string`
+```
+string
+```
 
-##### root: `string`
+##### job
+
+Signature:
+
+```
+string
+```
+
+##### max\_context_length
+
+Signature:
+
+```
+integer
+```
+
+##### model\_type
+
+Signature:
+```
+enum
+  completion
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+```
+enum
+  model
+```
+
+##### owned\_by
+
+Signature:
+
+```
+string
+```
+
+##### root
+
+Signature:
+
+```
+string
+```
 
 </details>
-
-##### `object`
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierFTModelOut Properties</summary>
 
-##### aliases: `Array<string>`
+##### aliases
 
-##### archived: `boolean`
+Signature:
 
-##### capabilities: `object`
+```
+array
+  string
+```
+
+##### archived
+
+Signature:
+
+```
+boolean
+```
+
+##### capabilities
+
+Signature:
+
+```
+FTModelCapabilitiesOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>FTModelCapabilitiesOut Properties</summary>
 
-##### classification: `boolean`
+##### classification
 
-##### completion\_chat: `boolean`
+Signature:
 
-##### completion\_fim: `boolean`
+```
+boolean
+```
 
-##### fine\_tuning: `boolean`
+##### completion\_chat
 
-##### function\_calling: `boolean`
+Signature:
+
+```
+boolean
+```
+
+##### completion\_fim
+
+Signature:
+
+```
+boolean
+```
+
+##### fine\_tuning
+
+Signature:
+
+```
+boolean
+```
+
+##### function\_calling
+
+Signature:
+
+```
+boolean
+```
 
 </details>
 
-##### classifier\_targets: `array`
+##### classifier\_targets
+
+Signature:
+
+```
+array
+  ClassifierTargetOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierTargetOut Properties</summary>
 
-##### labels: `Array<string>`
+##### labels
 
-##### loss\_function: `"single_class" | "multi_class"`
+Signature:
 
-##### name: `string`
+```
+array
+  string
+```
 
-##### weight: `number`
+##### loss\_function
+
+Signature:
+```
+enum
+  single_class
+  multi_class
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### weight
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### created: `integer`
+##### created
 
-##### description: `string`
+Signature:
 
-##### id: `string`
+```
+integer
+```
 
-##### job: `string`
+##### description
 
-##### max\_context_length: `integer`
+Signature:
 
-##### model\_type: `"classifier"`
+```
+string
+```
 
-##### name: `string`
+##### id
 
-##### object: `"model"`
+Signature:
 
-##### owned\_by: `string`
+```
+string
+```
 
-##### root: `string`
+##### job
 
-</details>
+Signature:
+
+```
+string
+```
+
+##### max\_context_length
+
+Signature:
+
+```
+integer
+```
+
+##### model\_type
+
+Signature:
+```
+enum
+  classifier
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+```
+enum
+  model
+```
+
+##### owned\_by
+
+Signature:
+
+```
+string
+```
+
+##### root
+
+Signature:
+
+```
+string
+```
 
 </details>
 
@@ -545,13 +1359,31 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### archived: `boolean`
+##### archived
 
-##### id: `string`
+Signature:
 
-##### object: `"model"`
+```
+boolean
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+```
+enum
+  model
+```
 
 </details>
 
@@ -577,12 +1409,30 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### archived: `boolean`
+##### archived
 
-##### id: `string`
+Signature:
 
-##### object: `"model"`
+```
+boolean
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+```
+enum
+  model
+```
 
 </details>

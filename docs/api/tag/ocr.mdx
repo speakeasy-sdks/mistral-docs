@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.2
+sidebar_position: 2.6
 sidebar_label: ocr
 ---
 
@@ -15,73 +15,142 @@ OCR
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Request Body</summary>
 
-##### document: `union`
+##### document
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### document\_name: `string`
-
-##### document\_url: `string`
-
-##### type: `"document_url"`
-
-</details>
-
-##### `object`
+```
+union
+  DocumentURLChunk
+  ImageURLChunk
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>DocumentURLChunk Properties</summary>
 
-##### image\_url: `union`
+##### document\_name
+
+Signature:
+
+```
+string
+```
+
+##### document\_url
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  document_url
+```
+
+</details>
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ImageURLChunk Properties</summary>
 
-##### `object`
+##### image\_url
+
+Signature:
+
+```
+union
+  ImageURL
+  string
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ImageURL Properties</summary>
 
-##### detail: `string`
+##### detail
 
-##### url: `string`
+Signature:
+
+```
+string
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### `string`
+##### type
+
+Signature:
+```
+enum
+  image_url
+```
 
 </details>
 
-##### type: `"image_url"`
+##### id
 
-</details>
+Signature:
 
-</details>
+```
+string
+```
 
-##### id: `string`
+##### image\_limit
 
-##### image\_limit: `integer`
+Signature:
 
-##### image\_min_size: `integer`
+```
+integer
+```
 
-##### include\_image_base64: `boolean`
+##### image\_min_size
 
-##### model: `string`
+Signature:
 
-##### pages: `Array<integer>`
+```
+integer
+```
+
+##### include\_image_base64
+
+Signature:
+
+```
+boolean
+```
+
+##### model
+
+Signature:
+
+```
+string
+```
+
+##### pages
+
+Signature:
+
+```
+array
+  integer
+```
 
 </details>
 
@@ -93,65 +162,175 @@ Successful Response
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### model: `string`
+##### model
 
-##### pages: `array`
+Signature:
+
+```
+string
+```
+
+##### pages
+
+Signature:
+
+```
+array
+  OCRPageObject
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>OCRPageObject Properties</summary>
 
-##### dimensions: `object`
+##### dimensions
+
+Signature:
+
+```
+OCRPageDimensions
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>OCRPageDimensions Properties</summary>
 
-##### dpi: `integer`
+##### dpi
 
-##### height: `integer`
+Signature:
 
-##### width: `integer`
+```
+integer
+```
+
+##### height
+
+Signature:
+
+```
+integer
+```
+
+##### width
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-##### images: `array`
+##### images
+
+Signature:
+
+```
+array
+  OCRImageObject
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>OCRImageObject Properties</summary>
 
-##### bottom\_right_x: `integer`
+##### bottom\_right_x
 
-##### bottom\_right_y: `integer`
+Signature:
 
-##### id: `string`
+```
+integer
+```
 
-##### image\_base64: `string`
+##### bottom\_right_y
 
-##### top\_left_x: `integer`
+Signature:
 
-##### top\_left_y: `integer`
+```
+integer
+```
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### image\_base64
+
+Signature:
+
+```
+string
+```
+
+##### top\_left_x
+
+Signature:
+
+```
+integer
+```
+
+##### top\_left_y
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-##### index: `integer`
+##### index
 
-##### markdown: `string`
+Signature:
+
+```
+integer
+```
+
+##### markdown
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### usage\_info: `object`
+##### usage\_info
+
+Signature:
+
+```
+OCRUsageInfo
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>OCRUsageInfo Properties</summary>
 
-##### doc\_size_bytes: `integer`
+##### doc\_size_bytes
 
-##### pages\_processed: `integer`
+Signature:
+
+```
+integer
+```
+
+##### pages\_processed
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
@@ -163,19 +342,47 @@ Validation Error
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### detail: `array`
+##### detail
+
+Signature:
+
+```
+array
+  ValidationError
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ValidationError Properties</summary>
 
-##### loc: `Array<string | integer>`
+##### loc
 
-##### msg: `string`
+Signature:
 
-##### type: `string`
+```
+array
+  union
+    string
+    integer
+```
+
+##### msg
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+
+```
+string
+```
 
 </details>
 

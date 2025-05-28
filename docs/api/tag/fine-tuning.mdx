@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.5
+sidebar_position: 2.1
 sidebar_label: fine-tuning
 ---
 
@@ -21,251 +21,728 @@ OK
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### data: `array`
+##### data
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### auto\_start: `boolean`
-
-##### created\_at: `integer`
-
-##### fine\_tuned_model: `string`
-
-##### hyperparameters: `object`
+```
+array
+  union
+    CompletionJobOut
+    ClassifierJobOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionJobOut Properties</summary>
 
-##### epochs: `number`
+##### auto\_start
 
-##### fim\_ratio: `number`
+Signature:
 
-##### learning\_rate: `number`
+```
+boolean
+```
 
-##### seq\_len: `integer`
+##### created\_at
 
-##### training\_steps: `integer`
+Signature:
 
-##### warmup\_fraction: `number`
+```
+integer
+```
 
-##### weight\_decay: `number`
+##### fine\_tuned_model
 
-</details>
+Signature:
 
-##### id: `string`
+```
+string
+```
 
-##### integrations: `array`
+##### hyperparameters
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### name: `string`
-
-##### project: `string`
-
-##### run\_name: `string`
-
-##### type: `"wandb"`
-
-##### url: `string`
-
-</details>
-
-</details>
-
-##### job\_type: `"completion"`
-
-##### metadata: `object`
+```
+CompletionTrainingParameters
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionTrainingParameters Properties</summary>
 
-##### cost: `number`
+##### epochs
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+number
+```
 
-##### estimated\_start_time: `integer`
+##### fim\_ratio
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+number
+```
 
-##### train\_tokens_per_step: `integer`
+##### learning\_rate
+
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### id
 
-##### modified\_at: `integer`
+Signature:
 
-##### object: `"job"`
+```
+string
+```
 
-##### repositories: `array`
+##### integrations
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### `object`
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### project
+
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### job\_type
+
+Signature:
+```
+enum
+  completion
+```
+
+##### metadata
+
+Signature:
+
+```
+JobMetadataOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>JobMetadataOut Properties</summary>
 
-##### name: `string`
+##### cost
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
+```
+number
+```
 
-##### type: `"wandb"`
+##### cost\_currency
 
-##### url: `string`
+Signature:
+
+```
+string
+```
+
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-</details>
+##### model
 
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
 
-##### suffix: `string`
+##### modified\_at
 
-##### trained\_tokens: `integer`
+Signature:
 
-##### training\_files: `Array<string>`
+```
+integer
+```
 
-##### validation\_files: `Array<string>`
+##### object
 
-</details>
+Signature:
+```
+enum
+  job
+```
 
-##### `object`
+##### repositories
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### auto\_start: `boolean`
+##### name
 
-##### created\_at: `integer`
+Signature:
 
-##### fine\_tuned_model: `string`
+```
+string
+```
 
-##### hyperparameters: `object`
+##### project
+
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### status
+
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
+
+##### suffix
+
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+</details>
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierJobOut Properties</summary>
 
-##### epochs: `number`
+##### auto\_start
 
-##### learning\_rate: `number`
+Signature:
 
-##### seq\_len: `integer`
+```
+boolean
+```
 
-##### training\_steps: `integer`
+##### created\_at
 
-##### warmup\_fraction: `number`
+Signature:
 
-##### weight\_decay: `number`
+```
+integer
+```
 
-</details>
+##### fine\_tuned_model
 
-##### id: `string`
+Signature:
 
-##### integrations: `array`
+```
+string
+```
 
-<details open>
+##### hyperparameters
 
-<summary>Union Values</summary>
+Signature:
 
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### name: `string`
-
-##### project: `string`
-
-##### run\_name: `string`
-
-##### type: `"wandb"`
-
-##### url: `string`
-
-</details>
-
-</details>
-
-##### job\_type: `"classifier"`
-
-##### metadata: `object`
+```
+ClassifierTrainingParameters
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierTrainingParameters Properties</summary>
 
-##### cost: `number`
+##### epochs
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+number
+```
 
-##### estimated\_start_time: `integer`
+##### learning\_rate
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+number
+```
 
-##### train\_tokens_per_step: `integer`
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### id
 
-##### modified\_at: `integer`
+Signature:
 
-##### object: `"job"`
+```
+string
+```
 
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+##### integrations
 
-##### suffix: `string`
+Signature:
 
-##### trained\_tokens: `integer`
+```
+array
+  union
+    WandbIntegrationOut
+```
 
-##### training\_files: `Array<string>`
+<details open>
 
-##### validation\_files: `Array<string>`
+<summary>WandbIntegrationOut Properties</summary>
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### project
+
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
+##### job\_type
+
+Signature:
+```
+enum
+  classifier
+```
+
+##### metadata
+
+Signature:
+
+```
+JobMetadataOut
+```
+
+<details open>
+
+<summary>JobMetadataOut Properties</summary>
+
+##### cost
+
+Signature:
+
+```
+number
+```
+
+##### cost\_currency
+
+Signature:
+
+```
+string
+```
+
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
+
 </details>
 
-##### object: `"list"`
+##### model
 
-##### total: `integer`
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
+
+##### modified\_at
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+```
+enum
+  job
+```
+
+##### status
+
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
+
+##### suffix
+
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+</details>
+
+##### object
+
+Signature:
+```
+enum
+  list
+```
+
+##### total
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
@@ -291,149 +768,381 @@ Create a new fine-tuning job, it will be queued for processing.
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Request Body</summary>
 
-##### auto\_start: `boolean`
+##### auto\_start
 
-##### classifier\_targets: `array`
+Signature:
 
-<details open>
+```
+boolean
+```
 
-<summary>Object Properties</summary>
+##### classifier\_targets
 
-##### labels: `Array<string>`
+Signature:
 
-##### loss\_function: `"single_class" | "multi_class"`
-
-##### name: `string`
-
-##### weight: `number`
-
-</details>
-
-##### hyperparameters: `union`
+```
+array
+  ClassifierTargetIn
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ClassifierTargetIn Properties</summary>
 
-##### `object`
+##### labels
+
+Signature:
+
+```
+array
+  string
+```
+
+##### loss\_function
+
+Signature:
+```
+enum
+  single_class
+  multi_class
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### weight
+
+Signature:
+
+```
+number
+```
+
+</details>
+
+##### hyperparameters
+
+Signature:
+
+```
+union
+  CompletionTrainingParametersIn
+  ClassifierTrainingParametersIn
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionTrainingParametersIn Properties</summary>
 
-##### epochs: `number`
+##### epochs
 
-##### fim\_ratio: `number`
+Signature:
 
-##### learning\_rate: `number`
+```
+number
+```
 
-##### seq\_len: `integer`
+##### fim\_ratio
 
-##### training\_steps: `integer`
+Signature:
 
-##### warmup\_fraction: `number`
+```
+number
+```
 
-##### weight\_decay: `number`
+##### learning\_rate
+
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
 
 </details>
-
-##### `object`
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierTrainingParametersIn Properties</summary>
 
-##### epochs: `number`
+##### epochs
 
-##### learning\_rate: `number`
+Signature:
 
-##### seq\_len: `integer`
+```
+number
+```
 
-##### training\_steps: `integer`
+##### learning\_rate
 
-##### warmup\_fraction: `number`
+Signature:
 
-##### weight\_decay: `number`
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-</details>
+##### integrations
 
-##### integrations: `array`
+Signature:
+
+```
+array
+  union
+    WandbIntegration
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>WandbIntegration Properties</summary>
 
-##### `object`
+##### api\_key
+
+Signature:
+
+```
+string
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### project
+
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+</details>
+
+##### invalid\_sample_skip_percentage
+
+Signature:
+
+```
+number
+```
+
+##### job\_type
+
+Signature:
+```
+enum
+  completion
+  classifier
+```
+
+##### model
+
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
+
+##### repositories
+
+Signature:
+
+```
+array
+  union
+    WandbIntegration
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegration Properties</summary>
 
-##### api\_key: `string`
+##### api\_key
 
-##### name: `string`
+Signature:
 
-##### project: `string`
+```
+string
+```
 
-##### run\_name: `string`
+##### name
 
-##### type: `"wandb"`
+Signature:
+
+```
+string
+```
+
+##### project
+
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
 
 </details>
 
-</details>
+##### suffix
 
-##### invalid\_sample_skip_percentage: `number`
+Signature:
 
-##### job\_type: `"completion" | "classifier"`
+```
+string
+```
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### training\_files
 
-##### repositories: `array`
+Signature:
+
+```
+array
+  TrainingFile
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>TrainingFile Properties</summary>
 
-##### `object`
+##### file\_id
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
+```
+string
+```
 
-##### api\_key: `string`
+##### weight
 
-##### name: `string`
+Signature:
 
-##### project: `string`
-
-##### run\_name: `string`
-
-##### type: `"wandb"`
-
-</details>
+```
+number
+```
 
 </details>
 
-##### suffix: `string`
+##### validation\_files
 
-##### training\_files: `array`
+Signature:
 
-<details open>
-
-<summary>Object Properties</summary>
-
-##### file\_id: `string`
-
-##### weight: `number`
-
-</details>
-
-##### validation\_files: `Array<string>`
+```
+array
+  string
+```
 
 </details>
 
@@ -443,281 +1152,809 @@ Create a new fine-tuning job, it will be queued for processing.
 
 OK
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `union`
-
-<details open>
-
-<summary>Union Values</summary>
-
-##### `object`
+```
+union
+  union
+    CompletionJobOut
+    ClassifierJobOut
+  LegacyJobMetadataOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionJobOut Properties</summary>
 
-##### auto\_start: `boolean`
+##### auto\_start
 
-##### created\_at: `integer`
+Signature:
 
-##### fine\_tuned_model: `string`
+```
+boolean
+```
 
-##### hyperparameters: `object`
+##### created\_at
+
+Signature:
+
+```
+integer
+```
+
+##### fine\_tuned_model
+
+Signature:
+
+```
+string
+```
+
+##### hyperparameters
+
+Signature:
+
+```
+CompletionTrainingParameters
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionTrainingParameters Properties</summary>
 
-##### epochs: `number`
+##### epochs
 
-##### fim\_ratio: `number`
+Signature:
 
-##### learning\_rate: `number`
+```
+number
+```
 
-##### seq\_len: `integer`
+##### fim\_ratio
 
-##### training\_steps: `integer`
+Signature:
 
-##### warmup\_fraction: `number`
+```
+number
+```
 
-##### weight\_decay: `number`
+##### learning\_rate
+
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### id: `string`
+##### id
 
-##### integrations: `array`
+Signature:
 
-<details open>
+```
+string
+```
 
-<summary>Union Values</summary>
+##### integrations
 
-##### `object`
+Signature:
 
-<details open>
-
-<summary>Object Properties</summary>
-
-##### name: `string`
-
-##### project: `string`
-
-##### run\_name: `string`
-
-##### type: `"wandb"`
-
-##### url: `string`
-
-</details>
-
-</details>
-
-##### job\_type: `"completion"`
-
-##### metadata: `object`
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### cost: `number`
+##### name
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+string
+```
 
-##### estimated\_start_time: `integer`
+##### project
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+string
+```
 
-##### train\_tokens_per_step: `integer`
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### job\_type
 
-##### modified\_at: `integer`
+Signature:
+```
+enum
+  completion
+```
 
-##### object: `"job"`
+##### metadata
 
-##### repositories: `array`
+Signature:
+
+```
+JobMetadataOut
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>JobMetadataOut Properties</summary>
 
-##### `object`
+##### cost
+
+Signature:
+
+```
+number
+```
+
+##### cost\_currency
+
+Signature:
+
+```
+string
+```
+
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
+
+</details>
+
+##### model
+
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
+
+##### modified\_at
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+```
+enum
+  job
+```
+
+##### repositories
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### name: `string`
+##### name
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
+```
+string
+```
 
-##### type: `"wandb"`
+##### project
 
-##### url: `string`
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
+##### status
+
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
+
+##### suffix
+
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
+
 </details>
-
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
-
-##### suffix: `string`
-
-##### trained\_tokens: `integer`
-
-##### training\_files: `Array<string>`
-
-##### validation\_files: `Array<string>`
-
-</details>
-
-##### `object`
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierJobOut Properties</summary>
 
-##### auto\_start: `boolean`
+##### auto\_start
 
-##### created\_at: `integer`
+Signature:
 
-##### fine\_tuned_model: `string`
+```
+boolean
+```
 
-##### hyperparameters: `object`
+##### created\_at
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
+```
+integer
+```
 
-##### epochs: `number`
+##### fine\_tuned_model
 
-##### learning\_rate: `number`
+Signature:
 
-##### seq\_len: `integer`
+```
+string
+```
 
-##### training\_steps: `integer`
+##### hyperparameters
 
-##### warmup\_fraction: `number`
+Signature:
 
-##### weight\_decay: `number`
-
-</details>
-
-##### id: `string`
-
-##### integrations: `array`
-
-<details open>
-
-<summary>Union Values</summary>
-
-##### `object`
+```
+ClassifierTrainingParameters
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierTrainingParameters Properties</summary>
 
-##### name: `string`
+##### epochs
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
+```
+number
+```
 
-##### type: `"wandb"`
+##### learning\_rate
 
-##### url: `string`
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-</details>
+##### id
 
-##### job\_type: `"classifier"`
+Signature:
 
-##### metadata: `object`
+```
+string
+```
+
+##### integrations
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### cost: `number`
+##### name
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+string
+```
 
-##### estimated\_start_time: `integer`
+##### project
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+string
+```
 
-##### train\_tokens_per_step: `integer`
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### job\_type
 
-##### modified\_at: `integer`
+Signature:
+```
+enum
+  classifier
+```
 
-##### object: `"job"`
+##### metadata
 
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+Signature:
 
-##### suffix: `string`
-
-##### trained\_tokens: `integer`
-
-##### training\_files: `Array<string>`
-
-##### validation\_files: `Array<string>`
-
-</details>
-
-</details>
-
-##### `object`
+```
+JobMetadataOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>JobMetadataOut Properties</summary>
 
-##### cost: `number`
+##### cost
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+number
+```
 
-##### deprecated: `boolean`
+##### cost\_currency
 
-##### details: `string`
+Signature:
 
-##### epochs: `number`
+```
+string
+```
 
-##### estimated\_start_time: `integer`
+##### data\_tokens
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### object: `"job.metadata"`
+```
+integer
+```
 
-##### train\_tokens: `integer`
+##### estimated\_start_time
 
-##### train\_tokens_per_step: `integer`
+Signature:
 
-##### training\_steps: `integer`
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
 
 </details>
+
+##### model
+
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
+
+##### modified\_at
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+```
+enum
+  job
+```
+
+##### status
+
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
+
+##### suffix
+
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+</details>
+
+<details open>
+
+<summary>LegacyJobMetadataOut Properties</summary>
+
+##### cost
+
+Signature:
+
+```
+number
+```
+
+##### cost\_currency
+
+Signature:
+
+```
+string
+```
+
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### deprecated
+
+Signature:
+
+```
+boolean
+```
+
+##### details
+
+Signature:
+
+```
+string
+```
+
+##### epochs
+
+Signature:
+
+```
+number
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+```
+enum
+  job.metadata
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
@@ -741,337 +1978,972 @@ The ID of the job to analyse.
 
 OK
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### auto\_start: `boolean`
-
-##### checkpoints: `array`
+```
+union
+  CompletionDetailedJobOut
+  ClassifierDetailedJobOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionDetailedJobOut Properties</summary>
 
-##### created\_at: `integer`
+##### auto\_start
 
-##### metrics: `object`
+Signature:
+
+```
+boolean
+```
+
+##### checkpoints
+
+Signature:
+
+```
+array
+  CheckpointOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CheckpointOut Properties</summary>
 
-##### train\_loss: `number`
+##### created\_at
 
-##### valid\_loss: `number`
+Signature:
 
-##### valid\_mean_token_accuracy: `number`
+```
+integer
+```
+
+##### metrics
+
+Signature:
+
+```
+MetricOut
+```
+
+<details open>
+
+<summary>MetricOut Properties</summary>
+
+##### train\_loss
+
+Signature:
+
+```
+number
+```
+
+##### valid\_loss
+
+Signature:
+
+```
+number
+```
+
+##### valid\_mean_token_accuracy
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### step\_number: `integer`
+##### step\_number
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-##### created\_at: `integer`
+##### created\_at
 
-##### events: `array`
+Signature:
+
+```
+integer
+```
+
+##### events
+
+Signature:
+
+```
+array
+  EventOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>EventOut Properties</summary>
 
-##### created\_at: `integer`
+##### created\_at
 
-##### data: `Map<any>`
+Signature:
 
-##### name: `string`
+```
+integer
+```
+
+##### data
+
+Signature:
+
+```
+map
+  any
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### fine\_tuned_model: `string`
+##### fine\_tuned_model
 
-##### hyperparameters: `object`
+Signature:
+
+```
+string
+```
+
+##### hyperparameters
+
+Signature:
+
+```
+CompletionTrainingParameters
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionTrainingParameters Properties</summary>
 
-##### epochs: `number`
+##### epochs
 
-##### fim\_ratio: `number`
+Signature:
 
-##### learning\_rate: `number`
+```
+number
+```
 
-##### seq\_len: `integer`
+##### fim\_ratio
 
-##### training\_steps: `integer`
+Signature:
 
-##### warmup\_fraction: `number`
+```
+number
+```
 
-##### weight\_decay: `number`
+##### learning\_rate
+
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### id: `string`
+##### id
 
-##### integrations: `array`
+Signature:
+
+```
+string
+```
+
+##### integrations
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### `object`
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### project
+
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### job\_type
+
+Signature:
+```
+enum
+  completion
+```
+
+##### metadata
+
+Signature:
+
+```
+JobMetadataOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>JobMetadataOut Properties</summary>
 
-##### name: `string`
+##### cost
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
+```
+number
+```
 
-##### type: `"wandb"`
+##### cost\_currency
 
-##### url: `string`
+Signature:
+
+```
+string
+```
+
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-</details>
+##### model
 
-##### job\_type: `"completion"`
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
 
-##### metadata: `object`
+##### modified\_at
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+```
+enum
+  job
+```
+
+##### repositories
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### cost: `number`
+##### name
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+string
+```
 
-##### estimated\_start_time: `integer`
+##### project
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+string
+```
 
-##### train\_tokens_per_step: `integer`
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### status
 
-##### modified\_at: `integer`
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
 
-##### object: `"job"`
+##### suffix
 
-##### repositories: `array`
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+</details>
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ClassifierDetailedJobOut Properties</summary>
 
-##### `object`
+##### auto\_start
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
+```
+boolean
+```
 
-##### name: `string`
+##### checkpoints
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
-
-##### type: `"wandb"`
-
-##### url: `string`
-
-</details>
-
-</details>
-
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
-
-##### suffix: `string`
-
-##### trained\_tokens: `integer`
-
-##### training\_files: `Array<string>`
-
-##### validation\_files: `Array<string>`
-
-</details>
-
-##### `object`
+```
+array
+  CheckpointOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CheckpointOut Properties</summary>
 
-##### auto\_start: `boolean`
+##### created\_at
 
-##### checkpoints: `array`
+Signature:
 
-<details open>
+```
+integer
+```
 
-<summary>Object Properties</summary>
+##### metrics
 
-##### created\_at: `integer`
+Signature:
 
-##### metrics: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### train\_loss: `number`
-
-##### valid\_loss: `number`
-
-##### valid\_mean_token_accuracy: `number`
-
-</details>
-
-##### step\_number: `integer`
-
-</details>
-
-##### classifier\_targets: `array`
+```
+MetricOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>MetricOut Properties</summary>
 
-##### labels: `Array<string>`
+##### train\_loss
 
-##### loss\_function: `"single_class" | "multi_class"`
+Signature:
 
-##### name: `string`
+```
+number
+```
 
-##### weight: `number`
+##### valid\_loss
+
+Signature:
+
+```
+number
+```
+
+##### valid\_mean_token_accuracy
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### created\_at: `integer`
+##### step\_number
 
-##### events: `array`
+Signature:
+
+```
+integer
+```
+
+</details>
+
+##### classifier\_targets
+
+Signature:
+
+```
+array
+  ClassifierTargetOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierTargetOut Properties</summary>
 
-##### created\_at: `integer`
+##### labels
 
-##### data: `Map<any>`
+Signature:
 
-##### name: `string`
+```
+array
+  string
+```
+
+##### loss\_function
+
+Signature:
+```
+enum
+  single_class
+  multi_class
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### weight
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### fine\_tuned_model: `string`
+##### created\_at
 
-##### hyperparameters: `object`
+Signature:
+
+```
+integer
+```
+
+##### events
+
+Signature:
+
+```
+array
+  EventOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>EventOut Properties</summary>
 
-##### epochs: `number`
+##### created\_at
 
-##### learning\_rate: `number`
+Signature:
 
-##### seq\_len: `integer`
+```
+integer
+```
 
-##### training\_steps: `integer`
+##### data
 
-##### warmup\_fraction: `number`
+Signature:
 
-##### weight\_decay: `number`
+```
+map
+  any
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### id: `string`
+##### fine\_tuned_model
 
-##### integrations: `array`
+Signature:
+
+```
+string
+```
+
+##### hyperparameters
+
+Signature:
+
+```
+ClassifierTrainingParameters
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ClassifierTrainingParameters Properties</summary>
 
-##### `object`
+##### epochs
+
+Signature:
+
+```
+number
+```
+
+##### learning\_rate
+
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
+
+</details>
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### integrations
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### name: `string`
+##### name
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
+```
+string
+```
 
-##### type: `"wandb"`
+##### project
 
-##### url: `string`
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-</details>
+##### job\_type
 
-##### job\_type: `"classifier"`
+Signature:
+```
+enum
+  classifier
+```
 
-##### metadata: `object`
+##### metadata
+
+Signature:
+
+```
+JobMetadataOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>JobMetadataOut Properties</summary>
 
-##### cost: `number`
+##### cost
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+number
+```
 
-##### estimated\_start_time: `integer`
+##### cost\_currency
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+string
+```
 
-##### train\_tokens_per_step: `integer`
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### model
 
-##### modified\_at: `integer`
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
 
-##### object: `"job"`
+##### modified\_at
 
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+Signature:
 
-##### suffix: `string`
+```
+integer
+```
 
-##### trained\_tokens: `integer`
+##### object
 
-##### training\_files: `Array<string>`
+Signature:
+```
+enum
+  job
+```
 
-##### validation\_files: `Array<string>`
+##### status
 
-</details>
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
+
+##### suffix
+
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
 
 </details>
 
@@ -1095,337 +2967,972 @@ The ID of the job to cancel.
 
 OK
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### auto\_start: `boolean`
-
-##### checkpoints: `array`
+```
+union
+  CompletionDetailedJobOut
+  ClassifierDetailedJobOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionDetailedJobOut Properties</summary>
 
-##### created\_at: `integer`
+##### auto\_start
 
-##### metrics: `object`
+Signature:
+
+```
+boolean
+```
+
+##### checkpoints
+
+Signature:
+
+```
+array
+  CheckpointOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CheckpointOut Properties</summary>
 
-##### train\_loss: `number`
+##### created\_at
 
-##### valid\_loss: `number`
+Signature:
 
-##### valid\_mean_token_accuracy: `number`
+```
+integer
+```
+
+##### metrics
+
+Signature:
+
+```
+MetricOut
+```
+
+<details open>
+
+<summary>MetricOut Properties</summary>
+
+##### train\_loss
+
+Signature:
+
+```
+number
+```
+
+##### valid\_loss
+
+Signature:
+
+```
+number
+```
+
+##### valid\_mean_token_accuracy
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### step\_number: `integer`
+##### step\_number
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-##### created\_at: `integer`
+##### created\_at
 
-##### events: `array`
+Signature:
+
+```
+integer
+```
+
+##### events
+
+Signature:
+
+```
+array
+  EventOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>EventOut Properties</summary>
 
-##### created\_at: `integer`
+##### created\_at
 
-##### data: `Map<any>`
+Signature:
 
-##### name: `string`
+```
+integer
+```
+
+##### data
+
+Signature:
+
+```
+map
+  any
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### fine\_tuned_model: `string`
+##### fine\_tuned_model
 
-##### hyperparameters: `object`
+Signature:
+
+```
+string
+```
+
+##### hyperparameters
+
+Signature:
+
+```
+CompletionTrainingParameters
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionTrainingParameters Properties</summary>
 
-##### epochs: `number`
+##### epochs
 
-##### fim\_ratio: `number`
+Signature:
 
-##### learning\_rate: `number`
+```
+number
+```
 
-##### seq\_len: `integer`
+##### fim\_ratio
 
-##### training\_steps: `integer`
+Signature:
 
-##### warmup\_fraction: `number`
+```
+number
+```
 
-##### weight\_decay: `number`
+##### learning\_rate
+
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### id: `string`
+##### id
 
-##### integrations: `array`
+Signature:
+
+```
+string
+```
+
+##### integrations
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### `object`
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### project
+
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### job\_type
+
+Signature:
+```
+enum
+  completion
+```
+
+##### metadata
+
+Signature:
+
+```
+JobMetadataOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>JobMetadataOut Properties</summary>
 
-##### name: `string`
+##### cost
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
+```
+number
+```
 
-##### type: `"wandb"`
+##### cost\_currency
 
-##### url: `string`
+Signature:
+
+```
+string
+```
+
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-</details>
+##### model
 
-##### job\_type: `"completion"`
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
 
-##### metadata: `object`
+##### modified\_at
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+```
+enum
+  job
+```
+
+##### repositories
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### cost: `number`
+##### name
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+string
+```
 
-##### estimated\_start_time: `integer`
+##### project
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+string
+```
 
-##### train\_tokens_per_step: `integer`
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### status
 
-##### modified\_at: `integer`
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
 
-##### object: `"job"`
+##### suffix
 
-##### repositories: `array`
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+</details>
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ClassifierDetailedJobOut Properties</summary>
 
-##### `object`
+##### auto\_start
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
+```
+boolean
+```
 
-##### name: `string`
+##### checkpoints
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
-
-##### type: `"wandb"`
-
-##### url: `string`
-
-</details>
-
-</details>
-
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
-
-##### suffix: `string`
-
-##### trained\_tokens: `integer`
-
-##### training\_files: `Array<string>`
-
-##### validation\_files: `Array<string>`
-
-</details>
-
-##### `object`
+```
+array
+  CheckpointOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CheckpointOut Properties</summary>
 
-##### auto\_start: `boolean`
+##### created\_at
 
-##### checkpoints: `array`
+Signature:
 
-<details open>
+```
+integer
+```
 
-<summary>Object Properties</summary>
+##### metrics
 
-##### created\_at: `integer`
+Signature:
 
-##### metrics: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### train\_loss: `number`
-
-##### valid\_loss: `number`
-
-##### valid\_mean_token_accuracy: `number`
-
-</details>
-
-##### step\_number: `integer`
-
-</details>
-
-##### classifier\_targets: `array`
+```
+MetricOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>MetricOut Properties</summary>
 
-##### labels: `Array<string>`
+##### train\_loss
 
-##### loss\_function: `"single_class" | "multi_class"`
+Signature:
 
-##### name: `string`
+```
+number
+```
 
-##### weight: `number`
+##### valid\_loss
+
+Signature:
+
+```
+number
+```
+
+##### valid\_mean_token_accuracy
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### created\_at: `integer`
+##### step\_number
 
-##### events: `array`
+Signature:
+
+```
+integer
+```
+
+</details>
+
+##### classifier\_targets
+
+Signature:
+
+```
+array
+  ClassifierTargetOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierTargetOut Properties</summary>
 
-##### created\_at: `integer`
+##### labels
 
-##### data: `Map<any>`
+Signature:
 
-##### name: `string`
+```
+array
+  string
+```
+
+##### loss\_function
+
+Signature:
+```
+enum
+  single_class
+  multi_class
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### weight
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### fine\_tuned_model: `string`
+##### created\_at
 
-##### hyperparameters: `object`
+Signature:
+
+```
+integer
+```
+
+##### events
+
+Signature:
+
+```
+array
+  EventOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>EventOut Properties</summary>
 
-##### epochs: `number`
+##### created\_at
 
-##### learning\_rate: `number`
+Signature:
 
-##### seq\_len: `integer`
+```
+integer
+```
 
-##### training\_steps: `integer`
+##### data
 
-##### warmup\_fraction: `number`
+Signature:
 
-##### weight\_decay: `number`
+```
+map
+  any
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### id: `string`
+##### fine\_tuned_model
 
-##### integrations: `array`
+Signature:
+
+```
+string
+```
+
+##### hyperparameters
+
+Signature:
+
+```
+ClassifierTrainingParameters
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ClassifierTrainingParameters Properties</summary>
 
-##### `object`
+##### epochs
+
+Signature:
+
+```
+number
+```
+
+##### learning\_rate
+
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
+
+</details>
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### integrations
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### name: `string`
+##### name
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
+```
+string
+```
 
-##### type: `"wandb"`
+##### project
 
-##### url: `string`
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-</details>
+##### job\_type
 
-##### job\_type: `"classifier"`
+Signature:
+```
+enum
+  classifier
+```
 
-##### metadata: `object`
+##### metadata
+
+Signature:
+
+```
+JobMetadataOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>JobMetadataOut Properties</summary>
 
-##### cost: `number`
+##### cost
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+number
+```
 
-##### estimated\_start_time: `integer`
+##### cost\_currency
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+string
+```
 
-##### train\_tokens_per_step: `integer`
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### model
 
-##### modified\_at: `integer`
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
 
-##### object: `"job"`
+##### modified\_at
 
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+Signature:
 
-##### suffix: `string`
+```
+integer
+```
 
-##### trained\_tokens: `integer`
+##### object
 
-##### training\_files: `Array<string>`
+Signature:
+```
+enum
+  job
+```
 
-##### validation\_files: `Array<string>`
+##### status
 
-</details>
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
+
+##### suffix
+
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
 
 </details>
 
@@ -1447,336 +3954,971 @@ Request the start of a validated fine tuning job.
 
 OK
 
-<details open>
+Signature:
 
-<summary>Union Values</summary>
-
-##### `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### auto\_start: `boolean`
-
-##### checkpoints: `array`
+```
+union
+  CompletionDetailedJobOut
+  ClassifierDetailedJobOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionDetailedJobOut Properties</summary>
 
-##### created\_at: `integer`
+##### auto\_start
 
-##### metrics: `object`
+Signature:
+
+```
+boolean
+```
+
+##### checkpoints
+
+Signature:
+
+```
+array
+  CheckpointOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CheckpointOut Properties</summary>
 
-##### train\_loss: `number`
+##### created\_at
 
-##### valid\_loss: `number`
+Signature:
 
-##### valid\_mean_token_accuracy: `number`
+```
+integer
+```
+
+##### metrics
+
+Signature:
+
+```
+MetricOut
+```
+
+<details open>
+
+<summary>MetricOut Properties</summary>
+
+##### train\_loss
+
+Signature:
+
+```
+number
+```
+
+##### valid\_loss
+
+Signature:
+
+```
+number
+```
+
+##### valid\_mean_token_accuracy
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### step\_number: `integer`
+##### step\_number
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-##### created\_at: `integer`
+##### created\_at
 
-##### events: `array`
+Signature:
+
+```
+integer
+```
+
+##### events
+
+Signature:
+
+```
+array
+  EventOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>EventOut Properties</summary>
 
-##### created\_at: `integer`
+##### created\_at
 
-##### data: `Map<any>`
+Signature:
 
-##### name: `string`
+```
+integer
+```
+
+##### data
+
+Signature:
+
+```
+map
+  any
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### fine\_tuned_model: `string`
+##### fine\_tuned_model
 
-##### hyperparameters: `object`
+Signature:
+
+```
+string
+```
+
+##### hyperparameters
+
+Signature:
+
+```
+CompletionTrainingParameters
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CompletionTrainingParameters Properties</summary>
 
-##### epochs: `number`
+##### epochs
 
-##### fim\_ratio: `number`
+Signature:
 
-##### learning\_rate: `number`
+```
+number
+```
 
-##### seq\_len: `integer`
+##### fim\_ratio
 
-##### training\_steps: `integer`
+Signature:
 
-##### warmup\_fraction: `number`
+```
+number
+```
 
-##### weight\_decay: `number`
+##### learning\_rate
+
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### id: `string`
+##### id
 
-##### integrations: `array`
+Signature:
+
+```
+string
+```
+
+##### integrations
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### `object`
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### project
+
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
+
+</details>
+
+##### job\_type
+
+Signature:
+```
+enum
+  completion
+```
+
+##### metadata
+
+Signature:
+
+```
+JobMetadataOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>JobMetadataOut Properties</summary>
 
-##### name: `string`
+##### cost
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
+```
+number
+```
 
-##### type: `"wandb"`
+##### cost\_currency
 
-##### url: `string`
+Signature:
+
+```
+string
+```
+
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-</details>
+##### model
 
-##### job\_type: `"completion"`
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
 
-##### metadata: `object`
+##### modified\_at
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+```
+enum
+  job
+```
+
+##### repositories
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### cost: `number`
+##### name
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+string
+```
 
-##### estimated\_start_time: `integer`
+##### project
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+string
+```
 
-##### train\_tokens_per_step: `integer`
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### status
 
-##### modified\_at: `integer`
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
 
-##### object: `"job"`
+##### suffix
 
-##### repositories: `array`
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+</details>
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ClassifierDetailedJobOut Properties</summary>
 
-##### `object`
+##### auto\_start
 
-<details open>
+Signature:
 
-<summary>Object Properties</summary>
+```
+boolean
+```
 
-##### name: `string`
+##### checkpoints
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
-
-##### type: `"wandb"`
-
-##### url: `string`
-
-</details>
-
-</details>
-
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
-
-##### suffix: `string`
-
-##### trained\_tokens: `integer`
-
-##### training\_files: `Array<string>`
-
-##### validation\_files: `Array<string>`
-
-</details>
-
-##### `object`
+```
+array
+  CheckpointOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>CheckpointOut Properties</summary>
 
-##### auto\_start: `boolean`
+##### created\_at
 
-##### checkpoints: `array`
+Signature:
 
-<details open>
+```
+integer
+```
 
-<summary>Object Properties</summary>
+##### metrics
 
-##### created\_at: `integer`
+Signature:
 
-##### metrics: `object`
-
-<details open>
-
-<summary>Object Properties</summary>
-
-##### train\_loss: `number`
-
-##### valid\_loss: `number`
-
-##### valid\_mean_token_accuracy: `number`
-
-</details>
-
-##### step\_number: `integer`
-
-</details>
-
-##### classifier\_targets: `array`
+```
+MetricOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>MetricOut Properties</summary>
 
-##### labels: `Array<string>`
+##### train\_loss
 
-##### loss\_function: `"single_class" | "multi_class"`
+Signature:
 
-##### name: `string`
+```
+number
+```
 
-##### weight: `number`
+##### valid\_loss
+
+Signature:
+
+```
+number
+```
+
+##### valid\_mean_token_accuracy
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### created\_at: `integer`
+##### step\_number
 
-##### events: `array`
+Signature:
+
+```
+integer
+```
+
+</details>
+
+##### classifier\_targets
+
+Signature:
+
+```
+array
+  ClassifierTargetOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ClassifierTargetOut Properties</summary>
 
-##### created\_at: `integer`
+##### labels
 
-##### data: `Map<any>`
+Signature:
 
-##### name: `string`
+```
+array
+  string
+```
+
+##### loss\_function
+
+Signature:
+```
+enum
+  single_class
+  multi_class
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
+
+##### weight
+
+Signature:
+
+```
+number
+```
 
 </details>
 
-##### fine\_tuned_model: `string`
+##### created\_at
 
-##### hyperparameters: `object`
+Signature:
+
+```
+integer
+```
+
+##### events
+
+Signature:
+
+```
+array
+  EventOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>EventOut Properties</summary>
 
-##### epochs: `number`
+##### created\_at
 
-##### learning\_rate: `number`
+Signature:
 
-##### seq\_len: `integer`
+```
+integer
+```
 
-##### training\_steps: `integer`
+##### data
 
-##### warmup\_fraction: `number`
+Signature:
 
-##### weight\_decay: `number`
+```
+map
+  any
+```
+
+##### name
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### id: `string`
+##### fine\_tuned_model
 
-##### integrations: `array`
+Signature:
+
+```
+string
+```
+
+##### hyperparameters
+
+Signature:
+
+```
+ClassifierTrainingParameters
+```
 
 <details open>
 
-<summary>Union Values</summary>
+<summary>ClassifierTrainingParameters Properties</summary>
 
-##### `object`
+##### epochs
+
+Signature:
+
+```
+number
+```
+
+##### learning\_rate
+
+Signature:
+
+```
+number
+```
+
+##### seq\_len
+
+Signature:
+
+```
+integer
+```
+
+##### training\_steps
+
+Signature:
+
+```
+integer
+```
+
+##### warmup\_fraction
+
+Signature:
+
+```
+number
+```
+
+##### weight\_decay
+
+Signature:
+
+```
+number
+```
+
+</details>
+
+##### id
+
+Signature:
+
+```
+string
+```
+
+##### integrations
+
+Signature:
+
+```
+array
+  union
+    WandbIntegrationOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>WandbIntegrationOut Properties</summary>
 
-##### name: `string`
+##### name
 
-##### project: `string`
+Signature:
 
-##### run\_name: `string`
+```
+string
+```
 
-##### type: `"wandb"`
+##### project
 
-##### url: `string`
+Signature:
+
+```
+string
+```
+
+##### run\_name
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+```
+enum
+  wandb
+```
+
+##### url
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-</details>
+##### job\_type
 
-##### job\_type: `"classifier"`
+Signature:
+```
+enum
+  classifier
+```
 
-##### metadata: `object`
+##### metadata
+
+Signature:
+
+```
+JobMetadataOut
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>JobMetadataOut Properties</summary>
 
-##### cost: `number`
+##### cost
 
-##### cost\_currency: `string`
+Signature:
 
-##### data\_tokens: `integer`
+```
+number
+```
 
-##### estimated\_start_time: `integer`
+##### cost\_currency
 
-##### expected\_duration_seconds: `integer`
+Signature:
 
-##### train\_tokens: `integer`
+```
+string
+```
 
-##### train\_tokens_per_step: `integer`
+##### data\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### estimated\_start_time
+
+Signature:
+
+```
+integer
+```
+
+##### expected\_duration_seconds
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### train\_tokens_per_step
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
-##### model: `"open-mistral-7b" | "mistral-small-latest" | "codestral-latest" | "mistral-large-latest" | "open-mistral-nemo" | "ministral-3b-latest" | "ministral-8b-latest"`
+##### model
 
-##### modified\_at: `integer`
+Signature:
+```
+enum
+  open-mistral-7b
+  mistral-small-latest
+  codestral-latest
+  mistral-large-latest
+  open-mistral-nemo
+  ministral-3b-latest
+  ministral-8b-latest
+```
 
-##### object: `"job"`
+##### modified\_at
 
-##### status: `"QUEUED" | "STARTED" | "VALIDATING" | "VALIDATED" | "RUNNING" | "FAILED_VALIDATION" | "FAILED" | "SUCCESS" | "CANCELLED" | "CANCELLATION_REQUESTED"`
+Signature:
 
-##### suffix: `string`
+```
+integer
+```
 
-##### trained\_tokens: `integer`
+##### object
 
-##### training\_files: `Array<string>`
+Signature:
+```
+enum
+  job
+```
 
-##### validation\_files: `Array<string>`
+##### status
 
-</details>
+Signature:
+```
+enum
+  QUEUED
+  STARTED
+  VALIDATING
+  VALIDATED
+  RUNNING
+  FAILED_VALIDATION
+  FAILED
+  SUCCESS
+  CANCELLED
+  CANCELLATION_REQUESTED
+```
+
+##### suffix
+
+Signature:
+
+```
+string
+```
+
+##### trained\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### training\_files
+
+Signature:
+
+```
+array
+  string
+```
+
+##### validation\_files
+
+Signature:
+
+```
+array
+  string
+```
 
 </details>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.0
+sidebar_position: 2.4
 sidebar_label: embeddings
 ---
 
@@ -17,11 +17,26 @@ Embeddings
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Request Body</summary>
 
-##### input: `string | Array<string>`
+##### input
 
-##### model: `string`
+Signature:
+
+```
+union
+  string
+  array
+    string
+```
+
+##### model
+
+Signature:
+
+```
+string
+```
 
 </details>
 
@@ -33,39 +48,107 @@ Successful Response
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### data: `array`
+##### data
+
+Signature:
+
+```
+array
+  EmbeddingResponseData
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>EmbeddingResponseData Properties</summary>
 
-##### embedding: `Array<number>`
+##### embedding
 
-##### index: `integer`
+Signature:
 
-##### object: `string`
+```
+array
+  number
+```
+
+##### index
+
+Signature:
+
+```
+integer
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
 
 </details>
 
-##### id: `string`
+##### id
 
-##### model: `string`
+Signature:
 
-##### object: `string`
+```
+string
+```
 
-##### usage: `object`
+##### model
+
+Signature:
+
+```
+string
+```
+
+##### object
+
+Signature:
+
+```
+string
+```
+
+##### usage
+
+Signature:
+
+```
+UsageInfo
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>UsageInfo Properties</summary>
 
-##### completion\_tokens: `integer`
+##### completion\_tokens
 
-##### prompt\_tokens: `integer`
+Signature:
 
-##### total\_tokens: `integer`
+```
+integer
+```
+
+##### prompt\_tokens
+
+Signature:
+
+```
+integer
+```
+
+##### total\_tokens
+
+Signature:
+
+```
+integer
+```
 
 </details>
 
@@ -77,19 +160,47 @@ Validation Error
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>Response Body</summary>
 
-##### detail: `array`
+##### detail
+
+Signature:
+
+```
+array
+  ValidationError
+```
 
 <details open>
 
-<summary>Object Properties</summary>
+<summary>ValidationError Properties</summary>
 
-##### loc: `Array<string | integer>`
+##### loc
 
-##### msg: `string`
+Signature:
 
-##### type: `string`
+```
+array
+  union
+    string
+    integer
+```
+
+##### msg
+
+Signature:
+
+```
+string
+```
+
+##### type
+
+Signature:
+
+```
+string
+```
 
 </details>
 
