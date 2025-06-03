@@ -5,7 +5,7 @@ sidebar_label: embeddings
 
 # embeddings
 
-# POST /v1/embeddings
+## POST /v1/embeddings
 
 Operation ID: embeddings_v1_embeddings_post
 
@@ -13,19 +13,19 @@ _Embeddings_
 
 Embeddings
 
-## Request Body \(required\)
+### Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-### input
+#### input
 
 Text to embed.
 
 _Type Signature:_ `string | array<string>`
 
-### model
+#### model
 
 ID of the model to use.
 
@@ -33,7 +33,7 @@ _Type Signature:_ `string`
 
 </details>
 
-## Response: 200 \(application/json\)
+### Response: 200 \(application/json\)
 
 Successful Response
 
@@ -41,7 +41,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-### data
+#### data
 
 _Type Signature:_ `array<EmbeddingResponseData>`
 
@@ -49,33 +49,33 @@ _Type Signature:_ `array<EmbeddingResponseData>`
 
 <summary>EmbeddingResponseData Properties</summary>
 
-#### embedding
+##### embedding
 
 _Type Signature:_ `array<number>`
 
-#### index
+##### index
 
 _Type Signature:_ `integer`
 
-#### object
+##### object
 
 _Type Signature:_ `string`
 
 </details>
 
-### id
+#### id
 
 _Type Signature:_ `string`
 
-### model
+#### model
 
 _Type Signature:_ `string`
 
-### object
+#### object
 
 _Type Signature:_ `string`
 
-### usage
+#### usage
 
 _Type Signature:_ `UsageInfo`
 
@@ -83,15 +83,15 @@ _Type Signature:_ `UsageInfo`
 
 <summary>UsageInfo Properties</summary>
 
-#### completion\_tokens
+##### completion\_tokens
 
 _Type Signature:_ `integer`
 
-#### prompt\_tokens
+##### prompt\_tokens
 
 _Type Signature:_ `integer`
 
-#### total\_tokens
+##### total\_tokens
 
 _Type Signature:_ `integer`
 
@@ -99,7 +99,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-## Response: 422 \(application/json\)
+### Response: 422 \(application/json\)
 
 Validation Error
 
@@ -107,7 +107,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-### HttpMeta
+#### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -115,13 +115,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-#### Request
+##### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-#### Response
+##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -129,7 +129,7 @@ _Type Signature:_ `any`
 
 </details>
 
-### detail
+#### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -137,15 +137,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-#### loc
+##### loc
 
 _Type Signature:_ `array<string | integer>`
 
-#### msg
+##### msg
 
 _Type Signature:_ `string`
 
-#### type
+##### type
 
 _Type Signature:_ `string`
 

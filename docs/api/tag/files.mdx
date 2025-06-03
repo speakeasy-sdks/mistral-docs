@@ -5,7 +5,7 @@ sidebar_label: files
 
 # files
 
-# GET /v1/files
+## GET /v1/files
 
 Operation ID: files_api_routes_list_files
 
@@ -13,7 +13,7 @@ _List Files_
 
 Returns a list of files that belong to the user's organization.
 
-## Response: 200 \(application/json\)
+### Response: 200 \(application/json\)
 
 OK
 
@@ -21,13 +21,139 @@ OK
 
 <summary>Response Body</summary>
 
-### data
+#### data
 
 _Type Signature:_ `array<FileSchema>`
 
 <details open>
 
 <summary>FileSchema Properties</summary>
+
+##### bytes
+
+The size of the file, in bytes.
+
+_Type Signature:_ `integer`
+
+##### created\_at
+
+The UNIX timestamp (in seconds) of the event.
+
+_Type Signature:_ `integer`
+
+##### filename
+
+The name of the uploaded file.
+
+_Type Signature:_ `string`
+
+##### id
+
+The unique identifier of the file.
+
+_Type Signature:_ `string`
+
+##### num\_lines
+
+_Type Signature:_ `integer`
+
+##### object
+
+The object type, which is always "file".
+
+_Type Signature:_ `string`
+
+##### purpose
+
+_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
+
+##### sample\_type
+
+_Type Signature:_
+```
+enum
+  'pretrain'
+  'instruct'
+  'batch_request'
+  'batch_result'
+  'batch_error'
+```
+
+##### source
+
+_Type Signature:_ `'upload' | 'repository' | 'mistral'`
+
+</details>
+
+#### object
+
+_Type Signature:_ `string`
+
+#### total
+
+_Type Signature:_ `integer`
+
+</details>
+
+## POST /v1/files
+
+Operation ID: files_api_routes_upload_file
+
+_Upload File_
+
+Upload a file that can be used across various endpoints.
+
+The size of individual files can be a maximum of 512 MB. The Fine-tuning API only supports .jsonl files.
+
+Please contact us if you need to increase these storage limits.
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Request Body</summary>
+
+#### file
+
+The File object (not file name) to be uploaded.
+ To upload a file and specify a custom file name you should format your request as such:
+ ```bash
+ file=@path/to/your/file.jsonl;filename=custom_name.jsonl
+ ```
+ Otherwise, you can just keep the original file name:
+ ```bash
+ file=@path/to/your/file.jsonl
+ ```
+
+_Type Signature:_ `File`
+
+<details open>
+
+<summary>File Properties</summary>
+
+##### content
+
+_Type Signature:_ `binary`
+
+##### fileName
+
+_Type Signature:_ `string`
+
+</details>
+
+#### purpose
+
+_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
+
+</details>
+
+### Response: 200 \(application/json\)
+
+OK
+
+<details open>
+
+<summary>Response Body</summary>
 
 #### bytes
 
@@ -85,133 +211,7 @@ _Type Signature:_ `'upload' | 'repository' | 'mistral'`
 
 </details>
 
-### object
-
-_Type Signature:_ `string`
-
-### total
-
-_Type Signature:_ `integer`
-
-</details>
-
-# POST /v1/files
-
-Operation ID: files_api_routes_upload_file
-
-_Upload File_
-
-Upload a file that can be used across various endpoints.
-
-The size of individual files can be a maximum of 512 MB. The Fine-tuning API only supports .jsonl files.
-
-Please contact us if you need to increase these storage limits.
-
-## Request Body \(required\)
-
-<details open>
-
-<summary>Request Body</summary>
-
-### file
-
-The File object (not file name) to be uploaded.
- To upload a file and specify a custom file name you should format your request as such:
- ```bash
- file=@path/to/your/file.jsonl;filename=custom_name.jsonl
- ```
- Otherwise, you can just keep the original file name:
- ```bash
- file=@path/to/your/file.jsonl
- ```
-
-_Type Signature:_ `File`
-
-<details open>
-
-<summary>File Properties</summary>
-
-#### content
-
-_Type Signature:_ `binary`
-
-#### fileName
-
-_Type Signature:_ `string`
-
-</details>
-
-### purpose
-
-_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
-
-</details>
-
-## Response: 200 \(application/json\)
-
-OK
-
-<details open>
-
-<summary>Response Body</summary>
-
-### bytes
-
-The size of the file, in bytes.
-
-_Type Signature:_ `integer`
-
-### created\_at
-
-The UNIX timestamp (in seconds) of the event.
-
-_Type Signature:_ `integer`
-
-### filename
-
-The name of the uploaded file.
-
-_Type Signature:_ `string`
-
-### id
-
-The unique identifier of the file.
-
-_Type Signature:_ `string`
-
-### num\_lines
-
-_Type Signature:_ `integer`
-
-### object
-
-The object type, which is always "file".
-
-_Type Signature:_ `string`
-
-### purpose
-
-_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
-
-### sample\_type
-
-_Type Signature:_
-```
-enum
-  'pretrain'
-  'instruct'
-  'batch_request'
-  'batch_result'
-  'batch_error'
-```
-
-### source
-
-_Type Signature:_ `'upload' | 'repository' | 'mistral'`
-
-</details>
-
-# GET /v1/files/\{file\_id\}
+## GET /v1/files/\{file\_id\}
 
 Operation ID: files_api_routes_retrieve_file
 
@@ -219,11 +219,11 @@ _Retrieve File_
 
 Returns information about a specific file.
 
-## Parameters
+### Parameters
 
-### file\_id \(required\)
+#### file\_id \(required\)
 
-## Response: 200 \(application/json\)
+### Response: 200 \(application/json\)
 
 OK
 
@@ -231,49 +231,49 @@ OK
 
 <summary>Response Body</summary>
 
-### bytes
+#### bytes
 
 The size of the file, in bytes.
 
 _Type Signature:_ `integer`
 
-### created\_at
+#### created\_at
 
 The UNIX timestamp (in seconds) of the event.
 
 _Type Signature:_ `integer`
 
-### deleted
+#### deleted
 
 _Type Signature:_ `boolean`
 
-### filename
+#### filename
 
 The name of the uploaded file.
 
 _Type Signature:_ `string`
 
-### id
+#### id
 
 The unique identifier of the file.
 
 _Type Signature:_ `string`
 
-### num\_lines
+#### num\_lines
 
 _Type Signature:_ `integer`
 
-### object
+#### object
 
 The object type, which is always "file".
 
 _Type Signature:_ `string`
 
-### purpose
+#### purpose
 
 _Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
 
-### sample\_type
+#### sample\_type
 
 _Type Signature:_
 ```
@@ -285,13 +285,13 @@ enum
   'batch_error'
 ```
 
-### source
+#### source
 
 _Type Signature:_ `'upload' | 'repository' | 'mistral'`
 
 </details>
 
-# DELETE /v1/files/\{file\_id\}
+## DELETE /v1/files/\{file\_id\}
 
 Operation ID: files_api_routes_delete_file
 
@@ -299,11 +299,11 @@ _Delete File_
 
 Delete a file.
 
-## Parameters
+### Parameters
 
-### file\_id \(required\)
+#### file\_id \(required\)
 
-## Response: 200 \(application/json\)
+### Response: 200 \(application/json\)
 
 OK
 
@@ -311,19 +311,19 @@ OK
 
 <summary>Response Body</summary>
 
-### deleted
+#### deleted
 
 The deletion status.
 
 _Type Signature:_ `boolean`
 
-### id
+#### id
 
 The ID of the deleted file.
 
 _Type Signature:_ `string`
 
-### object
+#### object
 
 The object type that was deleted
 
@@ -331,7 +331,7 @@ _Type Signature:_ `string`
 
 </details>
 
-# GET /v1/files/\{file\_id\}/content
+## GET /v1/files/\{file\_id\}/content
 
 Operation ID: files_api_routes_download_file
 
@@ -339,11 +339,11 @@ _Download File_
 
 Download a file
 
-## Parameters
+### Parameters
 
-### file\_id \(required\)
+#### file\_id \(required\)
 
-## Response: 200 \(application/octet-stream\)
+### Response: 200 \(application/octet-stream\)
 
 OK
 
@@ -351,21 +351,21 @@ OK
 
 _Type Signature:_ `binary`
 
-# GET /v1/files/\{file\_id\}/url
+## GET /v1/files/\{file\_id\}/url
 
 Operation ID: files_api_routes_get_signed_url
 
 Get Signed Url
 
-## Parameters
+### Parameters
 
-### file\_id \(required\)
+#### file\_id \(required\)
 
-### expiry
+#### expiry
 
 Number of hours before the url becomes invalid. Defaults to 24h
 
-## Response: 200 \(application/json\)
+### Response: 200 \(application/json\)
 
 OK
 
@@ -373,7 +373,7 @@ OK
 
 <summary>Response Body</summary>
 
-### url
+#### url
 
 _Type Signature:_ `string`
 

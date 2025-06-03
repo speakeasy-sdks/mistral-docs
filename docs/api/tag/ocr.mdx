@@ -5,19 +5,19 @@ sidebar_label: ocr
 
 # ocr
 
-# POST /v1/ocr
+## POST /v1/ocr
 
 Operation ID: ocr_v1_ocr_post
 
 OCR
 
-## Request Body \(required\)
+### Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-### document
+#### document
 
 Document to run OCR on
 
@@ -27,17 +27,17 @@ _Type Signature:_ `DocumentURLChunk | ImageURLChunk`
 
 <summary>DocumentURLChunk Properties</summary>
 
-#### document\_name
+##### document\_name
 
 The filename of the document
 
 _Type Signature:_ `string`
 
-#### document\_url
+##### document\_url
 
 _Type Signature:_ `string`
 
-#### type
+##### type
 
 _Type Signature:_ `'document_url'`
 
@@ -47,7 +47,7 @@ _Type Signature:_ `'document_url'`
 
 <summary>ImageURLChunk Properties</summary>
 
-#### image\_url
+##### image\_url
 
 _Type Signature:_ `ImageURL | string`
 
@@ -65,39 +65,39 @@ _Type Signature:_ `string`
 
 </details>
 
-#### type
+##### type
 
 _Type Signature:_ `'image_url'`
 
 </details>
 
-### id
+#### id
 
 _Type Signature:_ `string`
 
-### image\_limit
+#### image\_limit
 
 Max images to extract
 
 _Type Signature:_ `integer`
 
-### image\_min\_size
+#### image\_min\_size
 
 Minimum height and width of image to extract
 
 _Type Signature:_ `integer`
 
-### include\_image\_base64
+#### include\_image\_base64
 
 Include image URLs in response
 
 _Type Signature:_ `boolean`
 
-### model
+#### model
 
 _Type Signature:_ `string`
 
-### pages
+#### pages
 
 Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
 
@@ -105,7 +105,7 @@ _Type Signature:_ `array<integer>`
 
 </details>
 
-## Response: 200 \(application/json\)
+### Response: 200 \(application/json\)
 
 Successful Response
 
@@ -113,13 +113,13 @@ Successful Response
 
 <summary>Response Body</summary>
 
-### model
+#### model
 
 The model used to generate the OCR.
 
 _Type Signature:_ `string`
 
-### pages
+#### pages
 
 List of OCR info for pages.
 
@@ -129,7 +129,7 @@ _Type Signature:_ `array<OCRPageObject>`
 
 <summary>OCRPageObject Properties</summary>
 
-#### dimensions
+##### dimensions
 
 The dimensions of the PDF Page's screenshot image
 
@@ -159,7 +159,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-#### images
+##### images
 
 List of all extracted images in the page
 
@@ -207,13 +207,13 @@ _Type Signature:_ `integer`
 
 </details>
 
-#### index
+##### index
 
 The page index in a pdf document starting from 0
 
 _Type Signature:_ `integer`
 
-#### markdown
+##### markdown
 
 The markdown string response of the page
 
@@ -221,7 +221,7 @@ _Type Signature:_ `string`
 
 </details>
 
-### usage\_info
+#### usage\_info
 
 _Type Signature:_ `OCRUsageInfo`
 
@@ -229,13 +229,13 @@ _Type Signature:_ `OCRUsageInfo`
 
 <summary>OCRUsageInfo Properties</summary>
 
-#### doc\_size\_bytes
+##### doc\_size\_bytes
 
 Document size in bytes
 
 _Type Signature:_ `integer`
 
-#### pages\_processed
+##### pages\_processed
 
 Number of pages processed
 
@@ -245,7 +245,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-## Response: 422 \(application/json\)
+### Response: 422 \(application/json\)
 
 Validation Error
 
@@ -253,7 +253,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-### HttpMeta
+#### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -261,13 +261,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-#### Request
+##### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-#### Response
+##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -275,7 +275,7 @@ _Type Signature:_ `any`
 
 </details>
 
-### detail
+#### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -283,15 +283,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-#### loc
+##### loc
 
 _Type Signature:_ `array<string | integer>`
 
-#### msg
+##### msg
 
 _Type Signature:_ `string`
 
-#### type
+##### type
 
 _Type Signature:_ `string`
 
