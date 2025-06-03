@@ -5,7 +5,7 @@ sidebar_label: models
 
 # models
 
-## GET /v1/models
+# GET /v1/models
 
 Operation ID: list_models_v1_models_get
 
@@ -13,9 +13,7 @@ _List Models_
 
 List all models available to the user.
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 Successful Response
 
@@ -23,7 +21,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-##### data
+### data
 
 _Type Signature:_ `array<BaseModelCard | FTModelCard>`
 
@@ -31,11 +29,11 @@ _Type Signature:_ `array<BaseModelCard | FTModelCard>`
 
 <summary>BaseModelCard Properties</summary>
 
-##### aliases
+#### aliases
 
 _Type Signature:_ `array<string>`
 
-##### capabilities
+#### capabilities
 
 _Type Signature:_ `ModelCapabilities`
 
@@ -65,43 +63,43 @@ _Type Signature:_ `boolean`
 
 </details>
 
-##### created
+#### created
 
 _Type Signature:_ `integer`
 
-##### default\_model\_temperature
+#### default\_model\_temperature
 
 _Type Signature:_ `number`
 
-##### deprecation
+#### deprecation
 
 _Type Signature:_ `date-time`
 
-##### description
+#### description
 
 _Type Signature:_ `string`
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### max\_context\_length
+#### max\_context\_length
 
 _Type Signature:_ `integer`
 
-##### name
+#### name
 
 _Type Signature:_ `string`
 
-##### object
+#### object
 
 _Type Signature:_ `string`
 
-##### owned\_by
+#### owned\_by
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `'base'`
 
@@ -111,15 +109,15 @@ _Type Signature:_ `'base'`
 
 <summary>FTModelCard Properties</summary>
 
-##### aliases
+#### aliases
 
 _Type Signature:_ `array<string>`
 
-##### archived
+#### archived
 
 _Type Signature:_ `boolean`
 
-##### capabilities
+#### capabilities
 
 _Type Signature:_ `ModelCapabilities`
 
@@ -149,63 +147,63 @@ _Type Signature:_ `boolean`
 
 </details>
 
-##### created
+#### created
 
 _Type Signature:_ `integer`
 
-##### default\_model\_temperature
+#### default\_model\_temperature
 
 _Type Signature:_ `number`
 
-##### deprecation
+#### deprecation
 
 _Type Signature:_ `date-time`
 
-##### description
+#### description
 
 _Type Signature:_ `string`
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### job
+#### job
 
 _Type Signature:_ `string`
 
-##### max\_context\_length
+#### max\_context\_length
 
 _Type Signature:_ `integer`
 
-##### name
+#### name
 
 _Type Signature:_ `string`
 
-##### object
+#### object
 
 _Type Signature:_ `string`
 
-##### owned\_by
+#### owned\_by
 
 _Type Signature:_ `string`
 
-##### root
+#### root
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `'fine-tuned'`
 
 </details>
 
-##### object
+### object
 
 _Type Signature:_ `string`
 
 </details>
 
-#### 422 \(application/json\)
+## Response: 422 \(application/json\)
 
 Validation Error
 
@@ -213,7 +211,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-##### HttpMeta
+### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -221,13 +219,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-##### Request
+#### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-##### Response
+#### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -235,7 +233,7 @@ _Type Signature:_ `any`
 
 </details>
 
-##### detail
+### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -243,15 +241,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+#### loc
 
 _Type Signature:_ `array<string | integer>`
 
-##### msg
+#### msg
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `string`
 
@@ -259,7 +257,7 @@ _Type Signature:_ `string`
 
 </details>
 
-## GET /v1/models/\{model\_id\}
+# GET /v1/models/\{model\_id\}
 
 Operation ID: retrieve_model_v1_models__model_id__get
 
@@ -267,15 +265,13 @@ _Retrieve Model_
 
 Retrieve a model information.
 
-### Parameters
+## Parameters
 
-#### model\_id \(required\)
+### model\_id \(required\)
 
 The ID of the model to retrieve.
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 Successful Response
 
@@ -287,11 +283,11 @@ _Type Signature:_ `BaseModelCard | FTModelCard`
 
 <summary>BaseModelCard Properties</summary>
 
-##### aliases
+#### aliases
 
 _Type Signature:_ `array<string>`
 
-##### capabilities
+#### capabilities
 
 _Type Signature:_ `ModelCapabilities`
 
@@ -321,43 +317,43 @@ _Type Signature:_ `boolean`
 
 </details>
 
-##### created
+#### created
 
 _Type Signature:_ `integer`
 
-##### default\_model\_temperature
+#### default\_model\_temperature
 
 _Type Signature:_ `number`
 
-##### deprecation
+#### deprecation
 
 _Type Signature:_ `date-time`
 
-##### description
+#### description
 
 _Type Signature:_ `string`
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### max\_context\_length
+#### max\_context\_length
 
 _Type Signature:_ `integer`
 
-##### name
+#### name
 
 _Type Signature:_ `string`
 
-##### object
+#### object
 
 _Type Signature:_ `string`
 
-##### owned\_by
+#### owned\_by
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `'base'`
 
@@ -367,15 +363,15 @@ _Type Signature:_ `'base'`
 
 <summary>FTModelCard Properties</summary>
 
-##### aliases
+#### aliases
 
 _Type Signature:_ `array<string>`
 
-##### archived
+#### archived
 
 _Type Signature:_ `boolean`
 
-##### capabilities
+#### capabilities
 
 _Type Signature:_ `ModelCapabilities`
 
@@ -405,57 +401,57 @@ _Type Signature:_ `boolean`
 
 </details>
 
-##### created
+#### created
 
 _Type Signature:_ `integer`
 
-##### default\_model\_temperature
+#### default\_model\_temperature
 
 _Type Signature:_ `number`
 
-##### deprecation
+#### deprecation
 
 _Type Signature:_ `date-time`
 
-##### description
+#### description
 
 _Type Signature:_ `string`
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### job
+#### job
 
 _Type Signature:_ `string`
 
-##### max\_context\_length
+#### max\_context\_length
 
 _Type Signature:_ `integer`
 
-##### name
+#### name
 
 _Type Signature:_ `string`
 
-##### object
+#### object
 
 _Type Signature:_ `string`
 
-##### owned\_by
+#### owned\_by
 
 _Type Signature:_ `string`
 
-##### root
+#### root
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `'fine-tuned'`
 
 </details>
 
-#### 422 \(application/json\)
+## Response: 422 \(application/json\)
 
 Validation Error
 
@@ -463,7 +459,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-##### HttpMeta
+### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -471,13 +467,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-##### Request
+#### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-##### Response
+#### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -485,7 +481,7 @@ _Type Signature:_ `any`
 
 </details>
 
-##### detail
+### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -493,15 +489,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+#### loc
 
 _Type Signature:_ `array<string | integer>`
 
-##### msg
+#### msg
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `string`
 
@@ -509,7 +505,7 @@ _Type Signature:_ `string`
 
 </details>
 
-## DELETE /v1/models/\{model\_id\}
+# DELETE /v1/models/\{model\_id\}
 
 Operation ID: delete_model_v1_models__model_id__delete
 
@@ -517,15 +513,13 @@ _Delete Model_
 
 Delete a fine-tuned model.
 
-### Parameters
+## Parameters
 
-#### model\_id \(required\)
+### model\_id \(required\)
 
 The ID of the model to delete.
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 Successful Response
 
@@ -533,19 +527,19 @@ Successful Response
 
 <summary>Response Body</summary>
 
-##### deleted
+### deleted
 
 The deletion status
 
 _Type Signature:_ `boolean`
 
-##### id
+### id
 
 The ID of the deleted model.
 
 _Type Signature:_ `string`
 
-##### object
+### object
 
 The object type that was deleted
 
@@ -553,7 +547,7 @@ _Type Signature:_ `string`
 
 </details>
 
-#### 422 \(application/json\)
+## Response: 422 \(application/json\)
 
 Validation Error
 
@@ -561,7 +555,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-##### HttpMeta
+### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -569,13 +563,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-##### Request
+#### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-##### Response
+#### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -583,7 +577,7 @@ _Type Signature:_ `any`
 
 </details>
 
-##### detail
+### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -591,15 +585,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+#### loc
 
 _Type Signature:_ `array<string | integer>`
 
-##### msg
+#### msg
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `string`
 
@@ -607,7 +601,7 @@ _Type Signature:_ `string`
 
 </details>
 
-## PATCH /v1/fine\_tuning/models/\{model\_id\}
+# PATCH /v1/fine\_tuning/models/\{model\_id\}
 
 Operation ID: jobs_api_routes_fine_tuning_update_fine_tuned_model
 
@@ -615,31 +609,29 @@ _Update Fine Tuned Model_
 
 Update a model name or description.
 
-### Parameters
+## Parameters
 
-#### model\_id \(required\)
+### model\_id \(required\)
 
 The ID of the model to update.
 
-### Request Body \(required\)
+## Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-##### description
+### description
 
 _Type Signature:_ `string`
 
-##### name
+### name
 
 _Type Signature:_ `string`
 
 </details>
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -651,15 +643,15 @@ _Type Signature:_ `CompletionFTModelOut | ClassifierFTModelOut`
 
 <summary>CompletionFTModelOut Properties</summary>
 
-##### aliases
+#### aliases
 
 _Type Signature:_ `array<string>`
 
-##### archived
+#### archived
 
 _Type Signature:_ `boolean`
 
-##### capabilities
+#### capabilities
 
 _Type Signature:_ `FTModelCapabilitiesOut`
 
@@ -689,43 +681,43 @@ _Type Signature:_ `boolean`
 
 </details>
 
-##### created
+#### created
 
 _Type Signature:_ `integer`
 
-##### description
+#### description
 
 _Type Signature:_ `string`
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### job
+#### job
 
 _Type Signature:_ `string`
 
-##### max\_context\_length
+#### max\_context\_length
 
 _Type Signature:_ `integer`
 
-##### model\_type
+#### model\_type
 
 _Type Signature:_ `'completion'`
 
-##### name
+#### name
 
 _Type Signature:_ `string`
 
-##### object
+#### object
 
 _Type Signature:_ `'model'`
 
-##### owned\_by
+#### owned\_by
 
 _Type Signature:_ `string`
 
-##### root
+#### root
 
 _Type Signature:_ `string`
 
@@ -735,15 +727,15 @@ _Type Signature:_ `string`
 
 <summary>ClassifierFTModelOut Properties</summary>
 
-##### aliases
+#### aliases
 
 _Type Signature:_ `array<string>`
 
-##### archived
+#### archived
 
 _Type Signature:_ `boolean`
 
-##### capabilities
+#### capabilities
 
 _Type Signature:_ `FTModelCapabilitiesOut`
 
@@ -773,7 +765,7 @@ _Type Signature:_ `boolean`
 
 </details>
 
-##### classifier\_targets
+#### classifier\_targets
 
 _Type Signature:_ `array<ClassifierTargetOut>`
 
@@ -799,49 +791,49 @@ _Type Signature:_ `number`
 
 </details>
 
-##### created
+#### created
 
 _Type Signature:_ `integer`
 
-##### description
+#### description
 
 _Type Signature:_ `string`
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### job
+#### job
 
 _Type Signature:_ `string`
 
-##### max\_context\_length
+#### max\_context\_length
 
 _Type Signature:_ `integer`
 
-##### model\_type
+#### model\_type
 
 _Type Signature:_ `'classifier'`
 
-##### name
+#### name
 
 _Type Signature:_ `string`
 
-##### object
+#### object
 
 _Type Signature:_ `'model'`
 
-##### owned\_by
+#### owned\_by
 
 _Type Signature:_ `string`
 
-##### root
+#### root
 
 _Type Signature:_ `string`
 
 </details>
 
-## POST /v1/fine\_tuning/models/\{model\_id\}/archive
+# POST /v1/fine\_tuning/models/\{model\_id\}/archive
 
 Operation ID: jobs_api_routes_fine_tuning_archive_fine_tuned_model
 
@@ -849,15 +841,13 @@ _Archive Fine Tuned Model_
 
 Archive a fine-tuned model.
 
-### Parameters
+## Parameters
 
-#### model\_id \(required\)
+### model\_id \(required\)
 
 The ID of the model to archive.
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -865,21 +855,21 @@ OK
 
 <summary>Response Body</summary>
 
-##### archived
+### archived
 
 _Type Signature:_ `boolean`
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### object
+### object
 
 _Type Signature:_ `'model'`
 
 </details>
 
-## DELETE /v1/fine\_tuning/models/\{model\_id\}/archive
+# DELETE /v1/fine\_tuning/models/\{model\_id\}/archive
 
 Operation ID: jobs_api_routes_fine_tuning_unarchive_fine_tuned_model
 
@@ -887,15 +877,13 @@ _Unarchive Fine Tuned Model_
 
 Un-archive a fine-tuned model.
 
-### Parameters
+## Parameters
 
-#### model\_id \(required\)
+### model\_id \(required\)
 
 The ID of the model to unarchive.
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -903,15 +891,15 @@ OK
 
 <summary>Response Body</summary>
 
-##### archived
+### archived
 
 _Type Signature:_ `boolean`
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### object
+### object
 
 _Type Signature:_ `'model'`
 

@@ -17,37 +17,37 @@ import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx
 
 # agents
 
-## POST /v1/agents/completions
+# POST /v1/agents/completions
 
 Operation ID: agents_completion_v1_agents_completions_post
 
 Agents Completion
 
-### Request Body \(required\)
+## Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-##### agent\_id
+### agent\_id
 
 The ID of the agent to use for this completion.
 
 _Type Signature:_ `string`
 
-##### frequency\_penalty
+### frequency\_penalty
 
 frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.
 
 _Type Signature:_ `number`
 
-##### max\_tokens
+### max\_tokens
 
 The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
 
 _Type Signature:_ `integer`
 
-##### messages
+### messages
 
 The prompt(s) to generate completions for, encoded as a list of dict with role and content.
 
@@ -65,7 +65,7 @@ array
 
 <summary>SystemMessage Properties</summary>
 
-##### content
+#### content
 
 _Type Signature:_ `string | array<TextChunk>`
 
@@ -83,7 +83,7 @@ _Type Signature:_ `'text'`
 
 </details>
 
-##### role
+#### role
 
 _Type Signature:_ `'system'`
 
@@ -93,7 +93,7 @@ _Type Signature:_ `'system'`
 
 <summary>UserMessage Properties</summary>
 
-##### content
+#### content
 
 _Type Signature:_
 ```
@@ -175,7 +175,7 @@ _Type Signature:_ `'reference'`
 
 </details>
 
-##### role
+#### role
 
 _Type Signature:_ `'user'`
 
@@ -185,7 +185,7 @@ _Type Signature:_ `'user'`
 
 <summary>AssistantMessage Properties</summary>
 
-##### content
+#### content
 
 _Type Signature:_
 ```
@@ -267,17 +267,17 @@ _Type Signature:_ `'reference'`
 
 </details>
 
-##### prefix
+#### prefix
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Type Signature:_ `boolean`
 
-##### role
+#### role
 
 _Type Signature:_ `'assistant'`
 
-##### tool\_calls
+#### tool\_calls
 
 _Type Signature:_ `array<ToolCall>`
 
@@ -315,7 +315,7 @@ _Type Signature:_ `'function'`
 
 <summary>ToolMessage Properties</summary>
 
-##### content
+#### content
 
 _Type Signature:_
 ```
@@ -397,31 +397,31 @@ _Type Signature:_ `'reference'`
 
 </details>
 
-##### name
+#### name
 
 _Type Signature:_ `string`
 
-##### role
+#### role
 
 _Type Signature:_ `'tool'`
 
-##### tool\_call\_id
+#### tool\_call\_id
 
 _Type Signature:_ `string`
 
 </details>
 
-##### n
+### n
 
 Number of completions to return for each request, input tokens are only billed once.
 
 _Type Signature:_ `integer`
 
-##### parallel\_tool\_calls
+### parallel\_tool\_calls
 
 _Type Signature:_ `boolean`
 
-##### prediction
+### prediction
 
 _Type Signature:_ `Prediction`
 
@@ -429,29 +429,29 @@ _Type Signature:_ `Prediction`
 
 <summary>Prediction Properties</summary>
 
-##### content
+#### content
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `string`
 
 </details>
 
-##### presence\_penalty
+### presence\_penalty
 
 presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.
 
 _Type Signature:_ `number`
 
-##### random\_seed
+### random\_seed
 
 The seed to use for random sampling. If set, different calls will generate deterministic results.
 
 _Type Signature:_ `integer`
 
-##### response\_format
+### response\_format
 
 _Type Signature:_ `ResponseFormat`
 
@@ -459,7 +459,7 @@ _Type Signature:_ `ResponseFormat`
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+#### json\_schema
 
 _Type Signature:_ `JsonSchema`
 
@@ -485,25 +485,25 @@ _Type Signature:_ `boolean`
 
 </details>
 
-##### type
+#### type
 
 _Type Signature:_ `'text' | 'json_object' | 'json_schema'`
 
 </details>
 
-##### stop
+### stop
 
 Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
 
 _Type Signature:_ `string | array<string>`
 
-##### stream
+### stream
 
 Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
 
 _Type Signature:_ `boolean`
 
-##### tool\_choice
+### tool\_choice
 
 _Type Signature:_ `ToolChoice | `
 
@@ -511,7 +511,7 @@ _Type Signature:_ `ToolChoice | `
 
 <summary>ToolChoice Properties</summary>
 
-##### function
+#### function
 
 this restriction of `Function` is used to select a specific function to call
 
@@ -527,13 +527,13 @@ _Type Signature:_ `string`
 
 </details>
 
-##### type
+#### type
 
 _Type Signature:_ `'function'`
 
 </details>
 
-##### tools
+### tools
 
 _Type Signature:_ `array<Tool>`
 
@@ -541,7 +541,7 @@ _Type Signature:_ `array<Tool>`
 
 <summary>Tool Properties</summary>
 
-##### function
+#### function
 
 _Type Signature:_ `Function`
 
@@ -567,7 +567,7 @@ _Type Signature:_ `boolean`
 
 </details>
 
-##### type
+#### type
 
 _Type Signature:_ `'function'`
 
@@ -575,9 +575,7 @@ _Type Signature:_ `'function'`
 
 </details>
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 Successful Response
 
@@ -585,7 +583,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-##### choices
+### choices
 
 _Type Signature:_ `array<ChatCompletionChoice>`
 
@@ -593,15 +591,15 @@ _Type Signature:_ `array<ChatCompletionChoice>`
 
 <summary>ChatCompletionChoice Properties</summary>
 
-##### finish\_reason
+#### finish\_reason
 
 _Type Signature:_ `'stop' | 'length' | 'model_length' | 'error' | 'tool_calls'`
 
-##### index
+#### index
 
 _Type Signature:_ `integer`
 
-##### message
+#### message
 
 _Type Signature:_ `AssistantMessage`
 
@@ -671,23 +669,23 @@ _Type Signature:_ `array<ToolCall>`
 
 </details>
 
-##### created
+### created
 
 _Type Signature:_ `integer`
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
-##### object
+### object
 
 _Type Signature:_ `string`
 
-##### usage
+### usage
 
 _Type Signature:_ `UsageInfo`
 
@@ -695,15 +693,15 @@ _Type Signature:_ `UsageInfo`
 
 <summary>UsageInfo Properties</summary>
 
-##### completion\_tokens
+#### completion\_tokens
 
 _Type Signature:_ `integer`
 
-##### prompt\_tokens
+#### prompt\_tokens
 
 _Type Signature:_ `integer`
 
-##### total\_tokens
+#### total\_tokens
 
 _Type Signature:_ `integer`
 
@@ -711,7 +709,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-#### 422 \(application/json\)
+## Response: 422 \(application/json\)
 
 Validation Error
 
@@ -719,7 +717,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-##### HttpMeta
+### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -727,13 +725,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-##### Request
+#### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-##### Response
+#### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -741,7 +739,7 @@ _Type Signature:_ `any`
 
 </details>
 
-##### detail
+### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -749,15 +747,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+#### loc
 
 _Type Signature:_ `array<string | integer>`
 
-##### msg
+#### msg
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `string`
 

@@ -17,25 +17,25 @@ import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx
 
 # classifiers
 
-## POST /v1/moderations
+# POST /v1/moderations
 
 Operation ID: moderations_v1_moderations_post
 
 Moderations
 
-### Request Body \(required\)
+## Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-##### input
+### input
 
 Text to classify.
 
 _Type Signature:_ `string | array<string>`
 
-##### model
+### model
 
 ID of the model to use.
 
@@ -43,9 +43,7 @@ _Type Signature:_ `string`
 
 </details>
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 Successful Response
 
@@ -53,15 +51,15 @@ Successful Response
 
 <summary>Response Body</summary>
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
-##### results
+### results
 
 _Type Signature:_ `array<ModerationObject>`
 
@@ -69,13 +67,13 @@ _Type Signature:_ `array<ModerationObject>`
 
 <summary>ModerationObject Properties</summary>
 
-##### categories
+#### categories
 
 Moderation result thresholds
 
 _Type Signature:_ `map<boolean>`
 
-##### category\_scores
+#### category\_scores
 
 Moderation result
 
@@ -85,7 +83,7 @@ _Type Signature:_ `map<number>`
 
 </details>
 
-#### 422 \(application/json\)
+## Response: 422 \(application/json\)
 
 Validation Error
 
@@ -93,7 +91,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-##### HttpMeta
+### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -101,13 +99,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-##### Request
+#### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-##### Response
+#### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -115,7 +113,7 @@ _Type Signature:_ `any`
 
 </details>
 
-##### detail
+### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -123,15 +121,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+#### loc
 
 _Type Signature:_ `array<string | integer>`
 
-##### msg
+#### msg
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `string`
 
@@ -139,19 +137,19 @@ _Type Signature:_ `string`
 
 </details>
 
-## POST /v1/chat/moderations
+# POST /v1/chat/moderations
 
 Operation ID: chat_moderations_v1_chat_moderations_post
 
 Chat Moderations
 
-### Request Body \(required\)
+## Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-##### input
+### input
 
 Chat to classify
 
@@ -177,7 +175,7 @@ union
 
 <summary>SystemMessage Properties</summary>
 
-##### content
+#### content
 
 _Type Signature:_ `string | array<TextChunk>`
 
@@ -195,7 +193,7 @@ _Type Signature:_ `'text'`
 
 </details>
 
-##### role
+#### role
 
 _Type Signature:_ `'system'`
 
@@ -205,7 +203,7 @@ _Type Signature:_ `'system'`
 
 <summary>UserMessage Properties</summary>
 
-##### content
+#### content
 
 _Type Signature:_
 ```
@@ -287,7 +285,7 @@ _Type Signature:_ `'reference'`
 
 </details>
 
-##### role
+#### role
 
 _Type Signature:_ `'user'`
 
@@ -297,7 +295,7 @@ _Type Signature:_ `'user'`
 
 <summary>AssistantMessage Properties</summary>
 
-##### content
+#### content
 
 _Type Signature:_
 ```
@@ -379,17 +377,17 @@ _Type Signature:_ `'reference'`
 
 </details>
 
-##### prefix
+#### prefix
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Type Signature:_ `boolean`
 
-##### role
+#### role
 
 _Type Signature:_ `'assistant'`
 
-##### tool\_calls
+#### tool\_calls
 
 _Type Signature:_ `array<ToolCall>`
 
@@ -427,7 +425,7 @@ _Type Signature:_ `'function'`
 
 <summary>ToolMessage Properties</summary>
 
-##### content
+#### content
 
 _Type Signature:_
 ```
@@ -509,29 +507,27 @@ _Type Signature:_ `'reference'`
 
 </details>
 
-##### name
+#### name
 
 _Type Signature:_ `string`
 
-##### role
+#### role
 
 _Type Signature:_ `'tool'`
 
-##### tool\_call\_id
+#### tool\_call\_id
 
 _Type Signature:_ `string`
 
 </details>
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
 </details>
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 Successful Response
 
@@ -539,15 +535,15 @@ Successful Response
 
 <summary>Response Body</summary>
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
-##### results
+### results
 
 _Type Signature:_ `array<ModerationObject>`
 
@@ -555,13 +551,13 @@ _Type Signature:_ `array<ModerationObject>`
 
 <summary>ModerationObject Properties</summary>
 
-##### categories
+#### categories
 
 Moderation result thresholds
 
 _Type Signature:_ `map<boolean>`
 
-##### category\_scores
+#### category\_scores
 
 Moderation result
 
@@ -571,7 +567,7 @@ _Type Signature:_ `map<number>`
 
 </details>
 
-#### 422 \(application/json\)
+## Response: 422 \(application/json\)
 
 Validation Error
 
@@ -579,7 +575,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-##### HttpMeta
+### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -587,13 +583,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-##### Request
+#### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-##### Response
+#### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -601,7 +597,7 @@ _Type Signature:_ `any`
 
 </details>
 
-##### detail
+### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -609,15 +605,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+#### loc
 
 _Type Signature:_ `array<string | integer>`
 
-##### msg
+#### msg
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `string`
 
@@ -625,25 +621,25 @@ _Type Signature:_ `string`
 
 </details>
 
-## POST /v1/classifications
+# POST /v1/classifications
 
 Operation ID: classifications_v1_classifications_post
 
 Classifications
 
-### Request Body \(required\)
+## Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-##### input
+### input
 
 Text to classify.
 
 _Type Signature:_ `string | array<string>`
 
-##### model
+### model
 
 ID of the model to use.
 
@@ -651,9 +647,7 @@ _Type Signature:_ `string`
 
 </details>
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 Successful Response
 
@@ -661,15 +655,15 @@ Successful Response
 
 <summary>Response Body</summary>
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
-##### results
+### results
 
 _Type Signature:_ `array<map<ClassificationTargetResult>>`
 
@@ -677,7 +671,7 @@ _Type Signature:_ `array<map<ClassificationTargetResult>>`
 
 <summary>ClassificationTargetResult Properties</summary>
 
-##### scores
+#### scores
 
 _Type Signature:_ `map<number>`
 
@@ -685,7 +679,7 @@ _Type Signature:_ `map<number>`
 
 </details>
 
-#### 422 \(application/json\)
+## Response: 422 \(application/json\)
 
 Validation Error
 
@@ -693,7 +687,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-##### HttpMeta
+### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -701,13 +695,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-##### Request
+#### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-##### Response
+#### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -715,7 +709,7 @@ _Type Signature:_ `any`
 
 </details>
 
-##### detail
+### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -723,15 +717,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+#### loc
 
 _Type Signature:_ `array<string | integer>`
 
-##### msg
+#### msg
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `string`
 
@@ -739,19 +733,19 @@ _Type Signature:_ `string`
 
 </details>
 
-## POST /v1/chat/classifications
+# POST /v1/chat/classifications
 
 Operation ID: chat_classifications_v1_chat_classifications_post
 
 Chat Classifications
 
-### Request Body \(required\)
+## Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-##### input
+### input
 
 Chat to classify
 
@@ -761,7 +755,7 @@ _Type Signature:_ `InstructRequest | array<InstructRequest>`
 
 <summary>InstructRequest Properties</summary>
 
-##### messages
+#### messages
 
 _Type Signature:_
 ```
@@ -963,15 +957,13 @@ _Type Signature:_ `string`
 
 </details>
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
 </details>
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 Successful Response
 
@@ -979,15 +971,15 @@ Successful Response
 
 <summary>Response Body</summary>
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
-##### results
+### results
 
 _Type Signature:_ `array<map<ClassificationTargetResult>>`
 
@@ -995,7 +987,7 @@ _Type Signature:_ `array<map<ClassificationTargetResult>>`
 
 <summary>ClassificationTargetResult Properties</summary>
 
-##### scores
+#### scores
 
 _Type Signature:_ `map<number>`
 
@@ -1003,7 +995,7 @@ _Type Signature:_ `map<number>`
 
 </details>
 
-#### 422 \(application/json\)
+## Response: 422 \(application/json\)
 
 Validation Error
 
@@ -1011,7 +1003,7 @@ Validation Error
 
 <summary>Response Body</summary>
 
-##### HttpMeta
+### HttpMeta
 
 _Type Signature:_ `HTTPMetadata`
 
@@ -1019,13 +1011,13 @@ _Type Signature:_ `HTTPMetadata`
 
 <summary>HTTPMetadata Properties</summary>
 
-##### Request
+#### Request
 
 Raw HTTP request; suitable for debugging
 
 _Type Signature:_ `any`
 
-##### Response
+#### Response
 
 Raw HTTP response; suitable for custom response parsing
 
@@ -1033,7 +1025,7 @@ _Type Signature:_ `any`
 
 </details>
 
-##### detail
+### detail
 
 _Type Signature:_ `array<ValidationError>`
 
@@ -1041,15 +1033,15 @@ _Type Signature:_ `array<ValidationError>`
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+#### loc
 
 _Type Signature:_ `array<string | integer>`
 
-##### msg
+#### msg
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `string`
 

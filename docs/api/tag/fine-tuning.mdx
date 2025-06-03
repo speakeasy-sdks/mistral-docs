@@ -11,7 +11,7 @@ import EmbedMetricOut from "../../../src/components/speakeasy/embeds/MetricOut.m
 
 # fine-tuning
 
-## GET /v1/fine\_tuning/jobs
+# GET /v1/fine\_tuning/jobs
 
 Operation ID: jobs_api_routes_fine_tuning_get_fine_tuning_jobs
 
@@ -19,9 +19,7 @@ _Get Fine Tuning Jobs_
 
 Get a list of fine-tuning jobs for your organization and user.
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -29,7 +27,7 @@ OK
 
 <summary>Response Body</summary>
 
-##### data
+### data
 
 _Type Signature:_ `array<CompletionJobOut | ClassifierJobOut>`
 
@@ -37,23 +35,23 @@ _Type Signature:_ `array<CompletionJobOut | ClassifierJobOut>`
 
 <summary>CompletionJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### created\_at
+#### created\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
 _Type Signature:_ `integer`
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 The name of the fine-tuned model that is being created. The value will be `null` if the fine-tuning job is still running.
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `CompletionTrainingParameters`
 
@@ -91,13 +89,13 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 The ID of the job.
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 A list of integrations enabled for your fine-tuning job.
 
@@ -133,11 +131,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'completion'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -175,7 +173,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -189,17 +187,17 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### repositories
+#### repositories
 
 A list of integrations enabled for your fine-tuning job.
 
@@ -235,7 +233,7 @@ _Type Signature:_ `string`
 
 </details>
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -252,25 +250,25 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 Total number of tokens trained.
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 A list containing the IDs of uploaded files that contain training data.
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 A list containing the IDs of uploaded files that contain validation data.
 
@@ -282,23 +280,23 @@ _Type Signature:_ `array<string>`
 
 <summary>ClassifierJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### created\_at
+#### created\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
 _Type Signature:_ `integer`
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 The name of the fine-tuned model that is being created. The value will be `null` if the fine-tuning job is still running.
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `ClassifierTrainingParameters`
 
@@ -332,13 +330,13 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 The ID of the job.
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 A list of integrations enabled for your fine-tuning job.
 
@@ -374,11 +372,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'classifier'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -416,7 +414,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -430,17 +428,17 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -457,25 +455,25 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 Total number of tokens trained.
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 A list containing the IDs of uploaded files that contain training data.
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 A list containing the IDs of uploaded files that contain validation data.
 
@@ -483,17 +481,17 @@ _Type Signature:_ `array<string>`
 
 </details>
 
-##### object
+### object
 
 _Type Signature:_ `'list'`
 
-##### total
+### total
 
 _Type Signature:_ `integer`
 
 </details>
 
-## POST /v1/fine\_tuning/jobs
+# POST /v1/fine\_tuning/jobs
 
 Operation ID: jobs_api_routes_fine_tuning_create_fine_tuning_job
 
@@ -501,9 +499,9 @@ _Create Fine Tuning Job_
 
 Create a new fine-tuning job, it will be queued for processing.
 
-### Parameters
+## Parameters
 
-#### dry\_run
+### dry\_run
 
 * If `true` the job is not spawned, instead the query returns a handful of useful metadata
   for the user to perform sanity checks (see `LegacyJobMetadataOut` response).
@@ -511,19 +509,19 @@ Create a new fine-tuning job, it will be queued for processing.
   input parameters (see `JobOut` response).
 
 
-### Request Body \(required\)
+## Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-##### auto\_start
+### auto\_start
 
 This field will be required in a future release.
 
 _Type Signature:_ `boolean`
 
-##### classifier\_targets
+### classifier\_targets
 
 _Type Signature:_ `array<ClassifierTargetIn>`
 
@@ -531,25 +529,25 @@ _Type Signature:_ `array<ClassifierTargetIn>`
 
 <summary>ClassifierTargetIn Properties</summary>
 
-##### labels
+#### labels
 
 _Type Signature:_ `array<string>`
 
-##### loss\_function
+#### loss\_function
 
 _Type Signature:_ `'single_class' | 'multi_class'`
 
-##### name
+#### name
 
 _Type Signature:_ `string`
 
-##### weight
+#### weight
 
 _Type Signature:_ `number`
 
 </details>
 
-##### hyperparameters
+### hyperparameters
 
 _Type Signature:_
 ```
@@ -562,37 +560,37 @@ union
 
 <summary>CompletionTrainingParametersIn Properties</summary>
 
-##### epochs
+#### epochs
 
 _Type Signature:_ `number`
 
-##### fim\_ratio
+#### fim\_ratio
 
 _Type Signature:_ `number`
 
-##### learning\_rate
+#### learning\_rate
 
 A parameter describing how much to adjust the pre-trained model's weights in response to the estimated error each time the weights are updated during the fine-tuning process.
 
 _Type Signature:_ `number`
 
-##### seq\_len
+#### seq\_len
 
 _Type Signature:_ `integer`
 
-##### training\_steps
+#### training\_steps
 
 The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
 
 _Type Signature:_ `integer`
 
-##### warmup\_fraction
+#### warmup\_fraction
 
 (Advanced Usage) A parameter that specifies the percentage of the total training steps at which the learning rate warm-up phase ends. During this phase, the learning rate gradually increases from a small value to the initial learning rate, helping to stabilize the training process and improve convergence. Similar to `pct_start` in [mistral-finetune](https://github.com/mistralai/mistral-finetune)
 
 _Type Signature:_ `number`
 
-##### weight\_decay
+#### weight\_decay
 
 (Advanced Usage) Weight decay adds a term to the loss function that is proportional to the sum of the squared weights. This term reduces the magnitude of the weights and prevents them from growing too large.
 
@@ -604,33 +602,33 @@ _Type Signature:_ `number`
 
 <summary>ClassifierTrainingParametersIn Properties</summary>
 
-##### epochs
+#### epochs
 
 _Type Signature:_ `number`
 
-##### learning\_rate
+#### learning\_rate
 
 A parameter describing how much to adjust the pre-trained model's weights in response to the estimated error each time the weights are updated during the fine-tuning process.
 
 _Type Signature:_ `number`
 
-##### seq\_len
+#### seq\_len
 
 _Type Signature:_ `integer`
 
-##### training\_steps
+#### training\_steps
 
 The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
 
 _Type Signature:_ `integer`
 
-##### warmup\_fraction
+#### warmup\_fraction
 
 (Advanced Usage) A parameter that specifies the percentage of the total training steps at which the learning rate warm-up phase ends. During this phase, the learning rate gradually increases from a small value to the initial learning rate, helping to stabilize the training process and improve convergence. Similar to `pct_start` in [mistral-finetune](https://github.com/mistralai/mistral-finetune)
 
 _Type Signature:_ `number`
 
-##### weight\_decay
+#### weight\_decay
 
 (Advanced Usage) Weight decay adds a term to the loss function that is proportional to the sum of the squared weights. This term reduces the magnitude of the weights and prevents them from growing too large.
 
@@ -638,7 +636,7 @@ _Type Signature:_ `number`
 
 </details>
 
-##### integrations
+### integrations
 
 A list of integrations to enable for your fine-tuning job.
 
@@ -648,43 +646,43 @@ _Type Signature:_ `array<WandbIntegration>`
 
 <summary>WandbIntegration Properties</summary>
 
-##### api\_key
+#### api\_key
 
 The WandB API key to use for authentication.
 
 _Type Signature:_ `string`
 
-##### name
+#### name
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
 _Type Signature:_ `string`
 
-##### project
+#### project
 
 The name of the project that the new run will be created under.
 
 _Type Signature:_ `string`
 
-##### run\_name
+#### run\_name
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `'wandb'`
 
 </details>
 
-##### invalid\_sample\_skip\_percentage
+### invalid\_sample\_skip\_percentage
 
 _Type Signature:_ `number`
 
-##### job\_type
+### job\_type
 
 _Type Signature:_ `'completion' | 'classifier'`
 
-##### model
+### model
 
 _Type Signature:_
 ```
@@ -698,7 +696,7 @@ enum
   'ministral-8b-latest'
 ```
 
-##### repositories
+### repositories
 
 A list of integrations to enable for your fine-tuning job.
 
@@ -708,41 +706,41 @@ _Type Signature:_ `array<WandbIntegration>`
 
 <summary>WandbIntegration Properties</summary>
 
-##### api\_key
+#### api\_key
 
 The WandB API key to use for authentication.
 
 _Type Signature:_ `string`
 
-##### name
+#### name
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
 _Type Signature:_ `string`
 
-##### project
+#### project
 
 The name of the project that the new run will be created under.
 
 _Type Signature:_ `string`
 
-##### run\_name
+#### run\_name
 
 _Type Signature:_ `string`
 
-##### type
+#### type
 
 _Type Signature:_ `'wandb'`
 
 </details>
 
-##### suffix
+### suffix
 
 A string that will be added to your fine-tuning model name. For example, a suffix of "my-great-model" would produce a model name like `ft:open-mistral-7b:my-great-model:xxx...`
 
 _Type Signature:_ `string`
 
-##### training\_files
+### training\_files
 
 _Type Signature:_ `array<TrainingFile>`
 
@@ -750,17 +748,17 @@ _Type Signature:_ `array<TrainingFile>`
 
 <summary>TrainingFile Properties</summary>
 
-##### file\_id
+#### file\_id
 
 _Type Signature:_ `string`
 
-##### weight
+#### weight
 
 _Type Signature:_ `number`
 
 </details>
 
-##### validation\_files
+### validation\_files
 
 A list containing the IDs of uploaded files that contain validation data. If you provide these files, the data is used to generate validation metrics periodically during fine-tuning. These metrics can be viewed in `checkpoints` when getting the status of a running fine-tuning job. The same data should not be present in both train and validation files.
 
@@ -768,9 +766,7 @@ _Type Signature:_ `array<string>`
 
 </details>
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -782,23 +778,23 @@ _Type Signature:_ `CompletionJobOut | ClassifierJobOut | LegacyJobMetadataOut`
 
 <summary>CompletionJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### created\_at
+#### created\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
 _Type Signature:_ `integer`
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 The name of the fine-tuned model that is being created. The value will be `null` if the fine-tuning job is still running.
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `CompletionTrainingParameters`
 
@@ -836,13 +832,13 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 The ID of the job.
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 A list of integrations enabled for your fine-tuning job.
 
@@ -878,11 +874,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'completion'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -920,7 +916,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -934,17 +930,17 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### repositories
+#### repositories
 
 A list of integrations enabled for your fine-tuning job.
 
@@ -980,7 +976,7 @@ _Type Signature:_ `string`
 
 </details>
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -997,25 +993,25 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 Total number of tokens trained.
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 A list containing the IDs of uploaded files that contain training data.
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 A list containing the IDs of uploaded files that contain validation data.
 
@@ -1027,23 +1023,23 @@ _Type Signature:_ `array<string>`
 
 <summary>ClassifierJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### created\_at
+#### created\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
 _Type Signature:_ `integer`
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 The name of the fine-tuned model that is being created. The value will be `null` if the fine-tuning job is still running.
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `ClassifierTrainingParameters`
 
@@ -1077,13 +1073,13 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 The ID of the job.
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 A list of integrations enabled for your fine-tuning job.
 
@@ -1119,11 +1115,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'classifier'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -1161,7 +1157,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -1175,17 +1171,17 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -1202,25 +1198,25 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 Total number of tokens trained.
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 A list containing the IDs of uploaded files that contain training data.
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 A list containing the IDs of uploaded files that contain validation data.
 
@@ -1232,65 +1228,65 @@ _Type Signature:_ `array<string>`
 
 <summary>LegacyJobMetadataOut Properties</summary>
 
-##### cost
+#### cost
 
 The cost of the fine-tuning job.
 
 _Type Signature:_ `number`
 
-##### cost\_currency
+#### cost\_currency
 
 The currency used for the fine-tuning job cost.
 
 _Type Signature:_ `string`
 
-##### data\_tokens
+#### data\_tokens
 
 The total number of tokens in the training dataset.
 
 _Type Signature:_ `integer`
 
-##### deprecated
+#### deprecated
 
 _Type Signature:_ `boolean`
 
-##### details
+#### details
 
 _Type Signature:_ `string`
 
-##### epochs
+#### epochs
 
 The number of complete passes through the entire training dataset.
 
 _Type Signature:_ `number`
 
-##### estimated\_start\_time
+#### estimated\_start\_time
 
 _Type Signature:_ `integer`
 
-##### expected\_duration\_seconds
+#### expected\_duration\_seconds
 
 The approximated time (in seconds) for the fine-tuning process to complete.
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job.metadata'`
 
-##### train\_tokens
+#### train\_tokens
 
 The total number of tokens used during the fine-tuning process.
 
 _Type Signature:_ `integer`
 
-##### train\_tokens\_per\_step
+#### train\_tokens\_per\_step
 
 The number of tokens consumed by one training step.
 
 _Type Signature:_ `integer`
 
-##### training\_steps
+#### training\_steps
 
 The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
 
@@ -1298,7 +1294,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-## GET /v1/fine\_tuning/jobs/\{job\_id\}
+# GET /v1/fine\_tuning/jobs/\{job\_id\}
 
 Operation ID: jobs_api_routes_fine_tuning_get_fine_tuning_job
 
@@ -1306,15 +1302,13 @@ _Get Fine Tuning Job_
 
 Get a fine-tuned job details by its UUID.
 
-### Parameters
+## Parameters
 
-#### job\_id \(required\)
+### job\_id \(required\)
 
 The ID of the job to analyse.
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -1326,11 +1320,11 @@ _Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
 
 <summary>CompletionDetailedJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### checkpoints
+#### checkpoints
 
 _Type Signature:_ `array<CheckpointOut>`
 
@@ -1364,11 +1358,11 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### created\_at
+#### created\_at
 
 _Type Signature:_ `integer`
 
-##### events
+#### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
@@ -1396,11 +1390,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `CompletionTrainingParameters`
 
@@ -1438,11 +1432,11 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 _Type Signature:_ `array<WandbIntegrationOut>`
 
@@ -1476,11 +1470,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'completion'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -1518,7 +1512,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -1532,15 +1526,15 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### repositories
+#### repositories
 
 _Type Signature:_ `array<WandbIntegrationOut>`
 
@@ -1574,7 +1568,7 @@ _Type Signature:_ `string`
 
 </details>
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -1591,19 +1585,19 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 _Type Signature:_ `array<string>`
 
@@ -1613,11 +1607,11 @@ _Type Signature:_ `array<string>`
 
 <summary>ClassifierDetailedJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### checkpoints
+#### checkpoints
 
 _Type Signature:_ `array<CheckpointOut>`
 
@@ -1651,7 +1645,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### classifier\_targets
+#### classifier\_targets
 
 _Type Signature:_ `array<ClassifierTargetOut>`
 
@@ -1677,11 +1671,11 @@ _Type Signature:_ `number`
 
 </details>
 
-##### created\_at
+#### created\_at
 
 _Type Signature:_ `integer`
 
-##### events
+#### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
@@ -1709,11 +1703,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `ClassifierTrainingParameters`
 
@@ -1747,11 +1741,11 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 _Type Signature:_ `array<WandbIntegrationOut>`
 
@@ -1785,11 +1779,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'classifier'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -1827,7 +1821,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -1841,15 +1835,15 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -1866,25 +1860,25 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 _Type Signature:_ `array<string>`
 
 </details>
 
-## POST /v1/fine\_tuning/jobs/\{job\_id\}/cancel
+# POST /v1/fine\_tuning/jobs/\{job\_id\}/cancel
 
 Operation ID: jobs_api_routes_fine_tuning_cancel_fine_tuning_job
 
@@ -1892,15 +1886,13 @@ _Cancel Fine Tuning Job_
 
 Request the cancellation of a fine tuning job.
 
-### Parameters
+## Parameters
 
-#### job\_id \(required\)
+### job\_id \(required\)
 
 The ID of the job to cancel.
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -1912,11 +1904,11 @@ _Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
 
 <summary>CompletionDetailedJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### checkpoints
+#### checkpoints
 
 _Type Signature:_ `array<CheckpointOut>`
 
@@ -1950,11 +1942,11 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### created\_at
+#### created\_at
 
 _Type Signature:_ `integer`
 
-##### events
+#### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
@@ -1982,11 +1974,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `CompletionTrainingParameters`
 
@@ -2024,11 +2016,11 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 _Type Signature:_ `array<WandbIntegrationOut>`
 
@@ -2062,11 +2054,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'completion'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -2104,7 +2096,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -2118,15 +2110,15 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### repositories
+#### repositories
 
 _Type Signature:_ `array<WandbIntegrationOut>`
 
@@ -2160,7 +2152,7 @@ _Type Signature:_ `string`
 
 </details>
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -2177,19 +2169,19 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 _Type Signature:_ `array<string>`
 
@@ -2199,11 +2191,11 @@ _Type Signature:_ `array<string>`
 
 <summary>ClassifierDetailedJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### checkpoints
+#### checkpoints
 
 _Type Signature:_ `array<CheckpointOut>`
 
@@ -2237,7 +2229,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### classifier\_targets
+#### classifier\_targets
 
 _Type Signature:_ `array<ClassifierTargetOut>`
 
@@ -2263,11 +2255,11 @@ _Type Signature:_ `number`
 
 </details>
 
-##### created\_at
+#### created\_at
 
 _Type Signature:_ `integer`
 
-##### events
+#### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
@@ -2295,11 +2287,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `ClassifierTrainingParameters`
 
@@ -2333,11 +2325,11 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 _Type Signature:_ `array<WandbIntegrationOut>`
 
@@ -2371,11 +2363,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'classifier'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -2413,7 +2405,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -2427,15 +2419,15 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -2452,25 +2444,25 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 _Type Signature:_ `array<string>`
 
 </details>
 
-## POST /v1/fine\_tuning/jobs/\{job\_id\}/start
+# POST /v1/fine\_tuning/jobs/\{job\_id\}/start
 
 Operation ID: jobs_api_routes_fine_tuning_start_fine_tuning_job
 
@@ -2478,13 +2470,11 @@ _Start Fine Tuning Job_
 
 Request the start of a validated fine tuning job.
 
-### Parameters
+## Parameters
 
-#### job\_id \(required\)
+### job\_id \(required\)
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -2496,11 +2486,11 @@ _Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
 
 <summary>CompletionDetailedJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### checkpoints
+#### checkpoints
 
 _Type Signature:_ `array<CheckpointOut>`
 
@@ -2534,11 +2524,11 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### created\_at
+#### created\_at
 
 _Type Signature:_ `integer`
 
-##### events
+#### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
@@ -2566,11 +2556,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `CompletionTrainingParameters`
 
@@ -2608,11 +2598,11 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 _Type Signature:_ `array<WandbIntegrationOut>`
 
@@ -2646,11 +2636,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'completion'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -2688,7 +2678,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -2702,15 +2692,15 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### repositories
+#### repositories
 
 _Type Signature:_ `array<WandbIntegrationOut>`
 
@@ -2744,7 +2734,7 @@ _Type Signature:_ `string`
 
 </details>
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -2761,19 +2751,19 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 _Type Signature:_ `array<string>`
 
@@ -2783,11 +2773,11 @@ _Type Signature:_ `array<string>`
 
 <summary>ClassifierDetailedJobOut Properties</summary>
 
-##### auto\_start
+#### auto\_start
 
 _Type Signature:_ `boolean`
 
-##### checkpoints
+#### checkpoints
 
 _Type Signature:_ `array<CheckpointOut>`
 
@@ -2821,7 +2811,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### classifier\_targets
+#### classifier\_targets
 
 _Type Signature:_ `array<ClassifierTargetOut>`
 
@@ -2847,11 +2837,11 @@ _Type Signature:_ `number`
 
 </details>
 
-##### created\_at
+#### created\_at
 
 _Type Signature:_ `integer`
 
-##### events
+#### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
@@ -2879,11 +2869,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### fine\_tuned\_model
+#### fine\_tuned\_model
 
 _Type Signature:_ `string`
 
-##### hyperparameters
+#### hyperparameters
 
 _Type Signature:_ `ClassifierTrainingParameters`
 
@@ -2917,11 +2907,11 @@ _Type Signature:_ `number`
 
 </details>
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### integrations
+#### integrations
 
 _Type Signature:_ `array<WandbIntegrationOut>`
 
@@ -2955,11 +2945,11 @@ _Type Signature:_ `string`
 
 </details>
 
-##### job\_type
+#### job\_type
 
 _Type Signature:_ `'classifier'`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `JobMetadataOut`
 
@@ -2997,7 +2987,7 @@ _Type Signature:_ `integer`
 
 </details>
 
-##### model
+#### model
 
 _Type Signature:_
 ```
@@ -3011,15 +3001,15 @@ enum
   'ministral-8b-latest'
 ```
 
-##### modified\_at
+#### modified\_at
 
 _Type Signature:_ `integer`
 
-##### object
+#### object
 
 _Type Signature:_ `'job'`
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -3036,19 +3026,19 @@ enum
   'CANCELLATION_REQUESTED'
 ```
 
-##### suffix
+#### suffix
 
 _Type Signature:_ `string`
 
-##### trained\_tokens
+#### trained\_tokens
 
 _Type Signature:_ `integer`
 
-##### training\_files
+#### training\_files
 
 _Type Signature:_ `array<string>`
 
-##### validation\_files
+#### validation\_files
 
 _Type Signature:_ `array<string>`
 

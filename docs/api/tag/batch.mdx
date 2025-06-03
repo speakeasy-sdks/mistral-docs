@@ -5,7 +5,7 @@ sidebar_label: batch
 
 # batch
 
-## GET /v1/batch/jobs
+# GET /v1/batch/jobs
 
 Operation ID: jobs_api_routes_batch_get_batch_jobs
 
@@ -13,9 +13,7 @@ _Get Batch Jobs_
 
 Get a list of batch jobs for your organization and user.
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -23,7 +21,7 @@ OK
 
 <summary>Response Body</summary>
 
-##### data
+### data
 
 _Type Signature:_ `array<BatchJobOut>`
 
@@ -31,27 +29,27 @@ _Type Signature:_ `array<BatchJobOut>`
 
 <summary>BatchJobOut Properties</summary>
 
-##### completed\_at
+#### completed\_at
 
 _Type Signature:_ `integer`
 
-##### completed\_requests
+#### completed\_requests
 
 _Type Signature:_ `integer`
 
-##### created\_at
+#### created\_at
 
 _Type Signature:_ `integer`
 
-##### endpoint
+#### endpoint
 
 _Type Signature:_ `string`
 
-##### error\_file
+#### error\_file
 
 _Type Signature:_ `string`
 
-##### errors
+#### errors
 
 _Type Signature:_ `array<BatchError>`
 
@@ -69,39 +67,39 @@ _Type Signature:_ `string`
 
 </details>
 
-##### failed\_requests
+#### failed\_requests
 
 _Type Signature:_ `integer`
 
-##### id
+#### id
 
 _Type Signature:_ `string`
 
-##### input\_files
+#### input\_files
 
 _Type Signature:_ `array<string>`
 
-##### metadata
+#### metadata
 
 _Type Signature:_ `map<any>`
 
-##### model
+#### model
 
 _Type Signature:_ `string`
 
-##### object
+#### object
 
 _Type Signature:_ `'batch'`
 
-##### output\_file
+#### output\_file
 
 _Type Signature:_ `string`
 
-##### started\_at
+#### started\_at
 
 _Type Signature:_ `integer`
 
-##### status
+#### status
 
 _Type Signature:_
 ```
@@ -115,27 +113,27 @@ enum
   'CANCELLED'
 ```
 
-##### succeeded\_requests
+#### succeeded\_requests
 
 _Type Signature:_ `integer`
 
-##### total\_requests
+#### total\_requests
 
 _Type Signature:_ `integer`
 
 </details>
 
-##### object
+### object
 
 _Type Signature:_ `'list'`
 
-##### total
+### total
 
 _Type Signature:_ `integer`
 
 </details>
 
-## POST /v1/batch/jobs
+# POST /v1/batch/jobs
 
 Operation ID: jobs_api_routes_batch_create_batch_job
 
@@ -143,13 +141,13 @@ _Create Batch Job_
 
 Create a new batch job, it will be queued for processing.
 
-### Request Body \(required\)
+## Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-##### endpoint
+### endpoint
 
 _Type Signature:_
 ```
@@ -161,27 +159,25 @@ enum
   '/v1/chat/moderations'
 ```
 
-##### input\_files
+### input\_files
 
 _Type Signature:_ `array<string>`
 
-##### metadata
+### metadata
 
 _Type Signature:_ `map<string>`
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
-##### timeout\_hours
+### timeout\_hours
 
 _Type Signature:_ `integer`
 
 </details>
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -189,27 +185,27 @@ OK
 
 <summary>Response Body</summary>
 
-##### completed\_at
+### completed\_at
 
 _Type Signature:_ `integer`
 
-##### completed\_requests
+### completed\_requests
 
 _Type Signature:_ `integer`
 
-##### created\_at
+### created\_at
 
 _Type Signature:_ `integer`
 
-##### endpoint
+### endpoint
 
 _Type Signature:_ `string`
 
-##### error\_file
+### error\_file
 
 _Type Signature:_ `string`
 
-##### errors
+### errors
 
 _Type Signature:_ `array<BatchError>`
 
@@ -217,49 +213,49 @@ _Type Signature:_ `array<BatchError>`
 
 <summary>BatchError Properties</summary>
 
-##### count
+#### count
 
 _Type Signature:_ `integer`
 
-##### message
+#### message
 
 _Type Signature:_ `string`
 
 </details>
 
-##### failed\_requests
+### failed\_requests
 
 _Type Signature:_ `integer`
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### input\_files
+### input\_files
 
 _Type Signature:_ `array<string>`
 
-##### metadata
+### metadata
 
 _Type Signature:_ `map<any>`
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
-##### object
+### object
 
 _Type Signature:_ `'batch'`
 
-##### output\_file
+### output\_file
 
 _Type Signature:_ `string`
 
-##### started\_at
+### started\_at
 
 _Type Signature:_ `integer`
 
-##### status
+### status
 
 _Type Signature:_
 ```
@@ -273,17 +269,17 @@ enum
   'CANCELLED'
 ```
 
-##### succeeded\_requests
+### succeeded\_requests
 
 _Type Signature:_ `integer`
 
-##### total\_requests
+### total\_requests
 
 _Type Signature:_ `integer`
 
 </details>
 
-## GET /v1/batch/jobs/\{job\_id\}
+# GET /v1/batch/jobs/\{job\_id\}
 
 Operation ID: jobs_api_routes_batch_get_batch_job
 
@@ -291,13 +287,11 @@ _Get Batch Job_
 
 Get a batch job details by its UUID.
 
-### Parameters
+## Parameters
 
-#### job\_id \(required\)
+### job\_id \(required\)
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -305,27 +299,27 @@ OK
 
 <summary>Response Body</summary>
 
-##### completed\_at
+### completed\_at
 
 _Type Signature:_ `integer`
 
-##### completed\_requests
+### completed\_requests
 
 _Type Signature:_ `integer`
 
-##### created\_at
+### created\_at
 
 _Type Signature:_ `integer`
 
-##### endpoint
+### endpoint
 
 _Type Signature:_ `string`
 
-##### error\_file
+### error\_file
 
 _Type Signature:_ `string`
 
-##### errors
+### errors
 
 _Type Signature:_ `array<BatchError>`
 
@@ -333,49 +327,49 @@ _Type Signature:_ `array<BatchError>`
 
 <summary>BatchError Properties</summary>
 
-##### count
+#### count
 
 _Type Signature:_ `integer`
 
-##### message
+#### message
 
 _Type Signature:_ `string`
 
 </details>
 
-##### failed\_requests
+### failed\_requests
 
 _Type Signature:_ `integer`
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### input\_files
+### input\_files
 
 _Type Signature:_ `array<string>`
 
-##### metadata
+### metadata
 
 _Type Signature:_ `map<any>`
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
-##### object
+### object
 
 _Type Signature:_ `'batch'`
 
-##### output\_file
+### output\_file
 
 _Type Signature:_ `string`
 
-##### started\_at
+### started\_at
 
 _Type Signature:_ `integer`
 
-##### status
+### status
 
 _Type Signature:_
 ```
@@ -389,17 +383,17 @@ enum
   'CANCELLED'
 ```
 
-##### succeeded\_requests
+### succeeded\_requests
 
 _Type Signature:_ `integer`
 
-##### total\_requests
+### total\_requests
 
 _Type Signature:_ `integer`
 
 </details>
 
-## POST /v1/batch/jobs/\{job\_id\}/cancel
+# POST /v1/batch/jobs/\{job\_id\}/cancel
 
 Operation ID: jobs_api_routes_batch_cancel_batch_job
 
@@ -407,13 +401,11 @@ _Cancel Batch Job_
 
 Request the cancellation of a batch job.
 
-### Parameters
+## Parameters
 
-#### job\_id \(required\)
+### job\_id \(required\)
 
-### Responses
-
-#### 200 \(application/json\)
+## Response: 200 \(application/json\)
 
 OK
 
@@ -421,27 +413,27 @@ OK
 
 <summary>Response Body</summary>
 
-##### completed\_at
+### completed\_at
 
 _Type Signature:_ `integer`
 
-##### completed\_requests
+### completed\_requests
 
 _Type Signature:_ `integer`
 
-##### created\_at
+### created\_at
 
 _Type Signature:_ `integer`
 
-##### endpoint
+### endpoint
 
 _Type Signature:_ `string`
 
-##### error\_file
+### error\_file
 
 _Type Signature:_ `string`
 
-##### errors
+### errors
 
 _Type Signature:_ `array<BatchError>`
 
@@ -449,49 +441,49 @@ _Type Signature:_ `array<BatchError>`
 
 <summary>BatchError Properties</summary>
 
-##### count
+#### count
 
 _Type Signature:_ `integer`
 
-##### message
+#### message
 
 _Type Signature:_ `string`
 
 </details>
 
-##### failed\_requests
+### failed\_requests
 
 _Type Signature:_ `integer`
 
-##### id
+### id
 
 _Type Signature:_ `string`
 
-##### input\_files
+### input\_files
 
 _Type Signature:_ `array<string>`
 
-##### metadata
+### metadata
 
 _Type Signature:_ `map<any>`
 
-##### model
+### model
 
 _Type Signature:_ `string`
 
-##### object
+### object
 
 _Type Signature:_ `'batch'`
 
-##### output\_file
+### output\_file
 
 _Type Signature:_ `string`
 
-##### started\_at
+### started\_at
 
 _Type Signature:_ `integer`
 
-##### status
+### status
 
 _Type Signature:_
 ```
@@ -505,11 +497,11 @@ enum
   'CANCELLED'
 ```
 
-##### succeeded\_requests
+### succeeded\_requests
 
 _Type Signature:_ `integer`
 
-##### total\_requests
+### total\_requests
 
 _Type Signature:_ `integer`
 
