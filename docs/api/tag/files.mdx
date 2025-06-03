@@ -25,12 +25,7 @@ OK
 
 ##### data
 
-Signature:
-
-```
-array
-  FileSchema
-```
+Type Signature: `array<FileSchema>`
 
 <details open>
 
@@ -40,109 +35,65 @@ array
 
 The size of the file, in bytes.
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) of the event.
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### filename
 
 The name of the uploaded file.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### id
 
 The unique identifier of the file.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### num\_lines
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### object
 
 The object type, which is always "file".
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### purpose
 
-Signature:
-```
-enum
-  fine-tune
-  batch
-  ocr
-```
+Type Signature: `'fine-tune' | 'batch' | 'ocr'`
 
 ##### sample\_type
 
-Signature:
+Type Signature:
 ```
 enum
-  pretrain
-  instruct
-  batch_request
-  batch_result
-  batch_error
+  'pretrain'
+  'instruct'
+  'batch_request'
+  'batch_result'
+  'batch_error'
 ```
 
 ##### source
 
-Signature:
-```
-enum
-  upload
-  repository
-  mistral
-```
+Type Signature: `'upload' | 'repository' | 'mistral'`
 
 </details>
 
 ##### object
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### total
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 </details>
 
@@ -176,11 +127,7 @@ The File object (not file name) to be uploaded.
  file=@path/to/your/file.jsonl
  ```
 
-Signature:
-
-```
-File
-```
+Type Signature: `File`
 
 <details open>
 
@@ -188,31 +135,17 @@ File
 
 ##### content
 
-Signature:
-
-```
-binary
-```
+Type Signature: `binary`
 
 ##### fileName
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
 ##### purpose
 
-Signature:
-```
-enum
-  fine-tune
-  batch
-  ocr
-```
+Type Signature: `'fine-tune' | 'batch' | 'ocr'`
 
 </details>
 
@@ -230,91 +163,55 @@ OK
 
 The size of the file, in bytes.
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) of the event.
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### filename
 
 The name of the uploaded file.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### id
 
 The unique identifier of the file.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### num\_lines
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### object
 
 The object type, which is always "file".
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### purpose
 
-Signature:
-```
-enum
-  fine-tune
-  batch
-  ocr
-```
+Type Signature: `'fine-tune' | 'batch' | 'ocr'`
 
 ##### sample\_type
 
-Signature:
+Type Signature:
 ```
 enum
-  pretrain
-  instruct
-  batch_request
-  batch_result
-  batch_error
+  'pretrain'
+  'instruct'
+  'batch_request'
+  'batch_result'
+  'batch_error'
 ```
 
 ##### source
 
-Signature:
-```
-enum
-  upload
-  repository
-  mistral
-```
+Type Signature: `'upload' | 'repository' | 'mistral'`
 
 </details>
 
@@ -344,99 +241,59 @@ OK
 
 The size of the file, in bytes.
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) of the event.
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### deleted
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 ##### filename
 
 The name of the uploaded file.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### id
 
 The unique identifier of the file.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### num\_lines
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### object
 
 The object type, which is always "file".
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### purpose
 
-Signature:
-```
-enum
-  fine-tune
-  batch
-  ocr
-```
+Type Signature: `'fine-tune' | 'batch' | 'ocr'`
 
 ##### sample\_type
 
-Signature:
+Type Signature:
 ```
 enum
-  pretrain
-  instruct
-  batch_request
-  batch_result
-  batch_error
+  'pretrain'
+  'instruct'
+  'batch_request'
+  'batch_result'
+  'batch_error'
 ```
 
 ##### source
 
-Signature:
-```
-enum
-  upload
-  repository
-  mistral
-```
+Type Signature: `'upload' | 'repository' | 'mistral'`
 
 </details>
 
@@ -466,31 +323,19 @@ OK
 
 The deletion status.
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 ##### id
 
 The ID of the deleted file.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### object
 
 The object type that was deleted
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -514,11 +359,7 @@ OK
 
 OK
 
-Signature:
-
-```
-binary
-```
+Type Signature: `binary`
 
 ## GET /v1/files/\{file\_id\}/url
 
@@ -546,10 +387,6 @@ OK
 
 ##### url
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>

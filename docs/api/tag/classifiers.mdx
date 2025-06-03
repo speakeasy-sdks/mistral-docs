@@ -33,24 +33,13 @@ Moderations
 
 Text to classify.
 
-Signature:
-
-```
-union
-  string
-  array
-    string
-```
+Type Signature: `string | array<string>`
 
 ##### model
 
 ID of the model to use.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -66,28 +55,15 @@ Successful Response
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### results
 
-Signature:
-
-```
-array
-  ModerationObject
-```
+Type Signature: `array<ModerationObject>`
 
 <details open>
 
@@ -97,23 +73,13 @@ array
 
 Moderation result thresholds
 
-Signature:
-
-```
-map
-  boolean
-```
+Type Signature: `map<boolean>`
 
 ##### category\_scores
 
 Moderation result
 
-Signature:
-
-```
-map
-  number
-```
+Type Signature: `map<number>`
 
 </details>
 
@@ -129,11 +95,7 @@ Validation Error
 
 ##### HttpMeta
 
-Signature:
-
-```
-HTTPMetadata
-```
+Type Signature: `HTTPMetadata`
 
 <details open>
 
@@ -143,32 +105,19 @@ HTTPMetadata
 
 Raw HTTP request; suitable for debugging
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 ##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 </details>
 
 ##### detail
 
-Signature:
-
-```
-array
-  ValidationError
-```
+Type Signature: `array<ValidationError>`
 
 <details open>
 
@@ -176,30 +125,15 @@ array
 
 ##### loc
 
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
+Type Signature: `array<string | integer>`
 
 ##### msg
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -221,8 +155,7 @@ Chat Moderations
 
 Chat to classify
 
-Signature:
-
+Type Signature:
 ```
 union
   array
@@ -246,14 +179,7 @@ union
 
 ##### content
 
-Signature:
-
-```
-union
-  string
-  array
-    TextChunk
-```
+Type Signature: `string | array<TextChunk>`
 
 <details open>
 
@@ -261,29 +187,17 @@ union
 
 ##### text
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  text
-```
+Type Signature: `'text'`
 
 </details>
 
 ##### role
 
-Signature:
-```
-enum
-  system
-```
+Type Signature: `'system'`
 
 </details>
 
@@ -293,8 +207,7 @@ enum
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -312,19 +225,11 @@ union
 
 ##### text
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  text
-```
+Type Signature: `'text'`
 
 </details>
 
@@ -334,13 +239,7 @@ enum
 
 ##### image\_url
 
-Signature:
-
-```
-union
-  ImageURL
-  string
-```
+Type Signature: `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL" title="ImageURL">
@@ -350,11 +249,7 @@ union
 
 ##### type
 
-Signature:
-```
-enum
-  image_url
-```
+Type Signature: `'image_url'`
 
 </details>
 
@@ -366,27 +261,15 @@ enum
 
 The filename of the document
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### document\_url
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  document_url
-```
+Type Signature: `'document_url'`
 
 </details>
 
@@ -396,30 +279,17 @@ enum
 
 ##### reference\_ids
 
-Signature:
-
-```
-array
-  integer
-```
+Type Signature: `array<integer>`
 
 ##### type
 
-Signature:
-```
-enum
-  reference
-```
+Type Signature: `'reference'`
 
 </details>
 
 ##### role
 
-Signature:
-```
-enum
-  user
-```
+Type Signature: `'user'`
 
 </details>
 
@@ -429,8 +299,7 @@ enum
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -448,19 +317,11 @@ union
 
 ##### text
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  text
-```
+Type Signature: `'text'`
 
 </details>
 
@@ -470,13 +331,7 @@ enum
 
 ##### image\_url
 
-Signature:
-
-```
-union
-  ImageURL
-  string
-```
+Type Signature: `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL" title="ImageURL">
@@ -486,11 +341,7 @@ union
 
 ##### type
 
-Signature:
-```
-enum
-  image_url
-```
+Type Signature: `'image_url'`
 
 </details>
 
@@ -502,27 +353,15 @@ enum
 
 The filename of the document
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### document\_url
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  document_url
-```
+Type Signature: `'document_url'`
 
 </details>
 
@@ -532,20 +371,11 @@ enum
 
 ##### reference\_ids
 
-Signature:
-
-```
-array
-  integer
-```
+Type Signature: `array<integer>`
 
 ##### type
 
-Signature:
-```
-enum
-  reference
-```
+Type Signature: `'reference'`
 
 </details>
 
@@ -553,28 +383,15 @@ enum
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 ##### role
 
-Signature:
-```
-enum
-  assistant
-```
+Type Signature: `'assistant'`
 
 ##### tool\_calls
 
-Signature:
-
-```
-array
-  ToolCall
-```
+Type Signature: `array<ToolCall>`
 
 <details open>
 
@@ -582,11 +399,7 @@ array
 
 ##### function
 
-Signature:
-
-```
-FunctionCall
-```
+Type Signature: `FunctionCall`
 
 <p>
   <SideBarCta cta="View FunctionCall" title="FunctionCall">
@@ -596,27 +409,15 @@ FunctionCall
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### index
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### type
 
-Signature:
-```
-enum
-  function
-```
+Type Signature: `'function'`
 
 </details>
 
@@ -628,8 +429,7 @@ enum
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -647,19 +447,11 @@ union
 
 ##### text
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  text
-```
+Type Signature: `'text'`
 
 </details>
 
@@ -669,13 +461,7 @@ enum
 
 ##### image\_url
 
-Signature:
-
-```
-union
-  ImageURL
-  string
-```
+Type Signature: `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL" title="ImageURL">
@@ -685,11 +471,7 @@ union
 
 ##### type
 
-Signature:
-```
-enum
-  image_url
-```
+Type Signature: `'image_url'`
 
 </details>
 
@@ -701,27 +483,15 @@ enum
 
 The filename of the document
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### document\_url
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  document_url
-```
+Type Signature: `'document_url'`
 
 </details>
 
@@ -731,56 +501,31 @@ enum
 
 ##### reference\_ids
 
-Signature:
-
-```
-array
-  integer
-```
+Type Signature: `array<integer>`
 
 ##### type
 
-Signature:
-```
-enum
-  reference
-```
+Type Signature: `'reference'`
 
 </details>
 
 ##### name
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### role
 
-Signature:
-```
-enum
-  tool
-```
+Type Signature: `'tool'`
 
 ##### tool\_call\_id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -796,28 +541,15 @@ Successful Response
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### results
 
-Signature:
-
-```
-array
-  ModerationObject
-```
+Type Signature: `array<ModerationObject>`
 
 <details open>
 
@@ -827,23 +559,13 @@ array
 
 Moderation result thresholds
 
-Signature:
-
-```
-map
-  boolean
-```
+Type Signature: `map<boolean>`
 
 ##### category\_scores
 
 Moderation result
 
-Signature:
-
-```
-map
-  number
-```
+Type Signature: `map<number>`
 
 </details>
 
@@ -859,11 +581,7 @@ Validation Error
 
 ##### HttpMeta
 
-Signature:
-
-```
-HTTPMetadata
-```
+Type Signature: `HTTPMetadata`
 
 <details open>
 
@@ -873,32 +591,19 @@ HTTPMetadata
 
 Raw HTTP request; suitable for debugging
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 ##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 </details>
 
 ##### detail
 
-Signature:
-
-```
-array
-  ValidationError
-```
+Type Signature: `array<ValidationError>`
 
 <details open>
 
@@ -906,30 +611,15 @@ array
 
 ##### loc
 
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
+Type Signature: `array<string | integer>`
 
 ##### msg
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -951,24 +641,13 @@ Classifications
 
 Text to classify.
 
-Signature:
-
-```
-union
-  string
-  array
-    string
-```
+Type Signature: `string | array<string>`
 
 ##### model
 
 ID of the model to use.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -984,29 +663,15 @@ Successful Response
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### results
 
-Signature:
-
-```
-array
-  map
-    ClassificationTargetResult
-```
+Type Signature: `array<map<ClassificationTargetResult>>`
 
 <details open>
 
@@ -1014,12 +679,7 @@ array
 
 ##### scores
 
-Signature:
-
-```
-map
-  number
-```
+Type Signature: `map<number>`
 
 </details>
 
@@ -1035,11 +695,7 @@ Validation Error
 
 ##### HttpMeta
 
-Signature:
-
-```
-HTTPMetadata
-```
+Type Signature: `HTTPMetadata`
 
 <details open>
 
@@ -1049,32 +705,19 @@ HTTPMetadata
 
 Raw HTTP request; suitable for debugging
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 ##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 </details>
 
 ##### detail
 
-Signature:
-
-```
-array
-  ValidationError
-```
+Type Signature: `array<ValidationError>`
 
 <details open>
 
@@ -1082,30 +725,15 @@ array
 
 ##### loc
 
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
+Type Signature: `array<string | integer>`
 
 ##### msg
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -1127,14 +755,7 @@ Chat Classifications
 
 Chat to classify
 
-Signature:
-
-```
-union
-  InstructRequest
-  array
-    InstructRequest
-```
+Type Signature: `InstructRequest | array<InstructRequest>`
 
 <details open>
 
@@ -1142,8 +763,7 @@ union
 
 ##### messages
 
-Signature:
-
+Type Signature:
 ```
 array
   union
@@ -1159,14 +779,7 @@ array
 
 ##### content
 
-Signature:
-
-```
-union
-  string
-  array
-    TextChunk
-```
+Type Signature: `string | array<TextChunk>`
 
 <p>
   <SideBarCta cta="View TextChunk" title="TextChunk">
@@ -1176,11 +789,7 @@ union
 
 ##### role
 
-Signature:
-```
-enum
-  system
-```
+Type Signature: `'system'`
 
 </details>
 
@@ -1190,8 +799,7 @@ enum
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -1229,11 +837,7 @@ union
 
 ##### role
 
-Signature:
-```
-enum
-  user
-```
+Type Signature: `'user'`
 
 </details>
 
@@ -1243,8 +847,7 @@ enum
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -1284,28 +887,15 @@ union
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 ##### role
 
-Signature:
-```
-enum
-  assistant
-```
+Type Signature: `'assistant'`
 
 ##### tool\_calls
 
-Signature:
-
-```
-array
-  ToolCall
-```
+Type Signature: `array<ToolCall>`
 
 <p>
   <SideBarCta cta="View ToolCall" title="ToolCall">
@@ -1321,8 +911,7 @@ array
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -1360,27 +949,15 @@ union
 
 ##### name
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### role
 
-Signature:
-```
-enum
-  tool
-```
+Type Signature: `'tool'`
 
 ##### tool\_call\_id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -1388,11 +965,7 @@ string
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -1408,29 +981,15 @@ Successful Response
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### results
 
-Signature:
-
-```
-array
-  map
-    ClassificationTargetResult
-```
+Type Signature: `array<map<ClassificationTargetResult>>`
 
 <details open>
 
@@ -1438,12 +997,7 @@ array
 
 ##### scores
 
-Signature:
-
-```
-map
-  number
-```
+Type Signature: `map<number>`
 
 </details>
 
@@ -1459,11 +1013,7 @@ Validation Error
 
 ##### HttpMeta
 
-Signature:
-
-```
-HTTPMetadata
-```
+Type Signature: `HTTPMetadata`
 
 <details open>
 
@@ -1473,32 +1023,19 @@ HTTPMetadata
 
 Raw HTTP request; suitable for debugging
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 ##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 </details>
 
 ##### detail
 
-Signature:
-
-```
-array
-  ValidationError
-```
+Type Signature: `array<ValidationError>`
 
 <details open>
 
@@ -1506,30 +1043,15 @@ array
 
 ##### loc
 
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
+Type Signature: `array<string | integer>`
 
 ##### msg
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 

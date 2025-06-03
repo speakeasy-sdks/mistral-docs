@@ -33,38 +33,25 @@ Agents Completion
 
 The ID of the agent to use for this completion.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### frequency\_penalty
 
 frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.
 
-Signature:
-
-```
-number
-```
+Type Signature: `number`
 
 ##### max\_tokens
 
 The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### messages
 
 The prompt(s) to generate completions for, encoded as a list of dict with role and content.
 
-Signature:
-
+Type Signature:
 ```
 array
   union
@@ -80,14 +67,7 @@ array
 
 ##### content
 
-Signature:
-
-```
-union
-  string
-  array
-    TextChunk
-```
+Type Signature: `string | array<TextChunk>`
 
 <details open>
 
@@ -95,29 +75,17 @@ union
 
 ##### text
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  text
-```
+Type Signature: `'text'`
 
 </details>
 
 ##### role
 
-Signature:
-```
-enum
-  system
-```
+Type Signature: `'system'`
 
 </details>
 
@@ -127,8 +95,7 @@ enum
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -146,19 +113,11 @@ union
 
 ##### text
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  text
-```
+Type Signature: `'text'`
 
 </details>
 
@@ -168,13 +127,7 @@ enum
 
 ##### image\_url
 
-Signature:
-
-```
-union
-  ImageURL
-  string
-```
+Type Signature: `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL" title="ImageURL">
@@ -184,11 +137,7 @@ union
 
 ##### type
 
-Signature:
-```
-enum
-  image_url
-```
+Type Signature: `'image_url'`
 
 </details>
 
@@ -200,27 +149,15 @@ enum
 
 The filename of the document
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### document\_url
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  document_url
-```
+Type Signature: `'document_url'`
 
 </details>
 
@@ -230,30 +167,17 @@ enum
 
 ##### reference\_ids
 
-Signature:
-
-```
-array
-  integer
-```
+Type Signature: `array<integer>`
 
 ##### type
 
-Signature:
-```
-enum
-  reference
-```
+Type Signature: `'reference'`
 
 </details>
 
 ##### role
 
-Signature:
-```
-enum
-  user
-```
+Type Signature: `'user'`
 
 </details>
 
@@ -263,8 +187,7 @@ enum
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -282,19 +205,11 @@ union
 
 ##### text
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  text
-```
+Type Signature: `'text'`
 
 </details>
 
@@ -304,13 +219,7 @@ enum
 
 ##### image\_url
 
-Signature:
-
-```
-union
-  ImageURL
-  string
-```
+Type Signature: `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL" title="ImageURL">
@@ -320,11 +229,7 @@ union
 
 ##### type
 
-Signature:
-```
-enum
-  image_url
-```
+Type Signature: `'image_url'`
 
 </details>
 
@@ -336,27 +241,15 @@ enum
 
 The filename of the document
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### document\_url
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  document_url
-```
+Type Signature: `'document_url'`
 
 </details>
 
@@ -366,20 +259,11 @@ enum
 
 ##### reference\_ids
 
-Signature:
-
-```
-array
-  integer
-```
+Type Signature: `array<integer>`
 
 ##### type
 
-Signature:
-```
-enum
-  reference
-```
+Type Signature: `'reference'`
 
 </details>
 
@@ -387,28 +271,15 @@ enum
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 ##### role
 
-Signature:
-```
-enum
-  assistant
-```
+Type Signature: `'assistant'`
 
 ##### tool\_calls
 
-Signature:
-
-```
-array
-  ToolCall
-```
+Type Signature: `array<ToolCall>`
 
 <details open>
 
@@ -416,11 +287,7 @@ array
 
 ##### function
 
-Signature:
-
-```
-FunctionCall
-```
+Type Signature: `FunctionCall`
 
 <p>
   <SideBarCta cta="View FunctionCall" title="FunctionCall">
@@ -430,27 +297,15 @@ FunctionCall
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### index
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### type
 
-Signature:
-```
-enum
-  function
-```
+Type Signature: `'function'`
 
 </details>
 
@@ -462,8 +317,7 @@ enum
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -481,19 +335,11 @@ union
 
 ##### text
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  text
-```
+Type Signature: `'text'`
 
 </details>
 
@@ -503,13 +349,7 @@ enum
 
 ##### image\_url
 
-Signature:
-
-```
-union
-  ImageURL
-  string
-```
+Type Signature: `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL" title="ImageURL">
@@ -519,11 +359,7 @@ union
 
 ##### type
 
-Signature:
-```
-enum
-  image_url
-```
+Type Signature: `'image_url'`
 
 </details>
 
@@ -535,27 +371,15 @@ enum
 
 The filename of the document
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### document\_url
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-```
-enum
-  document_url
-```
+Type Signature: `'document_url'`
 
 </details>
 
@@ -565,46 +389,25 @@ enum
 
 ##### reference\_ids
 
-Signature:
-
-```
-array
-  integer
-```
+Type Signature: `array<integer>`
 
 ##### type
 
-Signature:
-```
-enum
-  reference
-```
+Type Signature: `'reference'`
 
 </details>
 
 ##### name
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### role
 
-Signature:
-```
-enum
-  tool
-```
+Type Signature: `'tool'`
 
 ##### tool\_call\_id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -612,27 +415,15 @@ string
 
 Number of completions to return for each request, input tokens are only billed once.
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### parallel\_tool\_calls
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 ##### prediction
 
-Signature:
-
-```
-Prediction
-```
+Type Signature: `Prediction`
 
 <details open>
 
@@ -640,19 +431,11 @@ Prediction
 
 ##### content
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -660,29 +443,17 @@ string
 
 presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.
 
-Signature:
-
-```
-number
-```
+Type Signature: `number`
 
 ##### random\_seed
 
 The seed to use for random sampling. If set, different calls will generate deterministic results.
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### response\_format
 
-Signature:
-
-```
-ResponseFormat
-```
+Type Signature: `ResponseFormat`
 
 <details open>
 
@@ -690,11 +461,7 @@ ResponseFormat
 
 ##### json\_schema
 
-Signature:
-
-```
-JsonSchema
-```
+Type Signature: `JsonSchema`
 
 <details open>
 
@@ -702,48 +469,25 @@ JsonSchema
 
 ##### description
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### name
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### schema\_definition
 
-Signature:
-
-```
-map
-  any
-```
+Type Signature: `map<any>`
 
 ##### strict
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 </details>
 
 ##### type
 
-Signature:
-```
-enum
-  text
-  json_object
-  json_schema
-```
+Type Signature: `'text' | 'json_object' | 'json_schema'`
 
 </details>
 
@@ -751,34 +495,17 @@ enum
 
 Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
 
-Signature:
-
-```
-union
-  string
-  array
-    string
-```
+Type Signature: `string | array<string>`
 
 ##### stream
 
 Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 ##### tool\_choice
 
-Signature:
-
-```
-union
-  ToolChoice
-  enum
-```
+Type Signature: `ToolChoice | `
 
 <details open>
 
@@ -788,11 +515,7 @@ union
 
 this restriction of `Function` is used to select a specific function to call
 
-Signature:
-
-```
-FunctionName
-```
+Type Signature: `FunctionName`
 
 <details open>
 
@@ -800,32 +523,19 @@ FunctionName
 
 ##### name
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
 ##### type
 
-Signature:
-```
-enum
-  function
-```
+Type Signature: `'function'`
 
 </details>
 
 ##### tools
 
-Signature:
-
-```
-array
-  Tool
-```
+Type Signature: `array<Tool>`
 
 <details open>
 
@@ -833,11 +543,7 @@ array
 
 ##### function
 
-Signature:
-
-```
-Function
-```
+Type Signature: `Function`
 
 <details open>
 
@@ -845,46 +551,25 @@ Function
 
 ##### description
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### name
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### parameters
 
-Signature:
-
-```
-map
-  any
-```
+Type Signature: `map<any>`
 
 ##### strict
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 </details>
 
 ##### type
 
-Signature:
-```
-enum
-  function
-```
+Type Signature: `'function'`
 
 </details>
 
@@ -902,12 +587,7 @@ Successful Response
 
 ##### choices
 
-Signature:
-
-```
-array
-  ChatCompletionChoice
-```
+Type Signature: `array<ChatCompletionChoice>`
 
 <details open>
 
@@ -915,31 +595,15 @@ array
 
 ##### finish\_reason
 
-Signature:
-```
-enum
-  stop
-  length
-  model_length
-  error
-  tool_calls
-```
+Type Signature: `'stop' | 'length' | 'model_length' | 'error' | 'tool_calls'`
 
 ##### index
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### message
 
-Signature:
-
-```
-AssistantMessage
-```
+Type Signature: `AssistantMessage`
 
 <details open>
 
@@ -947,8 +611,7 @@ AssistantMessage
 
 ##### content
 
-Signature:
-
+Type Signature:
 ```
 union
   string
@@ -988,28 +651,15 @@ union
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
-Signature:
-
-```
-boolean
-```
+Type Signature: `boolean`
 
 ##### role
 
-Signature:
-```
-enum
-  assistant
-```
+Type Signature: `'assistant'`
 
 ##### tool\_calls
 
-Signature:
-
-```
-array
-  ToolCall
-```
+Type Signature: `array<ToolCall>`
 
 <p>
   <SideBarCta cta="View ToolCall" title="ToolCall">
@@ -1023,43 +673,23 @@ array
 
 ##### created
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### object
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### usage
 
-Signature:
-
-```
-UsageInfo
-```
+Type Signature: `UsageInfo`
 
 <details open>
 
@@ -1067,27 +697,15 @@ UsageInfo
 
 ##### completion\_tokens
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### prompt\_tokens
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### total\_tokens
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 </details>
 
@@ -1103,11 +721,7 @@ Validation Error
 
 ##### HttpMeta
 
-Signature:
-
-```
-HTTPMetadata
-```
+Type Signature: `HTTPMetadata`
 
 <details open>
 
@@ -1117,32 +731,19 @@ HTTPMetadata
 
 Raw HTTP request; suitable for debugging
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 ##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 </details>
 
 ##### detail
 
-Signature:
-
-```
-array
-  ValidationError
-```
+Type Signature: `array<ValidationError>`
 
 <details open>
 
@@ -1150,30 +751,15 @@ array
 
 ##### loc
 
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
+Type Signature: `array<string | integer>`
 
 ##### msg
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 

@@ -25,12 +25,7 @@ OK
 
 ##### data
 
-Signature:
-
-```
-array
-  BatchJobOut
-```
+Type Signature: `array<BatchJobOut>`
 
 <details open>
 
@@ -38,52 +33,27 @@ array
 
 ##### completed\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### completed\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### created\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### endpoint
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### error\_file
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### errors
 
-Signature:
-
-```
-array
-  BatchError
-```
+Type Signature: `array<BatchError>`
 
 <details open>
 
@@ -91,135 +61,77 @@ array
 
 ##### count
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### message
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
 ##### failed\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### input\_files
 
-Signature:
-
-```
-array
-  string
-```
+Type Signature: `array<string>`
 
 ##### metadata
 
-Signature:
-
-```
-map
-  any
-```
+Type Signature: `map<any>`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### object
 
-Signature:
-```
-enum
-  batch
-```
+Type Signature: `'batch'`
 
 ##### output\_file
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### started\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### status
 
-Signature:
+Type Signature:
 ```
 enum
-  QUEUED
-  RUNNING
-  SUCCESS
-  FAILED
-  TIMEOUT_EXCEEDED
-  CANCELLATION_REQUESTED
-  CANCELLED
+  'QUEUED'
+  'RUNNING'
+  'SUCCESS'
+  'FAILED'
+  'TIMEOUT_EXCEEDED'
+  'CANCELLATION_REQUESTED'
+  'CANCELLED'
 ```
 
 ##### succeeded\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### total\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 </details>
 
 ##### object
 
-Signature:
-```
-enum
-  list
-```
+Type Signature: `'list'`
 
 ##### total
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 </details>
 
@@ -239,49 +151,31 @@ Create a new batch job, it will be queued for processing.
 
 ##### endpoint
 
-Signature:
+Type Signature:
 ```
 enum
-  /v1/chat/completions
-  /v1/embeddings
-  /v1/fim/completions
-  /v1/moderations
-  /v1/chat/moderations
+  '/v1/chat/completions'
+  '/v1/embeddings'
+  '/v1/fim/completions'
+  '/v1/moderations'
+  '/v1/chat/moderations'
 ```
 
 ##### input\_files
 
-Signature:
-
-```
-array
-  string
-```
+Type Signature: `array<string>`
 
 ##### metadata
 
-Signature:
-
-```
-map
-  string
-```
+Type Signature: `map<string>`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### timeout\_hours
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 </details>
 
@@ -297,52 +191,27 @@ OK
 
 ##### completed\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### completed\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### created\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### endpoint
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### error\_file
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### errors
 
-Signature:
-
-```
-array
-  BatchError
-```
+Type Signature: `array<BatchError>`
 
 <details open>
 
@@ -350,117 +219,67 @@ array
 
 ##### count
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### message
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
 ##### failed\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### input\_files
 
-Signature:
-
-```
-array
-  string
-```
+Type Signature: `array<string>`
 
 ##### metadata
 
-Signature:
-
-```
-map
-  any
-```
+Type Signature: `map<any>`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### object
 
-Signature:
-```
-enum
-  batch
-```
+Type Signature: `'batch'`
 
 ##### output\_file
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### started\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### status
 
-Signature:
+Type Signature:
 ```
 enum
-  QUEUED
-  RUNNING
-  SUCCESS
-  FAILED
-  TIMEOUT_EXCEEDED
-  CANCELLATION_REQUESTED
-  CANCELLED
+  'QUEUED'
+  'RUNNING'
+  'SUCCESS'
+  'FAILED'
+  'TIMEOUT_EXCEEDED'
+  'CANCELLATION_REQUESTED'
+  'CANCELLED'
 ```
 
 ##### succeeded\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### total\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 </details>
 
@@ -488,52 +307,27 @@ OK
 
 ##### completed\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### completed\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### created\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### endpoint
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### error\_file
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### errors
 
-Signature:
-
-```
-array
-  BatchError
-```
+Type Signature: `array<BatchError>`
 
 <details open>
 
@@ -541,117 +335,67 @@ array
 
 ##### count
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### message
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
 ##### failed\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### input\_files
 
-Signature:
-
-```
-array
-  string
-```
+Type Signature: `array<string>`
 
 ##### metadata
 
-Signature:
-
-```
-map
-  any
-```
+Type Signature: `map<any>`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### object
 
-Signature:
-```
-enum
-  batch
-```
+Type Signature: `'batch'`
 
 ##### output\_file
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### started\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### status
 
-Signature:
+Type Signature:
 ```
 enum
-  QUEUED
-  RUNNING
-  SUCCESS
-  FAILED
-  TIMEOUT_EXCEEDED
-  CANCELLATION_REQUESTED
-  CANCELLED
+  'QUEUED'
+  'RUNNING'
+  'SUCCESS'
+  'FAILED'
+  'TIMEOUT_EXCEEDED'
+  'CANCELLATION_REQUESTED'
+  'CANCELLED'
 ```
 
 ##### succeeded\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### total\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 </details>
 
@@ -679,52 +423,27 @@ OK
 
 ##### completed\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### completed\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### created\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### endpoint
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### error\_file
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### errors
 
-Signature:
-
-```
-array
-  BatchError
-```
+Type Signature: `array<BatchError>`
 
 <details open>
 
@@ -732,116 +451,66 @@ array
 
 ##### count
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### message
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
 ##### failed\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### input\_files
 
-Signature:
-
-```
-array
-  string
-```
+Type Signature: `array<string>`
 
 ##### metadata
 
-Signature:
-
-```
-map
-  any
-```
+Type Signature: `map<any>`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### object
 
-Signature:
-```
-enum
-  batch
-```
+Type Signature: `'batch'`
 
 ##### output\_file
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### started\_at
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### status
 
-Signature:
+Type Signature:
 ```
 enum
-  QUEUED
-  RUNNING
-  SUCCESS
-  FAILED
-  TIMEOUT_EXCEEDED
-  CANCELLATION_REQUESTED
-  CANCELLED
+  'QUEUED'
+  'RUNNING'
+  'SUCCESS'
+  'FAILED'
+  'TIMEOUT_EXCEEDED'
+  'CANCELLATION_REQUESTED'
+  'CANCELLED'
 ```
 
 ##### succeeded\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### total\_requests
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 </details>

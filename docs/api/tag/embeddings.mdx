@@ -23,24 +23,13 @@ Embeddings
 
 Text to embed.
 
-Signature:
-
-```
-union
-  string
-  array
-    string
-```
+Type Signature: `string | array<string>`
 
 ##### model
 
 ID of the model to use.
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
@@ -56,12 +45,7 @@ Successful Response
 
 ##### data
 
-Signature:
-
-```
-array
-  EmbeddingResponseData
-```
+Type Signature: `array<EmbeddingResponseData>`
 
 <details open>
 
@@ -69,62 +53,33 @@ array
 
 ##### embedding
 
-Signature:
-
-```
-array
-  number
-```
+Type Signature: `array<number>`
 
 ##### index
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### object
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
 ##### id
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### model
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### object
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### usage
 
-Signature:
-
-```
-UsageInfo
-```
+Type Signature: `UsageInfo`
 
 <details open>
 
@@ -132,27 +87,15 @@ UsageInfo
 
 ##### completion\_tokens
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### prompt\_tokens
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 ##### total\_tokens
 
-Signature:
-
-```
-integer
-```
+Type Signature: `integer`
 
 </details>
 
@@ -168,11 +111,7 @@ Validation Error
 
 ##### HttpMeta
 
-Signature:
-
-```
-HTTPMetadata
-```
+Type Signature: `HTTPMetadata`
 
 <details open>
 
@@ -182,32 +121,19 @@ HTTPMetadata
 
 Raw HTTP request; suitable for debugging
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 ##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
-Signature:
-
-```
-any
-```
+Type Signature: `any`
 
 </details>
 
 ##### detail
 
-Signature:
-
-```
-array
-  ValidationError
-```
+Type Signature: `array<ValidationError>`
 
 <details open>
 
@@ -215,30 +141,15 @@ array
 
 ##### loc
 
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
+Type Signature: `array<string | integer>`
 
 ##### msg
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 ##### type
 
-Signature:
-
-```
-string
-```
+Type Signature: `string`
 
 </details>
 
