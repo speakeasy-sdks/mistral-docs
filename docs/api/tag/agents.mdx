@@ -33,25 +33,25 @@ Agents Completion
 
 The ID of the agent to use for this completion.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### frequency\_penalty
 
 frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### max\_tokens
 
 The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### messages
 
 The prompt(s) to generate completions for, encoded as a list of dict with role and content.
 
-Type Signature:
+_Type Signature:_
 ```
 array
   union
@@ -67,7 +67,7 @@ array
 
 ##### content
 
-Type Signature: `string | array<TextChunk>`
+_Type Signature:_ `string | array<TextChunk>`
 
 <details open>
 
@@ -75,17 +75,17 @@ Type Signature: `string | array<TextChunk>`
 
 ##### text
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'text'`
+_Type Signature:_ `'text'`
 
 </details>
 
 ##### role
 
-Type Signature: `'system'`
+_Type Signature:_ `'system'`
 
 </details>
 
@@ -95,7 +95,7 @@ Type Signature: `'system'`
 
 ##### content
 
-Type Signature:
+_Type Signature:_
 ```
 union
   string
@@ -113,11 +113,11 @@ union
 
 ##### text
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'text'`
+_Type Signature:_ `'text'`
 
 </details>
 
@@ -127,7 +127,7 @@ Type Signature: `'text'`
 
 ##### image\_url
 
-Type Signature: `ImageURL | string`
+_Type Signature:_ `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL" title="ImageURL">
@@ -137,7 +137,7 @@ Type Signature: `ImageURL | string`
 
 ##### type
 
-Type Signature: `'image_url'`
+_Type Signature:_ `'image_url'`
 
 </details>
 
@@ -149,15 +149,15 @@ Type Signature: `'image_url'`
 
 The filename of the document
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### document\_url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'document_url'`
+_Type Signature:_ `'document_url'`
 
 </details>
 
@@ -167,17 +167,17 @@ Type Signature: `'document_url'`
 
 ##### reference\_ids
 
-Type Signature: `array<integer>`
+_Type Signature:_ `array<integer>`
 
 ##### type
 
-Type Signature: `'reference'`
+_Type Signature:_ `'reference'`
 
 </details>
 
 ##### role
 
-Type Signature: `'user'`
+_Type Signature:_ `'user'`
 
 </details>
 
@@ -187,7 +187,7 @@ Type Signature: `'user'`
 
 ##### content
 
-Type Signature:
+_Type Signature:_
 ```
 union
   string
@@ -205,11 +205,11 @@ union
 
 ##### text
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'text'`
+_Type Signature:_ `'text'`
 
 </details>
 
@@ -219,7 +219,7 @@ Type Signature: `'text'`
 
 ##### image\_url
 
-Type Signature: `ImageURL | string`
+_Type Signature:_ `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL" title="ImageURL">
@@ -229,7 +229,7 @@ Type Signature: `ImageURL | string`
 
 ##### type
 
-Type Signature: `'image_url'`
+_Type Signature:_ `'image_url'`
 
 </details>
 
@@ -241,15 +241,15 @@ Type Signature: `'image_url'`
 
 The filename of the document
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### document\_url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'document_url'`
+_Type Signature:_ `'document_url'`
 
 </details>
 
@@ -259,11 +259,11 @@ Type Signature: `'document_url'`
 
 ##### reference\_ids
 
-Type Signature: `array<integer>`
+_Type Signature:_ `array<integer>`
 
 ##### type
 
-Type Signature: `'reference'`
+_Type Signature:_ `'reference'`
 
 </details>
 
@@ -271,15 +271,15 @@ Type Signature: `'reference'`
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### role
 
-Type Signature: `'assistant'`
+_Type Signature:_ `'assistant'`
 
 ##### tool\_calls
 
-Type Signature: `array<ToolCall>`
+_Type Signature:_ `array<ToolCall>`
 
 <details open>
 
@@ -287,7 +287,7 @@ Type Signature: `array<ToolCall>`
 
 ##### function
 
-Type Signature: `FunctionCall`
+_Type Signature:_ `FunctionCall`
 
 <p>
   <SideBarCta cta="View FunctionCall" title="FunctionCall">
@@ -297,15 +297,15 @@ Type Signature: `FunctionCall`
 
 ##### id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### index
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### type
 
-Type Signature: `'function'`
+_Type Signature:_ `'function'`
 
 </details>
 
@@ -317,7 +317,7 @@ Type Signature: `'function'`
 
 ##### content
 
-Type Signature:
+_Type Signature:_
 ```
 union
   string
@@ -335,11 +335,11 @@ union
 
 ##### text
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'text'`
+_Type Signature:_ `'text'`
 
 </details>
 
@@ -349,7 +349,7 @@ Type Signature: `'text'`
 
 ##### image\_url
 
-Type Signature: `ImageURL | string`
+_Type Signature:_ `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL" title="ImageURL">
@@ -359,7 +359,7 @@ Type Signature: `ImageURL | string`
 
 ##### type
 
-Type Signature: `'image_url'`
+_Type Signature:_ `'image_url'`
 
 </details>
 
@@ -371,15 +371,15 @@ Type Signature: `'image_url'`
 
 The filename of the document
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### document\_url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'document_url'`
+_Type Signature:_ `'document_url'`
 
 </details>
 
@@ -389,25 +389,25 @@ Type Signature: `'document_url'`
 
 ##### reference\_ids
 
-Type Signature: `array<integer>`
+_Type Signature:_ `array<integer>`
 
 ##### type
 
-Type Signature: `'reference'`
+_Type Signature:_ `'reference'`
 
 </details>
 
 ##### name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### role
 
-Type Signature: `'tool'`
+_Type Signature:_ `'tool'`
 
 ##### tool\_call\_id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
@@ -415,15 +415,15 @@ Type Signature: `string`
 
 Number of completions to return for each request, input tokens are only billed once.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### parallel\_tool\_calls
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### prediction
 
-Type Signature: `Prediction`
+_Type Signature:_ `Prediction`
 
 <details open>
 
@@ -431,11 +431,11 @@ Type Signature: `Prediction`
 
 ##### content
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
@@ -443,17 +443,17 @@ Type Signature: `string`
 
 presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### random\_seed
 
 The seed to use for random sampling. If set, different calls will generate deterministic results.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### response\_format
 
-Type Signature: `ResponseFormat`
+_Type Signature:_ `ResponseFormat`
 
 <details open>
 
@@ -461,7 +461,7 @@ Type Signature: `ResponseFormat`
 
 ##### json\_schema
 
-Type Signature: `JsonSchema`
+_Type Signature:_ `JsonSchema`
 
 <details open>
 
@@ -469,25 +469,25 @@ Type Signature: `JsonSchema`
 
 ##### description
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### schema\_definition
 
-Type Signature: `map<any>`
+_Type Signature:_ `map<any>`
 
 ##### strict
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 </details>
 
 ##### type
 
-Type Signature: `'text' | 'json_object' | 'json_schema'`
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
 
 </details>
 
@@ -495,17 +495,17 @@ Type Signature: `'text' | 'json_object' | 'json_schema'`
 
 Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
 
-Type Signature: `string | array<string>`
+_Type Signature:_ `string | array<string>`
 
 ##### stream
 
 Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### tool\_choice
 
-Type Signature: `ToolChoice | `
+_Type Signature:_ `ToolChoice | `
 
 <details open>
 
@@ -515,7 +515,7 @@ Type Signature: `ToolChoice | `
 
 this restriction of `Function` is used to select a specific function to call
 
-Type Signature: `FunctionName`
+_Type Signature:_ `FunctionName`
 
 <details open>
 
@@ -523,19 +523,19 @@ Type Signature: `FunctionName`
 
 ##### name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### type
 
-Type Signature: `'function'`
+_Type Signature:_ `'function'`
 
 </details>
 
 ##### tools
 
-Type Signature: `array<Tool>`
+_Type Signature:_ `array<Tool>`
 
 <details open>
 
@@ -543,7 +543,7 @@ Type Signature: `array<Tool>`
 
 ##### function
 
-Type Signature: `Function`
+_Type Signature:_ `Function`
 
 <details open>
 
@@ -551,25 +551,25 @@ Type Signature: `Function`
 
 ##### description
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### parameters
 
-Type Signature: `map<any>`
+_Type Signature:_ `map<any>`
 
 ##### strict
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 </details>
 
 ##### type
 
-Type Signature: `'function'`
+_Type Signature:_ `'function'`
 
 </details>
 
@@ -587,7 +587,7 @@ Successful Response
 
 ##### choices
 
-Type Signature: `array<ChatCompletionChoice>`
+_Type Signature:_ `array<ChatCompletionChoice>`
 
 <details open>
 
@@ -595,15 +595,15 @@ Type Signature: `array<ChatCompletionChoice>`
 
 ##### finish\_reason
 
-Type Signature: `'stop' | 'length' | 'model_length' | 'error' | 'tool_calls'`
+_Type Signature:_ `'stop' | 'length' | 'model_length' | 'error' | 'tool_calls'`
 
 ##### index
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### message
 
-Type Signature: `AssistantMessage`
+_Type Signature:_ `AssistantMessage`
 
 <details open>
 
@@ -611,7 +611,7 @@ Type Signature: `AssistantMessage`
 
 ##### content
 
-Type Signature:
+_Type Signature:_
 ```
 union
   string
@@ -651,15 +651,15 @@ union
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### role
 
-Type Signature: `'assistant'`
+_Type Signature:_ `'assistant'`
 
 ##### tool\_calls
 
-Type Signature: `array<ToolCall>`
+_Type Signature:_ `array<ToolCall>`
 
 <p>
   <SideBarCta cta="View ToolCall" title="ToolCall">
@@ -673,23 +673,23 @@ Type Signature: `array<ToolCall>`
 
 ##### created
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### model
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### object
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### usage
 
-Type Signature: `UsageInfo`
+_Type Signature:_ `UsageInfo`
 
 <details open>
 
@@ -697,15 +697,15 @@ Type Signature: `UsageInfo`
 
 ##### completion\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### prompt\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### total\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
@@ -721,7 +721,7 @@ Validation Error
 
 ##### HttpMeta
 
-Type Signature: `HTTPMetadata`
+_Type Signature:_ `HTTPMetadata`
 
 <details open>
 
@@ -731,19 +731,19 @@ Type Signature: `HTTPMetadata`
 
 Raw HTTP request; suitable for debugging
 
-Type Signature: `any`
+_Type Signature:_ `any`
 
 ##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
-Type Signature: `any`
+_Type Signature:_ `any`
 
 </details>
 
 ##### detail
 
-Type Signature: `array<ValidationError>`
+_Type Signature:_ `array<ValidationError>`
 
 <details open>
 
@@ -751,15 +751,15 @@ Type Signature: `array<ValidationError>`
 
 ##### loc
 
-Type Signature: `array<string | integer>`
+_Type Signature:_ `array<string | integer>`
 
 ##### msg
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 

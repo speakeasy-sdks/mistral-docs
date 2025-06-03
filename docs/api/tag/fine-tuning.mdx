@@ -31,7 +31,7 @@ OK
 
 ##### data
 
-Type Signature: `array<CompletionJobOut | ClassifierJobOut>`
+_Type Signature:_ `array<CompletionJobOut | ClassifierJobOut>`
 
 <details open>
 
@@ -39,23 +39,23 @@ Type Signature: `array<CompletionJobOut | ClassifierJobOut>`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### fine\_tuned\_model
 
 The name of the fine-tuned model that is being created. The value will be `null` if the fine-tuning job is still running.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `CompletionTrainingParameters`
+_Type Signature:_ `CompletionTrainingParameters`
 
 <details open>
 
@@ -63,31 +63,31 @@ Type Signature: `CompletionTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### fim\_ratio
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
@@ -95,13 +95,13 @@ Type Signature: `number`
 
 The ID of the job.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
 A list of integrations enabled for your fine-tuning job.
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -111,35 +111,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'completion'`
+_Type Signature:_ `'completion'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -147,37 +147,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -193,17 +193,17 @@ enum
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### repositories
 
 A list of integrations enabled for your fine-tuning job.
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -213,31 +213,31 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -256,25 +256,25 @@ enum
 
 Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
 Total number of tokens trained.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
 A list containing the IDs of uploaded files that contain training data.
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
 A list containing the IDs of uploaded files that contain validation data.
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
@@ -284,23 +284,23 @@ Type Signature: `array<string>`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### fine\_tuned\_model
 
 The name of the fine-tuned model that is being created. The value will be `null` if the fine-tuning job is still running.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `ClassifierTrainingParameters`
+_Type Signature:_ `ClassifierTrainingParameters`
 
 <details open>
 
@@ -308,27 +308,27 @@ Type Signature: `ClassifierTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
@@ -336,13 +336,13 @@ Type Signature: `number`
 
 The ID of the job.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
 A list of integrations enabled for your fine-tuning job.
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -352,35 +352,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'classifier'`
+_Type Signature:_ `'classifier'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -388,37 +388,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -434,15 +434,15 @@ enum
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -461,35 +461,35 @@ enum
 
 Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
 Total number of tokens trained.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
 A list containing the IDs of uploaded files that contain training data.
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
 A list containing the IDs of uploaded files that contain validation data.
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
 ##### object
 
-Type Signature: `'list'`
+_Type Signature:_ `'list'`
 
 ##### total
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
@@ -521,11 +521,11 @@ Create a new fine-tuning job, it will be queued for processing.
 
 This field will be required in a future release.
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### classifier\_targets
 
-Type Signature: `array<ClassifierTargetIn>`
+_Type Signature:_ `array<ClassifierTargetIn>`
 
 <details open>
 
@@ -533,25 +533,25 @@ Type Signature: `array<ClassifierTargetIn>`
 
 ##### labels
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### loss\_function
 
-Type Signature: `'single_class' | 'multi_class'`
+_Type Signature:_ `'single_class' | 'multi_class'`
 
 ##### name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### weight
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### hyperparameters
 
-Type Signature:
+_Type Signature:_
 ```
 union
   CompletionTrainingParametersIn
@@ -564,39 +564,39 @@ union
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### fim\_ratio
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
 A parameter describing how much to adjust the pre-trained model's weights in response to the estimated error each time the weights are updated during the fine-tuning process.
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
 The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
 (Advanced Usage) A parameter that specifies the percentage of the total training steps at which the learning rate warm-up phase ends. During this phase, the learning rate gradually increases from a small value to the initial learning rate, helping to stabilize the training process and improve convergence. Similar to `pct_start` in [mistral-finetune](https://github.com/mistralai/mistral-finetune)
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
 (Advanced Usage) Weight decay adds a term to the loss function that is proportional to the sum of the squared weights. This term reduces the magnitude of the weights and prevents them from growing too large.
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
@@ -606,35 +606,35 @@ Type Signature: `number`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
 A parameter describing how much to adjust the pre-trained model's weights in response to the estimated error each time the weights are updated during the fine-tuning process.
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
 The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
 (Advanced Usage) A parameter that specifies the percentage of the total training steps at which the learning rate warm-up phase ends. During this phase, the learning rate gradually increases from a small value to the initial learning rate, helping to stabilize the training process and improve convergence. Similar to `pct_start` in [mistral-finetune](https://github.com/mistralai/mistral-finetune)
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
 (Advanced Usage) Weight decay adds a term to the loss function that is proportional to the sum of the squared weights. This term reduces the magnitude of the weights and prevents them from growing too large.
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
@@ -642,7 +642,7 @@ Type Signature: `number`
 
 A list of integrations to enable for your fine-tuning job.
 
-Type Signature: `array<WandbIntegration>`
+_Type Signature:_ `array<WandbIntegration>`
 
 <details open>
 
@@ -652,41 +652,41 @@ Type Signature: `array<WandbIntegration>`
 
 The WandB API key to use for authentication.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### name
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 </details>
 
 ##### invalid\_sample\_skip\_percentage
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### job\_type
 
-Type Signature: `'completion' | 'classifier'`
+_Type Signature:_ `'completion' | 'classifier'`
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -702,7 +702,7 @@ enum
 
 A list of integrations to enable for your fine-tuning job.
 
-Type Signature: `array<WandbIntegration>`
+_Type Signature:_ `array<WandbIntegration>`
 
 <details open>
 
@@ -712,27 +712,27 @@ Type Signature: `array<WandbIntegration>`
 
 The WandB API key to use for authentication.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### name
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 </details>
 
@@ -740,11 +740,11 @@ Type Signature: `'wandb'`
 
 A string that will be added to your fine-tuning model name. For example, a suffix of "my-great-model" would produce a model name like `ft:open-mistral-7b:my-great-model:xxx...`
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### training\_files
 
-Type Signature: `array<TrainingFile>`
+_Type Signature:_ `array<TrainingFile>`
 
 <details open>
 
@@ -752,11 +752,11 @@ Type Signature: `array<TrainingFile>`
 
 ##### file\_id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### weight
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
@@ -764,7 +764,7 @@ Type Signature: `number`
 
 A list containing the IDs of uploaded files that contain validation data. If you provide these files, the data is used to generate validation metrics periodically during fine-tuning. These metrics can be viewed in `checkpoints` when getting the status of a running fine-tuning job. The same data should not be present in both train and validation files.
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
@@ -776,7 +776,7 @@ OK
 
 OK
 
-Type Signature: `CompletionJobOut | ClassifierJobOut | LegacyJobMetadataOut`
+_Type Signature:_ `CompletionJobOut | ClassifierJobOut | LegacyJobMetadataOut`
 
 <details open>
 
@@ -784,23 +784,23 @@ Type Signature: `CompletionJobOut | ClassifierJobOut | LegacyJobMetadataOut`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### fine\_tuned\_model
 
 The name of the fine-tuned model that is being created. The value will be `null` if the fine-tuning job is still running.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `CompletionTrainingParameters`
+_Type Signature:_ `CompletionTrainingParameters`
 
 <details open>
 
@@ -808,31 +808,31 @@ Type Signature: `CompletionTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### fim\_ratio
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
@@ -840,13 +840,13 @@ Type Signature: `number`
 
 The ID of the job.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
 A list of integrations enabled for your fine-tuning job.
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -856,35 +856,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'completion'`
+_Type Signature:_ `'completion'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -892,37 +892,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -938,17 +938,17 @@ enum
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### repositories
 
 A list of integrations enabled for your fine-tuning job.
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -958,31 +958,31 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -1001,25 +1001,25 @@ enum
 
 Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
 Total number of tokens trained.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
 A list containing the IDs of uploaded files that contain training data.
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
 A list containing the IDs of uploaded files that contain validation data.
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
@@ -1029,23 +1029,23 @@ Type Signature: `array<string>`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### fine\_tuned\_model
 
 The name of the fine-tuned model that is being created. The value will be `null` if the fine-tuning job is still running.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `ClassifierTrainingParameters`
+_Type Signature:_ `ClassifierTrainingParameters`
 
 <details open>
 
@@ -1053,27 +1053,27 @@ Type Signature: `ClassifierTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
@@ -1081,13 +1081,13 @@ Type Signature: `number`
 
 The ID of the job.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
 A list of integrations enabled for your fine-tuning job.
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -1097,35 +1097,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'classifier'`
+_Type Signature:_ `'classifier'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -1133,37 +1133,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -1179,15 +1179,15 @@ enum
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -1206,25 +1206,25 @@ enum
 
 Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
 Total number of tokens trained.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
 A list containing the IDs of uploaded files that contain training data.
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
 A list containing the IDs of uploaded files that contain validation data.
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
@@ -1236,65 +1236,65 @@ Type Signature: `array<string>`
 
 The cost of the fine-tuning job.
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
 The currency used for the fine-tuning job cost.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
 The total number of tokens in the training dataset.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### deprecated
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### details
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### epochs
 
 The number of complete passes through the entire training dataset.
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
 The approximated time (in seconds) for the fine-tuning process to complete.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job.metadata'`
+_Type Signature:_ `'job.metadata'`
 
 ##### train\_tokens
 
 The total number of tokens used during the fine-tuning process.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
 The number of tokens consumed by one training step.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
 The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
@@ -1320,7 +1320,7 @@ OK
 
 OK
 
-Type Signature: `CompletionDetailedJobOut | ClassifierDetailedJobOut`
+_Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
 
 <details open>
 
@@ -1328,11 +1328,11 @@ Type Signature: `CompletionDetailedJobOut | ClassifierDetailedJobOut`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### checkpoints
 
-Type Signature: `array<CheckpointOut>`
+_Type Signature:_ `array<CheckpointOut>`
 
 <details open>
 
@@ -1342,13 +1342,13 @@ Type Signature: `array<CheckpointOut>`
 
 The UNIX timestamp (in seconds) for when the checkpoint was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### metrics
 
 Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
 
-Type Signature: `MetricOut`
+_Type Signature:_ `MetricOut`
 
 <p>
   <SideBarCta cta="View MetricOut" title="MetricOut">
@@ -1360,19 +1360,19 @@ Type Signature: `MetricOut`
 
 The step number that the checkpoint was created at.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### created\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
-Type Signature: `array<EventOut>`
+_Type Signature:_ `array<EventOut>`
 
 <details open>
 
@@ -1382,27 +1382,27 @@ Type Signature: `array<EventOut>`
 
 The UNIX timestamp (in seconds) of the event.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### data
 
-Type Signature: `map<any>`
+_Type Signature:_ `map<any>`
 
 ##### name
 
 The name of the event.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### fine\_tuned\_model
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `CompletionTrainingParameters`
+_Type Signature:_ `CompletionTrainingParameters`
 
 <details open>
 
@@ -1410,41 +1410,41 @@ Type Signature: `CompletionTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### fim\_ratio
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -1454,35 +1454,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'completion'`
+_Type Signature:_ `'completion'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -1490,37 +1490,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -1534,15 +1534,15 @@ enum
 
 ##### modified\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### repositories
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -1552,31 +1552,31 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -1593,19 +1593,19 @@ enum
 
 ##### suffix
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
@@ -1615,11 +1615,11 @@ Type Signature: `array<string>`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### checkpoints
 
-Type Signature: `array<CheckpointOut>`
+_Type Signature:_ `array<CheckpointOut>`
 
 <details open>
 
@@ -1629,13 +1629,13 @@ Type Signature: `array<CheckpointOut>`
 
 The UNIX timestamp (in seconds) for when the checkpoint was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### metrics
 
 Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
 
-Type Signature: `MetricOut`
+_Type Signature:_ `MetricOut`
 
 <p>
   <SideBarCta cta="View MetricOut" title="MetricOut">
@@ -1647,13 +1647,13 @@ Type Signature: `MetricOut`
 
 The step number that the checkpoint was created at.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### classifier\_targets
 
-Type Signature: `array<ClassifierTargetOut>`
+_Type Signature:_ `array<ClassifierTargetOut>`
 
 <details open>
 
@@ -1661,31 +1661,31 @@ Type Signature: `array<ClassifierTargetOut>`
 
 ##### labels
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### loss\_function
 
-Type Signature: `'single_class' | 'multi_class'`
+_Type Signature:_ `'single_class' | 'multi_class'`
 
 ##### name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### weight
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### created\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
-Type Signature: `array<EventOut>`
+_Type Signature:_ `array<EventOut>`
 
 <details open>
 
@@ -1695,27 +1695,27 @@ Type Signature: `array<EventOut>`
 
 The UNIX timestamp (in seconds) of the event.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### data
 
-Type Signature: `map<any>`
+_Type Signature:_ `map<any>`
 
 ##### name
 
 The name of the event.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### fine\_tuned\_model
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `ClassifierTrainingParameters`
+_Type Signature:_ `ClassifierTrainingParameters`
 
 <details open>
 
@@ -1723,37 +1723,37 @@ Type Signature: `ClassifierTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -1763,35 +1763,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'classifier'`
+_Type Signature:_ `'classifier'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -1799,37 +1799,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -1843,15 +1843,15 @@ enum
 
 ##### modified\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -1868,19 +1868,19 @@ enum
 
 ##### suffix
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
@@ -1906,7 +1906,7 @@ OK
 
 OK
 
-Type Signature: `CompletionDetailedJobOut | ClassifierDetailedJobOut`
+_Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
 
 <details open>
 
@@ -1914,11 +1914,11 @@ Type Signature: `CompletionDetailedJobOut | ClassifierDetailedJobOut`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### checkpoints
 
-Type Signature: `array<CheckpointOut>`
+_Type Signature:_ `array<CheckpointOut>`
 
 <details open>
 
@@ -1928,13 +1928,13 @@ Type Signature: `array<CheckpointOut>`
 
 The UNIX timestamp (in seconds) for when the checkpoint was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### metrics
 
 Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
 
-Type Signature: `MetricOut`
+_Type Signature:_ `MetricOut`
 
 <p>
   <SideBarCta cta="View MetricOut" title="MetricOut">
@@ -1946,19 +1946,19 @@ Type Signature: `MetricOut`
 
 The step number that the checkpoint was created at.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### created\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
-Type Signature: `array<EventOut>`
+_Type Signature:_ `array<EventOut>`
 
 <details open>
 
@@ -1968,27 +1968,27 @@ Type Signature: `array<EventOut>`
 
 The UNIX timestamp (in seconds) of the event.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### data
 
-Type Signature: `map<any>`
+_Type Signature:_ `map<any>`
 
 ##### name
 
 The name of the event.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### fine\_tuned\_model
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `CompletionTrainingParameters`
+_Type Signature:_ `CompletionTrainingParameters`
 
 <details open>
 
@@ -1996,41 +1996,41 @@ Type Signature: `CompletionTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### fim\_ratio
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -2040,35 +2040,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'completion'`
+_Type Signature:_ `'completion'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -2076,37 +2076,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -2120,15 +2120,15 @@ enum
 
 ##### modified\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### repositories
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -2138,31 +2138,31 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -2179,19 +2179,19 @@ enum
 
 ##### suffix
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
@@ -2201,11 +2201,11 @@ Type Signature: `array<string>`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### checkpoints
 
-Type Signature: `array<CheckpointOut>`
+_Type Signature:_ `array<CheckpointOut>`
 
 <details open>
 
@@ -2215,13 +2215,13 @@ Type Signature: `array<CheckpointOut>`
 
 The UNIX timestamp (in seconds) for when the checkpoint was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### metrics
 
 Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
 
-Type Signature: `MetricOut`
+_Type Signature:_ `MetricOut`
 
 <p>
   <SideBarCta cta="View MetricOut" title="MetricOut">
@@ -2233,13 +2233,13 @@ Type Signature: `MetricOut`
 
 The step number that the checkpoint was created at.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### classifier\_targets
 
-Type Signature: `array<ClassifierTargetOut>`
+_Type Signature:_ `array<ClassifierTargetOut>`
 
 <details open>
 
@@ -2247,31 +2247,31 @@ Type Signature: `array<ClassifierTargetOut>`
 
 ##### labels
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### loss\_function
 
-Type Signature: `'single_class' | 'multi_class'`
+_Type Signature:_ `'single_class' | 'multi_class'`
 
 ##### name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### weight
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### created\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
-Type Signature: `array<EventOut>`
+_Type Signature:_ `array<EventOut>`
 
 <details open>
 
@@ -2281,27 +2281,27 @@ Type Signature: `array<EventOut>`
 
 The UNIX timestamp (in seconds) of the event.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### data
 
-Type Signature: `map<any>`
+_Type Signature:_ `map<any>`
 
 ##### name
 
 The name of the event.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### fine\_tuned\_model
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `ClassifierTrainingParameters`
+_Type Signature:_ `ClassifierTrainingParameters`
 
 <details open>
 
@@ -2309,37 +2309,37 @@ Type Signature: `ClassifierTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -2349,35 +2349,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'classifier'`
+_Type Signature:_ `'classifier'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -2385,37 +2385,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -2429,15 +2429,15 @@ enum
 
 ##### modified\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -2454,19 +2454,19 @@ enum
 
 ##### suffix
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
@@ -2490,7 +2490,7 @@ OK
 
 OK
 
-Type Signature: `CompletionDetailedJobOut | ClassifierDetailedJobOut`
+_Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
 
 <details open>
 
@@ -2498,11 +2498,11 @@ Type Signature: `CompletionDetailedJobOut | ClassifierDetailedJobOut`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### checkpoints
 
-Type Signature: `array<CheckpointOut>`
+_Type Signature:_ `array<CheckpointOut>`
 
 <details open>
 
@@ -2512,13 +2512,13 @@ Type Signature: `array<CheckpointOut>`
 
 The UNIX timestamp (in seconds) for when the checkpoint was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### metrics
 
 Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
 
-Type Signature: `MetricOut`
+_Type Signature:_ `MetricOut`
 
 <p>
   <SideBarCta cta="View MetricOut" title="MetricOut">
@@ -2530,19 +2530,19 @@ Type Signature: `MetricOut`
 
 The step number that the checkpoint was created at.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### created\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
-Type Signature: `array<EventOut>`
+_Type Signature:_ `array<EventOut>`
 
 <details open>
 
@@ -2552,27 +2552,27 @@ Type Signature: `array<EventOut>`
 
 The UNIX timestamp (in seconds) of the event.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### data
 
-Type Signature: `map<any>`
+_Type Signature:_ `map<any>`
 
 ##### name
 
 The name of the event.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### fine\_tuned\_model
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `CompletionTrainingParameters`
+_Type Signature:_ `CompletionTrainingParameters`
 
 <details open>
 
@@ -2580,41 +2580,41 @@ Type Signature: `CompletionTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### fim\_ratio
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -2624,35 +2624,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'completion'`
+_Type Signature:_ `'completion'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -2660,37 +2660,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -2704,15 +2704,15 @@ enum
 
 ##### modified\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### repositories
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -2722,31 +2722,31 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -2763,19 +2763,19 @@ enum
 
 ##### suffix
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>
 
@@ -2785,11 +2785,11 @@ Type Signature: `array<string>`
 
 ##### auto\_start
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### checkpoints
 
-Type Signature: `array<CheckpointOut>`
+_Type Signature:_ `array<CheckpointOut>`
 
 <details open>
 
@@ -2799,13 +2799,13 @@ Type Signature: `array<CheckpointOut>`
 
 The UNIX timestamp (in seconds) for when the checkpoint was created.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### metrics
 
 Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
 
-Type Signature: `MetricOut`
+_Type Signature:_ `MetricOut`
 
 <p>
   <SideBarCta cta="View MetricOut" title="MetricOut">
@@ -2817,13 +2817,13 @@ Type Signature: `MetricOut`
 
 The step number that the checkpoint was created at.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### classifier\_targets
 
-Type Signature: `array<ClassifierTargetOut>`
+_Type Signature:_ `array<ClassifierTargetOut>`
 
 <details open>
 
@@ -2831,31 +2831,31 @@ Type Signature: `array<ClassifierTargetOut>`
 
 ##### labels
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### loss\_function
 
-Type Signature: `'single_class' | 'multi_class'`
+_Type Signature:_ `'single_class' | 'multi_class'`
 
 ##### name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### weight
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### created\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### events
 
 Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
 
-Type Signature: `array<EventOut>`
+_Type Signature:_ `array<EventOut>`
 
 <details open>
 
@@ -2865,27 +2865,27 @@ Type Signature: `array<EventOut>`
 
 The UNIX timestamp (in seconds) of the event.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### data
 
-Type Signature: `map<any>`
+_Type Signature:_ `map<any>`
 
 ##### name
 
 The name of the event.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### fine\_tuned\_model
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### hyperparameters
 
-Type Signature: `ClassifierTrainingParameters`
+_Type Signature:_ `ClassifierTrainingParameters`
 
 <details open>
 
@@ -2893,37 +2893,37 @@ Type Signature: `ClassifierTrainingParameters`
 
 ##### epochs
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### learning\_rate
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### seq\_len
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_steps
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### warmup\_fraction
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### weight\_decay
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 </details>
 
 ##### id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### integrations
 
-Type Signature: `array<WandbIntegrationOut>`
+_Type Signature:_ `array<WandbIntegrationOut>`
 
 <details open>
 
@@ -2933,35 +2933,35 @@ Type Signature: `array<WandbIntegrationOut>`
 
 A display name to set for the run. If not set, will use the job ID as the name.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### project
 
 The name of the project that the new run will be created under.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### run\_name
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'wandb'`
+_Type Signature:_ `'wandb'`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### job\_type
 
-Type Signature: `'classifier'`
+_Type Signature:_ `'classifier'`
 
 ##### metadata
 
-Type Signature: `JobMetadataOut`
+_Type Signature:_ `JobMetadataOut`
 
 <details open>
 
@@ -2969,37 +2969,37 @@ Type Signature: `JobMetadataOut`
 
 ##### cost
 
-Type Signature: `number`
+_Type Signature:_ `number`
 
 ##### cost\_currency
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### data\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### estimated\_start\_time
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### expected\_duration\_seconds
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### train\_tokens\_per\_step
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
 ##### model
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'open-mistral-7b'
@@ -3013,15 +3013,15 @@ enum
 
 ##### modified\_at
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
-Type Signature: `'job'`
+_Type Signature:_ `'job'`
 
 ##### status
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'QUEUED'
@@ -3038,18 +3038,18 @@ enum
 
 ##### suffix
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### trained\_tokens
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### training\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 ##### validation\_files
 
-Type Signature: `array<string>`
+_Type Signature:_ `array<string>`
 
 </details>

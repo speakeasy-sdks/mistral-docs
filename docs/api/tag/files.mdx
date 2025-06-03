@@ -25,7 +25,7 @@ OK
 
 ##### data
 
-Type Signature: `array<FileSchema>`
+_Type Signature:_ `array<FileSchema>`
 
 <details open>
 
@@ -35,43 +35,43 @@ Type Signature: `array<FileSchema>`
 
 The size of the file, in bytes.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) of the event.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### filename
 
 The name of the uploaded file.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### id
 
 The unique identifier of the file.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### num\_lines
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
 The object type, which is always "file".
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### purpose
 
-Type Signature: `'fine-tune' | 'batch' | 'ocr'`
+_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
 
 ##### sample\_type
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'pretrain'
@@ -83,17 +83,17 @@ enum
 
 ##### source
 
-Type Signature: `'upload' | 'repository' | 'mistral'`
+_Type Signature:_ `'upload' | 'repository' | 'mistral'`
 
 </details>
 
 ##### object
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### total
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
@@ -127,7 +127,7 @@ The File object (not file name) to be uploaded.
  file=@path/to/your/file.jsonl
  ```
 
-Type Signature: `File`
+_Type Signature:_ `File`
 
 <details open>
 
@@ -135,17 +135,17 @@ Type Signature: `File`
 
 ##### content
 
-Type Signature: `binary`
+_Type Signature:_ `binary`
 
 ##### fileName
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### purpose
 
-Type Signature: `'fine-tune' | 'batch' | 'ocr'`
+_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
 
 </details>
 
@@ -163,43 +163,43 @@ OK
 
 The size of the file, in bytes.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) of the event.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### filename
 
 The name of the uploaded file.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### id
 
 The unique identifier of the file.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### num\_lines
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
 The object type, which is always "file".
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### purpose
 
-Type Signature: `'fine-tune' | 'batch' | 'ocr'`
+_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
 
 ##### sample\_type
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'pretrain'
@@ -211,7 +211,7 @@ enum
 
 ##### source
 
-Type Signature: `'upload' | 'repository' | 'mistral'`
+_Type Signature:_ `'upload' | 'repository' | 'mistral'`
 
 </details>
 
@@ -241,47 +241,47 @@ OK
 
 The size of the file, in bytes.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) of the event.
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### deleted
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### filename
 
 The name of the uploaded file.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### id
 
 The unique identifier of the file.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### num\_lines
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### object
 
 The object type, which is always "file".
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### purpose
 
-Type Signature: `'fine-tune' | 'batch' | 'ocr'`
+_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
 
 ##### sample\_type
 
-Type Signature:
+_Type Signature:_
 ```
 enum
   'pretrain'
@@ -293,7 +293,7 @@ enum
 
 ##### source
 
-Type Signature: `'upload' | 'repository' | 'mistral'`
+_Type Signature:_ `'upload' | 'repository' | 'mistral'`
 
 </details>
 
@@ -323,19 +323,19 @@ OK
 
 The deletion status.
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### id
 
 The ID of the deleted file.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### object
 
 The object type that was deleted
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
@@ -359,7 +359,7 @@ OK
 
 OK
 
-Type Signature: `binary`
+_Type Signature:_ `binary`
 
 ## GET /v1/files/\{file\_id\}/url
 
@@ -387,6 +387,6 @@ OK
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>

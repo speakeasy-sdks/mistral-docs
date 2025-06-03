@@ -21,7 +21,7 @@ OCR
 
 Document to run OCR on
 
-Type Signature: `DocumentURLChunk | ImageURLChunk`
+_Type Signature:_ `DocumentURLChunk | ImageURLChunk`
 
 <details open>
 
@@ -31,15 +31,15 @@ Type Signature: `DocumentURLChunk | ImageURLChunk`
 
 The filename of the document
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### document\_url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `'document_url'`
+_Type Signature:_ `'document_url'`
 
 </details>
 
@@ -49,7 +49,7 @@ Type Signature: `'document_url'`
 
 ##### image\_url
 
-Type Signature: `ImageURL | string`
+_Type Signature:_ `ImageURL | string`
 
 <details open>
 
@@ -57,51 +57,51 @@ Type Signature: `ImageURL | string`
 
 ##### detail
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### url
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### type
 
-Type Signature: `'image_url'`
+_Type Signature:_ `'image_url'`
 
 </details>
 
 ##### id
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### image\_limit
 
 Max images to extract
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### image\_min\_size
 
 Minimum height and width of image to extract
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### include\_image\_base64
 
 Include image URLs in response
 
-Type Signature: `boolean`
+_Type Signature:_ `boolean`
 
 ##### model
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### pages
 
 Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
 
-Type Signature: `array<integer>`
+_Type Signature:_ `array<integer>`
 
 </details>
 
@@ -119,13 +119,13 @@ Successful Response
 
 The model used to generate the OCR.
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### pages
 
 List of OCR info for pages.
 
-Type Signature: `array<OCRPageObject>`
+_Type Signature:_ `array<OCRPageObject>`
 
 <details open>
 
@@ -135,7 +135,7 @@ Type Signature: `array<OCRPageObject>`
 
 The dimensions of the PDF Page's screenshot image
 
-Type Signature: `OCRPageDimensions`
+_Type Signature:_ `OCRPageDimensions`
 
 <details open>
 
@@ -145,19 +145,19 @@ Type Signature: `OCRPageDimensions`
 
 Dots per inch of the page-image
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### height
 
 Height of the image in pixels
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### width
 
 Width of the image in pixels
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
@@ -165,7 +165,7 @@ Type Signature: `integer`
 
 List of all extracted images in the page
 
-Type Signature: `array<OCRImageObject>`
+_Type Signature:_ `array<OCRImageObject>`
 
 <details open>
 
@@ -175,37 +175,37 @@ Type Signature: `array<OCRImageObject>`
 
 X coordinate of bottom-right corner of the extracted image
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### bottom\_right\_y
 
 Y coordinate of bottom-right corner of the extracted image
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### id
 
 Image ID for extracted image in a page
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### image\_base64
 
 Base64 string of the extracted image
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### top\_left\_x
 
 X coordinate of top-left corner of the extracted image
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### top\_left\_y
 
 Y coordinate of top-left corner of the extracted image
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
@@ -213,19 +213,19 @@ Type Signature: `integer`
 
 The page index in a pdf document starting from 0
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### markdown
 
 The markdown string response of the page
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
 ##### usage\_info
 
-Type Signature: `OCRUsageInfo`
+_Type Signature:_ `OCRUsageInfo`
 
 <details open>
 
@@ -235,13 +235,13 @@ Type Signature: `OCRUsageInfo`
 
 Document size in bytes
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 ##### pages\_processed
 
 Number of pages processed
 
-Type Signature: `integer`
+_Type Signature:_ `integer`
 
 </details>
 
@@ -257,7 +257,7 @@ Validation Error
 
 ##### HttpMeta
 
-Type Signature: `HTTPMetadata`
+_Type Signature:_ `HTTPMetadata`
 
 <details open>
 
@@ -267,19 +267,19 @@ Type Signature: `HTTPMetadata`
 
 Raw HTTP request; suitable for debugging
 
-Type Signature: `any`
+_Type Signature:_ `any`
 
 ##### Response
 
 Raw HTTP response; suitable for custom response parsing
 
-Type Signature: `any`
+_Type Signature:_ `any`
 
 </details>
 
 ##### detail
 
-Type Signature: `array<ValidationError>`
+_Type Signature:_ `array<ValidationError>`
 
 <details open>
 
@@ -287,15 +287,15 @@ Type Signature: `array<ValidationError>`
 
 ##### loc
 
-Type Signature: `array<string | integer>`
+_Type Signature:_ `array<string | integer>`
 
 ##### msg
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 ##### type
 
-Type Signature: `string`
+_Type Signature:_ `string`
 
 </details>
 
