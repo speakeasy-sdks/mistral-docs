@@ -1,10 +1,13 @@
 ---
-sidebar_position: 2.1
+sidebar_position: 2.5
 sidebar_label: fine-tuning
 ---
 
-import { SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
+import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
+import EmbedMetricOut from "../../../src/components/speakeasy/embeds/MetricOut.mdx";
 
+
+<SideBar />
 
 # fine-tuning
 
@@ -57,7 +60,7 @@ Signature:
 integer
 ```
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -243,7 +246,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -251,7 +254,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -267,7 +270,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -436,7 +439,7 @@ Signature:
 integer
 ```
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -614,7 +617,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -622,7 +625,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -638,7 +641,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -1012,7 +1015,7 @@ enum
 
 </details>
 
-##### invalid\_sample_skip_percentage
+##### invalid\_sample\_skip\_percentage
 
 Signature:
 
@@ -1185,7 +1188,7 @@ Signature:
 integer
 ```
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -1371,7 +1374,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -1379,7 +1382,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -1395,7 +1398,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -1564,7 +1567,7 @@ Signature:
 integer
 ```
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -1742,7 +1745,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -1750,7 +1753,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -1766,7 +1769,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -1911,7 +1914,7 @@ Signature:
 number
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -1919,7 +1922,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -1943,7 +1946,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -1961,7 +1964,7 @@ integer
 
 </details>
 
-## GET /v1/fine\_tuning/jobs/\{job_id\}
+## GET /v1/fine\_tuning/jobs/\{job\_id\}
 
 Operation ID: jobs_api_routes_fine_tuning_get_fine_tuning_job
 
@@ -2031,11 +2034,9 @@ MetricOut
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View MetricOut" title="MetricOut">
+    <EmbedMetricOut />
+  </SideBarCta>
 </p>
 
 ##### step\_number
@@ -2096,7 +2097,7 @@ string
 
 </details>
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -2282,7 +2283,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -2290,7 +2291,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -2306,7 +2307,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -2497,11 +2498,9 @@ MetricOut
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View MetricOut" title="MetricOut">
+    <EmbedMetricOut />
+  </SideBarCta>
 </p>
 
 ##### step\_number
@@ -2611,7 +2610,7 @@ string
 
 </details>
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -2789,7 +2788,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -2797,7 +2796,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -2813,7 +2812,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -2906,7 +2905,7 @@ array
 
 </details>
 
-## POST /v1/fine\_tuning/jobs/\{job_id\}/cancel
+## POST /v1/fine\_tuning/jobs/\{job\_id\}/cancel
 
 Operation ID: jobs_api_routes_fine_tuning_cancel_fine_tuning_job
 
@@ -2976,11 +2975,9 @@ MetricOut
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View MetricOut" title="MetricOut">
+    <EmbedMetricOut />
+  </SideBarCta>
 </p>
 
 ##### step\_number
@@ -3041,7 +3038,7 @@ string
 
 </details>
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -3227,7 +3224,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -3235,7 +3232,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -3251,7 +3248,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -3442,11 +3439,9 @@ MetricOut
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View MetricOut" title="MetricOut">
+    <EmbedMetricOut />
+  </SideBarCta>
 </p>
 
 ##### step\_number
@@ -3556,7 +3551,7 @@ string
 
 </details>
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -3734,7 +3729,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -3742,7 +3737,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -3758,7 +3753,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -3851,7 +3846,7 @@ array
 
 </details>
 
-## POST /v1/fine\_tuning/jobs/\{job_id\}/start
+## POST /v1/fine\_tuning/jobs/\{job\_id\}/start
 
 Operation ID: jobs_api_routes_fine_tuning_start_fine_tuning_job
 
@@ -3919,11 +3914,9 @@ MetricOut
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View MetricOut" title="MetricOut">
+    <EmbedMetricOut />
+  </SideBarCta>
 </p>
 
 ##### step\_number
@@ -3984,7 +3977,7 @@ string
 
 </details>
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -4170,7 +4163,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -4178,7 +4171,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -4194,7 +4187,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 
@@ -4385,11 +4378,9 @@ MetricOut
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View MetricOut" title="MetricOut">
+    <EmbedMetricOut />
+  </SideBarCta>
 </p>
 
 ##### step\_number
@@ -4499,7 +4490,7 @@ string
 
 </details>
 
-##### fine\_tuned_model
+##### fine\_tuned\_model
 
 Signature:
 
@@ -4677,7 +4668,7 @@ Signature:
 integer
 ```
 
-##### estimated\_start_time
+##### estimated\_start\_time
 
 Signature:
 
@@ -4685,7 +4676,7 @@ Signature:
 integer
 ```
 
-##### expected\_duration_seconds
+##### expected\_duration\_seconds
 
 Signature:
 
@@ -4701,7 +4692,7 @@ Signature:
 integer
 ```
 
-##### train\_tokens_per_step
+##### train\_tokens\_per\_step
 
 Signature:
 

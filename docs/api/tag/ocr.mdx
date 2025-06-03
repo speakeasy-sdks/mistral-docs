@@ -1,9 +1,7 @@
 ---
-sidebar_position: 2.6
+sidebar_position: 2.7
 sidebar_label: ocr
 ---
-
-
 
 # ocr
 
@@ -121,7 +119,7 @@ Signature:
 integer
 ```
 
-##### image\_min_size
+##### image\_min\_size
 
 Signature:
 
@@ -129,7 +127,7 @@ Signature:
 integer
 ```
 
-##### include\_image_base64
+##### include\_image\_base64
 
 Signature:
 
@@ -238,7 +236,7 @@ array
 
 <summary>OCRImageObject Properties</summary>
 
-##### bottom\_right_x
+##### bottom\_right\_x
 
 Signature:
 
@@ -246,7 +244,7 @@ Signature:
 integer
 ```
 
-##### bottom\_right_y
+##### bottom\_right\_y
 
 Signature:
 
@@ -270,7 +268,7 @@ Signature:
 string
 ```
 
-##### top\_left_x
+##### top\_left\_x
 
 Signature:
 
@@ -278,7 +276,7 @@ Signature:
 integer
 ```
 
-##### top\_left_y
+##### top\_left\_y
 
 Signature:
 
@@ -318,7 +316,7 @@ OCRUsageInfo
 
 <summary>OCRUsageInfo Properties</summary>
 
-##### doc\_size_bytes
+##### doc\_size\_bytes
 
 Signature:
 
@@ -332,58 +330,6 @@ Signature:
 
 ```
 integer
-```
-
-</details>
-
-</details>
-
-#### 422 \(application/json\)
-
-Validation Error
-
-<details open>
-
-<summary>Response Body</summary>
-
-##### detail
-
-Signature:
-
-```
-array
-  ValidationError
-```
-
-<details open>
-
-<summary>ValidationError Properties</summary>
-
-##### loc
-
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
-
-##### msg
-
-Signature:
-
-```
-string
-```
-
-##### type
-
-Signature:
-
-```
-string
 ```
 
 </details>

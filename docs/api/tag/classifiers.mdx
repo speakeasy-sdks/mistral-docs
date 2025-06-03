@@ -1,10 +1,19 @@
 ---
-sidebar_position: 2.5
+sidebar_position: 2.2
 sidebar_label: classifiers
 ---
 
-import { SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
+import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
+import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
+import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
+import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
+import EmbedImageURLChunk from "../../../src/components/speakeasy/embeds/ImageURLChunk.mdx";
+import EmbedDocumentURLChunk from "../../../src/components/speakeasy/embeds/DocumentURLChunk.mdx";
+import EmbedReferenceChunk from "../../../src/components/speakeasy/embeds/ReferenceChunk.mdx";
+import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx";
 
+
+<SideBar />
 
 # classifiers
 
@@ -96,58 +105,6 @@ Signature:
 ```
 map
   number
-```
-
-</details>
-
-</details>
-
-#### 422 \(application/json\)
-
-Validation Error
-
-<details open>
-
-<summary>Response Body</summary>
-
-##### detail
-
-Signature:
-
-```
-array
-  ValidationError
-```
-
-<details open>
-
-<summary>ValidationError Properties</summary>
-
-##### loc
-
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
-
-##### msg
-
-Signature:
-
-```
-string
-```
-
-##### type
-
-Signature:
-
-```
-string
 ```
 
 </details>
@@ -290,11 +247,9 @@ union
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ImageURL" title="ImageURL">
+    <EmbedImageURL />
+  </SideBarCta>
 </p>
 
 ##### type
@@ -426,11 +381,9 @@ union
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ImageURL" title="ImageURL">
+    <EmbedImageURL />
+  </SideBarCta>
 </p>
 
 ##### type
@@ -534,11 +487,9 @@ FunctionCall
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View FunctionCall" title="FunctionCall">
+    <EmbedFunctionCall />
+  </SideBarCta>
 </p>
 
 ##### id
@@ -625,11 +576,9 @@ union
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ImageURL" title="ImageURL">
+    <EmbedImageURL />
+  </SideBarCta>
 </p>
 
 ##### type
@@ -711,7 +660,7 @@ enum
   tool
 ```
 
-##### tool\_call_id
+##### tool\_call\_id
 
 Signature:
 
@@ -786,58 +735,6 @@ Signature:
 ```
 map
   number
-```
-
-</details>
-
-</details>
-
-#### 422 \(application/json\)
-
-Validation Error
-
-<details open>
-
-<summary>Response Body</summary>
-
-##### detail
-
-Signature:
-
-```
-array
-  ValidationError
-```
-
-<details open>
-
-<summary>ValidationError Properties</summary>
-
-##### loc
-
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
-
-##### msg
-
-Signature:
-
-```
-string
-```
-
-##### type
-
-Signature:
-
-```
-string
 ```
 
 </details>
@@ -930,58 +827,6 @@ map
 
 </details>
 
-#### 422 \(application/json\)
-
-Validation Error
-
-<details open>
-
-<summary>Response Body</summary>
-
-##### detail
-
-Signature:
-
-```
-array
-  ValidationError
-```
-
-<details open>
-
-<summary>ValidationError Properties</summary>
-
-##### loc
-
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
-
-##### msg
-
-Signature:
-
-```
-string
-```
-
-##### type
-
-Signature:
-
-```
-string
-```
-
-</details>
-
-</details>
-
 ## POST /v1/chat/classifications
 
 Operation ID: chat_classifications_v1_chat_classifications_post
@@ -1038,11 +883,9 @@ union
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View TextChunk" title="TextChunk">
+    <EmbedTextChunk />
+  </SideBarCta>
 </p>
 
 ##### role
@@ -1075,35 +918,27 @@ union
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View TextChunk" title="TextChunk">
+    <EmbedTextChunk />
+  </SideBarCta>
 </p>
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ImageURLChunk" title="ImageURLChunk">
+    <EmbedImageURLChunk />
+  </SideBarCta>
 </p>
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View DocumentURLChunk" title="DocumentURLChunk">
+    <EmbedDocumentURLChunk />
+  </SideBarCta>
 </p>
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ReferenceChunk" title="ReferenceChunk">
+    <EmbedReferenceChunk />
+  </SideBarCta>
 </p>
 
 ##### role
@@ -1136,35 +971,27 @@ union
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View TextChunk" title="TextChunk">
+    <EmbedTextChunk />
+  </SideBarCta>
 </p>
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ImageURLChunk" title="ImageURLChunk">
+    <EmbedImageURLChunk />
+  </SideBarCta>
 </p>
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View DocumentURLChunk" title="DocumentURLChunk">
+    <EmbedDocumentURLChunk />
+  </SideBarCta>
 </p>
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ReferenceChunk" title="ReferenceChunk">
+    <EmbedReferenceChunk />
+  </SideBarCta>
 </p>
 
 ##### prefix
@@ -1193,11 +1020,9 @@ array
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ToolCall" title="ToolCall">
+    <EmbedToolCall />
+  </SideBarCta>
 </p>
 
 </details>
@@ -1222,35 +1047,27 @@ union
 ```
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View TextChunk" title="TextChunk">
+    <EmbedTextChunk />
+  </SideBarCta>
 </p>
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ImageURLChunk" title="ImageURLChunk">
+    <EmbedImageURLChunk />
+  </SideBarCta>
 </p>
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View DocumentURLChunk" title="DocumentURLChunk">
+    <EmbedDocumentURLChunk />
+  </SideBarCta>
 </p>
 
 <p>
-  <SideBar cta="View Nested Schema Placeholder" title="Nested Schema Placeholder">
-    # Nested Schema Placeholder
-
-This is a placeholder for a nested schema. It will be implemented soon.
-  </SideBar>
+  <SideBarCta cta="View ReferenceChunk" title="ReferenceChunk">
+    <EmbedReferenceChunk />
+  </SideBarCta>
 </p>
 
 ##### name
@@ -1269,7 +1086,7 @@ enum
   tool
 ```
 
-##### tool\_call_id
+##### tool\_call\_id
 
 Signature:
 
@@ -1338,58 +1155,6 @@ Signature:
 ```
 map
   number
-```
-
-</details>
-
-</details>
-
-#### 422 \(application/json\)
-
-Validation Error
-
-<details open>
-
-<summary>Response Body</summary>
-
-##### detail
-
-Signature:
-
-```
-array
-  ValidationError
-```
-
-<details open>
-
-<summary>ValidationError Properties</summary>
-
-##### loc
-
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
-
-##### msg
-
-Signature:
-
-```
-string
-```
-
-##### type
-
-Signature:
-
-```
-string
 ```
 
 </details>

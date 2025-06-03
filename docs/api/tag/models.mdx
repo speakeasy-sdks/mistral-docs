@@ -1,9 +1,7 @@
 ---
-sidebar_position: 2.7
+sidebar_position: 2.6
 sidebar_label: models
 ---
-
-
 
 # models
 
@@ -111,7 +109,7 @@ Signature:
 integer
 ```
 
-##### default\_model_temperature
+##### default\_model\_temperature
 
 Signature:
 
@@ -143,7 +141,7 @@ Signature:
 string
 ```
 
-##### max\_context_length
+##### max\_context\_length
 
 Signature:
 
@@ -268,7 +266,7 @@ Signature:
 integer
 ```
 
-##### default\_model_temperature
+##### default\_model\_temperature
 
 Signature:
 
@@ -308,7 +306,7 @@ Signature:
 string
 ```
 
-##### max\_context_length
+##### max\_context\_length
 
 Signature:
 
@@ -365,58 +363,6 @@ Signature:
 ```
 string
 ```
-
-</details>
-
-#### 422 \(application/json\)
-
-Validation Error
-
-<details open>
-
-<summary>Response Body</summary>
-
-##### detail
-
-Signature:
-
-```
-array
-  ValidationError
-```
-
-<details open>
-
-<summary>ValidationError Properties</summary>
-
-##### loc
-
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
-
-##### msg
-
-Signature:
-
-```
-string
-```
-
-##### type
-
-Signature:
-
-```
-string
-```
-
-</details>
 
 </details>
 
@@ -523,7 +469,7 @@ Signature:
 integer
 ```
 
-##### default\_model_temperature
+##### default\_model\_temperature
 
 Signature:
 
@@ -555,7 +501,7 @@ Signature:
 string
 ```
 
-##### max\_context_length
+##### max\_context\_length
 
 Signature:
 
@@ -680,7 +626,7 @@ Signature:
 integer
 ```
 
-##### default\_model_temperature
+##### default\_model\_temperature
 
 Signature:
 
@@ -720,7 +666,7 @@ Signature:
 string
 ```
 
-##### max\_context_length
+##### max\_context\_length
 
 Signature:
 
@@ -767,58 +713,6 @@ Signature:
 enum
   fine-tuned
 ```
-
-</details>
-
-#### 422 \(application/json\)
-
-Validation Error
-
-<details open>
-
-<summary>Response Body</summary>
-
-##### detail
-
-Signature:
-
-```
-array
-  ValidationError
-```
-
-<details open>
-
-<summary>ValidationError Properties</summary>
-
-##### loc
-
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
-
-##### msg
-
-Signature:
-
-```
-string
-```
-
-##### type
-
-Signature:
-
-```
-string
-```
-
-</details>
 
 </details>
 
@@ -872,59 +766,7 @@ string
 
 </details>
 
-#### 422 \(application/json\)
-
-Validation Error
-
-<details open>
-
-<summary>Response Body</summary>
-
-##### detail
-
-Signature:
-
-```
-array
-  ValidationError
-```
-
-<details open>
-
-<summary>ValidationError Properties</summary>
-
-##### loc
-
-Signature:
-
-```
-array
-  union
-    string
-    integer
-```
-
-##### msg
-
-Signature:
-
-```
-string
-```
-
-##### type
-
-Signature:
-
-```
-string
-```
-
-</details>
-
-</details>
-
-## PATCH /v1/fine\_tuning/models/\{model_id\}
+## PATCH /v1/fine\_tuning/models/\{model\_id\}
 
 Operation ID: jobs_api_routes_fine_tuning_update_fine_tuned_model
 
@@ -1083,7 +925,7 @@ Signature:
 string
 ```
 
-##### max\_context_length
+##### max\_context\_length
 
 Signature:
 
@@ -1289,7 +1131,7 @@ Signature:
 string
 ```
 
-##### max\_context_length
+##### max\_context\_length
 
 Signature:
 
@@ -1339,7 +1181,7 @@ string
 
 </details>
 
-## POST /v1/fine\_tuning/models/\{model_id\}/archive
+## POST /v1/fine\_tuning/models/\{model\_id\}/archive
 
 Operation ID: jobs_api_routes_fine_tuning_archive_fine_tuned_model
 
@@ -1389,7 +1231,7 @@ enum
 
 </details>
 
-## DELETE /v1/fine\_tuning/models/\{model_id\}/archive
+## DELETE /v1/fine\_tuning/models/\{model\_id\}/archive
 
 Operation ID: jobs_api_routes_fine_tuning_unarchive_fine_tuned_model
 
