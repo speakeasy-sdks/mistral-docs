@@ -19,6 +19,8 @@ OCR
 
 ##### document
 
+Document to run OCR on
+
 Signature:
 
 ```
@@ -32,6 +34,8 @@ union
 <summary>DocumentURLChunk Properties</summary>
 
 ##### document\_name
+
+The filename of the document
 
 Signature:
 
@@ -113,6 +117,8 @@ string
 
 ##### image\_limit
 
+Max images to extract
+
 Signature:
 
 ```
@@ -121,6 +127,8 @@ integer
 
 ##### image\_min\_size
 
+Minimum height and width of image to extract
+
 Signature:
 
 ```
@@ -128,6 +136,8 @@ integer
 ```
 
 ##### include\_image\_base64
+
+Include image URLs in response
 
 Signature:
 
@@ -144,6 +154,8 @@ string
 ```
 
 ##### pages
+
+Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
 
 Signature:
 
@@ -166,6 +178,8 @@ Successful Response
 
 ##### model
 
+The model used to generate the OCR.
+
 Signature:
 
 ```
@@ -173,6 +187,8 @@ string
 ```
 
 ##### pages
+
+List of OCR info for pages.
 
 Signature:
 
@@ -187,6 +203,8 @@ array
 
 ##### dimensions
 
+The dimensions of the PDF Page's screenshot image
+
 Signature:
 
 ```
@@ -199,6 +217,8 @@ OCRPageDimensions
 
 ##### dpi
 
+Dots per inch of the page-image
+
 Signature:
 
 ```
@@ -207,6 +227,8 @@ integer
 
 ##### height
 
+Height of the image in pixels
+
 Signature:
 
 ```
@@ -214,6 +236,8 @@ integer
 ```
 
 ##### width
+
+Width of the image in pixels
 
 Signature:
 
@@ -224,6 +248,8 @@ integer
 </details>
 
 ##### images
+
+List of all extracted images in the page
 
 Signature:
 
@@ -238,6 +264,8 @@ array
 
 ##### bottom\_right\_x
 
+X coordinate of bottom-right corner of the extracted image
+
 Signature:
 
 ```
@@ -245,6 +273,8 @@ integer
 ```
 
 ##### bottom\_right\_y
+
+Y coordinate of bottom-right corner of the extracted image
 
 Signature:
 
@@ -254,6 +284,8 @@ integer
 
 ##### id
 
+Image ID for extracted image in a page
+
 Signature:
 
 ```
@@ -261,6 +293,8 @@ string
 ```
 
 ##### image\_base64
+
+Base64 string of the extracted image
 
 Signature:
 
@@ -270,6 +304,8 @@ string
 
 ##### top\_left\_x
 
+X coordinate of top-left corner of the extracted image
+
 Signature:
 
 ```
@@ -277,6 +313,8 @@ integer
 ```
 
 ##### top\_left\_y
+
+Y coordinate of top-left corner of the extracted image
 
 Signature:
 
@@ -288,6 +326,8 @@ integer
 
 ##### index
 
+The page index in a pdf document starting from 0
+
 Signature:
 
 ```
@@ -295,6 +335,8 @@ integer
 ```
 
 ##### markdown
+
+The markdown string response of the page
 
 Signature:
 
@@ -318,6 +360,8 @@ OCRUsageInfo
 
 ##### doc\_size\_bytes
 
+Document size in bytes
+
 Signature:
 
 ```
@@ -325,6 +369,8 @@ integer
 ```
 
 ##### pages\_processed
+
+Number of pages processed
 
 Signature:
 
@@ -358,6 +404,8 @@ HTTPMetadata
 
 ##### Request
 
+Raw HTTP request; suitable for debugging
+
 Signature:
 
 ```
@@ -365,6 +413,8 @@ any
 ```
 
 ##### Response
+
+Raw HTTP response; suitable for custom response parsing
 
 Signature:
 

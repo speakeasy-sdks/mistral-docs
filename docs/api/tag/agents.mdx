@@ -31,6 +31,8 @@ Agents Completion
 
 ##### agent\_id
 
+The ID of the agent to use for this completion.
+
 Signature:
 
 ```
@@ -38,6 +40,8 @@ string
 ```
 
 ##### frequency\_penalty
+
+frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.
 
 Signature:
 
@@ -47,6 +51,8 @@ number
 
 ##### max\_tokens
 
+The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
+
 Signature:
 
 ```
@@ -54,6 +60,8 @@ integer
 ```
 
 ##### messages
+
+The prompt(s) to generate completions for, encoded as a list of dict with role and content.
 
 Signature:
 
@@ -190,6 +198,8 @@ enum
 
 ##### document\_name
 
+The filename of the document
+
 Signature:
 
 ```
@@ -324,6 +334,8 @@ enum
 
 ##### document\_name
 
+The filename of the document
+
 Signature:
 
 ```
@@ -372,6 +384,8 @@ enum
 </details>
 
 ##### prefix
+
+Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 Signature:
 
@@ -519,6 +533,8 @@ enum
 
 ##### document\_name
 
+The filename of the document
+
 Signature:
 
 ```
@@ -594,6 +610,8 @@ string
 
 ##### n
 
+Number of completions to return for each request, input tokens are only billed once.
+
 Signature:
 
 ```
@@ -640,6 +658,8 @@ string
 
 ##### presence\_penalty
 
+presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.
+
 Signature:
 
 ```
@@ -647,6 +667,8 @@ number
 ```
 
 ##### random\_seed
+
+The seed to use for random sampling. If set, different calls will generate deterministic results.
 
 Signature:
 
@@ -727,6 +749,8 @@ enum
 
 ##### stop
 
+Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
+
 Signature:
 
 ```
@@ -737,6 +761,8 @@ union
 ```
 
 ##### stream
+
+Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
 
 Signature:
 
@@ -759,6 +785,8 @@ union
 <summary>ToolChoice Properties</summary>
 
 ##### function
+
+this restriction of `Function` is used to select a specific function to call
 
 Signature:
 
@@ -958,6 +986,8 @@ union
 
 ##### prefix
 
+Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
+
 Signature:
 
 ```
@@ -1085,6 +1115,8 @@ HTTPMetadata
 
 ##### Request
 
+Raw HTTP request; suitable for debugging
+
 Signature:
 
 ```
@@ -1092,6 +1124,8 @@ any
 ```
 
 ##### Response
+
+Raw HTTP response; suitable for custom response parsing
 
 Signature:
 

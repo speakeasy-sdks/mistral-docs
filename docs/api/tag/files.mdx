@@ -38,6 +38,8 @@ array
 
 ##### bytes
 
+The size of the file, in bytes.
+
 Signature:
 
 ```
@@ -45,6 +47,8 @@ integer
 ```
 
 ##### created\_at
+
+The UNIX timestamp (in seconds) of the event.
 
 Signature:
 
@@ -54,6 +58,8 @@ integer
 
 ##### filename
 
+The name of the uploaded file.
+
 Signature:
 
 ```
@@ -61,6 +67,8 @@ string
 ```
 
 ##### id
+
+The unique identifier of the file.
 
 Signature:
 
@@ -77,6 +85,8 @@ integer
 ```
 
 ##### object
+
+The object type, which is always "file".
 
 Signature:
 
@@ -156,6 +166,16 @@ Please contact us if you need to increase these storage limits.
 
 ##### file
 
+The File object (not file name) to be uploaded.
+ To upload a file and specify a custom file name you should format your request as such:
+ ```bash
+ file=@path/to/your/file.jsonl;filename=custom_name.jsonl
+ ```
+ Otherwise, you can just keep the original file name:
+ ```bash
+ file=@path/to/your/file.jsonl
+ ```
+
 Signature:
 
 ```
@@ -208,6 +228,8 @@ OK
 
 ##### bytes
 
+The size of the file, in bytes.
+
 Signature:
 
 ```
@@ -215,6 +237,8 @@ integer
 ```
 
 ##### created\_at
+
+The UNIX timestamp (in seconds) of the event.
 
 Signature:
 
@@ -224,6 +248,8 @@ integer
 
 ##### filename
 
+The name of the uploaded file.
+
 Signature:
 
 ```
@@ -231,6 +257,8 @@ string
 ```
 
 ##### id
+
+The unique identifier of the file.
 
 Signature:
 
@@ -247,6 +275,8 @@ integer
 ```
 
 ##### object
+
+The object type, which is always "file".
 
 Signature:
 
@@ -312,6 +342,8 @@ OK
 
 ##### bytes
 
+The size of the file, in bytes.
+
 Signature:
 
 ```
@@ -319,6 +351,8 @@ integer
 ```
 
 ##### created\_at
+
+The UNIX timestamp (in seconds) of the event.
 
 Signature:
 
@@ -336,6 +370,8 @@ boolean
 
 ##### filename
 
+The name of the uploaded file.
+
 Signature:
 
 ```
@@ -343,6 +379,8 @@ string
 ```
 
 ##### id
+
+The unique identifier of the file.
 
 Signature:
 
@@ -359,6 +397,8 @@ integer
 ```
 
 ##### object
+
+The object type, which is always "file".
 
 Signature:
 
@@ -424,6 +464,8 @@ OK
 
 ##### deleted
 
+The deletion status.
+
 Signature:
 
 ```
@@ -432,6 +474,8 @@ boolean
 
 ##### id
 
+The ID of the deleted file.
+
 Signature:
 
 ```
@@ -439,6 +483,8 @@ string
 ```
 
 ##### object
+
+The object type that was deleted
 
 Signature:
 
@@ -463,6 +509,8 @@ Download a file
 ### Responses
 
 #### 200 \(application/octet-stream\)
+
+OK
 
 OK
 
