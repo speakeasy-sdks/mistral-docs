@@ -51,15 +51,7 @@ _Type Signature:_ `integer`
 
 The prompt(s) to generate completions for, encoded as a list of dict with role and content.
 
-_Type Signature:_
-```
-array
-  union
-    SystemMessage
-    UserMessage
-    AssistantMessage
-    ToolMessage
-```
+_Type Signature:_ `array<union<SystemMessage | UserMessage | AssistantMessage | ToolMessage>>`
 
 <details open>
 
@@ -67,7 +59,7 @@ array
 
 ##### content
 
-_Type Signature:_ `string | array<TextChunk>`
+_Type Signature:_ `union<string | array<TextChunk>>`
 
 <details open>
 
@@ -97,14 +89,10 @@ _Type Signature:_ `'system'`
 
 _Type Signature:_
 ```
-union
-  string
-  array
-    union
-      TextChunk
-      ImageURLChunk
-      DocumentURLChunk
-      ReferenceChunk
+union<
+ | string
+ | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
+>
 ```
 
 <details open>
@@ -127,7 +115,7 @@ _Type Signature:_ `'text'`
 
 ##### image\_url
 
-_Type Signature:_ `ImageURL | string`
+_Type Signature:_ `union<ImageURL | string>`
 
 <p>
   <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
@@ -189,14 +177,10 @@ _Type Signature:_ `'user'`
 
 _Type Signature:_
 ```
-union
-  string
-  array
-    union
-      TextChunk
-      ImageURLChunk
-      DocumentURLChunk
-      ReferenceChunk
+union<
+ | string
+ | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
+>
 ```
 
 <details open>
@@ -219,7 +203,7 @@ _Type Signature:_ `'text'`
 
 ##### image\_url
 
-_Type Signature:_ `ImageURL | string`
+_Type Signature:_ `union<ImageURL | string>`
 
 <p>
   <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
@@ -319,14 +303,10 @@ _Type Signature:_ `'function'`
 
 _Type Signature:_
 ```
-union
-  string
-  array
-    union
-      TextChunk
-      ImageURLChunk
-      DocumentURLChunk
-      ReferenceChunk
+union<
+ | string
+ | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
+>
 ```
 
 <details open>
@@ -349,7 +329,7 @@ _Type Signature:_ `'text'`
 
 ##### image\_url
 
-_Type Signature:_ `ImageURL | string`
+_Type Signature:_ `union<ImageURL | string>`
 
 <p>
   <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
@@ -495,7 +475,7 @@ _Type Signature:_ `'text' | 'json_object' | 'json_schema'`
 
 Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
 
-_Type Signature:_ `string | array<string>`
+_Type Signature:_ `union<string | array<string>>`
 
 #### stream
 
@@ -505,7 +485,7 @@ _Type Signature:_ `boolean`
 
 #### tool\_choice
 
-_Type Signature:_ `ToolChoice | `
+_Type Signature:_ `union<ToolChoice | enum<>>`
 
 <details open>
 
@@ -611,14 +591,10 @@ _Type Signature:_ `AssistantMessage`
 
 _Type Signature:_
 ```
-union
-  string
-  array
-    union
-      TextChunk
-      ImageURLChunk
-      DocumentURLChunk
-      ReferenceChunk
+union<
+ | string
+ | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
+>
 ```
 
 <p>
@@ -749,7 +725,7 @@ _Type Signature:_ `array<ValidationError>`
 
 ##### loc
 
-_Type Signature:_ `array<string | integer>`
+_Type Signature:_ `array<union<string | integer>>`
 
 ##### msg
 

@@ -29,7 +29,7 @@ OK
 
 #### data
 
-_Type Signature:_ `array<CompletionJobOut | ClassifierJobOut>`
+_Type Signature:_ `array<union<CompletionJobOut | ClassifierJobOut>>`
 
 <details open>
 
@@ -99,7 +99,7 @@ _Type Signature:_ `string`
 
 A list of integrations enabled for your fine-tuning job.
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -201,7 +201,7 @@ _Type Signature:_ `'job'`
 
 A list of integrations enabled for your fine-tuning job.
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -340,7 +340,7 @@ _Type Signature:_ `string`
 
 A list of integrations enabled for your fine-tuning job.
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -549,12 +549,7 @@ _Type Signature:_ `number`
 
 #### hyperparameters
 
-_Type Signature:_
-```
-union
-  CompletionTrainingParametersIn
-  ClassifierTrainingParametersIn
-```
+_Type Signature:_ `union<CompletionTrainingParametersIn | ClassifierTrainingParametersIn>`
 
 <details open>
 
@@ -640,7 +635,7 @@ _Type Signature:_ `number`
 
 A list of integrations to enable for your fine-tuning job.
 
-_Type Signature:_ `array<WandbIntegration>`
+_Type Signature:_ `array<union<WandbIntegration>>`
 
 <details open>
 
@@ -700,7 +695,7 @@ enum
 
 A list of integrations to enable for your fine-tuning job.
 
-_Type Signature:_ `array<WandbIntegration>`
+_Type Signature:_ `array<union<WandbIntegration>>`
 
 <details open>
 
@@ -772,7 +767,7 @@ OK
 
 OK
 
-_Type Signature:_ `CompletionJobOut | ClassifierJobOut | LegacyJobMetadataOut`
+_Type Signature:_ `union<union<CompletionJobOut | ClassifierJobOut> | LegacyJobMetadataOut>`
 
 <details open>
 
@@ -842,7 +837,7 @@ _Type Signature:_ `string`
 
 A list of integrations enabled for your fine-tuning job.
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -944,7 +939,7 @@ _Type Signature:_ `'job'`
 
 A list of integrations enabled for your fine-tuning job.
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -1083,7 +1078,7 @@ _Type Signature:_ `string`
 
 A list of integrations enabled for your fine-tuning job.
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -1314,7 +1309,7 @@ OK
 
 OK
 
-_Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
+_Type Signature:_ `union<CompletionDetailedJobOut | ClassifierDetailedJobOut>`
 
 <details open>
 
@@ -1438,7 +1433,7 @@ _Type Signature:_ `string`
 
 ##### integrations
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -1536,7 +1531,7 @@ _Type Signature:_ `'job'`
 
 ##### repositories
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -1747,7 +1742,7 @@ _Type Signature:_ `string`
 
 ##### integrations
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -1898,7 +1893,7 @@ OK
 
 OK
 
-_Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
+_Type Signature:_ `union<CompletionDetailedJobOut | ClassifierDetailedJobOut>`
 
 <details open>
 
@@ -2022,7 +2017,7 @@ _Type Signature:_ `string`
 
 ##### integrations
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -2120,7 +2115,7 @@ _Type Signature:_ `'job'`
 
 ##### repositories
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -2331,7 +2326,7 @@ _Type Signature:_ `string`
 
 ##### integrations
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -2480,7 +2475,7 @@ OK
 
 OK
 
-_Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
+_Type Signature:_ `union<CompletionDetailedJobOut | ClassifierDetailedJobOut>`
 
 <details open>
 
@@ -2604,7 +2599,7 @@ _Type Signature:_ `string`
 
 ##### integrations
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -2702,7 +2697,7 @@ _Type Signature:_ `'job'`
 
 ##### repositories
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
@@ -2913,7 +2908,7 @@ _Type Signature:_ `string`
 
 ##### integrations
 
-_Type Signature:_ `array<WandbIntegrationOut>`
+_Type Signature:_ `array<union<WandbIntegrationOut>>`
 
 <details open>
 
