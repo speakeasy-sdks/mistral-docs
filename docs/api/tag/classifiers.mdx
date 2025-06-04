@@ -33,7 +33,7 @@ Moderations
 
 Text to classify.
 
-_Type Signature:_ `union<string | array<string>>`
+_Type Signature:_ `string | array<string>`
 
 #### model
 
@@ -123,7 +123,7 @@ _Type Signature:_ `array<ValidationError>`
 
 ##### loc
 
-_Type Signature:_ `array<union<string | integer>>`
+_Type Signature:_ `array<string | integer>`
 
 ##### msg
 
@@ -155,13 +155,8 @@ Chat to classify
 
 _Type Signature:_
 ```
-union<
- | array<union<SystemMessage | UserMessage | AssistantMessage | ToolMessage>>
- | array<
-    array<union<SystemMessage | UserMessage | AssistantMessage | ToolMessage>>
-   >
-
->
+ | array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>
+ | array<array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>>
 ```
 
 <details open>
@@ -170,7 +165,7 @@ union<
 
 ##### content
 
-_Type Signature:_ `union<string | array<TextChunk>>`
+_Type Signature:_ `string | array<TextChunk>`
 
 <details open>
 
@@ -198,13 +193,7 @@ _Type Signature:_ `'system'`
 
 ##### content
 
-_Type Signature:_
-```
-union<
- | string
- | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
->
-```
+_Type Signature:_ `string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>`
 
 <details open>
 
@@ -226,7 +215,7 @@ _Type Signature:_ `'text'`
 
 ##### image\_url
 
-_Type Signature:_ `union<ImageURL | string>`
+_Type Signature:_ `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
@@ -286,13 +275,7 @@ _Type Signature:_ `'user'`
 
 ##### content
 
-_Type Signature:_
-```
-union<
- | string
- | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
->
-```
+_Type Signature:_ `string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>`
 
 <details open>
 
@@ -314,7 +297,7 @@ _Type Signature:_ `'text'`
 
 ##### image\_url
 
-_Type Signature:_ `union<ImageURL | string>`
+_Type Signature:_ `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
@@ -412,13 +395,7 @@ _Type Signature:_ `'function'`
 
 ##### content
 
-_Type Signature:_
-```
-union<
- | string
- | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
->
-```
+_Type Signature:_ `string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>`
 
 <details open>
 
@@ -440,7 +417,7 @@ _Type Signature:_ `'text'`
 
 ##### image\_url
 
-_Type Signature:_ `union<ImageURL | string>`
+_Type Signature:_ `ImageURL | string`
 
 <p>
   <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
@@ -588,7 +565,7 @@ _Type Signature:_ `array<ValidationError>`
 
 ##### loc
 
-_Type Signature:_ `array<union<string | integer>>`
+_Type Signature:_ `array<string | integer>`
 
 ##### msg
 
@@ -618,7 +595,7 @@ Classifications
 
 Text to classify.
 
-_Type Signature:_ `union<string | array<string>>`
+_Type Signature:_ `string | array<string>`
 
 #### model
 
@@ -700,7 +677,7 @@ _Type Signature:_ `array<ValidationError>`
 
 ##### loc
 
-_Type Signature:_ `array<union<string | integer>>`
+_Type Signature:_ `array<string | integer>`
 
 ##### msg
 
@@ -730,7 +707,7 @@ Chat Classifications
 
 Chat to classify
 
-_Type Signature:_ `union<InstructRequest | array<InstructRequest>>`
+_Type Signature:_ `InstructRequest | array<InstructRequest>`
 
 <details open>
 
@@ -738,7 +715,7 @@ _Type Signature:_ `union<InstructRequest | array<InstructRequest>>`
 
 ##### messages
 
-_Type Signature:_ `array<union<SystemMessage | UserMessage | AssistantMessage | ToolMessage>>`
+_Type Signature:_ `array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>`
 
 <details open>
 
@@ -746,7 +723,7 @@ _Type Signature:_ `array<union<SystemMessage | UserMessage | AssistantMessage | 
 
 ##### content
 
-_Type Signature:_ `union<string | array<TextChunk>>`
+_Type Signature:_ `string | array<TextChunk>`
 
 <p>
   <SideBarCta cta="View TextChunk Details" title="TextChunk Details">
@@ -766,13 +743,7 @@ _Type Signature:_ `'system'`
 
 ##### content
 
-_Type Signature:_
-```
-union<
- | string
- | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
->
-```
+_Type Signature:_ `string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>`
 
 <p>
   <SideBarCta cta="View TextChunk Details" title="TextChunk Details">
@@ -810,13 +781,7 @@ _Type Signature:_ `'user'`
 
 ##### content
 
-_Type Signature:_
-```
-union<
- | string
- | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
->
-```
+_Type Signature:_ `string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>`
 
 <p>
   <SideBarCta cta="View TextChunk Details" title="TextChunk Details">
@@ -870,13 +835,7 @@ _Type Signature:_ `array<ToolCall>`
 
 ##### content
 
-_Type Signature:_
-```
-union<
- | string
- | array<union<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>>
->
-```
+_Type Signature:_ `string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>`
 
 <p>
   <SideBarCta cta="View TextChunk Details" title="TextChunk Details">
@@ -996,7 +955,7 @@ _Type Signature:_ `array<ValidationError>`
 
 ##### loc
 
-_Type Signature:_ `array<union<string | integer>>`
+_Type Signature:_ `array<string | integer>`
 
 ##### msg
 
