@@ -13,6 +13,18 @@ _List Models_
 
 List all models available to the user.
 
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
 ### Response: 200 \(application/json\)
 
 Successful Response
@@ -249,23 +261,15 @@ Validation Error
 
 #### HttpMeta
 
-_Type Signature:_ `HTTPMetadata`
+_Type Signature:_ `Security`
 
 <details open>
 
-<summary>HTTPMetadata Properties</summary>
+<summary>Security Properties</summary>
 
-##### Request
+##### ApiKey
 
-Raw HTTP request; suitable for debugging
-
-_Type Signature:_ `any`
-
-##### Response
-
-Raw HTTP response; suitable for custom response parsing
-
-_Type Signature:_ `any`
+_Type Signature:_ `string`
 
 </details>
 
@@ -300,6 +304,18 @@ Operation ID: retrieve_model_v1_models__model_id__get
 _Retrieve Model_
 
 Retrieve a model information.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
 
 ### Parameters
 
@@ -531,23 +547,15 @@ Validation Error
 
 #### HttpMeta
 
-_Type Signature:_ `HTTPMetadata`
+_Type Signature:_ `Security`
 
 <details open>
 
-<summary>HTTPMetadata Properties</summary>
+<summary>Security Properties</summary>
 
-##### Request
+##### ApiKey
 
-Raw HTTP request; suitable for debugging
-
-_Type Signature:_ `any`
-
-##### Response
-
-Raw HTTP response; suitable for custom response parsing
-
-_Type Signature:_ `any`
+_Type Signature:_ `string`
 
 </details>
 
@@ -582,6 +590,18 @@ Operation ID: delete_model_v1_models__model_id__delete
 _Delete Model_
 
 Delete a fine-tuned model.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
 
 ### Parameters
 
@@ -643,23 +663,15 @@ Validation Error
 
 #### HttpMeta
 
-_Type Signature:_ `HTTPMetadata`
+_Type Signature:_ `Security`
 
 <details open>
 
-<summary>HTTPMetadata Properties</summary>
+<summary>Security Properties</summary>
 
-##### Request
+##### ApiKey
 
-Raw HTTP request; suitable for debugging
-
-_Type Signature:_ `any`
-
-##### Response
-
-Raw HTTP response; suitable for custom response parsing
-
-_Type Signature:_ `any`
+_Type Signature:_ `string`
 
 </details>
 
@@ -694,6 +706,18 @@ Operation ID: jobs_api_routes_fine_tuning_update_fine_tuned_model
 _Update Fine Tuned Model_
 
 Update a model name or description.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
 
 ### Parameters
 
@@ -951,6 +975,18 @@ _Archive Fine Tuned Model_
 
 Archive a fine-tuned model.
 
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
 ### Parameters
 
 #### model\_id \(required\)
@@ -988,6 +1024,18 @@ Operation ID: jobs_api_routes_fine_tuning_unarchive_fine_tuned_model
 _Unarchive Fine Tuned Model_
 
 Un-archive a fine-tuned model.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
 
 ### Parameters
 
