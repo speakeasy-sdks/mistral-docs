@@ -53,6 +53,12 @@ Successful Response
 
 #### id
 
+_Example:_
+
+```
+mod-e5cc70bb28c444948073e77776eb30ef
+```
+
 _Type Signature:_ `string`
 
 #### model
@@ -195,7 +201,9 @@ _Type Signature:_ `'system'`
 
 _Type Signature:_ 
 ```
-string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| string
+| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| null
 ```
 
 <details open>
@@ -238,9 +246,7 @@ _Type Signature:_ `'image_url'`
 
 ##### document\_name
 
-The filename of the document
-
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 ##### document\_url
 
@@ -280,7 +286,9 @@ _Type Signature:_ `'user'`
 
 _Type Signature:_ 
 ```
-string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| string
+| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| null
 ```
 
 <details open>
@@ -323,9 +331,7 @@ _Type Signature:_ `'image_url'`
 
 ##### document\_name
 
-The filename of the document
-
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 ##### document\_url
 
@@ -355,6 +361,8 @@ _Type Signature:_ `'reference'`
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
+_Default Value:_ `false`
+
 _Type Signature:_ `boolean`
 
 ##### role
@@ -363,7 +371,7 @@ _Type Signature:_ `'assistant'`
 
 ##### tool\_calls
 
-_Type Signature:_ `array<ToolCall>`
+_Type Signature:_ `array<ToolCall> | null`
 
 <details open>
 
@@ -381,9 +389,13 @@ _Type Signature:_ `FunctionCall`
 
 ##### id
 
+_Default Value:_ `"null"`
+
 _Type Signature:_ `string`
 
 ##### index
+
+_Default Value:_ `0`
 
 _Type Signature:_ `integer`
 
@@ -403,7 +415,9 @@ _Type Signature:_ `'function'`
 
 _Type Signature:_ 
 ```
-string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| string
+| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| null
 ```
 
 <details open>
@@ -446,9 +460,7 @@ _Type Signature:_ `'image_url'`
 
 ##### document\_name
 
-The filename of the document
-
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 ##### document\_url
 
@@ -476,7 +488,7 @@ _Type Signature:_ `'reference'`
 
 ##### name
 
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 ##### role
 
@@ -484,7 +496,7 @@ _Type Signature:_ `'tool'`
 
 ##### tool\_call\_id
 
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 </details>
 
@@ -503,6 +515,12 @@ Successful Response
 <summary>Response Body</summary>
 
 #### id
+
+_Example:_
+
+```
+mod-e5cc70bb28c444948073e77776eb30ef
+```
 
 _Type Signature:_ `string`
 
@@ -623,6 +641,12 @@ Successful Response
 <summary>Response Body</summary>
 
 #### id
+
+_Example:_
+
+```
+mod-e5cc70bb28c444948073e77776eb30ef
+```
 
 _Type Signature:_ `string`
 
@@ -757,7 +781,9 @@ _Type Signature:_ `'system'`
 
 _Type Signature:_ 
 ```
-string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| string
+| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| null
 ```
 
 <p>
@@ -798,7 +824,9 @@ _Type Signature:_ `'user'`
 
 _Type Signature:_ 
 ```
-string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| string
+| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| null
 ```
 
 <p>
@@ -829,6 +857,8 @@ string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
+_Default Value:_ `false`
+
 _Type Signature:_ `boolean`
 
 ##### role
@@ -837,7 +867,7 @@ _Type Signature:_ `'assistant'`
 
 ##### tool\_calls
 
-_Type Signature:_ `array<ToolCall>`
+_Type Signature:_ `array<ToolCall> | null`
 
 <p>
   <SideBarCta cta="View ToolCall Details" title="ToolCall Details">
@@ -855,7 +885,9 @@ _Type Signature:_ `array<ToolCall>`
 
 _Type Signature:_ 
 ```
-string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| string
+| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| null
 ```
 
 <p>
@@ -884,7 +916,7 @@ string | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 
 ##### name
 
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 ##### role
 
@@ -892,7 +924,7 @@ _Type Signature:_ `'tool'`
 
 ##### tool\_call\_id
 
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 </details>
 
@@ -913,6 +945,12 @@ Successful Response
 <summary>Response Body</summary>
 
 #### id
+
+_Example:_
+
+```
+mod-e5cc70bb28c444948073e77776eb30ef
+```
 
 _Type Signature:_ `string`
 

@@ -29,9 +29,7 @@ _Type Signature:_ `DocumentURLChunk | ImageURLChunk`
 
 ##### document\_name
 
-The filename of the document
-
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 ##### document\_url
 
@@ -57,7 +55,7 @@ _Type Signature:_ `ImageURL | string`
 
 ##### detail
 
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 ##### url
 
@@ -77,31 +75,23 @@ _Type Signature:_ `string`
 
 #### image\_limit
 
-Max images to extract
-
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 #### image\_min\_size
 
-Minimum height and width of image to extract
-
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 #### include\_image\_base64
 
-Include image URLs in response
-
-_Type Signature:_ `boolean`
+_Type Signature:_ `boolean | null`
 
 #### model
 
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 #### pages
 
-Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
-
-_Type Signature:_ `array<integer>`
+_Type Signature:_ `array<integer> | null`
 
 </details>
 
@@ -131,9 +121,7 @@ _Type Signature:_ `array<OCRPageObject>`
 
 ##### dimensions
 
-The dimensions of the PDF Page's screenshot image
-
-_Type Signature:_ `OCRPageDimensions`
+_Type Signature:_ `OCRPageDimensions | null`
 
 <details open>
 
@@ -171,15 +159,11 @@ _Type Signature:_ `array<OCRImageObject>`
 
 ##### bottom\_right\_x
 
-X coordinate of bottom-right corner of the extracted image
-
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 ##### bottom\_right\_y
 
-Y coordinate of bottom-right corner of the extracted image
-
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 ##### id
 
@@ -189,21 +173,15 @@ _Type Signature:_ `string`
 
 ##### image\_base64
 
-Base64 string of the extracted image
-
-_Type Signature:_ `string`
+_Type Signature:_ `string | null`
 
 ##### top\_left\_x
 
-X coordinate of top-left corner of the extracted image
-
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 ##### top\_left\_y
 
-Y coordinate of top-left corner of the extracted image
-
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 </details>
 
@@ -231,9 +209,7 @@ _Type Signature:_ `OCRUsageInfo`
 
 ##### doc\_size\_bytes
 
-Document size in bytes
-
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 ##### pages\_processed
 

@@ -33,11 +33,23 @@ _Type Signature:_ `array<FileSchema>`
 
 The size of the file, in bytes.
 
+_Example:_
+
+```
+13000
+```
+
 _Type Signature:_ `integer`
 
 ##### created\_at
 
 The UNIX timestamp (in seconds) of the event.
+
+_Example:_
+
+```
+1716963433
+```
 
 _Type Signature:_ `integer`
 
@@ -45,21 +57,39 @@ _Type Signature:_ `integer`
 
 The name of the uploaded file.
 
+_Example:_
+
+```
+files_upload.jsonl
+```
+
 _Type Signature:_ `string`
 
 ##### id
 
 The unique identifier of the file.
 
+_Example:_
+
+```
+497f6eca-6276-4993-bfeb-53cbbbba6f09
+```
+
 _Type Signature:_ `string`
 
 ##### num\_lines
 
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 ##### object
 
 The object type, which is always "file".
+
+_Example:_
+
+```
+file
+```
 
 _Type Signature:_ `string`
 
@@ -159,11 +189,23 @@ OK
 
 The size of the file, in bytes.
 
+_Example:_
+
+```
+13000
+```
+
 _Type Signature:_ `integer`
 
 #### created\_at
 
 The UNIX timestamp (in seconds) of the event.
+
+_Example:_
+
+```
+1716963433
+```
 
 _Type Signature:_ `integer`
 
@@ -171,21 +213,39 @@ _Type Signature:_ `integer`
 
 The name of the uploaded file.
 
+_Example:_
+
+```
+files_upload.jsonl
+```
+
 _Type Signature:_ `string`
 
 #### id
 
 The unique identifier of the file.
 
+_Example:_
+
+```
+497f6eca-6276-4993-bfeb-53cbbbba6f09
+```
+
 _Type Signature:_ `string`
 
 #### num\_lines
 
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 #### object
 
 The object type, which is always "file".
+
+_Example:_
+
+```
+file
+```
 
 _Type Signature:_ `string`
 
@@ -235,11 +295,23 @@ OK
 
 The size of the file, in bytes.
 
+_Example:_
+
+```
+13000
+```
+
 _Type Signature:_ `integer`
 
 #### created\_at
 
 The UNIX timestamp (in seconds) of the event.
+
+_Example:_
+
+```
+1716963433
+```
 
 _Type Signature:_ `integer`
 
@@ -251,21 +323,39 @@ _Type Signature:_ `boolean`
 
 The name of the uploaded file.
 
+_Example:_
+
+```
+files_upload.jsonl
+```
+
 _Type Signature:_ `string`
 
 #### id
 
 The unique identifier of the file.
 
+_Example:_
+
+```
+497f6eca-6276-4993-bfeb-53cbbbba6f09
+```
+
 _Type Signature:_ `string`
 
 #### num\_lines
 
-_Type Signature:_ `integer`
+_Type Signature:_ `integer | null`
 
 #### object
 
 The object type, which is always "file".
+
+_Example:_
+
+```
+file
+```
 
 _Type Signature:_ `string`
 
@@ -315,17 +405,35 @@ OK
 
 The deletion status.
 
+_Example:_
+
+```
+false
+```
+
 _Type Signature:_ `boolean`
 
 #### id
 
 The ID of the deleted file.
 
+_Example:_
+
+```
+497f6eca-6276-4993-bfeb-53cbbbba6f09
+```
+
 _Type Signature:_ `string`
 
 #### object
 
 The object type that was deleted
+
+_Example:_
+
+```
+file
+```
 
 _Type Signature:_ `string`
 
