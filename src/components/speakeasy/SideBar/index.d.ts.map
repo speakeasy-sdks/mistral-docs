@@ -1,1 +1,0 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/assets/SideBar/index.tsx"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,iBAAiB,EAAE,MAAM,OAAO,CAAC;AAC/C,OAAO,KAA2C,MAAM,OAAO,CAAC;AAoBhE,wBAAgB,OAAO,sBAiEtB;AAED,wBAAgB,UAAU,CAAC,EACzB,GAAG,EACH,QAAQ,EACR,KAAK,GACN,EAAE,iBAAiB,CAAC;IACnB,GAAG,EAAE,MAAM,CAAC;IACZ,KAAK,EAAE,MAAM,CAAC;CACf,CAAC,qBAOD"}
