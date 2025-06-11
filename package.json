@@ -5,6 +5,8 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start --host 0.0.0.0 --port 3030 --no-open",
+    "build-api-docs": "docs-md",
+    "prebuild": "pnpm run build-api-docs",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -12,8 +14,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc",
-    "build-api-docs": "node --experimental-strip-types ../docsmd/packages/chunk-generator/src/cli/cli.ts -s ./openapi.yaml -p ./docs/api -c ./src/components/speakeasy -f docusaurus"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@docusaurus/core": "3.5.2",
@@ -21,6 +22,7 @@
     "@docusaurus/theme-common": "3.5.2",
     "@easyops-cn/docusaurus-search-local": "^0.44.5",
     "@mdx-js/react": "^3.0.1",
+    "@speakeasy-api/docs-md": "0.1.0-beta2",
     "clsx": "^1.2.1",
     "docusaurus-lunr-search": "^3.4.0",
     "jotai": "^2.12.5",
