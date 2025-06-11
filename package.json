@@ -6,7 +6,6 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start --host 0.0.0.0 --port 3030 --no-open",
     "build-api-docs": "docs-md",
-    "prebuild": "pnpm run build-api-docs",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
