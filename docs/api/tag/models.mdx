@@ -3,6 +3,9 @@ sidebar_position: 2.6
 sidebar_label: models
 ---
 
+import { TryItNow } from "../../../src/components/speakeasy/TryItNow/index.tsx";
+
+
 # models
 
 ## GET /v1/models
@@ -24,6 +27,23 @@ List all models available to the user.
 _Type Signature:_ `string`
 
 </details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.models.listModelsV1ModelsGet();\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.models.listModelsV1ModelsGet();
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Response: 200 \(application/json\)
 
@@ -333,6 +353,25 @@ ft:open-mistral-7b:587a6b29:20240514:7e773925
 
 _Type Signature:_ `string`
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.models.retrieveModelV1ModelsModelIdGet(\\{\n    modelId: \"ft:open-mistral-7b:587a6b29:20240514:7e773925\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.models.retrieveModelV1ModelsModelIdGet({
+    modelId: "ft:open-mistral-7b:587a6b29:20240514:7e773925",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Response: 200 \(application/json\)
 
 Successful Response
@@ -629,6 +668,25 @@ ft:open-mistral-7b:587a6b29:20240514:7e773925
 
 _Type Signature:_ `string`
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.models.deleteModelV1ModelsModelIdDelete(\\{\n    modelId: \"ft:open-mistral-7b:587a6b29:20240514:7e773925\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.models.deleteModelV1ModelsModelIdDelete({
+    modelId: "ft:open-mistral-7b:587a6b29:20240514:7e773925",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Response: 200 \(application/json\)
 
 Successful Response
@@ -754,6 +812,26 @@ ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
 _Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.models.jobsApiRoutesFineTuningUpdateFineTunedModel(\\{\n    modelId: \"ft:open-mistral-7b:587a6b29:20240514:7e773925\",\n    updateFTModelIn: \\{\\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.models.jobsApiRoutesFineTuningUpdateFineTunedModel({
+    modelId: "ft:open-mistral-7b:587a6b29:20240514:7e773925",
+    updateFTModelIn: {},
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Request Body \(required\)
 
@@ -1033,6 +1111,25 @@ ft:open-mistral-7b:587a6b29:20240514:7e773925
 
 _Type Signature:_ `string`
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.models.jobsApiRoutesFineTuningArchiveFineTunedModel(\\{\n    modelId: \"ft:open-mistral-7b:587a6b29:20240514:7e773925\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.models.jobsApiRoutesFineTuningArchiveFineTunedModel({
+    modelId: "ft:open-mistral-7b:587a6b29:20240514:7e773925",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Response: 200 \(application/json\)
 
 OK
@@ -1092,6 +1189,25 @@ ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
 _Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.models.jobsApiRoutesFineTuningUnarchiveFineTunedModel(\\{\n    modelId: \"ft:open-mistral-7b:587a6b29:20240514:7e773925\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.models.jobsApiRoutesFineTuningUnarchiveFineTunedModel({
+    modelId: "ft:open-mistral-7b:587a6b29:20240514:7e773925",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Response: 200 \(application/json\)
 

@@ -3,6 +3,9 @@ sidebar_position: 2.3
 sidebar_label: embeddings
 ---
 
+import { TryItNow } from "../../../src/components/speakeasy/TryItNow/index.tsx";
+
+
 # embeddings
 
 ## POST /v1/embeddings
@@ -24,6 +27,29 @@ Embeddings
 _Type Signature:_ `string`
 
 </details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.embeddings.embeddingsV1EmbeddingsPost(\\{\n    model: \"mistral-embed\",\n    input: [\n      \"Embed this sentence.\",\n      \"As well as this one.\",\n    ],\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.embeddings.embeddingsV1EmbeddingsPost({
+    model: "mistral-embed",
+    input: [
+      "Embed this sentence.",
+      "As well as this one.",
+    ],
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Request Body \(required\)
 

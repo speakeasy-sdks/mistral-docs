@@ -3,6 +3,7 @@ sidebar_position: 2.0
 sidebar_label: agents
 ---
 
+import { TryItNow } from "../../../src/components/speakeasy/TryItNow/index.tsx";
 import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
 import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
 import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
@@ -34,6 +35,31 @@ Agents Completion
 _Type Signature:_ `string`
 
 </details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.agents.agentsCompletionV1AgentsCompletionsPost(\\{\n    messages: [\n      \\{\n        content: \"Who is the best French painter? Answer in one short sentence.\",\n        role: \"user\",\n      \\},\n    ],\n    agentId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.agents.agentsCompletionV1AgentsCompletionsPost({
+    messages: [
+      {
+        content: "Who is the best French painter? Answer in one short sentence.",
+        role: "user",
+      },
+    ],
+    agentId: "<id>",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Request Body \(required\)
 

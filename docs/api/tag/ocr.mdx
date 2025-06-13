@@ -3,6 +3,9 @@ sidebar_position: 2.7
 sidebar_label: ocr
 ---
 
+import { TryItNow } from "../../../src/components/speakeasy/TryItNow/index.tsx";
+
+
 # ocr
 
 ## POST /v1/ocr
@@ -22,6 +25,31 @@ OCR
 _Type Signature:_ `string`
 
 </details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.ocr.ocrV1OcrPost(\\{\n    model: \"CX-9\",\n    document: \\{\n      imageUrl: \\{\n        url: \"https://measly-scrap.com\",\n      \\},\n      type: \"image_url\",\n    \\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.ocr.ocrV1OcrPost({
+    model: "CX-9",
+    document: {
+      imageUrl: {
+        url: "https://measly-scrap.com",
+      },
+      type: "image_url",
+    },
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Request Body \(required\)
 

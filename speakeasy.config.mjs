@@ -9,4 +9,5 @@ export default {
     showSchemasInNav: false,
     showTypeSignatures: true,
   },
+  npmPackageName: "@mistralai/mistralai",
 };

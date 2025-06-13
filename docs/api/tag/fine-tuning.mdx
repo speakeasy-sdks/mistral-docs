@@ -3,6 +3,7 @@ sidebar_position: 2.5
 sidebar_label: fine-tuning
 ---
 
+import { TryItNow } from "../../../src/components/speakeasy/TryItNow/index.tsx";
 import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
 import EmbedMetricOut from "../../../src/components/speakeasy/embeds/MetricOut.mdx";
 
@@ -30,6 +31,23 @@ Get a list of fine-tuning jobs for your organization and user.
 _Type Signature:_ `string`
 
 </details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobsApiRoutesFineTuningGetFineTuningJobs(\\{\\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fineTuning.jobsApiRoutesFineTuningGetFineTuningJobs({});
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Response: 200 \(application/json\)
 
@@ -510,6 +528,30 @@ _Type Signature:_ `string`
 
 
 _Type Signature:_ `boolean | null`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobsApiRoutesFineTuningCreateFineTuningJob(\\{\n    jobIn: \\{\n      model: \"mistral-small-latest\",\n      hyperparameters: \\{\n        learningRate: 0.0001,\n      \\},\n    \\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fineTuning.jobsApiRoutesFineTuningCreateFineTuningJob({
+    jobIn: {
+      model: "mistral-small-latest",
+      hyperparameters: {
+        learningRate: 0.0001,
+      },
+    },
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Request Body \(required\)
 
@@ -1320,6 +1362,25 @@ The ID of the job to analyse.
 
 _Type Signature:_ `string`
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobsApiRoutesFineTuningGetFineTuningJob(\\{\n    jobId: \"c167a961-ffca-4bcf-93ac-6169468dd389\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fineTuning.jobsApiRoutesFineTuningGetFineTuningJob({
+    jobId: "c167a961-ffca-4bcf-93ac-6169468dd389",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Response: 200 \(application/json\)
 
 OK
@@ -1930,6 +1991,25 @@ The ID of the job to cancel.
 
 _Type Signature:_ `string`
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobsApiRoutesFineTuningCancelFineTuningJob(\\{\n    jobId: \"6188a2f6-7513-4e0f-89cc-3f8088523a49\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fineTuning.jobsApiRoutesFineTuningCancelFineTuningJob({
+    jobId: "6188a2f6-7513-4e0f-89cc-3f8088523a49",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Response: 200 \(application/json\)
 
 OK
@@ -2535,6 +2615,25 @@ _Type Signature:_ `string`
 #### job\_id \(required\)
 
 _Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobsApiRoutesFineTuningStartFineTuningJob(\\{\n    jobId: \"56553e4d-0679-471e-b9ac-59a77d671103\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fineTuning.jobsApiRoutesFineTuningStartFineTuningJob({
+    jobId: "56553e4d-0679-471e-b9ac-59a77d671103",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Response: 200 \(application/json\)
 
