@@ -4,17 +4,11 @@ sidebar_label: fine-tuning/jobs
 ---
 
 import { TryItNow } from "@speakeasy-api/docs-md";
-import EmbedMetricOut from "../../../../src/components/speakeasy/embeds/MetricOut.mdx";
-import { SideBarCta, SideBar } from "../../../../src/components/speakeasy/SideBar/index.tsx";
 
-
-<SideBar />
 
 # fine-tuning/jobs
 
 ## GET /v1/fine\_tuning/jobs
-
-Operation ID: jobs_api_routes_fine_tuning_get_fine_tuning_jobs
 
 _Get Fine Tuning Jobs_
 
@@ -482,8 +476,6 @@ _Type Signature:_ `integer`
 </details>
 
 ## POST /v1/fine\_tuning/jobs
-
-Operation ID: jobs_api_routes_fine_tuning_create_fine_tuning_job
 
 _Create Fine Tuning Job_
 
@@ -1280,8 +1272,6 @@ _Type Signature:_ `integer | null`
 
 ## GET /v1/fine\_tuning/jobs/\{job\_id\}
 
-Operation ID: jobs_api_routes_fine_tuning_get_fine_tuning_job
-
 _Get Fine Tuning Job_
 
 Get a fine-tuned job details by its UUID.
@@ -1369,11 +1359,23 @@ Metrics at the step number during the fine-tuning job. Use these metrics to asse
 
 _Type Signature:_ `MetricOut`
 
-<p>
-  <SideBarCta cta="View MetricOut Details" title="MetricOut Details">
-    <EmbedMetricOut />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>MetricOut Properties</summary>
+
+##### train\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_mean\_token\_accuracy
+
+_Type Signature:_ `number | null`
+
+</details>
 
 ##### step\_number
 
@@ -1652,11 +1654,23 @@ Metrics at the step number during the fine-tuning job. Use these metrics to asse
 
 _Type Signature:_ `MetricOut`
 
-<p>
-  <SideBarCta cta="View MetricOut Details" title="MetricOut Details">
-    <EmbedMetricOut />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>MetricOut Properties</summary>
+
+##### train\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_mean\_token\_accuracy
+
+_Type Signature:_ `number | null`
+
+</details>
 
 ##### step\_number
 
@@ -1893,8 +1907,6 @@ _Type Signature:_ `array<string> | null`
 
 ## POST /v1/fine\_tuning/jobs/\{job\_id\}/cancel
 
-Operation ID: jobs_api_routes_fine_tuning_cancel_fine_tuning_job
-
 _Cancel Fine Tuning Job_
 
 Request the cancellation of a fine tuning job.
@@ -1982,11 +1994,23 @@ Metrics at the step number during the fine-tuning job. Use these metrics to asse
 
 _Type Signature:_ `MetricOut`
 
-<p>
-  <SideBarCta cta="View MetricOut Details" title="MetricOut Details">
-    <EmbedMetricOut />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>MetricOut Properties</summary>
+
+##### train\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_mean\_token\_accuracy
+
+_Type Signature:_ `number | null`
+
+</details>
 
 ##### step\_number
 
@@ -2265,11 +2289,23 @@ Metrics at the step number during the fine-tuning job. Use these metrics to asse
 
 _Type Signature:_ `MetricOut`
 
-<p>
-  <SideBarCta cta="View MetricOut Details" title="MetricOut Details">
-    <EmbedMetricOut />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>MetricOut Properties</summary>
+
+##### train\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_mean\_token\_accuracy
+
+_Type Signature:_ `number | null`
+
+</details>
 
 ##### step\_number
 
@@ -2506,8 +2542,6 @@ _Type Signature:_ `array<string> | null`
 
 ## POST /v1/fine\_tuning/jobs/\{job\_id\}/start
 
-Operation ID: jobs_api_routes_fine_tuning_start_fine_tuning_job
-
 _Start Fine Tuning Job_
 
 Request the start of a validated fine tuning job.
@@ -2591,11 +2625,23 @@ Metrics at the step number during the fine-tuning job. Use these metrics to asse
 
 _Type Signature:_ `MetricOut`
 
-<p>
-  <SideBarCta cta="View MetricOut Details" title="MetricOut Details">
-    <EmbedMetricOut />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>MetricOut Properties</summary>
+
+##### train\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_mean\_token\_accuracy
+
+_Type Signature:_ `number | null`
+
+</details>
 
 ##### step\_number
 
@@ -2874,11 +2920,23 @@ Metrics at the step number during the fine-tuning job. Use these metrics to asse
 
 _Type Signature:_ `MetricOut`
 
-<p>
-  <SideBarCta cta="View MetricOut Details" title="MetricOut Details">
-    <EmbedMetricOut />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>MetricOut Properties</summary>
+
+##### train\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_loss
+
+_Type Signature:_ `number | null`
+
+##### valid\_mean\_token\_accuracy
+
+_Type Signature:_ `number | null`
+
+</details>
 
 ##### step\_number
 

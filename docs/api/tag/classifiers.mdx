@@ -4,15 +4,8 @@ sidebar_label: classifiers
 ---
 
 import { TryItNow } from "@speakeasy-api/docs-md";
-import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
-import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
-import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
 import Embedinputs from "../../../src/components/speakeasy/embeds/inputs.mdx";
-import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
-import EmbedImageURLChunk from "../../../src/components/speakeasy/embeds/ImageURLChunk.mdx";
-import EmbedDocumentURLChunk from "../../../src/components/speakeasy/embeds/DocumentURLChunk.mdx";
-import EmbedReferenceChunk from "../../../src/components/speakeasy/embeds/ReferenceChunk.mdx";
-import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx";
+import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
 
 
 <SideBar />
@@ -20,8 +13,6 @@ import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx
 # classifiers
 
 ## POST /v1/moderations
-
-Operation ID: moderations_v1_moderations_post
 
 Moderations
 
@@ -174,8 +165,6 @@ _Type Signature:_ `string`
 
 ## POST /v1/chat/moderations
 
-Operation ID: chat_moderations_v1_chat_moderations_post
-
 Chat Moderations
 
 ### Security
@@ -311,11 +300,19 @@ _Type Signature:_ `'text'`
 
 _Type Signature:_ `ImageURL | string`
 
-<p>
-  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
-    <EmbedImageURL />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>ImageURL Properties</summary>
+
+##### detail
+
+_Type Signature:_ `string | null`
+
+##### url
+
+_Type Signature:_ `string`
+
+</details>
 
 ##### type
 
@@ -396,11 +393,19 @@ _Type Signature:_ `'text'`
 
 _Type Signature:_ `ImageURL | string`
 
-<p>
-  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
-    <EmbedImageURL />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>ImageURL Properties</summary>
+
+##### detail
+
+_Type Signature:_ `string | null`
+
+##### url
+
+_Type Signature:_ `string`
+
+</details>
 
 ##### type
 
@@ -464,11 +469,19 @@ _Type Signature:_ `array<ToolCall> | null`
 
 _Type Signature:_ `FunctionCall`
 
-<p>
-  <SideBarCta cta="View FunctionCall Details" title="FunctionCall Details">
-    <EmbedFunctionCall />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>FunctionCall Properties</summary>
+
+##### arguments
+
+_Type Signature:_ `map<any> | string`
+
+##### name
+
+_Type Signature:_ `string`
+
+</details>
 
 ##### id
 
@@ -525,11 +538,19 @@ _Type Signature:_ `'text'`
 
 _Type Signature:_ `ImageURL | string`
 
-<p>
-  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
-    <EmbedImageURL />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>ImageURL Properties</summary>
+
+##### detail
+
+_Type Signature:_ `string | null`
+
+##### url
+
+_Type Signature:_ `string`
+
+</details>
 
 ##### type
 
@@ -683,8 +704,6 @@ _Type Signature:_ `string`
 
 ## POST /v1/classifications
 
-Operation ID: classifications_v1_classifications_post
-
 Classifications
 
 ### Security
@@ -827,8 +846,6 @@ _Type Signature:_ `string`
 
 ## POST /v1/chat/classifications
 
-Operation ID: chat_classifications_v1_chat_classifications_post
-
 Chat Classifications
 
 ### Security
@@ -916,11 +933,31 @@ _Type Signature:_ `array<inputs>`
 
 _Type Signature:_ `array<inputs>`
 
+<details open>
+
+<summary>inputs Properties</summary>
+
+##### messages
+
+_Type Signature:_ `array<inputs>`
+
+<details open>
+
+<summary>inputs Properties</summary>
+
+##### messages
+
+_Type Signature:_ `array<inputs>`
+
 <p>
   <SideBarCta cta="View inputs Details" title="inputs Details">
     <Embedinputs />
   </SideBarCta>
 </p>
+
+</details>
+
+</details>
 
 </details>
 
@@ -945,11 +982,19 @@ array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>
 
 _Type Signature:_ `string | array<TextChunk>`
 
-<p>
-  <SideBarCta cta="View TextChunk Details" title="TextChunk Details">
-    <EmbedTextChunk />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
 
 ##### role
 
@@ -970,29 +1015,79 @@ _Type Signature:_
 | null
 ```
 
-<p>
-  <SideBarCta cta="View TextChunk Details" title="TextChunk Details">
-    <EmbedTextChunk />
-  </SideBarCta>
-</p>
+<details open>
 
-<p>
-  <SideBarCta cta="View ImageURLChunk Details" title="ImageURLChunk Details">
-    <EmbedImageURLChunk />
-  </SideBarCta>
-</p>
+<summary>TextChunk Properties</summary>
 
-<p>
-  <SideBarCta cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
-    <EmbedDocumentURLChunk />
-  </SideBarCta>
-</p>
+##### text
 
-<p>
-  <SideBarCta cta="View ReferenceChunk Details" title="ReferenceChunk Details">
-    <EmbedReferenceChunk />
-  </SideBarCta>
-</p>
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<details open>
+
+<summary>ImageURL Properties</summary>
+
+##### detail
+
+_Type Signature:_ `string | null`
+
+##### url
+
+_Type Signature:_ `string`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+<details open>
+
+<summary>ReferenceChunk Properties</summary>
+
+##### reference\_ids
+
+_Type Signature:_ `array<integer>`
+
+##### type
+
+_Type Signature:_ `'reference'`
+
+</details>
 
 ##### role
 
@@ -1013,29 +1108,79 @@ _Type Signature:_
 | null
 ```
 
-<p>
-  <SideBarCta cta="View TextChunk Details" title="TextChunk Details">
-    <EmbedTextChunk />
-  </SideBarCta>
-</p>
+<details open>
 
-<p>
-  <SideBarCta cta="View ImageURLChunk Details" title="ImageURLChunk Details">
-    <EmbedImageURLChunk />
-  </SideBarCta>
-</p>
+<summary>TextChunk Properties</summary>
 
-<p>
-  <SideBarCta cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
-    <EmbedDocumentURLChunk />
-  </SideBarCta>
-</p>
+##### text
 
-<p>
-  <SideBarCta cta="View ReferenceChunk Details" title="ReferenceChunk Details">
-    <EmbedReferenceChunk />
-  </SideBarCta>
-</p>
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<details open>
+
+<summary>ImageURL Properties</summary>
+
+##### detail
+
+_Type Signature:_ `string | null`
+
+##### url
+
+_Type Signature:_ `string`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+<details open>
+
+<summary>ReferenceChunk Properties</summary>
+
+##### reference\_ids
+
+_Type Signature:_ `array<integer>`
+
+##### type
+
+_Type Signature:_ `'reference'`
+
+</details>
 
 ##### prefix
 
@@ -1053,11 +1198,45 @@ _Type Signature:_ `'assistant'`
 
 _Type Signature:_ `array<ToolCall> | null`
 
-<p>
-  <SideBarCta cta="View ToolCall Details" title="ToolCall Details">
-    <EmbedToolCall />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>ToolCall Properties</summary>
+
+##### function
+
+_Type Signature:_ `FunctionCall`
+
+<details open>
+
+<summary>FunctionCall Properties</summary>
+
+##### arguments
+
+_Type Signature:_ `map<any> | string`
+
+##### name
+
+_Type Signature:_ `string`
+
+</details>
+
+##### id
+
+_Default Value:_ `"null"`
+
+_Type Signature:_ `string`
+
+##### index
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
 
 </details>
 
@@ -1074,29 +1253,79 @@ _Type Signature:_
 | null
 ```
 
-<p>
-  <SideBarCta cta="View TextChunk Details" title="TextChunk Details">
-    <EmbedTextChunk />
-  </SideBarCta>
-</p>
+<details open>
 
-<p>
-  <SideBarCta cta="View ImageURLChunk Details" title="ImageURLChunk Details">
-    <EmbedImageURLChunk />
-  </SideBarCta>
-</p>
+<summary>TextChunk Properties</summary>
 
-<p>
-  <SideBarCta cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
-    <EmbedDocumentURLChunk />
-  </SideBarCta>
-</p>
+##### text
 
-<p>
-  <SideBarCta cta="View ReferenceChunk Details" title="ReferenceChunk Details">
-    <EmbedReferenceChunk />
-  </SideBarCta>
-</p>
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<details open>
+
+<summary>ImageURL Properties</summary>
+
+##### detail
+
+_Type Signature:_ `string | null`
+
+##### url
+
+_Type Signature:_ `string`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+<details open>
+
+<summary>ReferenceChunk Properties</summary>
+
+##### reference\_ids
+
+_Type Signature:_ `array<integer>`
+
+##### type
+
+_Type Signature:_ `'reference'`
+
+</details>
 
 ##### name
 

@@ -4,20 +4,11 @@ sidebar_label: beta/agents
 ---
 
 import { TryItNow } from "@speakeasy-api/docs-md";
-import EmbedPrediction from "../../../../src/components/speakeasy/embeds/Prediction.mdx";
-import { SideBarCta, SideBar } from "../../../../src/components/speakeasy/SideBar/index.tsx";
-import EmbedResponseFormat from "../../../../src/components/speakeasy/embeds/ResponseFormat.mdx";
-import EmbedFunction from "../../../../src/components/speakeasy/embeds/Function.mdx";
-import EmbedJsonSchema from "../../../../src/components/speakeasy/embeds/JsonSchema.mdx";
 
-
-<SideBar />
 
 # beta/agents
 
 ## GET /v1/agents
-
-Operation ID: agents_api_v1_agents_list
 
 _List agent entities._
 
@@ -96,11 +87,23 @@ _Type Signature:_ `integer | null`
 
 _Type Signature:_ `Prediction | null`
 
-<p>
-  <SideBarCta cta="View Prediction Details" title="Prediction Details">
-    <EmbedPrediction />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
 
 ##### presence\_penalty
 
@@ -114,11 +117,41 @@ _Type Signature:_ `integer | null`
 
 _Type Signature:_ `ResponseFormat | null`
 
-<p>
-  <SideBarCta cta="View ResponseFormat Details" title="ResponseFormat Details">
-    <EmbedResponseFormat />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<details open>
+
+<summary>JsonSchema Properties</summary>
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### schema\_definition
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
 
 ##### stop
 
@@ -197,11 +230,27 @@ array<
 
 _Type Signature:_ `Function`
 
-<p>
-  <SideBarCta cta="View Function Details" title="Function Details">
-    <EmbedFunction />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>Function Properties</summary>
+
+##### description
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### parameters
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
 
 ##### type
 
@@ -323,8 +372,6 @@ _Type Signature:_ `string`
 
 ## POST /v1/agents
 
-Operation ID: agents_api_v1_agents_create
-
 _Create a agent that can be used within a conversation._
 
 Create a new agent giving it instructions, tools, description. The agent is then available to be used as a regular assistant in a conversation or as part of an agent pool from which it can be used.
@@ -427,11 +474,27 @@ _Type Signature:_ `ResponseFormat | null`
 
 _Type Signature:_ `JsonSchema | null`
 
-<p>
-  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
-    <EmbedJsonSchema />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>JsonSchema Properties</summary>
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### schema\_definition
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
 
 ##### type
 
@@ -658,11 +721,27 @@ _Type Signature:_ `ResponseFormat | null`
 
 _Type Signature:_ `JsonSchema | null`
 
-<p>
-  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
-    <EmbedJsonSchema />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>JsonSchema Properties</summary>
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### schema\_definition
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
 
 ##### type
 
@@ -889,8 +968,6 @@ _Type Signature:_ `string`
 
 ## GET /v1/agents/\{agent\_id\}
 
-Operation ID: agents_api_v1_agents_get
-
 _Retrieve an agent entity._
 
 Given an agent retrieve an agent entity with its attributes.
@@ -1000,11 +1077,27 @@ _Type Signature:_ `ResponseFormat | null`
 
 _Type Signature:_ `JsonSchema | null`
 
-<p>
-  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
-    <EmbedJsonSchema />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>JsonSchema Properties</summary>
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### schema\_definition
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
 
 ##### type
 
@@ -1231,8 +1324,6 @@ _Type Signature:_ `string`
 
 ## PATCH /v1/agents/\{agent\_id\}
 
-Operation ID: agents_api_v1_agents_update
-
 _Update an agent entity._
 
 Update an agent attributes and create a new version.
@@ -1341,11 +1432,27 @@ _Type Signature:_ `ResponseFormat | null`
 
 _Type Signature:_ `JsonSchema | null`
 
-<p>
-  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
-    <EmbedJsonSchema />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>JsonSchema Properties</summary>
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### schema\_definition
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
 
 ##### type
 
@@ -1572,11 +1679,27 @@ _Type Signature:_ `ResponseFormat | null`
 
 _Type Signature:_ `JsonSchema | null`
 
-<p>
-  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
-    <EmbedJsonSchema />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>JsonSchema Properties</summary>
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### schema\_definition
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
 
 ##### type
 
@@ -1803,8 +1926,6 @@ _Type Signature:_ `string`
 
 ## PATCH /v1/agents/\{agent\_id\}/version
 
-Operation ID: agents_api_v1_agents_update_version
-
 _Update an agent version._
 
 Switch the version of an agent.
@@ -1919,11 +2040,27 @@ _Type Signature:_ `ResponseFormat | null`
 
 _Type Signature:_ `JsonSchema | null`
 
-<p>
-  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
-    <EmbedJsonSchema />
-  </SideBarCta>
-</p>
+<details open>
+
+<summary>JsonSchema Properties</summary>
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### schema\_definition
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
 
 ##### type
 
