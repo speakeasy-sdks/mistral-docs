@@ -1,9 +1,12 @@
 ---
 sidebar_position: 2.1
-sidebar_label: batch
+sidebar_label: batch/jobs
 ---
 
-# batch
+import { TryItNow } from "@speakeasy-api/docs-md";
+
+
+# batch/jobs
 
 ## GET /v1/batch/jobs
 
@@ -24,6 +27,23 @@ Get a list of batch jobs for your organization and user.
 _Type Signature:_ `string`
 
 </details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.batch.jobs.list(\\{\\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.batch.jobs.list({});
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Response: 200 \(application/json\)
 
@@ -166,6 +186,29 @@ Create a new batch job, it will be queued for processing.
 _Type Signature:_ `string`
 
 </details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.batch.jobs.create(\\{\n    inputFiles: [\n      \"fe3343a2-3b8d-404b-ba32-a78dede2614a\",\n    ],\n    endpoint: \"/v1/moderations\",\n    model: \"Altima\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.batch.jobs.create({
+    inputFiles: [
+      "fe3343a2-3b8d-404b-ba32-a78dede2614a",
+    ],
+    endpoint: "/v1/moderations",
+    model: "Altima",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Request Body \(required\)
 
@@ -335,6 +378,25 @@ _Type Signature:_ `string`
 
 _Type Signature:_ `string`
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.batch.jobs.get(\\{\n    jobId: \"4017dc9f-b629-42f4-9700-8c681b9e7f0f\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.batch.jobs.get({
+    jobId: "4017dc9f-b629-42f4-9700-8c681b9e7f0f",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Response: 200 \(application/json\)
 
 OK
@@ -464,6 +526,25 @@ _Type Signature:_ `string`
 #### job\_id \(required\)
 
 _Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.batch.jobs.cancel(\\{\n    jobId: \"4fb29d1c-535b-4f0a-a1cb-2167f86da569\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.batch.jobs.cancel({
+    jobId: "4fb29d1c-535b-4f0a-a1cb-2167f86da569",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Response: 200 \(application/json\)
 

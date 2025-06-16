@@ -1,11 +1,13 @@
 ---
-sidebar_position: 2.2
+sidebar_position: 2.5
 sidebar_label: classifiers
 ---
 
-import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
+import { TryItNow } from "@speakeasy-api/docs-md";
 import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
+import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
 import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
+import Embedinputs from "../../../src/components/speakeasy/embeds/inputs.mdx";
 import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
 import EmbedImageURLChunk from "../../../src/components/speakeasy/embeds/ImageURLChunk.mdx";
 import EmbedDocumentURLChunk from "../../../src/components/speakeasy/embeds/DocumentURLChunk.mdx";
@@ -35,13 +37,36 @@ _Type Signature:_ `string`
 
 </details>
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.classifiers.moderate(\\{\n    model: \"Durango\",\n    inputs: [\n      \"<value 1>\",\n      \"<value 2>\",\n    ],\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.classifiers.moderate({
+    model: "Durango",
+    inputs: [
+      "<value 1>",
+      "<value 2>",
+    ],
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### input
+#### inputs
 
 Text to classify.
 
@@ -165,13 +190,55 @@ _Type Signature:_ `string`
 
 </details>
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.classifiers.moderateChat(\\{\n    inputs: [\n      \\{\n        content: \"<value>\",\n        role: \"tool\",\n      \\},\n      \\{\n        content: [\n          \\{\n            documentUrl: \"https://limited-merit.com\",\n            type: \"document_url\",\n          \\},\n          \\{\n            documentUrl: \"https://deep-governance.com/\",\n            type: \"document_url\",\n          \\},\n          \\{\n            text: \"<value>\",\n            type: \"text\",\n          \\},\n        ],\n        role: \"tool\",\n      \\},\n    ],\n    model: \"Jetta\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.classifiers.moderateChat({
+    inputs: [
+      {
+        content: "<value>",
+        role: "tool",
+      },
+      {
+        content: [
+          {
+            documentUrl: "https://limited-merit.com",
+            type: "document_url",
+          },
+          {
+            documentUrl: "https://deep-governance.com/",
+            type: "document_url",
+          },
+          {
+            text: "<value>",
+            type: "text",
+          },
+        ],
+        role: "tool",
+      },
+    ],
+    model: "Jetta",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### input
+#### inputs
 
 Chat to classify
 
@@ -632,13 +699,35 @@ _Type Signature:_ `string`
 
 </details>
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.classifiers.classify(\\{\n    model: \"Silverado\",\n    inputs: [\n      \"<value 1>\",\n    ],\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.classifiers.classify({
+    model: "Silverado",
+    inputs: [
+      "<value 1>",
+    ],
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### input
+#### inputs
 
 Text to classify.
 
@@ -754,17 +843,88 @@ _Type Signature:_ `string`
 
 </details>
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.classifiers.classifyChat(\\{\n    model: \"Camry\",\n    inputs: [\n      \\{\n        messages: [\n          \\{\n            content: \"<value>\",\n            role: \"system\",\n          \\},\n          \\{\n            prefix: false,\n            role: \"assistant\",\n          \\},\n        ],\n      \\},\n      \\{\n        messages: [\n          \\{\n            content: \"<value>\",\n            role: \"system\",\n          \\},\n          \\{\n            prefix: false,\n            role: \"assistant\",\n          \\},\n        ],\n      \\},\n    ],\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.classifiers.classifyChat({
+    model: "Camry",
+    inputs: [
+      {
+        messages: [
+          {
+            content: "<value>",
+            role: "system",
+          },
+          {
+            prefix: false,
+            role: "assistant",
+          },
+        ],
+      },
+      {
+        messages: [
+          {
+            content: "<value>",
+            role: "system",
+          },
+          {
+            prefix: false,
+            role: "assistant",
+          },
+        ],
+      },
+    ],
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### input
+#### inputs
 
 Chat to classify
 
-_Type Signature:_ `InstructRequest | array<InstructRequest>`
+_Type Signature:_ `inputs | array<InstructRequest>`
+
+<details open>
+
+<summary>inputs Properties</summary>
+
+##### messages
+
+_Type Signature:_ `array<inputs>`
+
+<details open>
+
+<summary>inputs Properties</summary>
+
+##### messages
+
+_Type Signature:_ `array<inputs>`
+
+<p>
+  <SideBarCta cta="View inputs Details" title="inputs Details">
+    <Embedinputs />
+  </SideBarCta>
+</p>
+
+</details>
+
+</details>
 
 <details open>
 

@@ -1,0 +1,2149 @@
+---
+sidebar_position: 2.2
+sidebar_label: beta/agents
+---
+
+import { TryItNow } from "@speakeasy-api/docs-md";
+import EmbedPrediction from "../../../../src/components/speakeasy/embeds/Prediction.mdx";
+import { SideBarCta, SideBar } from "../../../../src/components/speakeasy/SideBar/index.tsx";
+import EmbedResponseFormat from "../../../../src/components/speakeasy/embeds/ResponseFormat.mdx";
+import EmbedFunction from "../../../../src/components/speakeasy/embeds/Function.mdx";
+import EmbedJsonSchema from "../../../../src/components/speakeasy/embeds/JsonSchema.mdx";
+
+
+<SideBar />
+
+# beta/agents
+
+## GET /v1/agents
+
+Operation ID: agents_api_v1_agents_list
+
+_List agent entities._
+
+Retrieve a list of agent entities sorted by creation time.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### page
+
+_Type Signature:_ `integer`
+
+#### page\_size
+
+_Type Signature:_ `integer`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.agents.list(\\{\\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.agents.list({});
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+Successful Response
+
+_Type Signature:_ `array<Agent>`
+
+<details open>
+
+<summary>Agent Properties</summary>
+
+##### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<p>
+  <SideBarCta cta="View Prediction Details" title="Prediction Details">
+    <EmbedPrediction />
+  </SideBarCta>
+</p>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<p>
+  <SideBarCta cta="View ResponseFormat Details" title="ResponseFormat Details">
+    <EmbedResponseFormat />
+  </SideBarCta>
+</p>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### handoffs
+
+_Type Signature:_ `array<string> | null`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### instructions
+
+_Type Signature:_ `string | null`
+
+##### model
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'agent'`
+
+##### tools
+
+List of tools which are available to the model during the conversation.
+
+_Type Signature:_ 
+```
+array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<p>
+  <SideBarCta cta="View Function Details" title="Function Details">
+    <EmbedFunction />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+##### updated\_at
+
+_Type Signature:_ `date-time`
+
+##### version
+
+_Type Signature:_ `integer`
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## POST /v1/agents
+
+Operation ID: agents_api_v1_agents_create
+
+_Create a agent that can be used within a conversation._
+
+Create a new agent giving it instructions, tools, description. The agent is then available to be used as a regular assistant in a conversation or as part of an agent pool from which it can be used.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.agents.create(\\{\n    model: \"LeBaron\",\n    name: \"<value>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.agents.create({
+    model: "LeBaron",
+    name: "<value>",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Request Body</summary>
+
+#### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<p>
+  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
+    <EmbedJsonSchema />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+#### description
+
+_Type Signature:_ `string | null`
+
+#### handoffs
+
+_Type Signature:_ `array<string> | null`
+
+#### instructions
+
+_Type Signature:_ `string | null`
+
+#### model
+
+_Type Signature:_ `string`
+
+#### name
+
+_Type Signature:_ `string`
+
+#### tools
+
+List of tools which are available to the model during the conversation.
+
+_Type Signature:_ 
+```
+array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<details open>
+
+<summary>Function Properties</summary>
+
+##### description
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### parameters
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+</details>
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<p>
+  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
+    <EmbedJsonSchema />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+#### created\_at
+
+_Type Signature:_ `date-time`
+
+#### description
+
+_Type Signature:_ `string | null`
+
+#### handoffs
+
+_Type Signature:_ `array<string> | null`
+
+#### id
+
+_Type Signature:_ `string`
+
+#### instructions
+
+_Type Signature:_ `string | null`
+
+#### model
+
+_Type Signature:_ `string`
+
+#### name
+
+_Type Signature:_ `string`
+
+#### object
+
+_Type Signature:_ `'agent'`
+
+#### tools
+
+List of tools which are available to the model during the conversation.
+
+_Type Signature:_ 
+```
+array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<details open>
+
+<summary>Function Properties</summary>
+
+##### description
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### parameters
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+#### updated\_at
+
+_Type Signature:_ `date-time`
+
+#### version
+
+_Type Signature:_ `integer`
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## GET /v1/agents/\{agent\_id\}
+
+Operation ID: agents_api_v1_agents_get
+
+_Retrieve an agent entity._
+
+Given an agent retrieve an agent entity with its attributes.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### agent\_id \(required\)
+
+_Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.agents.get(\\{\n    agentId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.agents.get({
+    agentId: "<id>",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<p>
+  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
+    <EmbedJsonSchema />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+#### created\_at
+
+_Type Signature:_ `date-time`
+
+#### description
+
+_Type Signature:_ `string | null`
+
+#### handoffs
+
+_Type Signature:_ `array<string> | null`
+
+#### id
+
+_Type Signature:_ `string`
+
+#### instructions
+
+_Type Signature:_ `string | null`
+
+#### model
+
+_Type Signature:_ `string`
+
+#### name
+
+_Type Signature:_ `string`
+
+#### object
+
+_Type Signature:_ `'agent'`
+
+#### tools
+
+List of tools which are available to the model during the conversation.
+
+_Type Signature:_ 
+```
+array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<details open>
+
+<summary>Function Properties</summary>
+
+##### description
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### parameters
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+#### updated\_at
+
+_Type Signature:_ `date-time`
+
+#### version
+
+_Type Signature:_ `integer`
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## PATCH /v1/agents/\{agent\_id\}
+
+Operation ID: agents_api_v1_agents_update
+
+_Update an agent entity._
+
+Update an agent attributes and create a new version.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### agent\_id \(required\)
+
+_Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.agents.update(\\{\n    agentId: \"<id>\",\n    agentUpdateRequest: \\{\\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.agents.update({
+    agentId: "<id>",
+    agentUpdateRequest: {},
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Request Body</summary>
+
+#### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<p>
+  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
+    <EmbedJsonSchema />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+#### description
+
+_Type Signature:_ `string | null`
+
+#### handoffs
+
+_Type Signature:_ `array<string> | null`
+
+#### instructions
+
+_Type Signature:_ `string | null`
+
+#### model
+
+_Type Signature:_ `string | null`
+
+#### name
+
+_Type Signature:_ `string | null`
+
+#### tools
+
+List of tools which are available to the model during the conversation.
+
+_Type Signature:_ 
+```
+array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<details open>
+
+<summary>Function Properties</summary>
+
+##### description
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### parameters
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+</details>
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<p>
+  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
+    <EmbedJsonSchema />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+#### created\_at
+
+_Type Signature:_ `date-time`
+
+#### description
+
+_Type Signature:_ `string | null`
+
+#### handoffs
+
+_Type Signature:_ `array<string> | null`
+
+#### id
+
+_Type Signature:_ `string`
+
+#### instructions
+
+_Type Signature:_ `string | null`
+
+#### model
+
+_Type Signature:_ `string`
+
+#### name
+
+_Type Signature:_ `string`
+
+#### object
+
+_Type Signature:_ `'agent'`
+
+#### tools
+
+List of tools which are available to the model during the conversation.
+
+_Type Signature:_ 
+```
+array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<details open>
+
+<summary>Function Properties</summary>
+
+##### description
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### parameters
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+#### updated\_at
+
+_Type Signature:_ `date-time`
+
+#### version
+
+_Type Signature:_ `integer`
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## PATCH /v1/agents/\{agent\_id\}/version
+
+Operation ID: agents_api_v1_agents_update_version
+
+_Update an agent version._
+
+Switch the version of an agent.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### agent\_id \(required\)
+
+_Type Signature:_ `string`
+
+#### version \(required\)
+
+_Type Signature:_ `integer`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.agents.updateVersion(\\{\n    agentId: \"<id>\",\n    version: 157995,\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.agents.updateVersion({
+    agentId: "<id>",
+    version: 157995,
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<p>
+  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
+    <EmbedJsonSchema />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+#### created\_at
+
+_Type Signature:_ `date-time`
+
+#### description
+
+_Type Signature:_ `string | null`
+
+#### handoffs
+
+_Type Signature:_ `array<string> | null`
+
+#### id
+
+_Type Signature:_ `string`
+
+#### instructions
+
+_Type Signature:_ `string | null`
+
+#### model
+
+_Type Signature:_ `string`
+
+#### name
+
+_Type Signature:_ `string`
+
+#### object
+
+_Type Signature:_ `'agent'`
+
+#### tools
+
+List of tools which are available to the model during the conversation.
+
+_Type Signature:_ 
+```
+array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<details open>
+
+<summary>Function Properties</summary>
+
+##### description
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### parameters
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+#### updated\_at
+
+_Type Signature:_ `date-time`
+
+#### version
+
+_Type Signature:_ `integer`
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>

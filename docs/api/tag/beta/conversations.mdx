@@ -1,0 +1,4005 @@
+---
+sidebar_position: 2.3
+sidebar_label: beta/conversations
+---
+
+import { TryItNow } from "@speakeasy-api/docs-md";
+import EmbedPrediction from "../../../../src/components/speakeasy/embeds/Prediction.mdx";
+import { SideBarCta, SideBar } from "../../../../src/components/speakeasy/SideBar/index.tsx";
+import EmbedResponseFormat from "../../../../src/components/speakeasy/embeds/ResponseFormat.mdx";
+import EmbedFunction from "../../../../src/components/speakeasy/embeds/Function.mdx";
+import EmbedJsonSchema from "../../../../src/components/speakeasy/embeds/JsonSchema.mdx";
+import EmbedImageURL from "../../../../src/components/speakeasy/embeds/ImageURL.mdx";
+
+
+<SideBar />
+
+# beta/conversations
+
+## GET /v1/conversations
+
+Operation ID: agents_api_v1_conversations_list
+
+_List all created conversations._
+
+Retrieve a list of conversation entities sorted by creation time.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### page
+
+_Type Signature:_ `integer`
+
+#### page\_size
+
+_Type Signature:_ `integer`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.list(\\{\\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.conversations.list({});
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+Successful Response
+
+_Type Signature:_ `array<ModelConversation | AgentConversation>`
+
+<details open>
+
+<summary>ModelConversation Properties</summary>
+
+##### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<p>
+  <SideBarCta cta="View Prediction Details" title="Prediction Details">
+    <EmbedPrediction />
+  </SideBarCta>
+</p>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<p>
+  <SideBarCta cta="View ResponseFormat Details" title="ResponseFormat Details">
+    <EmbedResponseFormat />
+  </SideBarCta>
+</p>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### instructions
+
+_Type Signature:_ `string | null`
+
+##### model
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string | null`
+
+##### object
+
+_Type Signature:_ `'conversation'`
+
+##### tools
+
+List of tools which are available to the model during the conversation.
+
+_Type Signature:_ 
+```
+array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<p>
+  <SideBarCta cta="View Function Details" title="Function Details">
+    <EmbedFunction />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+##### updated\_at
+
+_Type Signature:_ `date-time`
+
+</details>
+
+<details open>
+
+<summary>AgentConversation Properties</summary>
+
+##### agent\_id
+
+_Type Signature:_ `string`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string | null`
+
+##### object
+
+_Type Signature:_ `'conversation'`
+
+##### updated\_at
+
+_Type Signature:_ `date-time`
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## POST /v1/conversations
+
+Operation ID: agents_api_v1_conversations_start
+
+_Create a conversation and append entries to it._
+
+Create a new conversation, using a base model or an agent and append entries. Completion and tool executions are run and the response is appended to the conversation.Use the returned conversation_id to continue the conversation.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.start(\\{\n    inputs: \"<value>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.conversations.start({
+    inputs: "<value>",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Request Body</summary>
+
+#### agent\_id
+
+_Type Signature:_ `string | null`
+
+#### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<p>
+  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
+    <EmbedJsonSchema />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+#### description
+
+_Type Signature:_ `string | null`
+
+#### handoff\_execution
+
+_Type Signature:_ `'client' | 'server'`
+
+#### inputs
+
+_Type Signature:_ `string | array<MessageInputEntry | FunctionResultEntry>`
+
+<details open>
+
+<summary>MessageInputEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant' | 'user'`
+
+##### type
+
+_Type Signature:_ `'message.input'`
+
+</details>
+
+<details open>
+
+<summary>FunctionResultEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### result
+
+_Type Signature:_ `string`
+
+##### tool\_call\_id
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'function.result'`
+
+</details>
+
+#### instructions
+
+_Type Signature:_ `string | null`
+
+#### model
+
+_Type Signature:_ `string | null`
+
+#### name
+
+_Type Signature:_ `string | null`
+
+#### store
+
+_Type Signature:_ `boolean | null`
+
+#### stream
+
+_Default Value:_ `false`
+
+_Type Signature:_ `boolean`
+
+#### tools
+
+_Type Signature:_ 
+```
+| array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+| null
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<details open>
+
+<summary>Function Properties</summary>
+
+##### description
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### parameters
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+</details>
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### conversation\_id
+
+_Type Signature:_ `string`
+
+#### object
+
+_Type Signature:_ `'conversation.response'`
+
+#### outputs
+
+_Type Signature:_ 
+```
+array<
+ 
+ | MessageOutputEntry
+ | ToolExecutionEntry
+ | FunctionCallEntry
+ | AgentHandoffEntry
+>
+```
+
+<details open>
+
+<summary>MessageOutputEntry Properties</summary>
+
+##### agent\_id
+
+_Type Signature:_ `string | null`
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+| string
+| array<
+ 
+ | TextChunk
+ | ImageURLChunk
+ | ToolFileChunk
+ | DocumentURLChunk
+ | ToolReferenceChunk
+>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolReferenceChunk Properties</summary>
+
+##### source
+
+_Type Signature:_ `string | null`
+
+##### title
+
+_Type Signature:_ `string`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_reference'`
+
+##### url
+
+_Type Signature:_ `string | null`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### model
+
+_Type Signature:_ `string | null`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant'`
+
+##### type
+
+_Type Signature:_ `'message.output'`
+
+</details>
+
+<details open>
+
+<summary>ToolExecutionEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### info
+
+_Type Signature:_ `map<any>`
+
+##### name
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### type
+
+_Type Signature:_ `'tool.execution'`
+
+</details>
+
+<details open>
+
+<summary>FunctionCallEntry Properties</summary>
+
+##### arguments
+
+_Type Signature:_ `map<any> | string`
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### tool\_call\_id
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'function.call'`
+
+</details>
+
+<details open>
+
+<summary>AgentHandoffEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### next\_agent\_id
+
+_Type Signature:_ `string`
+
+##### next\_agent\_name
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### previous\_agent\_id
+
+_Type Signature:_ `string`
+
+##### previous\_agent\_name
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'agent.handoff'`
+
+</details>
+
+#### usage
+
+_Type Signature:_ `ConversationUsageInfo`
+
+<details open>
+
+<summary>ConversationUsageInfo Properties</summary>
+
+##### completion\_tokens
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+##### connector\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### connectors
+
+_Type Signature:_ `map<integer> | null`
+
+##### prompt\_tokens
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+##### total\_tokens
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+</details>
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## GET /v1/conversations/\{conversation\_id\}
+
+Operation ID: agents_api_v1_conversations_get
+
+_Retrieve a conversation information._
+
+Given a conversation_id retrieve a conversation entity with its attributes.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### conversation\_id \(required\)
+
+_Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.get(\\{\n    conversationId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.conversations.get({
+    conversationId: "<id>",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+Successful Response
+
+_Type Signature:_ `ModelConversation | AgentConversation`
+
+<details open>
+
+<summary>ModelConversation Properties</summary>
+
+##### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<p>
+  <SideBarCta cta="View Prediction Details" title="Prediction Details">
+    <EmbedPrediction />
+  </SideBarCta>
+</p>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<p>
+  <SideBarCta cta="View ResponseFormat Details" title="ResponseFormat Details">
+    <EmbedResponseFormat />
+  </SideBarCta>
+</p>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### instructions
+
+_Type Signature:_ `string | null`
+
+##### model
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string | null`
+
+##### object
+
+_Type Signature:_ `'conversation'`
+
+##### tools
+
+List of tools which are available to the model during the conversation.
+
+_Type Signature:_ 
+```
+array<
+ 
+ | FunctionTool
+ | WebSearchTool
+ | WebSearchPremiumTool
+ | CodeInterpreterTool
+ | ImageGenerationTool
+ | DocumentLibraryTool
+>
+```
+
+<details open>
+
+<summary>FunctionTool Properties</summary>
+
+##### function
+
+_Type Signature:_ `Function`
+
+<p>
+  <SideBarCta cta="View Function Details" title="Function Details">
+    <EmbedFunction />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'function'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search'`
+
+</details>
+
+<details open>
+
+<summary>WebSearchPremiumTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'web_search_premium'`
+
+</details>
+
+<details open>
+
+<summary>CodeInterpreterTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'code_interpreter'`
+
+</details>
+
+<details open>
+
+<summary>ImageGenerationTool Properties</summary>
+
+##### type
+
+_Type Signature:_ `'image_generation'`
+
+</details>
+
+<details open>
+
+<summary>DocumentLibraryTool Properties</summary>
+
+##### library\_ids
+
+Ids of the library in which to search.
+
+_Type Signature:_ `array<string>`
+
+##### type
+
+_Type Signature:_ `'document_library'`
+
+</details>
+
+##### updated\_at
+
+_Type Signature:_ `date-time`
+
+</details>
+
+<details open>
+
+<summary>AgentConversation Properties</summary>
+
+##### agent\_id
+
+_Type Signature:_ `string`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string | null`
+
+##### object
+
+_Type Signature:_ `'conversation'`
+
+##### updated\_at
+
+_Type Signature:_ `date-time`
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## POST /v1/conversations/\{conversation\_id\}
+
+Operation ID: agents_api_v1_conversations_append
+
+_Append new entries to an existing conversation._
+
+Run completion on the history of the conversation and the user entries. Return the new created entries.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### conversation\_id \(required\)
+
+ID of the conversation to which we append entries.
+
+ID of the conversation to which we append entries.
+
+_Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.append(\\{\n    conversationId: \"<id>\",\n    conversationAppendRequest: \\{\n      inputs: [\n        \\{\n          object: \"entry\",\n          type: \"message.input\",\n          role: \"user\",\n          content: [\n            \\{\n              documentUrl: \"https://oblong-decryption.info/\",\n              type: \"document_url\",\n            \\},\n          ],\n        \\},\n      ],\n    \\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.conversations.append({
+    conversationId: "<id>",
+    conversationAppendRequest: {
+      inputs: [
+        {
+          object: "entry",
+          type: "message.input",
+          role: "user",
+          content: [
+            {
+              documentUrl: "https://oblong-decryption.info/",
+              type: "document_url",
+            },
+          ],
+        },
+      ],
+    },
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Request Body</summary>
+
+#### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<p>
+  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
+    <EmbedJsonSchema />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+#### handoff\_execution
+
+_Type Signature:_ `'client' | 'server'`
+
+#### inputs
+
+_Type Signature:_ `string | array<MessageInputEntry | FunctionResultEntry>`
+
+<details open>
+
+<summary>MessageInputEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant' | 'user'`
+
+##### type
+
+_Type Signature:_ `'message.input'`
+
+</details>
+
+<details open>
+
+<summary>FunctionResultEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### result
+
+_Type Signature:_ `string`
+
+##### tool\_call\_id
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'function.result'`
+
+</details>
+
+#### store
+
+Whether to store the results into our servers or not.
+
+_Default Value:_ `true`
+
+_Type Signature:_ `boolean`
+
+#### stream
+
+_Default Value:_ `false`
+
+_Type Signature:_ `boolean`
+
+</details>
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### conversation\_id
+
+_Type Signature:_ `string`
+
+#### object
+
+_Type Signature:_ `'conversation.response'`
+
+#### outputs
+
+_Type Signature:_ 
+```
+array<
+ 
+ | MessageOutputEntry
+ | ToolExecutionEntry
+ | FunctionCallEntry
+ | AgentHandoffEntry
+>
+```
+
+<details open>
+
+<summary>MessageOutputEntry Properties</summary>
+
+##### agent\_id
+
+_Type Signature:_ `string | null`
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+| string
+| array<
+ 
+ | TextChunk
+ | ImageURLChunk
+ | ToolFileChunk
+ | DocumentURLChunk
+ | ToolReferenceChunk
+>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolReferenceChunk Properties</summary>
+
+##### source
+
+_Type Signature:_ `string | null`
+
+##### title
+
+_Type Signature:_ `string`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_reference'`
+
+##### url
+
+_Type Signature:_ `string | null`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### model
+
+_Type Signature:_ `string | null`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant'`
+
+##### type
+
+_Type Signature:_ `'message.output'`
+
+</details>
+
+<details open>
+
+<summary>ToolExecutionEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### info
+
+_Type Signature:_ `map<any>`
+
+##### name
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### type
+
+_Type Signature:_ `'tool.execution'`
+
+</details>
+
+<details open>
+
+<summary>FunctionCallEntry Properties</summary>
+
+##### arguments
+
+_Type Signature:_ `map<any> | string`
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### tool\_call\_id
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'function.call'`
+
+</details>
+
+<details open>
+
+<summary>AgentHandoffEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### next\_agent\_id
+
+_Type Signature:_ `string`
+
+##### next\_agent\_name
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### previous\_agent\_id
+
+_Type Signature:_ `string`
+
+##### previous\_agent\_name
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'agent.handoff'`
+
+</details>
+
+#### usage
+
+_Type Signature:_ `ConversationUsageInfo`
+
+<details open>
+
+<summary>ConversationUsageInfo Properties</summary>
+
+##### completion\_tokens
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+##### connector\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### connectors
+
+_Type Signature:_ `map<integer> | null`
+
+##### prompt\_tokens
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+##### total\_tokens
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+</details>
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## GET /v1/conversations/\{conversation\_id\}/history
+
+Operation ID: agents_api_v1_conversations_history
+
+_Retrieve all entries in a conversation._
+
+Given a conversation_id retrieve all the entries belonging to that conversation. The entries are sorted in the order they were appended, those can be messages, connectors or function_call.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### conversation\_id \(required\)
+
+_Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.getHistory(\\{\n    conversationId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.conversations.getHistory({
+    conversationId: "<id>",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### conversation\_id
+
+_Type Signature:_ `string`
+
+#### entries
+
+_Type Signature:_ 
+```
+array<
+ 
+ | MessageInputEntry
+ | MessageOutputEntry
+ | FunctionResultEntry
+ | FunctionCallEntry
+ | ToolExecutionEntry
+ | AgentHandoffEntry
+>
+```
+
+<details open>
+
+<summary>MessageInputEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant' | 'user'`
+
+##### type
+
+_Type Signature:_ `'message.input'`
+
+</details>
+
+<details open>
+
+<summary>MessageOutputEntry Properties</summary>
+
+##### agent\_id
+
+_Type Signature:_ `string | null`
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+| string
+| array<
+ 
+ | TextChunk
+ | ImageURLChunk
+ | ToolFileChunk
+ | DocumentURLChunk
+ | ToolReferenceChunk
+>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolReferenceChunk Properties</summary>
+
+##### source
+
+_Type Signature:_ `string | null`
+
+##### title
+
+_Type Signature:_ `string`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_reference'`
+
+##### url
+
+_Type Signature:_ `string | null`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### model
+
+_Type Signature:_ `string | null`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant'`
+
+##### type
+
+_Type Signature:_ `'message.output'`
+
+</details>
+
+<details open>
+
+<summary>FunctionResultEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### result
+
+_Type Signature:_ `string`
+
+##### tool\_call\_id
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'function.result'`
+
+</details>
+
+<details open>
+
+<summary>FunctionCallEntry Properties</summary>
+
+##### arguments
+
+_Type Signature:_ `map<any> | string`
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### tool\_call\_id
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'function.call'`
+
+</details>
+
+<details open>
+
+<summary>ToolExecutionEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### info
+
+_Type Signature:_ `map<any>`
+
+##### name
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### type
+
+_Type Signature:_ `'tool.execution'`
+
+</details>
+
+<details open>
+
+<summary>AgentHandoffEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### next\_agent\_id
+
+_Type Signature:_ `string`
+
+##### next\_agent\_name
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### previous\_agent\_id
+
+_Type Signature:_ `string`
+
+##### previous\_agent\_name
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'agent.handoff'`
+
+</details>
+
+#### object
+
+_Type Signature:_ `'conversation.history'`
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## GET /v1/conversations/\{conversation\_id\}/messages
+
+Operation ID: agents_api_v1_conversations_messages
+
+_Retrieve all messages in a conversation._
+
+Given a conversation_id retrieve all the messages belonging to that conversation. This is similar to retrieving all entries except we filter the messages only.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### conversation\_id \(required\)
+
+_Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.getMessages(\\{\n    conversationId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.conversations.getMessages({
+    conversationId: "<id>",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### conversation\_id
+
+_Type Signature:_ `string`
+
+#### messages
+
+_Type Signature:_ `array<MessageInputEntry | MessageOutputEntry>`
+
+<details open>
+
+<summary>MessageInputEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant' | 'user'`
+
+##### type
+
+_Type Signature:_ `'message.input'`
+
+</details>
+
+<details open>
+
+<summary>MessageOutputEntry Properties</summary>
+
+##### agent\_id
+
+_Type Signature:_ `string | null`
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+| string
+| array<
+ 
+ | TextChunk
+ | ImageURLChunk
+ | ToolFileChunk
+ | DocumentURLChunk
+ | ToolReferenceChunk
+>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolReferenceChunk Properties</summary>
+
+##### source
+
+_Type Signature:_ `string | null`
+
+##### title
+
+_Type Signature:_ `string`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_reference'`
+
+##### url
+
+_Type Signature:_ `string | null`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### model
+
+_Type Signature:_ `string | null`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant'`
+
+##### type
+
+_Type Signature:_ `'message.output'`
+
+</details>
+
+#### object
+
+_Type Signature:_ `'conversation.messages'`
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>
+
+## POST /v1/conversations/\{conversation\_id\}/restart
+
+Operation ID: agents_api_v1_conversations_restart
+
+_Restart a conversation starting from a given entry._
+
+Given a conversation_id and an id, recreate a conversation from this point and run completion. A new conversation is returned with the new entries returned.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Parameters
+
+#### conversation\_id \(required\)
+
+_Type Signature:_ `string`
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.restart(\\{\n    conversationId: \"<id>\",\n    conversationRestartRequest: \\{\n      inputs: \"<value>\",\n      fromEntryId: \"<id>\",\n    \\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.beta.conversations.restart({
+    conversationId: "<id>",
+    conversationRestartRequest: {
+      inputs: "<value>",
+      fromEntryId: "<id>",
+    },
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Request Body</summary>
+
+#### completion\_args
+
+White-listed arguments from the completion API
+
+_Type Signature:_ `CompletionArgs`
+
+<details open>
+
+<summary>CompletionArgs Properties</summary>
+
+##### frequency\_penalty
+
+_Type Signature:_ `number | null`
+
+##### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### prediction
+
+_Type Signature:_ `Prediction | null`
+
+<details open>
+
+<summary>Prediction Properties</summary>
+
+##### content
+
+_Default Value:_ `""`
+
+_Type Signature:_ `string`
+
+##### type
+
+_Default Value:_ `"content"`
+
+_Type Signature:_ `string`
+
+</details>
+
+##### presence\_penalty
+
+_Type Signature:_ `number | null`
+
+##### random\_seed
+
+_Type Signature:_ `integer | null`
+
+##### response\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<p>
+  <SideBarCta cta="View JsonSchema Details" title="JsonSchema Details">
+    <EmbedJsonSchema />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
+##### stop
+
+_Type Signature:_ `string | array<string> | null`
+
+##### temperature
+
+_Default Value:_ `0.3`
+
+_Type Signature:_ `number`
+
+##### tool\_choice
+
+_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
+
+##### top\_p
+
+_Type Signature:_ `number | null`
+
+</details>
+
+#### from\_entry\_id
+
+_Type Signature:_ `string`
+
+#### handoff\_execution
+
+_Type Signature:_ `'client' | 'server'`
+
+#### inputs
+
+_Type Signature:_ `string | array<MessageInputEntry | FunctionResultEntry>`
+
+<details open>
+
+<summary>MessageInputEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant' | 'user'`
+
+##### type
+
+_Type Signature:_ `'message.input'`
+
+</details>
+
+<details open>
+
+<summary>FunctionResultEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### result
+
+_Type Signature:_ `string`
+
+##### tool\_call\_id
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'function.result'`
+
+</details>
+
+#### store
+
+Whether to store the results into our servers or not.
+
+_Default Value:_ `true`
+
+_Type Signature:_ `boolean`
+
+#### stream
+
+_Default Value:_ `false`
+
+_Type Signature:_ `boolean`
+
+</details>
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### conversation\_id
+
+_Type Signature:_ `string`
+
+#### object
+
+_Type Signature:_ `'conversation.response'`
+
+#### outputs
+
+_Type Signature:_ 
+```
+array<
+ 
+ | MessageOutputEntry
+ | ToolExecutionEntry
+ | FunctionCallEntry
+ | AgentHandoffEntry
+>
+```
+
+<details open>
+
+<summary>MessageOutputEntry Properties</summary>
+
+##### agent\_id
+
+_Type Signature:_ `string | null`
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### content
+
+_Type Signature:_ 
+```
+| string
+| array<
+ 
+ | TextChunk
+ | ImageURLChunk
+ | ToolFileChunk
+ | DocumentURLChunk
+ | ToolReferenceChunk
+>
+```
+
+<details open>
+
+<summary>TextChunk Properties</summary>
+
+##### text
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'text'`
+
+</details>
+
+<details open>
+
+<summary>ImageURLChunk Properties</summary>
+
+##### image\_url
+
+_Type Signature:_ `ImageURL | string`
+
+<p>
+  <SideBarCta cta="View ImageURL Details" title="ImageURL Details">
+    <EmbedImageURL />
+  </SideBarCta>
+</p>
+
+##### type
+
+_Type Signature:_ `'image_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolFileChunk Properties</summary>
+
+##### file\_id
+
+_Type Signature:_ `string`
+
+##### file\_name
+
+_Type Signature:_ `string | null`
+
+##### file\_type
+
+_Type Signature:_ `string | null`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_file'`
+
+</details>
+
+<details open>
+
+<summary>DocumentURLChunk Properties</summary>
+
+##### document\_name
+
+_Type Signature:_ `string | null`
+
+##### document\_url
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'document_url'`
+
+</details>
+
+<details open>
+
+<summary>ToolReferenceChunk Properties</summary>
+
+##### source
+
+_Type Signature:_ `string | null`
+
+##### title
+
+_Type Signature:_ `string`
+
+##### tool
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### type
+
+_Type Signature:_ `'tool_reference'`
+
+##### url
+
+_Type Signature:_ `string | null`
+
+</details>
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### model
+
+_Type Signature:_ `string | null`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### role
+
+_Type Signature:_ `'assistant'`
+
+##### type
+
+_Type Signature:_ `'message.output'`
+
+</details>
+
+<details open>
+
+<summary>ToolExecutionEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### info
+
+_Type Signature:_ `map<any>`
+
+##### name
+
+_Type Signature:_
+```
+enum
+  'web_search'
+  'web_search_premium'
+  'code_interpreter'
+  'image_generation'
+  'document_library'
+```
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### type
+
+_Type Signature:_ `'tool.execution'`
+
+</details>
+
+<details open>
+
+<summary>FunctionCallEntry Properties</summary>
+
+##### arguments
+
+_Type Signature:_ `map<any> | string`
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### tool\_call\_id
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'function.call'`
+
+</details>
+
+<details open>
+
+<summary>AgentHandoffEntry Properties</summary>
+
+##### completed\_at
+
+_Type Signature:_ `date-time | null`
+
+##### created\_at
+
+_Type Signature:_ `date-time`
+
+##### id
+
+_Type Signature:_ `string`
+
+##### next\_agent\_id
+
+_Type Signature:_ `string`
+
+##### next\_agent\_name
+
+_Type Signature:_ `string`
+
+##### object
+
+_Type Signature:_ `'entry'`
+
+##### previous\_agent\_id
+
+_Type Signature:_ `string`
+
+##### previous\_agent\_name
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `'agent.handoff'`
+
+</details>
+
+#### usage
+
+_Type Signature:_ `ConversationUsageInfo`
+
+<details open>
+
+<summary>ConversationUsageInfo Properties</summary>
+
+##### completion\_tokens
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+##### connector\_tokens
+
+_Type Signature:_ `integer | null`
+
+##### connectors
+
+_Type Signature:_ `map<integer> | null`
+
+##### prompt\_tokens
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+##### total\_tokens
+
+_Default Value:_ `0`
+
+_Type Signature:_ `integer`
+
+</details>
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>

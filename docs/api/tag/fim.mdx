@@ -1,0 +1,365 @@
+---
+sidebar_position: 2.8
+sidebar_label: fim
+---
+
+import { TryItNow } from "@speakeasy-api/docs-md";
+import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
+import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
+import EmbedImageURLChunk from "../../../src/components/speakeasy/embeds/ImageURLChunk.mdx";
+import EmbedDocumentURLChunk from "../../../src/components/speakeasy/embeds/DocumentURLChunk.mdx";
+import EmbedReferenceChunk from "../../../src/components/speakeasy/embeds/ReferenceChunk.mdx";
+import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx";
+
+
+<SideBar />
+
+# fim
+
+## POST /v1/fim/completions
+
+Operation ID: fim_completion_v1_fim_completions_post
+
+_Fim Completion_
+
+FIM completion.
+
+### Security
+
+<details open>
+
+<summary>Security</summary>
+
+#### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fim.complete(\\{\n    model: \"codestral-2405\",\n    prompt: \"def\",\n    suffix: \"return a+b\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fim.complete({
+    model: "codestral-2405",
+    prompt: "def",
+    suffix: "return a+b",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
+### Request Body \(required\)
+
+<details open>
+
+<summary>Request Body</summary>
+
+#### max\_tokens
+
+_Type Signature:_ `integer | null`
+
+#### min\_tokens
+
+_Type Signature:_ `integer | null`
+
+#### model
+
+ID of the model to use. Only compatible for now with:
+  - `codestral-2405`
+  - `codestral-latest`
+
+_Example:_
+
+```
+codestral-2405
+```
+
+_Type Signature:_ `string`
+
+#### prompt
+
+The text/code to complete.
+
+_Example:_
+
+```
+def
+```
+
+_Type Signature:_ `string`
+
+#### random\_seed
+
+_Type Signature:_ `integer | null`
+
+#### stop
+
+Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
+
+_Type Signature:_ `string | array<string>`
+
+#### stream
+
+Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
+
+_Default Value:_ `false`
+
+_Type Signature:_ `boolean`
+
+#### suffix
+
+_Example:_
+
+```
+return a+b
+```
+
+_Type Signature:_ `string | null`
+
+#### temperature
+
+_Type Signature:_ `number | null`
+
+#### top\_p
+
+Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.
+
+_Default Value:_ `1`
+
+_Type Signature:_ `number`
+
+</details>
+
+### Response: 200 \(application/json\)
+
+Successful Response
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### choices
+
+_Type Signature:_ `array<ChatCompletionChoice>`
+
+<details open>
+
+<summary>ChatCompletionChoice Properties</summary>
+
+##### finish\_reason
+
+_Type Signature:_ `'stop' | 'length' | 'model_length' | 'error' | 'tool_calls'`
+
+##### index
+
+_Example:_
+
+```
+0
+```
+
+_Type Signature:_ `integer`
+
+##### message
+
+_Type Signature:_ `AssistantMessage`
+
+<details open>
+
+<summary>AssistantMessage Properties</summary>
+
+##### content
+
+_Type Signature:_ 
+```
+| string
+| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| null
+```
+
+<p>
+  <SideBarCta cta="View TextChunk Details" title="TextChunk Details">
+    <EmbedTextChunk />
+  </SideBarCta>
+</p>
+
+<p>
+  <SideBarCta cta="View ImageURLChunk Details" title="ImageURLChunk Details">
+    <EmbedImageURLChunk />
+  </SideBarCta>
+</p>
+
+<p>
+  <SideBarCta cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
+    <EmbedDocumentURLChunk />
+  </SideBarCta>
+</p>
+
+<p>
+  <SideBarCta cta="View ReferenceChunk Details" title="ReferenceChunk Details">
+    <EmbedReferenceChunk />
+  </SideBarCta>
+</p>
+
+##### prefix
+
+Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
+
+_Default Value:_ `false`
+
+_Type Signature:_ `boolean`
+
+##### role
+
+_Type Signature:_ `'assistant'`
+
+##### tool\_calls
+
+_Type Signature:_ `array<ToolCall> | null`
+
+<p>
+  <SideBarCta cta="View ToolCall Details" title="ToolCall Details">
+    <EmbedToolCall />
+  </SideBarCta>
+</p>
+
+</details>
+
+</details>
+
+#### created
+
+_Example:_
+
+```
+1702256327
+```
+
+_Type Signature:_ `integer`
+
+#### id
+
+_Example:_
+
+```
+cmpl-e5cc70bb28c444948073e77776eb30ef
+```
+
+_Type Signature:_ `string`
+
+#### model
+
+_Example:_
+
+```
+codestral-latest
+```
+
+_Type Signature:_ `string`
+
+#### object
+
+_Example:_
+
+```
+chat.completion
+```
+
+_Type Signature:_ `string`
+
+#### usage
+
+_Type Signature:_ `UsageInfo`
+
+<details open>
+
+<summary>UsageInfo Properties</summary>
+
+##### completion\_tokens
+
+_Example:_
+
+```
+34
+```
+
+_Type Signature:_ `integer`
+
+##### prompt\_tokens
+
+_Example:_
+
+```
+16
+```
+
+_Type Signature:_ `integer`
+
+##### total\_tokens
+
+_Example:_
+
+```
+50
+```
+
+_Type Signature:_ `integer`
+
+</details>
+
+</details>
+
+### Response: 422 \(application/json\)
+
+Validation Error
+
+<details open>
+
+<summary>Response Body</summary>
+
+#### HttpMeta
+
+_Type Signature:_ `Security`
+
+<details open>
+
+<summary>Security Properties</summary>
+
+##### ApiKey
+
+_Type Signature:_ `string`
+
+</details>
+
+#### detail
+
+_Type Signature:_ `array<ValidationError>`
+
+<details open>
+
+<summary>ValidationError Properties</summary>
+
+##### loc
+
+_Type Signature:_ `array<string | integer>`
+
+##### msg
+
+_Type Signature:_ `string`
+
+##### type
+
+_Type Signature:_ `string`
+
+</details>
+
+</details>

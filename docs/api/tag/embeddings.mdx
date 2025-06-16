@@ -1,7 +1,10 @@
 ---
-sidebar_position: 2.3
+sidebar_position: 2.6
 sidebar_label: embeddings
 ---
+
+import { TryItNow } from "@speakeasy-api/docs-md";
+
 
 # embeddings
 
@@ -25,13 +28,36 @@ _Type Signature:_ `string`
 
 </details>
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.embeddings.create(\\{\n    model: \"mistral-embed\",\n    inputs: [\n      \"Embed this sentence.\",\n      \"As well as this one.\",\n    ],\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.embeddings.create({
+    model: "mistral-embed",
+    inputs: [
+      "Embed this sentence.",
+      "As well as this one.",
+    ],
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### input
+#### inputs
 
 Text to embed.
 
@@ -48,6 +74,14 @@ mistral-embed
 ```
 
 _Type Signature:_ `string`
+
+#### output\_dimension
+
+_Type Signature:_ `integer | null`
+
+#### output\_dtype
+
+_Type Signature:_ `'float' | 'int8' | 'uint8' | 'binary' | 'ubinary'`
 
 </details>
 

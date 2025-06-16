@@ -1,7 +1,10 @@
 ---
-sidebar_position: 2.7
+sidebar_position: 2.11
 sidebar_label: ocr
 ---
+
+import { TryItNow } from "@speakeasy-api/docs-md";
+
 
 # ocr
 
@@ -23,11 +26,76 @@ _Type Signature:_ `string`
 
 </details>
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.ocr.process(\\{\n    model: \"CX-9\",\n    document: \\{\n      imageUrl: \\{\n        url: \"https://measly-scrap.com\",\n      \\},\n      type: \"image_url\",\n    \\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.ocr.process({
+    model: "CX-9",
+    document: {
+      imageUrl: {
+        url: "https://measly-scrap.com",
+      },
+      type: "image_url",
+    },
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Request Body \(required\)
 
 <details open>
 
 <summary>Request Body</summary>
+
+#### bbox\_annotation\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<details open>
+
+<summary>JsonSchema Properties</summary>
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### schema\_definition
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
 
 #### document
 
@@ -81,6 +149,46 @@ _Type Signature:_ `'image_url'`
 
 </details>
 
+#### document\_annotation\_format
+
+_Type Signature:_ `ResponseFormat | null`
+
+<details open>
+
+<summary>ResponseFormat Properties</summary>
+
+##### json\_schema
+
+_Type Signature:_ `JsonSchema | null`
+
+<details open>
+
+<summary>JsonSchema Properties</summary>
+
+##### description
+
+_Type Signature:_ `string | null`
+
+##### name
+
+_Type Signature:_ `string`
+
+##### schema\_definition
+
+_Type Signature:_ `map<any>`
+
+##### strict
+
+_Type Signature:_ `boolean`
+
+</details>
+
+##### type
+
+_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+
+</details>
+
 #### id
 
 _Type Signature:_ `string`
@@ -114,6 +222,10 @@ Successful Response
 <details open>
 
 <summary>Response Body</summary>
+
+#### document\_annotation
+
+_Type Signature:_ `string | null`
 
 #### model
 
@@ -182,6 +294,10 @@ _Type Signature:_ `integer | null`
 Image ID for extracted image in a page
 
 _Type Signature:_ `string`
+
+##### image\_annotation
+
+_Type Signature:_ `string | null`
 
 ##### image\_base64
 

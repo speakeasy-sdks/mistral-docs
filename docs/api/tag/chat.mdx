@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2.0
-sidebar_label: agents
+sidebar_position: 2.4
+sidebar_label: chat
 ---
 
 import { TryItNow } from "@speakeasy-api/docs-md";
@@ -16,13 +16,13 @@ import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx
 
 <SideBar />
 
-# agents
+# chat
 
-## POST /v1/agents/completions
+## POST /v1/chat/completions
 
-Operation ID: agents_completion_v1_agents_completions_post
+Operation ID: chat_completion_v1_chat_completions_post
 
-Agents Completion
+Chat Completion
 
 ### Security
 
@@ -38,21 +38,21 @@ _Type Signature:_ `string`
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.agents.complete(\\{\n    messages: [\n      \\{\n        content: \"Who is the best French painter? Answer in one short sentence.\",\n        role: \"user\",\n      \\},\n    ],\n    agentId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.chat.complete(\\{\n    model: \"mistral-small-latest\",\n    messages: [\n      \\{\n        content: \"Who is the best French painter? Answer in one short sentence.\",\n        role: \"user\",\n      \\},\n    ],\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await mistral.agents.complete({
+  const result = await mistral.chat.complete({
+    model: "mistral-small-latest",
     messages: [
       {
         content: "Who is the best French painter? Answer in one short sentence.",
         role: "user",
       },
     ],
-    agentId: "<id>",
   });
 
   // Handle the result
@@ -66,12 +66,6 @@ run();`} />
 <details open>
 
 <summary>Request Body</summary>
-
-#### agent\_id
-
-The ID of the agent to use for this completion.
-
-_Type Signature:_ `string`
 
 #### frequency\_penalty
 
@@ -427,6 +421,18 @@ _Type Signature:_ `string | null`
 
 </details>
 
+#### model
+
+ID of the model to use. You can use the List Available Models API to see all of your available models, or see our Model overview for model descriptions.
+
+_Example:_
+
+```
+mistral-small-latest
+```
+
+_Type Signature:_ `string`
+
 #### n
 
 _Type Signature:_ `integer | null`
@@ -511,6 +517,12 @@ _Type Signature:_ `'text' | 'json_object' | 'json_schema'`
 
 </details>
 
+#### safe\_prompt
+
+Whether to inject a safety prompt before all conversations.
+
+_Type Signature:_ `boolean`
+
 #### stop
 
 Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
@@ -524,6 +536,10 @@ Whether to stream back partial progress. If set, tokens will be sent as data-onl
 _Default Value:_ `false`
 
 _Type Signature:_ `boolean`
+
+#### temperature
+
+_Type Signature:_ `number | null`
 
 #### tool\_choice
 
@@ -594,6 +610,12 @@ _Type Signature:_ `boolean`
 _Type Signature:_ `'function'`
 
 </details>
+
+#### top\_p
+
+Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.
+
+_Type Signature:_ `number`
 
 </details>
 

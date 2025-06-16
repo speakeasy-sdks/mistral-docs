@@ -1,15 +1,16 @@
 ---
-sidebar_position: 2.5
-sidebar_label: fine-tuning
+sidebar_position: 2.9
+sidebar_label: fine-tuning/jobs
 ---
 
-import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
-import EmbedMetricOut from "../../../src/components/speakeasy/embeds/MetricOut.mdx";
+import { TryItNow } from "@speakeasy-api/docs-md";
+import EmbedMetricOut from "../../../../src/components/speakeasy/embeds/MetricOut.mdx";
+import { SideBarCta, SideBar } from "../../../../src/components/speakeasy/SideBar/index.tsx";
 
 
 <SideBar />
 
-# fine-tuning
+# fine-tuning/jobs
 
 ## GET /v1/fine\_tuning/jobs
 
@@ -30,6 +31,23 @@ Get a list of fine-tuning jobs for your organization and user.
 _Type Signature:_ `string`
 
 </details>
+
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.list(\\{\\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fineTuning.jobs.list({});
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Response: 200 \(application/json\)
 
@@ -183,17 +201,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
@@ -410,17 +420,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
@@ -499,17 +501,27 @@ _Type Signature:_ `string`
 
 </details>
 
-### Parameters
+### Try it Now
 
-#### dry\_run
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.create(\\{\n    model: \"Camaro\",\n    hyperparameters: \\{\n      learningRate: 0.0001,\n    \\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
-* If `true` the job is not spawned, instead the query returns a handful of useful metadata
-  for the user to perform sanity checks (see `LegacyJobMetadataOut` response).
-* Otherwise, the job is started and the query returns the job ID along with some of the
-  input parameters (see `JobOut` response).
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
+async function run() {
+  const result = await mistral.fineTuning.jobs.create({
+    model: "Camaro",
+    hyperparameters: {
+      learningRate: 0.0001,
+    },
+  });
 
-_Type Signature:_ `boolean | null`
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
 
 ### Request Body \(required\)
 
@@ -676,17 +688,9 @@ _Type Signature:_ `'completion' | 'classifier'`
 
 #### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 #### repositories
 
@@ -900,17 +904,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
@@ -1127,17 +1123,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
@@ -1320,6 +1308,25 @@ The ID of the job to analyse.
 
 _Type Signature:_ `string`
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.get(\\{\n    jobId: \"c167a961-ffca-4bcf-93ac-6169468dd389\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fineTuning.jobs.get({
+    jobId: "c167a961-ffca-4bcf-93ac-6169468dd389",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Response: 200 \(application/json\)
 
 OK
@@ -1532,17 +1539,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
@@ -1845,17 +1844,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
@@ -1930,6 +1921,25 @@ The ID of the job to cancel.
 
 _Type Signature:_ `string`
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.cancel(\\{\n    jobId: \"6188a2f6-7513-4e0f-89cc-3f8088523a49\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fineTuning.jobs.cancel({
+    jobId: "6188a2f6-7513-4e0f-89cc-3f8088523a49",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Response: 200 \(application/json\)
 
 OK
@@ -2142,17 +2152,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
@@ -2455,17 +2457,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
@@ -2536,6 +2530,25 @@ _Type Signature:_ `string`
 
 _Type Signature:_ `string`
 
+### Try it Now
+
+<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.start(\\{\n    jobId: \"56553e4d-0679-471e-b9ac-59a77d671103\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+
+const mistral = new Mistral({
+  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await mistral.fineTuning.jobs.start({
+    jobId: "56553e4d-0679-471e-b9ac-59a77d671103",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();`} />
+
 ### Response: 200 \(application/json\)
 
 OK
@@ -2748,17 +2761,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
@@ -3061,17 +3066,9 @@ _Type Signature:_ `integer | null`
 
 ##### model
 
-_Type Signature:_
-```
-enum
-  'open-mistral-7b'
-  'mistral-small-latest'
-  'codestral-latest'
-  'mistral-large-latest'
-  'open-mistral-nemo'
-  'ministral-3b-latest'
-  'ministral-8b-latest'
-```
+The name of the model to fine-tune.
+
+_Type Signature:_ `string`
 
 ##### modified\_at
 
