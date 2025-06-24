@@ -20,9 +20,7 @@ Get a list of fine-tuning jobs for your organization and user.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -51,427 +49,299 @@ OK
 
 <summary>Response Body</summary>
 
-#### data
+#### data: `array<CompletionJobOut | ClassifierJobOut>`
 
-_Type Signature:_ `array<CompletionJobOut | ClassifierJobOut>`
-
-<details open>
+<details >
 
 <summary>CompletionJobOut Properties</summary>
 
-##### auto\_start
+##### auto\_start \(required\): `boolean`
 
-_Type Signature:_ `boolean`
-
-##### created\_at
+##### created\_at \(required\): `integer`
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
-_Type Signature:_ `integer`
+##### fine\_tuned\_model: `string | null`
 
-##### fine\_tuned\_model
+##### hyperparameters \(required\): `CompletionTrainingParameters`
 
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `CompletionTrainingParameters`
-
-<details open>
+<details >
 
 <summary>CompletionTrainingParameters Properties</summary>
 
-##### epochs
+##### epochs: `number | null`
 
-_Type Signature:_ `number | null`
+##### fim\_ratio: `number | null`
 
-##### fim\_ratio
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
+##### learning\_rate: `number`
 
 _Default Value:_ `0.0001`
 
-_Type Signature:_ `number`
+##### seq\_len: `integer | null`
 
-##### seq\_len
+##### training\_steps: `integer | null`
 
-_Type Signature:_ `integer | null`
+##### warmup\_fraction: `number | null`
 
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
+##### weight\_decay: `number | null`
 
 </details>
 
-##### id
+##### id \(required\): `string`
 
 The ID of the job.
 
-_Type Signature:_ `string`
+##### integrations: `array<WandbIntegrationOut> | null`
 
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
+<details >
 
 <summary>WandbIntegrationOut Properties</summary>
 
-##### name
+##### name: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### project
+##### project \(required\): `string`
 
 The name of the project that the new run will be created under.
 
-_Type Signature:_ `string`
+##### run\_name: `string | null`
 
-##### run\_name
+##### type: `"wandb"`
 
-_Type Signature:_ `string | null`
+_Default Value:_ `"wandb"`
 
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
+##### url: `string | null`
 
 </details>
 
-##### job\_type
+##### job\_type: `"completion"`
 
-_Type Signature:_ `'completion'`
+The type of job (`FT` for fine-tuning).
 
-##### metadata
+_Default Value:_ `"completion"`
 
-_Type Signature:_ `JobMetadataOut | null`
+##### metadata: `JobMetadataOut | null`
 
-<details open>
+<details >
 
 <summary>JobMetadataOut Properties</summary>
 
-##### cost
+##### cost: `number | null`
 
-_Type Signature:_ `number | null`
+##### cost\_currency: `string | null`
 
-##### cost\_currency
+##### data\_tokens: `integer | null`
 
-_Type Signature:_ `string | null`
+##### estimated\_start\_time: `integer | null`
 
-##### data\_tokens
+##### expected\_duration\_seconds: `integer | null`
 
-_Type Signature:_ `integer | null`
+##### train\_tokens: `integer | null`
 
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
+##### train\_tokens\_per\_step: `integer | null`
 
 </details>
 
-##### model
+##### model \(required\): `string`
 
 The name of the model to fine-tune.
 
-_Type Signature:_ `string`
-
-##### modified\_at
+##### modified\_at \(required\): `integer`
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
-_Type Signature:_ `integer`
+##### object: `"job"`
 
-##### object
+The object type of the fine-tuning job.
 
-_Type Signature:_ `'job'`
+_Default Value:_ `"job"`
 
-##### repositories
+##### repositories: `array<WandbIntegrationOut> | null`
 
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
+<details >
 
 <summary>WandbIntegrationOut Properties</summary>
 
-##### name
+##### name: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### project
+##### project \(required\): `string`
 
 The name of the project that the new run will be created under.
 
-_Type Signature:_ `string`
+##### run\_name: `string | null`
 
-##### run\_name
+##### type: `"wandb"`
 
-_Type Signature:_ `string | null`
+_Default Value:_ `"wandb"`
 
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
+##### url: `string | null`
 
 </details>
 
-##### status
+##### status \(required\)
 
-_Type Signature:_
 ```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
+| "QUEUED"
+| "STARTED"
+| "VALIDATING"
+| "VALIDATED"
+| "RUNNING"
+| "FAILED_VALIDATION"
+| "FAILED"
+| "SUCCESS"
+| "CANCELLED"
+| "CANCELLATION_REQUESTED"
 ```
 
-##### suffix
+The current status of the fine-tuning job.
 
-_Type Signature:_ `string | null`
+##### suffix: `string | null`
 
-##### trained\_tokens
+##### trained\_tokens: `integer | null`
 
-_Type Signature:_ `integer | null`
-
-##### training\_files
+##### training\_files \(required\): `array<string>`
 
 A list containing the IDs of uploaded files that contain training data.
 
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
+##### validation\_files: `array<string> | null`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ClassifierJobOut Properties</summary>
 
-##### auto\_start
+##### auto\_start \(required\): `boolean`
 
-_Type Signature:_ `boolean`
-
-##### created\_at
+##### created\_at \(required\): `integer`
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
-_Type Signature:_ `integer`
+##### fine\_tuned\_model: `string | null`
 
-##### fine\_tuned\_model
+##### hyperparameters \(required\): `ClassifierTrainingParameters`
 
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `ClassifierTrainingParameters`
-
-<details open>
+<details >
 
 <summary>ClassifierTrainingParameters Properties</summary>
 
-##### epochs
+##### epochs: `number | null`
 
-_Type Signature:_ `number | null`
-
-##### learning\_rate
+##### learning\_rate: `number`
 
 _Default Value:_ `0.0001`
 
-_Type Signature:_ `number`
+##### seq\_len: `integer | null`
 
-##### seq\_len
+##### training\_steps: `integer | null`
 
-_Type Signature:_ `integer | null`
+##### warmup\_fraction: `number | null`
 
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
+##### weight\_decay: `number | null`
 
 </details>
 
-##### id
+##### id \(required\): `string`
 
 The ID of the job.
 
-_Type Signature:_ `string`
+##### integrations: `array<WandbIntegrationOut> | null`
 
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
+<details >
 
 <summary>WandbIntegrationOut Properties</summary>
 
-##### name
+##### name: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### project
+##### project \(required\): `string`
 
 The name of the project that the new run will be created under.
 
-_Type Signature:_ `string`
+##### run\_name: `string | null`
 
-##### run\_name
+##### type: `"wandb"`
 
-_Type Signature:_ `string | null`
+_Default Value:_ `"wandb"`
 
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
+##### url: `string | null`
 
 </details>
 
-##### job\_type
+##### job\_type: `"classifier"`
 
-_Type Signature:_ `'classifier'`
+The type of job (`FT` for fine-tuning).
 
-##### metadata
+_Default Value:_ `"classifier"`
 
-_Type Signature:_ `JobMetadataOut | null`
+##### metadata: `JobMetadataOut | null`
 
-<details open>
+<details >
 
 <summary>JobMetadataOut Properties</summary>
 
-##### cost
+##### cost: `number | null`
 
-_Type Signature:_ `number | null`
+##### cost\_currency: `string | null`
 
-##### cost\_currency
+##### data\_tokens: `integer | null`
 
-_Type Signature:_ `string | null`
+##### estimated\_start\_time: `integer | null`
 
-##### data\_tokens
+##### expected\_duration\_seconds: `integer | null`
 
-_Type Signature:_ `integer | null`
+##### train\_tokens: `integer | null`
 
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
+##### train\_tokens\_per\_step: `integer | null`
 
 </details>
 
-##### model
+##### model \(required\): `string`
 
 The name of the model to fine-tune.
 
-_Type Signature:_ `string`
-
-##### modified\_at
+##### modified\_at \(required\): `integer`
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
-_Type Signature:_ `integer`
+##### object: `"job"`
 
-##### object
+The object type of the fine-tuning job.
 
-_Type Signature:_ `'job'`
+_Default Value:_ `"job"`
 
-##### status
+##### status \(required\)
 
-_Type Signature:_
 ```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
+| "QUEUED"
+| "STARTED"
+| "VALIDATING"
+| "VALIDATED"
+| "RUNNING"
+| "FAILED_VALIDATION"
+| "FAILED"
+| "SUCCESS"
+| "CANCELLED"
+| "CANCELLATION_REQUESTED"
 ```
 
-##### suffix
+The current status of the fine-tuning job.
 
-_Type Signature:_ `string | null`
+##### suffix: `string | null`
 
-##### trained\_tokens
+##### trained\_tokens: `integer | null`
 
-_Type Signature:_ `integer | null`
-
-##### training\_files
+##### training\_files \(required\): `array<string>`
 
 A list containing the IDs of uploaded files that contain training data.
 
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
+##### validation\_files: `array<string> | null`
 
 </details>
 
-#### object
+#### object: `"list"`
 
-_Type Signature:_ `'list'`
+_Default Value:_ `"list"`
 
-#### total
-
-_Type Signature:_ `integer`
+#### total \(required\): `integer`
 
 </details>
 
@@ -487,9 +357,7 @@ Create a new fine-tuning job, it will be queued for processing.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -521,230 +389,155 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### auto\_start
+#### auto\_start: `boolean`
 
 This field will be required in a future release.
 
-_Type Signature:_ `boolean`
+#### classifier\_targets: `array<ClassifierTargetIn> | null`
 
-#### classifier\_targets
-
-_Type Signature:_ `array<ClassifierTargetIn> | null`
-
-<details open>
+<details >
 
 <summary>ClassifierTargetIn Properties</summary>
 
-##### labels
+##### labels \(required\): `array<string>`
 
-_Type Signature:_ `array<string>`
+##### loss\_function: `"single_class" | "multi_class"`
 
-##### loss\_function
+##### name \(required\): `string`
 
-_Type Signature:_ `'single_class' | 'multi_class'`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### weight
+##### weight: `number`
 
 _Default Value:_ `1`
 
-_Type Signature:_ `number`
-
 </details>
 
-#### hyperparameters
+#### hyperparameters \(required\)
 
-_Type Signature:_ 
 ```
 CompletionTrainingParametersIn | ClassifierTrainingParametersIn
 ```
 
-<details open>
+<details >
 
 <summary>CompletionTrainingParametersIn Properties</summary>
 
-##### epochs
+##### epochs: `number | null`
 
-_Type Signature:_ `number | null`
+##### fim\_ratio: `number | null`
 
-##### fim\_ratio
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
+##### learning\_rate: `number`
 
 A parameter describing how much to adjust the pre-trained model's weights in response to the estimated error each time the weights are updated during the fine-tuning process.
 
 _Default Value:_ `0.0001`
 
-_Type Signature:_ `number`
+##### seq\_len: `integer | null`
 
-##### seq\_len
+##### training\_steps: `integer | null`
 
-_Type Signature:_ `integer | null`
+##### warmup\_fraction: `number | null`
 
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
+##### weight\_decay: `number | null`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ClassifierTrainingParametersIn Properties</summary>
 
-##### epochs
+##### epochs: `number | null`
 
-_Type Signature:_ `number | null`
-
-##### learning\_rate
+##### learning\_rate: `number`
 
 A parameter describing how much to adjust the pre-trained model's weights in response to the estimated error each time the weights are updated during the fine-tuning process.
 
 _Default Value:_ `0.0001`
 
-_Type Signature:_ `number`
+##### seq\_len: `integer | null`
 
-##### seq\_len
+##### training\_steps: `integer | null`
 
-_Type Signature:_ `integer | null`
+##### warmup\_fraction: `number | null`
 
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
+##### weight\_decay: `number | null`
 
 </details>
 
-#### integrations
+#### integrations: `array<WandbIntegration> | null`
 
-_Type Signature:_ `array<WandbIntegration> | null`
-
-<details open>
+<details >
 
 <summary>WandbIntegration Properties</summary>
 
-##### api\_key
+##### api\_key \(required\): `string`
 
 The WandB API key to use for authentication.
 
-_Type Signature:_ `string`
+##### name: `string | null`
 
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
+##### project \(required\): `string`
 
 The name of the project that the new run will be created under.
 
-_Type Signature:_ `string`
+##### run\_name: `string | null`
 
-##### run\_name
+##### type: `"wandb"`
 
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
+_Default Value:_ `"wandb"`
 
 </details>
 
-#### invalid\_sample\_skip\_percentage
+#### invalid\_sample\_skip\_percentage: `number`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `number`
+#### job\_type: `"completion" | "classifier"`
 
-#### job\_type
-
-_Type Signature:_ `'completion' | 'classifier'`
-
-#### model
+#### model \(required\): `string`
 
 The name of the model to fine-tune.
 
-_Type Signature:_ `string`
+#### repositories: `array<WandbIntegration> | null`
 
-#### repositories
-
-_Type Signature:_ `array<WandbIntegration> | null`
-
-<details open>
+<details >
 
 <summary>WandbIntegration Properties</summary>
 
-##### api\_key
+##### api\_key \(required\): `string`
 
 The WandB API key to use for authentication.
 
-_Type Signature:_ `string`
+##### name: `string | null`
 
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
+##### project \(required\): `string`
 
 The name of the project that the new run will be created under.
 
-_Type Signature:_ `string`
+##### run\_name: `string | null`
 
-##### run\_name
+##### type: `"wandb"`
 
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
+_Default Value:_ `"wandb"`
 
 </details>
 
-#### suffix
+#### suffix: `string | null`
 
-_Type Signature:_ `string | null`
+#### training\_files: `array<TrainingFile>`
 
-#### training\_files
-
-_Type Signature:_ `array<TrainingFile>`
-
-<details open>
+<details >
 
 <summary>TrainingFile Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
-
-##### weight
+##### weight: `number`
 
 _Default Value:_ `1`
 
-_Type Signature:_ `number`
-
 </details>
 
-#### validation\_files
-
-_Type Signature:_ `array<string> | null`
+#### validation\_files: `array<string> | null`
 
 </details>
 
@@ -752,523 +545,13 @@ _Type Signature:_ `array<string> | null`
 
 OK
 
+#### Response Body \(required\)
+
+```
+CompletionJobOut | ClassifierJobOut | LegacyJobMetadataOut
+```
+
 OK
-
-_Type Signature:_ `CompletionJobOut | ClassifierJobOut | LegacyJobMetadataOut`
-
-<details open>
-
-<summary>CompletionJobOut Properties</summary>
-
-##### auto\_start
-
-_Type Signature:_ `boolean`
-
-##### created\_at
-
-The UNIX timestamp (in seconds) for when the fine-tuning job was created.
-
-_Type Signature:_ `integer`
-
-##### fine\_tuned\_model
-
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `CompletionTrainingParameters`
-
-<details open>
-
-<summary>CompletionTrainingParameters Properties</summary>
-
-##### epochs
-
-_Type Signature:_ `number | null`
-
-##### fim\_ratio
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
-
-_Default Value:_ `0.0001`
-
-_Type Signature:_ `number`
-
-##### seq\_len
-
-_Type Signature:_ `integer | null`
-
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### id
-
-The ID of the job.
-
-_Type Signature:_ `string`
-
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### job\_type
-
-_Type Signature:_ `'completion'`
-
-##### metadata
-
-_Type Signature:_ `JobMetadataOut | null`
-
-<details open>
-
-<summary>JobMetadataOut Properties</summary>
-
-##### cost
-
-_Type Signature:_ `number | null`
-
-##### cost\_currency
-
-_Type Signature:_ `string | null`
-
-##### data\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
-
-</details>
-
-##### model
-
-The name of the model to fine-tune.
-
-_Type Signature:_ `string`
-
-##### modified\_at
-
-The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
-
-_Type Signature:_ `integer`
-
-##### object
-
-_Type Signature:_ `'job'`
-
-##### repositories
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### status
-
-_Type Signature:_
-```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
-```
-
-##### suffix
-
-_Type Signature:_ `string | null`
-
-##### trained\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### training\_files
-
-A list containing the IDs of uploaded files that contain training data.
-
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
-
-</details>
-
-<details open>
-
-<summary>ClassifierJobOut Properties</summary>
-
-##### auto\_start
-
-_Type Signature:_ `boolean`
-
-##### created\_at
-
-The UNIX timestamp (in seconds) for when the fine-tuning job was created.
-
-_Type Signature:_ `integer`
-
-##### fine\_tuned\_model
-
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `ClassifierTrainingParameters`
-
-<details open>
-
-<summary>ClassifierTrainingParameters Properties</summary>
-
-##### epochs
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
-
-_Default Value:_ `0.0001`
-
-_Type Signature:_ `number`
-
-##### seq\_len
-
-_Type Signature:_ `integer | null`
-
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### id
-
-The ID of the job.
-
-_Type Signature:_ `string`
-
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### job\_type
-
-_Type Signature:_ `'classifier'`
-
-##### metadata
-
-_Type Signature:_ `JobMetadataOut | null`
-
-<details open>
-
-<summary>JobMetadataOut Properties</summary>
-
-##### cost
-
-_Type Signature:_ `number | null`
-
-##### cost\_currency
-
-_Type Signature:_ `string | null`
-
-##### data\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
-
-</details>
-
-##### model
-
-The name of the model to fine-tune.
-
-_Type Signature:_ `string`
-
-##### modified\_at
-
-The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
-
-_Type Signature:_ `integer`
-
-##### object
-
-_Type Signature:_ `'job'`
-
-##### status
-
-_Type Signature:_
-```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
-```
-
-##### suffix
-
-_Type Signature:_ `string | null`
-
-##### trained\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### training\_files
-
-A list containing the IDs of uploaded files that contain training data.
-
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
-
-</details>
-
-<details open>
-
-<summary>LegacyJobMetadataOut Properties</summary>
-
-##### cost
-
-_Example:_
-
-```
-10
-```
-
-_Type Signature:_ `number | null`
-
-##### cost\_currency
-
-_Example:_
-
-```
-EUR
-```
-
-_Type Signature:_ `string | null`
-
-##### data\_tokens
-
-_Example:_
-
-```
-305375
-```
-
-_Type Signature:_ `integer | null`
-
-##### deprecated
-
-_Default Value:_ `true`
-
-_Type Signature:_ `boolean`
-
-##### details
-
-_Type Signature:_ `string`
-
-##### epochs
-
-_Example:_
-
-```
-4.2922
-```
-
-_Type Signature:_ `number | null`
-
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Example:_
-
-```
-220
-```
-
-_Type Signature:_ `integer | null`
-
-##### object
-
-_Type Signature:_ `'job.metadata'`
-
-##### train\_tokens
-
-_Example:_
-
-```
-1310720
-```
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Example:_
-
-```
-131072
-```
-
-_Type Signature:_ `integer | null`
-
-##### training\_steps
-
-_Example:_
-
-```
-10
-```
-
-_Type Signature:_ `integer | null`
-
-</details>
 
 ## GET /v1/fine\_tuning/jobs/\{job\_id\}
 
@@ -1282,9 +565,7 @@ Get a fine-tuned job details by its UUID.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -1294,9 +575,9 @@ _Type Signature:_ `string`
 
 The ID of the job to analyse.
 
-The ID of the job to analyse.
+#### Security \(required\): `string`
 
-_Type Signature:_ `string`
+The ID of the job to analyse.
 
 ### Try it Now
 
@@ -1321,589 +602,9 @@ run();`} />
 
 OK
 
+#### Response Body \(required\): `CompletionDetailedJobOut | ClassifierDetailedJobOut`
+
 OK
-
-_Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
-
-<details open>
-
-<summary>CompletionDetailedJobOut Properties</summary>
-
-##### auto\_start
-
-_Type Signature:_ `boolean`
-
-##### checkpoints
-
-_Type Signature:_ `array<CheckpointOut>`
-
-<details open>
-
-<summary>CheckpointOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) for when the checkpoint was created.
-
-_Example:_
-
-```
-1716963433
-```
-
-_Type Signature:_ `integer`
-
-##### metrics
-
-Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
-
-_Type Signature:_ `MetricOut`
-
-<details open>
-
-<summary>MetricOut Properties</summary>
-
-##### train\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_mean\_token\_accuracy
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### step\_number
-
-The step number that the checkpoint was created at.
-
-_Type Signature:_ `integer`
-
-</details>
-
-##### created\_at
-
-_Type Signature:_ `integer`
-
-##### events
-
-Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
-
-_Type Signature:_ `array<EventOut>`
-
-<details open>
-
-<summary>EventOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) of the event.
-
-_Type Signature:_ `integer`
-
-##### data
-
-_Type Signature:_ `map<any> | null`
-
-##### name
-
-The name of the event.
-
-_Type Signature:_ `string`
-
-</details>
-
-##### fine\_tuned\_model
-
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `CompletionTrainingParameters`
-
-<details open>
-
-<summary>CompletionTrainingParameters Properties</summary>
-
-##### epochs
-
-_Type Signature:_ `number | null`
-
-##### fim\_ratio
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
-
-_Default Value:_ `0.0001`
-
-_Type Signature:_ `number`
-
-##### seq\_len
-
-_Type Signature:_ `integer | null`
-
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### id
-
-_Type Signature:_ `string`
-
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### job\_type
-
-_Type Signature:_ `'completion'`
-
-##### metadata
-
-_Type Signature:_ `JobMetadataOut | null`
-
-<details open>
-
-<summary>JobMetadataOut Properties</summary>
-
-##### cost
-
-_Type Signature:_ `number | null`
-
-##### cost\_currency
-
-_Type Signature:_ `string | null`
-
-##### data\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
-
-</details>
-
-##### model
-
-The name of the model to fine-tune.
-
-_Type Signature:_ `string`
-
-##### modified\_at
-
-_Type Signature:_ `integer`
-
-##### object
-
-_Type Signature:_ `'job'`
-
-##### repositories
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### status
-
-_Type Signature:_
-```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
-```
-
-##### suffix
-
-_Type Signature:_ `string | null`
-
-##### trained\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### training\_files
-
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
-
-</details>
-
-<details open>
-
-<summary>ClassifierDetailedJobOut Properties</summary>
-
-##### auto\_start
-
-_Type Signature:_ `boolean`
-
-##### checkpoints
-
-_Type Signature:_ `array<CheckpointOut>`
-
-<details open>
-
-<summary>CheckpointOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) for when the checkpoint was created.
-
-_Example:_
-
-```
-1716963433
-```
-
-_Type Signature:_ `integer`
-
-##### metrics
-
-Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
-
-_Type Signature:_ `MetricOut`
-
-<details open>
-
-<summary>MetricOut Properties</summary>
-
-##### train\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_mean\_token\_accuracy
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### step\_number
-
-The step number that the checkpoint was created at.
-
-_Type Signature:_ `integer`
-
-</details>
-
-##### classifier\_targets
-
-_Type Signature:_ `array<ClassifierTargetOut>`
-
-<details open>
-
-<summary>ClassifierTargetOut Properties</summary>
-
-##### labels
-
-_Type Signature:_ `array<string>`
-
-##### loss\_function
-
-_Type Signature:_ `'single_class' | 'multi_class'`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### weight
-
-_Type Signature:_ `number`
-
-</details>
-
-##### created\_at
-
-_Type Signature:_ `integer`
-
-##### events
-
-Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
-
-_Type Signature:_ `array<EventOut>`
-
-<details open>
-
-<summary>EventOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) of the event.
-
-_Type Signature:_ `integer`
-
-##### data
-
-_Type Signature:_ `map<any> | null`
-
-##### name
-
-The name of the event.
-
-_Type Signature:_ `string`
-
-</details>
-
-##### fine\_tuned\_model
-
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `ClassifierTrainingParameters`
-
-<details open>
-
-<summary>ClassifierTrainingParameters Properties</summary>
-
-##### epochs
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
-
-_Default Value:_ `0.0001`
-
-_Type Signature:_ `number`
-
-##### seq\_len
-
-_Type Signature:_ `integer | null`
-
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### id
-
-_Type Signature:_ `string`
-
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### job\_type
-
-_Type Signature:_ `'classifier'`
-
-##### metadata
-
-_Type Signature:_ `JobMetadataOut | null`
-
-<details open>
-
-<summary>JobMetadataOut Properties</summary>
-
-##### cost
-
-_Type Signature:_ `number | null`
-
-##### cost\_currency
-
-_Type Signature:_ `string | null`
-
-##### data\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
-
-</details>
-
-##### model
-
-The name of the model to fine-tune.
-
-_Type Signature:_ `string`
-
-##### modified\_at
-
-_Type Signature:_ `integer`
-
-##### object
-
-_Type Signature:_ `'job'`
-
-##### status
-
-_Type Signature:_
-```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
-```
-
-##### suffix
-
-_Type Signature:_ `string | null`
-
-##### trained\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### training\_files
-
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
-
-</details>
 
 ## POST /v1/fine\_tuning/jobs/\{job\_id\}/cancel
 
@@ -1917,9 +618,7 @@ Request the cancellation of a fine tuning job.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -1929,9 +628,9 @@ _Type Signature:_ `string`
 
 The ID of the job to cancel.
 
-The ID of the job to cancel.
+#### Security \(required\): `string`
 
-_Type Signature:_ `string`
+The ID of the job to cancel.
 
 ### Try it Now
 
@@ -1956,589 +655,9 @@ run();`} />
 
 OK
 
+#### Response Body \(required\): `CompletionDetailedJobOut | ClassifierDetailedJobOut`
+
 OK
-
-_Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
-
-<details open>
-
-<summary>CompletionDetailedJobOut Properties</summary>
-
-##### auto\_start
-
-_Type Signature:_ `boolean`
-
-##### checkpoints
-
-_Type Signature:_ `array<CheckpointOut>`
-
-<details open>
-
-<summary>CheckpointOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) for when the checkpoint was created.
-
-_Example:_
-
-```
-1716963433
-```
-
-_Type Signature:_ `integer`
-
-##### metrics
-
-Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
-
-_Type Signature:_ `MetricOut`
-
-<details open>
-
-<summary>MetricOut Properties</summary>
-
-##### train\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_mean\_token\_accuracy
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### step\_number
-
-The step number that the checkpoint was created at.
-
-_Type Signature:_ `integer`
-
-</details>
-
-##### created\_at
-
-_Type Signature:_ `integer`
-
-##### events
-
-Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
-
-_Type Signature:_ `array<EventOut>`
-
-<details open>
-
-<summary>EventOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) of the event.
-
-_Type Signature:_ `integer`
-
-##### data
-
-_Type Signature:_ `map<any> | null`
-
-##### name
-
-The name of the event.
-
-_Type Signature:_ `string`
-
-</details>
-
-##### fine\_tuned\_model
-
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `CompletionTrainingParameters`
-
-<details open>
-
-<summary>CompletionTrainingParameters Properties</summary>
-
-##### epochs
-
-_Type Signature:_ `number | null`
-
-##### fim\_ratio
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
-
-_Default Value:_ `0.0001`
-
-_Type Signature:_ `number`
-
-##### seq\_len
-
-_Type Signature:_ `integer | null`
-
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### id
-
-_Type Signature:_ `string`
-
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### job\_type
-
-_Type Signature:_ `'completion'`
-
-##### metadata
-
-_Type Signature:_ `JobMetadataOut | null`
-
-<details open>
-
-<summary>JobMetadataOut Properties</summary>
-
-##### cost
-
-_Type Signature:_ `number | null`
-
-##### cost\_currency
-
-_Type Signature:_ `string | null`
-
-##### data\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
-
-</details>
-
-##### model
-
-The name of the model to fine-tune.
-
-_Type Signature:_ `string`
-
-##### modified\_at
-
-_Type Signature:_ `integer`
-
-##### object
-
-_Type Signature:_ `'job'`
-
-##### repositories
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### status
-
-_Type Signature:_
-```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
-```
-
-##### suffix
-
-_Type Signature:_ `string | null`
-
-##### trained\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### training\_files
-
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
-
-</details>
-
-<details open>
-
-<summary>ClassifierDetailedJobOut Properties</summary>
-
-##### auto\_start
-
-_Type Signature:_ `boolean`
-
-##### checkpoints
-
-_Type Signature:_ `array<CheckpointOut>`
-
-<details open>
-
-<summary>CheckpointOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) for when the checkpoint was created.
-
-_Example:_
-
-```
-1716963433
-```
-
-_Type Signature:_ `integer`
-
-##### metrics
-
-Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
-
-_Type Signature:_ `MetricOut`
-
-<details open>
-
-<summary>MetricOut Properties</summary>
-
-##### train\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_mean\_token\_accuracy
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### step\_number
-
-The step number that the checkpoint was created at.
-
-_Type Signature:_ `integer`
-
-</details>
-
-##### classifier\_targets
-
-_Type Signature:_ `array<ClassifierTargetOut>`
-
-<details open>
-
-<summary>ClassifierTargetOut Properties</summary>
-
-##### labels
-
-_Type Signature:_ `array<string>`
-
-##### loss\_function
-
-_Type Signature:_ `'single_class' | 'multi_class'`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### weight
-
-_Type Signature:_ `number`
-
-</details>
-
-##### created\_at
-
-_Type Signature:_ `integer`
-
-##### events
-
-Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
-
-_Type Signature:_ `array<EventOut>`
-
-<details open>
-
-<summary>EventOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) of the event.
-
-_Type Signature:_ `integer`
-
-##### data
-
-_Type Signature:_ `map<any> | null`
-
-##### name
-
-The name of the event.
-
-_Type Signature:_ `string`
-
-</details>
-
-##### fine\_tuned\_model
-
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `ClassifierTrainingParameters`
-
-<details open>
-
-<summary>ClassifierTrainingParameters Properties</summary>
-
-##### epochs
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
-
-_Default Value:_ `0.0001`
-
-_Type Signature:_ `number`
-
-##### seq\_len
-
-_Type Signature:_ `integer | null`
-
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### id
-
-_Type Signature:_ `string`
-
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### job\_type
-
-_Type Signature:_ `'classifier'`
-
-##### metadata
-
-_Type Signature:_ `JobMetadataOut | null`
-
-<details open>
-
-<summary>JobMetadataOut Properties</summary>
-
-##### cost
-
-_Type Signature:_ `number | null`
-
-##### cost\_currency
-
-_Type Signature:_ `string | null`
-
-##### data\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
-
-</details>
-
-##### model
-
-The name of the model to fine-tune.
-
-_Type Signature:_ `string`
-
-##### modified\_at
-
-_Type Signature:_ `integer`
-
-##### object
-
-_Type Signature:_ `'job'`
-
-##### status
-
-_Type Signature:_
-```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
-```
-
-##### suffix
-
-_Type Signature:_ `string | null`
-
-##### trained\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### training\_files
-
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
-
-</details>
 
 ## POST /v1/fine\_tuning/jobs/\{job\_id\}/start
 
@@ -2552,9 +671,7 @@ Request the start of a validated fine tuning job.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -2562,7 +679,7 @@ _Type Signature:_ `string`
 
 #### job\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -2587,586 +704,6 @@ run();`} />
 
 OK
 
+#### Response Body \(required\): `CompletionDetailedJobOut | ClassifierDetailedJobOut`
+
 OK
-
-_Type Signature:_ `CompletionDetailedJobOut | ClassifierDetailedJobOut`
-
-<details open>
-
-<summary>CompletionDetailedJobOut Properties</summary>
-
-##### auto\_start
-
-_Type Signature:_ `boolean`
-
-##### checkpoints
-
-_Type Signature:_ `array<CheckpointOut>`
-
-<details open>
-
-<summary>CheckpointOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) for when the checkpoint was created.
-
-_Example:_
-
-```
-1716963433
-```
-
-_Type Signature:_ `integer`
-
-##### metrics
-
-Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
-
-_Type Signature:_ `MetricOut`
-
-<details open>
-
-<summary>MetricOut Properties</summary>
-
-##### train\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_mean\_token\_accuracy
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### step\_number
-
-The step number that the checkpoint was created at.
-
-_Type Signature:_ `integer`
-
-</details>
-
-##### created\_at
-
-_Type Signature:_ `integer`
-
-##### events
-
-Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
-
-_Type Signature:_ `array<EventOut>`
-
-<details open>
-
-<summary>EventOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) of the event.
-
-_Type Signature:_ `integer`
-
-##### data
-
-_Type Signature:_ `map<any> | null`
-
-##### name
-
-The name of the event.
-
-_Type Signature:_ `string`
-
-</details>
-
-##### fine\_tuned\_model
-
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `CompletionTrainingParameters`
-
-<details open>
-
-<summary>CompletionTrainingParameters Properties</summary>
-
-##### epochs
-
-_Type Signature:_ `number | null`
-
-##### fim\_ratio
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
-
-_Default Value:_ `0.0001`
-
-_Type Signature:_ `number`
-
-##### seq\_len
-
-_Type Signature:_ `integer | null`
-
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### id
-
-_Type Signature:_ `string`
-
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### job\_type
-
-_Type Signature:_ `'completion'`
-
-##### metadata
-
-_Type Signature:_ `JobMetadataOut | null`
-
-<details open>
-
-<summary>JobMetadataOut Properties</summary>
-
-##### cost
-
-_Type Signature:_ `number | null`
-
-##### cost\_currency
-
-_Type Signature:_ `string | null`
-
-##### data\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
-
-</details>
-
-##### model
-
-The name of the model to fine-tune.
-
-_Type Signature:_ `string`
-
-##### modified\_at
-
-_Type Signature:_ `integer`
-
-##### object
-
-_Type Signature:_ `'job'`
-
-##### repositories
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### status
-
-_Type Signature:_
-```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
-```
-
-##### suffix
-
-_Type Signature:_ `string | null`
-
-##### trained\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### training\_files
-
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
-
-</details>
-
-<details open>
-
-<summary>ClassifierDetailedJobOut Properties</summary>
-
-##### auto\_start
-
-_Type Signature:_ `boolean`
-
-##### checkpoints
-
-_Type Signature:_ `array<CheckpointOut>`
-
-<details open>
-
-<summary>CheckpointOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) for when the checkpoint was created.
-
-_Example:_
-
-```
-1716963433
-```
-
-_Type Signature:_ `integer`
-
-##### metrics
-
-Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
-
-_Type Signature:_ `MetricOut`
-
-<details open>
-
-<summary>MetricOut Properties</summary>
-
-##### train\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_loss
-
-_Type Signature:_ `number | null`
-
-##### valid\_mean\_token\_accuracy
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### step\_number
-
-The step number that the checkpoint was created at.
-
-_Type Signature:_ `integer`
-
-</details>
-
-##### classifier\_targets
-
-_Type Signature:_ `array<ClassifierTargetOut>`
-
-<details open>
-
-<summary>ClassifierTargetOut Properties</summary>
-
-##### labels
-
-_Type Signature:_ `array<string>`
-
-##### loss\_function
-
-_Type Signature:_ `'single_class' | 'multi_class'`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### weight
-
-_Type Signature:_ `number`
-
-</details>
-
-##### created\_at
-
-_Type Signature:_ `integer`
-
-##### events
-
-Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.
-
-_Type Signature:_ `array<EventOut>`
-
-<details open>
-
-<summary>EventOut Properties</summary>
-
-##### created\_at
-
-The UNIX timestamp (in seconds) of the event.
-
-_Type Signature:_ `integer`
-
-##### data
-
-_Type Signature:_ `map<any> | null`
-
-##### name
-
-The name of the event.
-
-_Type Signature:_ `string`
-
-</details>
-
-##### fine\_tuned\_model
-
-_Type Signature:_ `string | null`
-
-##### hyperparameters
-
-_Type Signature:_ `ClassifierTrainingParameters`
-
-<details open>
-
-<summary>ClassifierTrainingParameters Properties</summary>
-
-##### epochs
-
-_Type Signature:_ `number | null`
-
-##### learning\_rate
-
-_Default Value:_ `0.0001`
-
-_Type Signature:_ `number`
-
-##### seq\_len
-
-_Type Signature:_ `integer | null`
-
-##### training\_steps
-
-_Type Signature:_ `integer | null`
-
-##### warmup\_fraction
-
-_Type Signature:_ `number | null`
-
-##### weight\_decay
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### id
-
-_Type Signature:_ `string`
-
-##### integrations
-
-_Type Signature:_ `array<WandbIntegrationOut> | null`
-
-<details open>
-
-<summary>WandbIntegrationOut Properties</summary>
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### project
-
-The name of the project that the new run will be created under.
-
-_Type Signature:_ `string`
-
-##### run\_name
-
-_Type Signature:_ `string | null`
-
-##### type
-
-_Type Signature:_ `'wandb'`
-
-##### url
-
-_Type Signature:_ `string | null`
-
-</details>
-
-##### job\_type
-
-_Type Signature:_ `'classifier'`
-
-##### metadata
-
-_Type Signature:_ `JobMetadataOut | null`
-
-<details open>
-
-<summary>JobMetadataOut Properties</summary>
-
-##### cost
-
-_Type Signature:_ `number | null`
-
-##### cost\_currency
-
-_Type Signature:_ `string | null`
-
-##### data\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### estimated\_start\_time
-
-_Type Signature:_ `integer | null`
-
-##### expected\_duration\_seconds
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### train\_tokens\_per\_step
-
-_Type Signature:_ `integer | null`
-
-</details>
-
-##### model
-
-The name of the model to fine-tune.
-
-_Type Signature:_ `string`
-
-##### modified\_at
-
-_Type Signature:_ `integer`
-
-##### object
-
-_Type Signature:_ `'job'`
-
-##### status
-
-_Type Signature:_
-```
-enum
-  'QUEUED'
-  'STARTED'
-  'VALIDATING'
-  'VALIDATED'
-  'RUNNING'
-  'FAILED_VALIDATION'
-  'FAILED'
-  'SUCCESS'
-  'CANCELLED'
-  'CANCELLATION_REQUESTED'
-```
-
-##### suffix
-
-_Type Signature:_ `string | null`
-
-##### trained\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### training\_files
-
-_Type Signature:_ `array<string>`
-
-##### validation\_files
-
-_Type Signature:_ `array<string> | null`
-
-</details>

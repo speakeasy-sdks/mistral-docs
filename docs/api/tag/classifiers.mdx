@@ -4,11 +4,7 @@ sidebar_label: classifiers
 ---
 
 import { TryItNow } from "@speakeasy-api/docs-md";
-import Embedinputs from "../../../src/components/speakeasy/embeds/inputs.mdx";
-import { SideBarCta, SideBar } from "../../../src/components/speakeasy/SideBar/index.tsx";
 
-
-<SideBar />
 
 # classifiers
 
@@ -22,9 +18,7 @@ Moderations
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -57,17 +51,13 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### inputs
+#### inputs \(required\): `string | array<string>`
 
 Text to classify.
 
-_Type Signature:_ `string | array<string>`
-
-#### model
+#### model \(required\): `string`
 
 ID of the model to use.
-
-_Type Signature:_ `string`
 
 </details>
 
@@ -79,7 +69,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### id
+#### id \(required\): `string`
 
 _Example:_
 
@@ -87,31 +77,21 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-_Type Signature:_ `string`
+#### model \(required\): `string`
 
-#### model
+#### results \(required\): `array<ModerationObject>`
 
-_Type Signature:_ `string`
-
-#### results
-
-_Type Signature:_ `array<ModerationObject>`
-
-<details open>
+<details >
 
 <summary>ModerationObject Properties</summary>
 
-##### categories
+##### categories: `map<boolean>`
 
 Moderation result thresholds
 
-_Type Signature:_ `map<boolean>`
-
-##### category\_scores
+##### category\_scores: `map<number>`
 
 Moderation result
-
-_Type Signature:_ `map<number>`
 
 </details>
 
@@ -125,39 +105,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -173,9 +141,7 @@ Chat Moderations
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -227,386 +193,314 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### inputs
+#### inputs \(required\)
 
-Chat to classify
-
-_Type Signature:_ 
 ```
 | array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>
 | array<array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>>
 ```
 
-<details open>
+Chat to classify
+
+<details >
 
 <summary>SystemMessage Properties</summary>
 
-##### content
+##### content \(required\): `string | array<TextChunk>`
 
-_Type Signature:_ `string | array<TextChunk>`
-
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-##### role
+##### role: `"system"`
 
-_Type Signature:_ `'system'`
+_Default Value:_ `"system"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>UserMessage Properties</summary>
 
-##### content
+##### content \(required\)
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### role
+##### role: `"user"`
 
-_Type Signature:_ `'user'`
+_Default Value:_ `"user"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>AssistantMessage Properties</summary>
 
 ##### content
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### prefix
+##### prefix: `boolean`
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
+##### role: `"assistant"`
 
-##### role
+_Default Value:_ `"assistant"`
 
-_Type Signature:_ `'assistant'`
+##### tool\_calls: `array<ToolCall> | null`
 
-##### tool\_calls
-
-_Type Signature:_ `array<ToolCall> | null`
-
-<details open>
+<details >
 
 <summary>ToolCall Properties</summary>
 
-##### function
+##### function \(required\): `FunctionCall`
 
-_Type Signature:_ `FunctionCall`
-
-<details open>
+<details >
 
 <summary>FunctionCall Properties</summary>
 
-##### arguments
+##### arguments \(required\): `map<any> | string`
 
-_Type Signature:_ `map<any> | string`
-
-##### name
-
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
 </details>
 
-##### id
+##### id: `string`
 
 _Default Value:_ `"null"`
 
-_Type Signature:_ `string`
-
-##### index
+##### index: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
-
-##### type
-
-_Type Signature:_ `'function'`
+##### type: `"function"`
 
 </details>
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolMessage Properties</summary>
 
-##### content
+##### content \(required\)
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### name
+##### name: `string | null`
 
-_Type Signature:_ `string | null`
+##### role: `"tool"`
 
-##### role
+_Default Value:_ `"tool"`
 
-_Type Signature:_ `'tool'`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string | null`
+##### tool\_call\_id: `string | null`
 
 </details>
 
-#### model
-
-_Type Signature:_ `string`
+#### model \(required\): `string`
 
 </details>
 
@@ -618,7 +512,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### id
+#### id \(required\): `string`
 
 _Example:_
 
@@ -626,31 +520,21 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-_Type Signature:_ `string`
+#### model \(required\): `string`
 
-#### model
+#### results \(required\): `array<ModerationObject>`
 
-_Type Signature:_ `string`
-
-#### results
-
-_Type Signature:_ `array<ModerationObject>`
-
-<details open>
+<details >
 
 <summary>ModerationObject Properties</summary>
 
-##### categories
+##### categories: `map<boolean>`
 
 Moderation result thresholds
 
-_Type Signature:_ `map<boolean>`
-
-##### category\_scores
+##### category\_scores: `map<number>`
 
 Moderation result
-
-_Type Signature:_ `map<number>`
 
 </details>
 
@@ -664,39 +548,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -712,9 +584,7 @@ Classifications
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -746,17 +616,13 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### inputs
+#### inputs \(required\): `string | array<string>`
 
 Text to classify.
 
-_Type Signature:_ `string | array<string>`
-
-#### model
+#### model \(required\): `string`
 
 ID of the model to use.
-
-_Type Signature:_ `string`
 
 </details>
 
@@ -768,7 +634,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### id
+#### id \(required\): `string`
 
 _Example:_
 
@@ -776,23 +642,15 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-_Type Signature:_ `string`
+#### model \(required\): `string`
 
-#### model
+#### results \(required\): `array<map<ClassificationTargetResult>>`
 
-_Type Signature:_ `string`
-
-#### results
-
-_Type Signature:_ `array<map<ClassificationTargetResult>>`
-
-<details open>
+<details >
 
 <summary>ClassificationTargetResult Properties</summary>
 
-##### scores
-
-_Type Signature:_ `map<number>`
+##### scores \(required\): `map<number>`
 
 </details>
 
@@ -806,39 +664,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -854,9 +700,7 @@ Chat Classifications
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -911,441 +755,331 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### inputs
+#### inputs \(required\): `inputs | array<InstructRequest>`
 
 Chat to classify
 
-_Type Signature:_ `inputs | array<InstructRequest>`
-
-<details open>
+<details >
 
 <summary>inputs Properties</summary>
 
-##### messages
+##### messages \(required\): `array<inputs>`
 
-_Type Signature:_ `array<inputs>`
-
-<details open>
-
-<summary>inputs Properties</summary>
-
-##### messages
-
-_Type Signature:_ `array<inputs>`
-
-<details open>
-
-<summary>inputs Properties</summary>
-
-##### messages
-
-_Type Signature:_ `array<inputs>`
-
-<details open>
-
-<summary>inputs Properties</summary>
-
-##### messages
-
-_Type Signature:_ `array<inputs>`
-
-<p>
-  <SideBarCta cta="View inputs Details" title="inputs Details">
-    <Embedinputs />
-  </SideBarCta>
-</p>
+`inputs` is circular. See previous description for details.
 
 </details>
 
-</details>
-
-</details>
-
-</details>
-
-<details open>
+<details >
 
 <summary>InstructRequest Properties</summary>
 
-##### messages
+##### messages \(required\)
 
-_Type Signature:_ 
 ```
 array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>
 ```
 
-<details open>
+<details >
 
 <summary>SystemMessage Properties</summary>
 
-##### content
+##### content \(required\): `string | array<TextChunk>`
 
-_Type Signature:_ `string | array<TextChunk>`
-
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-##### role
+##### role: `"system"`
 
-_Type Signature:_ `'system'`
+_Default Value:_ `"system"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>UserMessage Properties</summary>
 
-##### content
+##### content \(required\)
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### role
+##### role: `"user"`
 
-_Type Signature:_ `'user'`
+_Default Value:_ `"user"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>AssistantMessage Properties</summary>
 
 ##### content
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### prefix
+##### prefix: `boolean`
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
+##### role: `"assistant"`
 
-##### role
+_Default Value:_ `"assistant"`
 
-_Type Signature:_ `'assistant'`
+##### tool\_calls: `array<ToolCall> | null`
 
-##### tool\_calls
-
-_Type Signature:_ `array<ToolCall> | null`
-
-<details open>
+<details >
 
 <summary>ToolCall Properties</summary>
 
-##### function
+##### function \(required\): `FunctionCall`
 
-_Type Signature:_ `FunctionCall`
-
-<details open>
+<details >
 
 <summary>FunctionCall Properties</summary>
 
-##### arguments
+##### arguments \(required\): `map<any> | string`
 
-_Type Signature:_ `map<any> | string`
-
-##### name
-
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
 </details>
 
-##### id
+##### id: `string`
 
 _Default Value:_ `"null"`
 
-_Type Signature:_ `string`
-
-##### index
+##### index: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
-
-##### type
-
-_Type Signature:_ `'function'`
+##### type: `"function"`
 
 </details>
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolMessage Properties</summary>
 
-##### content
+##### content \(required\)
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### name
+##### name: `string | null`
 
-_Type Signature:_ `string | null`
+##### role: `"tool"`
 
-##### role
+_Default Value:_ `"tool"`
 
-_Type Signature:_ `'tool'`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string | null`
+##### tool\_call\_id: `string | null`
 
 </details>
 
 </details>
 
-#### model
-
-_Type Signature:_ `string`
+#### model \(required\): `string`
 
 </details>
 
@@ -1357,7 +1091,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### id
+#### id \(required\): `string`
 
 _Example:_
 
@@ -1365,23 +1099,15 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-_Type Signature:_ `string`
+#### model \(required\): `string`
 
-#### model
+#### results \(required\): `array<map<ClassificationTargetResult>>`
 
-_Type Signature:_ `string`
-
-#### results
-
-_Type Signature:_ `array<map<ClassificationTargetResult>>`
-
-<details open>
+<details >
 
 <summary>ClassificationTargetResult Properties</summary>
 
-##### scores
-
-_Type Signature:_ `map<number>`
+##### scores \(required\): `map<number>`
 
 </details>
 
@@ -1395,39 +1121,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 

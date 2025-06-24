@@ -7,7 +7,6 @@ export default {
   },
   display: {
     showSchemasInNav: false,
-    showTypeSignatures: true,
   },
   tryItNow: {
     npmPackageName: "@mistralai/mistralai",

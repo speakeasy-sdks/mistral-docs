@@ -20,9 +20,7 @@ Get a list of batch jobs for your organization and user.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -51,117 +49,77 @@ OK
 
 <summary>Response Body</summary>
 
-#### data
+#### data: `array<BatchJobOut>`
 
-_Type Signature:_ `array<BatchJobOut>`
-
-<details open>
+<details >
 
 <summary>BatchJobOut Properties</summary>
 
-##### completed\_at
+##### completed\_at: `integer | null`
 
-_Type Signature:_ `integer | null`
+##### completed\_requests \(required\): `integer`
 
-##### completed\_requests
+##### created\_at \(required\): `integer`
 
-_Type Signature:_ `integer`
+##### endpoint \(required\): `string`
 
-##### created\_at
+##### error\_file: `string | null`
 
-_Type Signature:_ `integer`
+##### errors \(required\): `array<BatchError>`
 
-##### endpoint
-
-_Type Signature:_ `string`
-
-##### error\_file
-
-_Type Signature:_ `string | null`
-
-##### errors
-
-_Type Signature:_ `array<BatchError>`
-
-<details open>
+<details >
 
 <summary>BatchError Properties</summary>
 
-##### count
+##### count: `integer`
 
 _Default Value:_ `1`
 
-_Type Signature:_ `integer`
-
-##### message
-
-_Type Signature:_ `string`
+##### message \(required\): `string`
 
 </details>
 
-##### failed\_requests
+##### failed\_requests \(required\): `integer`
 
-_Type Signature:_ `integer`
+##### id \(required\): `string`
 
-##### id
+##### input\_files \(required\): `array<string>`
 
-_Type Signature:_ `string`
+##### metadata: `map<any> | null`
 
-##### input\_files
+##### model \(required\): `string`
 
-_Type Signature:_ `array<string>`
+##### object: `"batch"`
 
-##### metadata
+_Default Value:_ `"batch"`
 
-_Type Signature:_ `map<any> | null`
+##### output\_file: `string | null`
 
-##### model
+##### started\_at: `integer | null`
 
-_Type Signature:_ `string`
+##### status \(required\)
 
-##### object
-
-_Type Signature:_ `'batch'`
-
-##### output\_file
-
-_Type Signature:_ `string | null`
-
-##### started\_at
-
-_Type Signature:_ `integer | null`
-
-##### status
-
-_Type Signature:_
 ```
-enum
-  'QUEUED'
-  'RUNNING'
-  'SUCCESS'
-  'FAILED'
-  'TIMEOUT_EXCEEDED'
-  'CANCELLATION_REQUESTED'
-  'CANCELLED'
+| "QUEUED"
+| "RUNNING"
+| "SUCCESS"
+| "FAILED"
+| "TIMEOUT_EXCEEDED"
+| "CANCELLATION_REQUESTED"
+| "CANCELLED"
 ```
 
-##### succeeded\_requests
+##### succeeded\_requests \(required\): `integer`
 
-_Type Signature:_ `integer`
-
-##### total\_requests
-
-_Type Signature:_ `integer`
+##### total\_requests \(required\): `integer`
 
 </details>
 
-#### object
+#### object: `"list"`
 
-_Type Signature:_ `'list'`
+_Default Value:_ `"list"`
 
-#### total
-
-_Type Signature:_ `integer`
+#### total \(required\): `integer`
 
 </details>
 
@@ -177,9 +135,7 @@ Create a new batch job, it will be queued for processing.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -212,35 +168,25 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### endpoint
+#### endpoint \(required\)
 
-_Type Signature:_
 ```
-enum
-  '/v1/chat/completions'
-  '/v1/embeddings'
-  '/v1/fim/completions'
-  '/v1/moderations'
-  '/v1/chat/moderations'
+| "/v1/chat/completions"
+| "/v1/embeddings"
+| "/v1/fim/completions"
+| "/v1/moderations"
+| "/v1/chat/moderations"
 ```
 
-#### input\_files
+#### input\_files \(required\): `array<string>`
 
-_Type Signature:_ `array<string>`
+#### metadata: `map<string> | null`
 
-#### metadata
+#### model \(required\): `string`
 
-_Type Signature:_ `map<string> | null`
-
-#### model
-
-_Type Signature:_ `string`
-
-#### timeout\_hours
+#### timeout\_hours: `integer`
 
 _Default Value:_ `24`
-
-_Type Signature:_ `integer`
 
 </details>
 
@@ -252,99 +198,63 @@ OK
 
 <summary>Response Body</summary>
 
-#### completed\_at
+#### completed\_at: `integer | null`
 
-_Type Signature:_ `integer | null`
+#### completed\_requests \(required\): `integer`
 
-#### completed\_requests
+#### created\_at \(required\): `integer`
 
-_Type Signature:_ `integer`
+#### endpoint \(required\): `string`
 
-#### created\_at
+#### error\_file: `string | null`
 
-_Type Signature:_ `integer`
+#### errors \(required\): `array<BatchError>`
 
-#### endpoint
-
-_Type Signature:_ `string`
-
-#### error\_file
-
-_Type Signature:_ `string | null`
-
-#### errors
-
-_Type Signature:_ `array<BatchError>`
-
-<details open>
+<details >
 
 <summary>BatchError Properties</summary>
 
-##### count
+##### count: `integer`
 
 _Default Value:_ `1`
 
-_Type Signature:_ `integer`
-
-##### message
-
-_Type Signature:_ `string`
+##### message \(required\): `string`
 
 </details>
 
-#### failed\_requests
+#### failed\_requests \(required\): `integer`
 
-_Type Signature:_ `integer`
+#### id \(required\): `string`
 
-#### id
+#### input\_files \(required\): `array<string>`
 
-_Type Signature:_ `string`
+#### metadata: `map<any> | null`
 
-#### input\_files
+#### model \(required\): `string`
 
-_Type Signature:_ `array<string>`
+#### object: `"batch"`
 
-#### metadata
+_Default Value:_ `"batch"`
 
-_Type Signature:_ `map<any> | null`
+#### output\_file: `string | null`
 
-#### model
+#### started\_at: `integer | null`
 
-_Type Signature:_ `string`
+#### status \(required\)
 
-#### object
-
-_Type Signature:_ `'batch'`
-
-#### output\_file
-
-_Type Signature:_ `string | null`
-
-#### started\_at
-
-_Type Signature:_ `integer | null`
-
-#### status
-
-_Type Signature:_
 ```
-enum
-  'QUEUED'
-  'RUNNING'
-  'SUCCESS'
-  'FAILED'
-  'TIMEOUT_EXCEEDED'
-  'CANCELLATION_REQUESTED'
-  'CANCELLED'
+| "QUEUED"
+| "RUNNING"
+| "SUCCESS"
+| "FAILED"
+| "TIMEOUT_EXCEEDED"
+| "CANCELLATION_REQUESTED"
+| "CANCELLED"
 ```
 
-#### succeeded\_requests
+#### succeeded\_requests \(required\): `integer`
 
-_Type Signature:_ `integer`
-
-#### total\_requests
-
-_Type Signature:_ `integer`
+#### total\_requests \(required\): `integer`
 
 </details>
 
@@ -360,9 +270,7 @@ Get a batch job details by its UUID.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -370,7 +278,7 @@ _Type Signature:_ `string`
 
 #### job\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -399,99 +307,63 @@ OK
 
 <summary>Response Body</summary>
 
-#### completed\_at
+#### completed\_at: `integer | null`
 
-_Type Signature:_ `integer | null`
+#### completed\_requests \(required\): `integer`
 
-#### completed\_requests
+#### created\_at \(required\): `integer`
 
-_Type Signature:_ `integer`
+#### endpoint \(required\): `string`
 
-#### created\_at
+#### error\_file: `string | null`
 
-_Type Signature:_ `integer`
+#### errors \(required\): `array<BatchError>`
 
-#### endpoint
-
-_Type Signature:_ `string`
-
-#### error\_file
-
-_Type Signature:_ `string | null`
-
-#### errors
-
-_Type Signature:_ `array<BatchError>`
-
-<details open>
+<details >
 
 <summary>BatchError Properties</summary>
 
-##### count
+##### count: `integer`
 
 _Default Value:_ `1`
 
-_Type Signature:_ `integer`
-
-##### message
-
-_Type Signature:_ `string`
+##### message \(required\): `string`
 
 </details>
 
-#### failed\_requests
+#### failed\_requests \(required\): `integer`
 
-_Type Signature:_ `integer`
+#### id \(required\): `string`
 
-#### id
+#### input\_files \(required\): `array<string>`
 
-_Type Signature:_ `string`
+#### metadata: `map<any> | null`
 
-#### input\_files
+#### model \(required\): `string`
 
-_Type Signature:_ `array<string>`
+#### object: `"batch"`
 
-#### metadata
+_Default Value:_ `"batch"`
 
-_Type Signature:_ `map<any> | null`
+#### output\_file: `string | null`
 
-#### model
+#### started\_at: `integer | null`
 
-_Type Signature:_ `string`
+#### status \(required\)
 
-#### object
-
-_Type Signature:_ `'batch'`
-
-#### output\_file
-
-_Type Signature:_ `string | null`
-
-#### started\_at
-
-_Type Signature:_ `integer | null`
-
-#### status
-
-_Type Signature:_
 ```
-enum
-  'QUEUED'
-  'RUNNING'
-  'SUCCESS'
-  'FAILED'
-  'TIMEOUT_EXCEEDED'
-  'CANCELLATION_REQUESTED'
-  'CANCELLED'
+| "QUEUED"
+| "RUNNING"
+| "SUCCESS"
+| "FAILED"
+| "TIMEOUT_EXCEEDED"
+| "CANCELLATION_REQUESTED"
+| "CANCELLED"
 ```
 
-#### succeeded\_requests
+#### succeeded\_requests \(required\): `integer`
 
-_Type Signature:_ `integer`
-
-#### total\_requests
-
-_Type Signature:_ `integer`
+#### total\_requests \(required\): `integer`
 
 </details>
 
@@ -507,9 +379,7 @@ Request the cancellation of a batch job.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -517,7 +387,7 @@ _Type Signature:_ `string`
 
 #### job\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -546,98 +416,62 @@ OK
 
 <summary>Response Body</summary>
 
-#### completed\_at
+#### completed\_at: `integer | null`
 
-_Type Signature:_ `integer | null`
+#### completed\_requests \(required\): `integer`
 
-#### completed\_requests
+#### created\_at \(required\): `integer`
 
-_Type Signature:_ `integer`
+#### endpoint \(required\): `string`
 
-#### created\_at
+#### error\_file: `string | null`
 
-_Type Signature:_ `integer`
+#### errors \(required\): `array<BatchError>`
 
-#### endpoint
-
-_Type Signature:_ `string`
-
-#### error\_file
-
-_Type Signature:_ `string | null`
-
-#### errors
-
-_Type Signature:_ `array<BatchError>`
-
-<details open>
+<details >
 
 <summary>BatchError Properties</summary>
 
-##### count
+##### count: `integer`
 
 _Default Value:_ `1`
 
-_Type Signature:_ `integer`
-
-##### message
-
-_Type Signature:_ `string`
+##### message \(required\): `string`
 
 </details>
 
-#### failed\_requests
+#### failed\_requests \(required\): `integer`
 
-_Type Signature:_ `integer`
+#### id \(required\): `string`
 
-#### id
+#### input\_files \(required\): `array<string>`
 
-_Type Signature:_ `string`
+#### metadata: `map<any> | null`
 
-#### input\_files
+#### model \(required\): `string`
 
-_Type Signature:_ `array<string>`
+#### object: `"batch"`
 
-#### metadata
+_Default Value:_ `"batch"`
 
-_Type Signature:_ `map<any> | null`
+#### output\_file: `string | null`
 
-#### model
+#### started\_at: `integer | null`
 
-_Type Signature:_ `string`
+#### status \(required\)
 
-#### object
-
-_Type Signature:_ `'batch'`
-
-#### output\_file
-
-_Type Signature:_ `string | null`
-
-#### started\_at
-
-_Type Signature:_ `integer | null`
-
-#### status
-
-_Type Signature:_
 ```
-enum
-  'QUEUED'
-  'RUNNING'
-  'SUCCESS'
-  'FAILED'
-  'TIMEOUT_EXCEEDED'
-  'CANCELLATION_REQUESTED'
-  'CANCELLED'
+| "QUEUED"
+| "RUNNING"
+| "SUCCESS"
+| "FAILED"
+| "TIMEOUT_EXCEEDED"
+| "CANCELLATION_REQUESTED"
+| "CANCELLED"
 ```
 
-#### succeeded\_requests
+#### succeeded\_requests \(required\): `integer`
 
-_Type Signature:_ `integer`
-
-#### total\_requests
-
-_Type Signature:_ `integer`
+#### total\_requests \(required\): `integer`
 
 </details>

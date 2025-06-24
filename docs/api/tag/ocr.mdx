@@ -18,9 +18,7 @@ OCR
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -55,161 +53,113 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### bbox\_annotation\_format
+#### bbox\_annotation\_format: `ResponseFormat | null`
 
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-#### document
+#### document \(required\): `DocumentURLChunk | ImageURLChunk`
 
 Document to run OCR on
 
-_Type Signature:_ `DocumentURLChunk | ImageURLChunk`
-
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-#### document\_annotation\_format
+#### document\_annotation\_format: `ResponseFormat | null`
 
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-#### id
+#### id: `string`
 
-_Type Signature:_ `string`
+#### image\_limit: `integer | null`
 
-#### image\_limit
+#### image\_min\_size: `integer | null`
 
-_Type Signature:_ `integer | null`
+#### include\_image\_base64: `boolean | null`
 
-#### image\_min\_size
+#### model \(required\): `string | null`
 
-_Type Signature:_ `integer | null`
-
-#### include\_image\_base64
-
-_Type Signature:_ `boolean | null`
-
-#### model
-
-_Type Signature:_ `string | null`
-
-#### pages
-
-_Type Signature:_ `array<integer> | null`
+#### pages: `array<integer> | null`
 
 </details>
 
@@ -221,127 +171,87 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### document\_annotation
+#### document\_annotation: `string | null`
 
-_Type Signature:_ `string | null`
-
-#### model
+#### model \(required\): `string`
 
 The model used to generate the OCR.
 
-_Type Signature:_ `string`
-
-#### pages
+#### pages \(required\): `array<OCRPageObject>`
 
 List of OCR info for pages.
 
-_Type Signature:_ `array<OCRPageObject>`
-
-<details open>
+<details >
 
 <summary>OCRPageObject Properties</summary>
 
-##### dimensions
+##### dimensions \(required\): `OCRPageDimensions | null`
 
-_Type Signature:_ `OCRPageDimensions | null`
-
-<details open>
+<details >
 
 <summary>OCRPageDimensions Properties</summary>
 
-##### dpi
+##### dpi \(required\): `integer`
 
 Dots per inch of the page-image
 
-_Type Signature:_ `integer`
-
-##### height
+##### height \(required\): `integer`
 
 Height of the image in pixels
 
-_Type Signature:_ `integer`
-
-##### width
+##### width \(required\): `integer`
 
 Width of the image in pixels
 
-_Type Signature:_ `integer`
-
 </details>
 
-##### images
+##### images \(required\): `array<OCRImageObject>`
 
 List of all extracted images in the page
 
-_Type Signature:_ `array<OCRImageObject>`
-
-<details open>
+<details >
 
 <summary>OCRImageObject Properties</summary>
 
-##### bottom\_right\_x
+##### bottom\_right\_x \(required\): `integer | null`
 
-_Type Signature:_ `integer | null`
+##### bottom\_right\_y \(required\): `integer | null`
 
-##### bottom\_right\_y
-
-_Type Signature:_ `integer | null`
-
-##### id
+##### id \(required\): `string`
 
 Image ID for extracted image in a page
 
-_Type Signature:_ `string`
+##### image\_annotation: `string | null`
 
-##### image\_annotation
+##### image\_base64: `string | null`
 
-_Type Signature:_ `string | null`
+##### top\_left\_x \(required\): `integer | null`
 
-##### image\_base64
-
-_Type Signature:_ `string | null`
-
-##### top\_left\_x
-
-_Type Signature:_ `integer | null`
-
-##### top\_left\_y
-
-_Type Signature:_ `integer | null`
+##### top\_left\_y \(required\): `integer | null`
 
 </details>
 
-##### index
+##### index \(required\): `integer`
 
 The page index in a pdf document starting from 0
 
-_Type Signature:_ `integer`
-
-##### markdown
+##### markdown \(required\): `string`
 
 The markdown string response of the page
 
-_Type Signature:_ `string`
-
 </details>
 
-#### usage\_info
+#### usage\_info \(required\): `OCRUsageInfo`
 
-_Type Signature:_ `OCRUsageInfo`
-
-<details open>
+<details >
 
 <summary>OCRUsageInfo Properties</summary>
 
-##### doc\_size\_bytes
+##### doc\_size\_bytes: `integer | null`
 
-_Type Signature:_ `integer | null`
-
-##### pages\_processed
+##### pages\_processed \(required\): `integer`
 
 Number of pages processed
-
-_Type Signature:_ `integer`
 
 </details>
 
@@ -355,39 +265,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 

@@ -20,9 +20,7 @@ Embeddings
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -55,13 +53,11 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### inputs
+#### inputs \(required\): `string | array<string>`
 
 Text to embed.
 
-_Type Signature:_ `string | array<string>`
-
-#### model
+#### model \(required\): `string`
 
 ID of the model to use.
 
@@ -71,15 +67,9 @@ _Example:_
 mistral-embed
 ```
 
-_Type Signature:_ `string`
+#### output\_dimension: `integer | null`
 
-#### output\_dimension
-
-_Type Signature:_ `integer | null`
-
-#### output\_dtype
-
-_Type Signature:_ `'float' | 'int8' | 'uint8' | 'binary' | 'ubinary'`
+#### output\_dtype: `"float" | "int8" | "uint8" | "binary" | "ubinary"`
 
 </details>
 
@@ -91,19 +81,15 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### data
+#### data \(required\): `array<EmbeddingResponseData>`
 
-_Type Signature:_ `array<EmbeddingResponseData>`
-
-<details open>
+<details >
 
 <summary>EmbeddingResponseData Properties</summary>
 
-##### embedding
+##### embedding: `array<number>`
 
-_Type Signature:_ `array<number>`
-
-##### index
+##### index: `integer`
 
 _Example:_
 
@@ -111,9 +97,7 @@ _Example:_
 0
 ```
 
-_Type Signature:_ `integer`
-
-##### object
+##### object: `string`
 
 _Example:_
 
@@ -121,11 +105,9 @@ _Example:_
 embedding
 ```
 
-_Type Signature:_ `string`
-
 </details>
 
-#### id
+#### id \(required\): `string`
 
 _Example:_
 
@@ -133,9 +115,7 @@ _Example:_
 cmpl-e5cc70bb28c444948073e77776eb30ef
 ```
 
-_Type Signature:_ `string`
-
-#### model
+#### model \(required\): `string`
 
 _Example:_
 
@@ -143,9 +123,7 @@ _Example:_
 mistral-small-latest
 ```
 
-_Type Signature:_ `string`
-
-#### object
+#### object \(required\): `string`
 
 _Example:_
 
@@ -153,17 +131,13 @@ _Example:_
 chat.completion
 ```
 
-_Type Signature:_ `string`
+#### usage \(required\): `UsageInfo`
 
-#### usage
-
-_Type Signature:_ `UsageInfo`
-
-<details open>
+<details >
 
 <summary>UsageInfo Properties</summary>
 
-##### completion\_tokens
+##### completion\_tokens \(required\): `integer`
 
 _Example:_
 
@@ -171,9 +145,7 @@ _Example:_
 34
 ```
 
-_Type Signature:_ `integer`
-
-##### prompt\_tokens
+##### prompt\_tokens \(required\): `integer`
 
 _Example:_
 
@@ -181,17 +153,13 @@ _Example:_
 16
 ```
 
-_Type Signature:_ `integer`
-
-##### total\_tokens
+##### total\_tokens \(required\): `integer`
 
 _Example:_
 
 ```
 50
 ```
-
-_Type Signature:_ `integer`
 
 </details>
 
@@ -205,39 +173,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 

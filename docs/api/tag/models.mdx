@@ -20,9 +20,7 @@ List all models available to the user.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -51,221 +49,147 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### data
+#### data: `array<BaseModelCard | FTModelCard>`
 
-_Type Signature:_ `array<BaseModelCard | FTModelCard>`
-
-<details open>
+<details >
 
 <summary>BaseModelCard Properties</summary>
 
-##### aliases
+##### aliases: `array<string>`
 
-_Type Signature:_ `array<string>`
+##### capabilities \(required\): `ModelCapabilities`
 
-##### capabilities
-
-_Type Signature:_ `ModelCapabilities`
-
-<details open>
+<details >
 
 <summary>ModelCapabilities Properties</summary>
 
-##### completion\_chat
+##### completion\_chat: `boolean`
 
 _Default Value:_ `true`
 
-_Type Signature:_ `boolean`
-
-##### completion\_fim
+##### completion\_fim: `boolean`
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
-
-##### fine\_tuning
+##### fine\_tuning: `boolean`
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
-
-##### function\_calling
+##### function\_calling: `boolean`
 
 _Default Value:_ `true`
 
-_Type Signature:_ `boolean`
-
-##### vision
+##### vision: `boolean`
 
 _Default Value:_ `false`
-
-_Type Signature:_ `boolean`
 
 </details>
 
-##### created
+##### created: `integer`
 
-_Type Signature:_ `integer`
+##### default\_model\_temperature: `number | null`
 
-##### default\_model\_temperature
+##### deprecation: `date-time | null`
 
-_Type Signature:_ `number | null`
+##### description: `string | null`
 
-##### deprecation
+##### id \(required\): `string`
 
-_Type Signature:_ `date-time | null`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### max\_context\_length
+##### max\_context\_length: `integer`
 
 _Default Value:_ `32768`
 
-_Type Signature:_ `integer`
+##### name: `string | null`
 
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
+##### object: `string`
 
 _Default Value:_ `"model"`
 
-_Type Signature:_ `string`
-
-##### owned\_by
+##### owned\_by: `string`
 
 _Default Value:_ `"mistralai"`
 
-_Type Signature:_ `string`
+##### type: `"base"`
 
-##### type
-
-_Type Signature:_ `'base'`
+_Default Value:_ `"base"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>FTModelCard Properties</summary>
 
-##### aliases
+##### aliases: `array<string>`
 
-_Type Signature:_ `array<string>`
-
-##### archived
+##### archived: `boolean`
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
+##### capabilities \(required\): `ModelCapabilities`
 
-##### capabilities
-
-_Type Signature:_ `ModelCapabilities`
-
-<details open>
+<details >
 
 <summary>ModelCapabilities Properties</summary>
 
-##### completion\_chat
+##### completion\_chat: `boolean`
 
 _Default Value:_ `true`
 
-_Type Signature:_ `boolean`
-
-##### completion\_fim
+##### completion\_fim: `boolean`
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
-
-##### fine\_tuning
+##### fine\_tuning: `boolean`
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
-
-##### function\_calling
+##### function\_calling: `boolean`
 
 _Default Value:_ `true`
 
-_Type Signature:_ `boolean`
-
-##### vision
+##### vision: `boolean`
 
 _Default Value:_ `false`
-
-_Type Signature:_ `boolean`
 
 </details>
 
-##### created
+##### created: `integer`
 
-_Type Signature:_ `integer`
+##### default\_model\_temperature: `number | null`
 
-##### default\_model\_temperature
+##### deprecation: `date-time | null`
 
-_Type Signature:_ `number | null`
+##### description: `string | null`
 
-##### deprecation
+##### id \(required\): `string`
 
-_Type Signature:_ `date-time | null`
+##### job \(required\): `string`
 
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### job
-
-_Type Signature:_ `string`
-
-##### max\_context\_length
+##### max\_context\_length: `integer`
 
 _Default Value:_ `32768`
 
-_Type Signature:_ `integer`
+##### name: `string | null`
 
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
+##### object: `string`
 
 _Default Value:_ `"model"`
 
-_Type Signature:_ `string`
-
-##### owned\_by
+##### owned\_by: `string`
 
 _Default Value:_ `"mistralai"`
 
-_Type Signature:_ `string`
+##### root \(required\): `string`
 
-##### root
+##### type: `"fine-tuned"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'fine-tuned'`
+_Default Value:_ `"fine-tuned"`
 
 </details>
 
-#### object
+#### object: `string`
 
 _Default Value:_ `"list"`
-
-_Type Signature:_ `string`
 
 </details>
 
@@ -277,39 +201,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -327,9 +239,7 @@ Retrieve a model information.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -339,6 +249,8 @@ _Type Signature:_ `string`
 
 The ID of the model to retrieve.
 
+#### Security \(required\): `string`
+
 The ID of the model to retrieve.
 
 _Example:_
@@ -346,8 +258,6 @@ _Example:_
 ```
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
-
-_Type Signature:_ `string`
 
 ### Try it Now
 
@@ -372,215 +282,9 @@ run();`} />
 
 Successful Response
 
+#### Response Body \(required\): `BaseModelCard | FTModelCard`
+
 Successful Response
-
-_Type Signature:_ `BaseModelCard | FTModelCard`
-
-<details open>
-
-<summary>BaseModelCard Properties</summary>
-
-##### aliases
-
-_Type Signature:_ `array<string>`
-
-##### capabilities
-
-_Type Signature:_ `ModelCapabilities`
-
-<details open>
-
-<summary>ModelCapabilities Properties</summary>
-
-##### completion\_chat
-
-_Default Value:_ `true`
-
-_Type Signature:_ `boolean`
-
-##### completion\_fim
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### fine\_tuning
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### function\_calling
-
-_Default Value:_ `true`
-
-_Type Signature:_ `boolean`
-
-##### vision
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### created
-
-_Type Signature:_ `integer`
-
-##### default\_model\_temperature
-
-_Type Signature:_ `number | null`
-
-##### deprecation
-
-_Type Signature:_ `date-time | null`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### max\_context\_length
-
-_Default Value:_ `32768`
-
-_Type Signature:_ `integer`
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
-
-_Default Value:_ `"model"`
-
-_Type Signature:_ `string`
-
-##### owned\_by
-
-_Default Value:_ `"mistralai"`
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'base'`
-
-</details>
-
-<details open>
-
-<summary>FTModelCard Properties</summary>
-
-##### aliases
-
-_Type Signature:_ `array<string>`
-
-##### archived
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### capabilities
-
-_Type Signature:_ `ModelCapabilities`
-
-<details open>
-
-<summary>ModelCapabilities Properties</summary>
-
-##### completion\_chat
-
-_Default Value:_ `true`
-
-_Type Signature:_ `boolean`
-
-##### completion\_fim
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### fine\_tuning
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### function\_calling
-
-_Default Value:_ `true`
-
-_Type Signature:_ `boolean`
-
-##### vision
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### created
-
-_Type Signature:_ `integer`
-
-##### default\_model\_temperature
-
-_Type Signature:_ `number | null`
-
-##### deprecation
-
-_Type Signature:_ `date-time | null`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### job
-
-_Type Signature:_ `string`
-
-##### max\_context\_length
-
-_Default Value:_ `32768`
-
-_Type Signature:_ `integer`
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
-
-_Default Value:_ `"model"`
-
-_Type Signature:_ `string`
-
-##### owned\_by
-
-_Default Value:_ `"mistralai"`
-
-_Type Signature:_ `string`
-
-##### root
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'fine-tuned'`
-
-</details>
 
 ### Response: 422 \(application/json\)
 
@@ -590,39 +294,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -640,9 +332,7 @@ Delete a fine-tuned model.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -652,6 +342,8 @@ _Type Signature:_ `string`
 
 The ID of the model to delete.
 
+#### Security \(required\): `string`
+
 The ID of the model to delete.
 
 _Example:_
@@ -659,8 +351,6 @@ _Example:_
 ```
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
-
-_Type Signature:_ `string`
 
 ### Try it Now
 
@@ -689,7 +379,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### deleted
+#### deleted: `boolean`
 
 The deletion status
 
@@ -701,9 +391,7 @@ true
 
 _Default Value:_ `true`
 
-_Type Signature:_ `boolean`
-
-#### id
+#### id \(required\): `string`
 
 The ID of the deleted model.
 
@@ -713,15 +401,11 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-_Type Signature:_ `string`
-
-#### object
+#### object: `string`
 
 The object type that was deleted
 
 _Default Value:_ `"model"`
-
-_Type Signature:_ `string`
 
 </details>
 
@@ -733,39 +417,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -783,9 +455,7 @@ Update a model name or description.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -795,6 +465,8 @@ _Type Signature:_ `string`
 
 The ID of the model to update.
 
+#### Security \(required\): `string`
+
 The ID of the model to update.
 
 _Example:_
@@ -802,8 +474,6 @@ _Example:_
 ```
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
-
-_Type Signature:_ `string`
 
 ### Try it Now
 
@@ -831,13 +501,9 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### description
+#### description: `string | null`
 
-_Type Signature:_ `string | null`
-
-#### name
-
-_Type Signature:_ `string | null`
+#### name: `string | null`
 
 </details>
 
@@ -845,227 +511,9 @@ _Type Signature:_ `string | null`
 
 OK
 
+#### Response Body \(required\): `CompletionFTModelOut | ClassifierFTModelOut`
+
 OK
-
-_Type Signature:_ `CompletionFTModelOut | ClassifierFTModelOut`
-
-<details open>
-
-<summary>CompletionFTModelOut Properties</summary>
-
-##### aliases
-
-_Type Signature:_ `array<string>`
-
-##### archived
-
-_Type Signature:_ `boolean`
-
-##### capabilities
-
-_Type Signature:_ `FTModelCapabilitiesOut`
-
-<details open>
-
-<summary>FTModelCapabilitiesOut Properties</summary>
-
-##### classification
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### completion\_chat
-
-_Default Value:_ `true`
-
-_Type Signature:_ `boolean`
-
-##### completion\_fim
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### fine\_tuning
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### function\_calling
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### created
-
-_Type Signature:_ `integer`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### job
-
-_Type Signature:_ `string`
-
-##### max\_context\_length
-
-_Default Value:_ `32768`
-
-_Type Signature:_ `integer`
-
-##### model\_type
-
-_Type Signature:_ `'completion'`
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
-
-_Type Signature:_ `'model'`
-
-##### owned\_by
-
-_Type Signature:_ `string`
-
-##### root
-
-_Type Signature:_ `string`
-
-</details>
-
-<details open>
-
-<summary>ClassifierFTModelOut Properties</summary>
-
-##### aliases
-
-_Type Signature:_ `array<string>`
-
-##### archived
-
-_Type Signature:_ `boolean`
-
-##### capabilities
-
-_Type Signature:_ `FTModelCapabilitiesOut`
-
-<details open>
-
-<summary>FTModelCapabilitiesOut Properties</summary>
-
-##### classification
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### completion\_chat
-
-_Default Value:_ `true`
-
-_Type Signature:_ `boolean`
-
-##### completion\_fim
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### fine\_tuning
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-##### function\_calling
-
-_Default Value:_ `false`
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### classifier\_targets
-
-_Type Signature:_ `array<ClassifierTargetOut>`
-
-<details open>
-
-<summary>ClassifierTargetOut Properties</summary>
-
-##### labels
-
-_Type Signature:_ `array<string>`
-
-##### loss\_function
-
-_Type Signature:_ `'single_class' | 'multi_class'`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### weight
-
-_Type Signature:_ `number`
-
-</details>
-
-##### created
-
-_Type Signature:_ `integer`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### job
-
-_Type Signature:_ `string`
-
-##### max\_context\_length
-
-_Default Value:_ `32768`
-
-_Type Signature:_ `integer`
-
-##### model\_type
-
-_Type Signature:_ `'classifier'`
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
-
-_Type Signature:_ `'model'`
-
-##### owned\_by
-
-_Type Signature:_ `string`
-
-##### root
-
-_Type Signature:_ `string`
-
-</details>
 
 ## POST /v1/fine\_tuning/models/\{model\_id\}/archive
 
@@ -1079,9 +527,7 @@ Archive a fine-tuned model.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -1091,6 +537,8 @@ _Type Signature:_ `string`
 
 The ID of the model to archive.
 
+#### Security \(required\): `string`
+
 The ID of the model to archive.
 
 _Example:_
@@ -1098,8 +546,6 @@ _Example:_
 ```
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
-
-_Type Signature:_ `string`
 
 ### Try it Now
 
@@ -1128,19 +574,15 @@ OK
 
 <summary>Response Body</summary>
 
-#### archived
+#### archived: `boolean`
 
 _Default Value:_ `true`
 
-_Type Signature:_ `boolean`
+#### id \(required\): `string`
 
-#### id
+#### object: `"model"`
 
-_Type Signature:_ `string`
-
-#### object
-
-_Type Signature:_ `'model'`
+_Default Value:_ `"model"`
 
 </details>
 
@@ -1156,9 +598,7 @@ Un-archive a fine-tuned model.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -1168,6 +608,8 @@ _Type Signature:_ `string`
 
 The ID of the model to unarchive.
 
+#### Security \(required\): `string`
+
 The ID of the model to unarchive.
 
 _Example:_
@@ -1175,8 +617,6 @@ _Example:_
 ```
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
-
-_Type Signature:_ `string`
 
 ### Try it Now
 
@@ -1205,18 +645,14 @@ OK
 
 <summary>Response Body</summary>
 
-#### archived
+#### archived: `boolean`
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
+#### id \(required\): `string`
 
-#### id
+#### object: `"model"`
 
-_Type Signature:_ `string`
-
-#### object
-
-_Type Signature:_ `'model'`
+_Default Value:_ `"model"`
 
 </details>

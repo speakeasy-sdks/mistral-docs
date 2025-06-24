@@ -20,9 +20,7 @@ Returns a list of files that belong to the user's organization.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -51,15 +49,13 @@ OK
 
 <summary>Response Body</summary>
 
-#### data
+#### data \(required\): `array<FileSchema>`
 
-_Type Signature:_ `array<FileSchema>`
-
-<details open>
+<details >
 
 <summary>FileSchema Properties</summary>
 
-##### created\_at
+##### created\_at \(required\): `integer`
 
 The UNIX timestamp (in seconds) of the event.
 
@@ -69,9 +65,7 @@ _Example:_
 1716963433
 ```
 
-_Type Signature:_ `integer`
-
-##### filename
+##### filename \(required\): `string`
 
 The name of the uploaded file.
 
@@ -81,9 +75,7 @@ _Example:_
 files_upload.jsonl
 ```
 
-_Type Signature:_ `string`
-
-##### id
+##### id \(required\): `string`
 
 The unique identifier of the file.
 
@@ -93,13 +85,9 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-_Type Signature:_ `string`
+##### num\_lines: `integer | null`
 
-##### num\_lines
-
-_Type Signature:_ `integer | null`
-
-##### object
+##### object \(required\): `string`
 
 The object type, which is always "file".
 
@@ -109,25 +97,15 @@ _Example:_
 file
 ```
 
-_Type Signature:_ `string`
+##### purpose \(required\): `"fine-tune" | "batch" | "ocr"`
 
-##### purpose
+##### sample\_type \(required\)
 
-_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
-
-##### sample\_type
-
-_Type Signature:_
 ```
-enum
-  'pretrain'
-  'instruct'
-  'batch_request'
-  'batch_result'
-  'batch_error'
+"pretrain" | "instruct" | "batch_request" | "batch_result" | "batch_error"
 ```
 
-##### size\_bytes
+##### size\_bytes \(required\): `integer`
 
 The size of the file, in bytes.
 
@@ -137,21 +115,13 @@ _Example:_
 13000
 ```
 
-_Type Signature:_ `integer`
-
-##### source
-
-_Type Signature:_ `'upload' | 'repository' | 'mistral'`
+##### source \(required\): `"upload" | "repository" | "mistral"`
 
 </details>
 
-#### object
+#### object \(required\): `string`
 
-_Type Signature:_ `string`
-
-#### total
-
-_Type Signature:_ `integer`
+#### total \(required\): `integer`
 
 </details>
 
@@ -171,9 +141,7 @@ Please contact us if you need to increase these storage limits.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -203,7 +171,7 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### file
+#### file \(required\): `File`
 
 The File object (not file name) to be uploaded.
  To upload a file and specify a custom file name you should format your request as such:
@@ -215,25 +183,17 @@ The File object (not file name) to be uploaded.
  file=@path/to/your/file.jsonl
  ```
 
-_Type Signature:_ `File`
-
-<details open>
+<details >
 
 <summary>File Properties</summary>
 
-##### content
+##### content \(required\): `binary`
 
-_Type Signature:_ `binary`
-
-##### fileName
-
-_Type Signature:_ `string`
+##### fileName \(required\): `string`
 
 </details>
 
-#### purpose
-
-_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
+#### purpose: `"fine-tune" | "batch" | "ocr"`
 
 </details>
 
@@ -245,7 +205,7 @@ OK
 
 <summary>Response Body</summary>
 
-#### created\_at
+#### created\_at \(required\): `integer`
 
 The UNIX timestamp (in seconds) of the event.
 
@@ -255,9 +215,7 @@ _Example:_
 1716963433
 ```
 
-_Type Signature:_ `integer`
-
-#### filename
+#### filename \(required\): `string`
 
 The name of the uploaded file.
 
@@ -267,9 +225,7 @@ _Example:_
 files_upload.jsonl
 ```
 
-_Type Signature:_ `string`
-
-#### id
+#### id \(required\): `string`
 
 The unique identifier of the file.
 
@@ -279,13 +235,9 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-_Type Signature:_ `string`
+#### num\_lines: `integer | null`
 
-#### num\_lines
-
-_Type Signature:_ `integer | null`
-
-#### object
+#### object \(required\): `string`
 
 The object type, which is always "file".
 
@@ -295,25 +247,15 @@ _Example:_
 file
 ```
 
-_Type Signature:_ `string`
+#### purpose \(required\): `"fine-tune" | "batch" | "ocr"`
 
-#### purpose
+#### sample\_type \(required\)
 
-_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
-
-#### sample\_type
-
-_Type Signature:_
 ```
-enum
-  'pretrain'
-  'instruct'
-  'batch_request'
-  'batch_result'
-  'batch_error'
+"pretrain" | "instruct" | "batch_request" | "batch_result" | "batch_error"
 ```
 
-#### size\_bytes
+#### size\_bytes \(required\): `integer`
 
 The size of the file, in bytes.
 
@@ -323,11 +265,7 @@ _Example:_
 13000
 ```
 
-_Type Signature:_ `integer`
-
-#### source
-
-_Type Signature:_ `'upload' | 'repository' | 'mistral'`
+#### source \(required\): `"upload" | "repository" | "mistral"`
 
 </details>
 
@@ -343,9 +281,7 @@ Returns information about a specific file.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -353,7 +289,7 @@ _Type Signature:_ `string`
 
 #### file\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -382,7 +318,7 @@ OK
 
 <summary>Response Body</summary>
 
-#### created\_at
+#### created\_at \(required\): `integer`
 
 The UNIX timestamp (in seconds) of the event.
 
@@ -392,13 +328,9 @@ _Example:_
 1716963433
 ```
 
-_Type Signature:_ `integer`
+#### deleted \(required\): `boolean`
 
-#### deleted
-
-_Type Signature:_ `boolean`
-
-#### filename
+#### filename \(required\): `string`
 
 The name of the uploaded file.
 
@@ -408,9 +340,7 @@ _Example:_
 files_upload.jsonl
 ```
 
-_Type Signature:_ `string`
-
-#### id
+#### id \(required\): `string`
 
 The unique identifier of the file.
 
@@ -420,13 +350,9 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-_Type Signature:_ `string`
+#### num\_lines: `integer | null`
 
-#### num\_lines
-
-_Type Signature:_ `integer | null`
-
-#### object
+#### object \(required\): `string`
 
 The object type, which is always "file".
 
@@ -436,25 +362,15 @@ _Example:_
 file
 ```
 
-_Type Signature:_ `string`
+#### purpose \(required\): `"fine-tune" | "batch" | "ocr"`
 
-#### purpose
+#### sample\_type \(required\)
 
-_Type Signature:_ `'fine-tune' | 'batch' | 'ocr'`
-
-#### sample\_type
-
-_Type Signature:_
 ```
-enum
-  'pretrain'
-  'instruct'
-  'batch_request'
-  'batch_result'
-  'batch_error'
+"pretrain" | "instruct" | "batch_request" | "batch_result" | "batch_error"
 ```
 
-#### size\_bytes
+#### size\_bytes \(required\): `integer`
 
 The size of the file, in bytes.
 
@@ -464,11 +380,7 @@ _Example:_
 13000
 ```
 
-_Type Signature:_ `integer`
-
-#### source
-
-_Type Signature:_ `'upload' | 'repository' | 'mistral'`
+#### source \(required\): `"upload" | "repository" | "mistral"`
 
 </details>
 
@@ -484,9 +396,7 @@ Delete a file.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -494,7 +404,7 @@ _Type Signature:_ `string`
 
 #### file\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -523,7 +433,7 @@ OK
 
 <summary>Response Body</summary>
 
-#### deleted
+#### deleted \(required\): `boolean`
 
 The deletion status.
 
@@ -533,9 +443,7 @@ _Example:_
 false
 ```
 
-_Type Signature:_ `boolean`
-
-#### id
+#### id \(required\): `string`
 
 The ID of the deleted file.
 
@@ -545,9 +453,7 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-_Type Signature:_ `string`
-
-#### object
+#### object \(required\): `string`
 
 The object type that was deleted
 
@@ -556,8 +462,6 @@ _Example:_
 ```
 file
 ```
-
-_Type Signature:_ `string`
 
 </details>
 
@@ -573,9 +477,7 @@ Download a file
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -583,7 +485,7 @@ _Type Signature:_ `string`
 
 #### file\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -608,9 +510,9 @@ run();`} />
 
 OK
 
-OK
+#### Response Body \(required\): `binary`
 
-_Type Signature:_ `binary`
+OK
 
 ## GET /v1/files/\{file\_id\}/url
 
@@ -622,9 +524,7 @@ Get Signed Url
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -632,15 +532,15 @@ _Type Signature:_ `string`
 
 #### file\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 #### expiry
 
 Number of hours before the url becomes invalid. Defaults to 24h
 
-Number of hours before the url becomes invalid. Defaults to 24h
+#### Security \(required\): `integer`
 
-_Type Signature:_ `integer`
+Number of hours before the url becomes invalid. Defaults to 24h
 
 ### Try it Now
 
@@ -669,8 +569,6 @@ OK
 
 <summary>Response Body</summary>
 
-#### url
-
-_Type Signature:_ `string`
+#### url \(required\): `string`
 
 </details>

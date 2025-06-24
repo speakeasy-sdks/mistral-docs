@@ -20,9 +20,7 @@ Retrieve a list of conversation entities sorted by creation time.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -30,11 +28,11 @@ _Type Signature:_ `string`
 
 #### page
 
-_Type Signature:_ `integer`
+#### Security \(required\): `integer`
 
 #### page\_size
 
-_Type Signature:_ `integer`
+#### Security \(required\): `integer`
 
 ### Try it Now
 
@@ -57,298 +55,9 @@ run();`} />
 
 Successful Response
 
+#### Response Body \(required\): `array<ModelConversation | AgentConversation>`
+
 Successful Response
-
-_Type Signature:_ `array<ModelConversation | AgentConversation>`
-
-<details open>
-
-<summary>ModelConversation Properties</summary>
-
-##### completion\_args
-
-White-listed arguments from the completion API
-
-_Type Signature:_ `CompletionArgs`
-
-<details open>
-
-<summary>CompletionArgs Properties</summary>
-
-##### frequency\_penalty
-
-_Type Signature:_ `number | null`
-
-##### max\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
-
-<summary>Prediction Properties</summary>
-
-##### content
-
-_Default Value:_ `""`
-
-_Type Signature:_ `string`
-
-##### type
-
-_Default Value:_ `"content"`
-
-_Type Signature:_ `string`
-
-</details>
-
-##### presence\_penalty
-
-_Type Signature:_ `number | null`
-
-##### random\_seed
-
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
-
-<summary>ResponseFormat Properties</summary>
-
-##### json\_schema
-
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
-
-<summary>JsonSchema Properties</summary>
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### type
-
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
-
-</details>
-
-##### stop
-
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
-
-_Default Value:_ `0.3`
-
-_Type Signature:_ `number`
-
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### created\_at
-
-_Type Signature:_ `date-time`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### instructions
-
-_Type Signature:_ `string | null`
-
-##### model
-
-_Type Signature:_ `string`
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
-
-_Type Signature:_ `'conversation'`
-
-##### tools
-
-List of tools which are available to the model during the conversation.
-
-_Type Signature:_ 
-```
-array<
- 
- | FunctionTool
- | WebSearchTool
- | WebSearchPremiumTool
- | CodeInterpreterTool
- | ImageGenerationTool
- | DocumentLibraryTool
->
-```
-
-<details open>
-
-<summary>FunctionTool Properties</summary>
-
-##### function
-
-_Type Signature:_ `Function`
-
-<details open>
-
-<summary>Function Properties</summary>
-
-##### description
-
-_Type Signature:_ `string`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### type
-
-_Type Signature:_ `'function'`
-
-</details>
-
-<details open>
-
-<summary>WebSearchTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'web_search'`
-
-</details>
-
-<details open>
-
-<summary>WebSearchPremiumTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'web_search_premium'`
-
-</details>
-
-<details open>
-
-<summary>CodeInterpreterTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'code_interpreter'`
-
-</details>
-
-<details open>
-
-<summary>ImageGenerationTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'image_generation'`
-
-</details>
-
-<details open>
-
-<summary>DocumentLibraryTool Properties</summary>
-
-##### library\_ids
-
-Ids of the library in which to search.
-
-_Type Signature:_ `array<string>`
-
-##### type
-
-_Type Signature:_ `'document_library'`
-
-</details>
-
-##### updated\_at
-
-_Type Signature:_ `date-time`
-
-</details>
-
-<details open>
-
-<summary>AgentConversation Properties</summary>
-
-##### agent\_id
-
-_Type Signature:_ `string`
-
-##### created\_at
-
-_Type Signature:_ `date-time`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
-
-_Type Signature:_ `'conversation'`
-
-##### updated\_at
-
-_Type Signature:_ `date-time`
-
-</details>
 
 ### Response: 422 \(application/json\)
 
@@ -358,39 +67,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -408,9 +105,7 @@ Create a new conversation, using a base model or an agent and append entries. Co
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -439,320 +134,226 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### agent\_id
+#### agent\_id: `string | null`
 
-_Type Signature:_ `string | null`
-
-#### completion\_args
+#### completion\_args: `CompletionArgs`
 
 White-listed arguments from the completion API
 
-_Type Signature:_ `CompletionArgs`
-
-<details open>
+<details >
 
 <summary>CompletionArgs Properties</summary>
 
-##### frequency\_penalty
+##### frequency\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### max\_tokens: `integer | null`
 
-##### max\_tokens
+##### prediction: `Prediction | null`
 
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-##### presence\_penalty
+##### presence\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### random\_seed: `integer | null`
 
-##### random\_seed
+##### response\_format: `ResponseFormat | null`
 
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop
+##### stop: `string | array<string> | null`
 
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
+##### temperature: `number`
 
 _Default Value:_ `0.3`
 
-_Type Signature:_ `number`
+##### tool\_choice: `"auto" | "none" | "any" | "required"`
 
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
+##### top\_p: `number | null`
 
 </details>
 
-#### description
+#### description: `string | null`
 
-_Type Signature:_ `string | null`
+#### handoff\_execution: `"client" | "server"`
 
-#### handoff\_execution
+#### inputs \(required\): `string | array<MessageInputEntry | FunctionResultEntry>`
 
-_Type Signature:_ `'client' | 'server'`
-
-#### inputs
-
-_Type Signature:_ `string | array<MessageInputEntry | FunctionResultEntry>`
-
-<details open>
+<details >
 
 <summary>MessageInputEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### content \(required\)
 
-##### content
-
-_Type Signature:_ 
 ```
 string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### object: `"entry"`
 
-_Type Signature:_ `string`
+_Default Value:_ `"entry"`
 
-##### object
+##### role \(required\): `"assistant" | "user"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.input"`
 
-##### role
-
-_Type Signature:_ `'assistant' | 'user'`
-
-##### type
-
-_Type Signature:_ `'message.input'`
+_Default Value:_ `"message.input"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>FunctionResultEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### object: `"entry"`
 
-##### id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### result \(required\): `string`
 
-##### object
+##### tool\_call\_id \(required\): `string`
 
-_Type Signature:_ `'entry'`
+##### type: `"function.result"`
 
-##### result
-
-_Type Signature:_ `string`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'function.result'`
+_Default Value:_ `"function.result"`
 
 </details>
 
-#### instructions
+#### instructions: `string | null`
 
-_Type Signature:_ `string | null`
+#### model: `string | null`
 
-#### model
+#### name: `string | null`
 
-_Type Signature:_ `string | null`
+#### store: `boolean | null`
 
-#### name
-
-_Type Signature:_ `string | null`
-
-#### store
-
-_Type Signature:_ `boolean | null`
-
-#### stream
+#### stream: `boolean`
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
-
 #### tools
 
-_Type Signature:_ 
 ```
 | array<
  
@@ -766,95 +367,83 @@ _Type Signature:_
 | null
 ```
 
-<details open>
+<details >
 
 <summary>FunctionTool Properties</summary>
 
-##### function
+##### function \(required\): `Function`
 
-_Type Signature:_ `Function`
-
-<details open>
+<details >
 
 <summary>Function Properties</summary>
 
-##### description
+##### description: `string`
 
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
-##### name
+##### parameters \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"function"`
 
-_Type Signature:_ `'function'`
+_Default Value:_ `"function"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchTool Properties</summary>
 
-##### type
+##### type: `"web_search"`
 
-_Type Signature:_ `'web_search'`
+_Default Value:_ `"web_search"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchPremiumTool Properties</summary>
 
-##### type
+##### type: `"web_search_premium"`
 
-_Type Signature:_ `'web_search_premium'`
+_Default Value:_ `"web_search_premium"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>CodeInterpreterTool Properties</summary>
 
-##### type
+##### type: `"code_interpreter"`
 
-_Type Signature:_ `'code_interpreter'`
+_Default Value:_ `"code_interpreter"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageGenerationTool Properties</summary>
 
-##### type
+##### type: `"image_generation"`
 
-_Type Signature:_ `'image_generation'`
+_Default Value:_ `"image_generation"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentLibraryTool Properties</summary>
 
-##### library\_ids
+##### library\_ids \(required\): `array<string>`
 
 Ids of the library in which to search.
 
-_Type Signature:_ `array<string>`
+##### type: `"document_library"`
 
-##### type
-
-_Type Signature:_ `'document_library'`
+_Default Value:_ `"document_library"`
 
 </details>
 
@@ -868,17 +457,14 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id
+#### conversation\_id \(required\): `string`
 
-_Type Signature:_ `string`
+#### object: `"conversation.response"`
 
-#### object
+_Default Value:_ `"conversation.response"`
 
-_Type Signature:_ `'conversation.response'`
+#### outputs \(required\)
 
-#### outputs
-
-_Type Signature:_ 
 ```
 array<
  
@@ -889,21 +475,16 @@ array<
 >
 ```
 
-<details open>
+<details >
 
 <summary>MessageOutputEntry Properties</summary>
 
-##### agent\_id
+##### agent\_id: `string | null`
 
-_Type Signature:_ `string | null`
+##### completed\_at: `date-time | null`
 
-##### completed\_at
+##### content \(required\)
 
-_Type Signature:_ `date-time | null`
-
-##### content
-
-_Type Signature:_ 
 ```
 | string
 | array<
@@ -916,315 +497,233 @@ _Type Signature:_
 >
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolReferenceChunk Properties</summary>
 
-##### source
+##### source: `string | null`
 
-_Type Signature:_ `string | null`
+##### title \(required\): `string`
 
-##### title
+##### tool \(required\)
 
-_Type Signature:_ `string`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_reference"`
 
-_Type Signature:_ `'tool_reference'`
+_Default Value:_ `"tool_reference"`
 
-##### url
-
-_Type Signature:_ `string | null`
+##### url: `string | null`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### model: `string | null`
 
-_Type Signature:_ `string`
+##### object: `"entry"`
 
-##### model
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string | null`
+##### role: `"assistant"`
 
-##### object
+_Default Value:_ `"assistant"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.output"`
 
-##### role
-
-_Type Signature:_ `'assistant'`
-
-##### type
-
-_Type Signature:_ `'message.output'`
+_Default Value:_ `"message.output"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolExecutionEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### info: `map<any>`
 
-##### id
+##### name \(required\)
 
-_Type Signature:_ `string`
-
-##### info
-
-_Type Signature:_ `map<any>`
-
-##### name
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### object
+##### object: `"entry"`
 
-_Type Signature:_ `'entry'`
+_Default Value:_ `"entry"`
 
-##### type
+##### type: `"tool.execution"`
 
-_Type Signature:_ `'tool.execution'`
+_Default Value:_ `"tool.execution"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>FunctionCallEntry Properties</summary>
 
-##### arguments
+##### arguments \(required\): `map<any> | string`
 
-_Type Signature:_ `map<any> | string`
+##### completed\_at: `date-time | null`
 
-##### completed\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time | null`
+##### id: `string`
 
-##### created\_at
+##### name \(required\): `string`
 
-_Type Signature:_ `date-time`
+##### object: `"entry"`
 
-##### id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### tool\_call\_id \(required\): `string`
 
-##### name
+##### type: `"function.call"`
 
-_Type Signature:_ `string`
-
-##### object
-
-_Type Signature:_ `'entry'`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'function.call'`
+_Default Value:_ `"function.call"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>AgentHandoffEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### next\_agent\_id \(required\): `string`
 
-##### id
+##### next\_agent\_name \(required\): `string`
 
-_Type Signature:_ `string`
+##### object: `"entry"`
 
-##### next\_agent\_id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### previous\_agent\_id \(required\): `string`
 
-##### next\_agent\_name
+##### previous\_agent\_name \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"agent.handoff"`
 
-##### object
-
-_Type Signature:_ `'entry'`
-
-##### previous\_agent\_id
-
-_Type Signature:_ `string`
-
-##### previous\_agent\_name
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'agent.handoff'`
+_Default Value:_ `"agent.handoff"`
 
 </details>
 
-#### usage
+#### usage \(required\): `ConversationUsageInfo`
 
-_Type Signature:_ `ConversationUsageInfo`
-
-<details open>
+<details >
 
 <summary>ConversationUsageInfo Properties</summary>
 
-##### completion\_tokens
+##### completion\_tokens: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
+##### connector\_tokens: `integer | null`
 
-##### connector\_tokens
+##### connectors: `map<integer> | null`
 
-_Type Signature:_ `integer | null`
-
-##### connectors
-
-_Type Signature:_ `map<integer> | null`
-
-##### prompt\_tokens
+##### prompt\_tokens: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
-
-##### total\_tokens
+##### total\_tokens: `integer`
 
 _Default Value:_ `0`
-
-_Type Signature:_ `integer`
 
 </details>
 
@@ -1238,39 +737,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -1288,9 +775,7 @@ Given a conversation_id retrieve a conversation entity with its attributes.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -1298,7 +783,7 @@ _Type Signature:_ `string`
 
 #### conversation\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -1323,298 +808,9 @@ run();`} />
 
 Successful Response
 
+#### Response Body \(required\): `ModelConversation | AgentConversation`
+
 Successful Response
-
-_Type Signature:_ `ModelConversation | AgentConversation`
-
-<details open>
-
-<summary>ModelConversation Properties</summary>
-
-##### completion\_args
-
-White-listed arguments from the completion API
-
-_Type Signature:_ `CompletionArgs`
-
-<details open>
-
-<summary>CompletionArgs Properties</summary>
-
-##### frequency\_penalty
-
-_Type Signature:_ `number | null`
-
-##### max\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
-
-<summary>Prediction Properties</summary>
-
-##### content
-
-_Default Value:_ `""`
-
-_Type Signature:_ `string`
-
-##### type
-
-_Default Value:_ `"content"`
-
-_Type Signature:_ `string`
-
-</details>
-
-##### presence\_penalty
-
-_Type Signature:_ `number | null`
-
-##### random\_seed
-
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
-
-<summary>ResponseFormat Properties</summary>
-
-##### json\_schema
-
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
-
-<summary>JsonSchema Properties</summary>
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### type
-
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
-
-</details>
-
-##### stop
-
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
-
-_Default Value:_ `0.3`
-
-_Type Signature:_ `number`
-
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### created\_at
-
-_Type Signature:_ `date-time`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### instructions
-
-_Type Signature:_ `string | null`
-
-##### model
-
-_Type Signature:_ `string`
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
-
-_Type Signature:_ `'conversation'`
-
-##### tools
-
-List of tools which are available to the model during the conversation.
-
-_Type Signature:_ 
-```
-array<
- 
- | FunctionTool
- | WebSearchTool
- | WebSearchPremiumTool
- | CodeInterpreterTool
- | ImageGenerationTool
- | DocumentLibraryTool
->
-```
-
-<details open>
-
-<summary>FunctionTool Properties</summary>
-
-##### function
-
-_Type Signature:_ `Function`
-
-<details open>
-
-<summary>Function Properties</summary>
-
-##### description
-
-_Type Signature:_ `string`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### type
-
-_Type Signature:_ `'function'`
-
-</details>
-
-<details open>
-
-<summary>WebSearchTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'web_search'`
-
-</details>
-
-<details open>
-
-<summary>WebSearchPremiumTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'web_search_premium'`
-
-</details>
-
-<details open>
-
-<summary>CodeInterpreterTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'code_interpreter'`
-
-</details>
-
-<details open>
-
-<summary>ImageGenerationTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'image_generation'`
-
-</details>
-
-<details open>
-
-<summary>DocumentLibraryTool Properties</summary>
-
-##### library\_ids
-
-Ids of the library in which to search.
-
-_Type Signature:_ `array<string>`
-
-##### type
-
-_Type Signature:_ `'document_library'`
-
-</details>
-
-##### updated\_at
-
-_Type Signature:_ `date-time`
-
-</details>
-
-<details open>
-
-<summary>AgentConversation Properties</summary>
-
-##### agent\_id
-
-_Type Signature:_ `string`
-
-##### created\_at
-
-_Type Signature:_ `date-time`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### name
-
-_Type Signature:_ `string | null`
-
-##### object
-
-_Type Signature:_ `'conversation'`
-
-##### updated\_at
-
-_Type Signature:_ `date-time`
-
-</details>
 
 ### Response: 422 \(application/json\)
 
@@ -1624,39 +820,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -1674,9 +858,7 @@ Run completion on the history of the conversation and the user entries. Return t
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -1686,9 +868,9 @@ _Type Signature:_ `string`
 
 ID of the conversation to which we append entries.
 
-ID of the conversation to which we append entries.
+#### Security \(required\): `string`
 
-_Type Signature:_ `string`
+ID of the conversation to which we append entries.
 
 ### Try it Now
 
@@ -1730,300 +912,219 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### completion\_args
+#### completion\_args: `CompletionArgs`
 
 White-listed arguments from the completion API
 
-_Type Signature:_ `CompletionArgs`
-
-<details open>
+<details >
 
 <summary>CompletionArgs Properties</summary>
 
-##### frequency\_penalty
+##### frequency\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### max\_tokens: `integer | null`
 
-##### max\_tokens
+##### prediction: `Prediction | null`
 
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-##### presence\_penalty
+##### presence\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### random\_seed: `integer | null`
 
-##### random\_seed
+##### response\_format: `ResponseFormat | null`
 
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop
+##### stop: `string | array<string> | null`
 
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
+##### temperature: `number`
 
 _Default Value:_ `0.3`
 
-_Type Signature:_ `number`
+##### tool\_choice: `"auto" | "none" | "any" | "required"`
 
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
+##### top\_p: `number | null`
 
 </details>
 
-#### handoff\_execution
+#### handoff\_execution: `"client" | "server"`
 
-_Type Signature:_ `'client' | 'server'`
+_Default Value:_ `"server"`
 
-#### inputs
+#### inputs \(required\): `string | array<MessageInputEntry | FunctionResultEntry>`
 
-_Type Signature:_ `string | array<MessageInputEntry | FunctionResultEntry>`
-
-<details open>
+<details >
 
 <summary>MessageInputEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### content \(required\)
 
-##### content
-
-_Type Signature:_ 
 ```
 string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### object: `"entry"`
 
-_Type Signature:_ `string`
+_Default Value:_ `"entry"`
 
-##### object
+##### role \(required\): `"assistant" | "user"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.input"`
 
-##### role
-
-_Type Signature:_ `'assistant' | 'user'`
-
-##### type
-
-_Type Signature:_ `'message.input'`
+_Default Value:_ `"message.input"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>FunctionResultEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### object: `"entry"`
 
-##### id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### result \(required\): `string`
 
-##### object
+##### tool\_call\_id \(required\): `string`
 
-_Type Signature:_ `'entry'`
+##### type: `"function.result"`
 
-##### result
-
-_Type Signature:_ `string`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'function.result'`
+_Default Value:_ `"function.result"`
 
 </details>
 
-#### store
+#### store: `boolean`
 
 Whether to store the results into our servers or not.
 
 _Default Value:_ `true`
 
-_Type Signature:_ `boolean`
-
-#### stream
+#### stream: `boolean`
 
 _Default Value:_ `false`
-
-_Type Signature:_ `boolean`
 
 </details>
 
@@ -2035,17 +1136,14 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id
+#### conversation\_id \(required\): `string`
 
-_Type Signature:_ `string`
+#### object: `"conversation.response"`
 
-#### object
+_Default Value:_ `"conversation.response"`
 
-_Type Signature:_ `'conversation.response'`
+#### outputs \(required\)
 
-#### outputs
-
-_Type Signature:_ 
 ```
 array<
  
@@ -2056,21 +1154,16 @@ array<
 >
 ```
 
-<details open>
+<details >
 
 <summary>MessageOutputEntry Properties</summary>
 
-##### agent\_id
+##### agent\_id: `string | null`
 
-_Type Signature:_ `string | null`
+##### completed\_at: `date-time | null`
 
-##### completed\_at
+##### content \(required\)
 
-_Type Signature:_ `date-time | null`
-
-##### content
-
-_Type Signature:_ 
 ```
 | string
 | array<
@@ -2083,315 +1176,233 @@ _Type Signature:_
 >
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolReferenceChunk Properties</summary>
 
-##### source
+##### source: `string | null`
 
-_Type Signature:_ `string | null`
+##### title \(required\): `string`
 
-##### title
+##### tool \(required\)
 
-_Type Signature:_ `string`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_reference"`
 
-_Type Signature:_ `'tool_reference'`
+_Default Value:_ `"tool_reference"`
 
-##### url
-
-_Type Signature:_ `string | null`
+##### url: `string | null`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### model: `string | null`
 
-_Type Signature:_ `string`
+##### object: `"entry"`
 
-##### model
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string | null`
+##### role: `"assistant"`
 
-##### object
+_Default Value:_ `"assistant"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.output"`
 
-##### role
-
-_Type Signature:_ `'assistant'`
-
-##### type
-
-_Type Signature:_ `'message.output'`
+_Default Value:_ `"message.output"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolExecutionEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### info: `map<any>`
 
-##### id
+##### name \(required\)
 
-_Type Signature:_ `string`
-
-##### info
-
-_Type Signature:_ `map<any>`
-
-##### name
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### object
+##### object: `"entry"`
 
-_Type Signature:_ `'entry'`
+_Default Value:_ `"entry"`
 
-##### type
+##### type: `"tool.execution"`
 
-_Type Signature:_ `'tool.execution'`
+_Default Value:_ `"tool.execution"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>FunctionCallEntry Properties</summary>
 
-##### arguments
+##### arguments \(required\): `map<any> | string`
 
-_Type Signature:_ `map<any> | string`
+##### completed\_at: `date-time | null`
 
-##### completed\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time | null`
+##### id: `string`
 
-##### created\_at
+##### name \(required\): `string`
 
-_Type Signature:_ `date-time`
+##### object: `"entry"`
 
-##### id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### tool\_call\_id \(required\): `string`
 
-##### name
+##### type: `"function.call"`
 
-_Type Signature:_ `string`
-
-##### object
-
-_Type Signature:_ `'entry'`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'function.call'`
+_Default Value:_ `"function.call"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>AgentHandoffEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### next\_agent\_id \(required\): `string`
 
-##### id
+##### next\_agent\_name \(required\): `string`
 
-_Type Signature:_ `string`
+##### object: `"entry"`
 
-##### next\_agent\_id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### previous\_agent\_id \(required\): `string`
 
-##### next\_agent\_name
+##### previous\_agent\_name \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"agent.handoff"`
 
-##### object
-
-_Type Signature:_ `'entry'`
-
-##### previous\_agent\_id
-
-_Type Signature:_ `string`
-
-##### previous\_agent\_name
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'agent.handoff'`
+_Default Value:_ `"agent.handoff"`
 
 </details>
 
-#### usage
+#### usage \(required\): `ConversationUsageInfo`
 
-_Type Signature:_ `ConversationUsageInfo`
-
-<details open>
+<details >
 
 <summary>ConversationUsageInfo Properties</summary>
 
-##### completion\_tokens
+##### completion\_tokens: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
+##### connector\_tokens: `integer | null`
 
-##### connector\_tokens
+##### connectors: `map<integer> | null`
 
-_Type Signature:_ `integer | null`
-
-##### connectors
-
-_Type Signature:_ `map<integer> | null`
-
-##### prompt\_tokens
+##### prompt\_tokens: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
-
-##### total\_tokens
+##### total\_tokens: `integer`
 
 _Default Value:_ `0`
-
-_Type Signature:_ `integer`
 
 </details>
 
@@ -2405,39 +1416,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -2455,9 +1454,7 @@ Given a conversation_id retrieve all the entries belonging to that conversation.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -2465,7 +1462,7 @@ _Type Signature:_ `string`
 
 #### conversation\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -2494,13 +1491,10 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id
+#### conversation\_id \(required\): `string`
 
-_Type Signature:_ `string`
+#### entries \(required\)
 
-#### entries
-
-_Type Signature:_ 
 ```
 array<
  
@@ -2513,152 +1507,118 @@ array<
 >
 ```
 
-<details open>
+<details >
 
 <summary>MessageInputEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### content \(required\)
 
-##### content
-
-_Type Signature:_ 
 ```
 string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### object: `"entry"`
 
-_Type Signature:_ `string`
+_Default Value:_ `"entry"`
 
-##### object
+##### role \(required\): `"assistant" | "user"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.input"`
 
-##### role
-
-_Type Signature:_ `'assistant' | 'user'`
-
-##### type
-
-_Type Signature:_ `'message.input'`
+_Default Value:_ `"message.input"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>MessageOutputEntry Properties</summary>
 
-##### agent\_id
+##### agent\_id: `string | null`
 
-_Type Signature:_ `string | null`
+##### completed\_at: `date-time | null`
 
-##### completed\_at
+##### content \(required\)
 
-_Type Signature:_ `date-time | null`
-
-##### content
-
-_Type Signature:_ 
 ```
 | string
 | array<
@@ -2671,319 +1631,239 @@ _Type Signature:_
 >
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolReferenceChunk Properties</summary>
 
-##### source
+##### source: `string | null`
 
-_Type Signature:_ `string | null`
+##### title \(required\): `string`
 
-##### title
+##### tool \(required\)
 
-_Type Signature:_ `string`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_reference"`
 
-_Type Signature:_ `'tool_reference'`
+_Default Value:_ `"tool_reference"`
 
-##### url
-
-_Type Signature:_ `string | null`
+##### url: `string | null`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### model: `string | null`
 
-_Type Signature:_ `string`
+##### object: `"entry"`
 
-##### model
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string | null`
+##### role: `"assistant"`
 
-##### object
+_Default Value:_ `"assistant"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.output"`
 
-##### role
-
-_Type Signature:_ `'assistant'`
-
-##### type
-
-_Type Signature:_ `'message.output'`
+_Default Value:_ `"message.output"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>FunctionResultEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### object: `"entry"`
 
-##### id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### result \(required\): `string`
 
-##### object
+##### tool\_call\_id \(required\): `string`
 
-_Type Signature:_ `'entry'`
+##### type: `"function.result"`
 
-##### result
-
-_Type Signature:_ `string`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'function.result'`
+_Default Value:_ `"function.result"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>FunctionCallEntry Properties</summary>
 
-##### arguments
+##### arguments \(required\): `map<any> | string`
 
-_Type Signature:_ `map<any> | string`
+##### completed\_at: `date-time | null`
 
-##### completed\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time | null`
+##### id: `string`
 
-##### created\_at
+##### name \(required\): `string`
 
-_Type Signature:_ `date-time`
+##### object: `"entry"`
 
-##### id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### tool\_call\_id \(required\): `string`
 
-##### name
+##### type: `"function.call"`
 
-_Type Signature:_ `string`
-
-##### object
-
-_Type Signature:_ `'entry'`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'function.call'`
+_Default Value:_ `"function.call"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolExecutionEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### info: `map<any>`
 
-##### id
+##### name \(required\)
 
-_Type Signature:_ `string`
-
-##### info
-
-_Type Signature:_ `map<any>`
-
-##### name
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### object
+##### object: `"entry"`
 
-_Type Signature:_ `'entry'`
+_Default Value:_ `"entry"`
 
-##### type
+##### type: `"tool.execution"`
 
-_Type Signature:_ `'tool.execution'`
+_Default Value:_ `"tool.execution"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>AgentHandoffEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### next\_agent\_id \(required\): `string`
 
-##### id
+##### next\_agent\_name \(required\): `string`
 
-_Type Signature:_ `string`
+##### object: `"entry"`
 
-##### next\_agent\_id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### previous\_agent\_id \(required\): `string`
 
-##### next\_agent\_name
+##### previous\_agent\_name \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"agent.handoff"`
 
-##### object
-
-_Type Signature:_ `'entry'`
-
-##### previous\_agent\_id
-
-_Type Signature:_ `string`
-
-##### previous\_agent\_name
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'agent.handoff'`
+_Default Value:_ `"agent.handoff"`
 
 </details>
 
-#### object
+#### object: `"conversation.history"`
 
-_Type Signature:_ `'conversation.history'`
+_Default Value:_ `"conversation.history"`
 
 </details>
 
@@ -2995,39 +1875,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -3045,9 +1913,7 @@ Given a conversation_id retrieve all the messages belonging to that conversation
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -3055,7 +1921,7 @@ _Type Signature:_ `string`
 
 #### conversation\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -3084,160 +1950,122 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id
+#### conversation\_id \(required\): `string`
 
-_Type Signature:_ `string`
+#### messages \(required\): `array<MessageInputEntry | MessageOutputEntry>`
 
-#### messages
-
-_Type Signature:_ `array<MessageInputEntry | MessageOutputEntry>`
-
-<details open>
+<details >
 
 <summary>MessageInputEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### content \(required\)
 
-##### content
-
-_Type Signature:_ 
 ```
 string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### object: `"entry"`
 
-_Type Signature:_ `string`
+_Default Value:_ `"entry"`
 
-##### object
+##### role \(required\): `"assistant" | "user"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.input"`
 
-##### role
-
-_Type Signature:_ `'assistant' | 'user'`
-
-##### type
-
-_Type Signature:_ `'message.input'`
+_Default Value:_ `"message.input"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>MessageOutputEntry Properties</summary>
 
-##### agent\_id
+##### agent\_id: `string | null`
 
-_Type Signature:_ `string | null`
+##### completed\_at: `date-time | null`
 
-##### completed\_at
+##### content \(required\)
 
-_Type Signature:_ `date-time | null`
-
-##### content
-
-_Type Signature:_ 
 ```
 | string
 | array<
@@ -3250,163 +2078,129 @@ _Type Signature:_
 >
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolReferenceChunk Properties</summary>
 
-##### source
+##### source: `string | null`
 
-_Type Signature:_ `string | null`
+##### title \(required\): `string`
 
-##### title
+##### tool \(required\)
 
-_Type Signature:_ `string`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_reference"`
 
-_Type Signature:_ `'tool_reference'`
+_Default Value:_ `"tool_reference"`
 
-##### url
-
-_Type Signature:_ `string | null`
+##### url: `string | null`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### model: `string | null`
 
-_Type Signature:_ `string`
+##### object: `"entry"`
 
-##### model
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string | null`
+##### role: `"assistant"`
 
-##### object
+_Default Value:_ `"assistant"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.output"`
 
-##### role
-
-_Type Signature:_ `'assistant'`
-
-##### type
-
-_Type Signature:_ `'message.output'`
+_Default Value:_ `"message.output"`
 
 </details>
 
-#### object
+#### object: `"conversation.messages"`
 
-_Type Signature:_ `'conversation.messages'`
+_Default Value:_ `"conversation.messages"`
 
 </details>
 
@@ -3418,39 +2212,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -3468,9 +2250,7 @@ Given a conversation_id and an id, recreate a conversation from this point and r
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -3478,7 +2258,7 @@ _Type Signature:_ `string`
 
 #### conversation\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -3509,304 +2289,221 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### completion\_args
+#### completion\_args: `CompletionArgs`
 
 White-listed arguments from the completion API
 
-_Type Signature:_ `CompletionArgs`
-
-<details open>
+<details >
 
 <summary>CompletionArgs Properties</summary>
 
-##### frequency\_penalty
+##### frequency\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### max\_tokens: `integer | null`
 
-##### max\_tokens
+##### prediction: `Prediction | null`
 
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-##### presence\_penalty
+##### presence\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### random\_seed: `integer | null`
 
-##### random\_seed
+##### response\_format: `ResponseFormat | null`
 
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop
+##### stop: `string | array<string> | null`
 
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
+##### temperature: `number`
 
 _Default Value:_ `0.3`
 
-_Type Signature:_ `number`
+##### tool\_choice: `"auto" | "none" | "any" | "required"`
 
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
+##### top\_p: `number | null`
 
 </details>
 
-#### from\_entry\_id
+#### from\_entry\_id \(required\): `string`
 
-_Type Signature:_ `string`
+#### handoff\_execution: `"client" | "server"`
 
-#### handoff\_execution
+_Default Value:_ `"server"`
 
-_Type Signature:_ `'client' | 'server'`
+#### inputs \(required\): `string | array<MessageInputEntry | FunctionResultEntry>`
 
-#### inputs
-
-_Type Signature:_ `string | array<MessageInputEntry | FunctionResultEntry>`
-
-<details open>
+<details >
 
 <summary>MessageInputEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### content \(required\)
 
-##### content
-
-_Type Signature:_ 
 ```
 string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### object: `"entry"`
 
-_Type Signature:_ `string`
+_Default Value:_ `"entry"`
 
-##### object
+##### role \(required\): `"assistant" | "user"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.input"`
 
-##### role
-
-_Type Signature:_ `'assistant' | 'user'`
-
-##### type
-
-_Type Signature:_ `'message.input'`
+_Default Value:_ `"message.input"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>FunctionResultEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### object: `"entry"`
 
-##### id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### result \(required\): `string`
 
-##### object
+##### tool\_call\_id \(required\): `string`
 
-_Type Signature:_ `'entry'`
+##### type: `"function.result"`
 
-##### result
-
-_Type Signature:_ `string`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'function.result'`
+_Default Value:_ `"function.result"`
 
 </details>
 
-#### store
+#### store: `boolean`
 
 Whether to store the results into our servers or not.
 
 _Default Value:_ `true`
 
-_Type Signature:_ `boolean`
-
-#### stream
+#### stream: `boolean`
 
 _Default Value:_ `false`
-
-_Type Signature:_ `boolean`
 
 </details>
 
@@ -3818,17 +2515,14 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id
+#### conversation\_id \(required\): `string`
 
-_Type Signature:_ `string`
+#### object: `"conversation.response"`
 
-#### object
+_Default Value:_ `"conversation.response"`
 
-_Type Signature:_ `'conversation.response'`
+#### outputs \(required\)
 
-#### outputs
-
-_Type Signature:_ 
 ```
 array<
  
@@ -3839,21 +2533,16 @@ array<
 >
 ```
 
-<details open>
+<details >
 
 <summary>MessageOutputEntry Properties</summary>
 
-##### agent\_id
+##### agent\_id: `string | null`
 
-_Type Signature:_ `string | null`
+##### completed\_at: `date-time | null`
 
-##### completed\_at
+##### content \(required\)
 
-_Type Signature:_ `date-time | null`
-
-##### content
-
-_Type Signature:_ 
 ```
 | string
 | array<
@@ -3866,315 +2555,233 @@ _Type Signature:_
 >
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolFileChunk Properties</summary>
 
-##### file\_id
+##### file\_id \(required\): `string`
 
-_Type Signature:_ `string`
+##### file\_name: `string | null`
 
-##### file\_name
+##### file\_type: `string | null`
 
-_Type Signature:_ `string | null`
+##### tool \(required\)
 
-##### file\_type
-
-_Type Signature:_ `string | null`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_file"`
 
-_Type Signature:_ `'tool_file'`
+_Default Value:_ `"tool_file"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolReferenceChunk Properties</summary>
 
-##### source
+##### source: `string | null`
 
-_Type Signature:_ `string | null`
+##### title \(required\): `string`
 
-##### title
+##### tool \(required\)
 
-_Type Signature:_ `string`
-
-##### tool
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### type
+##### type: `"tool_reference"`
 
-_Type Signature:_ `'tool_reference'`
+_Default Value:_ `"tool_reference"`
 
-##### url
-
-_Type Signature:_ `string | null`
+##### url: `string | null`
 
 </details>
 
-##### created\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time`
+##### id: `string`
 
-##### id
+##### model: `string | null`
 
-_Type Signature:_ `string`
+##### object: `"entry"`
 
-##### model
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string | null`
+##### role: `"assistant"`
 
-##### object
+_Default Value:_ `"assistant"`
 
-_Type Signature:_ `'entry'`
+##### type: `"message.output"`
 
-##### role
-
-_Type Signature:_ `'assistant'`
-
-##### type
-
-_Type Signature:_ `'message.output'`
+_Default Value:_ `"message.output"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolExecutionEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### info: `map<any>`
 
-##### id
+##### name \(required\)
 
-_Type Signature:_ `string`
-
-##### info
-
-_Type Signature:_ `map<any>`
-
-##### name
-
-_Type Signature:_
 ```
-enum
-  'web_search'
-  'web_search_premium'
-  'code_interpreter'
-  'image_generation'
-  'document_library'
+| "web_search"
+| "web_search_premium"
+| "code_interpreter"
+| "image_generation"
+| "document_library"
 ```
 
-##### object
+##### object: `"entry"`
 
-_Type Signature:_ `'entry'`
+_Default Value:_ `"entry"`
 
-##### type
+##### type: `"tool.execution"`
 
-_Type Signature:_ `'tool.execution'`
+_Default Value:_ `"tool.execution"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>FunctionCallEntry Properties</summary>
 
-##### arguments
+##### arguments \(required\): `map<any> | string`
 
-_Type Signature:_ `map<any> | string`
+##### completed\_at: `date-time | null`
 
-##### completed\_at
+##### created\_at: `date-time`
 
-_Type Signature:_ `date-time | null`
+##### id: `string`
 
-##### created\_at
+##### name \(required\): `string`
 
-_Type Signature:_ `date-time`
+##### object: `"entry"`
 
-##### id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### tool\_call\_id \(required\): `string`
 
-##### name
+##### type: `"function.call"`
 
-_Type Signature:_ `string`
-
-##### object
-
-_Type Signature:_ `'entry'`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'function.call'`
+_Default Value:_ `"function.call"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>AgentHandoffEntry Properties</summary>
 
-##### completed\_at
+##### completed\_at: `date-time | null`
 
-_Type Signature:_ `date-time | null`
+##### created\_at: `date-time`
 
-##### created\_at
+##### id: `string`
 
-_Type Signature:_ `date-time`
+##### next\_agent\_id \(required\): `string`
 
-##### id
+##### next\_agent\_name \(required\): `string`
 
-_Type Signature:_ `string`
+##### object: `"entry"`
 
-##### next\_agent\_id
+_Default Value:_ `"entry"`
 
-_Type Signature:_ `string`
+##### previous\_agent\_id \(required\): `string`
 
-##### next\_agent\_name
+##### previous\_agent\_name \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"agent.handoff"`
 
-##### object
-
-_Type Signature:_ `'entry'`
-
-##### previous\_agent\_id
-
-_Type Signature:_ `string`
-
-##### previous\_agent\_name
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'agent.handoff'`
+_Default Value:_ `"agent.handoff"`
 
 </details>
 
-#### usage
+#### usage \(required\): `ConversationUsageInfo`
 
-_Type Signature:_ `ConversationUsageInfo`
-
-<details open>
+<details >
 
 <summary>ConversationUsageInfo Properties</summary>
 
-##### completion\_tokens
+##### completion\_tokens: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
+##### connector\_tokens: `integer | null`
 
-##### connector\_tokens
+##### connectors: `map<integer> | null`
 
-_Type Signature:_ `integer | null`
-
-##### connectors
-
-_Type Signature:_ `map<integer> | null`
-
-##### prompt\_tokens
+##### prompt\_tokens: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
-
-##### total\_tokens
+##### total\_tokens: `integer`
 
 _Default Value:_ `0`
-
-_Type Signature:_ `integer`
 
 </details>
 
@@ -4188,39 +2795,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 

@@ -20,9 +20,7 @@ Retrieve a list of agent entities sorted by creation time.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -30,11 +28,11 @@ _Type Signature:_ `string`
 
 #### page
 
-_Type Signature:_ `integer`
+#### Security \(required\): `integer`
 
 #### page\_size
 
-_Type Signature:_ `integer`
+#### Security \(required\): `integer`
 
 ### Try it Now
 
@@ -57,272 +55,9 @@ run();`} />
 
 Successful Response
 
+#### Response Body \(required\): `array<Agent>`
+
 Successful Response
-
-_Type Signature:_ `array<Agent>`
-
-<details open>
-
-<summary>Agent Properties</summary>
-
-##### completion\_args
-
-White-listed arguments from the completion API
-
-_Type Signature:_ `CompletionArgs`
-
-<details open>
-
-<summary>CompletionArgs Properties</summary>
-
-##### frequency\_penalty
-
-_Type Signature:_ `number | null`
-
-##### max\_tokens
-
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
-
-<summary>Prediction Properties</summary>
-
-##### content
-
-_Default Value:_ `""`
-
-_Type Signature:_ `string`
-
-##### type
-
-_Default Value:_ `"content"`
-
-_Type Signature:_ `string`
-
-</details>
-
-##### presence\_penalty
-
-_Type Signature:_ `number | null`
-
-##### random\_seed
-
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
-
-<summary>ResponseFormat Properties</summary>
-
-##### json\_schema
-
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
-
-<summary>JsonSchema Properties</summary>
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### type
-
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
-
-</details>
-
-##### stop
-
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
-
-_Default Value:_ `0.3`
-
-_Type Signature:_ `number`
-
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
-
-</details>
-
-##### created\_at
-
-_Type Signature:_ `date-time`
-
-##### description
-
-_Type Signature:_ `string | null`
-
-##### handoffs
-
-_Type Signature:_ `array<string> | null`
-
-##### id
-
-_Type Signature:_ `string`
-
-##### instructions
-
-_Type Signature:_ `string | null`
-
-##### model
-
-_Type Signature:_ `string`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### object
-
-_Type Signature:_ `'agent'`
-
-##### tools
-
-List of tools which are available to the model during the conversation.
-
-_Type Signature:_ 
-```
-array<
- 
- | FunctionTool
- | WebSearchTool
- | WebSearchPremiumTool
- | CodeInterpreterTool
- | ImageGenerationTool
- | DocumentLibraryTool
->
-```
-
-<details open>
-
-<summary>FunctionTool Properties</summary>
-
-##### function
-
-_Type Signature:_ `Function`
-
-<details open>
-
-<summary>Function Properties</summary>
-
-##### description
-
-_Type Signature:_ `string`
-
-##### name
-
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
-
-</details>
-
-##### type
-
-_Type Signature:_ `'function'`
-
-</details>
-
-<details open>
-
-<summary>WebSearchTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'web_search'`
-
-</details>
-
-<details open>
-
-<summary>WebSearchPremiumTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'web_search_premium'`
-
-</details>
-
-<details open>
-
-<summary>CodeInterpreterTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'code_interpreter'`
-
-</details>
-
-<details open>
-
-<summary>ImageGenerationTool Properties</summary>
-
-##### type
-
-_Type Signature:_ `'image_generation'`
-
-</details>
-
-<details open>
-
-<summary>DocumentLibraryTool Properties</summary>
-
-##### library\_ids
-
-Ids of the library in which to search.
-
-_Type Signature:_ `array<string>`
-
-##### type
-
-_Type Signature:_ `'document_library'`
-
-</details>
-
-##### updated\_at
-
-_Type Signature:_ `date-time`
-
-##### version
-
-_Type Signature:_ `integer`
-
-</details>
 
 ### Response: 422 \(application/json\)
 
@@ -332,39 +67,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -382,9 +105,7 @@ Create a new agent giving it instructions, tools, description. The agent is then
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -414,139 +135,90 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### completion\_args
+#### completion\_args: `CompletionArgs`
 
 White-listed arguments from the completion API
 
-_Type Signature:_ `CompletionArgs`
-
-<details open>
+<details >
 
 <summary>CompletionArgs Properties</summary>
 
-##### frequency\_penalty
+##### frequency\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### max\_tokens: `integer | null`
 
-##### max\_tokens
+##### prediction: `Prediction | null`
 
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-##### presence\_penalty
+##### presence\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### random\_seed: `integer | null`
 
-##### random\_seed
+##### response\_format: `ResponseFormat | null`
 
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop
+##### stop: `string | array<string> | null`
 
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
+##### temperature: `number`
 
 _Default Value:_ `0.3`
 
-_Type Signature:_ `number`
+##### tool\_choice: `"auto" | "none" | "any" | "required"`
 
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
+##### top\_p: `number | null`
 
 </details>
 
-#### description
+#### description: `string | null`
 
-_Type Signature:_ `string | null`
+#### handoffs: `array<string> | null`
 
-#### handoffs
+#### instructions: `string | null`
 
-_Type Signature:_ `array<string> | null`
+#### model \(required\): `string`
 
-#### instructions
-
-_Type Signature:_ `string | null`
-
-#### model
-
-_Type Signature:_ `string`
-
-#### name
-
-_Type Signature:_ `string`
+#### name \(required\): `string`
 
 #### tools
 
-List of tools which are available to the model during the conversation.
-
-_Type Signature:_ 
 ```
 array<
  
@@ -559,95 +231,85 @@ array<
 >
 ```
 
-<details open>
+List of tools which are available to the model during the conversation.
+
+<details >
 
 <summary>FunctionTool Properties</summary>
 
-##### function
+##### function \(required\): `Function`
 
-_Type Signature:_ `Function`
-
-<details open>
+<details >
 
 <summary>Function Properties</summary>
 
-##### description
+##### description: `string`
 
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
-##### name
+##### parameters \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"function"`
 
-_Type Signature:_ `'function'`
+_Default Value:_ `"function"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchTool Properties</summary>
 
-##### type
+##### type: `"web_search"`
 
-_Type Signature:_ `'web_search'`
+_Default Value:_ `"web_search"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchPremiumTool Properties</summary>
 
-##### type
+##### type: `"web_search_premium"`
 
-_Type Signature:_ `'web_search_premium'`
+_Default Value:_ `"web_search_premium"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>CodeInterpreterTool Properties</summary>
 
-##### type
+##### type: `"code_interpreter"`
 
-_Type Signature:_ `'code_interpreter'`
+_Default Value:_ `"code_interpreter"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageGenerationTool Properties</summary>
 
-##### type
+##### type: `"image_generation"`
 
-_Type Signature:_ `'image_generation'`
+_Default Value:_ `"image_generation"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentLibraryTool Properties</summary>
 
-##### library\_ids
+##### library\_ids \(required\): `array<string>`
 
 Ids of the library in which to search.
 
-_Type Signature:_ `array<string>`
+##### type: `"document_library"`
 
-##### type
-
-_Type Signature:_ `'document_library'`
+_Default Value:_ `"document_library"`
 
 </details>
 
@@ -661,151 +323,98 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### completion\_args
+#### completion\_args: `CompletionArgs`
 
 White-listed arguments from the completion API
 
-_Type Signature:_ `CompletionArgs`
-
-<details open>
+<details >
 
 <summary>CompletionArgs Properties</summary>
 
-##### frequency\_penalty
+##### frequency\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### max\_tokens: `integer | null`
 
-##### max\_tokens
+##### prediction: `Prediction | null`
 
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-##### presence\_penalty
+##### presence\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### random\_seed: `integer | null`
 
-##### random\_seed
+##### response\_format: `ResponseFormat | null`
 
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop
+##### stop: `string | array<string> | null`
 
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
+##### temperature: `number`
 
 _Default Value:_ `0.3`
 
-_Type Signature:_ `number`
+##### tool\_choice: `"auto" | "none" | "any" | "required"`
 
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
+##### top\_p: `number | null`
 
 </details>
 
-#### created\_at
+#### created\_at \(required\): `date-time`
 
-_Type Signature:_ `date-time`
+#### description: `string | null`
 
-#### description
+#### handoffs: `array<string> | null`
 
-_Type Signature:_ `string | null`
+#### id \(required\): `string`
 
-#### handoffs
+#### instructions: `string | null`
 
-_Type Signature:_ `array<string> | null`
+#### model \(required\): `string`
 
-#### id
+#### name \(required\): `string`
 
-_Type Signature:_ `string`
+#### object: `"agent"`
 
-#### instructions
-
-_Type Signature:_ `string | null`
-
-#### model
-
-_Type Signature:_ `string`
-
-#### name
-
-_Type Signature:_ `string`
-
-#### object
-
-_Type Signature:_ `'agent'`
+_Default Value:_ `"agent"`
 
 #### tools
 
-List of tools which are available to the model during the conversation.
-
-_Type Signature:_ 
 ```
 array<
  
@@ -818,105 +427,91 @@ array<
 >
 ```
 
-<details open>
+List of tools which are available to the model during the conversation.
+
+<details >
 
 <summary>FunctionTool Properties</summary>
 
-##### function
+##### function \(required\): `Function`
 
-_Type Signature:_ `Function`
-
-<details open>
+<details >
 
 <summary>Function Properties</summary>
 
-##### description
+##### description: `string`
 
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
-##### name
+##### parameters \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"function"`
 
-_Type Signature:_ `'function'`
+_Default Value:_ `"function"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchTool Properties</summary>
 
-##### type
+##### type: `"web_search"`
 
-_Type Signature:_ `'web_search'`
+_Default Value:_ `"web_search"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchPremiumTool Properties</summary>
 
-##### type
+##### type: `"web_search_premium"`
 
-_Type Signature:_ `'web_search_premium'`
+_Default Value:_ `"web_search_premium"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>CodeInterpreterTool Properties</summary>
 
-##### type
+##### type: `"code_interpreter"`
 
-_Type Signature:_ `'code_interpreter'`
+_Default Value:_ `"code_interpreter"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageGenerationTool Properties</summary>
 
-##### type
+##### type: `"image_generation"`
 
-_Type Signature:_ `'image_generation'`
+_Default Value:_ `"image_generation"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentLibraryTool Properties</summary>
 
-##### library\_ids
+##### library\_ids \(required\): `array<string>`
 
 Ids of the library in which to search.
 
-_Type Signature:_ `array<string>`
+##### type: `"document_library"`
 
-##### type
-
-_Type Signature:_ `'document_library'`
+_Default Value:_ `"document_library"`
 
 </details>
 
-#### updated\_at
+#### updated\_at \(required\): `date-time`
 
-_Type Signature:_ `date-time`
-
-#### version
-
-_Type Signature:_ `integer`
+#### version \(required\): `integer`
 
 </details>
 
@@ -928,39 +523,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -978,9 +561,7 @@ Given an agent retrieve an agent entity with its attributes.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -988,7 +569,7 @@ _Type Signature:_ `string`
 
 #### agent\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -1017,151 +598,98 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### completion\_args
+#### completion\_args: `CompletionArgs`
 
 White-listed arguments from the completion API
 
-_Type Signature:_ `CompletionArgs`
-
-<details open>
+<details >
 
 <summary>CompletionArgs Properties</summary>
 
-##### frequency\_penalty
+##### frequency\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### max\_tokens: `integer | null`
 
-##### max\_tokens
+##### prediction: `Prediction | null`
 
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-##### presence\_penalty
+##### presence\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### random\_seed: `integer | null`
 
-##### random\_seed
+##### response\_format: `ResponseFormat | null`
 
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop
+##### stop: `string | array<string> | null`
 
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
+##### temperature: `number`
 
 _Default Value:_ `0.3`
 
-_Type Signature:_ `number`
+##### tool\_choice: `"auto" | "none" | "any" | "required"`
 
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
+##### top\_p: `number | null`
 
 </details>
 
-#### created\_at
+#### created\_at \(required\): `date-time`
 
-_Type Signature:_ `date-time`
+#### description: `string | null`
 
-#### description
+#### handoffs: `array<string> | null`
 
-_Type Signature:_ `string | null`
+#### id \(required\): `string`
 
-#### handoffs
+#### instructions: `string | null`
 
-_Type Signature:_ `array<string> | null`
+#### model \(required\): `string`
 
-#### id
+#### name \(required\): `string`
 
-_Type Signature:_ `string`
+#### object: `"agent"`
 
-#### instructions
-
-_Type Signature:_ `string | null`
-
-#### model
-
-_Type Signature:_ `string`
-
-#### name
-
-_Type Signature:_ `string`
-
-#### object
-
-_Type Signature:_ `'agent'`
+_Default Value:_ `"agent"`
 
 #### tools
 
-List of tools which are available to the model during the conversation.
-
-_Type Signature:_ 
 ```
 array<
  
@@ -1174,105 +702,91 @@ array<
 >
 ```
 
-<details open>
+List of tools which are available to the model during the conversation.
+
+<details >
 
 <summary>FunctionTool Properties</summary>
 
-##### function
+##### function \(required\): `Function`
 
-_Type Signature:_ `Function`
-
-<details open>
+<details >
 
 <summary>Function Properties</summary>
 
-##### description
+##### description: `string`
 
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
-##### name
+##### parameters \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"function"`
 
-_Type Signature:_ `'function'`
+_Default Value:_ `"function"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchTool Properties</summary>
 
-##### type
+##### type: `"web_search"`
 
-_Type Signature:_ `'web_search'`
+_Default Value:_ `"web_search"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchPremiumTool Properties</summary>
 
-##### type
+##### type: `"web_search_premium"`
 
-_Type Signature:_ `'web_search_premium'`
+_Default Value:_ `"web_search_premium"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>CodeInterpreterTool Properties</summary>
 
-##### type
+##### type: `"code_interpreter"`
 
-_Type Signature:_ `'code_interpreter'`
+_Default Value:_ `"code_interpreter"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageGenerationTool Properties</summary>
 
-##### type
+##### type: `"image_generation"`
 
-_Type Signature:_ `'image_generation'`
+_Default Value:_ `"image_generation"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentLibraryTool Properties</summary>
 
-##### library\_ids
+##### library\_ids \(required\): `array<string>`
 
 Ids of the library in which to search.
 
-_Type Signature:_ `array<string>`
+##### type: `"document_library"`
 
-##### type
-
-_Type Signature:_ `'document_library'`
+_Default Value:_ `"document_library"`
 
 </details>
 
-#### updated\_at
+#### updated\_at \(required\): `date-time`
 
-_Type Signature:_ `date-time`
-
-#### version
-
-_Type Signature:_ `integer`
+#### version \(required\): `integer`
 
 </details>
 
@@ -1284,39 +798,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -1334,9 +836,7 @@ Update an agent attributes and create a new version.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -1344,7 +844,7 @@ _Type Signature:_ `string`
 
 #### agent\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 ### Try it Now
 
@@ -1372,139 +872,90 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### completion\_args
+#### completion\_args: `CompletionArgs`
 
 White-listed arguments from the completion API
 
-_Type Signature:_ `CompletionArgs`
-
-<details open>
+<details >
 
 <summary>CompletionArgs Properties</summary>
 
-##### frequency\_penalty
+##### frequency\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### max\_tokens: `integer | null`
 
-##### max\_tokens
+##### prediction: `Prediction | null`
 
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-##### presence\_penalty
+##### presence\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### random\_seed: `integer | null`
 
-##### random\_seed
+##### response\_format: `ResponseFormat | null`
 
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop
+##### stop: `string | array<string> | null`
 
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
+##### temperature: `number`
 
 _Default Value:_ `0.3`
 
-_Type Signature:_ `number`
+##### tool\_choice: `"auto" | "none" | "any" | "required"`
 
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
+##### top\_p: `number | null`
 
 </details>
 
-#### description
+#### description: `string | null`
 
-_Type Signature:_ `string | null`
+#### handoffs: `array<string> | null`
 
-#### handoffs
+#### instructions: `string | null`
 
-_Type Signature:_ `array<string> | null`
+#### model: `string | null`
 
-#### instructions
-
-_Type Signature:_ `string | null`
-
-#### model
-
-_Type Signature:_ `string | null`
-
-#### name
-
-_Type Signature:_ `string | null`
+#### name: `string | null`
 
 #### tools
 
-List of tools which are available to the model during the conversation.
-
-_Type Signature:_ 
 ```
 array<
  
@@ -1517,95 +968,85 @@ array<
 >
 ```
 
-<details open>
+List of tools which are available to the model during the conversation.
+
+<details >
 
 <summary>FunctionTool Properties</summary>
 
-##### function
+##### function \(required\): `Function`
 
-_Type Signature:_ `Function`
-
-<details open>
+<details >
 
 <summary>Function Properties</summary>
 
-##### description
+##### description: `string`
 
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
-##### name
+##### parameters \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"function"`
 
-_Type Signature:_ `'function'`
+_Default Value:_ `"function"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchTool Properties</summary>
 
-##### type
+##### type: `"web_search"`
 
-_Type Signature:_ `'web_search'`
+_Default Value:_ `"web_search"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchPremiumTool Properties</summary>
 
-##### type
+##### type: `"web_search_premium"`
 
-_Type Signature:_ `'web_search_premium'`
+_Default Value:_ `"web_search_premium"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>CodeInterpreterTool Properties</summary>
 
-##### type
+##### type: `"code_interpreter"`
 
-_Type Signature:_ `'code_interpreter'`
+_Default Value:_ `"code_interpreter"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageGenerationTool Properties</summary>
 
-##### type
+##### type: `"image_generation"`
 
-_Type Signature:_ `'image_generation'`
+_Default Value:_ `"image_generation"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentLibraryTool Properties</summary>
 
-##### library\_ids
+##### library\_ids \(required\): `array<string>`
 
 Ids of the library in which to search.
 
-_Type Signature:_ `array<string>`
+##### type: `"document_library"`
 
-##### type
-
-_Type Signature:_ `'document_library'`
+_Default Value:_ `"document_library"`
 
 </details>
 
@@ -1619,151 +1060,98 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### completion\_args
+#### completion\_args: `CompletionArgs`
 
 White-listed arguments from the completion API
 
-_Type Signature:_ `CompletionArgs`
-
-<details open>
+<details >
 
 <summary>CompletionArgs Properties</summary>
 
-##### frequency\_penalty
+##### frequency\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### max\_tokens: `integer | null`
 
-##### max\_tokens
+##### prediction: `Prediction | null`
 
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-##### presence\_penalty
+##### presence\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### random\_seed: `integer | null`
 
-##### random\_seed
+##### response\_format: `ResponseFormat | null`
 
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop
+##### stop: `string | array<string> | null`
 
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
+##### temperature: `number`
 
 _Default Value:_ `0.3`
 
-_Type Signature:_ `number`
+##### tool\_choice: `"auto" | "none" | "any" | "required"`
 
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
+##### top\_p: `number | null`
 
 </details>
 
-#### created\_at
+#### created\_at \(required\): `date-time`
 
-_Type Signature:_ `date-time`
+#### description: `string | null`
 
-#### description
+#### handoffs: `array<string> | null`
 
-_Type Signature:_ `string | null`
+#### id \(required\): `string`
 
-#### handoffs
+#### instructions: `string | null`
 
-_Type Signature:_ `array<string> | null`
+#### model \(required\): `string`
 
-#### id
+#### name \(required\): `string`
 
-_Type Signature:_ `string`
+#### object: `"agent"`
 
-#### instructions
-
-_Type Signature:_ `string | null`
-
-#### model
-
-_Type Signature:_ `string`
-
-#### name
-
-_Type Signature:_ `string`
-
-#### object
-
-_Type Signature:_ `'agent'`
+_Default Value:_ `"agent"`
 
 #### tools
 
-List of tools which are available to the model during the conversation.
-
-_Type Signature:_ 
 ```
 array<
  
@@ -1776,105 +1164,91 @@ array<
 >
 ```
 
-<details open>
+List of tools which are available to the model during the conversation.
+
+<details >
 
 <summary>FunctionTool Properties</summary>
 
-##### function
+##### function \(required\): `Function`
 
-_Type Signature:_ `Function`
-
-<details open>
+<details >
 
 <summary>Function Properties</summary>
 
-##### description
+##### description: `string`
 
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
-##### name
+##### parameters \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"function"`
 
-_Type Signature:_ `'function'`
+_Default Value:_ `"function"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchTool Properties</summary>
 
-##### type
+##### type: `"web_search"`
 
-_Type Signature:_ `'web_search'`
+_Default Value:_ `"web_search"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchPremiumTool Properties</summary>
 
-##### type
+##### type: `"web_search_premium"`
 
-_Type Signature:_ `'web_search_premium'`
+_Default Value:_ `"web_search_premium"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>CodeInterpreterTool Properties</summary>
 
-##### type
+##### type: `"code_interpreter"`
 
-_Type Signature:_ `'code_interpreter'`
+_Default Value:_ `"code_interpreter"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageGenerationTool Properties</summary>
 
-##### type
+##### type: `"image_generation"`
 
-_Type Signature:_ `'image_generation'`
+_Default Value:_ `"image_generation"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentLibraryTool Properties</summary>
 
-##### library\_ids
+##### library\_ids \(required\): `array<string>`
 
 Ids of the library in which to search.
 
-_Type Signature:_ `array<string>`
+##### type: `"document_library"`
 
-##### type
-
-_Type Signature:_ `'document_library'`
+_Default Value:_ `"document_library"`
 
 </details>
 
-#### updated\_at
+#### updated\_at \(required\): `date-time`
 
-_Type Signature:_ `date-time`
-
-#### version
-
-_Type Signature:_ `integer`
+#### version \(required\): `integer`
 
 </details>
 
@@ -1886,39 +1260,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
@@ -1936,9 +1298,7 @@ Switch the version of an agent.
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -1946,11 +1306,11 @@ _Type Signature:_ `string`
 
 #### agent\_id \(required\)
 
-_Type Signature:_ `string`
+#### Security \(required\): `string`
 
 #### version \(required\)
 
-_Type Signature:_ `integer`
+#### Security \(required\): `integer`
 
 ### Try it Now
 
@@ -1980,151 +1340,98 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### completion\_args
+#### completion\_args: `CompletionArgs`
 
 White-listed arguments from the completion API
 
-_Type Signature:_ `CompletionArgs`
-
-<details open>
+<details >
 
 <summary>CompletionArgs Properties</summary>
 
-##### frequency\_penalty
+##### frequency\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### max\_tokens: `integer | null`
 
-##### max\_tokens
+##### prediction: `Prediction | null`
 
-_Type Signature:_ `integer | null`
-
-##### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-##### presence\_penalty
+##### presence\_penalty: `number | null`
 
-_Type Signature:_ `number | null`
+##### random\_seed: `integer | null`
 
-##### random\_seed
+##### response\_format: `ResponseFormat | null`
 
-_Type Signature:_ `integer | null`
-
-##### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop
+##### stop: `string | array<string> | null`
 
-_Type Signature:_ `string | array<string> | null`
-
-##### temperature
+##### temperature: `number`
 
 _Default Value:_ `0.3`
 
-_Type Signature:_ `number`
+##### tool\_choice: `"auto" | "none" | "any" | "required"`
 
-##### tool\_choice
-
-_Type Signature:_ `'auto' | 'none' | 'any' | 'required'`
-
-##### top\_p
-
-_Type Signature:_ `number | null`
+##### top\_p: `number | null`
 
 </details>
 
-#### created\_at
+#### created\_at \(required\): `date-time`
 
-_Type Signature:_ `date-time`
+#### description: `string | null`
 
-#### description
+#### handoffs: `array<string> | null`
 
-_Type Signature:_ `string | null`
+#### id \(required\): `string`
 
-#### handoffs
+#### instructions: `string | null`
 
-_Type Signature:_ `array<string> | null`
+#### model \(required\): `string`
 
-#### id
+#### name \(required\): `string`
 
-_Type Signature:_ `string`
+#### object: `"agent"`
 
-#### instructions
-
-_Type Signature:_ `string | null`
-
-#### model
-
-_Type Signature:_ `string`
-
-#### name
-
-_Type Signature:_ `string`
-
-#### object
-
-_Type Signature:_ `'agent'`
+_Default Value:_ `"agent"`
 
 #### tools
 
-List of tools which are available to the model during the conversation.
-
-_Type Signature:_ 
 ```
 array<
  
@@ -2137,105 +1444,91 @@ array<
 >
 ```
 
-<details open>
+List of tools which are available to the model during the conversation.
+
+<details >
 
 <summary>FunctionTool Properties</summary>
 
-##### function
+##### function \(required\): `Function`
 
-_Type Signature:_ `Function`
-
-<details open>
+<details >
 
 <summary>Function Properties</summary>
 
-##### description
+##### description: `string`
 
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
-##### name
+##### parameters \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"function"`
 
-_Type Signature:_ `'function'`
+_Default Value:_ `"function"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchTool Properties</summary>
 
-##### type
+##### type: `"web_search"`
 
-_Type Signature:_ `'web_search'`
+_Default Value:_ `"web_search"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>WebSearchPremiumTool Properties</summary>
 
-##### type
+##### type: `"web_search_premium"`
 
-_Type Signature:_ `'web_search_premium'`
+_Default Value:_ `"web_search_premium"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>CodeInterpreterTool Properties</summary>
 
-##### type
+##### type: `"code_interpreter"`
 
-_Type Signature:_ `'code_interpreter'`
+_Default Value:_ `"code_interpreter"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageGenerationTool Properties</summary>
 
-##### type
+##### type: `"image_generation"`
 
-_Type Signature:_ `'image_generation'`
+_Default Value:_ `"image_generation"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentLibraryTool Properties</summary>
 
-##### library\_ids
+##### library\_ids \(required\): `array<string>`
 
 Ids of the library in which to search.
 
-_Type Signature:_ `array<string>`
+##### type: `"document_library"`
 
-##### type
-
-_Type Signature:_ `'document_library'`
+_Default Value:_ `"document_library"`
 
 </details>
 
-#### updated\_at
+#### updated\_at \(required\): `date-time`
 
-_Type Signature:_ `date-time`
-
-#### version
-
-_Type Signature:_ `integer`
+#### version \(required\): `integer`
 
 </details>
 
@@ -2247,39 +1540,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 

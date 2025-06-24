@@ -18,9 +18,7 @@ Agents Completion
 
 <summary>Security</summary>
 
-#### ApiKey
-
-_Type Signature:_ `string`
+#### ApiKey \(required\): `string`
 
 </details>
 
@@ -55,563 +53,433 @@ run();`} />
 
 <summary>Request Body</summary>
 
-#### agent\_id
+#### agent\_id \(required\): `string`
 
 The ID of the agent to use for this completion.
 
-_Type Signature:_ `string`
-
-#### frequency\_penalty
+#### frequency\_penalty: `number`
 
 frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.
 
-_Type Signature:_ `number`
+#### max\_tokens: `integer | null`
 
-#### max\_tokens
+#### messages \(required\)
 
-_Type Signature:_ `integer | null`
-
-#### messages
-
-The prompt(s) to generate completions for, encoded as a list of dict with role and content.
-
-_Type Signature:_ 
 ```
 array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>
 ```
 
-<details open>
+The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+
+<details >
 
 <summary>SystemMessage Properties</summary>
 
-##### content
+##### content \(required\): `string | array<TextChunk>`
 
-_Type Signature:_ `string | array<TextChunk>`
-
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-##### role
+##### role: `"system"`
 
-_Type Signature:_ `'system'`
+_Default Value:_ `"system"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>UserMessage Properties</summary>
 
-##### content
+##### content \(required\)
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### role
+##### role: `"user"`
 
-_Type Signature:_ `'user'`
+_Default Value:_ `"user"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>AssistantMessage Properties</summary>
 
 ##### content
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### prefix
+##### prefix: `boolean`
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
+##### role: `"assistant"`
 
-##### role
+_Default Value:_ `"assistant"`
 
-_Type Signature:_ `'assistant'`
+##### tool\_calls: `array<ToolCall> | null`
 
-##### tool\_calls
-
-_Type Signature:_ `array<ToolCall> | null`
-
-<details open>
+<details >
 
 <summary>ToolCall Properties</summary>
 
-##### function
+##### function \(required\): `FunctionCall`
 
-_Type Signature:_ `FunctionCall`
-
-<details open>
+<details >
 
 <summary>FunctionCall Properties</summary>
 
-##### arguments
+##### arguments \(required\): `map<any> | string`
 
-_Type Signature:_ `map<any> | string`
-
-##### name
-
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
 </details>
 
-##### id
+##### id: `string`
 
 _Default Value:_ `"null"`
 
-_Type Signature:_ `string`
-
-##### index
+##### index: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
-
-##### type
-
-_Type Signature:_ `'function'`
+##### type: `"function"`
 
 </details>
 
 </details>
 
-<details open>
+<details >
 
 <summary>ToolMessage Properties</summary>
 
-##### content
+##### content \(required\)
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### name
+##### name: `string | null`
 
-_Type Signature:_ `string | null`
+##### role: `"tool"`
 
-##### role
+_Default Value:_ `"tool"`
 
-_Type Signature:_ `'tool'`
-
-##### tool\_call\_id
-
-_Type Signature:_ `string | null`
+##### tool\_call\_id: `string | null`
 
 </details>
 
-#### n
+#### n: `integer | null`
 
-_Type Signature:_ `integer | null`
+#### parallel\_tool\_calls: `boolean`
 
-#### parallel\_tool\_calls
+#### prediction: `Prediction | null`
 
-_Type Signature:_ `boolean`
-
-#### prediction
-
-_Type Signature:_ `Prediction | null`
-
-<details open>
+<details >
 
 <summary>Prediction Properties</summary>
 
-##### content
+##### content: `string`
 
 _Default Value:_ `""`
 
-_Type Signature:_ `string`
-
-##### type
+##### type: `string`
 
 _Default Value:_ `"content"`
 
-_Type Signature:_ `string`
-
 </details>
 
-#### presence\_penalty
+#### presence\_penalty: `number`
 
 presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.
 
-_Type Signature:_ `number`
+#### prompt\_mode: `"reasoning"`
 
-#### prompt\_mode
+#### random\_seed: `integer | null`
 
-_Type Signature:_ `'reasoning'`
+#### response\_format: `ResponseFormat | null`
 
-#### random\_seed
-
-_Type Signature:_ `integer | null`
-
-#### response\_format
-
-_Type Signature:_ `ResponseFormat | null`
-
-<details open>
+<details >
 
 <summary>ResponseFormat Properties</summary>
 
-##### json\_schema
+##### json\_schema: `JsonSchema | null`
 
-_Type Signature:_ `JsonSchema | null`
-
-<details open>
+<details >
 
 <summary>JsonSchema Properties</summary>
 
-##### description
+##### description: `string | null`
 
-_Type Signature:_ `string | null`
+##### name \(required\): `string`
 
-##### name
+##### schema\_definition \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### schema\_definition
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
+##### type: `"text" | "json_object" | "json_schema"`
 
-_Type Signature:_ `'text' | 'json_object' | 'json_schema'`
+An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-#### stop
+#### stop: `string | array<string>`
 
 Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
 
-_Type Signature:_ `string | array<string>`
-
-#### stream
+#### stream: `boolean`
 
 Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
+#### tool\_choice: `ToolChoice | "auto" | "none" | "any" | "required"`
 
-#### tool\_choice
-
-_Type Signature:_ `ToolChoice | `
-
-<details open>
+<details >
 
 <summary>ToolChoice Properties</summary>
 
-##### function
+##### function \(required\): `FunctionName`
 
 this restriction of `Function` is used to select a specific function to call
 
-_Type Signature:_ `FunctionName`
-
-<details open>
+<details >
 
 <summary>FunctionName Properties</summary>
 
-##### name
-
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
 </details>
 
-##### type
-
-_Type Signature:_ `'function'`
+##### type: `"function"`
 
 </details>
 
-#### tools
+#### tools: `array<Tool> | null`
 
-_Type Signature:_ `array<Tool> | null`
-
-<details open>
+<details >
 
 <summary>Tool Properties</summary>
 
-##### function
+##### function \(required\): `Function`
 
-_Type Signature:_ `Function`
-
-<details open>
+<details >
 
 <summary>Function Properties</summary>
 
-##### description
+##### description: `string`
 
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
-##### name
+##### parameters \(required\): `map<any>`
 
-_Type Signature:_ `string`
-
-##### parameters
-
-_Type Signature:_ `map<any>`
-
-##### strict
-
-_Type Signature:_ `boolean`
+##### strict: `boolean`
 
 </details>
 
-##### type
-
-_Type Signature:_ `'function'`
+##### type: `"function"`
 
 </details>
 
@@ -625,19 +493,25 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### choices
+#### choices \(required\): `array<ChatCompletionChoice>`
 
-_Type Signature:_ `array<ChatCompletionChoice>`
-
-<details open>
+<details >
 
 <summary>ChatCompletionChoice Properties</summary>
 
-##### finish\_reason
+##### finish\_reason \(required\)
 
-_Type Signature:_ `'stop' | 'length' | 'model_length' | 'error' | 'tool_calls'`
+```
+"stop" | "length" | "model_length" | "error" | "tool_calls"
+```
 
-##### index
+_Example:_
+
+```
+stop
+```
+
+##### index \(required\): `integer`
 
 _Example:_
 
@@ -645,152 +519,117 @@ _Example:_
 0
 ```
 
-_Type Signature:_ `integer`
+##### message \(required\): `AssistantMessage`
 
-##### message
-
-_Type Signature:_ `AssistantMessage`
-
-<details open>
+<details >
 
 <summary>AssistantMessage Properties</summary>
 
 ##### content
 
-_Type Signature:_ 
 ```
 | string
 | array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
 | null
 ```
 
-<details open>
+<details >
 
 <summary>TextChunk Properties</summary>
 
-##### text
+##### text \(required\): `string`
 
-_Type Signature:_ `string`
+##### type: `"text"`
 
-##### type
-
-_Type Signature:_ `'text'`
+_Default Value:_ `"text"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ImageURLChunk Properties</summary>
 
-##### image\_url
+##### image\_url \(required\): `ImageURL | string`
 
-_Type Signature:_ `ImageURL | string`
-
-<details open>
+<details >
 
 <summary>ImageURL Properties</summary>
 
-##### detail
+##### detail: `string | null`
 
-_Type Signature:_ `string | null`
-
-##### url
-
-_Type Signature:_ `string`
+##### url \(required\): `string`
 
 </details>
 
-##### type
+##### type: `"image_url"`
 
-_Type Signature:_ `'image_url'`
+_Default Value:_ `"image_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>DocumentURLChunk Properties</summary>
 
-##### document\_name
+##### document\_name: `string | null`
 
-_Type Signature:_ `string | null`
+##### document\_url \(required\): `string`
 
-##### document\_url
+##### type: `"document_url"`
 
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `'document_url'`
+_Default Value:_ `"document_url"`
 
 </details>
 
-<details open>
+<details >
 
 <summary>ReferenceChunk Properties</summary>
 
-##### reference\_ids
+##### reference\_ids \(required\): `array<integer>`
 
-_Type Signature:_ `array<integer>`
+##### type: `"reference"`
 
-##### type
-
-_Type Signature:_ `'reference'`
+_Default Value:_ `"reference"`
 
 </details>
 
-##### prefix
+##### prefix: `boolean`
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-_Type Signature:_ `boolean`
+##### role: `"assistant"`
 
-##### role
+_Default Value:_ `"assistant"`
 
-_Type Signature:_ `'assistant'`
+##### tool\_calls: `array<ToolCall> | null`
 
-##### tool\_calls
-
-_Type Signature:_ `array<ToolCall> | null`
-
-<details open>
+<details >
 
 <summary>ToolCall Properties</summary>
 
-##### function
+##### function \(required\): `FunctionCall`
 
-_Type Signature:_ `FunctionCall`
-
-<details open>
+<details >
 
 <summary>FunctionCall Properties</summary>
 
-##### arguments
+##### arguments \(required\): `map<any> | string`
 
-_Type Signature:_ `map<any> | string`
-
-##### name
-
-_Type Signature:_ `string`
+##### name \(required\): `string`
 
 </details>
 
-##### id
+##### id: `string`
 
 _Default Value:_ `"null"`
 
-_Type Signature:_ `string`
-
-##### index
+##### index: `integer`
 
 _Default Value:_ `0`
 
-_Type Signature:_ `integer`
-
-##### type
-
-_Type Signature:_ `'function'`
+##### type: `"function"`
 
 </details>
 
@@ -798,7 +637,7 @@ _Type Signature:_ `'function'`
 
 </details>
 
-#### created
+#### created \(required\): `integer`
 
 _Example:_
 
@@ -806,9 +645,7 @@ _Example:_
 1702256327
 ```
 
-_Type Signature:_ `integer`
-
-#### id
+#### id \(required\): `string`
 
 _Example:_
 
@@ -816,9 +653,7 @@ _Example:_
 cmpl-e5cc70bb28c444948073e77776eb30ef
 ```
 
-_Type Signature:_ `string`
-
-#### model
+#### model \(required\): `string`
 
 _Example:_
 
@@ -826,9 +661,7 @@ _Example:_
 mistral-small-latest
 ```
 
-_Type Signature:_ `string`
-
-#### object
+#### object \(required\): `string`
 
 _Example:_
 
@@ -836,17 +669,13 @@ _Example:_
 chat.completion
 ```
 
-_Type Signature:_ `string`
+#### usage \(required\): `UsageInfo`
 
-#### usage
-
-_Type Signature:_ `UsageInfo`
-
-<details open>
+<details >
 
 <summary>UsageInfo Properties</summary>
 
-##### completion\_tokens
+##### completion\_tokens \(required\): `integer`
 
 _Example:_
 
@@ -854,9 +683,7 @@ _Example:_
 34
 ```
 
-_Type Signature:_ `integer`
-
-##### prompt\_tokens
+##### prompt\_tokens \(required\): `integer`
 
 _Example:_
 
@@ -864,17 +691,13 @@ _Example:_
 16
 ```
 
-_Type Signature:_ `integer`
-
-##### total\_tokens
+##### total\_tokens \(required\): `integer`
 
 _Example:_
 
 ```
 50
 ```
-
-_Type Signature:_ `integer`
 
 </details>
 
@@ -888,39 +711,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta
+#### HttpMeta \(required\): `Security`
 
-_Type Signature:_ `Security`
-
-<details open>
+<details >
 
 <summary>Security Properties</summary>
 
-##### ApiKey
-
-_Type Signature:_ `string`
+##### ApiKey \(required\): `string`
 
 </details>
 
-#### detail
+#### detail: `array<ValidationError>`
 
-_Type Signature:_ `array<ValidationError>`
-
-<details open>
+<details >
 
 <summary>ValidationError Properties</summary>
 
-##### loc
+##### loc \(required\): `array<string | integer>`
 
-_Type Signature:_ `array<string | integer>`
+##### msg \(required\): `string`
 
-##### msg
-
-_Type Signature:_ `string`
-
-##### type
-
-_Type Signature:_ `string`
+##### type \(required\): `string`
 
 </details>
 
