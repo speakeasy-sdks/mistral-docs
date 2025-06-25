@@ -24,7 +24,9 @@ Moderations
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.classifiers.moderate(\\{\n    model: \"Durango\",\n    inputs: [\n      \"<value 1>\",\n      \"<value 2>\",\n    ],\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -43,7 +45,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -147,7 +150,9 @@ Chat Moderations
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.classifiers.moderateChat(\\{\n    inputs: [\n      \\{\n        content: \"<value>\",\n        role: \"tool\",\n      \\},\n      \\{\n        content: [\n          \\{\n            documentUrl: \"https://limited-merit.com\",\n            type: \"document_url\",\n          \\},\n          \\{\n            documentUrl: \"https://deep-governance.com/\",\n            type: \"document_url\",\n          \\},\n          \\{\n            text: \"<value>\",\n            type: \"text\",\n          \\},\n        ],\n        role: \"tool\",\n      \\},\n    ],\n    model: \"Jetta\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -185,7 +190,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -195,10 +201,19 @@ run();`} />
 
 #### inputs \(required\)
 
-```
-| array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>
-| array<array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>>
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+| array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
+| array&lt;array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;&gt;
+</code>
+</pre>
 
 Chat to classify
 
@@ -232,11 +247,20 @@ _Default Value:_ `"system"`
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 
@@ -310,11 +334,20 @@ _Default Value:_ `"user"`
 
 ##### content
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 
@@ -424,11 +457,20 @@ _Default Value:_ `0`
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 
@@ -590,7 +632,9 @@ Classifications
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.classifiers.classify(\\{\n    model: \"Silverado\",\n    inputs: [\n      \"<value 1>\",\n    ],\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -608,7 +652,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -706,7 +751,9 @@ Chat Classifications
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.classifiers.classifyChat(\\{\n    model: \"Camry\",\n    inputs: [\n      \\{\n        messages: [\n          \\{\n            content: \"<value>\",\n            role: \"system\",\n          \\},\n          \\{\n            prefix: false,\n            role: \"assistant\",\n          \\},\n        ],\n      \\},\n      \\{\n        messages: [\n          \\{\n            content: \"<value>\",\n            role: \"system\",\n          \\},\n          \\{\n            prefix: false,\n            role: \"assistant\",\n          \\},\n        ],\n      \\},\n    ],\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -747,7 +794,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -775,9 +823,18 @@ Chat to classify
 
 ##### messages \(required\)
 
-```
-array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
+</code>
+</pre>
 
 <details >
 
@@ -809,11 +866,20 @@ _Default Value:_ `"system"`
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 
@@ -887,11 +953,20 @@ _Default Value:_ `"user"`
 
 ##### content
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 
@@ -1001,11 +1076,20 @@ _Default Value:_ `0`
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 

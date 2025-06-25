@@ -26,7 +26,9 @@ Get a list of fine-tuning jobs for your organization and user.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.list(\\{\\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -39,7 +41,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -179,7 +182,15 @@ _Default Value:_ `"wandb"`
 
 ##### status \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "QUEUED"
 | "STARTED"
 | "VALIDATING"
@@ -190,7 +201,8 @@ _Default Value:_ `"wandb"`
 | "SUCCESS"
 | "CANCELLED"
 | "CANCELLATION_REQUESTED"
-```
+</code>
+</pre>
 
 The current status of the fine-tuning job.
 
@@ -310,7 +322,15 @@ _Default Value:_ `"job"`
 
 ##### status \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "QUEUED"
 | "STARTED"
 | "VALIDATING"
@@ -321,7 +341,8 @@ _Default Value:_ `"job"`
 | "SUCCESS"
 | "CANCELLED"
 | "CANCELLATION_REQUESTED"
-```
+</code>
+</pre>
 
 The current status of the fine-tuning job.
 
@@ -363,7 +384,9 @@ Create a new fine-tuning job, it will be queued for processing.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.create(\\{\n    model: \"Camaro\",\n    hyperparameters: \\{\n      learningRate: 0.0001,\n    \\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -381,7 +404,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -413,9 +437,18 @@ _Default Value:_ `1`
 
 #### hyperparameters \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 CompletionTrainingParametersIn | ClassifierTrainingParametersIn
-```
+</code>
+</pre>
 
 <details >
 
@@ -547,9 +580,18 @@ OK
 
 #### Response Body \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 CompletionJobOut | ClassifierJobOut | LegacyJobMetadataOut
-```
+</code>
+</pre>
 
 OK
 
@@ -581,7 +623,9 @@ The ID of the job to analyse.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.get(\\{\n    jobId: \"c167a961-ffca-4bcf-93ac-6169468dd389\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -596,7 +640,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -634,7 +679,9 @@ The ID of the job to cancel.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.cancel(\\{\n    jobId: \"6188a2f6-7513-4e0f-89cc-3f8088523a49\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -649,7 +696,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -683,7 +731,9 @@ Request the start of a validated fine tuning job.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fineTuning.jobs.start(\\{\n    jobId: \"56553e4d-0679-471e-b9ac-59a77d671103\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -698,7 +748,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 

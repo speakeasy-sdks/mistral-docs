@@ -36,7 +36,9 @@ Retrieve a list of conversation entities sorted by creation time.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.list(\\{\\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -49,7 +51,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -111,7 +114,9 @@ Create a new conversation, using a base model or an agent and append entries. Co
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.start(\\{\n    inputs: \"<value>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -126,7 +131,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -222,9 +228,18 @@ _Default Value:_ `0.3`
 
 ##### content \(required\)
 
-```
-string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+</code>
+</pre>
 
 <details >
 
@@ -272,13 +287,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -354,8 +378,16 @@ _Default Value:_ `false`
 
 #### tools
 
-```
-| array<
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+| array&lt;
  
  | FunctionTool
  | WebSearchTool
@@ -363,9 +395,10 @@ _Default Value:_ `false`
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
->
+&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 
@@ -465,15 +498,24 @@ _Default Value:_ `"conversation.response"`
 
 #### outputs \(required\)
 
-```
-array<
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+array&lt;
  
  | MessageOutputEntry
  | ToolExecutionEntry
  | FunctionCallEntry
  | AgentHandoffEntry
->
-```
+&gt;
+</code>
+</pre>
 
 <details >
 
@@ -485,17 +527,26 @@ array<
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<
+| array&lt;
  
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
  | DocumentURLChunk
  | ToolReferenceChunk
->
-```
+&gt;
+</code>
+</pre>
 
 <details >
 
@@ -543,13 +594,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -581,13 +641,22 @@ _Default Value:_ `"document_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_reference"`
 
@@ -631,13 +700,22 @@ _Default Value:_ `"message.output"`
 
 ##### name \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### object: `"entry"`
 
@@ -787,7 +865,9 @@ Given a conversation_id retrieve a conversation entity with its attributes.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.get(\\{\n    conversationId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -802,7 +882,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -874,7 +955,9 @@ ID of the conversation to which we append entries.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.append(\\{\n    conversationId: \"<id>\",\n    conversationAppendRequest: \\{\n      inputs: [\n        \\{\n          object: \"entry\",\n          type: \"message.input\",\n          role: \"user\",\n          content: [\n            \\{\n              documentUrl: \"https://oblong-decryption.info/\",\n              type: \"document_url\",\n            \\},\n          ],\n        \\},\n      ],\n    \\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -904,7 +987,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -998,9 +1082,18 @@ _Default Value:_ `"server"`
 
 ##### content \(required\)
 
-```
-string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+</code>
+</pre>
 
 <details >
 
@@ -1048,13 +1141,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -1144,15 +1246,24 @@ _Default Value:_ `"conversation.response"`
 
 #### outputs \(required\)
 
-```
-array<
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+array&lt;
  
  | MessageOutputEntry
  | ToolExecutionEntry
  | FunctionCallEntry
  | AgentHandoffEntry
->
-```
+&gt;
+</code>
+</pre>
 
 <details >
 
@@ -1164,17 +1275,26 @@ array<
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<
+| array&lt;
  
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
  | DocumentURLChunk
  | ToolReferenceChunk
->
-```
+&gt;
+</code>
+</pre>
 
 <details >
 
@@ -1222,13 +1342,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -1260,13 +1389,22 @@ _Default Value:_ `"document_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_reference"`
 
@@ -1310,13 +1448,22 @@ _Default Value:_ `"message.output"`
 
 ##### name \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### object: `"entry"`
 
@@ -1466,7 +1613,9 @@ Given a conversation_id retrieve all the entries belonging to that conversation.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.getHistory(\\{\n    conversationId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1481,7 +1630,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -1495,8 +1645,16 @@ Successful Response
 
 #### entries \(required\)
 
-```
-array<
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+array&lt;
  
  | MessageInputEntry
  | MessageOutputEntry
@@ -1504,8 +1662,9 @@ array<
  | FunctionCallEntry
  | ToolExecutionEntry
  | AgentHandoffEntry
->
-```
+&gt;
+</code>
+</pre>
 
 <details >
 
@@ -1515,9 +1674,18 @@ array<
 
 ##### content \(required\)
 
-```
-string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+</code>
+</pre>
 
 <details >
 
@@ -1565,13 +1733,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -1619,17 +1796,26 @@ _Default Value:_ `"message.input"`
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<
+| array&lt;
  
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
  | DocumentURLChunk
  | ToolReferenceChunk
->
-```
+&gt;
+</code>
+</pre>
 
 <details >
 
@@ -1677,13 +1863,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -1715,13 +1910,22 @@ _Default Value:_ `"document_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_reference"`
 
@@ -1815,13 +2019,22 @@ _Default Value:_ `"function.call"`
 
 ##### name \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### object: `"entry"`
 
@@ -1925,7 +2138,9 @@ Given a conversation_id retrieve all the messages belonging to that conversation
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.getMessages(\\{\n    conversationId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1940,7 +2155,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -1962,9 +2178,18 @@ Successful Response
 
 ##### content \(required\)
 
-```
-string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+</code>
+</pre>
 
 <details >
 
@@ -2012,13 +2237,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -2066,17 +2300,26 @@ _Default Value:_ `"message.input"`
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<
+| array&lt;
  
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
  | DocumentURLChunk
  | ToolReferenceChunk
->
-```
+&gt;
+</code>
+</pre>
 
 <details >
 
@@ -2124,13 +2367,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -2162,13 +2414,22 @@ _Default Value:_ `"document_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_reference"`
 
@@ -2262,7 +2523,9 @@ Given a conversation_id and an id, recreate a conversation from this point and r
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.beta.conversations.restart(\\{\n    conversationId: \"<id>\",\n    conversationRestartRequest: \\{\n      inputs: \"<value>\",\n      fromEntryId: \"<id>\",\n    \\},\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -2281,7 +2544,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -2377,9 +2641,18 @@ _Default Value:_ `"server"`
 
 ##### content \(required\)
 
-```
-string | array<TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk>
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+</code>
+</pre>
 
 <details >
 
@@ -2427,13 +2700,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -2523,15 +2805,24 @@ _Default Value:_ `"conversation.response"`
 
 #### outputs \(required\)
 
-```
-array<
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+array&lt;
  
  | MessageOutputEntry
  | ToolExecutionEntry
  | FunctionCallEntry
  | AgentHandoffEntry
->
-```
+&gt;
+</code>
+</pre>
 
 <details >
 
@@ -2543,17 +2834,26 @@ array<
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<
+| array&lt;
  
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
  | DocumentURLChunk
  | ToolReferenceChunk
->
-```
+&gt;
+</code>
+</pre>
 
 <details >
 
@@ -2601,13 +2901,22 @@ _Default Value:_ `"image_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_file"`
 
@@ -2639,13 +2948,22 @@ _Default Value:_ `"document_url"`
 
 ##### tool \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### type: `"tool_reference"`
 
@@ -2689,13 +3007,22 @@ _Default Value:_ `"message.output"`
 
 ##### name \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "web_search"
 | "web_search_premium"
 | "code_interpreter"
 | "image_generation"
 | "document_library"
-```
+</code>
+</pre>
 
 ##### object: `"entry"`
 

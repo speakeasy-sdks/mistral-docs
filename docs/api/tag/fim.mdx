@@ -26,7 +26,9 @@ FIM completion.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.fim.complete(\\{\n    model: \"codestral-2405\",\n    prompt: \"def\",\n    suffix: \"return a+b\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -43,7 +45,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -123,9 +126,18 @@ Successful Response
 
 ##### finish\_reason \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 "stop" | "length" | "model_length" | "error" | "tool_calls"
-```
+</code>
+</pre>
 
 _Example:_
 
@@ -149,11 +161,20 @@ _Example:_
 
 ##### content
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 

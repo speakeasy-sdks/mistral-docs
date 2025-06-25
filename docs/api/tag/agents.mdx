@@ -24,7 +24,9 @@ Agents Completion
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.agents.complete(\\{\n    messages: [\n      \\{\n        content: \"Who is the best French painter? Answer in one short sentence.\",\n        role: \"user\",\n      \\},\n    ],\n    agentId: \"<id>\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -45,7 +47,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -65,9 +68,18 @@ frequency_penalty penalizes the repetition of words based on their frequency in 
 
 #### messages \(required\)
 
-```
-array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
+array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
+</code>
+</pre>
 
 The prompt(s) to generate completions for, encoded as a list of dict with role and content.
 
@@ -101,11 +113,20 @@ _Default Value:_ `"system"`
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 
@@ -179,11 +200,20 @@ _Default Value:_ `"user"`
 
 ##### content
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 
@@ -293,11 +323,20 @@ _Default Value:_ `0`
 
 ##### content \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 
@@ -501,9 +540,18 @@ Successful Response
 
 ##### finish\_reason \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 "stop" | "length" | "model_length" | "error" | "tool_calls"
-```
+</code>
+</pre>
 
 _Example:_
 
@@ -527,11 +575,20 @@ _Example:_
 
 ##### content
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | string
-| array<TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk>
+| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
 | null
-```
+</code>
+</pre>
 
 <details >
 

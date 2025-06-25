@@ -5,9 +5,6 @@ export default {
     componentOutDir: "./src/components/speakeasy",
     framework: "docusaurus",
   },
-  display: {
-    showSchemasInNav: false,
-  },
   tryItNow: {
     npmPackageName: "@mistralai/mistralai",
     sdkClassName: "Mistral",

@@ -26,7 +26,9 @@ Get a list of batch jobs for your organization and user.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.batch.jobs.list(\\{\\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -39,7 +41,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -99,7 +102,15 @@ _Default Value:_ `"batch"`
 
 ##### status \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "QUEUED"
 | "RUNNING"
 | "SUCCESS"
@@ -107,7 +118,8 @@ _Default Value:_ `"batch"`
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
 | "CANCELLED"
-```
+</code>
+</pre>
 
 ##### succeeded\_requests \(required\): `integer`
 
@@ -141,7 +153,9 @@ Create a new batch job, it will be queued for processing.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.batch.jobs.create(\\{\n    inputFiles: [\n      \"fe3343a2-3b8d-404b-ba32-a78dede2614a\",\n    ],\n    endpoint: \"/v1/moderations\",\n    model: \"Altima\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -160,7 +174,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Request Body \(required\)
 
@@ -170,13 +185,22 @@ run();`} />
 
 #### endpoint \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "/v1/chat/completions"
 | "/v1/embeddings"
 | "/v1/fim/completions"
 | "/v1/moderations"
 | "/v1/chat/moderations"
-```
+</code>
+</pre>
 
 #### input\_files \(required\): `array<string>`
 
@@ -242,7 +266,15 @@ _Default Value:_ `"batch"`
 
 #### status \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "QUEUED"
 | "RUNNING"
 | "SUCCESS"
@@ -250,7 +282,8 @@ _Default Value:_ `"batch"`
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
 | "CANCELLED"
-```
+</code>
+</pre>
 
 #### succeeded\_requests \(required\): `integer`
 
@@ -282,7 +315,9 @@ Get a batch job details by its UUID.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.batch.jobs.get(\\{\n    jobId: \"4017dc9f-b629-42f4-9700-8c681b9e7f0f\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -297,7 +332,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -351,7 +387,15 @@ _Default Value:_ `"batch"`
 
 #### status \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "QUEUED"
 | "RUNNING"
 | "SUCCESS"
@@ -359,7 +403,8 @@ _Default Value:_ `"batch"`
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
 | "CANCELLED"
-```
+</code>
+</pre>
 
 #### succeeded\_requests \(required\): `integer`
 
@@ -391,7 +436,9 @@ Request the cancellation of a batch job.
 
 ### Try it Now
 
-<TryItNow {...{"externalDependencies":"{\"zod\":\"^3.25.64\",\"@mistralai/mistralai\":\"latest\"}","defaultValue":"import \\{ Mistral \\} from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral(\\{\n  apiKey: \"<YOUR_BEARER_TOKEN_HERE>\",\n\\});\n\nasync function run() \\{\n  const result = await mistral.batch.jobs.cancel(\\{\n    jobId: \"4fb29d1c-535b-4f0a-a1cb-2167f86da569\",\n  \\});\n\n  // Handle the result\n  console.log(result);\n\\}\n\nrun();"}} externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}} defaultValue={`import { Mistral } from "@mistralai/mistralai";
+<TryItNow
+ externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+ defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -406,7 +453,8 @@ async function run() {
   console.log(result);
 }
 
-run();`} />
+run();`}
+/>
 
 ### Response: 200 \(application/json\)
 
@@ -460,7 +508,15 @@ _Default Value:_ `"batch"`
 
 #### status \(required\)
 
-```
+<pre style={{
+  backgroundColor: "var(--ifm-code-background)",
+  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "var(--ifm-code-border-radius)",
+  fontFamily: "var(--ifm-font-family-monospace)",
+  fontSize: "var(--ifm-code-font-size)",
+  verticalAlign: "middle",
+}}>
+<code>
 | "QUEUED"
 | "RUNNING"
 | "SUCCESS"
@@ -468,7 +524,8 @@ _Default Value:_ `"batch"`
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
 | "CANCELLED"
-```
+</code>
+</pre>
 
 #### succeeded\_requests \(required\): `integer`
 
