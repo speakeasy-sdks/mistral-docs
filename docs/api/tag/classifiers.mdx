@@ -3,7 +3,14 @@ sidebar_position: 2.5
 sidebar_label: classifiers
 ---
 
-import { TryItNow } from "@speakeasy-api/docs-md";
+import { TryItNow, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
+import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
+import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
+import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
+import EmbedImageURLChunk from "../../../src/components/speakeasy/embeds/ImageURLChunk.mdx";
+import EmbedDocumentURLChunk from "../../../src/components/speakeasy/embeds/DocumentURLChunk.mdx";
+import EmbedReferenceChunk from "../../../src/components/speakeasy/embeds/ReferenceChunk.mdx";
+import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx";
 
 
 # classifiers
@@ -280,15 +287,11 @@ _Default Value:_ `"text"`
 
 ##### image\_url \(required\): `ImageURL | string`
 
-<details >
-
-<summary>ImageURL Properties</summary>
-
-##### detail: `string | null`
-
-##### url \(required\): `string`
-
-</details>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
+      <EmbedImageURL />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
 ##### type: `"image_url"`
 
@@ -367,15 +370,11 @@ _Default Value:_ `"text"`
 
 ##### image\_url \(required\): `ImageURL | string`
 
-<details >
-
-<summary>ImageURL Properties</summary>
-
-##### detail: `string | null`
-
-##### url \(required\): `string`
-
-</details>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
+      <EmbedImageURL />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
 ##### type: `"image_url"`
 
@@ -427,15 +426,11 @@ _Default Value:_ `"assistant"`
 
 ##### function \(required\): `FunctionCall`
 
-<details >
-
-<summary>FunctionCall Properties</summary>
-
-##### arguments \(required\): `map<any> | string`
-
-##### name \(required\): `string`
-
-</details>
+<p>
+    <SideBarTrigger.Docusaurus cta="View FunctionCall Details" title="FunctionCall Details">
+      <EmbedFunctionCall />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
 ##### id: `string`
 
@@ -490,15 +485,11 @@ _Default Value:_ `"text"`
 
 ##### image\_url \(required\): `ImageURL | string`
 
-<details >
-
-<summary>ImageURL Properties</summary>
-
-##### detail: `string | null`
-
-##### url \(required\): `string`
-
-</details>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
+      <EmbedImageURL />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
 ##### type: `"image_url"`
 
@@ -842,17 +833,11 @@ array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
 
 ##### content \(required\): `string | array<TextChunk>`
 
-<details >
-
-<summary>TextChunk Properties</summary>
-
-##### text \(required\): `string`
-
-##### type: `"text"`
-
-_Default Value:_ `"text"`
-
-</details>
+<p>
+    <SideBarTrigger.Docusaurus cta="View TextChunk Details" title="TextChunk Details">
+      <EmbedTextChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
 ##### role: `"system"`
 
@@ -881,65 +866,29 @@ _Default Value:_ `"system"`
 </code>
 </pre>
 
-<details >
+<p>
+    <SideBarTrigger.Docusaurus cta="View TextChunk Details" title="TextChunk Details">
+      <EmbedTextChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
-<summary>TextChunk Properties</summary>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ImageURLChunk Details" title="ImageURLChunk Details">
+      <EmbedImageURLChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
-##### text \(required\): `string`
+<p>
+    <SideBarTrigger.Docusaurus cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
+      <EmbedDocumentURLChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
-##### type: `"text"`
-
-_Default Value:_ `"text"`
-
-</details>
-
-<details >
-
-<summary>ImageURLChunk Properties</summary>
-
-##### image\_url \(required\): `ImageURL | string`
-
-<details >
-
-<summary>ImageURL Properties</summary>
-
-##### detail: `string | null`
-
-##### url \(required\): `string`
-
-</details>
-
-##### type: `"image_url"`
-
-_Default Value:_ `"image_url"`
-
-</details>
-
-<details >
-
-<summary>DocumentURLChunk Properties</summary>
-
-##### document\_name: `string | null`
-
-##### document\_url \(required\): `string`
-
-##### type: `"document_url"`
-
-_Default Value:_ `"document_url"`
-
-</details>
-
-<details >
-
-<summary>ReferenceChunk Properties</summary>
-
-##### reference\_ids \(required\): `array<integer>`
-
-##### type: `"reference"`
-
-_Default Value:_ `"reference"`
-
-</details>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ReferenceChunk Details" title="ReferenceChunk Details">
+      <EmbedReferenceChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
 ##### role: `"user"`
 
@@ -968,65 +917,29 @@ _Default Value:_ `"user"`
 </code>
 </pre>
 
-<details >
+<p>
+    <SideBarTrigger.Docusaurus cta="View TextChunk Details" title="TextChunk Details">
+      <EmbedTextChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
-<summary>TextChunk Properties</summary>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ImageURLChunk Details" title="ImageURLChunk Details">
+      <EmbedImageURLChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
-##### text \(required\): `string`
+<p>
+    <SideBarTrigger.Docusaurus cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
+      <EmbedDocumentURLChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
-##### type: `"text"`
-
-_Default Value:_ `"text"`
-
-</details>
-
-<details >
-
-<summary>ImageURLChunk Properties</summary>
-
-##### image\_url \(required\): `ImageURL | string`
-
-<details >
-
-<summary>ImageURL Properties</summary>
-
-##### detail: `string | null`
-
-##### url \(required\): `string`
-
-</details>
-
-##### type: `"image_url"`
-
-_Default Value:_ `"image_url"`
-
-</details>
-
-<details >
-
-<summary>DocumentURLChunk Properties</summary>
-
-##### document\_name: `string | null`
-
-##### document\_url \(required\): `string`
-
-##### type: `"document_url"`
-
-_Default Value:_ `"document_url"`
-
-</details>
-
-<details >
-
-<summary>ReferenceChunk Properties</summary>
-
-##### reference\_ids \(required\): `array<integer>`
-
-##### type: `"reference"`
-
-_Default Value:_ `"reference"`
-
-</details>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ReferenceChunk Details" title="ReferenceChunk Details">
+      <EmbedReferenceChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
 ##### prefix: `boolean`
 
@@ -1040,33 +953,11 @@ _Default Value:_ `"assistant"`
 
 ##### tool\_calls: `array<ToolCall> | null`
 
-<details >
-
-<summary>ToolCall Properties</summary>
-
-##### function \(required\): `FunctionCall`
-
-<details >
-
-<summary>FunctionCall Properties</summary>
-
-##### arguments \(required\): `map<any> | string`
-
-##### name \(required\): `string`
-
-</details>
-
-##### id: `string`
-
-_Default Value:_ `"null"`
-
-##### index: `integer`
-
-_Default Value:_ `0`
-
-##### type: `"function"`
-
-</details>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ToolCall Details" title="ToolCall Details">
+      <EmbedToolCall />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
 </details>
 
@@ -1091,65 +982,29 @@ _Default Value:_ `0`
 </code>
 </pre>
 
-<details >
+<p>
+    <SideBarTrigger.Docusaurus cta="View TextChunk Details" title="TextChunk Details">
+      <EmbedTextChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
-<summary>TextChunk Properties</summary>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ImageURLChunk Details" title="ImageURLChunk Details">
+      <EmbedImageURLChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
-##### text \(required\): `string`
+<p>
+    <SideBarTrigger.Docusaurus cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
+      <EmbedDocumentURLChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
-##### type: `"text"`
-
-_Default Value:_ `"text"`
-
-</details>
-
-<details >
-
-<summary>ImageURLChunk Properties</summary>
-
-##### image\_url \(required\): `ImageURL | string`
-
-<details >
-
-<summary>ImageURL Properties</summary>
-
-##### detail: `string | null`
-
-##### url \(required\): `string`
-
-</details>
-
-##### type: `"image_url"`
-
-_Default Value:_ `"image_url"`
-
-</details>
-
-<details >
-
-<summary>DocumentURLChunk Properties</summary>
-
-##### document\_name: `string | null`
-
-##### document\_url \(required\): `string`
-
-##### type: `"document_url"`
-
-_Default Value:_ `"document_url"`
-
-</details>
-
-<details >
-
-<summary>ReferenceChunk Properties</summary>
-
-##### reference\_ids \(required\): `array<integer>`
-
-##### type: `"reference"`
-
-_Default Value:_ `"reference"`
-
-</details>
+<p>
+    <SideBarTrigger.Docusaurus cta="View ReferenceChunk Details" title="ReferenceChunk Details">
+      <EmbedReferenceChunk />
+    </SideBarTrigger.Docusaurus>
+  </p>
 
 ##### name: `string | null`
 
@@ -1230,3 +1085,5 @@ Validation Error
 </details>
 
 </details>
+
+<SideBar.Docusaurus />

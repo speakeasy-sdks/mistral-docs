@@ -5,6 +5,9 @@ export default {
     componentOutDir: "./src/components/speakeasy",
     framework: "docusaurus",
   },
+  display: {
+    maxSchemaNesting: 2,
+  },
   tryItNow: {
     npmPackageName: "@mistralai/mistralai",
     sdkClassName: "Mistral",
