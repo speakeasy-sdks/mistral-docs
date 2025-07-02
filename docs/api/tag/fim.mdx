@@ -13,25 +13,25 @@ import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx
 
 # fim
 
-## POST /v1/fim/completions
+## POST /v1/fim/completions \{#operation-fim_completion_v1_fim_completions_post\}
 
 _Fim Completion_
 
 FIM completion.
 
-### Security
+### Security \{#operation-fim_completion_v1_fim_completions_post+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-fim_completion_v1_fim_completions_post+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -53,17 +53,17 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-fim_completion_v1_fim_completions_post+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### max\_tokens: `integer | null`
+#### max\_tokens: <code>integer | null</code> \{#operation-fim_completion_v1_fim_completions_post+request+max_tokens\}
 
-#### min\_tokens: `integer | null`
+#### min\_tokens: <code>integer | null</code> \{#operation-fim_completion_v1_fim_completions_post+request+min_tokens\}
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+request+model\}
 
 ID of the model to use. Only compatible for now with:
   - `codestral-2405`
@@ -75,7 +75,7 @@ _Example:_
 codestral-2405
 ```
 
-#### prompt \(required\): `string`
+#### prompt \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+request+prompt\}
 
 The text/code to complete.
 
@@ -85,19 +85,19 @@ _Example:_
 def
 ```
 
-#### random\_seed: `integer | null`
+#### random\_seed: <code>integer | null</code> \{#operation-fim_completion_v1_fim_completions_post+request+random_seed\}
 
-#### stop: `string | array<string>`
+#### stop: <code>string | array&lt;string&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+request+stop\}
 
 Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
 
-#### stream: `boolean`
+#### stream: <code>boolean</code> \{#operation-fim_completion_v1_fim_completions_post+request+stream\}
 
 Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
 
 _Default Value:_ `false`
 
-#### suffix: `string | null`
+#### suffix: <code>string | null</code> \{#operation-fim_completion_v1_fim_completions_post+request+suffix\}
 
 _Example:_
 
@@ -105,9 +105,9 @@ _Example:_
 return a+b
 ```
 
-#### temperature: `number | null`
+#### temperature: <code>number | null</code> \{#operation-fim_completion_v1_fim_completions_post+request+temperature\}
 
-#### top\_p: `number`
+#### top\_p: <code>number</code> \{#operation-fim_completion_v1_fim_completions_post+request+top_p\}
 
 Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.
 
@@ -115,7 +115,7 @@ _Default Value:_ `1`
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-fim_completion_v1_fim_completions_post+200+application-json\}
 
 Successful Response
 
@@ -123,13 +123,13 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### choices \(required\): `array<ChatCompletionChoice>`
+#### choices \(required\): <code>array&lt;ChatCompletionChoice&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+choices\}
 
 <details >
 
-<summary>ChatCompletionChoice Properties</summary>
+<summary>ChatCompletionChoice</summary>
 
-##### finish\_reason \(required\)
+##### finish\_reason \(required\) \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+finish_reason\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -150,7 +150,7 @@ _Example:_
 stop
 ```
 
-##### index \(required\): `integer`
+##### index \(required\): <code>integer</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+index\}
 
 _Example:_
 
@@ -158,13 +158,13 @@ _Example:_
 0
 ```
 
-##### message \(required\): `AssistantMessage`
+##### message \(required\): <code>AssistantMessage</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+message\}
 
 <details >
 
-<summary>AssistantMessage Properties</summary>
+<summary>AssistantMessage</summary>
 
-##### content
+##### content \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -205,17 +205,17 @@ _Example:_
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### prefix: `boolean`
+##### prefix: <code>boolean</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+prefix\}
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+role\}
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: `array<ToolCall> | null`
+##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ToolCall Details" title="ToolCall Details">
@@ -227,7 +227,7 @@ _Default Value:_ `"assistant"`
 
 </details>
 
-#### created \(required\): `integer`
+#### created \(required\): <code>integer</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+created\}
 
 _Example:_
 
@@ -235,7 +235,7 @@ _Example:_
 1702256327
 ```
 
-#### id \(required\): `string`
+#### id \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+id\}
 
 _Example:_
 
@@ -243,7 +243,7 @@ _Example:_
 cmpl-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+model\}
 
 _Example:_
 
@@ -251,7 +251,7 @@ _Example:_
 codestral-latest
 ```
 
-#### object \(required\): `string`
+#### object \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+object\}
 
 _Example:_
 
@@ -259,13 +259,13 @@ _Example:_
 chat.completion
 ```
 
-#### usage \(required\): `UsageInfo`
+#### usage \(required\): <code>UsageInfo</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+usage\}
 
 <details >
 
-<summary>UsageInfo Properties</summary>
+<summary>UsageInfo</summary>
 
-##### completion\_tokens \(required\): `integer`
+##### completion\_tokens \(required\): <code>integer</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo+completion_tokens\}
 
 _Example:_
 
@@ -273,7 +273,7 @@ _Example:_
 34
 ```
 
-##### prompt\_tokens \(required\): `integer`
+##### prompt\_tokens \(required\): <code>integer</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo+prompt_tokens\}
 
 _Example:_
 
@@ -281,7 +281,7 @@ _Example:_
 16
 ```
 
-##### total\_tokens \(required\): `integer`
+##### total\_tokens \(required\): <code>integer</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo+total_tokens\}
 
 _Example:_
 
@@ -293,7 +293,7 @@ _Example:_
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-fim_completion_v1_fim_completions_post+422+application-json\}
 
 Validation Error
 
@@ -301,27 +301,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
+##### type \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError+type\}
 
 </details>
 

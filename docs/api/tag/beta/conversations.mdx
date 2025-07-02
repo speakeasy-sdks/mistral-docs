@@ -10,35 +10,35 @@ import EmbedImageURL from "../../../../src/components/speakeasy/embeds/ImageURL.
 
 # beta/conversations
 
-## GET /v1/conversations
+## GET /v1/conversations \{#operation-agents_api_v1_conversations_list\}
 
 _List all created conversations._
 
 Retrieve a list of conversation entities sorted by creation time.
 
-### Security
+### Security \{#operation-agents_api_v1_conversations_list+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_list+security+ApiKey\}
 
 </details>
 
-### Parameters
+### Parameters \{#operation-agents_api_v1_conversations_list+parameters\}
 
-#### page
+#### page \{#operation-agents_api_v1_conversations_list+parameters+page\}
 
-#### Security \(required\): `integer`
+#### Security \(required\): <code>integer</code> \{#operation-agents_api_v1_conversations_list+parameters+Security\}
 
-#### page\_size
+#### page\_size \{#operation-agents_api_v1_conversations_list+parameters+page_size\}
 
-#### Security \(required\): `integer`
+#### Security \(required\): <code>integer</code> \{#operation-agents_api_v1_conversations_list+parameters+Security\}
 
-### Try it Now
+### Try it Now \{#operation-agents_api_v1_conversations_list+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -56,15 +56,15 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-agents_api_v1_conversations_list+200+application-json\}
 
 Successful Response
 
-#### Response Body \(required\): `array<ModelConversation | AgentConversation>`
+#### Response Body \(required\): <code>array&lt;ModelConversation | AgentConversation&gt;</code> \{#operation-agents_api_v1_conversations_list+200+application-json+Response Body\}
 
 Successful Response
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-agents_api_v1_conversations_list+422+application-json\}
 
 Validation Error
 
@@ -72,51 +72,51 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_conversations_list+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_list+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_conversations_list+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_conversations_list+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_list+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
-
-</details>
+##### type \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_list+422+application-json+ValidationError+type\}
 
 </details>
 
-## POST /v1/conversations
+</details>
+
+## POST /v1/conversations \{#operation-agents_api_v1_conversations_start\}
 
 _Create a conversation and append entries to it._
 
 Create a new conversation, using a base model or an agent and append entries. Completion and tool executions are run and the response is appended to the conversation.Use the returned conversation_id to continue the conversation.
 
-### Security
+### Security \{#operation-agents_api_v1_conversations_start+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-agents_api_v1_conversations_start+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -136,53 +136,53 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-agents_api_v1_conversations_start+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### agent\_id: `string | null`
+#### agent\_id: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+request+agent_id\}
 
-#### completion\_args: `CompletionArgs`
+#### completion\_args: <code>CompletionArgs</code> \{#operation-agents_api_v1_conversations_start+request+completion_args\}
 
 White-listed arguments from the completion API
 
 <details >
 
-<summary>CompletionArgs Properties</summary>
+<summary>CompletionArgs</summary>
 
-##### frequency\_penalty: `number | null`
+##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+frequency_penalty\}
 
-##### max\_tokens: `integer | null`
+##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+max_tokens\}
 
-##### prediction: `Prediction | null`
+##### prediction: <code>Prediction | null</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+prediction\}
 
 <details >
 
-<summary>Prediction Properties</summary>
+<summary>Prediction</summary>
 
-##### content: `string`
+##### content: <code>string</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: `string`
+##### type: <code>string</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+Prediction+type\}
 
 _Default Value:_ `"content"`
 
 </details>
 
-##### presence\_penalty: `number | null`
+##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+presence_penalty\}
 
-##### random\_seed: `integer | null`
+##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+random_seed\}
 
-##### response\_format: `ResponseFormat | null`
+##### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+response_format\}
 
 <details >
 
-<summary>ResponseFormat Properties</summary>
+<summary>ResponseFormat</summary>
 
-##### json\_schema: `JsonSchema | null`
+##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View JsonSchema Details" title="JsonSchema Details">
@@ -190,37 +190,37 @@ _Default Value:_ `"content"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"text" | "json_object" | "json_schema"`
+##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop: `string | array<string> | null`
+##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+stop\}
 
-##### temperature: `number`
+##### temperature: <code>number</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+temperature\}
 
 _Default Value:_ `0.3`
 
-##### tool\_choice: `"auto" | "none" | "any" | "required"`
+##### tool\_choice: <code>"auto" | "none" | "any" | "required"</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+tool_choice\}
 
-##### top\_p: `number | null`
+##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_conversations_start+request+CompletionArgs+top_p\}
 
 </details>
 
-#### description: `string | null`
+#### description: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+request+description\}
 
-#### handoff\_execution: `"client" | "server"`
+#### handoff\_execution: <code>"client" | "server"</code> \{#operation-agents_api_v1_conversations_start+request+handoff_execution\}
 
-#### inputs \(required\): `string | array<MessageInputEntry | FunctionResultEntry>`
+#### inputs \(required\): <code>string | array&lt;MessageInputEntry | FunctionResultEntry&gt;</code> \{#operation-agents_api_v1_conversations_start+request+inputs\}
 
 <details >
 
-<summary>MessageInputEntry Properties</summary>
+<summary>MessageInputEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -231,17 +231,18 @@ _Default Value:_ `0.3`
   verticalAlign: "middle",
 }}>
 <code>
-string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+| string
+| array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
 </code>
 </pre>
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -249,9 +250,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -259,7 +260,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -267,15 +268,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -294,7 +295,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -302,29 +303,29 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+id\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role \(required\): `"assistant" | "user"`
+##### role \(required\): <code>"assistant" | "user"</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+role\}
 
-##### type: `"message.input"`
+##### type: <code>"message.input"</code> \{#operation-agents_api_v1_conversations_start+request+MessageInputEntry+type\}
 
 _Default Value:_ `"message.input"`
 
@@ -332,41 +333,41 @@ _Default Value:_ `"message.input"`
 
 <details >
 
-<summary>FunctionResultEntry Properties</summary>
+<summary>FunctionResultEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_start+request+FunctionResultEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_start+request+FunctionResultEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_start+request+FunctionResultEntry+id\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_start+request+FunctionResultEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### result \(required\): `string`
+##### result \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+request+FunctionResultEntry+result\}
 
-##### tool\_call\_id \(required\): `string`
+##### tool\_call\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+request+FunctionResultEntry+tool_call_id\}
 
-##### type: `"function.result"`
+##### type: <code>"function.result"</code> \{#operation-agents_api_v1_conversations_start+request+FunctionResultEntry+type\}
 
 _Default Value:_ `"function.result"`
 
 </details>
 
-#### instructions: `string | null`
+#### instructions: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+request+instructions\}
 
-#### model: `string | null`
+#### model: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+request+model\}
 
-#### name: `string | null`
+#### name: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+request+name\}
 
-#### store: `boolean | null`
+#### store: <code>boolean | null</code> \{#operation-agents_api_v1_conversations_start+request+store\}
 
-#### stream: `boolean`
+#### stream: <code>boolean</code> \{#operation-agents_api_v1_conversations_start+request+stream\}
 
 _Default Value:_ `false`
 
-#### tools
+#### tools \{#operation-agents_api_v1_conversations_start+request+tools\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -378,7 +379,6 @@ _Default Value:_ `false`
 }}>
 <code>
 | array&lt;
- 
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
@@ -392,25 +392,25 @@ _Default Value:_ `false`
 
 <details >
 
-<summary>FunctionTool Properties</summary>
+<summary>FunctionTool</summary>
 
-##### function \(required\): `Function`
+##### function \(required\): <code>Function</code> \{#operation-agents_api_v1_conversations_start+request+FunctionTool+function\}
 
 <details >
 
-<summary>Function Properties</summary>
+<summary>Function</summary>
 
-##### description: `string`
+##### description: <code>string</code> \{#operation-agents_api_v1_conversations_start+request+FunctionTool+Function+description\}
 
-##### name \(required\): `string`
+##### name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+request+FunctionTool+Function+name\}
 
-##### parameters \(required\): `map<any>`
+##### parameters \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_conversations_start+request+FunctionTool+Function+parameters\}
 
-##### strict: `boolean`
+##### strict: <code>boolean</code> \{#operation-agents_api_v1_conversations_start+request+FunctionTool+Function+strict\}
 
 </details>
 
-##### type: `"function"`
+##### type: <code>"function"</code> \{#operation-agents_api_v1_conversations_start+request+FunctionTool+type\}
 
 _Default Value:_ `"function"`
 
@@ -418,9 +418,9 @@ _Default Value:_ `"function"`
 
 <details >
 
-<summary>WebSearchTool Properties</summary>
+<summary>WebSearchTool</summary>
 
-##### type: `"web_search"`
+##### type: <code>"web_search"</code> \{#operation-agents_api_v1_conversations_start+request+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
 
@@ -428,9 +428,9 @@ _Default Value:_ `"web_search"`
 
 <details >
 
-<summary>WebSearchPremiumTool Properties</summary>
+<summary>WebSearchPremiumTool</summary>
 
-##### type: `"web_search_premium"`
+##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_conversations_start+request+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
 
@@ -438,9 +438,9 @@ _Default Value:_ `"web_search_premium"`
 
 <details >
 
-<summary>CodeInterpreterTool Properties</summary>
+<summary>CodeInterpreterTool</summary>
 
-##### type: `"code_interpreter"`
+##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_conversations_start+request+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
 
@@ -448,9 +448,9 @@ _Default Value:_ `"code_interpreter"`
 
 <details >
 
-<summary>ImageGenerationTool Properties</summary>
+<summary>ImageGenerationTool</summary>
 
-##### type: `"image_generation"`
+##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_conversations_start+request+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
 
@@ -458,13 +458,13 @@ _Default Value:_ `"image_generation"`
 
 <details >
 
-<summary>DocumentLibraryTool Properties</summary>
+<summary>DocumentLibraryTool</summary>
 
-##### library\_ids \(required\): `array<string>`
+##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_conversations_start+request+DocumentLibraryTool+library_ids\}
 
 Ids of the library in which to search.
 
-##### type: `"document_library"`
+##### type: <code>"document_library"</code> \{#operation-agents_api_v1_conversations_start+request+DocumentLibraryTool+type\}
 
 _Default Value:_ `"document_library"`
 
@@ -472,7 +472,7 @@ _Default Value:_ `"document_library"`
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-agents_api_v1_conversations_start+200+application-json\}
 
 Successful Response
 
@@ -480,13 +480,13 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id \(required\): `string`
+#### conversation\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+conversation_id\}
 
-#### object: `"conversation.response"`
+#### object: <code>"conversation.response"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+object\}
 
 _Default Value:_ `"conversation.response"`
 
-#### outputs \(required\)
+#### outputs \(required\) \{#operation-agents_api_v1_conversations_start+200+application-json+outputs\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -498,7 +498,6 @@ _Default Value:_ `"conversation.response"`
 }}>
 <code>
 array&lt;
- 
  | MessageOutputEntry
  | ToolExecutionEntry
  | FunctionCallEntry
@@ -509,13 +508,13 @@ array&lt;
 
 <details >
 
-<summary>MessageOutputEntry Properties</summary>
+<summary>MessageOutputEntry</summary>
 
-##### agent\_id: `string | null`
+##### agent\_id: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+agent_id\}
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -528,7 +527,6 @@ array&lt;
 <code>
 | string
 | array&lt;
- 
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
@@ -540,11 +538,11 @@ array&lt;
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -552,9 +550,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -562,7 +560,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -570,15 +568,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -597,7 +595,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -605,13 +603,13 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -619,13 +617,13 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ToolReferenceChunk Properties</summary>
+<summary>ToolReferenceChunk</summary>
 
-##### source: `string | null`
+##### source: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolReferenceChunk+source\}
 
-##### title \(required\): `string`
+##### title \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolReferenceChunk+title\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolReferenceChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -644,29 +642,29 @@ _Default Value:_ `"document_url"`
 </code>
 </pre>
 
-##### type: `"tool_reference"`
+##### type: <code>"tool_reference"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolReferenceChunk+type\}
 
 _Default Value:_ `"tool_reference"`
 
-##### url: `string | null`
+##### url: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+ToolReferenceChunk+url\}
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+id\}
 
-##### model: `string | null`
+##### model: <code>string | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+model\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+role\}
 
 _Default Value:_ `"assistant"`
 
-##### type: `"message.output"`
+##### type: <code>"message.output"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+MessageOutputEntry+type\}
 
 _Default Value:_ `"message.output"`
 
@@ -674,17 +672,17 @@ _Default Value:_ `"message.output"`
 
 <details >
 
-<summary>ToolExecutionEntry Properties</summary>
+<summary>ToolExecutionEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ToolExecutionEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ToolExecutionEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ToolExecutionEntry+id\}
 
-##### info: `map<any>`
+##### info: <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ToolExecutionEntry+info\}
 
-##### name \(required\)
+##### name \(required\) \{#operation-agents_api_v1_conversations_start+200+application-json+ToolExecutionEntry+name\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -703,11 +701,11 @@ _Default Value:_ `"message.output"`
 </code>
 </pre>
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ToolExecutionEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### type: `"tool.execution"`
+##### type: <code>"tool.execution"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ToolExecutionEntry+type\}
 
 _Default Value:_ `"tool.execution"`
 
@@ -715,25 +713,25 @@ _Default Value:_ `"tool.execution"`
 
 <details >
 
-<summary>FunctionCallEntry Properties</summary>
+<summary>FunctionCallEntry</summary>
 
-##### arguments \(required\): `map<any> | string`
+##### arguments \(required\): <code>map&lt;any&gt; | string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+FunctionCallEntry+arguments\}
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+FunctionCallEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_start+200+application-json+FunctionCallEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+FunctionCallEntry+id\}
 
-##### name \(required\): `string`
+##### name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+FunctionCallEntry+name\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+FunctionCallEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### tool\_call\_id \(required\): `string`
+##### tool\_call\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+FunctionCallEntry+tool_call_id\}
 
-##### type: `"function.call"`
+##### type: <code>"function.call"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+FunctionCallEntry+type\}
 
 _Default Value:_ `"function.call"`
 
@@ -741,51 +739,51 @@ _Default Value:_ `"function.call"`
 
 <details >
 
-<summary>AgentHandoffEntry Properties</summary>
+<summary>AgentHandoffEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+AgentHandoffEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_start+200+application-json+AgentHandoffEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+AgentHandoffEntry+id\}
 
-##### next\_agent\_id \(required\): `string`
+##### next\_agent\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+AgentHandoffEntry+next_agent_id\}
 
-##### next\_agent\_name \(required\): `string`
+##### next\_agent\_name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+AgentHandoffEntry+next_agent_name\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+AgentHandoffEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### previous\_agent\_id \(required\): `string`
+##### previous\_agent\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+AgentHandoffEntry+previous_agent_id\}
 
-##### previous\_agent\_name \(required\): `string`
+##### previous\_agent\_name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+200+application-json+AgentHandoffEntry+previous_agent_name\}
 
-##### type: `"agent.handoff"`
+##### type: <code>"agent.handoff"</code> \{#operation-agents_api_v1_conversations_start+200+application-json+AgentHandoffEntry+type\}
 
 _Default Value:_ `"agent.handoff"`
 
 </details>
 
-#### usage \(required\): `ConversationUsageInfo`
+#### usage \(required\): <code>ConversationUsageInfo</code> \{#operation-agents_api_v1_conversations_start+200+application-json+usage\}
 
 <details >
 
-<summary>ConversationUsageInfo Properties</summary>
+<summary>ConversationUsageInfo</summary>
 
-##### completion\_tokens: `integer`
-
-_Default Value:_ `0`
-
-##### connector\_tokens: `integer | null`
-
-##### connectors: `map<integer> | null`
-
-##### prompt\_tokens: `integer`
+##### completion\_tokens: <code>integer</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ConversationUsageInfo+completion_tokens\}
 
 _Default Value:_ `0`
 
-##### total\_tokens: `integer`
+##### connector\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ConversationUsageInfo+connector_tokens\}
+
+##### connectors: <code>map&lt;integer&gt; | null</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ConversationUsageInfo+connectors\}
+
+##### prompt\_tokens: <code>integer</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ConversationUsageInfo+prompt_tokens\}
+
+_Default Value:_ `0`
+
+##### total\_tokens: <code>integer</code> \{#operation-agents_api_v1_conversations_start+200+application-json+ConversationUsageInfo+total_tokens\}
 
 _Default Value:_ `0`
 
@@ -793,7 +791,7 @@ _Default Value:_ `0`
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-agents_api_v1_conversations_start+422+application-json\}
 
 Validation Error
 
@@ -801,57 +799,57 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_conversations_start+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_conversations_start+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_conversations_start+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
-
-</details>
+##### type \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_start+422+application-json+ValidationError+type\}
 
 </details>
 
-## GET /v1/conversations/\{conversation\_id\}
+</details>
+
+## GET /v1/conversations/\{conversation\_id\} \{#operation-agents_api_v1_conversations_get\}
 
 _Retrieve a conversation information._
 
 Given a conversation_id retrieve a conversation entity with its attributes.
 
-### Security
+### Security \{#operation-agents_api_v1_conversations_get+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_get+security+ApiKey\}
 
 </details>
 
-### Parameters
+### Parameters \{#operation-agents_api_v1_conversations_get+parameters\}
 
-#### conversation\_id \(required\)
+#### conversation\_id \(required\) \{#operation-agents_api_v1_conversations_get+parameters+conversation_id\}
 
-#### Security \(required\): `string`
+#### Security \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_get+parameters+Security\}
 
-### Try it Now
+### Try it Now \{#operation-agents_api_v1_conversations_get+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -871,15 +869,15 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-agents_api_v1_conversations_get+200+application-json\}
 
 Successful Response
 
-#### Response Body \(required\): `ModelConversation | AgentConversation`
+#### Response Body \(required\): <code>ModelConversation | AgentConversation</code> \{#operation-agents_api_v1_conversations_get+200+application-json+Response Body\}
 
 Successful Response
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-agents_api_v1_conversations_get+422+application-json\}
 
 Validation Error
 
@@ -887,61 +885,61 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_conversations_get+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_get+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_conversations_get+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_conversations_get+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_get+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
-
-</details>
+##### type \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_get+422+application-json+ValidationError+type\}
 
 </details>
 
-## POST /v1/conversations/\{conversation\_id\}
+</details>
+
+## POST /v1/conversations/\{conversation\_id\} \{#operation-agents_api_v1_conversations_append\}
 
 _Append new entries to an existing conversation._
 
 Run completion on the history of the conversation and the user entries. Return the new created entries.
 
-### Security
+### Security \{#operation-agents_api_v1_conversations_append+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+security+ApiKey\}
 
 </details>
 
-### Parameters
+### Parameters \{#operation-agents_api_v1_conversations_append+parameters\}
 
-#### conversation\_id \(required\)
-
-ID of the conversation to which we append entries.
-
-#### Security \(required\): `string`
+#### conversation\_id \(required\) \{#operation-agents_api_v1_conversations_append+parameters+conversation_id\}
 
 ID of the conversation to which we append entries.
 
-### Try it Now
+#### Security \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+parameters+Security\}
 
-<TryItNow
+ID of the conversation to which we append entries.
+
+### Try it Now \{#operation-agents_api_v1_conversations_append+try-it-now\}
+
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -976,51 +974,51 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-agents_api_v1_conversations_append+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### completion\_args: `CompletionArgs`
+#### completion\_args: <code>CompletionArgs</code> \{#operation-agents_api_v1_conversations_append+request+completion_args\}
 
 White-listed arguments from the completion API
 
 <details >
 
-<summary>CompletionArgs Properties</summary>
+<summary>CompletionArgs</summary>
 
-##### frequency\_penalty: `number | null`
+##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+frequency_penalty\}
 
-##### max\_tokens: `integer | null`
+##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+max_tokens\}
 
-##### prediction: `Prediction | null`
+##### prediction: <code>Prediction | null</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+prediction\}
 
 <details >
 
-<summary>Prediction Properties</summary>
+<summary>Prediction</summary>
 
-##### content: `string`
+##### content: <code>string</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: `string`
+##### type: <code>string</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+Prediction+type\}
 
 _Default Value:_ `"content"`
 
 </details>
 
-##### presence\_penalty: `number | null`
+##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+presence_penalty\}
 
-##### random\_seed: `integer | null`
+##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+random_seed\}
 
-##### response\_format: `ResponseFormat | null`
+##### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+response_format\}
 
 <details >
 
-<summary>ResponseFormat Properties</summary>
+<summary>ResponseFormat</summary>
 
-##### json\_schema: `JsonSchema | null`
+##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View JsonSchema Details" title="JsonSchema Details">
@@ -1028,37 +1026,37 @@ _Default Value:_ `"content"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"text" | "json_object" | "json_schema"`
+##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop: `string | array<string> | null`
+##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+stop\}
 
-##### temperature: `number`
+##### temperature: <code>number</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+temperature\}
 
 _Default Value:_ `0.3`
 
-##### tool\_choice: `"auto" | "none" | "any" | "required"`
+##### tool\_choice: <code>"auto" | "none" | "any" | "required"</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+tool_choice\}
 
-##### top\_p: `number | null`
+##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_conversations_append+request+CompletionArgs+top_p\}
 
 </details>
 
-#### handoff\_execution: `"client" | "server"`
+#### handoff\_execution: <code>"client" | "server"</code> \{#operation-agents_api_v1_conversations_append+request+handoff_execution\}
 
 _Default Value:_ `"server"`
 
-#### inputs \(required\): `string | array<MessageInputEntry | FunctionResultEntry>`
+#### inputs \(required\): <code>string | array&lt;MessageInputEntry | FunctionResultEntry&gt;</code> \{#operation-agents_api_v1_conversations_append+request+inputs\}
 
 <details >
 
-<summary>MessageInputEntry Properties</summary>
+<summary>MessageInputEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1069,17 +1067,18 @@ _Default Value:_ `"server"`
   verticalAlign: "middle",
 }}>
 <code>
-string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+| string
+| array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
 </code>
 </pre>
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -1087,9 +1086,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -1097,7 +1096,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -1105,15 +1104,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1132,7 +1131,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -1140,29 +1139,29 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+id\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role \(required\): `"assistant" | "user"`
+##### role \(required\): <code>"assistant" | "user"</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+role\}
 
-##### type: `"message.input"`
+##### type: <code>"message.input"</code> \{#operation-agents_api_v1_conversations_append+request+MessageInputEntry+type\}
 
 _Default Value:_ `"message.input"`
 
@@ -1170,41 +1169,41 @@ _Default Value:_ `"message.input"`
 
 <details >
 
-<summary>FunctionResultEntry Properties</summary>
+<summary>FunctionResultEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_append+request+FunctionResultEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_append+request+FunctionResultEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_append+request+FunctionResultEntry+id\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_append+request+FunctionResultEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### result \(required\): `string`
+##### result \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+request+FunctionResultEntry+result\}
 
-##### tool\_call\_id \(required\): `string`
+##### tool\_call\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+request+FunctionResultEntry+tool_call_id\}
 
-##### type: `"function.result"`
+##### type: <code>"function.result"</code> \{#operation-agents_api_v1_conversations_append+request+FunctionResultEntry+type\}
 
 _Default Value:_ `"function.result"`
 
 </details>
 
-#### store: `boolean`
+#### store: <code>boolean</code> \{#operation-agents_api_v1_conversations_append+request+store\}
 
 Whether to store the results into our servers or not.
 
 _Default Value:_ `true`
 
-#### stream: `boolean`
+#### stream: <code>boolean</code> \{#operation-agents_api_v1_conversations_append+request+stream\}
 
 _Default Value:_ `false`
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-agents_api_v1_conversations_append+200+application-json\}
 
 Successful Response
 
@@ -1212,13 +1211,13 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id \(required\): `string`
+#### conversation\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+conversation_id\}
 
-#### object: `"conversation.response"`
+#### object: <code>"conversation.response"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+object\}
 
 _Default Value:_ `"conversation.response"`
 
-#### outputs \(required\)
+#### outputs \(required\) \{#operation-agents_api_v1_conversations_append+200+application-json+outputs\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1230,7 +1229,6 @@ _Default Value:_ `"conversation.response"`
 }}>
 <code>
 array&lt;
- 
  | MessageOutputEntry
  | ToolExecutionEntry
  | FunctionCallEntry
@@ -1241,13 +1239,13 @@ array&lt;
 
 <details >
 
-<summary>MessageOutputEntry Properties</summary>
+<summary>MessageOutputEntry</summary>
 
-##### agent\_id: `string | null`
+##### agent\_id: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+agent_id\}
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1260,7 +1258,6 @@ array&lt;
 <code>
 | string
 | array&lt;
- 
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
@@ -1272,11 +1269,11 @@ array&lt;
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -1284,9 +1281,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -1294,7 +1291,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -1302,15 +1299,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1329,7 +1326,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -1337,13 +1334,13 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -1351,13 +1348,13 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ToolReferenceChunk Properties</summary>
+<summary>ToolReferenceChunk</summary>
 
-##### source: `string | null`
+##### source: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolReferenceChunk+source\}
 
-##### title \(required\): `string`
+##### title \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolReferenceChunk+title\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolReferenceChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1376,29 +1373,29 @@ _Default Value:_ `"document_url"`
 </code>
 </pre>
 
-##### type: `"tool_reference"`
+##### type: <code>"tool_reference"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolReferenceChunk+type\}
 
 _Default Value:_ `"tool_reference"`
 
-##### url: `string | null`
+##### url: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+ToolReferenceChunk+url\}
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+id\}
 
-##### model: `string | null`
+##### model: <code>string | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+model\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+role\}
 
 _Default Value:_ `"assistant"`
 
-##### type: `"message.output"`
+##### type: <code>"message.output"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+MessageOutputEntry+type\}
 
 _Default Value:_ `"message.output"`
 
@@ -1406,17 +1403,17 @@ _Default Value:_ `"message.output"`
 
 <details >
 
-<summary>ToolExecutionEntry Properties</summary>
+<summary>ToolExecutionEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ToolExecutionEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ToolExecutionEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ToolExecutionEntry+id\}
 
-##### info: `map<any>`
+##### info: <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ToolExecutionEntry+info\}
 
-##### name \(required\)
+##### name \(required\) \{#operation-agents_api_v1_conversations_append+200+application-json+ToolExecutionEntry+name\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1435,11 +1432,11 @@ _Default Value:_ `"message.output"`
 </code>
 </pre>
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ToolExecutionEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### type: `"tool.execution"`
+##### type: <code>"tool.execution"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ToolExecutionEntry+type\}
 
 _Default Value:_ `"tool.execution"`
 
@@ -1447,25 +1444,25 @@ _Default Value:_ `"tool.execution"`
 
 <details >
 
-<summary>FunctionCallEntry Properties</summary>
+<summary>FunctionCallEntry</summary>
 
-##### arguments \(required\): `map<any> | string`
+##### arguments \(required\): <code>map&lt;any&gt; | string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+FunctionCallEntry+arguments\}
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+FunctionCallEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_append+200+application-json+FunctionCallEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+FunctionCallEntry+id\}
 
-##### name \(required\): `string`
+##### name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+FunctionCallEntry+name\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+FunctionCallEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### tool\_call\_id \(required\): `string`
+##### tool\_call\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+FunctionCallEntry+tool_call_id\}
 
-##### type: `"function.call"`
+##### type: <code>"function.call"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+FunctionCallEntry+type\}
 
 _Default Value:_ `"function.call"`
 
@@ -1473,51 +1470,51 @@ _Default Value:_ `"function.call"`
 
 <details >
 
-<summary>AgentHandoffEntry Properties</summary>
+<summary>AgentHandoffEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+AgentHandoffEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_append+200+application-json+AgentHandoffEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+AgentHandoffEntry+id\}
 
-##### next\_agent\_id \(required\): `string`
+##### next\_agent\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+AgentHandoffEntry+next_agent_id\}
 
-##### next\_agent\_name \(required\): `string`
+##### next\_agent\_name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+AgentHandoffEntry+next_agent_name\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+AgentHandoffEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### previous\_agent\_id \(required\): `string`
+##### previous\_agent\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+AgentHandoffEntry+previous_agent_id\}
 
-##### previous\_agent\_name \(required\): `string`
+##### previous\_agent\_name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+200+application-json+AgentHandoffEntry+previous_agent_name\}
 
-##### type: `"agent.handoff"`
+##### type: <code>"agent.handoff"</code> \{#operation-agents_api_v1_conversations_append+200+application-json+AgentHandoffEntry+type\}
 
 _Default Value:_ `"agent.handoff"`
 
 </details>
 
-#### usage \(required\): `ConversationUsageInfo`
+#### usage \(required\): <code>ConversationUsageInfo</code> \{#operation-agents_api_v1_conversations_append+200+application-json+usage\}
 
 <details >
 
-<summary>ConversationUsageInfo Properties</summary>
+<summary>ConversationUsageInfo</summary>
 
-##### completion\_tokens: `integer`
-
-_Default Value:_ `0`
-
-##### connector\_tokens: `integer | null`
-
-##### connectors: `map<integer> | null`
-
-##### prompt\_tokens: `integer`
+##### completion\_tokens: <code>integer</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ConversationUsageInfo+completion_tokens\}
 
 _Default Value:_ `0`
 
-##### total\_tokens: `integer`
+##### connector\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ConversationUsageInfo+connector_tokens\}
+
+##### connectors: <code>map&lt;integer&gt; | null</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ConversationUsageInfo+connectors\}
+
+##### prompt\_tokens: <code>integer</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ConversationUsageInfo+prompt_tokens\}
+
+_Default Value:_ `0`
+
+##### total\_tokens: <code>integer</code> \{#operation-agents_api_v1_conversations_append+200+application-json+ConversationUsageInfo+total_tokens\}
 
 _Default Value:_ `0`
 
@@ -1525,7 +1522,7 @@ _Default Value:_ `0`
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-agents_api_v1_conversations_append+422+application-json\}
 
 Validation Error
 
@@ -1533,57 +1530,57 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_conversations_append+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_conversations_append+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_conversations_append+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
-
-</details>
+##### type \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_append+422+application-json+ValidationError+type\}
 
 </details>
 
-## GET /v1/conversations/\{conversation\_id\}/history
+</details>
+
+## GET /v1/conversations/\{conversation\_id\}/history \{#operation-agents_api_v1_conversations_history\}
 
 _Retrieve all entries in a conversation._
 
 Given a conversation_id retrieve all the entries belonging to that conversation. The entries are sorted in the order they were appended, those can be messages, connectors or function_call.
 
-### Security
+### Security \{#operation-agents_api_v1_conversations_history+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+security+ApiKey\}
 
 </details>
 
-### Parameters
+### Parameters \{#operation-agents_api_v1_conversations_history+parameters\}
 
-#### conversation\_id \(required\)
+#### conversation\_id \(required\) \{#operation-agents_api_v1_conversations_history+parameters+conversation_id\}
 
-#### Security \(required\): `string`
+#### Security \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+parameters+Security\}
 
-### Try it Now
+### Try it Now \{#operation-agents_api_v1_conversations_history+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -1603,7 +1600,7 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-agents_api_v1_conversations_history+200+application-json\}
 
 Successful Response
 
@@ -1611,9 +1608,9 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id \(required\): `string`
+#### conversation\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+conversation_id\}
 
-#### entries \(required\)
+#### entries \(required\) \{#operation-agents_api_v1_conversations_history+200+application-json+entries\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1625,7 +1622,6 @@ Successful Response
 }}>
 <code>
 array&lt;
- 
  | MessageInputEntry
  | MessageOutputEntry
  | FunctionResultEntry
@@ -1638,11 +1634,11 @@ array&lt;
 
 <details >
 
-<summary>MessageInputEntry Properties</summary>
+<summary>MessageInputEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1653,17 +1649,18 @@ array&lt;
   verticalAlign: "middle",
 }}>
 <code>
-string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+| string
+| array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
 </code>
 </pre>
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -1671,9 +1668,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -1681,7 +1678,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -1689,15 +1686,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1716,7 +1713,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -1724,29 +1721,29 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+id\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role \(required\): `"assistant" | "user"`
+##### role \(required\): <code>"assistant" | "user"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+role\}
 
-##### type: `"message.input"`
+##### type: <code>"message.input"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageInputEntry+type\}
 
 _Default Value:_ `"message.input"`
 
@@ -1754,13 +1751,13 @@ _Default Value:_ `"message.input"`
 
 <details >
 
-<summary>MessageOutputEntry Properties</summary>
+<summary>MessageOutputEntry</summary>
 
-##### agent\_id: `string | null`
+##### agent\_id: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+agent_id\}
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1773,7 +1770,6 @@ _Default Value:_ `"message.input"`
 <code>
 | string
 | array&lt;
- 
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
@@ -1785,11 +1781,11 @@ _Default Value:_ `"message.input"`
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -1797,9 +1793,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -1807,7 +1803,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -1815,15 +1811,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1842,7 +1838,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -1850,13 +1846,13 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -1864,13 +1860,13 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ToolReferenceChunk Properties</summary>
+<summary>ToolReferenceChunk</summary>
 
-##### source: `string | null`
+##### source: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolReferenceChunk+source\}
 
-##### title \(required\): `string`
+##### title \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolReferenceChunk+title\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolReferenceChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1889,29 +1885,29 @@ _Default Value:_ `"document_url"`
 </code>
 </pre>
 
-##### type: `"tool_reference"`
+##### type: <code>"tool_reference"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolReferenceChunk+type\}
 
 _Default Value:_ `"tool_reference"`
 
-##### url: `string | null`
+##### url: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+ToolReferenceChunk+url\}
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+id\}
 
-##### model: `string | null`
+##### model: <code>string | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+model\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+role\}
 
 _Default Value:_ `"assistant"`
 
-##### type: `"message.output"`
+##### type: <code>"message.output"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+MessageOutputEntry+type\}
 
 _Default Value:_ `"message.output"`
 
@@ -1919,23 +1915,23 @@ _Default Value:_ `"message.output"`
 
 <details >
 
-<summary>FunctionResultEntry Properties</summary>
+<summary>FunctionResultEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionResultEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionResultEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionResultEntry+id\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionResultEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### result \(required\): `string`
+##### result \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionResultEntry+result\}
 
-##### tool\_call\_id \(required\): `string`
+##### tool\_call\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionResultEntry+tool_call_id\}
 
-##### type: `"function.result"`
+##### type: <code>"function.result"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionResultEntry+type\}
 
 _Default Value:_ `"function.result"`
 
@@ -1943,25 +1939,25 @@ _Default Value:_ `"function.result"`
 
 <details >
 
-<summary>FunctionCallEntry Properties</summary>
+<summary>FunctionCallEntry</summary>
 
-##### arguments \(required\): `map<any> | string`
+##### arguments \(required\): <code>map&lt;any&gt; | string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionCallEntry+arguments\}
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionCallEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionCallEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionCallEntry+id\}
 
-##### name \(required\): `string`
+##### name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionCallEntry+name\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionCallEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### tool\_call\_id \(required\): `string`
+##### tool\_call\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionCallEntry+tool_call_id\}
 
-##### type: `"function.call"`
+##### type: <code>"function.call"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+FunctionCallEntry+type\}
 
 _Default Value:_ `"function.call"`
 
@@ -1969,17 +1965,17 @@ _Default Value:_ `"function.call"`
 
 <details >
 
-<summary>ToolExecutionEntry Properties</summary>
+<summary>ToolExecutionEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+ToolExecutionEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_history+200+application-json+ToolExecutionEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+ToolExecutionEntry+id\}
 
-##### info: `map<any>`
+##### info: <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_conversations_history+200+application-json+ToolExecutionEntry+info\}
 
-##### name \(required\)
+##### name \(required\) \{#operation-agents_api_v1_conversations_history+200+application-json+ToolExecutionEntry+name\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1998,11 +1994,11 @@ _Default Value:_ `"function.call"`
 </code>
 </pre>
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+ToolExecutionEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### type: `"tool.execution"`
+##### type: <code>"tool.execution"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+ToolExecutionEntry+type\}
 
 _Default Value:_ `"tool.execution"`
 
@@ -2010,39 +2006,39 @@ _Default Value:_ `"tool.execution"`
 
 <details >
 
-<summary>AgentHandoffEntry Properties</summary>
+<summary>AgentHandoffEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_history+200+application-json+AgentHandoffEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_history+200+application-json+AgentHandoffEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+AgentHandoffEntry+id\}
 
-##### next\_agent\_id \(required\): `string`
+##### next\_agent\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+AgentHandoffEntry+next_agent_id\}
 
-##### next\_agent\_name \(required\): `string`
+##### next\_agent\_name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+AgentHandoffEntry+next_agent_name\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+AgentHandoffEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### previous\_agent\_id \(required\): `string`
+##### previous\_agent\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+AgentHandoffEntry+previous_agent_id\}
 
-##### previous\_agent\_name \(required\): `string`
+##### previous\_agent\_name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+200+application-json+AgentHandoffEntry+previous_agent_name\}
 
-##### type: `"agent.handoff"`
+##### type: <code>"agent.handoff"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+AgentHandoffEntry+type\}
 
 _Default Value:_ `"agent.handoff"`
 
 </details>
 
-#### object: `"conversation.history"`
+#### object: <code>"conversation.history"</code> \{#operation-agents_api_v1_conversations_history+200+application-json+object\}
 
 _Default Value:_ `"conversation.history"`
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-agents_api_v1_conversations_history+422+application-json\}
 
 Validation Error
 
@@ -2050,57 +2046,57 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_conversations_history+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_conversations_history+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_conversations_history+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
-
-</details>
+##### type \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_history+422+application-json+ValidationError+type\}
 
 </details>
 
-## GET /v1/conversations/\{conversation\_id\}/messages
+</details>
+
+## GET /v1/conversations/\{conversation\_id\}/messages \{#operation-agents_api_v1_conversations_messages\}
 
 _Retrieve all messages in a conversation._
 
 Given a conversation_id retrieve all the messages belonging to that conversation. This is similar to retrieving all entries except we filter the messages only.
 
-### Security
+### Security \{#operation-agents_api_v1_conversations_messages+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+security+ApiKey\}
 
 </details>
 
-### Parameters
+### Parameters \{#operation-agents_api_v1_conversations_messages+parameters\}
 
-#### conversation\_id \(required\)
+#### conversation\_id \(required\) \{#operation-agents_api_v1_conversations_messages+parameters+conversation_id\}
 
-#### Security \(required\): `string`
+#### Security \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+parameters+Security\}
 
-### Try it Now
+### Try it Now \{#operation-agents_api_v1_conversations_messages+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -2120,7 +2116,7 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-agents_api_v1_conversations_messages+200+application-json\}
 
 Successful Response
 
@@ -2128,17 +2124,17 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id \(required\): `string`
+#### conversation\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+conversation_id\}
 
-#### messages \(required\): `array<MessageInputEntry | MessageOutputEntry>`
+#### messages \(required\): <code>array&lt;MessageInputEntry | MessageOutputEntry&gt;</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+messages\}
 
 <details >
 
-<summary>MessageInputEntry Properties</summary>
+<summary>MessageInputEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2149,17 +2145,18 @@ Successful Response
   verticalAlign: "middle",
 }}>
 <code>
-string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+| string
+| array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
 </code>
 </pre>
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -2167,9 +2164,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -2177,7 +2174,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -2185,15 +2182,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2212,7 +2209,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -2220,29 +2217,29 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+id\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role \(required\): `"assistant" | "user"`
+##### role \(required\): <code>"assistant" | "user"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+role\}
 
-##### type: `"message.input"`
+##### type: <code>"message.input"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageInputEntry+type\}
 
 _Default Value:_ `"message.input"`
 
@@ -2250,13 +2247,13 @@ _Default Value:_ `"message.input"`
 
 <details >
 
-<summary>MessageOutputEntry Properties</summary>
+<summary>MessageOutputEntry</summary>
 
-##### agent\_id: `string | null`
+##### agent\_id: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+agent_id\}
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2269,7 +2266,6 @@ _Default Value:_ `"message.input"`
 <code>
 | string
 | array&lt;
- 
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
@@ -2281,11 +2277,11 @@ _Default Value:_ `"message.input"`
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -2293,9 +2289,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -2303,7 +2299,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -2311,15 +2307,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2338,7 +2334,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -2346,13 +2342,13 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -2360,13 +2356,13 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ToolReferenceChunk Properties</summary>
+<summary>ToolReferenceChunk</summary>
 
-##### source: `string | null`
+##### source: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolReferenceChunk+source\}
 
-##### title \(required\): `string`
+##### title \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolReferenceChunk+title\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolReferenceChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2385,41 +2381,41 @@ _Default Value:_ `"document_url"`
 </code>
 </pre>
 
-##### type: `"tool_reference"`
+##### type: <code>"tool_reference"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolReferenceChunk+type\}
 
 _Default Value:_ `"tool_reference"`
 
-##### url: `string | null`
+##### url: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+ToolReferenceChunk+url\}
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+id\}
 
-##### model: `string | null`
+##### model: <code>string | null</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+model\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+role\}
 
 _Default Value:_ `"assistant"`
 
-##### type: `"message.output"`
+##### type: <code>"message.output"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+MessageOutputEntry+type\}
 
 _Default Value:_ `"message.output"`
 
 </details>
 
-#### object: `"conversation.messages"`
+#### object: <code>"conversation.messages"</code> \{#operation-agents_api_v1_conversations_messages+200+application-json+object\}
 
 _Default Value:_ `"conversation.messages"`
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-agents_api_v1_conversations_messages+422+application-json\}
 
 Validation Error
 
@@ -2427,57 +2423,57 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_conversations_messages+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_conversations_messages+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_conversations_messages+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
-
-</details>
+##### type \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_messages+422+application-json+ValidationError+type\}
 
 </details>
 
-## POST /v1/conversations/\{conversation\_id\}/restart
+</details>
+
+## POST /v1/conversations/\{conversation\_id\}/restart \{#operation-agents_api_v1_conversations_restart\}
 
 _Restart a conversation starting from a given entry._
 
 Given a conversation_id and an id, recreate a conversation from this point and run completion. A new conversation is returned with the new entries returned.
 
-### Security
+### Security \{#operation-agents_api_v1_conversations_restart+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+security+ApiKey\}
 
 </details>
 
-### Parameters
+### Parameters \{#operation-agents_api_v1_conversations_restart+parameters\}
 
-#### conversation\_id \(required\)
+#### conversation\_id \(required\) \{#operation-agents_api_v1_conversations_restart+parameters+conversation_id\}
 
-#### Security \(required\): `string`
+#### Security \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+parameters+Security\}
 
-### Try it Now
+### Try it Now \{#operation-agents_api_v1_conversations_restart+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -2501,51 +2497,51 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-agents_api_v1_conversations_restart+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### completion\_args: `CompletionArgs`
+#### completion\_args: <code>CompletionArgs</code> \{#operation-agents_api_v1_conversations_restart+request+completion_args\}
 
 White-listed arguments from the completion API
 
 <details >
 
-<summary>CompletionArgs Properties</summary>
+<summary>CompletionArgs</summary>
 
-##### frequency\_penalty: `number | null`
+##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+frequency_penalty\}
 
-##### max\_tokens: `integer | null`
+##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+max_tokens\}
 
-##### prediction: `Prediction | null`
+##### prediction: <code>Prediction | null</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+prediction\}
 
 <details >
 
-<summary>Prediction Properties</summary>
+<summary>Prediction</summary>
 
-##### content: `string`
+##### content: <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: `string`
+##### type: <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+Prediction+type\}
 
 _Default Value:_ `"content"`
 
 </details>
 
-##### presence\_penalty: `number | null`
+##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+presence_penalty\}
 
-##### random\_seed: `integer | null`
+##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+random_seed\}
 
-##### response\_format: `ResponseFormat | null`
+##### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+response_format\}
 
 <details >
 
-<summary>ResponseFormat Properties</summary>
+<summary>ResponseFormat</summary>
 
-##### json\_schema: `JsonSchema | null`
+##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View JsonSchema Details" title="JsonSchema Details">
@@ -2553,39 +2549,39 @@ _Default Value:_ `"content"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"text" | "json_object" | "json_schema"`
+##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-##### stop: `string | array<string> | null`
+##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+stop\}
 
-##### temperature: `number`
+##### temperature: <code>number</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+temperature\}
 
 _Default Value:_ `0.3`
 
-##### tool\_choice: `"auto" | "none" | "any" | "required"`
+##### tool\_choice: <code>"auto" | "none" | "any" | "required"</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+tool_choice\}
 
-##### top\_p: `number | null`
+##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_conversations_restart+request+CompletionArgs+top_p\}
 
 </details>
 
-#### from\_entry\_id \(required\): `string`
+#### from\_entry\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+from_entry_id\}
 
-#### handoff\_execution: `"client" | "server"`
+#### handoff\_execution: <code>"client" | "server"</code> \{#operation-agents_api_v1_conversations_restart+request+handoff_execution\}
 
 _Default Value:_ `"server"`
 
-#### inputs \(required\): `string | array<MessageInputEntry | FunctionResultEntry>`
+#### inputs \(required\): <code>string | array&lt;MessageInputEntry | FunctionResultEntry&gt;</code> \{#operation-agents_api_v1_conversations_restart+request+inputs\}
 
 <details >
 
-<summary>MessageInputEntry Properties</summary>
+<summary>MessageInputEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2596,17 +2592,18 @@ _Default Value:_ `"server"`
   verticalAlign: "middle",
 }}>
 <code>
-string | array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
+| string
+| array&lt;TextChunk | ImageURLChunk | ToolFileChunk | DocumentURLChunk&gt;
 </code>
 </pre>
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -2614,9 +2611,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -2624,7 +2621,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -2632,15 +2629,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2659,7 +2656,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -2667,29 +2664,29 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+id\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role \(required\): `"assistant" | "user"`
+##### role \(required\): <code>"assistant" | "user"</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+role\}
 
-##### type: `"message.input"`
+##### type: <code>"message.input"</code> \{#operation-agents_api_v1_conversations_restart+request+MessageInputEntry+type\}
 
 _Default Value:_ `"message.input"`
 
@@ -2697,41 +2694,41 @@ _Default Value:_ `"message.input"`
 
 <details >
 
-<summary>FunctionResultEntry Properties</summary>
+<summary>FunctionResultEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_restart+request+FunctionResultEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_restart+request+FunctionResultEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+FunctionResultEntry+id\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_restart+request+FunctionResultEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### result \(required\): `string`
+##### result \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+FunctionResultEntry+result\}
 
-##### tool\_call\_id \(required\): `string`
+##### tool\_call\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+request+FunctionResultEntry+tool_call_id\}
 
-##### type: `"function.result"`
+##### type: <code>"function.result"</code> \{#operation-agents_api_v1_conversations_restart+request+FunctionResultEntry+type\}
 
 _Default Value:_ `"function.result"`
 
 </details>
 
-#### store: `boolean`
+#### store: <code>boolean</code> \{#operation-agents_api_v1_conversations_restart+request+store\}
 
 Whether to store the results into our servers or not.
 
 _Default Value:_ `true`
 
-#### stream: `boolean`
+#### stream: <code>boolean</code> \{#operation-agents_api_v1_conversations_restart+request+stream\}
 
 _Default Value:_ `false`
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-agents_api_v1_conversations_restart+200+application-json\}
 
 Successful Response
 
@@ -2739,13 +2736,13 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### conversation\_id \(required\): `string`
+#### conversation\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+conversation_id\}
 
-#### object: `"conversation.response"`
+#### object: <code>"conversation.response"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+object\}
 
 _Default Value:_ `"conversation.response"`
 
-#### outputs \(required\)
+#### outputs \(required\) \{#operation-agents_api_v1_conversations_restart+200+application-json+outputs\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2757,7 +2754,6 @@ _Default Value:_ `"conversation.response"`
 }}>
 <code>
 array&lt;
- 
  | MessageOutputEntry
  | ToolExecutionEntry
  | FunctionCallEntry
@@ -2768,13 +2764,13 @@ array&lt;
 
 <details >
 
-<summary>MessageOutputEntry Properties</summary>
+<summary>MessageOutputEntry</summary>
 
-##### agent\_id: `string | null`
+##### agent\_id: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+agent_id\}
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+completed_at\}
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2787,7 +2783,6 @@ array&lt;
 <code>
 | string
 | array&lt;
- 
  | TextChunk
  | ImageURLChunk
  | ToolFileChunk
@@ -2799,11 +2794,11 @@ array&lt;
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -2811,9 +2806,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -2821,7 +2816,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -2829,15 +2824,15 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>ToolFileChunk Properties</summary>
+<summary>ToolFileChunk</summary>
 
-##### file\_id \(required\): `string`
+##### file\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolFileChunk+file_id\}
 
-##### file\_name: `string | null`
+##### file\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolFileChunk+file_name\}
 
-##### file\_type: `string | null`
+##### file\_type: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolFileChunk+file_type\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolFileChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2856,7 +2851,7 @@ _Default Value:_ `"image_url"`
 </code>
 </pre>
 
-##### type: `"tool_file"`
+##### type: <code>"tool_file"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolFileChunk+type\}
 
 _Default Value:_ `"tool_file"`
 
@@ -2864,13 +2859,13 @@ _Default Value:_ `"tool_file"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -2878,13 +2873,13 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ToolReferenceChunk Properties</summary>
+<summary>ToolReferenceChunk</summary>
 
-##### source: `string | null`
+##### source: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolReferenceChunk+source\}
 
-##### title \(required\): `string`
+##### title \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolReferenceChunk+title\}
 
-##### tool \(required\)
+##### tool \(required\) \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolReferenceChunk+tool\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2903,29 +2898,29 @@ _Default Value:_ `"document_url"`
 </code>
 </pre>
 
-##### type: `"tool_reference"`
+##### type: <code>"tool_reference"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolReferenceChunk+type\}
 
 _Default Value:_ `"tool_reference"`
 
-##### url: `string | null`
+##### url: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+ToolReferenceChunk+url\}
 
 </details>
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+id\}
 
-##### model: `string | null`
+##### model: <code>string | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+model\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+role\}
 
 _Default Value:_ `"assistant"`
 
-##### type: `"message.output"`
+##### type: <code>"message.output"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+MessageOutputEntry+type\}
 
 _Default Value:_ `"message.output"`
 
@@ -2933,17 +2928,17 @@ _Default Value:_ `"message.output"`
 
 <details >
 
-<summary>ToolExecutionEntry Properties</summary>
+<summary>ToolExecutionEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ToolExecutionEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ToolExecutionEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ToolExecutionEntry+id\}
 
-##### info: `map<any>`
+##### info: <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ToolExecutionEntry+info\}
 
-##### name \(required\)
+##### name \(required\) \{#operation-agents_api_v1_conversations_restart+200+application-json+ToolExecutionEntry+name\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -2962,11 +2957,11 @@ _Default Value:_ `"message.output"`
 </code>
 </pre>
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ToolExecutionEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### type: `"tool.execution"`
+##### type: <code>"tool.execution"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ToolExecutionEntry+type\}
 
 _Default Value:_ `"tool.execution"`
 
@@ -2974,25 +2969,25 @@ _Default Value:_ `"tool.execution"`
 
 <details >
 
-<summary>FunctionCallEntry Properties</summary>
+<summary>FunctionCallEntry</summary>
 
-##### arguments \(required\): `map<any> | string`
+##### arguments \(required\): <code>map&lt;any&gt; | string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+FunctionCallEntry+arguments\}
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+FunctionCallEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+FunctionCallEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+FunctionCallEntry+id\}
 
-##### name \(required\): `string`
+##### name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+FunctionCallEntry+name\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+FunctionCallEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### tool\_call\_id \(required\): `string`
+##### tool\_call\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+FunctionCallEntry+tool_call_id\}
 
-##### type: `"function.call"`
+##### type: <code>"function.call"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+FunctionCallEntry+type\}
 
 _Default Value:_ `"function.call"`
 
@@ -3000,51 +2995,51 @@ _Default Value:_ `"function.call"`
 
 <details >
 
-<summary>AgentHandoffEntry Properties</summary>
+<summary>AgentHandoffEntry</summary>
 
-##### completed\_at: `date-time | null`
+##### completed\_at: <code>date-time | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+AgentHandoffEntry+completed_at\}
 
-##### created\_at: `date-time`
+##### created\_at: <code>date-time</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+AgentHandoffEntry+created_at\}
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+AgentHandoffEntry+id\}
 
-##### next\_agent\_id \(required\): `string`
+##### next\_agent\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+AgentHandoffEntry+next_agent_id\}
 
-##### next\_agent\_name \(required\): `string`
+##### next\_agent\_name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+AgentHandoffEntry+next_agent_name\}
 
-##### object: `"entry"`
+##### object: <code>"entry"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+AgentHandoffEntry+object\}
 
 _Default Value:_ `"entry"`
 
-##### previous\_agent\_id \(required\): `string`
+##### previous\_agent\_id \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+AgentHandoffEntry+previous_agent_id\}
 
-##### previous\_agent\_name \(required\): `string`
+##### previous\_agent\_name \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+AgentHandoffEntry+previous_agent_name\}
 
-##### type: `"agent.handoff"`
+##### type: <code>"agent.handoff"</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+AgentHandoffEntry+type\}
 
 _Default Value:_ `"agent.handoff"`
 
 </details>
 
-#### usage \(required\): `ConversationUsageInfo`
+#### usage \(required\): <code>ConversationUsageInfo</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+usage\}
 
 <details >
 
-<summary>ConversationUsageInfo Properties</summary>
+<summary>ConversationUsageInfo</summary>
 
-##### completion\_tokens: `integer`
-
-_Default Value:_ `0`
-
-##### connector\_tokens: `integer | null`
-
-##### connectors: `map<integer> | null`
-
-##### prompt\_tokens: `integer`
+##### completion\_tokens: <code>integer</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ConversationUsageInfo+completion_tokens\}
 
 _Default Value:_ `0`
 
-##### total\_tokens: `integer`
+##### connector\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ConversationUsageInfo+connector_tokens\}
+
+##### connectors: <code>map&lt;integer&gt; | null</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ConversationUsageInfo+connectors\}
+
+##### prompt\_tokens: <code>integer</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ConversationUsageInfo+prompt_tokens\}
+
+_Default Value:_ `0`
+
+##### total\_tokens: <code>integer</code> \{#operation-agents_api_v1_conversations_restart+200+application-json+ConversationUsageInfo+total_tokens\}
 
 _Default Value:_ `0`
 
@@ -3052,7 +3047,7 @@ _Default Value:_ `0`
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-agents_api_v1_conversations_restart+422+application-json\}
 
 Validation Error
 
@@ -3060,27 +3055,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_conversations_restart+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_conversations_restart+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_conversations_restart+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
+##### type \(required\): <code>string</code> \{#operation-agents_api_v1_conversations_restart+422+application-json+ValidationError+type\}
 
 </details>
 

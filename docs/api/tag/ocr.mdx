@@ -8,23 +8,23 @@ import { TryItNow } from "@speakeasy-api/docs-md";
 
 # ocr
 
-## POST /v1/ocr
+## POST /v1/ocr \{#operation-ocr_v1_ocr_post\}
 
 OCR
 
-### Security
+### Security \{#operation-ocr_v1_ocr_post+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-ocr_v1_ocr_post+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -50,53 +50,53 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-ocr_v1_ocr_post+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### bbox\_annotation\_format: `ResponseFormat | null`
+#### bbox\_annotation\_format: <code>ResponseFormat | null</code> \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format\}
 
 <details >
 
-<summary>ResponseFormat Properties</summary>
+<summary>ResponseFormat</summary>
 
-##### json\_schema: `JsonSchema | null`
+##### json\_schema: <code>JsonSchema | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
 
 <details >
 
-<summary>JsonSchema Properties</summary>
+<summary>JsonSchema</summary>
 
-##### description: `string | null`
+##### description: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
 
-##### name \(required\): `string`
+##### name \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
 
-##### schema\_definition \(required\): `map<any>`
+##### schema\_definition \(required\): <code>map&lt;any&gt;</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
 
-##### strict: `boolean`
+##### strict: <code>boolean</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
 
 </details>
 
-##### type: `"text" | "json_object" | "json_schema"`
+##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-#### document \(required\): `DocumentURLChunk | ImageURLChunk`
+#### document \(required\): <code>DocumentURLChunk | ImageURLChunk</code> \{#operation-ocr_v1_ocr_post+request+document\}
 
 Document to run OCR on
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -104,69 +104,69 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+image_url\}
 
 <details >
 
-<summary>ImageURL Properties</summary>
+<summary>ImageURL</summary>
 
-##### detail: `string | null`
+##### detail: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+detail\}
 
-##### url \(required\): `string`
+##### url \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+url\}
 
 </details>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
 </details>
 
-#### document\_annotation\_format: `ResponseFormat | null`
+#### document\_annotation\_format: <code>ResponseFormat | null</code> \{#operation-ocr_v1_ocr_post+request+document_annotation_format\}
 
 <details >
 
-<summary>ResponseFormat Properties</summary>
+<summary>ResponseFormat</summary>
 
-##### json\_schema: `JsonSchema | null`
+##### json\_schema: <code>JsonSchema | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
 
 <details >
 
-<summary>JsonSchema Properties</summary>
+<summary>JsonSchema</summary>
 
-##### description: `string | null`
+##### description: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
 
-##### name \(required\): `string`
+##### name \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
 
-##### schema\_definition \(required\): `map<any>`
+##### schema\_definition \(required\): <code>map&lt;any&gt;</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
 
-##### strict: `boolean`
+##### strict: <code>boolean</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
 
 </details>
 
-##### type: `"text" | "json_object" | "json_schema"`
+##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-#### id: `string`
+#### id: <code>string</code> \{#operation-ocr_v1_ocr_post+request+id\}
 
-#### image\_limit: `integer | null`
+#### image\_limit: <code>integer | null</code> \{#operation-ocr_v1_ocr_post+request+image_limit\}
 
-#### image\_min\_size: `integer | null`
+#### image\_min\_size: <code>integer | null</code> \{#operation-ocr_v1_ocr_post+request+image_min_size\}
 
-#### include\_image\_base64: `boolean | null`
+#### include\_image\_base64: <code>boolean | null</code> \{#operation-ocr_v1_ocr_post+request+include_image_base64\}
 
-#### model \(required\): `string | null`
+#### model \(required\): <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+model\}
 
-#### pages: `array<integer> | null`
+#### pages: <code>array&lt;integer&gt; | null</code> \{#operation-ocr_v1_ocr_post+request+pages\}
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-ocr_v1_ocr_post+200+application-json\}
 
 Successful Response
 
@@ -174,85 +174,85 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### document\_annotation: `string | null`
+#### document\_annotation: <code>string | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+document_annotation\}
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+200+application-json+model\}
 
 The model used to generate the OCR.
 
-#### pages \(required\): `array<OCRPageObject>`
+#### pages \(required\): <code>array&lt;OCRPageObject&gt;</code> \{#operation-ocr_v1_ocr_post+200+application-json+pages\}
 
 List of OCR info for pages.
 
 <details >
 
-<summary>OCRPageObject Properties</summary>
+<summary>OCRPageObject</summary>
 
-##### dimensions \(required\): `OCRPageDimensions | null`
+##### dimensions \(required\): <code>OCRPageDimensions | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+dimensions\}
 
 <details >
 
-<summary>OCRPageDimensions Properties</summary>
+<summary>OCRPageDimensions</summary>
 
-##### dpi \(required\): `integer`
+##### dpi \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+dpi\}
 
 Dots per inch of the page-image
 
-##### height \(required\): `integer`
+##### height \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+height\}
 
 Height of the image in pixels
 
-##### width \(required\): `integer`
+##### width \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+width\}
 
 Width of the image in pixels
 
 </details>
 
-##### images \(required\): `array<OCRImageObject>`
+##### images \(required\): <code>array&lt;OCRImageObject&gt;</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+images\}
 
 List of all extracted images in the page
 
 <details >
 
-<summary>OCRImageObject Properties</summary>
+<summary>OCRImageObject</summary>
 
-##### bottom\_right\_x \(required\): `integer | null`
+##### bottom\_right\_x \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_x\}
 
-##### bottom\_right\_y \(required\): `integer | null`
+##### bottom\_right\_y \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_y\}
 
-##### id \(required\): `string`
+##### id \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+id\}
 
 Image ID for extracted image in a page
 
-##### image\_annotation: `string | null`
+##### image\_annotation: <code>string | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_annotation\}
 
-##### image\_base64: `string | null`
+##### image\_base64: <code>string | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_base64\}
 
-##### top\_left\_x \(required\): `integer | null`
+##### top\_left\_x \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_x\}
 
-##### top\_left\_y \(required\): `integer | null`
+##### top\_left\_y \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_y\}
 
 </details>
 
-##### index \(required\): `integer`
+##### index \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+index\}
 
 The page index in a pdf document starting from 0
 
-##### markdown \(required\): `string`
+##### markdown \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+markdown\}
 
 The markdown string response of the page
 
 </details>
 
-#### usage\_info \(required\): `OCRUsageInfo`
+#### usage\_info \(required\): <code>OCRUsageInfo</code> \{#operation-ocr_v1_ocr_post+200+application-json+usage_info\}
 
 <details >
 
-<summary>OCRUsageInfo Properties</summary>
+<summary>OCRUsageInfo</summary>
 
-##### doc\_size\_bytes: `integer | null`
+##### doc\_size\_bytes: <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+doc_size_bytes\}
 
-##### pages\_processed \(required\): `integer`
+##### pages\_processed \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+pages_processed\}
 
 Number of pages processed
 
@@ -260,7 +260,7 @@ Number of pages processed
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-ocr_v1_ocr_post+422+application-json\}
 
 Validation Error
 
@@ -268,27 +268,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-ocr_v1_ocr_post+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-ocr_v1_ocr_post+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
+##### type \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+type\}
 
 </details>
 

@@ -15,23 +15,23 @@ import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx
 
 # agents
 
-## POST /v1/agents/completions
+## POST /v1/agents/completions \{#operation-agents_completion_v1_agents_completions_post\}
 
 Agents Completion
 
-### Security
+### Security \{#operation-agents_completion_v1_agents_completions_post+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-agents_completion_v1_agents_completions_post+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -57,23 +57,23 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-agents_completion_v1_agents_completions_post+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### agent\_id \(required\): `string`
+#### agent\_id \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+agent_id\}
 
 The ID of the agent to use for this completion.
 
-#### frequency\_penalty: `number`
+#### frequency\_penalty: <code>number</code> \{#operation-agents_completion_v1_agents_completions_post+request+frequency_penalty\}
 
 frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.
 
-#### max\_tokens: `integer | null`
+#### max\_tokens: <code>integer | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+max_tokens\}
 
-#### messages \(required\)
+#### messages \(required\) \{#operation-agents_completion_v1_agents_completions_post+request+messages\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -92,23 +92,23 @@ The prompt(s) to generate completions for, encoded as a list of dict with role a
 
 <details >
 
-<summary>SystemMessage Properties</summary>
+<summary>SystemMessage</summary>
 
-##### content \(required\): `string | array<TextChunk>`
+##### content \(required\): <code>string | array&lt;TextChunk&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+content\}
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
 </details>
 
-##### role: `"system"`
+##### role: <code>"system"</code> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+role\}
 
 _Default Value:_ `"system"`
 
@@ -116,9 +116,9 @@ _Default Value:_ `"system"`
 
 <details >
 
-<summary>UserMessage Properties</summary>
+<summary>UserMessage</summary>
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -137,11 +137,11 @@ _Default Value:_ `"system"`
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -149,9 +149,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -159,7 +159,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -167,13 +167,13 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -181,17 +181,17 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ReferenceChunk Properties</summary>
+<summary>ReferenceChunk</summary>
 
-##### reference\_ids \(required\): `array<integer>`
+##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ReferenceChunk+reference_ids\}
 
-##### type: `"reference"`
+##### type: <code>"reference"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
 </details>
 
-##### role: `"user"`
+##### role: <code>"user"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+role\}
 
 _Default Value:_ `"user"`
 
@@ -199,9 +199,9 @@ _Default Value:_ `"user"`
 
 <details >
 
-<summary>AssistantMessage Properties</summary>
+<summary>AssistantMessage</summary>
 
-##### content
+##### content \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -220,11 +220,11 @@ _Default Value:_ `"user"`
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -232,9 +232,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -242,7 +242,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -250,13 +250,13 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -264,33 +264,33 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ReferenceChunk Properties</summary>
+<summary>ReferenceChunk</summary>
 
-##### reference\_ids \(required\): `array<integer>`
+##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ReferenceChunk+reference_ids\}
 
-##### type: `"reference"`
+##### type: <code>"reference"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
 </details>
 
-##### prefix: `boolean`
+##### prefix: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+prefix\}
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+role\}
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: `array<ToolCall> | null`
+##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+tool_calls\}
 
 <details >
 
-<summary>ToolCall Properties</summary>
+<summary>ToolCall</summary>
 
-##### function \(required\): `FunctionCall`
+##### function \(required\): <code>FunctionCall</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+function\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View FunctionCall Details" title="FunctionCall Details">
@@ -298,15 +298,15 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+id\}
 
 _Default Value:_ `"null"`
 
-##### index: `integer`
+##### index: <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+index\}
 
 _Default Value:_ `0`
 
-##### type: `"function"`
+##### type: <code>"function"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+type\}
 
 </details>
 
@@ -314,9 +314,9 @@ _Default Value:_ `0`
 
 <details >
 
-<summary>ToolMessage Properties</summary>
+<summary>ToolMessage</summary>
 
-##### content \(required\)
+##### content \(required\) \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -335,11 +335,11 @@ _Default Value:_ `0`
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -347,9 +347,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -357,7 +357,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -365,13 +365,13 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -379,143 +379,143 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ReferenceChunk Properties</summary>
+<summary>ReferenceChunk</summary>
 
-##### reference\_ids \(required\): `array<integer>`
+##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ReferenceChunk+reference_ids\}
 
-##### type: `"reference"`
+##### type: <code>"reference"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
 </details>
 
-##### name: `string | null`
+##### name: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+name\}
 
-##### role: `"tool"`
+##### role: <code>"tool"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+role\}
 
 _Default Value:_ `"tool"`
 
-##### tool\_call\_id: `string | null`
+##### tool\_call\_id: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+tool_call_id\}
 
 </details>
 
-#### n: `integer | null`
+#### n: <code>integer | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+n\}
 
-#### parallel\_tool\_calls: `boolean`
+#### parallel\_tool\_calls: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+parallel_tool_calls\}
 
-#### prediction: `Prediction | null`
+#### prediction: <code>Prediction | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+prediction\}
 
 <details >
 
-<summary>Prediction Properties</summary>
+<summary>Prediction</summary>
 
-##### content: `string`
+##### content: <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: `string`
+##### type: <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+Prediction+type\}
 
 _Default Value:_ `"content"`
 
 </details>
 
-#### presence\_penalty: `number`
+#### presence\_penalty: <code>number</code> \{#operation-agents_completion_v1_agents_completions_post+request+presence_penalty\}
 
 presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.
 
-#### prompt\_mode: `"reasoning"`
+#### prompt\_mode: <code>"reasoning"</code> \{#operation-agents_completion_v1_agents_completions_post+request+prompt_mode\}
 
-#### random\_seed: `integer | null`
+#### random\_seed: <code>integer | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+random_seed\}
 
-#### response\_format: `ResponseFormat | null`
-
-<details >
-
-<summary>ResponseFormat Properties</summary>
-
-##### json\_schema: `JsonSchema | null`
+#### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+response_format\}
 
 <details >
 
-<summary>JsonSchema Properties</summary>
+<summary>ResponseFormat</summary>
 
-##### description: `string | null`
+##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+json_schema\}
 
-##### name \(required\): `string`
+<details >
 
-##### schema\_definition \(required\): `map<any>`
+<summary>JsonSchema</summary>
 
-##### strict: `boolean`
+##### description: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+description\}
+
+##### name \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+name\}
+
+##### schema\_definition \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+schema_definition\}
+
+##### strict: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+strict\}
 
 </details>
 
-##### type: `"text" | "json_object" | "json_schema"`
+##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
 </details>
 
-#### stop: `string | array<string>`
+#### stop: <code>string | array&lt;string&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+stop\}
 
 Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
 
-#### stream: `boolean`
+#### stream: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+stream\}
 
 Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
 
 _Default Value:_ `false`
 
-#### tool\_choice: `ToolChoice | "auto" | "none" | "any" | "required"`
+#### tool\_choice: <code>ToolChoice | "auto" | "none" | "any" | "required"</code> \{#operation-agents_completion_v1_agents_completions_post+request+tool_choice\}
 
 <details >
 
-<summary>ToolChoice Properties</summary>
+<summary>ToolChoice</summary>
 
-##### function \(required\): `FunctionName`
+##### function \(required\): <code>FunctionName</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+function\}
 
 this restriction of `Function` is used to select a specific function to call
 
 <details >
 
-<summary>FunctionName Properties</summary>
+<summary>FunctionName</summary>
 
-##### name \(required\): `string`
-
-</details>
-
-##### type: `"function"`
+##### name \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+FunctionName+name\}
 
 </details>
 
-#### tools: `array<Tool> | null`
+##### type: <code>"function"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+type\}
+
+</details>
+
+#### tools: <code>array&lt;Tool&gt; | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+tools\}
 
 <details >
 
-<summary>Tool Properties</summary>
+<summary>Tool</summary>
 
-##### function \(required\): `Function`
+##### function \(required\): <code>Function</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+function\}
 
 <details >
 
-<summary>Function Properties</summary>
+<summary>Function</summary>
 
-##### description: `string`
+##### description: <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+description\}
 
-##### name \(required\): `string`
+##### name \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+name\}
 
-##### parameters \(required\): `map<any>`
+##### parameters \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+parameters\}
 
-##### strict: `boolean`
-
-</details>
-
-##### type: `"function"`
+##### strict: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+strict\}
 
 </details>
 
+##### type: <code>"function"</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+type\}
+
 </details>
 
-### Response: 200 \(application/json\)
+</details>
+
+### Response: 200 \(application/json\) \{#operation-agents_completion_v1_agents_completions_post+200+application-json\}
 
 Successful Response
 
@@ -523,13 +523,13 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### choices \(required\): `array<ChatCompletionChoice>`
+#### choices \(required\): <code>array&lt;ChatCompletionChoice&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+choices\}
 
 <details >
 
-<summary>ChatCompletionChoice Properties</summary>
+<summary>ChatCompletionChoice</summary>
 
-##### finish\_reason \(required\)
+##### finish\_reason \(required\) \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+finish_reason\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -550,7 +550,7 @@ _Example:_
 stop
 ```
 
-##### index \(required\): `integer`
+##### index \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+index\}
 
 _Example:_
 
@@ -558,13 +558,13 @@ _Example:_
 0
 ```
 
-##### message \(required\): `AssistantMessage`
+##### message \(required\): <code>AssistantMessage</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+message\}
 
 <details >
 
-<summary>AssistantMessage Properties</summary>
+<summary>AssistantMessage</summary>
 
-##### content
+##### content \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -605,17 +605,17 @@ _Example:_
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### prefix: `boolean`
+##### prefix: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+prefix\}
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+role\}
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: `array<ToolCall> | null`
+##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ToolCall Details" title="ToolCall Details">
@@ -627,7 +627,7 @@ _Default Value:_ `"assistant"`
 
 </details>
 
-#### created \(required\): `integer`
+#### created \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+created\}
 
 _Example:_
 
@@ -635,7 +635,7 @@ _Example:_
 1702256327
 ```
 
-#### id \(required\): `string`
+#### id \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+id\}
 
 _Example:_
 
@@ -643,7 +643,7 @@ _Example:_
 cmpl-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+model\}
 
 _Example:_
 
@@ -651,7 +651,7 @@ _Example:_
 mistral-small-latest
 ```
 
-#### object \(required\): `string`
+#### object \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+object\}
 
 _Example:_
 
@@ -659,13 +659,13 @@ _Example:_
 chat.completion
 ```
 
-#### usage \(required\): `UsageInfo`
+#### usage \(required\): <code>UsageInfo</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+usage\}
 
 <details >
 
-<summary>UsageInfo Properties</summary>
+<summary>UsageInfo</summary>
 
-##### completion\_tokens \(required\): `integer`
+##### completion\_tokens \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo+completion_tokens\}
 
 _Example:_
 
@@ -673,7 +673,7 @@ _Example:_
 34
 ```
 
-##### prompt\_tokens \(required\): `integer`
+##### prompt\_tokens \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo+prompt_tokens\}
 
 _Example:_
 
@@ -681,7 +681,7 @@ _Example:_
 16
 ```
 
-##### total\_tokens \(required\): `integer`
+##### total\_tokens \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo+total_tokens\}
 
 _Example:_
 
@@ -693,7 +693,7 @@ _Example:_
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-agents_completion_v1_agents_completions_post+422+application-json\}
 
 Validation Error
 
@@ -701,27 +701,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
+##### type \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+type\}
 
 </details>
 

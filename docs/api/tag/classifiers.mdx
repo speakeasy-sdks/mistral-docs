@@ -15,23 +15,23 @@ import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx
 
 # classifiers
 
-## POST /v1/moderations
+## POST /v1/moderations \{#operation-moderations_v1_moderations_post\}
 
 Moderations
 
-### Security
+### Security \{#operation-moderations_v1_moderations_post+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-moderations_v1_moderations_post+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -55,23 +55,23 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-moderations_v1_moderations_post+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### inputs \(required\): `string | array<string>`
+#### inputs \(required\): <code>string | array&lt;string&gt;</code> \{#operation-moderations_v1_moderations_post+request+inputs\}
 
 Text to classify.
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+request+model\}
 
 ID of the model to use.
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-moderations_v1_moderations_post+200+application-json\}
 
 Successful Response
 
@@ -79,7 +79,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### id \(required\): `string`
+#### id \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+200+application-json+id\}
 
 _Example:_
 
@@ -87,19 +87,19 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+200+application-json+model\}
 
-#### results \(required\): `array<ModerationObject>`
+#### results \(required\): <code>array&lt;ModerationObject&gt;</code> \{#operation-moderations_v1_moderations_post+200+application-json+results\}
 
 <details >
 
-<summary>ModerationObject Properties</summary>
+<summary>ModerationObject</summary>
 
-##### categories: `map<boolean>`
+##### categories: <code>map&lt;boolean&gt;</code> \{#operation-moderations_v1_moderations_post+200+application-json+ModerationObject+categories\}
 
 Moderation result thresholds
 
-##### category\_scores: `map<number>`
+##### category\_scores: <code>map&lt;number&gt;</code> \{#operation-moderations_v1_moderations_post+200+application-json+ModerationObject+category_scores\}
 
 Moderation result
 
@@ -107,7 +107,7 @@ Moderation result
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-moderations_v1_moderations_post+422+application-json\}
 
 Validation Error
 
@@ -115,49 +115,49 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-moderations_v1_moderations_post+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-moderations_v1_moderations_post+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
-
-</details>
+##### type \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+type\}
 
 </details>
 
-## POST /v1/chat/moderations
+</details>
+
+## POST /v1/chat/moderations \{#operation-chat_moderations_v1_chat_moderations_post\}
 
 Chat Moderations
 
-### Security
+### Security \{#operation-chat_moderations_v1_chat_moderations_post+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-chat_moderations_v1_chat_moderations_post+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -200,13 +200,13 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### inputs \(required\)
+#### inputs \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -218,7 +218,9 @@ run();`}
 }}>
 <code>
 | array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
-| array&lt;array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;&gt;
+| array&lt;
+ array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
+&gt;
 </code>
 </pre>
 
@@ -226,23 +228,23 @@ Chat to classify
 
 <details >
 
-<summary>SystemMessage Properties</summary>
+<summary>SystemMessage</summary>
 
-##### content \(required\): `string | array<TextChunk>`
+##### content \(required\): <code>string | array&lt;TextChunk&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+content\}
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
 </details>
 
-##### role: `"system"`
+##### role: <code>"system"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+role\}
 
 _Default Value:_ `"system"`
 
@@ -250,9 +252,9 @@ _Default Value:_ `"system"`
 
 <details >
 
-<summary>UserMessage Properties</summary>
+<summary>UserMessage</summary>
 
-##### content \(required\)
+##### content \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -271,11 +273,11 @@ _Default Value:_ `"system"`
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -283,9 +285,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -293,7 +295,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -301,13 +303,13 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -315,17 +317,17 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ReferenceChunk Properties</summary>
+<summary>ReferenceChunk</summary>
 
-##### reference\_ids \(required\): `array<integer>`
+##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk+reference_ids\}
 
-##### type: `"reference"`
+##### type: <code>"reference"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
 </details>
 
-##### role: `"user"`
+##### role: <code>"user"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+role\}
 
 _Default Value:_ `"user"`
 
@@ -333,9 +335,9 @@ _Default Value:_ `"user"`
 
 <details >
 
-<summary>AssistantMessage Properties</summary>
+<summary>AssistantMessage</summary>
 
-##### content
+##### content \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -354,11 +356,11 @@ _Default Value:_ `"user"`
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -366,9 +368,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -376,7 +378,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -384,13 +386,13 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -398,33 +400,33 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ReferenceChunk Properties</summary>
+<summary>ReferenceChunk</summary>
 
-##### reference\_ids \(required\): `array<integer>`
+##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk+reference_ids\}
 
-##### type: `"reference"`
+##### type: <code>"reference"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
 </details>
 
-##### prefix: `boolean`
+##### prefix: <code>boolean</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+prefix\}
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+role\}
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: `array<ToolCall> | null`
+##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+tool_calls\}
 
 <details >
 
-<summary>ToolCall Properties</summary>
+<summary>ToolCall</summary>
 
-##### function \(required\): `FunctionCall`
+##### function \(required\): <code>FunctionCall</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+function\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View FunctionCall Details" title="FunctionCall Details">
@@ -432,15 +434,15 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### id: `string`
+##### id: <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+id\}
 
 _Default Value:_ `"null"`
 
-##### index: `integer`
+##### index: <code>integer</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+index\}
 
 _Default Value:_ `0`
 
-##### type: `"function"`
+##### type: <code>"function"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+type\}
 
 </details>
 
@@ -448,9 +450,9 @@ _Default Value:_ `0`
 
 <details >
 
-<summary>ToolMessage Properties</summary>
+<summary>ToolMessage</summary>
 
-##### content \(required\)
+##### content \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -469,11 +471,11 @@ _Default Value:_ `0`
 
 <details >
 
-<summary>TextChunk Properties</summary>
+<summary>TextChunk</summary>
 
-##### text \(required\): `string`
+##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk+text\}
 
-##### type: `"text"`
+##### type: <code>"text"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
@@ -481,9 +483,9 @@ _Default Value:_ `"text"`
 
 <details >
 
-<summary>ImageURLChunk Properties</summary>
+<summary>ImageURLChunk</summary>
 
-##### image\_url \(required\): `ImageURL | string`
+##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -491,7 +493,7 @@ _Default Value:_ `"text"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### type: `"image_url"`
+##### type: <code>"image_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
@@ -499,13 +501,13 @@ _Default Value:_ `"image_url"`
 
 <details >
 
-<summary>DocumentURLChunk Properties</summary>
+<summary>DocumentURLChunk</summary>
 
-##### document\_name: `string | null`
+##### document\_name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+document_name\}
 
-##### document\_url \(required\): `string`
+##### document\_url \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+document_url\}
 
-##### type: `"document_url"`
+##### type: <code>"document_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
 
@@ -513,31 +515,31 @@ _Default Value:_ `"document_url"`
 
 <details >
 
-<summary>ReferenceChunk Properties</summary>
+<summary>ReferenceChunk</summary>
 
-##### reference\_ids \(required\): `array<integer>`
+##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk+reference_ids\}
 
-##### type: `"reference"`
+##### type: <code>"reference"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
 </details>
 
-##### name: `string | null`
+##### name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+name\}
 
-##### role: `"tool"`
+##### role: <code>"tool"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+role\}
 
 _Default Value:_ `"tool"`
 
-##### tool\_call\_id: `string | null`
+##### tool\_call\_id: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+tool_call_id\}
 
 </details>
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+model\}
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json\}
 
 Successful Response
 
@@ -545,7 +547,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### id \(required\): `string`
+#### id \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+id\}
 
 _Example:_
 
@@ -553,19 +555,19 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+model\}
 
-#### results \(required\): `array<ModerationObject>`
+#### results \(required\): <code>array&lt;ModerationObject&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+results\}
 
 <details >
 
-<summary>ModerationObject Properties</summary>
+<summary>ModerationObject</summary>
 
-##### categories: `map<boolean>`
+##### categories: <code>map&lt;boolean&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject+categories\}
 
 Moderation result thresholds
 
-##### category\_scores: `map<number>`
+##### category\_scores: <code>map&lt;number&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject+category_scores\}
 
 Moderation result
 
@@ -573,7 +575,7 @@ Moderation result
 
 </details>
 
-### Response: 422 \(application/json\)
+### Response: 422 \(application/json\) \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json\}
 
 Validation Error
 
@@ -581,49 +583,49 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
-
-</details>
+##### type \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+type\}
 
 </details>
 
-## POST /v1/classifications
+</details>
+
+## POST /v1/classifications \{#operation-classifications_v1_classifications_post\}
 
 Classifications
 
-### Security
+### Security \{#operation-classifications_v1_classifications_post+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-classifications_v1_classifications_post+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -646,23 +648,23 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-classifications_v1_classifications_post+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### inputs \(required\): `string | array<string>`
+#### inputs \(required\): <code>string | array&lt;string&gt;</code> \{#operation-classifications_v1_classifications_post+request+inputs\}
 
 Text to classify.
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+request+model\}
 
 ID of the model to use.
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-classifications_v1_classifications_post+200+application-json\}
 
 Successful Response
 
@@ -670,7 +672,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### id \(required\): `string`
+#### id \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+200+application-json+id\}
 
 _Example:_
 
@@ -678,21 +680,21 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+200+application-json+model\}
 
-#### results \(required\): `array<map<ClassificationTargetResult>>`
+#### results \(required\): <code>array&lt;map&lt;ClassificationTargetResult&gt;&gt;</code> \{#operation-classifications_v1_classifications_post+200+application-json+results\}
 
 <details >
 
-<summary>ClassificationTargetResult Properties</summary>
+<summary>ClassificationTargetResult</summary>
 
-##### scores \(required\): `map<number>`
-
-</details>
+##### scores \(required\): <code>map&lt;number&gt;</code> \{#operation-classifications_v1_classifications_post+200+application-json+ClassificationTargetResult+scores\}
 
 </details>
 
-### Response: 422 \(application/json\)
+</details>
+
+### Response: 422 \(application/json\) \{#operation-classifications_v1_classifications_post+422+application-json\}
 
 Validation Error
 
@@ -700,49 +702,49 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-classifications_v1_classifications_post+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-classifications_v1_classifications_post+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
-
-</details>
+##### type \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+type\}
 
 </details>
 
-## POST /v1/chat/classifications
+</details>
+
+## POST /v1/chat/classifications \{#operation-chat_classifications_v1_chat_classifications_post\}
 
 Chat Classifications
 
-### Security
+### Security \{#operation-chat_classifications_v1_chat_classifications_post+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-chat_classifications_v1_chat_classifications_post+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -788,21 +790,21 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### inputs \(required\): `inputs | array<InstructRequest>`
+#### inputs \(required\): <code>inputs | array&lt;InstructRequest&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs\}
 
 Chat to classify
 
 <details >
 
-<summary>inputs Properties</summary>
+<summary>inputs</summary>
 
-##### messages \(required\): `array<inputs>`
+##### messages \(required\): <code>array&lt;inputs&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+messages\}
 
 `inputs` is circular. See previous description for details.
 
@@ -810,9 +812,9 @@ Chat to classify
 
 <details >
 
-<summary>InstructRequest Properties</summary>
+<summary>InstructRequest</summary>
 
-##### messages \(required\)
+##### messages \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+messages\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -829,9 +831,9 @@ array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
 
 <details >
 
-<summary>SystemMessage Properties</summary>
+<summary>SystemMessage</summary>
 
-##### content \(required\): `string | array<TextChunk>`
+##### content \(required\): <code>string | array&lt;TextChunk&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+content\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View TextChunk Details" title="TextChunk Details">
@@ -839,7 +841,7 @@ array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### role: `"system"`
+##### role: <code>"system"</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+role\}
 
 _Default Value:_ `"system"`
 
@@ -847,9 +849,9 @@ _Default Value:_ `"system"`
 
 <details >
 
-<summary>UserMessage Properties</summary>
+<summary>UserMessage</summary>
 
-##### content \(required\)
+##### content \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -890,7 +892,7 @@ _Default Value:_ `"system"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### role: `"user"`
+##### role: <code>"user"</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+role\}
 
 _Default Value:_ `"user"`
 
@@ -898,9 +900,9 @@ _Default Value:_ `"user"`
 
 <details >
 
-<summary>AssistantMessage Properties</summary>
+<summary>AssistantMessage</summary>
 
-##### content
+##### content \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -941,17 +943,17 @@ _Default Value:_ `"user"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### prefix: `boolean`
+##### prefix: <code>boolean</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+prefix\}
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-##### role: `"assistant"`
+##### role: <code>"assistant"</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+role\}
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: `array<ToolCall> | null`
+##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+tool_calls\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ToolCall Details" title="ToolCall Details">
@@ -963,9 +965,9 @@ _Default Value:_ `"assistant"`
 
 <details >
 
-<summary>ToolMessage Properties</summary>
+<summary>ToolMessage</summary>
 
-##### content \(required\)
+##### content \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+content\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -1006,23 +1008,23 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-##### name: `string | null`
+##### name: <code>string | null</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+name\}
 
-##### role: `"tool"`
+##### role: <code>"tool"</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+role\}
 
 _Default Value:_ `"tool"`
 
-##### tool\_call\_id: `string | null`
+##### tool\_call\_id: <code>string | null</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+tool_call_id\}
 
 </details>
 
 </details>
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+model\}
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json\}
 
 Successful Response
 
@@ -1030,7 +1032,7 @@ Successful Response
 
 <summary>Response Body</summary>
 
-#### id \(required\): `string`
+#### id \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+id\}
 
 _Example:_
 
@@ -1038,21 +1040,21 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+model\}
 
-#### results \(required\): `array<map<ClassificationTargetResult>>`
+#### results \(required\): <code>array&lt;map&lt;ClassificationTargetResult&gt;&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+results\}
 
 <details >
 
-<summary>ClassificationTargetResult Properties</summary>
+<summary>ClassificationTargetResult</summary>
 
-##### scores \(required\): `map<number>`
-
-</details>
+##### scores \(required\): <code>map&lt;number&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+ClassificationTargetResult+scores\}
 
 </details>
 
-### Response: 422 \(application/json\)
+</details>
+
+### Response: 422 \(application/json\) \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json\}
 
 Validation Error
 
@@ -1060,27 +1062,27 @@ Validation Error
 
 <summary>Response Body</summary>
 
-#### HttpMeta \(required\): `Security`
+#### HttpMeta \(required\): <code>Security</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+HttpMeta\}
 
 <details >
 
-<summary>Security Properties</summary>
+<summary>Security</summary>
 
-##### ApiKey \(required\): `string`
+##### ApiKey \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+Security+ApiKey\}
 
 </details>
 
-#### detail: `array<ValidationError>`
+#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+detail\}
 
 <details >
 
-<summary>ValidationError Properties</summary>
+<summary>ValidationError</summary>
 
-##### loc \(required\): `array<string | integer>`
+##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+loc\}
 
-##### msg \(required\): `string`
+##### msg \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+msg\}
 
-##### type \(required\): `string`
+##### type \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+type\}
 
 </details>
 

@@ -8,25 +8,25 @@ import { TryItNow } from "@speakeasy-api/docs-md";
 
 # batch/jobs
 
-## GET /v1/batch/jobs
+## GET /v1/batch/jobs \{#operation-jobs_api_routes_batch_get_batch_jobs\}
 
 _Get Batch Jobs_
 
 Get a list of batch jobs for your organization and user.
 
-### Security
+### Security \{#operation-jobs_api_routes_batch_get_batch_jobs+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-jobs_api_routes_batch_get_batch_jobs+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -44,7 +44,7 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json\}
 
 OK
 
@@ -52,55 +52,55 @@ OK
 
 <summary>Response Body</summary>
 
-#### data: `array<BatchJobOut>`
+#### data: <code>array&lt;BatchJobOut&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+data\}
 
 <details >
 
-<summary>BatchJobOut Properties</summary>
+<summary>BatchJobOut</summary>
 
-##### completed\_at: `integer | null`
+##### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_at\}
 
-##### completed\_requests \(required\): `integer`
+##### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_requests\}
 
-##### created\_at \(required\): `integer`
+##### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+created_at\}
 
-##### endpoint \(required\): `string`
+##### endpoint \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+endpoint\}
 
-##### error\_file: `string | null`
+##### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+error_file\}
 
-##### errors \(required\): `array<BatchError>`
+##### errors \(required\): <code>array&lt;BatchError&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+errors\}
 
 <details >
 
-<summary>BatchError Properties</summary>
+<summary>BatchError</summary>
 
-##### count: `integer`
+##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+count\}
 
 _Default Value:_ `1`
 
-##### message \(required\): `string`
+##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+message\}
 
 </details>
 
-##### failed\_requests \(required\): `integer`
+##### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+failed_requests\}
 
-##### id \(required\): `string`
+##### id \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+id\}
 
-##### input\_files \(required\): `array<string>`
+##### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+input_files\}
 
-##### metadata: `map<any> | null`
+##### metadata: <code>map&lt;any&gt; | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+metadata\}
 
-##### model \(required\): `string`
+##### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+model\}
 
-##### object: `"batch"`
+##### object: <code>"batch"</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+object\}
 
 _Default Value:_ `"batch"`
 
-##### output\_file: `string | null`
+##### output\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+output_file\}
 
-##### started\_at: `integer | null`
+##### started\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+started_at\}
 
-##### status \(required\)
+##### status \(required\) \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+status\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -121,39 +121,39 @@ _Default Value:_ `"batch"`
 </code>
 </pre>
 
-##### succeeded\_requests \(required\): `integer`
+##### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+succeeded_requests\}
 
-##### total\_requests \(required\): `integer`
+##### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+total_requests\}
 
 </details>
 
-#### object: `"list"`
+#### object: <code>"list"</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+object\}
 
 _Default Value:_ `"list"`
 
-#### total \(required\): `integer`
+#### total \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+total\}
 
 </details>
 
-## POST /v1/batch/jobs
+## POST /v1/batch/jobs \{#operation-jobs_api_routes_batch_create_batch_job\}
 
 _Create Batch Job_
 
 Create a new batch job, it will be queued for processing.
 
-### Security
+### Security \{#operation-jobs_api_routes_batch_create_batch_job+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+security+ApiKey\}
 
 </details>
 
-### Try it Now
+### Try it Now \{#operation-jobs_api_routes_batch_create_batch_job+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -177,13 +177,13 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\)
+### Request Body \(required\) \{#operation-jobs_api_routes_batch_create_batch_job+request\}
 
 <details open>
 
 <summary>Request Body</summary>
 
-#### endpoint \(required\)
+#### endpoint \(required\) \{#operation-jobs_api_routes_batch_create_batch_job+request+endpoint\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -202,19 +202,19 @@ run();`}
 </code>
 </pre>
 
-#### input\_files \(required\): `array<string>`
+#### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_create_batch_job+request+input_files\}
 
-#### metadata: `map<string> | null`
+#### metadata: <code>map&lt;string&gt; | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+request+metadata\}
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+request+model\}
 
-#### timeout\_hours: `integer`
+#### timeout\_hours: <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+request+timeout_hours\}
 
 _Default Value:_ `24`
 
 </details>
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json\}
 
 OK
 
@@ -222,49 +222,49 @@ OK
 
 <summary>Response Body</summary>
 
-#### completed\_at: `integer | null`
+#### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_at\}
 
-#### completed\_requests \(required\): `integer`
+#### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_requests\}
 
-#### created\_at \(required\): `integer`
+#### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+created_at\}
 
-#### endpoint \(required\): `string`
+#### endpoint \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+endpoint\}
 
-#### error\_file: `string | null`
+#### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+error_file\}
 
-#### errors \(required\): `array<BatchError>`
+#### errors \(required\): <code>array&lt;BatchError&gt;</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+errors\}
 
 <details >
 
-<summary>BatchError Properties</summary>
+<summary>BatchError</summary>
 
-##### count: `integer`
+##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+count\}
 
 _Default Value:_ `1`
 
-##### message \(required\): `string`
+##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+message\}
 
 </details>
 
-#### failed\_requests \(required\): `integer`
+#### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+failed_requests\}
 
-#### id \(required\): `string`
+#### id \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+id\}
 
-#### input\_files \(required\): `array<string>`
+#### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+input_files\}
 
-#### metadata: `map<any> | null`
+#### metadata: <code>map&lt;any&gt; | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+metadata\}
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+model\}
 
-#### object: `"batch"`
+#### object: <code>"batch"</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+object\}
 
 _Default Value:_ `"batch"`
 
-#### output\_file: `string | null`
+#### output\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+output_file\}
 
-#### started\_at: `integer | null`
+#### started\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+started_at\}
 
-#### status \(required\)
+#### status \(required\) \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+status\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -285,37 +285,37 @@ _Default Value:_ `"batch"`
 </code>
 </pre>
 
-#### succeeded\_requests \(required\): `integer`
+#### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+succeeded_requests\}
 
-#### total\_requests \(required\): `integer`
+#### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+total_requests\}
 
 </details>
 
-## GET /v1/batch/jobs/\{job\_id\}
+## GET /v1/batch/jobs/\{job\_id\} \{#operation-jobs_api_routes_batch_get_batch_job\}
 
 _Get Batch Job_
 
 Get a batch job details by its UUID.
 
-### Security
+### Security \{#operation-jobs_api_routes_batch_get_batch_job+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+security+ApiKey\}
 
 </details>
 
-### Parameters
+### Parameters \{#operation-jobs_api_routes_batch_get_batch_job+parameters\}
 
-#### job\_id \(required\)
+#### job\_id \(required\) \{#operation-jobs_api_routes_batch_get_batch_job+parameters+job_id\}
 
-#### Security \(required\): `string`
+#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+parameters+Security\}
 
-### Try it Now
+### Try it Now \{#operation-jobs_api_routes_batch_get_batch_job+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -335,7 +335,7 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json\}
 
 OK
 
@@ -343,49 +343,49 @@ OK
 
 <summary>Response Body</summary>
 
-#### completed\_at: `integer | null`
+#### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_at\}
 
-#### completed\_requests \(required\): `integer`
+#### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_requests\}
 
-#### created\_at \(required\): `integer`
+#### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+created_at\}
 
-#### endpoint \(required\): `string`
+#### endpoint \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+endpoint\}
 
-#### error\_file: `string | null`
+#### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+error_file\}
 
-#### errors \(required\): `array<BatchError>`
+#### errors \(required\): <code>array&lt;BatchError&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+errors\}
 
 <details >
 
-<summary>BatchError Properties</summary>
+<summary>BatchError</summary>
 
-##### count: `integer`
+##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+count\}
 
 _Default Value:_ `1`
 
-##### message \(required\): `string`
+##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+message\}
 
 </details>
 
-#### failed\_requests \(required\): `integer`
+#### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+failed_requests\}
 
-#### id \(required\): `string`
+#### id \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+id\}
 
-#### input\_files \(required\): `array<string>`
+#### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+input_files\}
 
-#### metadata: `map<any> | null`
+#### metadata: <code>map&lt;any&gt; | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+metadata\}
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+model\}
 
-#### object: `"batch"`
+#### object: <code>"batch"</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+object\}
 
 _Default Value:_ `"batch"`
 
-#### output\_file: `string | null`
+#### output\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+output_file\}
 
-#### started\_at: `integer | null`
+#### started\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+started_at\}
 
-#### status \(required\)
+#### status \(required\) \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+status\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -406,37 +406,37 @@ _Default Value:_ `"batch"`
 </code>
 </pre>
 
-#### succeeded\_requests \(required\): `integer`
+#### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+succeeded_requests\}
 
-#### total\_requests \(required\): `integer`
+#### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+total_requests\}
 
 </details>
 
-## POST /v1/batch/jobs/\{job\_id\}/cancel
+## POST /v1/batch/jobs/\{job\_id\}/cancel \{#operation-jobs_api_routes_batch_cancel_batch_job\}
 
 _Cancel Batch Job_
 
 Request the cancellation of a batch job.
 
-### Security
+### Security \{#operation-jobs_api_routes_batch_cancel_batch_job+security\}
 
 <details open>
 
 <summary>Security</summary>
 
-#### ApiKey \(required\): `string`
+#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+security+ApiKey\}
 
 </details>
 
-### Parameters
+### Parameters \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters\}
 
-#### job\_id \(required\)
+#### job\_id \(required\) \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+job_id\}
 
-#### Security \(required\): `string`
+#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+Security\}
 
-### Try it Now
+### Try it Now \{#operation-jobs_api_routes_batch_cancel_batch_job+try-it-now\}
 
-<TryItNow
+<TryItNow.Docusaurus
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -456,7 +456,7 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\)
+### Response: 200 \(application/json\) \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json\}
 
 OK
 
@@ -464,49 +464,49 @@ OK
 
 <summary>Response Body</summary>
 
-#### completed\_at: `integer | null`
+#### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_at\}
 
-#### completed\_requests \(required\): `integer`
+#### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_requests\}
 
-#### created\_at \(required\): `integer`
+#### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+created_at\}
 
-#### endpoint \(required\): `string`
+#### endpoint \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+endpoint\}
 
-#### error\_file: `string | null`
+#### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+error_file\}
 
-#### errors \(required\): `array<BatchError>`
+#### errors \(required\): <code>array&lt;BatchError&gt;</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+errors\}
 
 <details >
 
-<summary>BatchError Properties</summary>
+<summary>BatchError</summary>
 
-##### count: `integer`
+##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+count\}
 
 _Default Value:_ `1`
 
-##### message \(required\): `string`
+##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+message\}
 
 </details>
 
-#### failed\_requests \(required\): `integer`
+#### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+failed_requests\}
 
-#### id \(required\): `string`
+#### id \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+id\}
 
-#### input\_files \(required\): `array<string>`
+#### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+input_files\}
 
-#### metadata: `map<any> | null`
+#### metadata: <code>map&lt;any&gt; | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+metadata\}
 
-#### model \(required\): `string`
+#### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+model\}
 
-#### object: `"batch"`
+#### object: <code>"batch"</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+object\}
 
 _Default Value:_ `"batch"`
 
-#### output\_file: `string | null`
+#### output\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+output_file\}
 
-#### started\_at: `integer | null`
+#### started\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+started_at\}
 
-#### status \(required\)
+#### status \(required\) \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+status\}
 
 <pre style={{
   backgroundColor: "var(--ifm-code-background)",
@@ -527,8 +527,8 @@ _Default Value:_ `"batch"`
 </code>
 </pre>
 
-#### succeeded\_requests \(required\): `integer`
+#### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+succeeded_requests\}
 
-#### total\_requests \(required\): `integer`
+#### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+total_requests\}
 
 </details>
