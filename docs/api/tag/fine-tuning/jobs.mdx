@@ -3,7 +3,7 @@ sidebar_position: 2.9
 sidebar_label: fine-tuning/jobs
 ---
 
-import { TryItNow } from "@speakeasy-api/docs-md";
+import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
 
 
 # fine-tuning/jobs
@@ -16,13 +16,7 @@ Get a list of fine-tuning jobs for your organization and user.
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+try-it-now\}
 
@@ -48,15 +42,9 @@ run();`}
 
 OK
 
-<details open>
+#### data: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut">CompletionJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut">ClassifierJobOut</a>&gt;</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+data\}
 
-<summary>Response Body</summary>
-
-#### data: <code>array&lt;CompletionJobOut | ClassifierJobOut&gt;</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+data\}
-
-<details >
-
-<summary>CompletionJobOut</summary>
+<ExpandableSection.Docusaurus title="CompletionJobOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut">
 
 ##### auto\_start \(required\): <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+auto_start\}
 
@@ -66,11 +54,9 @@ The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
 ##### fine\_tuned\_model: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+fine_tuned_model\}
 
-##### hyperparameters \(required\): <code>CompletionTrainingParameters</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+hyperparameters\}
+##### hyperparameters \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters">CompletionTrainingParameters</a></code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+hyperparameters\}
 
-<details >
-
-<summary>CompletionTrainingParameters</summary>
+<ExpandableSection.Docusaurus title="CompletionTrainingParameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters">
 
 ##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+epochs\}
 
@@ -88,17 +74,15 @@ _Default Value:_ `0.0001`
 
 ##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+weight_decay\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+id\}
 
 The ID of the job.
 
-##### integrations: <code>array&lt;WandbIntegrationOut&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+integrations\}
+##### integrations: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+integrations\}
 
-<details >
-
-<summary>WandbIntegrationOut</summary>
+<ExpandableSection.Docusaurus title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">
 
 ##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+name\}
 
@@ -114,7 +98,7 @@ _Default Value:_ `"wandb"`
 
 ##### url: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+url\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### job\_type: <code>"completion"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+job_type\}
 
@@ -122,11 +106,9 @@ The type of job (`FT` for fine-tuning).
 
 _Default Value:_ `"completion"`
 
-##### metadata: <code>JobMetadataOut | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+metadata\}
+##### metadata: <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut">JobMetadataOut</a> | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+metadata\}
 
-<details >
-
-<summary>JobMetadataOut</summary>
+<ExpandableSection.Docusaurus title="JobMetadataOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut">
 
 ##### cost: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+cost\}
 
@@ -142,7 +124,7 @@ _Default Value:_ `"completion"`
 
 ##### train\_tokens\_per\_step: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+train_tokens_per_step\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### model \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+model\}
 
@@ -158,11 +140,9 @@ The object type of the fine-tuning job.
 
 _Default Value:_ `"job"`
 
-##### repositories: <code>array&lt;WandbIntegrationOut&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+repositories\}
+##### repositories: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+repositories\}
 
-<details >
-
-<summary>WandbIntegrationOut</summary>
+<ExpandableSection.Docusaurus title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">
 
 ##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+name\}
 
@@ -178,7 +158,7 @@ _Default Value:_ `"wandb"`
 
 ##### url: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+url\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### status \(required\) \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+status\}
 
@@ -191,7 +171,7 @@ _Default Value:_ `"wandb"`
   verticalAlign: "middle",
 }}>
 <code>
-| "QUEUED"
+<p style={{ margin: "0" }}>| "QUEUED"
 | "STARTED"
 | "VALIDATING"
 | "VALIDATED"
@@ -200,7 +180,7 @@ _Default Value:_ `"wandb"`
 | "FAILED"
 | "SUCCESS"
 | "CANCELLED"
-| "CANCELLATION_REQUESTED"
+| "CANCELLATION_REQUESTED"</p>
 </code>
 </pre>
 
@@ -216,11 +196,9 @@ A list containing the IDs of uploaded files that contain training data.
 
 ##### validation\_files: <code>array&lt;string&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+validation_files\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ClassifierJobOut</summary>
+<ExpandableSection.Docusaurus title="ClassifierJobOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut">
 
 ##### auto\_start \(required\): <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+auto_start\}
 
@@ -230,11 +208,9 @@ The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
 ##### fine\_tuned\_model: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+fine_tuned_model\}
 
-##### hyperparameters \(required\): <code>ClassifierTrainingParameters</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+hyperparameters\}
+##### hyperparameters \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters">ClassifierTrainingParameters</a></code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+hyperparameters\}
 
-<details >
-
-<summary>ClassifierTrainingParameters</summary>
+<ExpandableSection.Docusaurus title="ClassifierTrainingParameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters">
 
 ##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+epochs\}
 
@@ -250,17 +226,15 @@ _Default Value:_ `0.0001`
 
 ##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+weight_decay\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+id\}
 
 The ID of the job.
 
-##### integrations: <code>array&lt;WandbIntegrationOut&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+integrations\}
+##### integrations: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+integrations\}
 
-<details >
-
-<summary>WandbIntegrationOut</summary>
+<ExpandableSection.Docusaurus title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut">
 
 ##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+name\}
 
@@ -276,7 +250,7 @@ _Default Value:_ `"wandb"`
 
 ##### url: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+url\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### job\_type: <code>"classifier"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+job_type\}
 
@@ -284,11 +258,9 @@ The type of job (`FT` for fine-tuning).
 
 _Default Value:_ `"classifier"`
 
-##### metadata: <code>JobMetadataOut | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+metadata\}
+##### metadata: <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut">JobMetadataOut</a> | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+metadata\}
 
-<details >
-
-<summary>JobMetadataOut</summary>
+<ExpandableSection.Docusaurus title="JobMetadataOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut">
 
 ##### cost: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+cost\}
 
@@ -304,7 +276,7 @@ _Default Value:_ `"classifier"`
 
 ##### train\_tokens\_per\_step: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+train_tokens_per_step\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### model \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+model\}
 
@@ -331,7 +303,7 @@ _Default Value:_ `"job"`
   verticalAlign: "middle",
 }}>
 <code>
-| "QUEUED"
+<p style={{ margin: "0" }}>| "QUEUED"
 | "STARTED"
 | "VALIDATING"
 | "VALIDATED"
@@ -340,7 +312,7 @@ _Default Value:_ `"job"`
 | "FAILED"
 | "SUCCESS"
 | "CANCELLED"
-| "CANCELLATION_REQUESTED"
+| "CANCELLATION_REQUESTED"</p>
 </code>
 </pre>
 
@@ -356,15 +328,13 @@ A list containing the IDs of uploaded files that contain training data.
 
 ##### validation\_files: <code>array&lt;string&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+validation_files\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### object: <code>"list"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+object\}
 
 _Default Value:_ `"list"`
 
 #### total \(required\): <code>integer</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+total\}
-
-</details>
 
 ## POST /v1/fine\_tuning/jobs \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job\}
 
@@ -374,13 +344,7 @@ Create a new fine-tuning job, it will be queued for processing.
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+try-it-now\}
 
@@ -409,19 +373,13 @@ run();`}
 
 ### Request Body \(required\) \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
 #### auto\_start: <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+auto_start\}
 
 This field will be required in a future release.
 
-#### classifier\_targets: <code>array&lt;ClassifierTargetIn&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+classifier_targets\}
+#### classifier\_targets: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn">ClassifierTargetIn</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+classifier_targets\}
 
-<details >
-
-<summary>ClassifierTargetIn</summary>
+<ExpandableSection.Docusaurus title="ClassifierTargetIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn">
 
 ##### labels \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+labels\}
 
@@ -433,7 +391,7 @@ This field will be required in a future release.
 
 _Default Value:_ `1`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### hyperparameters \(required\) \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+hyperparameters\}
 
@@ -446,13 +404,11 @@ _Default Value:_ `1`
   verticalAlign: "middle",
 }}>
 <code>
-CompletionTrainingParametersIn | ClassifierTrainingParametersIn
+<p style={{ margin: "0" }}><a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn">CompletionTrainingParametersIn</a> | <a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn">ClassifierTrainingParametersIn</a></p>
 </code>
 </pre>
 
-<details >
-
-<summary>CompletionTrainingParametersIn</summary>
+<ExpandableSection.Docusaurus title="CompletionTrainingParametersIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn">
 
 ##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+epochs\}
 
@@ -472,11 +428,9 @@ _Default Value:_ `0.0001`
 
 ##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+weight_decay\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ClassifierTrainingParametersIn</summary>
+<ExpandableSection.Docusaurus title="ClassifierTrainingParametersIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn">
 
 ##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+epochs\}
 
@@ -494,13 +448,11 @@ _Default Value:_ `0.0001`
 
 ##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+weight_decay\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### integrations: <code>array&lt;WandbIntegration&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+integrations\}
+#### integrations: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">WandbIntegration</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+integrations\}
 
-<details >
-
-<summary>WandbIntegration</summary>
+<ExpandableSection.Docusaurus title="WandbIntegration" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">
 
 ##### api\_key \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+api_key\}
 
@@ -518,7 +470,7 @@ The name of the project that the new run will be created under.
 
 _Default Value:_ `"wandb"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### invalid\_sample\_skip\_percentage: <code>number</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+invalid_sample_skip_percentage\}
 
@@ -530,11 +482,9 @@ _Default Value:_ `0`
 
 The name of the model to fine-tune.
 
-#### repositories: <code>array&lt;WandbIntegration&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+repositories\}
+#### repositories: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">WandbIntegration</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+repositories\}
 
-<details >
-
-<summary>WandbIntegration</summary>
+<ExpandableSection.Docusaurus title="WandbIntegration" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">
 
 ##### api\_key \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+api_key\}
 
@@ -552,15 +502,13 @@ The name of the project that the new run will be created under.
 
 _Default Value:_ `"wandb"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### suffix: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+suffix\}
 
-#### training\_files: <code>array&lt;TrainingFile&gt;</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+training_files\}
+#### training\_files: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile">TrainingFile</a>&gt;</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+training_files\}
 
-<details >
-
-<summary>TrainingFile</summary>
+<ExpandableSection.Docusaurus title="TrainingFile" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile">
 
 ##### file\_id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile+file_id\}
 
@@ -568,11 +516,9 @@ _Default Value:_ `"wandb"`
 
 _Default Value:_ `1`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### validation\_files: <code>array&lt;string&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+validation_files\}
-
-</details>
 
 ### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json\}
 
@@ -589,7 +535,7 @@ OK
   verticalAlign: "middle",
 }}>
 <code>
-CompletionJobOut | ClassifierJobOut | LegacyJobMetadataOut
+<p style={{ margin: "0" }}><a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+CompletionJobOut">CompletionJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+ClassifierJobOut">ClassifierJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+LegacyJobMetadataOut">LegacyJobMetadataOut</a></p>
 </code>
 </pre>
 
@@ -603,13 +549,7 @@ Get a fine-tuned job details by its UUID.
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters\}
 
@@ -647,7 +587,7 @@ run();`}
 
 OK
 
-#### Response Body \(required\): <code>CompletionDetailedJobOut | ClassifierDetailedJobOut</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+Response Body\}
+#### Response Body \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+Response Body\}
 
 OK
 
@@ -659,13 +599,7 @@ Request the cancellation of a fine tuning job.
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters\}
 
@@ -703,7 +637,7 @@ run();`}
 
 OK
 
-#### Response Body \(required\): <code>CompletionDetailedJobOut | ClassifierDetailedJobOut</code> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+Response Body\}
+#### Response Body \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></code> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+Response Body\}
 
 OK
 
@@ -715,13 +649,7 @@ Request the start of a validated fine tuning job.
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters\}
 
@@ -755,6 +683,6 @@ run();`}
 
 OK
 
-#### Response Body \(required\): <code>CompletionDetailedJobOut | ClassifierDetailedJobOut</code> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+Response Body\}
+#### Response Body \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></code> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+Response Body\}
 
 OK

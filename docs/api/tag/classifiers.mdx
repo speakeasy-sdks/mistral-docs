@@ -3,7 +3,7 @@ sidebar_position: 2.5
 sidebar_label: classifiers
 ---
 
-import { TryItNow, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
+import { TryItNow, ExpandableSection, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
 import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
 import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
 import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
@@ -21,13 +21,7 @@ Moderations
 
 ### Security \{#operation-moderations_v1_moderations_post+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-moderations_v1_moderations_post+try-it-now\}
 
@@ -57,10 +51,6 @@ run();`}
 
 ### Request Body \(required\) \{#operation-moderations_v1_moderations_post+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
 #### inputs \(required\): <code>string | array&lt;string&gt;</code> \{#operation-moderations_v1_moderations_post+request+inputs\}
 
 Text to classify.
@@ -69,15 +59,9 @@ Text to classify.
 
 ID of the model to use.
 
-</details>
-
 ### Response: 200 \(application/json\) \{#operation-moderations_v1_moderations_post+200+application-json\}
 
 Successful Response
-
-<details open>
-
-<summary>Response Body</summary>
 
 #### id \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+200+application-json+id\}
 
@@ -89,11 +73,9 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 #### model \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+200+application-json+model\}
 
-#### results \(required\): <code>array&lt;ModerationObject&gt;</code> \{#operation-moderations_v1_moderations_post+200+application-json+results\}
+#### results \(required\): <code>array&lt;<a href="#operation-moderations_v1_moderations_post+200+application-json+ModerationObject">ModerationObject</a>&gt;</code> \{#operation-moderations_v1_moderations_post+200+application-json+results\}
 
-<details >
-
-<summary>ModerationObject</summary>
+<ExpandableSection.Docusaurus title="ModerationObject" id="operation-moderations_v1_moderations_post+200+application-json+ModerationObject">
 
 ##### categories: <code>map&lt;boolean&gt;</code> \{#operation-moderations_v1_moderations_post+200+application-json+ModerationObject+categories\}
 
@@ -103,33 +85,23 @@ Moderation result thresholds
 
 Moderation result
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ### Response: 422 \(application/json\) \{#operation-moderations_v1_moderations_post+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-moderations_v1_moderations_post+422+application-json+Security">Security</a></code> \{#operation-moderations_v1_moderations_post+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-moderations_v1_moderations_post+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-moderations_v1_moderations_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-moderations_v1_moderations_post+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-moderations_v1_moderations_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-moderations_v1_moderations_post+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-moderations_v1_moderations_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+loc\}
 
@@ -137,9 +109,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## POST /v1/chat/moderations \{#operation-chat_moderations_v1_chat_moderations_post\}
 
@@ -147,13 +117,7 @@ Chat Moderations
 
 ### Security \{#operation-chat_moderations_v1_chat_moderations_post+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-chat_moderations_v1_chat_moderations_post+try-it-now\}
 
@@ -202,10 +166,6 @@ run();`}
 
 ### Request Body \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
 #### inputs \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs\}
 
 <pre style={{
@@ -217,24 +177,20 @@ run();`}
   verticalAlign: "middle",
 }}>
 <code>
-| array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
+<p style={{ margin: "0" }}>| array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage">SystemMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage">UserMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage">AssistantMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage">ToolMessage</a>&gt;
 | array&lt;
- array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
-&gt;
+ array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage">SystemMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage">UserMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage">AssistantMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage">ToolMessage</a>&gt;
+&gt;</p>
 </code>
 </pre>
 
 Chat to classify
 
-<details >
+<ExpandableSection.Docusaurus title="SystemMessage" id="operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage">
 
-<summary>SystemMessage</summary>
+##### content \(required\): <code>string | array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk">TextChunk</a>&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+content\}
 
-##### content \(required\): <code>string | array&lt;TextChunk&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+content\}
-
-<details >
-
-<summary>TextChunk</summary>
+<ExpandableSection.Docusaurus title="TextChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk">
 
 ##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk+text\}
 
@@ -242,17 +198,15 @@ Chat to classify
 
 _Default Value:_ `"text"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### role: <code>"system"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+role\}
 
 _Default Value:_ `"system"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>UserMessage</summary>
+<ExpandableSection.Docusaurus title="UserMessage" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage">
 
 ##### content \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+content\}
 
@@ -265,15 +219,13 @@ _Default Value:_ `"system"`
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
-<details >
-
-<summary>TextChunk</summary>
+<ExpandableSection.Docusaurus title="TextChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk">
 
 ##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk+text\}
 
@@ -281,13 +233,11 @@ _Default Value:_ `"system"`
 
 _Default Value:_ `"text"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
+<ExpandableSection.Docusaurus title="ImageURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk">
 
-<summary>ImageURLChunk</summary>
-
-##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+image_url\}
+##### image\_url \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -299,11 +249,9 @@ _Default Value:_ `"text"`
 
 _Default Value:_ `"image_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentURLChunk</summary>
+<ExpandableSection.Docusaurus title="DocumentURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk">
 
 ##### document\_name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+document_name\}
 
@@ -313,11 +261,9 @@ _Default Value:_ `"image_url"`
 
 _Default Value:_ `"document_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ReferenceChunk</summary>
+<ExpandableSection.Docusaurus title="ReferenceChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk">
 
 ##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk+reference_ids\}
 
@@ -325,17 +271,15 @@ _Default Value:_ `"document_url"`
 
 _Default Value:_ `"reference"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### role: <code>"user"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+role\}
 
 _Default Value:_ `"user"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>AssistantMessage</summary>
+<ExpandableSection.Docusaurus title="AssistantMessage" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage">
 
 ##### content \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+content\}
 
@@ -348,15 +292,13 @@ _Default Value:_ `"user"`
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
-<details >
-
-<summary>TextChunk</summary>
+<ExpandableSection.Docusaurus title="TextChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk">
 
 ##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk+text\}
 
@@ -364,13 +306,11 @@ _Default Value:_ `"user"`
 
 _Default Value:_ `"text"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
+<ExpandableSection.Docusaurus title="ImageURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk">
 
-<summary>ImageURLChunk</summary>
-
-##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+image_url\}
+##### image\_url \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -382,11 +322,9 @@ _Default Value:_ `"text"`
 
 _Default Value:_ `"image_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentURLChunk</summary>
+<ExpandableSection.Docusaurus title="DocumentURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk">
 
 ##### document\_name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+document_name\}
 
@@ -396,11 +334,9 @@ _Default Value:_ `"image_url"`
 
 _Default Value:_ `"document_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ReferenceChunk</summary>
+<ExpandableSection.Docusaurus title="ReferenceChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk">
 
 ##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk+reference_ids\}
 
@@ -408,7 +344,7 @@ _Default Value:_ `"document_url"`
 
 _Default Value:_ `"reference"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### prefix: <code>boolean</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+prefix\}
 
@@ -420,13 +356,11 @@ _Default Value:_ `false`
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+tool_calls\}
+##### tool\_calls: <code>array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+tool_calls\}
 
-<details >
+<ExpandableSection.Docusaurus title="ToolCall" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall">
 
-<summary>ToolCall</summary>
-
-##### function \(required\): <code>FunctionCall</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+function\}
+##### function \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+FunctionCall">FunctionCall</a></code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+function\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View FunctionCall Details" title="FunctionCall Details">
@@ -444,13 +378,11 @@ _Default Value:_ `0`
 
 ##### type: <code>"function"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+type\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ToolMessage</summary>
+<ExpandableSection.Docusaurus title="ToolMessage" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage">
 
 ##### content \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+content\}
 
@@ -463,15 +395,13 @@ _Default Value:_ `0`
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
-<details >
-
-<summary>TextChunk</summary>
+<ExpandableSection.Docusaurus title="TextChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk">
 
 ##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk+text\}
 
@@ -479,13 +409,11 @@ _Default Value:_ `0`
 
 _Default Value:_ `"text"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
+<ExpandableSection.Docusaurus title="ImageURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk">
 
-<summary>ImageURLChunk</summary>
-
-##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+image_url\}
+##### image\_url \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -497,11 +425,9 @@ _Default Value:_ `"text"`
 
 _Default Value:_ `"image_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentURLChunk</summary>
+<ExpandableSection.Docusaurus title="DocumentURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk">
 
 ##### document\_name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+document_name\}
 
@@ -511,11 +437,9 @@ _Default Value:_ `"image_url"`
 
 _Default Value:_ `"document_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ReferenceChunk</summary>
+<ExpandableSection.Docusaurus title="ReferenceChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk">
 
 ##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk+reference_ids\}
 
@@ -523,7 +447,7 @@ _Default Value:_ `"document_url"`
 
 _Default Value:_ `"reference"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+name\}
 
@@ -533,19 +457,13 @@ _Default Value:_ `"tool"`
 
 ##### tool\_call\_id: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+tool_call_id\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### model \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+model\}
-
-</details>
 
 ### Response: 200 \(application/json\) \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json\}
 
 Successful Response
-
-<details open>
-
-<summary>Response Body</summary>
 
 #### id \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+id\}
 
@@ -557,11 +475,9 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 #### model \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+model\}
 
-#### results \(required\): <code>array&lt;ModerationObject&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+results\}
+#### results \(required\): <code>array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject">ModerationObject</a>&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+results\}
 
-<details >
-
-<summary>ModerationObject</summary>
+<ExpandableSection.Docusaurus title="ModerationObject" id="operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject">
 
 ##### categories: <code>map&lt;boolean&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject+categories\}
 
@@ -571,33 +487,23 @@ Moderation result thresholds
 
 Moderation result
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ### Response: 422 \(application/json\) \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+422+application-json+Security">Security</a></code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-chat_moderations_v1_chat_moderations_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+loc\}
 
@@ -605,9 +511,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## POST /v1/classifications \{#operation-classifications_v1_classifications_post\}
 
@@ -615,13 +519,7 @@ Classifications
 
 ### Security \{#operation-classifications_v1_classifications_post+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-classifications_v1_classifications_post+try-it-now\}
 
@@ -650,10 +548,6 @@ run();`}
 
 ### Request Body \(required\) \{#operation-classifications_v1_classifications_post+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
 #### inputs \(required\): <code>string | array&lt;string&gt;</code> \{#operation-classifications_v1_classifications_post+request+inputs\}
 
 Text to classify.
@@ -662,15 +556,9 @@ Text to classify.
 
 ID of the model to use.
 
-</details>
-
 ### Response: 200 \(application/json\) \{#operation-classifications_v1_classifications_post+200+application-json\}
 
 Successful Response
-
-<details open>
-
-<summary>Response Body</summary>
 
 #### id \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+200+application-json+id\}
 
@@ -682,41 +570,29 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 #### model \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+200+application-json+model\}
 
-#### results \(required\): <code>array&lt;map&lt;ClassificationTargetResult&gt;&gt;</code> \{#operation-classifications_v1_classifications_post+200+application-json+results\}
+#### results \(required\): <code>array&lt;map&lt;<a href="#operation-classifications_v1_classifications_post+200+application-json+ClassificationTargetResult">ClassificationTargetResult</a>&gt;&gt;</code> \{#operation-classifications_v1_classifications_post+200+application-json+results\}
 
-<details >
-
-<summary>ClassificationTargetResult</summary>
+<ExpandableSection.Docusaurus title="ClassificationTargetResult" id="operation-classifications_v1_classifications_post+200+application-json+ClassificationTargetResult">
 
 ##### scores \(required\): <code>map&lt;number&gt;</code> \{#operation-classifications_v1_classifications_post+200+application-json+ClassificationTargetResult+scores\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ### Response: 422 \(application/json\) \{#operation-classifications_v1_classifications_post+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-classifications_v1_classifications_post+422+application-json+Security">Security</a></code> \{#operation-classifications_v1_classifications_post+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-classifications_v1_classifications_post+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-classifications_v1_classifications_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-classifications_v1_classifications_post+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-classifications_v1_classifications_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-classifications_v1_classifications_post+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-classifications_v1_classifications_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+loc\}
 
@@ -724,9 +600,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## POST /v1/chat/classifications \{#operation-chat_classifications_v1_chat_classifications_post\}
 
@@ -734,13 +608,7 @@ Chat Classifications
 
 ### Security \{#operation-chat_classifications_v1_chat_classifications_post+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-chat_classifications_v1_chat_classifications_post+try-it-now\}
 
@@ -792,27 +660,19 @@ run();`}
 
 ### Request Body \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
-#### inputs \(required\): <code>inputs | array&lt;InstructRequest&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs\}
+#### inputs \(required\): <code><a href="#operation-chat_classifications_v1_chat_classifications_post+request+inputs">inputs</a> | array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest">InstructRequest</a>&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs\}
 
 Chat to classify
 
-<details >
+<ExpandableSection.Docusaurus title="inputs" id="operation-chat_classifications_v1_chat_classifications_post+request+inputs">
 
-<summary>inputs</summary>
-
-##### messages \(required\): <code>array&lt;inputs&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+messages\}
+##### messages \(required\): <code>array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+inputs+inputs">inputs</a>&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+messages\}
 
 `inputs` is circular. See previous description for details.
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>InstructRequest</summary>
+<ExpandableSection.Docusaurus title="InstructRequest" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest">
 
 ##### messages \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+messages\}
 
@@ -825,15 +685,13 @@ Chat to classify
   verticalAlign: "middle",
 }}>
 <code>
-array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
+<p style={{ margin: "0" }}>array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage">SystemMessage</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage">UserMessage</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage">AssistantMessage</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage">ToolMessage</a>&gt;</p>
 </code>
 </pre>
 
-<details >
+<ExpandableSection.Docusaurus title="SystemMessage" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage">
 
-<summary>SystemMessage</summary>
-
-##### content \(required\): <code>string | array&lt;TextChunk&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+content\}
+##### content \(required\): <code>string | array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+TextChunk">TextChunk</a>&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+content\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View TextChunk Details" title="TextChunk Details">
@@ -845,11 +703,9 @@ array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
 
 _Default Value:_ `"system"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>UserMessage</summary>
+<ExpandableSection.Docusaurus title="UserMessage" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage">
 
 ##### content \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+content\}
 
@@ -862,9 +718,9 @@ _Default Value:_ `"system"`
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
@@ -896,11 +752,9 @@ _Default Value:_ `"system"`
 
 _Default Value:_ `"user"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>AssistantMessage</summary>
+<ExpandableSection.Docusaurus title="AssistantMessage" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage">
 
 ##### content \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+content\}
 
@@ -913,9 +767,9 @@ _Default Value:_ `"user"`
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
@@ -953,7 +807,7 @@ _Default Value:_ `false`
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+tool_calls\}
+##### tool\_calls: <code>array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+tool_calls\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ToolCall Details" title="ToolCall Details">
@@ -961,11 +815,9 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ToolMessage</summary>
+<ExpandableSection.Docusaurus title="ToolMessage" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage">
 
 ##### content \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+content\}
 
@@ -978,9 +830,9 @@ _Default Value:_ `"assistant"`
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
@@ -1016,21 +868,15 @@ _Default Value:_ `"tool"`
 
 ##### tool\_call\_id: <code>string | null</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+tool_call_id\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### model \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+model\}
-
-</details>
 
 ### Response: 200 \(application/json\) \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json\}
 
 Successful Response
-
-<details open>
-
-<summary>Response Body</summary>
 
 #### id \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+id\}
 
@@ -1042,41 +888,29 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 #### model \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+model\}
 
-#### results \(required\): <code>array&lt;map&lt;ClassificationTargetResult&gt;&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+results\}
+#### results \(required\): <code>array&lt;map&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+200+application-json+ClassificationTargetResult">ClassificationTargetResult</a>&gt;&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+results\}
 
-<details >
-
-<summary>ClassificationTargetResult</summary>
+<ExpandableSection.Docusaurus title="ClassificationTargetResult" id="operation-chat_classifications_v1_chat_classifications_post+200+application-json+ClassificationTargetResult">
 
 ##### scores \(required\): <code>map&lt;number&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+ClassificationTargetResult+scores\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ### Response: 422 \(application/json\) \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-chat_classifications_v1_chat_classifications_post+422+application-json+Security">Security</a></code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-chat_classifications_v1_chat_classifications_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+loc\}
 
@@ -1084,8 +918,6 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 <SideBar.Docusaurus />

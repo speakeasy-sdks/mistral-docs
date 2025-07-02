@@ -3,7 +3,7 @@ sidebar_position: 2.1
 sidebar_label: batch/jobs
 ---
 
-import { TryItNow } from "@speakeasy-api/docs-md";
+import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
 
 
 # batch/jobs
@@ -16,13 +16,7 @@ Get a list of batch jobs for your organization and user.
 
 ### Security \{#operation-jobs_api_routes_batch_get_batch_jobs+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-jobs_api_routes_batch_get_batch_jobs+try-it-now\}
 
@@ -48,15 +42,9 @@ run();`}
 
 OK
 
-<details open>
+#### data: <code>array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">BatchJobOut</a>&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+data\}
 
-<summary>Response Body</summary>
-
-#### data: <code>array&lt;BatchJobOut&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+data\}
-
-<details >
-
-<summary>BatchJobOut</summary>
+<ExpandableSection.Docusaurus title="BatchJobOut" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">
 
 ##### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_at\}
 
@@ -68,11 +56,9 @@ OK
 
 ##### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+error_file\}
 
-##### errors \(required\): <code>array&lt;BatchError&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+errors\}
+##### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+errors\}
 
-<details >
-
-<summary>BatchError</summary>
+<ExpandableSection.Docusaurus title="BatchError" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">
 
 ##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+count\}
 
@@ -80,7 +66,7 @@ _Default Value:_ `1`
 
 ##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+message\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+failed_requests\}
 
@@ -111,13 +97,13 @@ _Default Value:_ `"batch"`
   verticalAlign: "middle",
 }}>
 <code>
-| "QUEUED"
+<p style={{ margin: "0" }}>| "QUEUED"
 | "RUNNING"
 | "SUCCESS"
 | "FAILED"
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
-| "CANCELLED"
+| "CANCELLED"</p>
 </code>
 </pre>
 
@@ -125,15 +111,13 @@ _Default Value:_ `"batch"`
 
 ##### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+total_requests\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### object: <code>"list"</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+object\}
 
 _Default Value:_ `"list"`
 
 #### total \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+total\}
-
-</details>
 
 ## POST /v1/batch/jobs \{#operation-jobs_api_routes_batch_create_batch_job\}
 
@@ -143,13 +127,7 @@ Create a new batch job, it will be queued for processing.
 
 ### Security \{#operation-jobs_api_routes_batch_create_batch_job+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-jobs_api_routes_batch_create_batch_job+try-it-now\}
 
@@ -179,10 +157,6 @@ run();`}
 
 ### Request Body \(required\) \{#operation-jobs_api_routes_batch_create_batch_job+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
 #### endpoint \(required\) \{#operation-jobs_api_routes_batch_create_batch_job+request+endpoint\}
 
 <pre style={{
@@ -194,11 +168,11 @@ run();`}
   verticalAlign: "middle",
 }}>
 <code>
-| "/v1/chat/completions"
+<p style={{ margin: "0" }}>| "/v1/chat/completions"
 | "/v1/embeddings"
 | "/v1/fim/completions"
 | "/v1/moderations"
-| "/v1/chat/moderations"
+| "/v1/chat/moderations"</p>
 </code>
 </pre>
 
@@ -212,15 +186,9 @@ run();`}
 
 _Default Value:_ `24`
 
-</details>
-
 ### Response: 200 \(application/json\) \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json\}
 
 OK
-
-<details open>
-
-<summary>Response Body</summary>
 
 #### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_at\}
 
@@ -232,11 +200,9 @@ OK
 
 #### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+error_file\}
 
-#### errors \(required\): <code>array&lt;BatchError&gt;</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+errors\}
+#### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+errors\}
 
-<details >
-
-<summary>BatchError</summary>
+<ExpandableSection.Docusaurus title="BatchError" id="operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">
 
 ##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+count\}
 
@@ -244,7 +210,7 @@ _Default Value:_ `1`
 
 ##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+message\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+failed_requests\}
 
@@ -275,21 +241,19 @@ _Default Value:_ `"batch"`
   verticalAlign: "middle",
 }}>
 <code>
-| "QUEUED"
+<p style={{ margin: "0" }}>| "QUEUED"
 | "RUNNING"
 | "SUCCESS"
 | "FAILED"
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
-| "CANCELLED"
+| "CANCELLED"</p>
 </code>
 </pre>
 
 #### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+succeeded_requests\}
 
 #### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+total_requests\}
-
-</details>
 
 ## GET /v1/batch/jobs/\{job\_id\} \{#operation-jobs_api_routes_batch_get_batch_job\}
 
@@ -299,13 +263,7 @@ Get a batch job details by its UUID.
 
 ### Security \{#operation-jobs_api_routes_batch_get_batch_job+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-jobs_api_routes_batch_get_batch_job+parameters\}
 
@@ -339,10 +297,6 @@ run();`}
 
 OK
 
-<details open>
-
-<summary>Response Body</summary>
-
 #### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_at\}
 
 #### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_requests\}
@@ -353,11 +307,9 @@ OK
 
 #### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+error_file\}
 
-#### errors \(required\): <code>array&lt;BatchError&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+errors\}
+#### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+errors\}
 
-<details >
-
-<summary>BatchError</summary>
+<ExpandableSection.Docusaurus title="BatchError" id="operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">
 
 ##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+count\}
 
@@ -365,7 +317,7 @@ _Default Value:_ `1`
 
 ##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+message\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+failed_requests\}
 
@@ -396,21 +348,19 @@ _Default Value:_ `"batch"`
   verticalAlign: "middle",
 }}>
 <code>
-| "QUEUED"
+<p style={{ margin: "0" }}>| "QUEUED"
 | "RUNNING"
 | "SUCCESS"
 | "FAILED"
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
-| "CANCELLED"
+| "CANCELLED"</p>
 </code>
 </pre>
 
 #### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+succeeded_requests\}
 
 #### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+total_requests\}
-
-</details>
 
 ## POST /v1/batch/jobs/\{job\_id\}/cancel \{#operation-jobs_api_routes_batch_cancel_batch_job\}
 
@@ -420,13 +370,7 @@ Request the cancellation of a batch job.
 
 ### Security \{#operation-jobs_api_routes_batch_cancel_batch_job+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters\}
 
@@ -460,10 +404,6 @@ run();`}
 
 OK
 
-<details open>
-
-<summary>Response Body</summary>
-
 #### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_at\}
 
 #### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_requests\}
@@ -474,11 +414,9 @@ OK
 
 #### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+error_file\}
 
-#### errors \(required\): <code>array&lt;BatchError&gt;</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+errors\}
+#### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+errors\}
 
-<details >
-
-<summary>BatchError</summary>
+<ExpandableSection.Docusaurus title="BatchError" id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">
 
 ##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+count\}
 
@@ -486,7 +424,7 @@ _Default Value:_ `1`
 
 ##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+message\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+failed_requests\}
 
@@ -517,18 +455,16 @@ _Default Value:_ `"batch"`
   verticalAlign: "middle",
 }}>
 <code>
-| "QUEUED"
+<p style={{ margin: "0" }}>| "QUEUED"
 | "RUNNING"
 | "SUCCESS"
 | "FAILED"
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
-| "CANCELLED"
+| "CANCELLED"</p>
 </code>
 </pre>
 
 #### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+succeeded_requests\}
 
 #### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+total_requests\}
-
-</details>

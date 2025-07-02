@@ -24,8 +24,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1(@types/react@18.3.5)(react@18.3.1)
       '@speakeasy-api/docs-md':
-        specifier: ^0.1.7
-        version: 0.1.7(@types/react@18.3.5)(jquery@3.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.1.8
+        version: 0.1.8(@types/react@18.3.5)(jquery@3.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -2275,8 +2275,8 @@ packages:
   '@slorber/remark-comment@1.0.0':
     resolution: {integrity: sha512-RCE24n7jsOj1M0UPvIQCHTe7fI0sFL4S2nwKVWwHyVr/wI/H8GosgsJGyhnsZoGFnD/P2hLf1mSbrrgSLN93NA==}
 
-  '@speakeasy-api/docs-md@0.1.7':
-    resolution: {integrity: sha512-laY4iuDfeab7ZGRiStm3CnoSsddpY/Z957FtBOGmnA39ZtP9eWv9JtfI3UORzjkH4XpEdQazwaQZ1VVPfabyfA==}
+  '@speakeasy-api/docs-md@0.1.8':
+    resolution: {integrity: sha512-T91j+ETgjtasvqNi+WS/nn6NN7Bt7H1CNMiYL7MSAmV6A/S/DGrmY8w6piN/fgbzJdqy4GxqynMYtqdEs+3OZA==}
     hasBin: true
 
   '@stitches/core@1.2.8':
@@ -11238,7 +11238,7 @@ snapshots:
       micromark-util-character: 1.2.0
       micromark-util-symbol: 1.1.0
 
-  '@speakeasy-api/docs-md@0.1.7(@types/react@18.3.5)(jquery@3.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@speakeasy-api/docs-md@0.1.8(@types/react@18.3.5)(jquery@3.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@codesandbox/sandpack-client': 2.19.8
       '@codesandbox/sandpack-react': 2.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

@@ -3,7 +3,7 @@ sidebar_position: 2.6
 sidebar_label: embeddings
 ---
 
-import { TryItNow } from "@speakeasy-api/docs-md";
+import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
 
 
 # embeddings
@@ -16,13 +16,7 @@ Embeddings
 
 ### Security \{#operation-embeddings_v1_embeddings_post+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-embeddings_v1_embeddings_post+try-it-now\}
 
@@ -52,10 +46,6 @@ run();`}
 
 ### Request Body \(required\) \{#operation-embeddings_v1_embeddings_post+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
 #### inputs \(required\): <code>string | array&lt;string&gt;</code> \{#operation-embeddings_v1_embeddings_post+request+inputs\}
 
 Text to embed.
@@ -74,21 +64,13 @@ mistral-embed
 
 #### output\_dtype: <code>"float" | "int8" | "uint8" | "binary" | "ubinary"</code> \{#operation-embeddings_v1_embeddings_post+request+output_dtype\}
 
-</details>
-
 ### Response: 200 \(application/json\) \{#operation-embeddings_v1_embeddings_post+200+application-json\}
 
 Successful Response
 
-<details open>
+#### data \(required\): <code>array&lt;<a href="#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData">EmbeddingResponseData</a>&gt;</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+data\}
 
-<summary>Response Body</summary>
-
-#### data \(required\): <code>array&lt;EmbeddingResponseData&gt;</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+data\}
-
-<details >
-
-<summary>EmbeddingResponseData</summary>
+<ExpandableSection.Docusaurus title="EmbeddingResponseData" id="operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData">
 
 ##### embedding: <code>array&lt;number&gt;</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData+embedding\}
 
@@ -108,7 +90,7 @@ _Example:_
 embedding
 ```
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### id \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+id\}
 
@@ -134,11 +116,9 @@ _Example:_
 chat.completion
 ```
 
-#### usage \(required\): <code>UsageInfo</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+usage\}
+#### usage \(required\): <code><a href="#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo">UsageInfo</a></code> \{#operation-embeddings_v1_embeddings_post+200+application-json+usage\}
 
-<details >
-
-<summary>UsageInfo</summary>
+<ExpandableSection.Docusaurus title="UsageInfo" id="operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo">
 
 ##### completion\_tokens \(required\): <code>integer</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo+completion_tokens\}
 
@@ -164,33 +144,23 @@ _Example:_
 50
 ```
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ### Response: 422 \(application/json\) \{#operation-embeddings_v1_embeddings_post+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-embeddings_v1_embeddings_post+422+application-json+Security">Security</a></code> \{#operation-embeddings_v1_embeddings_post+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-embeddings_v1_embeddings_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-embeddings_v1_embeddings_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+loc\}
 
@@ -198,6 +168,4 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>

@@ -3,7 +3,7 @@ sidebar_position: 2.4
 sidebar_label: chat
 ---
 
-import { TryItNow, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
+import { TryItNow, ExpandableSection, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
 import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
 import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
 import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
@@ -21,13 +21,7 @@ Chat Completion
 
 ### Security \{#operation-chat_completion_v1_chat_completions_post+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-chat_completion_v1_chat_completions_post+try-it-now\}
 
@@ -59,10 +53,6 @@ run();`}
 
 ### Request Body \(required\) \{#operation-chat_completion_v1_chat_completions_post+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
 #### frequency\_penalty: <code>number</code> \{#operation-chat_completion_v1_chat_completions_post+request+frequency_penalty\}
 
 frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.
@@ -80,21 +70,17 @@ frequency_penalty penalizes the repetition of words based on their frequency in 
   verticalAlign: "middle",
 }}>
 <code>
-array&lt;SystemMessage | UserMessage | AssistantMessage | ToolMessage&gt;
+<p style={{ margin: "0" }}>array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+request+SystemMessage">SystemMessage</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+UserMessage">UserMessage</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage">AssistantMessage</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+ToolMessage">ToolMessage</a>&gt;</p>
 </code>
 </pre>
 
 The prompt(s) to generate completions for, encoded as a list of dict with role and content.
 
-<details >
+<ExpandableSection.Docusaurus title="SystemMessage" id="operation-chat_completion_v1_chat_completions_post+request+SystemMessage">
 
-<summary>SystemMessage</summary>
+##### content \(required\): <code>string | array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+request+SystemMessage+TextChunk">TextChunk</a>&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+request+SystemMessage+content\}
 
-##### content \(required\): <code>string | array&lt;TextChunk&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+request+SystemMessage+content\}
-
-<details >
-
-<summary>TextChunk</summary>
+<ExpandableSection.Docusaurus title="TextChunk" id="operation-chat_completion_v1_chat_completions_post+request+SystemMessage+TextChunk">
 
 ##### text \(required\): <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+request+SystemMessage+TextChunk+text\}
 
@@ -102,17 +88,15 @@ The prompt(s) to generate completions for, encoded as a list of dict with role a
 
 _Default Value:_ `"text"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### role: <code>"system"</code> \{#operation-chat_completion_v1_chat_completions_post+request+SystemMessage+role\}
 
 _Default Value:_ `"system"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>UserMessage</summary>
+<ExpandableSection.Docusaurus title="UserMessage" id="operation-chat_completion_v1_chat_completions_post+request+UserMessage">
 
 ##### content \(required\) \{#operation-chat_completion_v1_chat_completions_post+request+UserMessage+content\}
 
@@ -125,15 +109,13 @@ _Default Value:_ `"system"`
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+request+UserMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+UserMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+UserMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+UserMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
-<details >
-
-<summary>TextChunk</summary>
+<ExpandableSection.Docusaurus title="TextChunk" id="operation-chat_completion_v1_chat_completions_post+request+UserMessage+TextChunk">
 
 ##### text \(required\): <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+request+UserMessage+TextChunk+text\}
 
@@ -141,13 +123,11 @@ _Default Value:_ `"system"`
 
 _Default Value:_ `"text"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
+<ExpandableSection.Docusaurus title="ImageURLChunk" id="operation-chat_completion_v1_chat_completions_post+request+UserMessage+ImageURLChunk">
 
-<summary>ImageURLChunk</summary>
-
-##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-chat_completion_v1_chat_completions_post+request+UserMessage+ImageURLChunk+image_url\}
+##### image\_url \(required\): <code><a href="#operation-chat_completion_v1_chat_completions_post+request+UserMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-chat_completion_v1_chat_completions_post+request+UserMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -159,11 +139,9 @@ _Default Value:_ `"text"`
 
 _Default Value:_ `"image_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentURLChunk</summary>
+<ExpandableSection.Docusaurus title="DocumentURLChunk" id="operation-chat_completion_v1_chat_completions_post+request+UserMessage+DocumentURLChunk">
 
 ##### document\_name: <code>string | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+UserMessage+DocumentURLChunk+document_name\}
 
@@ -173,11 +151,9 @@ _Default Value:_ `"image_url"`
 
 _Default Value:_ `"document_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ReferenceChunk</summary>
+<ExpandableSection.Docusaurus title="ReferenceChunk" id="operation-chat_completion_v1_chat_completions_post+request+UserMessage+ReferenceChunk">
 
 ##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+request+UserMessage+ReferenceChunk+reference_ids\}
 
@@ -185,17 +161,15 @@ _Default Value:_ `"document_url"`
 
 _Default Value:_ `"reference"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### role: <code>"user"</code> \{#operation-chat_completion_v1_chat_completions_post+request+UserMessage+role\}
 
 _Default Value:_ `"user"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>AssistantMessage</summary>
+<ExpandableSection.Docusaurus title="AssistantMessage" id="operation-chat_completion_v1_chat_completions_post+request+AssistantMessage">
 
 ##### content \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+content\}
 
@@ -208,15 +182,13 @@ _Default Value:_ `"user"`
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
-<details >
-
-<summary>TextChunk</summary>
+<ExpandableSection.Docusaurus title="TextChunk" id="operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+TextChunk">
 
 ##### text \(required\): <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+TextChunk+text\}
 
@@ -224,13 +196,11 @@ _Default Value:_ `"user"`
 
 _Default Value:_ `"text"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
+<ExpandableSection.Docusaurus title="ImageURLChunk" id="operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ImageURLChunk">
 
-<summary>ImageURLChunk</summary>
-
-##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ImageURLChunk+image_url\}
+##### image\_url \(required\): <code><a href="#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -242,11 +212,9 @@ _Default Value:_ `"text"`
 
 _Default Value:_ `"image_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentURLChunk</summary>
+<ExpandableSection.Docusaurus title="DocumentURLChunk" id="operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+DocumentURLChunk">
 
 ##### document\_name: <code>string | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+DocumentURLChunk+document_name\}
 
@@ -256,11 +224,9 @@ _Default Value:_ `"image_url"`
 
 _Default Value:_ `"document_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ReferenceChunk</summary>
+<ExpandableSection.Docusaurus title="ReferenceChunk" id="operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ReferenceChunk">
 
 ##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ReferenceChunk+reference_ids\}
 
@@ -268,7 +234,7 @@ _Default Value:_ `"document_url"`
 
 _Default Value:_ `"reference"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### prefix: <code>boolean</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+prefix\}
 
@@ -280,13 +246,11 @@ _Default Value:_ `false`
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+tool_calls\}
+##### tool\_calls: <code>array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+tool_calls\}
 
-<details >
+<ExpandableSection.Docusaurus title="ToolCall" id="operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ToolCall">
 
-<summary>ToolCall</summary>
-
-##### function \(required\): <code>FunctionCall</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ToolCall+function\}
+##### function \(required\): <code><a href="#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ToolCall+FunctionCall">FunctionCall</a></code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ToolCall+function\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View FunctionCall Details" title="FunctionCall Details">
@@ -304,13 +268,11 @@ _Default Value:_ `0`
 
 ##### type: <code>"function"</code> \{#operation-chat_completion_v1_chat_completions_post+request+AssistantMessage+ToolCall+type\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ToolMessage</summary>
+<ExpandableSection.Docusaurus title="ToolMessage" id="operation-chat_completion_v1_chat_completions_post+request+ToolMessage">
 
 ##### content \(required\) \{#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+content\}
 
@@ -323,15 +285,13 @@ _Default Value:_ `0`
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
-<details >
-
-<summary>TextChunk</summary>
+<ExpandableSection.Docusaurus title="TextChunk" id="operation-chat_completion_v1_chat_completions_post+request+ToolMessage+TextChunk">
 
 ##### text \(required\): <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+TextChunk+text\}
 
@@ -339,13 +299,11 @@ _Default Value:_ `0`
 
 _Default Value:_ `"text"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
+<ExpandableSection.Docusaurus title="ImageURLChunk" id="operation-chat_completion_v1_chat_completions_post+request+ToolMessage+ImageURLChunk">
 
-<summary>ImageURLChunk</summary>
-
-##### image\_url \(required\): <code>ImageURL | string</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+ImageURLChunk+image_url\}
+##### image\_url \(required\): <code><a href="#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ImageURL Details" title="ImageURL Details">
@@ -357,11 +315,9 @@ _Default Value:_ `"text"`
 
 _Default Value:_ `"image_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentURLChunk</summary>
+<ExpandableSection.Docusaurus title="DocumentURLChunk" id="operation-chat_completion_v1_chat_completions_post+request+ToolMessage+DocumentURLChunk">
 
 ##### document\_name: <code>string | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+DocumentURLChunk+document_name\}
 
@@ -371,11 +327,9 @@ _Default Value:_ `"image_url"`
 
 _Default Value:_ `"document_url"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ReferenceChunk</summary>
+<ExpandableSection.Docusaurus title="ReferenceChunk" id="operation-chat_completion_v1_chat_completions_post+request+ToolMessage+ReferenceChunk">
 
 ##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+ReferenceChunk+reference_ids\}
 
@@ -383,7 +337,7 @@ _Default Value:_ `"document_url"`
 
 _Default Value:_ `"reference"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### name: <code>string | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+name\}
 
@@ -393,7 +347,7 @@ _Default Value:_ `"tool"`
 
 ##### tool\_call\_id: <code>string | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolMessage+tool_call_id\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### model \(required\): <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+request+model\}
 
@@ -409,11 +363,9 @@ mistral-small-latest
 
 #### parallel\_tool\_calls: <code>boolean</code> \{#operation-chat_completion_v1_chat_completions_post+request+parallel_tool_calls\}
 
-#### prediction: <code>Prediction | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+prediction\}
+#### prediction: <code><a href="#operation-chat_completion_v1_chat_completions_post+request+Prediction">Prediction</a> | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+prediction\}
 
-<details >
-
-<summary>Prediction</summary>
+<ExpandableSection.Docusaurus title="Prediction" id="operation-chat_completion_v1_chat_completions_post+request+Prediction">
 
 ##### content: <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+request+Prediction+content\}
 
@@ -423,7 +375,7 @@ _Default Value:_ `""`
 
 _Default Value:_ `"content"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### presence\_penalty: <code>number</code> \{#operation-chat_completion_v1_chat_completions_post+request+presence_penalty\}
 
@@ -433,17 +385,13 @@ presence_penalty determines how much the model penalizes the repetition of words
 
 #### random\_seed: <code>integer | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+random_seed\}
 
-#### response\_format: <code>ResponseFormat | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+response_format\}
+#### response\_format: <code><a href="#operation-chat_completion_v1_chat_completions_post+request+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+response_format\}
 
-<details >
+<ExpandableSection.Docusaurus title="ResponseFormat" id="operation-chat_completion_v1_chat_completions_post+request+ResponseFormat">
 
-<summary>ResponseFormat</summary>
+##### json\_schema: <code><a href="#operation-chat_completion_v1_chat_completions_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+ResponseFormat+json_schema\}
 
-##### json\_schema: <code>JsonSchema | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+ResponseFormat+json_schema\}
-
-<details >
-
-<summary>JsonSchema</summary>
+<ExpandableSection.Docusaurus title="JsonSchema" id="operation-chat_completion_v1_chat_completions_post+request+ResponseFormat+JsonSchema">
 
 ##### description: <code>string | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+ResponseFormat+JsonSchema+description\}
 
@@ -453,13 +401,13 @@ presence_penalty determines how much the model penalizes the repetition of words
 
 ##### strict: <code>boolean</code> \{#operation-chat_completion_v1_chat_completions_post+request+ResponseFormat+JsonSchema+strict\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-chat_completion_v1_chat_completions_post+request+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### safe\_prompt: <code>boolean</code> \{#operation-chat_completion_v1_chat_completions_post+request+safe_prompt\}
 
@@ -477,39 +425,31 @@ _Default Value:_ `false`
 
 #### temperature: <code>number | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+temperature\}
 
-#### tool\_choice: <code>ToolChoice | "auto" | "none" | "any" | "required"</code> \{#operation-chat_completion_v1_chat_completions_post+request+tool_choice\}
+#### tool\_choice: <code><a href="#operation-chat_completion_v1_chat_completions_post+request+ToolChoice">ToolChoice</a> | "auto" | "none" | "any" | "required"</code> \{#operation-chat_completion_v1_chat_completions_post+request+tool_choice\}
 
-<details >
+<ExpandableSection.Docusaurus title="ToolChoice" id="operation-chat_completion_v1_chat_completions_post+request+ToolChoice">
 
-<summary>ToolChoice</summary>
-
-##### function \(required\): <code>FunctionName</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolChoice+function\}
+##### function \(required\): <code><a href="#operation-chat_completion_v1_chat_completions_post+request+ToolChoice+FunctionName">FunctionName</a></code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolChoice+function\}
 
 this restriction of `Function` is used to select a specific function to call
 
-<details >
-
-<summary>FunctionName</summary>
+<ExpandableSection.Docusaurus title="FunctionName" id="operation-chat_completion_v1_chat_completions_post+request+ToolChoice+FunctionName">
 
 ##### name \(required\): <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolChoice+FunctionName+name\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### type: <code>"function"</code> \{#operation-chat_completion_v1_chat_completions_post+request+ToolChoice+type\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### tools: <code>array&lt;Tool&gt; | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+tools\}
+#### tools: <code>array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+request+Tool">Tool</a>&gt; | null</code> \{#operation-chat_completion_v1_chat_completions_post+request+tools\}
 
-<details >
+<ExpandableSection.Docusaurus title="Tool" id="operation-chat_completion_v1_chat_completions_post+request+Tool">
 
-<summary>Tool</summary>
+##### function \(required\): <code><a href="#operation-chat_completion_v1_chat_completions_post+request+Tool+Function">Function</a></code> \{#operation-chat_completion_v1_chat_completions_post+request+Tool+function\}
 
-##### function \(required\): <code>Function</code> \{#operation-chat_completion_v1_chat_completions_post+request+Tool+function\}
-
-<details >
-
-<summary>Function</summary>
+<ExpandableSection.Docusaurus title="Function" id="operation-chat_completion_v1_chat_completions_post+request+Tool+Function">
 
 ##### description: <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+request+Tool+Function+description\}
 
@@ -519,31 +459,23 @@ this restriction of `Function` is used to select a specific function to call
 
 ##### strict: <code>boolean</code> \{#operation-chat_completion_v1_chat_completions_post+request+Tool+Function+strict\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### type: <code>"function"</code> \{#operation-chat_completion_v1_chat_completions_post+request+Tool+type\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### top\_p: <code>number</code> \{#operation-chat_completion_v1_chat_completions_post+request+top_p\}
 
 Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.
 
-</details>
-
 ### Response: 200 \(application/json\) \{#operation-chat_completion_v1_chat_completions_post+200+application-json\}
 
 Successful Response
 
-<details open>
+#### choices \(required\): <code>array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice">ChatCompletionChoice</a>&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+choices\}
 
-<summary>Response Body</summary>
-
-#### choices \(required\): <code>array&lt;ChatCompletionChoice&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+choices\}
-
-<details >
-
-<summary>ChatCompletionChoice</summary>
+<ExpandableSection.Docusaurus title="ChatCompletionChoice" id="operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice">
 
 ##### finish\_reason \(required\) \{#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+finish_reason\}
 
@@ -556,7 +488,7 @@ Successful Response
   verticalAlign: "middle",
 }}>
 <code>
-"stop" | "length" | "model_length" | "error" | "tool_calls"
+<p style={{ margin: "0" }}>"stop" | "length" | "model_length" | "error" | "tool_calls"</p>
 </code>
 </pre>
 
@@ -574,11 +506,9 @@ _Example:_
 0
 ```
 
-##### message \(required\): <code>AssistantMessage</code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+message\}
+##### message \(required\): <code><a href="#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">AssistantMessage</a></code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+message\}
 
-<details >
-
-<summary>AssistantMessage</summary>
+<ExpandableSection.Docusaurus title="AssistantMessage" id="operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">
 
 ##### content \{#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+content\}
 
@@ -591,9 +521,9 @@ _Example:_
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
@@ -631,7 +561,7 @@ _Default Value:_ `false`
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
+##### tool\_calls: <code>array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ToolCall Details" title="ToolCall Details">
@@ -639,9 +569,9 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-</details>
+</ExpandableSection.Docusaurus>
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### created \(required\): <code>integer</code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+created\}
 
@@ -675,11 +605,9 @@ _Example:_
 chat.completion
 ```
 
-#### usage \(required\): <code>UsageInfo</code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+usage\}
+#### usage \(required\): <code><a href="#operation-chat_completion_v1_chat_completions_post+200+application-json+UsageInfo">UsageInfo</a></code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+usage\}
 
-<details >
-
-<summary>UsageInfo</summary>
+<ExpandableSection.Docusaurus title="UsageInfo" id="operation-chat_completion_v1_chat_completions_post+200+application-json+UsageInfo">
 
 ##### completion\_tokens \(required\): <code>integer</code> \{#operation-chat_completion_v1_chat_completions_post+200+application-json+UsageInfo+completion_tokens\}
 
@@ -705,33 +633,23 @@ _Example:_
 50
 ```
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ### Response: 422 \(application/json\) \{#operation-chat_completion_v1_chat_completions_post+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-chat_completion_v1_chat_completions_post+422+application-json+Security">Security</a></code> \{#operation-chat_completion_v1_chat_completions_post+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-chat_completion_v1_chat_completions_post+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-chat_completion_v1_chat_completions_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-chat_completion_v1_chat_completions_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-chat_completion_v1_chat_completions_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-chat_completion_v1_chat_completions_post+422+application-json+ValidationError+loc\}
 
@@ -739,8 +657,6 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-chat_completion_v1_chat_completions_post+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 <SideBar.Docusaurus />

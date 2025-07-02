@@ -3,7 +3,7 @@ sidebar_position: 2.2
 sidebar_label: beta/agents
 ---
 
-import { TryItNow, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
+import { TryItNow, ExpandableSection, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
 import EmbedJsonSchema from "../../../../src/components/speakeasy/embeds/JsonSchema.mdx";
 
 
@@ -17,13 +17,7 @@ Retrieve a list of agent entities sorted by creation time.
 
 ### Security \{#operation-agents_api_v1_agents_list+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_list+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-agents_api_v1_agents_list+parameters\}
 
@@ -59,7 +53,7 @@ run();`}
 
 Successful Response
 
-#### Response Body \(required\): <code>array&lt;Agent&gt;</code> \{#operation-agents_api_v1_agents_list+200+application-json+Response Body\}
+#### Response Body \(required\): <code>array&lt;<a href="#operation-agents_api_v1_agents_list+200+application-json+Agent">Agent</a>&gt;</code> \{#operation-agents_api_v1_agents_list+200+application-json+Response Body\}
 
 Successful Response
 
@@ -67,25 +61,17 @@ Successful Response
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_list+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_list+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_agents_list+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-agents_api_v1_agents_list+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_list+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_agents_list+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_list+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_list+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-agents_api_v1_agents_list+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_list+422+application-json+ValidationError+loc\}
 
@@ -93,9 +79,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_list+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## POST /v1/agents \{#operation-agents_api_v1_agents_create\}
 
@@ -105,13 +89,7 @@ Create a new agent giving it instructions, tools, description. The agent is then
 
 ### Security \{#operation-agents_api_v1_agents_create+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-agents_api_v1_agents_create+try-it-now\}
 
@@ -138,27 +116,19 @@ run();`}
 
 ### Request Body \(required\) \{#operation-agents_api_v1_agents_create+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
-#### completion\_args: <code>CompletionArgs</code> \{#operation-agents_api_v1_agents_create+request+completion_args\}
+#### completion\_args: <code><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_create+request+completion_args\}
 
 White-listed arguments from the completion API
 
-<details >
-
-<summary>CompletionArgs</summary>
+<ExpandableSection.Docusaurus title="CompletionArgs" id="operation-agents_api_v1_agents_create+request+CompletionArgs">
 
 ##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+frequency_penalty\}
 
 ##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+max_tokens\}
 
-##### prediction: <code>Prediction | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+prediction\}
+##### prediction: <code><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+prediction\}
 
-<details >
-
-<summary>Prediction</summary>
+<ExpandableSection.Docusaurus title="Prediction" id="operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction">
 
 ##### content: <code>string</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction+content\}
 
@@ -168,19 +138,17 @@ _Default Value:_ `""`
 
 _Default Value:_ `"content"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+presence_penalty\}
 
 ##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+random_seed\}
 
-##### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+response_format\}
+##### response\_format: <code><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+response_format\}
 
-<details >
+<ExpandableSection.Docusaurus title="ResponseFormat" id="operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat">
 
-<summary>ResponseFormat</summary>
-
-##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+json_schema\}
+##### json\_schema: <code><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View JsonSchema Details" title="JsonSchema Details">
@@ -192,7 +160,7 @@ _Default Value:_ `"content"`
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+stop\}
 
@@ -204,7 +172,7 @@ _Default Value:_ `0.3`
 
 ##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+top_p\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### description: <code>string | null</code> \{#operation-agents_api_v1_agents_create+request+description\}
 
@@ -227,28 +195,24 @@ _Default Value:_ `0.3`
   verticalAlign: "middle",
 }}>
 <code>
-array&lt;
+<p style={{ margin: "0" }}>array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;
+&gt;</p>
 </code>
 </pre>
 
 List of tools which are available to the model during the conversation.
 
-<details >
+<ExpandableSection.Docusaurus title="FunctionTool" id="operation-agents_api_v1_agents_create+request+FunctionTool">
 
-<summary>FunctionTool</summary>
+##### function \(required\): <code><a href="#operation-agents_api_v1_agents_create+request+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+function\}
 
-##### function \(required\): <code>Function</code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+function\}
-
-<details >
-
-<summary>Function</summary>
+<ExpandableSection.Docusaurus title="Function" id="operation-agents_api_v1_agents_create+request+FunctionTool+Function">
 
 ##### description: <code>string</code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+description\}
 
@@ -258,57 +222,47 @@ List of tools which are available to the model during the conversation.
 
 ##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+strict\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+type\}
 
 _Default Value:_ `"function"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchTool" id="operation-agents_api_v1_agents_create+request+WebSearchTool">
 
 ##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_create+request+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchPremiumTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_create+request+WebSearchPremiumTool">
 
 ##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_create+request+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>CodeInterpreterTool</summary>
+<ExpandableSection.Docusaurus title="CodeInterpreterTool" id="operation-agents_api_v1_agents_create+request+CodeInterpreterTool">
 
 ##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_create+request+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ImageGenerationTool</summary>
+<ExpandableSection.Docusaurus title="ImageGenerationTool" id="operation-agents_api_v1_agents_create+request+ImageGenerationTool">
 
 ##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_create+request+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentLibraryTool</summary>
+<ExpandableSection.Docusaurus title="DocumentLibraryTool" id="operation-agents_api_v1_agents_create+request+DocumentLibraryTool">
 
 ##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_create+request+DocumentLibraryTool+library_ids\}
 
@@ -318,35 +272,25 @@ Ids of the library in which to search.
 
 _Default Value:_ `"document_library"`
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ### Response: 200 \(application/json\) \{#operation-agents_api_v1_agents_create+200+application-json\}
 
 Successful Response
 
-<details open>
-
-<summary>Response Body</summary>
-
-#### completion\_args: <code>CompletionArgs</code> \{#operation-agents_api_v1_agents_create+200+application-json+completion_args\}
+#### completion\_args: <code><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_create+200+application-json+completion_args\}
 
 White-listed arguments from the completion API
 
-<details >
-
-<summary>CompletionArgs</summary>
+<ExpandableSection.Docusaurus title="CompletionArgs" id="operation-agents_api_v1_agents_create+200+application-json+CompletionArgs">
 
 ##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+frequency_penalty\}
 
 ##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+max_tokens\}
 
-##### prediction: <code>Prediction | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+prediction\}
+##### prediction: <code><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+prediction\}
 
-<details >
-
-<summary>Prediction</summary>
+<ExpandableSection.Docusaurus title="Prediction" id="operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction">
 
 ##### content: <code>string</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction+content\}
 
@@ -356,19 +300,17 @@ _Default Value:_ `""`
 
 _Default Value:_ `"content"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+presence_penalty\}
 
 ##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+random_seed\}
 
-##### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+response_format\}
+##### response\_format: <code><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+response_format\}
 
-<details >
+<ExpandableSection.Docusaurus title="ResponseFormat" id="operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat">
 
-<summary>ResponseFormat</summary>
-
-##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
+##### json\_schema: <code><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View JsonSchema Details" title="JsonSchema Details">
@@ -380,7 +322,7 @@ _Default Value:_ `"content"`
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+stop\}
 
@@ -392,7 +334,7 @@ _Default Value:_ `0.3`
 
 ##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+top_p\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### created\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_create+200+application-json+created_at\}
 
@@ -423,28 +365,24 @@ _Default Value:_ `"agent"`
   verticalAlign: "middle",
 }}>
 <code>
-array&lt;
+<p style={{ margin: "0" }}>array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;
+&gt;</p>
 </code>
 </pre>
 
 List of tools which are available to the model during the conversation.
 
-<details >
+<ExpandableSection.Docusaurus title="FunctionTool" id="operation-agents_api_v1_agents_create+200+application-json+FunctionTool">
 
-<summary>FunctionTool</summary>
+##### function \(required\): <code><a href="#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+function\}
 
-##### function \(required\): <code>Function</code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+function\}
-
-<details >
-
-<summary>Function</summary>
+<ExpandableSection.Docusaurus title="Function" id="operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function">
 
 ##### description: <code>string</code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+description\}
 
@@ -454,57 +392,47 @@ List of tools which are available to the model during the conversation.
 
 ##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+strict\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+type\}
 
 _Default Value:_ `"function"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchTool" id="operation-agents_api_v1_agents_create+200+application-json+WebSearchTool">
 
 ##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_create+200+application-json+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchPremiumTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_create+200+application-json+WebSearchPremiumTool">
 
 ##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_create+200+application-json+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>CodeInterpreterTool</summary>
+<ExpandableSection.Docusaurus title="CodeInterpreterTool" id="operation-agents_api_v1_agents_create+200+application-json+CodeInterpreterTool">
 
 ##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_create+200+application-json+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ImageGenerationTool</summary>
+<ExpandableSection.Docusaurus title="ImageGenerationTool" id="operation-agents_api_v1_agents_create+200+application-json+ImageGenerationTool">
 
 ##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_create+200+application-json+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentLibraryTool</summary>
+<ExpandableSection.Docusaurus title="DocumentLibraryTool" id="operation-agents_api_v1_agents_create+200+application-json+DocumentLibraryTool">
 
 ##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_create+200+application-json+DocumentLibraryTool+library_ids\}
 
@@ -514,37 +442,27 @@ Ids of the library in which to search.
 
 _Default Value:_ `"document_library"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### updated\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_create+200+application-json+updated_at\}
 
 #### version \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_create+200+application-json+version\}
 
-</details>
-
 ### Response: 422 \(application/json\) \{#operation-agents_api_v1_agents_create+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_create+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_create+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_agents_create+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-agents_api_v1_agents_create+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_agents_create+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_create+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_create+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-agents_api_v1_agents_create+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_create+422+application-json+ValidationError+loc\}
 
@@ -552,9 +470,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## GET /v1/agents/\{agent\_id\} \{#operation-agents_api_v1_agents_get\}
 
@@ -564,13 +480,7 @@ Given an agent retrieve an agent entity with its attributes.
 
 ### Security \{#operation-agents_api_v1_agents_get+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-agents_api_v1_agents_get+parameters\}
 
@@ -604,27 +514,19 @@ run();`}
 
 Successful Response
 
-<details open>
-
-<summary>Response Body</summary>
-
-#### completion\_args: <code>CompletionArgs</code> \{#operation-agents_api_v1_agents_get+200+application-json+completion_args\}
+#### completion\_args: <code><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_get+200+application-json+completion_args\}
 
 White-listed arguments from the completion API
 
-<details >
-
-<summary>CompletionArgs</summary>
+<ExpandableSection.Docusaurus title="CompletionArgs" id="operation-agents_api_v1_agents_get+200+application-json+CompletionArgs">
 
 ##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+frequency_penalty\}
 
 ##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+max_tokens\}
 
-##### prediction: <code>Prediction | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+prediction\}
+##### prediction: <code><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+prediction\}
 
-<details >
-
-<summary>Prediction</summary>
+<ExpandableSection.Docusaurus title="Prediction" id="operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction">
 
 ##### content: <code>string</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction+content\}
 
@@ -634,19 +536,17 @@ _Default Value:_ `""`
 
 _Default Value:_ `"content"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+presence_penalty\}
 
 ##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+random_seed\}
 
-##### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+response_format\}
+##### response\_format: <code><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+response_format\}
 
-<details >
+<ExpandableSection.Docusaurus title="ResponseFormat" id="operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat">
 
-<summary>ResponseFormat</summary>
-
-##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
+##### json\_schema: <code><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View JsonSchema Details" title="JsonSchema Details">
@@ -658,7 +558,7 @@ _Default Value:_ `"content"`
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+stop\}
 
@@ -670,7 +570,7 @@ _Default Value:_ `0.3`
 
 ##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+top_p\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### created\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_get+200+application-json+created_at\}
 
@@ -701,28 +601,24 @@ _Default Value:_ `"agent"`
   verticalAlign: "middle",
 }}>
 <code>
-array&lt;
+<p style={{ margin: "0" }}>array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;
+&gt;</p>
 </code>
 </pre>
 
 List of tools which are available to the model during the conversation.
 
-<details >
+<ExpandableSection.Docusaurus title="FunctionTool" id="operation-agents_api_v1_agents_get+200+application-json+FunctionTool">
 
-<summary>FunctionTool</summary>
+##### function \(required\): <code><a href="#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+function\}
 
-##### function \(required\): <code>Function</code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+function\}
-
-<details >
-
-<summary>Function</summary>
+<ExpandableSection.Docusaurus title="Function" id="operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function">
 
 ##### description: <code>string</code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+description\}
 
@@ -732,57 +628,47 @@ List of tools which are available to the model during the conversation.
 
 ##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+strict\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+type\}
 
 _Default Value:_ `"function"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchTool" id="operation-agents_api_v1_agents_get+200+application-json+WebSearchTool">
 
 ##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_get+200+application-json+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchPremiumTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_get+200+application-json+WebSearchPremiumTool">
 
 ##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_get+200+application-json+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>CodeInterpreterTool</summary>
+<ExpandableSection.Docusaurus title="CodeInterpreterTool" id="operation-agents_api_v1_agents_get+200+application-json+CodeInterpreterTool">
 
 ##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_get+200+application-json+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ImageGenerationTool</summary>
+<ExpandableSection.Docusaurus title="ImageGenerationTool" id="operation-agents_api_v1_agents_get+200+application-json+ImageGenerationTool">
 
 ##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_get+200+application-json+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentLibraryTool</summary>
+<ExpandableSection.Docusaurus title="DocumentLibraryTool" id="operation-agents_api_v1_agents_get+200+application-json+DocumentLibraryTool">
 
 ##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_get+200+application-json+DocumentLibraryTool+library_ids\}
 
@@ -792,37 +678,27 @@ Ids of the library in which to search.
 
 _Default Value:_ `"document_library"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### updated\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_get+200+application-json+updated_at\}
 
 #### version \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_get+200+application-json+version\}
 
-</details>
-
 ### Response: 422 \(application/json\) \{#operation-agents_api_v1_agents_get+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_get+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_get+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_agents_get+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-agents_api_v1_agents_get+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_agents_get+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_get+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_get+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-agents_api_v1_agents_get+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_get+422+application-json+ValidationError+loc\}
 
@@ -830,9 +706,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## PATCH /v1/agents/\{agent\_id\} \{#operation-agents_api_v1_agents_update\}
 
@@ -842,13 +716,7 @@ Update an agent attributes and create a new version.
 
 ### Security \{#operation-agents_api_v1_agents_update+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-agents_api_v1_agents_update+parameters\}
 
@@ -881,27 +749,19 @@ run();`}
 
 ### Request Body \(required\) \{#operation-agents_api_v1_agents_update+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
-#### completion\_args: <code>CompletionArgs</code> \{#operation-agents_api_v1_agents_update+request+completion_args\}
+#### completion\_args: <code><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_update+request+completion_args\}
 
 White-listed arguments from the completion API
 
-<details >
-
-<summary>CompletionArgs</summary>
+<ExpandableSection.Docusaurus title="CompletionArgs" id="operation-agents_api_v1_agents_update+request+CompletionArgs">
 
 ##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+frequency_penalty\}
 
 ##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+max_tokens\}
 
-##### prediction: <code>Prediction | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+prediction\}
+##### prediction: <code><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+prediction\}
 
-<details >
-
-<summary>Prediction</summary>
+<ExpandableSection.Docusaurus title="Prediction" id="operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction">
 
 ##### content: <code>string</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction+content\}
 
@@ -911,19 +771,17 @@ _Default Value:_ `""`
 
 _Default Value:_ `"content"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+presence_penalty\}
 
 ##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+random_seed\}
 
-##### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+response_format\}
+##### response\_format: <code><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+response_format\}
 
-<details >
+<ExpandableSection.Docusaurus title="ResponseFormat" id="operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat">
 
-<summary>ResponseFormat</summary>
-
-##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat+json_schema\}
+##### json\_schema: <code><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View JsonSchema Details" title="JsonSchema Details">
@@ -935,7 +793,7 @@ _Default Value:_ `"content"`
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+stop\}
 
@@ -947,7 +805,7 @@ _Default Value:_ `0.3`
 
 ##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+top_p\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### description: <code>string | null</code> \{#operation-agents_api_v1_agents_update+request+description\}
 
@@ -970,28 +828,24 @@ _Default Value:_ `0.3`
   verticalAlign: "middle",
 }}>
 <code>
-array&lt;
+<p style={{ margin: "0" }}>array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;
+&gt;</p>
 </code>
 </pre>
 
 List of tools which are available to the model during the conversation.
 
-<details >
+<ExpandableSection.Docusaurus title="FunctionTool" id="operation-agents_api_v1_agents_update+request+FunctionTool">
 
-<summary>FunctionTool</summary>
+##### function \(required\): <code><a href="#operation-agents_api_v1_agents_update+request+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+function\}
 
-##### function \(required\): <code>Function</code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+function\}
-
-<details >
-
-<summary>Function</summary>
+<ExpandableSection.Docusaurus title="Function" id="operation-agents_api_v1_agents_update+request+FunctionTool+Function">
 
 ##### description: <code>string</code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+description\}
 
@@ -1001,57 +855,47 @@ List of tools which are available to the model during the conversation.
 
 ##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+strict\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+type\}
 
 _Default Value:_ `"function"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchTool" id="operation-agents_api_v1_agents_update+request+WebSearchTool">
 
 ##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_update+request+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchPremiumTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_update+request+WebSearchPremiumTool">
 
 ##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_update+request+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>CodeInterpreterTool</summary>
+<ExpandableSection.Docusaurus title="CodeInterpreterTool" id="operation-agents_api_v1_agents_update+request+CodeInterpreterTool">
 
 ##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_update+request+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ImageGenerationTool</summary>
+<ExpandableSection.Docusaurus title="ImageGenerationTool" id="operation-agents_api_v1_agents_update+request+ImageGenerationTool">
 
 ##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_update+request+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentLibraryTool</summary>
+<ExpandableSection.Docusaurus title="DocumentLibraryTool" id="operation-agents_api_v1_agents_update+request+DocumentLibraryTool">
 
 ##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_update+request+DocumentLibraryTool+library_ids\}
 
@@ -1061,35 +905,25 @@ Ids of the library in which to search.
 
 _Default Value:_ `"document_library"`
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ### Response: 200 \(application/json\) \{#operation-agents_api_v1_agents_update+200+application-json\}
 
 Successful Response
 
-<details open>
-
-<summary>Response Body</summary>
-
-#### completion\_args: <code>CompletionArgs</code> \{#operation-agents_api_v1_agents_update+200+application-json+completion_args\}
+#### completion\_args: <code><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_update+200+application-json+completion_args\}
 
 White-listed arguments from the completion API
 
-<details >
-
-<summary>CompletionArgs</summary>
+<ExpandableSection.Docusaurus title="CompletionArgs" id="operation-agents_api_v1_agents_update+200+application-json+CompletionArgs">
 
 ##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+frequency_penalty\}
 
 ##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+max_tokens\}
 
-##### prediction: <code>Prediction | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+prediction\}
+##### prediction: <code><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+prediction\}
 
-<details >
-
-<summary>Prediction</summary>
+<ExpandableSection.Docusaurus title="Prediction" id="operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction">
 
 ##### content: <code>string</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction+content\}
 
@@ -1099,19 +933,17 @@ _Default Value:_ `""`
 
 _Default Value:_ `"content"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+presence_penalty\}
 
 ##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+random_seed\}
 
-##### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+response_format\}
+##### response\_format: <code><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+response_format\}
 
-<details >
+<ExpandableSection.Docusaurus title="ResponseFormat" id="operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat">
 
-<summary>ResponseFormat</summary>
-
-##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
+##### json\_schema: <code><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View JsonSchema Details" title="JsonSchema Details">
@@ -1123,7 +955,7 @@ _Default Value:_ `"content"`
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+stop\}
 
@@ -1135,7 +967,7 @@ _Default Value:_ `0.3`
 
 ##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+top_p\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### created\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_update+200+application-json+created_at\}
 
@@ -1166,28 +998,24 @@ _Default Value:_ `"agent"`
   verticalAlign: "middle",
 }}>
 <code>
-array&lt;
+<p style={{ margin: "0" }}>array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;
+&gt;</p>
 </code>
 </pre>
 
 List of tools which are available to the model during the conversation.
 
-<details >
+<ExpandableSection.Docusaurus title="FunctionTool" id="operation-agents_api_v1_agents_update+200+application-json+FunctionTool">
 
-<summary>FunctionTool</summary>
+##### function \(required\): <code><a href="#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+function\}
 
-##### function \(required\): <code>Function</code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+function\}
-
-<details >
-
-<summary>Function</summary>
+<ExpandableSection.Docusaurus title="Function" id="operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function">
 
 ##### description: <code>string</code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+description\}
 
@@ -1197,57 +1025,47 @@ List of tools which are available to the model during the conversation.
 
 ##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+strict\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+type\}
 
 _Default Value:_ `"function"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchTool" id="operation-agents_api_v1_agents_update+200+application-json+WebSearchTool">
 
 ##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_update+200+application-json+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchPremiumTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_update+200+application-json+WebSearchPremiumTool">
 
 ##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_update+200+application-json+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>CodeInterpreterTool</summary>
+<ExpandableSection.Docusaurus title="CodeInterpreterTool" id="operation-agents_api_v1_agents_update+200+application-json+CodeInterpreterTool">
 
 ##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_update+200+application-json+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ImageGenerationTool</summary>
+<ExpandableSection.Docusaurus title="ImageGenerationTool" id="operation-agents_api_v1_agents_update+200+application-json+ImageGenerationTool">
 
 ##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_update+200+application-json+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentLibraryTool</summary>
+<ExpandableSection.Docusaurus title="DocumentLibraryTool" id="operation-agents_api_v1_agents_update+200+application-json+DocumentLibraryTool">
 
 ##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_update+200+application-json+DocumentLibraryTool+library_ids\}
 
@@ -1257,37 +1075,27 @@ Ids of the library in which to search.
 
 _Default Value:_ `"document_library"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### updated\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_update+200+application-json+updated_at\}
 
 #### version \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_update+200+application-json+version\}
 
-</details>
-
 ### Response: 422 \(application/json\) \{#operation-agents_api_v1_agents_update+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_update+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_update+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_agents_update+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-agents_api_v1_agents_update+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_agents_update+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_update+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_update+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-agents_api_v1_agents_update+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_update+422+application-json+ValidationError+loc\}
 
@@ -1295,9 +1103,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## PATCH /v1/agents/\{agent\_id\}/version \{#operation-agents_api_v1_agents_update_version\}
 
@@ -1307,13 +1113,7 @@ Switch the version of an agent.
 
 ### Security \{#operation-agents_api_v1_agents_update_version+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-agents_api_v1_agents_update_version+parameters\}
 
@@ -1352,27 +1152,19 @@ run();`}
 
 Successful Response
 
-<details open>
-
-<summary>Response Body</summary>
-
-#### completion\_args: <code>CompletionArgs</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+completion_args\}
+#### completion\_args: <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_update_version+200+application-json+completion_args\}
 
 White-listed arguments from the completion API
 
-<details >
-
-<summary>CompletionArgs</summary>
+<ExpandableSection.Docusaurus title="CompletionArgs" id="operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs">
 
 ##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+frequency_penalty\}
 
 ##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+max_tokens\}
 
-##### prediction: <code>Prediction | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+prediction\}
+##### prediction: <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+prediction\}
 
-<details >
-
-<summary>Prediction</summary>
+<ExpandableSection.Docusaurus title="Prediction" id="operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction">
 
 ##### content: <code>string</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction+content\}
 
@@ -1382,19 +1174,17 @@ _Default Value:_ `""`
 
 _Default Value:_ `"content"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+presence_penalty\}
 
 ##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+random_seed\}
 
-##### response\_format: <code>ResponseFormat | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+response_format\}
+##### response\_format: <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+response_format\}
 
-<details >
+<ExpandableSection.Docusaurus title="ResponseFormat" id="operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat">
 
-<summary>ResponseFormat</summary>
-
-##### json\_schema: <code>JsonSchema | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
+##### json\_schema: <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View JsonSchema Details" title="JsonSchema Details">
@@ -1406,7 +1196,7 @@ _Default Value:_ `"content"`
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+stop\}
 
@@ -1418,7 +1208,7 @@ _Default Value:_ `0.3`
 
 ##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+top_p\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### created\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+created_at\}
 
@@ -1449,28 +1239,24 @@ _Default Value:_ `"agent"`
   verticalAlign: "middle",
 }}>
 <code>
-array&lt;
+<p style={{ margin: "0" }}>array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;
+&gt;</p>
 </code>
 </pre>
 
 List of tools which are available to the model during the conversation.
 
-<details >
+<ExpandableSection.Docusaurus title="FunctionTool" id="operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool">
 
-<summary>FunctionTool</summary>
+##### function \(required\): <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+function\}
 
-##### function \(required\): <code>Function</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+function\}
-
-<details >
-
-<summary>Function</summary>
+<ExpandableSection.Docusaurus title="Function" id="operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function">
 
 ##### description: <code>string</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+description\}
 
@@ -1480,57 +1266,47 @@ List of tools which are available to the model during the conversation.
 
 ##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+strict\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+type\}
 
 _Default Value:_ `"function"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchTool" id="operation-agents_api_v1_agents_update_version+200+application-json+WebSearchTool">
 
 ##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>WebSearchPremiumTool</summary>
+<ExpandableSection.Docusaurus title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_update_version+200+application-json+WebSearchPremiumTool">
 
 ##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>CodeInterpreterTool</summary>
+<ExpandableSection.Docusaurus title="CodeInterpreterTool" id="operation-agents_api_v1_agents_update_version+200+application-json+CodeInterpreterTool">
 
 ##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>ImageGenerationTool</summary>
+<ExpandableSection.Docusaurus title="ImageGenerationTool" id="operation-agents_api_v1_agents_update_version+200+application-json+ImageGenerationTool">
 
 ##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>DocumentLibraryTool</summary>
+<ExpandableSection.Docusaurus title="DocumentLibraryTool" id="operation-agents_api_v1_agents_update_version+200+application-json+DocumentLibraryTool">
 
 ##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+DocumentLibraryTool+library_ids\}
 
@@ -1540,37 +1316,27 @@ Ids of the library in which to search.
 
 _Default Value:_ `"document_library"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### updated\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+updated_at\}
 
 #### version \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+version\}
 
-</details>
-
 ### Response: 422 \(application/json\) \{#operation-agents_api_v1_agents_update_version+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_update_version+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_update_version+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-agents_api_v1_agents_update_version+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-agents_api_v1_agents_update_version+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError+loc\}
 
@@ -1578,8 +1344,6 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 <SideBar.Docusaurus />

@@ -3,7 +3,7 @@ sidebar_position: 2.10
 sidebar_label: models
 ---
 
-import { TryItNow } from "@speakeasy-api/docs-md";
+import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
 
 
 # models
@@ -16,13 +16,7 @@ List all models available to the user.
 
 ### Security \{#operation-list_models_v1_models_get+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-list_models_v1_models_get+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-list_models_v1_models_get+try-it-now\}
 
@@ -48,23 +42,15 @@ run();`}
 
 Successful Response
 
-<details open>
+#### data: <code>array&lt;<a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard">BaseModelCard</a> | <a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard">FTModelCard</a>&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+data\}
 
-<summary>Response Body</summary>
-
-#### data: <code>array&lt;BaseModelCard | FTModelCard&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+data\}
-
-<details >
-
-<summary>BaseModelCard</summary>
+<ExpandableSection.Docusaurus title="BaseModelCard" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard">
 
 ##### aliases: <code>array&lt;string&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+aliases\}
 
-##### capabilities \(required\): <code>ModelCapabilities</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+capabilities\}
+##### capabilities \(required\): <code><a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">ModelCapabilities</a></code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+capabilities\}
 
-<details >
-
-<summary>ModelCapabilities</summary>
+<ExpandableSection.Docusaurus title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">
 
 ##### completion\_chat: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_chat\}
 
@@ -86,7 +72,7 @@ _Default Value:_ `true`
 
 _Default Value:_ `false`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### created: <code>integer</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+created\}
 
@@ -116,11 +102,9 @@ _Default Value:_ `"mistralai"`
 
 _Default Value:_ `"base"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
-<details >
-
-<summary>FTModelCard</summary>
+<ExpandableSection.Docusaurus title="FTModelCard" id="operation-list_models_v1_models_get+200+application-json+FTModelCard">
 
 ##### aliases: <code>array&lt;string&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+aliases\}
 
@@ -128,11 +112,9 @@ _Default Value:_ `"base"`
 
 _Default Value:_ `false`
 
-##### capabilities \(required\): <code>ModelCapabilities</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+capabilities\}
+##### capabilities \(required\): <code><a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">ModelCapabilities</a></code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+capabilities\}
 
-<details >
-
-<summary>ModelCapabilities</summary>
+<ExpandableSection.Docusaurus title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">
 
 ##### completion\_chat: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_chat\}
 
@@ -154,7 +136,7 @@ _Default Value:_ `true`
 
 _Default Value:_ `false`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 ##### created: <code>integer</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+created\}
 
@@ -188,37 +170,27 @@ _Default Value:_ `"mistralai"`
 
 _Default Value:_ `"fine-tuned"`
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### object: <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+object\}
 
 _Default Value:_ `"list"`
 
-</details>
-
 ### Response: 422 \(application/json\) \{#operation-list_models_v1_models_get+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-list_models_v1_models_get+422+application-json+Security">Security</a></code> \{#operation-list_models_v1_models_get+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-list_models_v1_models_get+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-list_models_v1_models_get+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-list_models_v1_models_get+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-list_models_v1_models_get+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-list_models_v1_models_get+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-list_models_v1_models_get+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-list_models_v1_models_get+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+loc\}
 
@@ -226,9 +198,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## GET /v1/models/\{model\_id\} \{#operation-retrieve_model_v1_models_model_id_get\}
 
@@ -238,13 +208,7 @@ Retrieve a model information.
 
 ### Security \{#operation-retrieve_model_v1_models_model_id_get+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-retrieve_model_v1_models_model_id_get+parameters\}
 
@@ -288,7 +252,7 @@ run();`}
 
 Successful Response
 
-#### Response Body \(required\): <code>BaseModelCard | FTModelCard</code> \{#operation-retrieve_model_v1_models_model_id_get+200+application-json+Response Body\}
+#### Response Body \(required\): <code><a href="#operation-retrieve_model_v1_models_model_id_get+200+application-json+BaseModelCard">BaseModelCard</a> | <a href="#operation-retrieve_model_v1_models_model_id_get+200+application-json+FTModelCard">FTModelCard</a></code> \{#operation-retrieve_model_v1_models_model_id_get+200+application-json+Response Body\}
 
 Successful Response
 
@@ -296,25 +260,17 @@ Successful Response
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">Security</a></code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+loc\}
 
@@ -322,9 +278,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## DELETE /v1/models/\{model\_id\} \{#operation-delete_model_v1_models_model_id_delete\}
 
@@ -334,13 +288,7 @@ Delete a fine-tuned model.
 
 ### Security \{#operation-delete_model_v1_models_model_id_delete+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-delete_model_v1_models_model_id_delete+parameters\}
 
@@ -384,10 +332,6 @@ run();`}
 
 Successful Response
 
-<details open>
-
-<summary>Response Body</summary>
-
 #### deleted: <code>boolean</code> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+deleted\}
 
 The deletion status
@@ -416,31 +360,21 @@ The object type that was deleted
 
 _Default Value:_ `"model"`
 
-</details>
-
 ### Response: 422 \(application/json\) \{#operation-delete_model_v1_models_model_id_delete+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+Security">Security</a></code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-delete_model_v1_models_model_id_delete+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+loc\}
 
@@ -448,9 +382,7 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ## PATCH /v1/fine\_tuning/models/\{model\_id\} \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model\}
 
@@ -460,13 +392,7 @@ Update a model name or description.
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters\}
 
@@ -509,21 +435,15 @@ run();`}
 
 ### Request Body \(required\) \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request\}
 
-<details open>
-
-<summary>Request Body</summary>
-
 #### description: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+description\}
 
 #### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+name\}
-
-</details>
 
 ### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json\}
 
 OK
 
-#### Response Body \(required\): <code>CompletionFTModelOut | ClassifierFTModelOut</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+Response Body\}
+#### Response Body \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+CompletionFTModelOut">CompletionFTModelOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+ClassifierFTModelOut">ClassifierFTModelOut</a></code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+Response Body\}
 
 OK
 
@@ -535,13 +455,7 @@ Archive a fine-tuned model.
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters\}
 
@@ -585,10 +499,6 @@ run();`}
 
 OK
 
-<details open>
-
-<summary>Response Body</summary>
-
 #### archived: <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+archived\}
 
 _Default Value:_ `true`
@@ -599,8 +509,6 @@ _Default Value:_ `true`
 
 _Default Value:_ `"model"`
 
-</details>
-
 ## DELETE /v1/fine\_tuning/models/\{model\_id\}/archive \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model\}
 
 _Unarchive Fine Tuned Model_
@@ -609,13 +517,7 @@ Un-archive a fine-tuned model.
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security+ApiKey\}
-
-</details>
 
 ### Parameters \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters\}
 
@@ -659,10 +561,6 @@ run();`}
 
 OK
 
-<details open>
-
-<summary>Response Body</summary>
-
 #### archived: <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+archived\}
 
 _Default Value:_ `false`
@@ -672,5 +570,3 @@ _Default Value:_ `false`
 #### object: <code>"model"</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+object\}
 
 _Default Value:_ `"model"`
-
-</details>

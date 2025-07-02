@@ -3,7 +3,7 @@ sidebar_position: 2.8
 sidebar_label: fim
 ---
 
-import { TryItNow, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
+import { TryItNow, ExpandableSection, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
 import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
 import EmbedImageURLChunk from "../../../src/components/speakeasy/embeds/ImageURLChunk.mdx";
 import EmbedDocumentURLChunk from "../../../src/components/speakeasy/embeds/DocumentURLChunk.mdx";
@@ -21,13 +21,7 @@ FIM completion.
 
 ### Security \{#operation-fim_completion_v1_fim_completions_post+security\}
 
-<details open>
-
-<summary>Security</summary>
-
 #### ApiKey \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+security+ApiKey\}
-
-</details>
 
 ### Try it Now \{#operation-fim_completion_v1_fim_completions_post+try-it-now\}
 
@@ -54,10 +48,6 @@ run();`}
 />
 
 ### Request Body \(required\) \{#operation-fim_completion_v1_fim_completions_post+request\}
-
-<details open>
-
-<summary>Request Body</summary>
 
 #### max\_tokens: <code>integer | null</code> \{#operation-fim_completion_v1_fim_completions_post+request+max_tokens\}
 
@@ -113,21 +103,13 @@ Nucleus sampling, where the model considers the results of the tokens with `top_
 
 _Default Value:_ `1`
 
-</details>
-
 ### Response: 200 \(application/json\) \{#operation-fim_completion_v1_fim_completions_post+200+application-json\}
 
 Successful Response
 
-<details open>
+#### choices \(required\): <code>array&lt;<a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice">ChatCompletionChoice</a>&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+choices\}
 
-<summary>Response Body</summary>
-
-#### choices \(required\): <code>array&lt;ChatCompletionChoice&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+choices\}
-
-<details >
-
-<summary>ChatCompletionChoice</summary>
+<ExpandableSection.Docusaurus title="ChatCompletionChoice" id="operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice">
 
 ##### finish\_reason \(required\) \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+finish_reason\}
 
@@ -140,7 +122,7 @@ Successful Response
   verticalAlign: "middle",
 }}>
 <code>
-"stop" | "length" | "model_length" | "error" | "tool_calls"
+<p style={{ margin: "0" }}>"stop" | "length" | "model_length" | "error" | "tool_calls"</p>
 </code>
 </pre>
 
@@ -158,11 +140,9 @@ _Example:_
 0
 ```
 
-##### message \(required\): <code>AssistantMessage</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+message\}
+##### message \(required\): <code><a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">AssistantMessage</a></code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+message\}
 
-<details >
-
-<summary>AssistantMessage</summary>
+<ExpandableSection.Docusaurus title="AssistantMessage" id="operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">
 
 ##### content \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+content\}
 
@@ -175,9 +155,9 @@ _Example:_
   verticalAlign: "middle",
 }}>
 <code>
-| string
-| array&lt;TextChunk | ImageURLChunk | DocumentURLChunk | ReferenceChunk&gt;
-| null
+<p style={{ margin: "0" }}>| string
+| array&lt;<a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk">TextChunk</a> | <a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk">ReferenceChunk</a>&gt;
+| null</p>
 </code>
 </pre>
 
@@ -215,7 +195,7 @@ _Default Value:_ `false`
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: <code>array&lt;ToolCall&gt; | null</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
+##### tool\_calls: <code>array&lt;<a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
 
 <p>
     <SideBarTrigger.Docusaurus cta="View ToolCall Details" title="ToolCall Details">
@@ -223,9 +203,9 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger.Docusaurus>
   </p>
 
-</details>
+</ExpandableSection.Docusaurus>
 
-</details>
+</ExpandableSection.Docusaurus>
 
 #### created \(required\): <code>integer</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+created\}
 
@@ -259,11 +239,9 @@ _Example:_
 chat.completion
 ```
 
-#### usage \(required\): <code>UsageInfo</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+usage\}
+#### usage \(required\): <code><a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo">UsageInfo</a></code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+usage\}
 
-<details >
-
-<summary>UsageInfo</summary>
+<ExpandableSection.Docusaurus title="UsageInfo" id="operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo">
 
 ##### completion\_tokens \(required\): <code>integer</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo+completion_tokens\}
 
@@ -289,33 +267,23 @@ _Example:_
 50
 ```
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 ### Response: 422 \(application/json\) \{#operation-fim_completion_v1_fim_completions_post+422+application-json\}
 
 Validation Error
 
-<details open>
+#### HttpMeta \(required\): <code><a href="#operation-fim_completion_v1_fim_completions_post+422+application-json+Security">Security</a></code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+HttpMeta\}
 
-<summary>Response Body</summary>
-
-#### HttpMeta \(required\): <code>Security</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+HttpMeta\}
-
-<details >
-
-<summary>Security</summary>
+<ExpandableSection.Docusaurus title="Security" id="operation-fim_completion_v1_fim_completions_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+Security+ApiKey\}
 
-</details>
+</ExpandableSection.Docusaurus>
 
-#### detail: <code>array&lt;ValidationError&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+detail\}
+#### detail: <code>array&lt;<a href="#operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+detail\}
 
-<details >
-
-<summary>ValidationError</summary>
+<ExpandableSection.Docusaurus title="ValidationError" id="operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError+loc\}
 
@@ -323,8 +291,6 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError+type\}
 
-</details>
-
-</details>
+</ExpandableSection.Docusaurus>
 
 <SideBar.Docusaurus />
