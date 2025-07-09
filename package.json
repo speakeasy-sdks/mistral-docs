@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start --host 0.0.0.0 --port 3030 --no-open",
+    "start": "docusaurus start --host 0.0.0.0 --port 3030",
     "build-api-docs": "docs-md",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -26,18 +26,14 @@
     "docusaurus-lunr-search": "^3.4.0",
     "jotai": "^2.12.5",
     "lunr": "^2.3.9",
-    "motion": "^12.15.0",
+    "motion": "^12.18.1",
     "prism-react-renderer": "^2.3.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "redocusaurus": "^2.1.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.2.1",
     "@docusaurus/tsconfig": "^3.5.2",
-    "@docusaurus/types": "^3.5.2",
-    "@tsconfig/docusaurus": "^2.0.3",
-    "@types/node": "^22.15.24",
     "@types/react": "^18.3.4",
     "typescript": "^5.5.4"
   },
