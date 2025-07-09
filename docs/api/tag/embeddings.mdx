@@ -3,7 +3,7 @@ sidebar_position: 2.6
 sidebar_label: embeddings
 ---
 
-import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
+import { Section, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # embeddings
@@ -14,13 +14,15 @@ _Embeddings_
 
 Embeddings
 
-### Security \{#operation-embeddings_v1_embeddings_post+security\}
+<Section title="Security" id="operation-embeddings_v1_embeddings_post+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+security+ApiKey\}
 
-### Try it Now \{#operation-embeddings_v1_embeddings_post+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-embeddings_v1_embeddings_post+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -44,7 +46,9 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\) \{#operation-embeddings_v1_embeddings_post+request\}
+</Section>
+
+<Section title="Request Body" id="operation-embeddings_v1_embeddings_post+request">
 
 #### inputs \(required\): <code>string | array&lt;string&gt;</code> \{#operation-embeddings_v1_embeddings_post+request+inputs\}
 
@@ -64,13 +68,17 @@ mistral-embed
 
 #### output\_dtype: <code>"float" | "int8" | "uint8" | "binary" | "ubinary"</code> \{#operation-embeddings_v1_embeddings_post+request+output_dtype\}
 
-### Response: 200 \(application/json\) \{#operation-embeddings_v1_embeddings_post+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-embeddings_v1_embeddings_post+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 Successful Response
 
 #### data \(required\): <code>array&lt;<a href="#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData">EmbeddingResponseData</a>&gt;</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+data\}
 
-<ExpandableSection.Docusaurus title="EmbeddingResponseData" id="operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData">
+<ExpandableSection title="EmbeddingResponseData" id="operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData">
 
 ##### embedding: <code>array&lt;number&gt;</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData+embedding\}
 
@@ -90,7 +98,7 @@ _Example:_
 embedding
 ```
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### id \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+id\}
 
@@ -118,7 +126,7 @@ chat.completion
 
 #### usage \(required\): <code><a href="#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo">UsageInfo</a></code> \{#operation-embeddings_v1_embeddings_post+200+application-json+usage\}
 
-<ExpandableSection.Docusaurus title="UsageInfo" id="operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo">
+<ExpandableSection title="UsageInfo" id="operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo">
 
 ##### completion\_tokens \(required\): <code>integer</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo+completion_tokens\}
 
@@ -144,23 +152,25 @@ _Example:_
 50
 ```
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
-### Response: 422 \(application/json\) \{#operation-embeddings_v1_embeddings_post+422+application-json\}
+</div>
+
+<div title="422" tooltip="422 (application/json)">
 
 Validation Error
 
 #### HttpMeta \(required\): <code><a href="#operation-embeddings_v1_embeddings_post+422+application-json+Security">Security</a></code> \{#operation-embeddings_v1_embeddings_post+422+application-json+HttpMeta\}
 
-<ExpandableSection.Docusaurus title="Security" id="operation-embeddings_v1_embeddings_post+422+application-json+Security">
+<ExpandableSection title="Security" id="operation-embeddings_v1_embeddings_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+Security+ApiKey\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### detail: <code>array&lt;<a href="#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+detail\}
 
-<ExpandableSection.Docusaurus title="ValidationError" id="operation-embeddings_v1_embeddings_post+422+application-json+ValidationError">
+<ExpandableSection title="ValidationError" id="operation-embeddings_v1_embeddings_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+loc\}
 
@@ -168,4 +178,8 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+type\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
+
+</div>
+
+</TabbedSection>

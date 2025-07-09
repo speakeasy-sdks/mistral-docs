@@ -3,7 +3,7 @@ sidebar_position: 2.11
 sidebar_label: ocr
 ---
 
-import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
+import { Section, TryItNow, ExpandableSection, TabbedSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # ocr
@@ -12,13 +12,15 @@ import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
 
 OCR
 
-### Security \{#operation-ocr_v1_ocr_post+security\}
+<Section title="Security" id="operation-ocr_v1_ocr_post+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+security+ApiKey\}
 
-### Try it Now \{#operation-ocr_v1_ocr_post+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-ocr_v1_ocr_post+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -44,15 +46,17 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\) \{#operation-ocr_v1_ocr_post+request\}
+</Section>
+
+<Section title="Request Body" id="operation-ocr_v1_ocr_post+request">
 
 #### bbox\_annotation\_format: <code><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format\}
 
-<ExpandableSection.Docusaurus title="ResponseFormat" id="operation-ocr_v1_ocr_post+request+ResponseFormat">
+<ExpandableSection title="ResponseFormat" id="operation-ocr_v1_ocr_post+request+ResponseFormat">
 
 ##### json\_schema: <code><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
 
-<ExpandableSection.Docusaurus title="JsonSchema" id="operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">
+<ExpandableSection title="JsonSchema" id="operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">
 
 ##### description: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
 
@@ -62,19 +66,19 @@ run();`}
 
 ##### strict: <code>boolean</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### document \(required\): <code><a href="#operation-ocr_v1_ocr_post+request+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-ocr_v1_ocr_post+request+ImageURLChunk">ImageURLChunk</a></code> \{#operation-ocr_v1_ocr_post+request+document\}
 
 Document to run OCR on
 
-<ExpandableSection.Docusaurus title="DocumentURLChunk" id="operation-ocr_v1_ocr_post+request+DocumentURLChunk">
+<ExpandableSection title="DocumentURLChunk" id="operation-ocr_v1_ocr_post+request+DocumentURLChunk">
 
 ##### document\_name: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_name\}
 
@@ -84,33 +88,33 @@ Document to run OCR on
 
 _Default Value:_ `"document_url"`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
-<ExpandableSection.Docusaurus title="ImageURLChunk" id="operation-ocr_v1_ocr_post+request+ImageURLChunk">
+<ExpandableSection title="ImageURLChunk" id="operation-ocr_v1_ocr_post+request+ImageURLChunk">
 
 ##### image\_url \(required\): <code><a href="#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+image_url\}
 
-<ExpandableSection.Docusaurus title="ImageURL" id="operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL">
+<ExpandableSection title="ImageURL" id="operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL">
 
 ##### detail: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+detail\}
 
 ##### url \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+url\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### type: <code>"image_url"</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### document\_annotation\_format: <code><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-ocr_v1_ocr_post+request+document_annotation_format\}
 
-<ExpandableSection.Docusaurus title="ResponseFormat" id="operation-ocr_v1_ocr_post+request+ResponseFormat">
+<ExpandableSection title="ResponseFormat" id="operation-ocr_v1_ocr_post+request+ResponseFormat">
 
 ##### json\_schema: <code><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
 
-<ExpandableSection.Docusaurus title="JsonSchema" id="operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">
+<ExpandableSection title="JsonSchema" id="operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">
 
 ##### description: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
 
@@ -120,13 +124,13 @@ _Default Value:_ `"image_url"`
 
 ##### strict: <code>boolean</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### id: <code>string</code> \{#operation-ocr_v1_ocr_post+request+id\}
 
@@ -140,7 +144,11 @@ An object specifying the format that the model must output. Setting to `\{ "type
 
 #### pages: <code>array&lt;integer&gt; | null</code> \{#operation-ocr_v1_ocr_post+request+pages\}
 
-### Response: 200 \(application/json\) \{#operation-ocr_v1_ocr_post+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-ocr_v1_ocr_post+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 Successful Response
 
@@ -154,11 +162,11 @@ The model used to generate the OCR.
 
 List of OCR info for pages.
 
-<ExpandableSection.Docusaurus title="OCRPageObject" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject">
+<ExpandableSection title="OCRPageObject" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject">
 
 ##### dimensions \(required\): <code><a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions">OCRPageDimensions</a> | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+dimensions\}
 
-<ExpandableSection.Docusaurus title="OCRPageDimensions" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions">
+<ExpandableSection title="OCRPageDimensions" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions">
 
 ##### dpi \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+dpi\}
 
@@ -172,13 +180,13 @@ Height of the image in pixels
 
 Width of the image in pixels
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### images \(required\): <code>array&lt;<a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject">OCRImageObject</a>&gt;</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+images\}
 
 List of all extracted images in the page
 
-<ExpandableSection.Docusaurus title="OCRImageObject" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject">
+<ExpandableSection title="OCRImageObject" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject">
 
 ##### bottom\_right\_x \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_x\}
 
@@ -196,7 +204,7 @@ Image ID for extracted image in a page
 
 ##### top\_left\_y \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_y\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### index \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+index\}
 
@@ -206,11 +214,11 @@ The page index in a pdf document starting from 0
 
 The markdown string response of the page
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### usage\_info \(required\): <code><a href="#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo">OCRUsageInfo</a></code> \{#operation-ocr_v1_ocr_post+200+application-json+usage_info\}
 
-<ExpandableSection.Docusaurus title="OCRUsageInfo" id="operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo">
+<ExpandableSection title="OCRUsageInfo" id="operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo">
 
 ##### doc\_size\_bytes: <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+doc_size_bytes\}
 
@@ -218,23 +226,25 @@ The markdown string response of the page
 
 Number of pages processed
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
-### Response: 422 \(application/json\) \{#operation-ocr_v1_ocr_post+422+application-json\}
+</div>
+
+<div title="422" tooltip="422 (application/json)">
 
 Validation Error
 
 #### HttpMeta \(required\): <code><a href="#operation-ocr_v1_ocr_post+422+application-json+Security">Security</a></code> \{#operation-ocr_v1_ocr_post+422+application-json+HttpMeta\}
 
-<ExpandableSection.Docusaurus title="Security" id="operation-ocr_v1_ocr_post+422+application-json+Security">
+<ExpandableSection title="Security" id="operation-ocr_v1_ocr_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+422+application-json+Security+ApiKey\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### detail: <code>array&lt;<a href="#operation-ocr_v1_ocr_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-ocr_v1_ocr_post+422+application-json+detail\}
 
-<ExpandableSection.Docusaurus title="ValidationError" id="operation-ocr_v1_ocr_post+422+application-json+ValidationError">
+<ExpandableSection title="ValidationError" id="operation-ocr_v1_ocr_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+loc\}
 
@@ -242,4 +252,8 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+type\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
+
+</div>
+
+</TabbedSection>

@@ -3,7 +3,7 @@ sidebar_position: 2.8
 sidebar_label: fim
 ---
 
-import { TryItNow, ExpandableSection, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md";
+import { Section, TryItNow, TabbedSection, ExpandableSection, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md/docusaurus";
 import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
 import EmbedImageURLChunk from "../../../src/components/speakeasy/embeds/ImageURLChunk.mdx";
 import EmbedDocumentURLChunk from "../../../src/components/speakeasy/embeds/DocumentURLChunk.mdx";
@@ -19,13 +19,15 @@ _Fim Completion_
 
 FIM completion.
 
-### Security \{#operation-fim_completion_v1_fim_completions_post+security\}
+<Section title="Security" id="operation-fim_completion_v1_fim_completions_post+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+security+ApiKey\}
 
-### Try it Now \{#operation-fim_completion_v1_fim_completions_post+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-fim_completion_v1_fim_completions_post+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -47,7 +49,9 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\) \{#operation-fim_completion_v1_fim_completions_post+request\}
+</Section>
+
+<Section title="Request Body" id="operation-fim_completion_v1_fim_completions_post+request">
 
 #### max\_tokens: <code>integer | null</code> \{#operation-fim_completion_v1_fim_completions_post+request+max_tokens\}
 
@@ -103,13 +107,17 @@ Nucleus sampling, where the model considers the results of the tokens with `top_
 
 _Default Value:_ `1`
 
-### Response: 200 \(application/json\) \{#operation-fim_completion_v1_fim_completions_post+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-fim_completion_v1_fim_completions_post+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 Successful Response
 
 #### choices \(required\): <code>array&lt;<a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice">ChatCompletionChoice</a>&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+choices\}
 
-<ExpandableSection.Docusaurus title="ChatCompletionChoice" id="operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice">
+<ExpandableSection title="ChatCompletionChoice" id="operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice">
 
 ##### finish\_reason \(required\) \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+finish_reason\}
 
@@ -142,7 +150,7 @@ _Example:_
 
 ##### message \(required\): <code><a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">AssistantMessage</a></code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+message\}
 
-<ExpandableSection.Docusaurus title="AssistantMessage" id="operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">
+<ExpandableSection title="AssistantMessage" id="operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">
 
 ##### content \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+content\}
 
@@ -162,27 +170,27 @@ _Example:_
 </pre>
 
 <p>
-    <SideBarTrigger.Docusaurus cta="View TextChunk Details" title="TextChunk Details">
+    <SideBarTrigger cta="View TextChunk Details" title="TextChunk Details">
       <EmbedTextChunk />
-    </SideBarTrigger.Docusaurus>
+    </SideBarTrigger>
   </p>
 
 <p>
-    <SideBarTrigger.Docusaurus cta="View ImageURLChunk Details" title="ImageURLChunk Details">
+    <SideBarTrigger cta="View ImageURLChunk Details" title="ImageURLChunk Details">
       <EmbedImageURLChunk />
-    </SideBarTrigger.Docusaurus>
+    </SideBarTrigger>
   </p>
 
 <p>
-    <SideBarTrigger.Docusaurus cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
+    <SideBarTrigger cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
       <EmbedDocumentURLChunk />
-    </SideBarTrigger.Docusaurus>
+    </SideBarTrigger>
   </p>
 
 <p>
-    <SideBarTrigger.Docusaurus cta="View ReferenceChunk Details" title="ReferenceChunk Details">
+    <SideBarTrigger cta="View ReferenceChunk Details" title="ReferenceChunk Details">
       <EmbedReferenceChunk />
-    </SideBarTrigger.Docusaurus>
+    </SideBarTrigger>
   </p>
 
 ##### prefix: <code>boolean</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+prefix\}
@@ -198,14 +206,14 @@ _Default Value:_ `"assistant"`
 ##### tool\_calls: <code>array&lt;<a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
 
 <p>
-    <SideBarTrigger.Docusaurus cta="View ToolCall Details" title="ToolCall Details">
+    <SideBarTrigger cta="View ToolCall Details" title="ToolCall Details">
       <EmbedToolCall />
-    </SideBarTrigger.Docusaurus>
+    </SideBarTrigger>
   </p>
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### created \(required\): <code>integer</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+created\}
 
@@ -241,7 +249,7 @@ chat.completion
 
 #### usage \(required\): <code><a href="#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo">UsageInfo</a></code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+usage\}
 
-<ExpandableSection.Docusaurus title="UsageInfo" id="operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo">
+<ExpandableSection title="UsageInfo" id="operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo">
 
 ##### completion\_tokens \(required\): <code>integer</code> \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo+completion_tokens\}
 
@@ -267,23 +275,25 @@ _Example:_
 50
 ```
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
-### Response: 422 \(application/json\) \{#operation-fim_completion_v1_fim_completions_post+422+application-json\}
+</div>
+
+<div title="422" tooltip="422 (application/json)">
 
 Validation Error
 
 #### HttpMeta \(required\): <code><a href="#operation-fim_completion_v1_fim_completions_post+422+application-json+Security">Security</a></code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+HttpMeta\}
 
-<ExpandableSection.Docusaurus title="Security" id="operation-fim_completion_v1_fim_completions_post+422+application-json+Security">
+<ExpandableSection title="Security" id="operation-fim_completion_v1_fim_completions_post+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+Security+ApiKey\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### detail: <code>array&lt;<a href="#operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+detail\}
 
-<ExpandableSection.Docusaurus title="ValidationError" id="operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError">
+<ExpandableSection title="ValidationError" id="operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError+loc\}
 
@@ -291,6 +301,10 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-fim_completion_v1_fim_completions_post+422+application-json+ValidationError+type\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
-<SideBar.Docusaurus />
+</div>
+
+</TabbedSection>
+
+<SideBar />

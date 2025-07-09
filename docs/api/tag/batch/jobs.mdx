@@ -3,7 +3,7 @@ sidebar_position: 2.1
 sidebar_label: batch/jobs
 ---
 
-import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
+import { Section, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # batch/jobs
@@ -14,13 +14,15 @@ _Get Batch Jobs_
 
 Get a list of batch jobs for your organization and user.
 
-### Security \{#operation-jobs_api_routes_batch_get_batch_jobs+security\}
+<Section title="Security" id="operation-jobs_api_routes_batch_get_batch_jobs+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+security+ApiKey\}
 
-### Try it Now \{#operation-jobs_api_routes_batch_get_batch_jobs+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_batch_get_batch_jobs+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -38,13 +40,17 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_batch_get_batch_jobs+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
 #### data: <code>array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">BatchJobOut</a>&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+data\}
 
-<ExpandableSection.Docusaurus title="BatchJobOut" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">
+<ExpandableSection title="BatchJobOut" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">
 
 ##### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_at\}
 
@@ -58,7 +64,7 @@ OK
 
 ##### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+errors\}
 
-<ExpandableSection.Docusaurus title="BatchError" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">
+<ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">
 
 ##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+count\}
 
@@ -66,7 +72,7 @@ _Default Value:_ `1`
 
 ##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+message\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+failed_requests\}
 
@@ -111,7 +117,7 @@ _Default Value:_ `"batch"`
 
 ##### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+total_requests\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### object: <code>"list"</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+object\}
 
@@ -119,19 +125,25 @@ _Default Value:_ `"list"`
 
 #### total \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+total\}
 
+</div>
+
+</TabbedSection>
+
 ## POST /v1/batch/jobs \{#operation-jobs_api_routes_batch_create_batch_job\}
 
 _Create Batch Job_
 
 Create a new batch job, it will be queued for processing.
 
-### Security \{#operation-jobs_api_routes_batch_create_batch_job+security\}
+<Section title="Security" id="operation-jobs_api_routes_batch_create_batch_job+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+security+ApiKey\}
 
-### Try it Now \{#operation-jobs_api_routes_batch_create_batch_job+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_batch_create_batch_job+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -155,7 +167,9 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\) \{#operation-jobs_api_routes_batch_create_batch_job+request\}
+</Section>
+
+<Section title="Request Body" id="operation-jobs_api_routes_batch_create_batch_job+request">
 
 #### endpoint \(required\) \{#operation-jobs_api_routes_batch_create_batch_job+request+endpoint\}
 
@@ -186,7 +200,11 @@ run();`}
 
 _Default Value:_ `24`
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_batch_create_batch_job+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -202,7 +220,7 @@ OK
 
 #### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+errors\}
 
-<ExpandableSection.Docusaurus title="BatchError" id="operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">
+<ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">
 
 ##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+count\}
 
@@ -210,7 +228,7 @@ _Default Value:_ `1`
 
 ##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+message\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+failed_requests\}
 
@@ -255,25 +273,33 @@ _Default Value:_ `"batch"`
 
 #### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+total_requests\}
 
+</div>
+
+</TabbedSection>
+
 ## GET /v1/batch/jobs/\{job\_id\} \{#operation-jobs_api_routes_batch_get_batch_job\}
 
 _Get Batch Job_
 
 Get a batch job details by its UUID.
 
-### Security \{#operation-jobs_api_routes_batch_get_batch_job+security\}
+<Section title="Security" id="operation-jobs_api_routes_batch_get_batch_job+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+security+ApiKey\}
 
-### Parameters \{#operation-jobs_api_routes_batch_get_batch_job+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-jobs_api_routes_batch_get_batch_job+parameters">
 
 #### job\_id \(required\) \{#operation-jobs_api_routes_batch_get_batch_job+parameters+job_id\}
 
 #### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+parameters+Security\}
 
-### Try it Now \{#operation-jobs_api_routes_batch_get_batch_job+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_batch_get_batch_job+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -293,7 +319,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_batch_get_batch_job+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -309,7 +339,7 @@ OK
 
 #### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+errors\}
 
-<ExpandableSection.Docusaurus title="BatchError" id="operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">
+<ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">
 
 ##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+count\}
 
@@ -317,7 +347,7 @@ _Default Value:_ `1`
 
 ##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+message\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+failed_requests\}
 
@@ -362,25 +392,33 @@ _Default Value:_ `"batch"`
 
 #### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+total_requests\}
 
+</div>
+
+</TabbedSection>
+
 ## POST /v1/batch/jobs/\{job\_id\}/cancel \{#operation-jobs_api_routes_batch_cancel_batch_job\}
 
 _Cancel Batch Job_
 
 Request the cancellation of a batch job.
 
-### Security \{#operation-jobs_api_routes_batch_cancel_batch_job+security\}
+<Section title="Security" id="operation-jobs_api_routes_batch_cancel_batch_job+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+security+ApiKey\}
 
-### Parameters \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-jobs_api_routes_batch_cancel_batch_job+parameters">
 
 #### job\_id \(required\) \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+job_id\}
 
 #### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+Security\}
 
-### Try it Now \{#operation-jobs_api_routes_batch_cancel_batch_job+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_batch_cancel_batch_job+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -400,7 +438,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_batch_cancel_batch_job+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -416,7 +458,7 @@ OK
 
 #### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+errors\}
 
-<ExpandableSection.Docusaurus title="BatchError" id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">
+<ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">
 
 ##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+count\}
 
@@ -424,7 +466,7 @@ _Default Value:_ `1`
 
 ##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+message\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+failed_requests\}
 
@@ -468,3 +510,7 @@ _Default Value:_ `"batch"`
 #### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+succeeded_requests\}
 
 #### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+total_requests\}
+
+</div>
+
+</TabbedSection>

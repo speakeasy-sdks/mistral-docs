@@ -3,7 +3,7 @@ sidebar_position: 2.7
 sidebar_label: files
 ---
 
-import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
+import { Section, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # files
@@ -14,13 +14,15 @@ _List Files_
 
 Returns a list of files that belong to the user's organization.
 
-### Security \{#operation-files_api_routes_list_files+security\}
+<Section title="Security" id="operation-files_api_routes_list_files+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-files_api_routes_list_files+security+ApiKey\}
 
-### Try it Now \{#operation-files_api_routes_list_files+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-files_api_routes_list_files+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -38,13 +40,17 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-files_api_routes_list_files+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-files_api_routes_list_files+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
 #### data \(required\): <code>array&lt;<a href="#operation-files_api_routes_list_files+200+application-json+FileSchema">FileSchema</a>&gt;</code> \{#operation-files_api_routes_list_files+200+application-json+data\}
 
-<ExpandableSection.Docusaurus title="FileSchema" id="operation-files_api_routes_list_files+200+application-json+FileSchema">
+<ExpandableSection title="FileSchema" id="operation-files_api_routes_list_files+200+application-json+FileSchema">
 
 ##### created\_at \(required\): <code>integer</code> \{#operation-files_api_routes_list_files+200+application-json+FileSchema+created_at\}
 
@@ -117,11 +123,15 @@ _Example:_
 
 ##### source \(required\): <code>"upload" | "repository" | "mistral"</code> \{#operation-files_api_routes_list_files+200+application-json+FileSchema+source\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### object \(required\): <code>string</code> \{#operation-files_api_routes_list_files+200+application-json+object\}
 
 #### total \(required\): <code>integer</code> \{#operation-files_api_routes_list_files+200+application-json+total\}
+
+</div>
+
+</TabbedSection>
 
 ## POST /v1/files \{#operation-files_api_routes_upload_file\}
 
@@ -133,13 +143,15 @@ The size of individual files can be a maximum of 512 MB. The Fine-tuning API onl
 
 Please contact us if you need to increase these storage limits.
 
-### Security \{#operation-files_api_routes_upload_file+security\}
+<Section title="Security" id="operation-files_api_routes_upload_file+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-files_api_routes_upload_file+security+ApiKey\}
 
-### Try it Now \{#operation-files_api_routes_upload_file+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-files_api_routes_upload_file+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 import { openAsBlob } from "node:fs";
@@ -160,7 +172,9 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\) \{#operation-files_api_routes_upload_file+request\}
+</Section>
+
+<Section title="Request Body" id="operation-files_api_routes_upload_file+request">
 
 #### file \(required\): <code><a href="#operation-files_api_routes_upload_file+request+File">File</a></code> \{#operation-files_api_routes_upload_file+request+file\}
 
@@ -174,17 +188,21 @@ The File object (not file name) to be uploaded.
  file=@path/to/your/file.jsonl
  ```
 
-<ExpandableSection.Docusaurus title="File" id="operation-files_api_routes_upload_file+request+File">
+<ExpandableSection title="File" id="operation-files_api_routes_upload_file+request+File">
 
 ##### content \(required\): <code>binary</code> \{#operation-files_api_routes_upload_file+request+File+content\}
 
 ##### fileName \(required\): <code>string</code> \{#operation-files_api_routes_upload_file+request+File+fileName\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### purpose: <code>"fine-tune" | "batch" | "ocr"</code> \{#operation-files_api_routes_upload_file+request+purpose\}
 
-### Response: 200 \(application/json\) \{#operation-files_api_routes_upload_file+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-files_api_routes_upload_file+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -259,25 +277,33 @@ _Example:_
 
 #### source \(required\): <code>"upload" | "repository" | "mistral"</code> \{#operation-files_api_routes_upload_file+200+application-json+source\}
 
+</div>
+
+</TabbedSection>
+
 ## GET /v1/files/\{file\_id\} \{#operation-files_api_routes_retrieve_file\}
 
 _Retrieve File_
 
 Returns information about a specific file.
 
-### Security \{#operation-files_api_routes_retrieve_file+security\}
+<Section title="Security" id="operation-files_api_routes_retrieve_file+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-files_api_routes_retrieve_file+security+ApiKey\}
 
-### Parameters \{#operation-files_api_routes_retrieve_file+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-files_api_routes_retrieve_file+parameters">
 
 #### file\_id \(required\) \{#operation-files_api_routes_retrieve_file+parameters+file_id\}
 
 #### Security \(required\): <code>string</code> \{#operation-files_api_routes_retrieve_file+parameters+Security\}
 
-### Try it Now \{#operation-files_api_routes_retrieve_file+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-files_api_routes_retrieve_file+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -297,7 +323,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-files_api_routes_retrieve_file+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-files_api_routes_retrieve_file+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -374,25 +404,33 @@ _Example:_
 
 #### source \(required\): <code>"upload" | "repository" | "mistral"</code> \{#operation-files_api_routes_retrieve_file+200+application-json+source\}
 
+</div>
+
+</TabbedSection>
+
 ## DELETE /v1/files/\{file\_id\} \{#operation-files_api_routes_delete_file\}
 
 _Delete File_
 
 Delete a file.
 
-### Security \{#operation-files_api_routes_delete_file+security\}
+<Section title="Security" id="operation-files_api_routes_delete_file+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-files_api_routes_delete_file+security+ApiKey\}
 
-### Parameters \{#operation-files_api_routes_delete_file+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-files_api_routes_delete_file+parameters">
 
 #### file\_id \(required\) \{#operation-files_api_routes_delete_file+parameters+file_id\}
 
 #### Security \(required\): <code>string</code> \{#operation-files_api_routes_delete_file+parameters+Security\}
 
-### Try it Now \{#operation-files_api_routes_delete_file+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-files_api_routes_delete_file+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -412,7 +450,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-files_api_routes_delete_file+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-files_api_routes_delete_file+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -446,25 +488,33 @@ _Example:_
 file
 ```
 
+</div>
+
+</TabbedSection>
+
 ## GET /v1/files/\{file\_id\}/content \{#operation-files_api_routes_download_file\}
 
 _Download File_
 
 Download a file
 
-### Security \{#operation-files_api_routes_download_file+security\}
+<Section title="Security" id="operation-files_api_routes_download_file+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-files_api_routes_download_file+security+ApiKey\}
 
-### Parameters \{#operation-files_api_routes_download_file+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-files_api_routes_download_file+parameters">
 
 #### file\_id \(required\) \{#operation-files_api_routes_download_file+parameters+file_id\}
 
 #### Security \(required\): <code>string</code> \{#operation-files_api_routes_download_file+parameters+Security\}
 
-### Try it Now \{#operation-files_api_routes_download_file+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-files_api_routes_download_file+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -484,7 +534,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/octet-stream\) \{#operation-files_api_routes_download_file+200+application-octet-stream\}
+</Section>
+
+<TabbedSection title="Response" id="operation-files_api_routes_download_file+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/octet-stream)">
 
 OK
 
@@ -492,15 +546,21 @@ OK
 
 OK
 
+</div>
+
+</TabbedSection>
+
 ## GET /v1/files/\{file\_id\}/url \{#operation-files_api_routes_get_signed_url\}
 
 Get Signed Url
 
-### Security \{#operation-files_api_routes_get_signed_url+security\}
+<Section title="Security" id="operation-files_api_routes_get_signed_url+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-files_api_routes_get_signed_url+security+ApiKey\}
 
-### Parameters \{#operation-files_api_routes_get_signed_url+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-files_api_routes_get_signed_url+parameters">
 
 #### file\_id \(required\) \{#operation-files_api_routes_get_signed_url+parameters+file_id\}
 
@@ -514,9 +574,11 @@ Number of hours before the url becomes invalid. Defaults to 24h
 
 Number of hours before the url becomes invalid. Defaults to 24h
 
-### Try it Now \{#operation-files_api_routes_get_signed_url+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-files_api_routes_get_signed_url+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -536,8 +598,16 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-files_api_routes_get_signed_url+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-files_api_routes_get_signed_url+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
 #### url \(required\): <code>string</code> \{#operation-files_api_routes_get_signed_url+200+application-json+url\}
+
+</div>
+
+</TabbedSection>

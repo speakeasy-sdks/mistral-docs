@@ -3,7 +3,7 @@ sidebar_position: 2.9
 sidebar_label: fine-tuning/jobs
 ---
 
-import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
+import { Section, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # fine-tuning/jobs
@@ -14,13 +14,15 @@ _Get Fine Tuning Jobs_
 
 Get a list of fine-tuning jobs for your organization and user.
 
-### Security \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security\}
+<Section title="Security" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security+ApiKey\}
 
-### Try it Now \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -38,13 +40,17 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
 #### data: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut">CompletionJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut">ClassifierJobOut</a>&gt;</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+data\}
 
-<ExpandableSection.Docusaurus title="CompletionJobOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut">
+<ExpandableSection title="CompletionJobOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut">
 
 ##### auto\_start \(required\): <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+auto_start\}
 
@@ -56,7 +62,7 @@ The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
 ##### hyperparameters \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters">CompletionTrainingParameters</a></code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+hyperparameters\}
 
-<ExpandableSection.Docusaurus title="CompletionTrainingParameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters">
+<ExpandableSection title="CompletionTrainingParameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters">
 
 ##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+epochs\}
 
@@ -74,7 +80,7 @@ _Default Value:_ `0.0001`
 
 ##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+weight_decay\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+id\}
 
@@ -82,7 +88,7 @@ The ID of the job.
 
 ##### integrations: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+integrations\}
 
-<ExpandableSection.Docusaurus title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">
+<ExpandableSection title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">
 
 ##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+name\}
 
@@ -98,7 +104,7 @@ _Default Value:_ `"wandb"`
 
 ##### url: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+url\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### job\_type: <code>"completion"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+job_type\}
 
@@ -108,7 +114,7 @@ _Default Value:_ `"completion"`
 
 ##### metadata: <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut">JobMetadataOut</a> | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+metadata\}
 
-<ExpandableSection.Docusaurus title="JobMetadataOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut">
+<ExpandableSection title="JobMetadataOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut">
 
 ##### cost: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+cost\}
 
@@ -124,7 +130,7 @@ _Default Value:_ `"completion"`
 
 ##### train\_tokens\_per\_step: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+train_tokens_per_step\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### model \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+model\}
 
@@ -142,7 +148,7 @@ _Default Value:_ `"job"`
 
 ##### repositories: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+repositories\}
 
-<ExpandableSection.Docusaurus title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">
+<ExpandableSection title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">
 
 ##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+name\}
 
@@ -158,7 +164,7 @@ _Default Value:_ `"wandb"`
 
 ##### url: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+url\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### status \(required\) \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+status\}
 
@@ -196,9 +202,9 @@ A list containing the IDs of uploaded files that contain training data.
 
 ##### validation\_files: <code>array&lt;string&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+validation_files\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
-<ExpandableSection.Docusaurus title="ClassifierJobOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut">
+<ExpandableSection title="ClassifierJobOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut">
 
 ##### auto\_start \(required\): <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+auto_start\}
 
@@ -210,7 +216,7 @@ The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
 ##### hyperparameters \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters">ClassifierTrainingParameters</a></code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+hyperparameters\}
 
-<ExpandableSection.Docusaurus title="ClassifierTrainingParameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters">
+<ExpandableSection title="ClassifierTrainingParameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters">
 
 ##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+epochs\}
 
@@ -226,7 +232,7 @@ _Default Value:_ `0.0001`
 
 ##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+weight_decay\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+id\}
 
@@ -234,7 +240,7 @@ The ID of the job.
 
 ##### integrations: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+integrations\}
 
-<ExpandableSection.Docusaurus title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut">
+<ExpandableSection title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut">
 
 ##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+name\}
 
@@ -250,7 +256,7 @@ _Default Value:_ `"wandb"`
 
 ##### url: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+url\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### job\_type: <code>"classifier"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+job_type\}
 
@@ -260,7 +266,7 @@ _Default Value:_ `"classifier"`
 
 ##### metadata: <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut">JobMetadataOut</a> | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+metadata\}
 
-<ExpandableSection.Docusaurus title="JobMetadataOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut">
+<ExpandableSection title="JobMetadataOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut">
 
 ##### cost: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+cost\}
 
@@ -276,7 +282,7 @@ _Default Value:_ `"classifier"`
 
 ##### train\_tokens\_per\_step: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+train_tokens_per_step\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### model \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+model\}
 
@@ -328,7 +334,7 @@ A list containing the IDs of uploaded files that contain training data.
 
 ##### validation\_files: <code>array&lt;string&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+validation_files\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### object: <code>"list"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+object\}
 
@@ -336,19 +342,25 @@ _Default Value:_ `"list"`
 
 #### total \(required\): <code>integer</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+total\}
 
+</div>
+
+</TabbedSection>
+
 ## POST /v1/fine\_tuning/jobs \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job\}
 
 _Create Fine Tuning Job_
 
 Create a new fine-tuning job, it will be queued for processing.
 
-### Security \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security\}
+<Section title="Security" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security+ApiKey\}
 
-### Try it Now \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -371,7 +383,9 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\) \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request\}
+</Section>
+
+<Section title="Request Body" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request">
 
 #### auto\_start: <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+auto_start\}
 
@@ -379,7 +393,7 @@ This field will be required in a future release.
 
 #### classifier\_targets: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn">ClassifierTargetIn</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+classifier_targets\}
 
-<ExpandableSection.Docusaurus title="ClassifierTargetIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn">
+<ExpandableSection title="ClassifierTargetIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn">
 
 ##### labels \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+labels\}
 
@@ -391,7 +405,7 @@ This field will be required in a future release.
 
 _Default Value:_ `1`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### hyperparameters \(required\) \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+hyperparameters\}
 
@@ -408,7 +422,7 @@ _Default Value:_ `1`
 </code>
 </pre>
 
-<ExpandableSection.Docusaurus title="CompletionTrainingParametersIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn">
+<ExpandableSection title="CompletionTrainingParametersIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn">
 
 ##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+epochs\}
 
@@ -428,9 +442,9 @@ _Default Value:_ `0.0001`
 
 ##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+weight_decay\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
-<ExpandableSection.Docusaurus title="ClassifierTrainingParametersIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn">
+<ExpandableSection title="ClassifierTrainingParametersIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn">
 
 ##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+epochs\}
 
@@ -448,11 +462,11 @@ _Default Value:_ `0.0001`
 
 ##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+weight_decay\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### integrations: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">WandbIntegration</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+integrations\}
 
-<ExpandableSection.Docusaurus title="WandbIntegration" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">
+<ExpandableSection title="WandbIntegration" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">
 
 ##### api\_key \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+api_key\}
 
@@ -470,7 +484,7 @@ The name of the project that the new run will be created under.
 
 _Default Value:_ `"wandb"`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### invalid\_sample\_skip\_percentage: <code>number</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+invalid_sample_skip_percentage\}
 
@@ -484,7 +498,7 @@ The name of the model to fine-tune.
 
 #### repositories: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">WandbIntegration</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+repositories\}
 
-<ExpandableSection.Docusaurus title="WandbIntegration" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">
+<ExpandableSection title="WandbIntegration" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">
 
 ##### api\_key \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+api_key\}
 
@@ -502,13 +516,13 @@ The name of the project that the new run will be created under.
 
 _Default Value:_ `"wandb"`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### suffix: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+suffix\}
 
 #### training\_files: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile">TrainingFile</a>&gt;</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+training_files\}
 
-<ExpandableSection.Docusaurus title="TrainingFile" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile">
+<ExpandableSection title="TrainingFile" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile">
 
 ##### file\_id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile+file_id\}
 
@@ -516,11 +530,15 @@ _Default Value:_ `"wandb"`
 
 _Default Value:_ `1`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### validation\_files: <code>array&lt;string&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+validation_files\}
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -541,17 +559,23 @@ OK
 
 OK
 
+</div>
+
+</TabbedSection>
+
 ## GET /v1/fine\_tuning/jobs/\{job\_id\} \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job\}
 
 _Get Fine Tuning Job_
 
 Get a fine-tuned job details by its UUID.
 
-### Security \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security\}
+<Section title="Security" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security+ApiKey\}
 
-### Parameters \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters">
 
 #### job\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters+job_id\}
 
@@ -561,9 +585,11 @@ The ID of the job to analyse.
 
 The ID of the job to analyse.
 
-### Try it Now \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -583,7 +609,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -591,17 +621,23 @@ OK
 
 OK
 
+</div>
+
+</TabbedSection>
+
 ## POST /v1/fine\_tuning/jobs/\{job\_id\}/cancel \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job\}
 
 _Cancel Fine Tuning Job_
 
 Request the cancellation of a fine tuning job.
 
-### Security \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security\}
+<Section title="Security" id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security+ApiKey\}
 
-### Parameters \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters">
 
 #### job\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters+job_id\}
 
@@ -611,9 +647,11 @@ The ID of the job to cancel.
 
 The ID of the job to cancel.
 
-### Try it Now \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -633,7 +671,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -641,25 +683,33 @@ OK
 
 OK
 
+</div>
+
+</TabbedSection>
+
 ## POST /v1/fine\_tuning/jobs/\{job\_id\}/start \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job\}
 
 _Start Fine Tuning Job_
 
 Request the start of a validated fine tuning job.
 
-### Security \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security\}
+<Section title="Security" id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security+ApiKey\}
 
-### Parameters \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters">
 
 #### job\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters+job_id\}
 
 #### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters+Security\}
 
-### Try it Now \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -679,10 +729,18 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
 #### Response Body \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></code> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+Response Body\}
 
 OK
+
+</div>
+
+</TabbedSection>

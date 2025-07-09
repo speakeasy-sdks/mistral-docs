@@ -3,7 +3,7 @@ sidebar_position: 2.10
 sidebar_label: models
 ---
 
-import { TryItNow, ExpandableSection } from "@speakeasy-api/docs-md";
+import { Section, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # models
@@ -14,13 +14,15 @@ _List Models_
 
 List all models available to the user.
 
-### Security \{#operation-list_models_v1_models_get+security\}
+<Section title="Security" id="operation-list_models_v1_models_get+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-list_models_v1_models_get+security+ApiKey\}
 
-### Try it Now \{#operation-list_models_v1_models_get+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-list_models_v1_models_get+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -38,19 +40,23 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-list_models_v1_models_get+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-list_models_v1_models_get+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 Successful Response
 
 #### data: <code>array&lt;<a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard">BaseModelCard</a> | <a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard">FTModelCard</a>&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+data\}
 
-<ExpandableSection.Docusaurus title="BaseModelCard" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard">
+<ExpandableSection title="BaseModelCard" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard">
 
 ##### aliases: <code>array&lt;string&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+aliases\}
 
 ##### capabilities \(required\): <code><a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">ModelCapabilities</a></code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+capabilities\}
 
-<ExpandableSection.Docusaurus title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">
+<ExpandableSection title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">
 
 ##### completion\_chat: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_chat\}
 
@@ -72,7 +78,7 @@ _Default Value:_ `true`
 
 _Default Value:_ `false`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### created: <code>integer</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+created\}
 
@@ -102,9 +108,9 @@ _Default Value:_ `"mistralai"`
 
 _Default Value:_ `"base"`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
-<ExpandableSection.Docusaurus title="FTModelCard" id="operation-list_models_v1_models_get+200+application-json+FTModelCard">
+<ExpandableSection title="FTModelCard" id="operation-list_models_v1_models_get+200+application-json+FTModelCard">
 
 ##### aliases: <code>array&lt;string&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+aliases\}
 
@@ -114,7 +120,7 @@ _Default Value:_ `false`
 
 ##### capabilities \(required\): <code><a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">ModelCapabilities</a></code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+capabilities\}
 
-<ExpandableSection.Docusaurus title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">
+<ExpandableSection title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">
 
 ##### completion\_chat: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_chat\}
 
@@ -136,7 +142,7 @@ _Default Value:_ `true`
 
 _Default Value:_ `false`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 ##### created: <code>integer</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+created\}
 
@@ -170,27 +176,29 @@ _Default Value:_ `"mistralai"`
 
 _Default Value:_ `"fine-tuned"`
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### object: <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+object\}
 
 _Default Value:_ `"list"`
 
-### Response: 422 \(application/json\) \{#operation-list_models_v1_models_get+422+application-json\}
+</div>
+
+<div title="422" tooltip="422 (application/json)">
 
 Validation Error
 
 #### HttpMeta \(required\): <code><a href="#operation-list_models_v1_models_get+422+application-json+Security">Security</a></code> \{#operation-list_models_v1_models_get+422+application-json+HttpMeta\}
 
-<ExpandableSection.Docusaurus title="Security" id="operation-list_models_v1_models_get+422+application-json+Security">
+<ExpandableSection title="Security" id="operation-list_models_v1_models_get+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-list_models_v1_models_get+422+application-json+Security+ApiKey\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### detail: <code>array&lt;<a href="#operation-list_models_v1_models_get+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-list_models_v1_models_get+422+application-json+detail\}
 
-<ExpandableSection.Docusaurus title="ValidationError" id="operation-list_models_v1_models_get+422+application-json+ValidationError">
+<ExpandableSection title="ValidationError" id="operation-list_models_v1_models_get+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+loc\}
 
@@ -198,7 +206,11 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+type\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
+
+</div>
+
+</TabbedSection>
 
 ## GET /v1/models/\{model\_id\} \{#operation-retrieve_model_v1_models_model_id_get\}
 
@@ -206,11 +218,13 @@ _Retrieve Model_
 
 Retrieve a model information.
 
-### Security \{#operation-retrieve_model_v1_models_model_id_get+security\}
+<Section title="Security" id="operation-retrieve_model_v1_models_model_id_get+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+security+ApiKey\}
 
-### Parameters \{#operation-retrieve_model_v1_models_model_id_get+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-retrieve_model_v1_models_model_id_get+parameters">
 
 #### model\_id \(required\) \{#operation-retrieve_model_v1_models_model_id_get+parameters+model_id\}
 
@@ -226,9 +240,11 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-### Try it Now \{#operation-retrieve_model_v1_models_model_id_get+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-retrieve_model_v1_models_model_id_get+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -248,7 +264,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-retrieve_model_v1_models_model_id_get+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-retrieve_model_v1_models_model_id_get+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 Successful Response
 
@@ -256,21 +276,23 @@ Successful Response
 
 Successful Response
 
-### Response: 422 \(application/json\) \{#operation-retrieve_model_v1_models_model_id_get+422+application-json\}
+</div>
+
+<div title="422" tooltip="422 (application/json)">
 
 Validation Error
 
 #### HttpMeta \(required\): <code><a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">Security</a></code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+HttpMeta\}
 
-<ExpandableSection.Docusaurus title="Security" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">
+<ExpandableSection title="Security" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security+ApiKey\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### detail: <code>array&lt;<a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+detail\}
 
-<ExpandableSection.Docusaurus title="ValidationError" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">
+<ExpandableSection title="ValidationError" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+loc\}
 
@@ -278,7 +300,11 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+type\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
+
+</div>
+
+</TabbedSection>
 
 ## DELETE /v1/models/\{model\_id\} \{#operation-delete_model_v1_models_model_id_delete\}
 
@@ -286,11 +312,13 @@ _Delete Model_
 
 Delete a fine-tuned model.
 
-### Security \{#operation-delete_model_v1_models_model_id_delete+security\}
+<Section title="Security" id="operation-delete_model_v1_models_model_id_delete+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+security+ApiKey\}
 
-### Parameters \{#operation-delete_model_v1_models_model_id_delete+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-delete_model_v1_models_model_id_delete+parameters">
 
 #### model\_id \(required\) \{#operation-delete_model_v1_models_model_id_delete+parameters+model_id\}
 
@@ -306,9 +334,11 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-### Try it Now \{#operation-delete_model_v1_models_model_id_delete+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-delete_model_v1_models_model_id_delete+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -328,7 +358,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-delete_model_v1_models_model_id_delete+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-delete_model_v1_models_model_id_delete+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 Successful Response
 
@@ -360,21 +394,23 @@ The object type that was deleted
 
 _Default Value:_ `"model"`
 
-### Response: 422 \(application/json\) \{#operation-delete_model_v1_models_model_id_delete+422+application-json\}
+</div>
+
+<div title="422" tooltip="422 (application/json)">
 
 Validation Error
 
 #### HttpMeta \(required\): <code><a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+Security">Security</a></code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+HttpMeta\}
 
-<ExpandableSection.Docusaurus title="Security" id="operation-delete_model_v1_models_model_id_delete+422+application-json+Security">
+<ExpandableSection title="Security" id="operation-delete_model_v1_models_model_id_delete+422+application-json+Security">
 
 ##### ApiKey \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+Security+ApiKey\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
 
 #### detail: <code>array&lt;<a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+detail\}
 
-<ExpandableSection.Docusaurus title="ValidationError" id="operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">
+<ExpandableSection title="ValidationError" id="operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">
 
 ##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+loc\}
 
@@ -382,7 +418,11 @@ Validation Error
 
 ##### type \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+type\}
 
-</ExpandableSection.Docusaurus>
+</ExpandableSection>
+
+</div>
+
+</TabbedSection>
 
 ## PATCH /v1/fine\_tuning/models/\{model\_id\} \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model\}
 
@@ -390,11 +430,13 @@ _Update Fine Tuned Model_
 
 Update a model name or description.
 
-### Security \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security\}
+<Section title="Security" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security+ApiKey\}
 
-### Parameters \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters">
 
 #### model\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+model_id\}
 
@@ -410,9 +452,11 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-### Try it Now \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -433,13 +477,19 @@ async function run() {
 run();`}
 />
 
-### Request Body \(required\) \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request\}
+</Section>
+
+<Section title="Request Body" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request">
 
 #### description: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+description\}
 
 #### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+name\}
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -447,17 +497,23 @@ OK
 
 OK
 
+</div>
+
+</TabbedSection>
+
 ## POST /v1/fine\_tuning/models/\{model\_id\}/archive \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model\}
 
 _Archive Fine Tuned Model_
 
 Archive a fine-tuned model.
 
-### Security \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security\}
+<Section title="Security" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security+ApiKey\}
 
-### Parameters \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters">
 
 #### model\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+model_id\}
 
@@ -473,9 +529,11 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-### Try it Now \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -495,7 +553,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -509,17 +571,23 @@ _Default Value:_ `true`
 
 _Default Value:_ `"model"`
 
+</div>
+
+</TabbedSection>
+
 ## DELETE /v1/fine\_tuning/models/\{model\_id\}/archive \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model\}
 
 _Unarchive Fine Tuned Model_
 
 Un-archive a fine-tuned model.
 
-### Security \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security\}
+<Section title="Security" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security">
 
 #### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security+ApiKey\}
 
-### Parameters \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters\}
+</Section>
+
+<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters">
 
 #### model\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+model_id\}
 
@@ -535,9 +603,11 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-### Try it Now \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+try-it-now\}
+</Section>
 
-<TryItNow.Docusaurus
+<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+try-it-now">
+
+<TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
@@ -557,7 +627,11 @@ async function run() {
 run();`}
 />
 
-### Response: 200 \(application/json\) \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json\}
+</Section>
+
+<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+responses" baseHeadingLevel="3">
+
+<div title="200" tooltip="200 (application/json)">
 
 OK
 
@@ -570,3 +644,7 @@ _Default Value:_ `false`
 #### object: <code>"model"</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+object\}
 
 _Default Value:_ `"model"`
+
+</div>
+
+</TabbedSection>
