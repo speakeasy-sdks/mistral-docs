@@ -3,24 +3,56 @@ sidebar_position: 2.6
 sidebar_label: embeddings
 ---
 
-import { Section, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionEntry, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # embeddings
 
-## POST /v1/embeddings \{#operation-embeddings_v1_embeddings_post\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/embeddings \{#operation-embeddings_v1_embeddings_post\}
 
 _Embeddings_
 
 Embeddings
 
-<Section title="Security" id="operation-embeddings_v1_embeddings_post+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+security+ApiKey\}
+<div>
+
+### Security \{#operation-embeddings_v1_embeddings_post+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-embeddings_v1_embeddings_post+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-embeddings_v1_embeddings_post+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-embeddings_v1_embeddings_post+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-embeddings_v1_embeddings_post+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -46,15 +78,39 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-embeddings_v1_embeddings_post+request">
+<Section variant="section">
 
-#### inputs \(required\): <code>string | array&lt;string&gt;</code> \{#operation-embeddings_v1_embeddings_post+request+inputs\}
+<div>
+
+## Request Body \{#operation-embeddings_v1_embeddings_post+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-embeddings_v1_embeddings_post+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### inputs <Pill variant="warning">required</Pill> <Pill variant="info">string | array&lt;string&gt;</Pill> \{#operation-embeddings_v1_embeddings_post+request+inputs\}
 
 Text to embed.
 
-#### model \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+request+model\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-embeddings_v1_embeddings_post+request+model\}
 
 ID of the model to use.
 
@@ -64,25 +120,67 @@ _Example:_
 mistral-embed
 ```
 
-#### output\_dimension: <code>integer | null</code> \{#operation-embeddings_v1_embeddings_post+request+output_dimension\}
+</SectionEntry>
 
-#### output\_dtype: <code>"float" | "int8" | "uint8" | "binary" | "ubinary"</code> \{#operation-embeddings_v1_embeddings_post+request+output_dtype\}
+<SectionEntry variant="fields">
+
+#### output\_dimension <Pill variant="info">integer | null</Pill> \{#operation-embeddings_v1_embeddings_post+request+output_dimension\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### output\_dtype <Pill variant="info">"float" | "int8" | "uint8" | "binary" | "ubinary"</Pill> \{#operation-embeddings_v1_embeddings_post+request+output_dtype\}
+
+</SectionEntry>
 
 </Section>
 
-<TabbedSection title="Response" id="operation-embeddings_v1_embeddings_post+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-embeddings_v1_embeddings_post+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-embeddings_v1_embeddings_post+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-embeddings_v1_embeddings_post+200+application-json">
 
 Successful Response
 
-#### data \(required\): <code>array&lt;<a href="#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData">EmbeddingResponseData</a>&gt;</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+data\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-embeddings_v1_embeddings_post+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### data <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData">EmbeddingResponseData</a>&gt;</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+data\}
 
 <ExpandableSection title="EmbeddingResponseData" id="operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData">
 
-##### embedding: <code>array&lt;number&gt;</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData+embedding\}
+<SectionEntry variant="fields">
 
-##### index: <code>integer</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData+index\}
+#### embedding <Pill variant="info">array&lt;number&gt;</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData+embedding\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### index <Pill variant="info">integer</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData+index\}
 
 _Example:_
 
@@ -90,7 +188,11 @@ _Example:_
 0
 ```
 
-##### object: <code>string</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData+object\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">string</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+EmbeddingResponseData+object\}
 
 _Example:_
 
@@ -98,9 +200,15 @@ _Example:_
 embedding
 ```
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### id \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+id\}
 
 _Example:_
 
@@ -108,7 +216,11 @@ _Example:_
 cmpl-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+model\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+model\}
 
 _Example:_
 
@@ -116,7 +228,11 @@ _Example:_
 mistral-small-latest
 ```
 
-#### object \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+object\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+object\}
 
 _Example:_
 
@@ -124,11 +240,17 @@ _Example:_
 chat.completion
 ```
 
-#### usage \(required\): <code><a href="#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo">UsageInfo</a></code> \{#operation-embeddings_v1_embeddings_post+200+application-json+usage\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### usage <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo">UsageInfo</a></Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+usage\}
 
 <ExpandableSection title="UsageInfo" id="operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo">
 
-##### completion\_tokens \(required\): <code>integer</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo+completion_tokens\}
+<SectionEntry variant="fields">
+
+#### completion_tokens <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo+completion_tokens\}
 
 _Example:_
 
@@ -136,7 +258,11 @@ _Example:_
 34
 ```
 
-##### prompt\_tokens \(required\): <code>integer</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo+prompt_tokens\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prompt_tokens <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo+prompt_tokens\}
 
 _Example:_
 
@@ -144,7 +270,11 @@ _Example:_
 16
 ```
 
-##### total\_tokens \(required\): <code>integer</code> \{#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo+total_tokens\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### total_tokens <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-embeddings_v1_embeddings_post+200+application-json+UsageInfo+total_tokens\}
 
 _Example:_
 
@@ -152,33 +282,79 @@ _Example:_
 50
 ```
 
+</SectionEntry>
+
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-embeddings_v1_embeddings_post+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-embeddings_v1_embeddings_post+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-embeddings_v1_embeddings_post+422+application-json+Security">Security</a></code> \{#operation-embeddings_v1_embeddings_post+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-embeddings_v1_embeddings_post+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-embeddings_v1_embeddings_post+422+application-json+Security">Security</a></Pill> \{#operation-embeddings_v1_embeddings_post+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-embeddings_v1_embeddings_post+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-embeddings_v1_embeddings_post+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-embeddings_v1_embeddings_post+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-embeddings_v1_embeddings_post+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-embeddings_v1_embeddings_post+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 

@@ -3,7 +3,7 @@ sidebar_position: 2.5
 sidebar_label: classifiers
 ---
 
-import { Section, TryItNow, TabbedSection, ExpandableSection, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionEntry, TryItNow, TabbedSection, ExpandableSection, Code, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md/docusaurus";
 import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
 import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
 import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
@@ -13,19 +13,54 @@ import EmbedReferenceChunk from "../../../src/components/speakeasy/embeds/Refere
 import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx";
 
 
+
+
+<SideBar />
 # classifiers
 
-## POST /v1/moderations \{#operation-moderations_v1_moderations_post\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/moderations \{#operation-moderations_v1_moderations_post\}
 
 Moderations
 
-<Section title="Security" id="operation-moderations_v1_moderations_post+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+security+ApiKey\}
+<div>
+
+### Security \{#operation-moderations_v1_moderations_post+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-moderations_v1_moderations_post+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-moderations_v1_moderations_post+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-moderations_v1_moderations_post+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-moderations_v1_moderations_post+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -51,27 +86,79 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-moderations_v1_moderations_post+request">
+<Section variant="section">
 
-#### inputs \(required\): <code>string | array&lt;string&gt;</code> \{#operation-moderations_v1_moderations_post+request+inputs\}
+<div>
+
+## Request Body \{#operation-moderations_v1_moderations_post+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-moderations_v1_moderations_post+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### inputs <Pill variant="warning">required</Pill> <Pill variant="info">string | array&lt;string&gt;</Pill> \{#operation-moderations_v1_moderations_post+request+inputs\}
 
 Text to classify.
 
-#### model \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+request+model\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-moderations_v1_moderations_post+request+model\}
 
 ID of the model to use.
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-moderations_v1_moderations_post+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-moderations_v1_moderations_post+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-moderations_v1_moderations_post+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-moderations_v1_moderations_post+200+application-json">
 
 Successful Response
 
-#### id \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+200+application-json+id\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-moderations_v1_moderations_post+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-moderations_v1_moderations_post+200+application-json+id\}
 
 _Example:_
 
@@ -79,63 +166,155 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+200+application-json+model\}
+</SectionEntry>
 
-#### results \(required\): <code>array&lt;<a href="#operation-moderations_v1_moderations_post+200+application-json+ModerationObject">ModerationObject</a>&gt;</code> \{#operation-moderations_v1_moderations_post+200+application-json+results\}
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-moderations_v1_moderations_post+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### results <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-moderations_v1_moderations_post+200+application-json+ModerationObject">ModerationObject</a>&gt;</Pill> \{#operation-moderations_v1_moderations_post+200+application-json+results\}
 
 <ExpandableSection title="ModerationObject" id="operation-moderations_v1_moderations_post+200+application-json+ModerationObject">
 
-##### categories: <code>map&lt;boolean&gt;</code> \{#operation-moderations_v1_moderations_post+200+application-json+ModerationObject+categories\}
+<SectionEntry variant="fields">
+
+#### categories <Pill variant="info">map&lt;boolean&gt;</Pill> \{#operation-moderations_v1_moderations_post+200+application-json+ModerationObject+categories\}
 
 Moderation result thresholds
 
-##### category\_scores: <code>map&lt;number&gt;</code> \{#operation-moderations_v1_moderations_post+200+application-json+ModerationObject+category_scores\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### category\_scores <Pill variant="info">map&lt;number&gt;</Pill> \{#operation-moderations_v1_moderations_post+200+application-json+ModerationObject+category_scores\}
 
 Moderation result
 
+</SectionEntry>
+
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-moderations_v1_moderations_post+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-moderations_v1_moderations_post+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-moderations_v1_moderations_post+422+application-json+Security">Security</a></code> \{#operation-moderations_v1_moderations_post+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-moderations_v1_moderations_post+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-moderations_v1_moderations_post+422+application-json+Security">Security</a></Pill> \{#operation-moderations_v1_moderations_post+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-moderations_v1_moderations_post+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-moderations_v1_moderations_post+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-moderations_v1_moderations_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-moderations_v1_moderations_post+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-moderations_v1_moderations_post+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-moderations_v1_moderations_post+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-moderations_v1_moderations_post+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-moderations_v1_moderations_post+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/chat/moderations \{#operation-chat_moderations_v1_chat_moderations_post\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/chat/moderations \{#operation-chat_moderations_v1_chat_moderations_post\}
 
 Chat Moderations
 
-<Section title="Security" id="operation-chat_moderations_v1_chat_moderations_post+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+security+ApiKey\}
+<div>
+
+### Security \{#operation-chat_moderations_v1_chat_moderations_post+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-chat_moderations_v1_chat_moderations_post+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-chat_moderations_v1_chat_moderations_post+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-chat_moderations_v1_chat_moderations_post+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -180,82 +359,108 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-chat_moderations_v1_chat_moderations_post+request">
+<Section variant="section">
 
-#### inputs \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs\}
+<div>
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage">SystemMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage">UserMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage">AssistantMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage">ToolMessage</a>&gt;
+## Request Body \{#operation-chat_moderations_v1_chat_moderations_post+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-chat_moderations_v1_chat_moderations_post+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### inputs <Pill variant="warning">required</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs\}
+
+<Code text={`| array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage">SystemMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage">UserMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage">AssistantMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage">ToolMessage</a>&gt;
 | array&lt;
  array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage">SystemMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage">UserMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage">AssistantMessage</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage">ToolMessage</a>&gt;
-&gt;</p>
-</code>
-</pre>
+&gt;`} />
 
 Chat to classify
 
 <ExpandableSection title="SystemMessage" id="operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage">
 
-##### content \(required\): <code>string | array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk">TextChunk</a>&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="warning">required</Pill> <Pill variant="info">string | array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk">TextChunk</a>&gt;</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+content\}
 
 <ExpandableSection title="TextChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk">
 
-##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk+text\}
+<SectionEntry variant="fields">
 
-##### type: <code>"text"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk+type\}
+#### text <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk+text\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### role: <code>"system"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"system"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+SystemMessage+role\}
 
 _Default Value:_ `"system"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="UserMessage" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage">
 
-##### content \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content <Pill variant="warning">required</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <ExpandableSection title="TextChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk">
 
-##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk+text\}
+<SectionEntry variant="fields">
 
-##### type: <code>"text"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk+type\}
+#### text <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk+text\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk">
 
-##### image\_url \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+image_url\}
+<SectionEntry variant="fields">
+
+#### image_url <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger cta="View ImageURL Details" title="ImageURL Details">
@@ -263,72 +468,105 @@ _Default Value:_ `"text"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"image_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_url"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk">
 
-##### document\_name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+document_name\}
+<SectionEntry variant="fields">
 
-##### document\_url \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+document_url\}
+#### document\_name <Pill variant="info">string | null</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+document_name\}
 
-##### type: <code>"document_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### document_url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+document_url\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_url"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ReferenceChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk">
 
-##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk+reference_ids\}
+<SectionEntry variant="fields">
 
-##### type: <code>"reference"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk+type\}
+#### reference_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;integer&gt;</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk+reference_ids\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"reference"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### role: <code>"user"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"user"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+UserMessage+role\}
 
 _Default Value:_ `"user"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="AssistantMessage" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage">
 
-##### content \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <ExpandableSection title="TextChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk">
 
-##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk+text\}
+<SectionEntry variant="fields">
 
-##### type: <code>"text"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk+type\}
+#### text <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk+text\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk">
 
-##### image\_url \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+image_url\}
+<SectionEntry variant="fields">
+
+#### image_url <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger cta="View ImageURL Details" title="ImageURL Details">
@@ -336,49 +574,89 @@ _Default Value:_ `"text"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"image_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_url"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk">
 
-##### document\_name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+document_name\}
+<SectionEntry variant="fields">
 
-##### document\_url \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+document_url\}
+#### document\_name <Pill variant="info">string | null</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+document_name\}
 
-##### type: <code>"document_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### document_url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+document_url\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_url"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ReferenceChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk">
 
-##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk+reference_ids\}
+<SectionEntry variant="fields">
 
-##### type: <code>"reference"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk+type\}
+#### reference_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;integer&gt;</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk+reference_ids\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"reference"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### prefix: <code>boolean</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+prefix\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prefix <Pill variant="info">boolean</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+prefix\}
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-##### role: <code>"assistant"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"assistant"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+role\}
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: <code>array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+tool_calls\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### tool\_calls <Pill variant="info">array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+tool_calls\}
 
 <ExpandableSection title="ToolCall" id="operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall">
 
-##### function \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+FunctionCall">FunctionCall</a></code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+FunctionCall">FunctionCall</a></Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+function\}
 
 <p>
     <SideBarTrigger cta="View FunctionCall Details" title="FunctionCall Details">
@@ -386,52 +664,69 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger>
   </p>
 
-##### id: <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+id\}
 
 _Default Value:_ `"null"`
 
-##### index: <code>integer</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+index\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### index <Pill variant="info">integer</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+index\}
 
 _Default Value:_ `0`
 
-##### type: <code>"function"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+AssistantMessage+ToolCall+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ToolMessage" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage">
 
-##### content \(required\) \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content <Pill variant="warning">required</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <ExpandableSection title="TextChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk">
 
-##### text \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk+text\}
+<SectionEntry variant="fields">
 
-##### type: <code>"text"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk+type\}
+#### text <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk+text\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk">
 
-##### image\_url \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+image_url\}
+<SectionEntry variant="fields">
+
+#### image_url <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger cta="View ImageURL Details" title="ImageURL Details">
@@ -439,55 +734,127 @@ _Default Value:_ `"text"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"image_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_url"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentURLChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk">
 
-##### document\_name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+document_name\}
+<SectionEntry variant="fields">
 
-##### document\_url \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+document_url\}
+#### document\_name <Pill variant="info">string | null</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+document_name\}
 
-##### type: <code>"document_url"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### document_url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+document_url\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_url"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ReferenceChunk" id="operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk">
 
-##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk+reference_ids\}
+<SectionEntry variant="fields">
 
-##### type: <code>"reference"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk+type\}
+#### reference_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;integer&gt;</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk+reference_ids\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"reference"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### name: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+name\}
+</SectionEntry>
 
-##### role: <code>"tool"</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+role\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="info">string | null</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"tool"</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+role\}
 
 _Default Value:_ `"tool"`
 
-##### tool\_call\_id: <code>string | null</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+tool_call_id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### tool\_call\_id <Pill variant="info">string | null</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+ToolMessage+tool_call_id\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### model \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+request+model\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+request+model\}
+
+</SectionEntry>
 
 </Section>
 
-<TabbedSection title="Response" id="operation-chat_moderations_v1_chat_moderations_post+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-chat_moderations_v1_chat_moderations_post+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-chat_moderations_v1_chat_moderations_post+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-chat_moderations_v1_chat_moderations_post+200+application-json">
 
 Successful Response
 
-#### id \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+id\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+id\}
 
 _Example:_
 
@@ -495,63 +862,155 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+model\}
+</SectionEntry>
 
-#### results \(required\): <code>array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject">ModerationObject</a>&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+results\}
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### results <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject">ModerationObject</a>&gt;</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+results\}
 
 <ExpandableSection title="ModerationObject" id="operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject">
 
-##### categories: <code>map&lt;boolean&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject+categories\}
+<SectionEntry variant="fields">
+
+#### categories <Pill variant="info">map&lt;boolean&gt;</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject+categories\}
 
 Moderation result thresholds
 
-##### category\_scores: <code>map&lt;number&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject+category_scores\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### category\_scores <Pill variant="info">map&lt;number&gt;</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+200+application-json+ModerationObject+category_scores\}
 
 Moderation result
 
+</SectionEntry>
+
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-chat_moderations_v1_chat_moderations_post+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-chat_moderations_v1_chat_moderations_post+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-chat_moderations_v1_chat_moderations_post+422+application-json+Security">Security</a></code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-chat_moderations_v1_chat_moderations_post+422+application-json+Security">Security</a></Pill> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-chat_moderations_v1_chat_moderations_post+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_moderations_v1_chat_moderations_post+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/classifications \{#operation-classifications_v1_classifications_post\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/classifications \{#operation-classifications_v1_classifications_post\}
 
 Classifications
 
-<Section title="Security" id="operation-classifications_v1_classifications_post+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+security+ApiKey\}
+<div>
+
+### Security \{#operation-classifications_v1_classifications_post+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-classifications_v1_classifications_post+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-classifications_v1_classifications_post+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-classifications_v1_classifications_post+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-classifications_v1_classifications_post+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -576,27 +1035,79 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-classifications_v1_classifications_post+request">
+<Section variant="section">
 
-#### inputs \(required\): <code>string | array&lt;string&gt;</code> \{#operation-classifications_v1_classifications_post+request+inputs\}
+<div>
+
+## Request Body \{#operation-classifications_v1_classifications_post+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-classifications_v1_classifications_post+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### inputs <Pill variant="warning">required</Pill> <Pill variant="info">string | array&lt;string&gt;</Pill> \{#operation-classifications_v1_classifications_post+request+inputs\}
 
 Text to classify.
 
-#### model \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+request+model\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-classifications_v1_classifications_post+request+model\}
 
 ID of the model to use.
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-classifications_v1_classifications_post+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-classifications_v1_classifications_post+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-classifications_v1_classifications_post+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-classifications_v1_classifications_post+200+application-json">
 
 Successful Response
 
-#### id \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+200+application-json+id\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-classifications_v1_classifications_post+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-classifications_v1_classifications_post+200+application-json+id\}
 
 _Example:_
 
@@ -604,57 +1115,145 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+200+application-json+model\}
+</SectionEntry>
 
-#### results \(required\): <code>array&lt;map&lt;<a href="#operation-classifications_v1_classifications_post+200+application-json+ClassificationTargetResult">ClassificationTargetResult</a>&gt;&gt;</code> \{#operation-classifications_v1_classifications_post+200+application-json+results\}
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-classifications_v1_classifications_post+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### results <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;map&lt;<a href="#operation-classifications_v1_classifications_post+200+application-json+ClassificationTargetResult">ClassificationTargetResult</a>&gt;&gt;</Pill> \{#operation-classifications_v1_classifications_post+200+application-json+results\}
 
 <ExpandableSection title="ClassificationTargetResult" id="operation-classifications_v1_classifications_post+200+application-json+ClassificationTargetResult">
 
-##### scores \(required\): <code>map&lt;number&gt;</code> \{#operation-classifications_v1_classifications_post+200+application-json+ClassificationTargetResult+scores\}
+<SectionEntry variant="fields">
+
+#### scores <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;number&gt;</Pill> \{#operation-classifications_v1_classifications_post+200+application-json+ClassificationTargetResult+scores\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-classifications_v1_classifications_post+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-classifications_v1_classifications_post+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-classifications_v1_classifications_post+422+application-json+Security">Security</a></code> \{#operation-classifications_v1_classifications_post+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-classifications_v1_classifications_post+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-classifications_v1_classifications_post+422+application-json+Security">Security</a></Pill> \{#operation-classifications_v1_classifications_post+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-classifications_v1_classifications_post+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-classifications_v1_classifications_post+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-classifications_v1_classifications_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-classifications_v1_classifications_post+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-classifications_v1_classifications_post+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-classifications_v1_classifications_post+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-classifications_v1_classifications_post+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-classifications_v1_classifications_post+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/chat/classifications \{#operation-chat_classifications_v1_chat_classifications_post\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/chat/classifications \{#operation-chat_classifications_v1_chat_classifications_post\}
 
 Chat Classifications
 
-<Section title="Security" id="operation-chat_classifications_v1_chat_classifications_post+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+security+ApiKey\}
+<div>
+
+### Security \{#operation-chat_classifications_v1_chat_classifications_post+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-chat_classifications_v1_chat_classifications_post+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-chat_classifications_v1_chat_classifications_post+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-chat_classifications_v1_chat_classifications_post+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -702,42 +1301,59 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-chat_classifications_v1_chat_classifications_post+request">
+<Section variant="section">
 
-#### inputs \(required\): <code><a href="#operation-chat_classifications_v1_chat_classifications_post+request+inputs">inputs</a> | array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest">InstructRequest</a>&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs\}
+<div>
+
+## Request Body \{#operation-chat_classifications_v1_chat_classifications_post+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-chat_classifications_v1_chat_classifications_post+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### inputs <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-chat_classifications_v1_chat_classifications_post+request+inputs">inputs</a> | array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest">InstructRequest</a>&gt;</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs\}
 
 Chat to classify
 
 <ExpandableSection title="inputs" id="operation-chat_classifications_v1_chat_classifications_post+request+inputs">
 
-##### messages \(required\): <code>array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+inputs+inputs">inputs</a>&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+messages\}
+<SectionEntry variant="fields">
+
+#### messages <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+inputs+inputs">inputs</a>&gt;</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+messages\}
 
 `inputs` is circular. See previous description for details.
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="InstructRequest" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest">
 
-##### messages \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+messages\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage">SystemMessage</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage">UserMessage</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage">AssistantMessage</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage">ToolMessage</a>&gt;</p>
-</code>
-</pre>
+#### messages <Pill variant="warning">required</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+messages\}
+
+<Code text={`array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage">SystemMessage</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage">UserMessage</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage">AssistantMessage</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage">ToolMessage</a>&gt;`} />
 
 <ExpandableSection title="SystemMessage" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage">
 
-##### content \(required\): <code>string | array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+TextChunk">TextChunk</a>&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="warning">required</Pill> <Pill variant="info">string | array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+TextChunk">TextChunk</a>&gt;</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+content\}
 
 <p>
     <SideBarTrigger cta="View TextChunk Details" title="TextChunk Details">
@@ -745,30 +1361,27 @@ Chat to classify
     </SideBarTrigger>
   </p>
 
-##### role: <code>"system"</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"system"</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+SystemMessage+role\}
 
 _Default Value:_ `"system"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="UserMessage" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage">
 
-##### content \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content <Pill variant="warning">required</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <p>
     <SideBarTrigger cta="View TextChunk Details" title="TextChunk Details">
@@ -794,30 +1407,27 @@ _Default Value:_ `"system"`
     </SideBarTrigger>
   </p>
 
-##### role: <code>"user"</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"user"</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+UserMessage+role\}
 
 _Default Value:_ `"user"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="AssistantMessage" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage">
 
-##### content \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <p>
     <SideBarTrigger cta="View TextChunk Details" title="TextChunk Details">
@@ -843,17 +1453,29 @@ _Default Value:_ `"user"`
     </SideBarTrigger>
   </p>
 
-##### prefix: <code>boolean</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+prefix\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prefix <Pill variant="info">boolean</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+prefix\}
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-##### role: <code>"assistant"</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"assistant"</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+role\}
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: <code>array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+tool_calls\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### tool\_calls <Pill variant="info">array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+AssistantMessage+tool_calls\}
 
 <p>
     <SideBarTrigger cta="View ToolCall Details" title="ToolCall Details">
@@ -861,26 +1483,19 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger>
   </p>
 
+</SectionEntry>
+
 </ExpandableSection>
 
 <ExpandableSection title="ToolMessage" id="operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage">
 
-##### content \(required\) \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content <Pill variant="warning">required</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+TextChunk">TextChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <p>
     <SideBarTrigger cta="View TextChunk Details" title="TextChunk Details">
@@ -906,29 +1521,77 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger>
   </p>
 
-##### name: <code>string | null</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+name\}
+</SectionEntry>
 
-##### role: <code>"tool"</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+role\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="info">string | null</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"tool"</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+role\}
 
 _Default Value:_ `"tool"`
 
-##### tool\_call\_id: <code>string | null</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+tool_call_id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### tool\_call\_id <Pill variant="info">string | null</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+InstructRequest+ToolMessage+tool_call_id\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### model \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+request+model\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+request+model\}
+
+</SectionEntry>
 
 </Section>
 
-<TabbedSection title="Response" id="operation-chat_classifications_v1_chat_classifications_post+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-chat_classifications_v1_chat_classifications_post+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-chat_classifications_v1_chat_classifications_post+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-chat_classifications_v1_chat_classifications_post+200+application-json">
 
 Successful Response
 
-#### id \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+id\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+id\}
 
 _Example:_
 
@@ -936,44 +1599,98 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+model\}
+</SectionEntry>
 
-#### results \(required\): <code>array&lt;map&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+200+application-json+ClassificationTargetResult">ClassificationTargetResult</a>&gt;&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+results\}
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### results <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;map&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+200+application-json+ClassificationTargetResult">ClassificationTargetResult</a>&gt;&gt;</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+results\}
 
 <ExpandableSection title="ClassificationTargetResult" id="operation-chat_classifications_v1_chat_classifications_post+200+application-json+ClassificationTargetResult">
 
-##### scores \(required\): <code>map&lt;number&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+ClassificationTargetResult+scores\}
+<SectionEntry variant="fields">
+
+#### scores <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;number&gt;</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+200+application-json+ClassificationTargetResult+scores\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-chat_classifications_v1_chat_classifications_post+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-chat_classifications_v1_chat_classifications_post+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-chat_classifications_v1_chat_classifications_post+422+application-json+Security">Security</a></code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-chat_classifications_v1_chat_classifications_post+422+application-json+Security">Security</a></Pill> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-chat_classifications_v1_chat_classifications_post+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-chat_classifications_v1_chat_classifications_post+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
-
-<SideBar />

@@ -3,24 +3,56 @@ sidebar_position: 2.1
 sidebar_label: batch/jobs
 ---
 
-import { Section, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionEntry, TryItNow, TabbedSection, ExpandableSection, Code } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # batch/jobs
 
-## GET /v1/batch/jobs \{#operation-jobs_api_routes_batch_get_batch_jobs\}
+## <Pill variant="primary"><b>GET</b></Pill> /v1/batch/jobs \{#operation-jobs_api_routes_batch_get_batch_jobs\}
 
 _Get Batch Jobs_
 
 Get a list of batch jobs for your organization and user.
 
-<Section title="Security" id="operation-jobs_api_routes_batch_get_batch_jobs+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_batch_get_batch_jobs+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_batch_get_batch_jobs+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_batch_get_batch_jobs+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_batch_get_batch_jobs+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -40,108 +72,241 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_batch_get_batch_jobs+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_batch_get_batch_jobs+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json">
 
 OK
 
-#### data: <code>array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">BatchJobOut</a>&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+data\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### data <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">BatchJobOut</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+data\}
 
 <ExpandableSection title="BatchJobOut" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">
 
-##### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_at\}
+<SectionEntry variant="fields">
 
-##### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_requests\}
+#### completed\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_at\}
 
-##### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+created_at\}
+</SectionEntry>
 
-##### endpoint \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+endpoint\}
+<SectionEntry variant="fields">
 
-##### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+error_file\}
+#### completed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_requests\}
 
-##### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+errors\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+created_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### endpoint <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+endpoint\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### error\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+error_file\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### errors <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">BatchError</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+errors\}
 
 <ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">
 
-##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+count\}
+<SectionEntry variant="fields">
+
+#### count <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+count\}
 
 _Default Value:_ `1`
 
-##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+message\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### message <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+message\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+failed_requests\}
+</SectionEntry>
 
-##### id \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+id\}
+<SectionEntry variant="fields">
 
-##### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+input_files\}
+#### failed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+failed_requests\}
 
-##### metadata: <code>map&lt;any&gt; | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+metadata\}
+</SectionEntry>
 
-##### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+model\}
+<SectionEntry variant="fields">
 
-##### object: <code>"batch"</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+object\}
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+input_files\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### metadata <Pill variant="info">map&lt;any&gt; | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+metadata\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"batch"</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+object\}
 
 _Default Value:_ `"batch"`
 
-##### output\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+output_file\}
+</SectionEntry>
 
-##### started\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+started_at\}
+<SectionEntry variant="fields">
 
-##### status \(required\) \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+status\}
+#### output\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+output_file\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| "QUEUED"
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### started\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+started_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+status\}
+
+<Code text={`| "QUEUED"
 | "RUNNING"
 | "SUCCESS"
 | "FAILED"
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
-| "CANCELLED"</p>
-</code>
-</pre>
+| "CANCELLED"`} />
 
-##### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+succeeded_requests\}
+</SectionEntry>
 
-##### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+total_requests\}
+<SectionEntry variant="fields">
+
+#### succeeded_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+succeeded_requests\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### total_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+total_requests\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### object: <code>"list"</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+object\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"list"</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+object\}
 
 _Default Value:_ `"list"`
 
-#### total \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+total\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### total <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+total\}
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/batch/jobs \{#operation-jobs_api_routes_batch_create_batch_job\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/batch/jobs \{#operation-jobs_api_routes_batch_create_batch_job\}
 
 _Create Batch Job_
 
 Create a new batch job, it will be queued for processing.
 
-<Section title="Security" id="operation-jobs_api_routes_batch_create_batch_job+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_batch_create_batch_job+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_batch_create_batch_job+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_batch_create_batch_job+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_batch_create_batch_job+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -167,137 +332,311 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-jobs_api_routes_batch_create_batch_job+request">
+<Section variant="section">
 
-#### endpoint \(required\) \{#operation-jobs_api_routes_batch_create_batch_job+request+endpoint\}
+<div>
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| "/v1/chat/completions"
+## Request Body \{#operation-jobs_api_routes_batch_create_batch_job+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_batch_create_batch_job+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### endpoint <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+endpoint\}
+
+<Code text={`| "/v1/chat/completions"
 | "/v1/embeddings"
 | "/v1/fim/completions"
 | "/v1/moderations"
-| "/v1/chat/moderations"</p>
-</code>
-</pre>
+| "/v1/chat/moderations"`} />
 
-#### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_create_batch_job+request+input_files\}
+</SectionEntry>
 
-#### metadata: <code>map&lt;string&gt; | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+request+metadata\}
+<SectionEntry variant="fields">
 
-#### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+request+model\}
+#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+input_files\}
 
-#### timeout\_hours: <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+request+timeout_hours\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### metadata <Pill variant="info">map&lt;string&gt; | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+metadata\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### timeout\_hours <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+timeout_hours\}
 
 _Default Value:_ `24`
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_batch_create_batch_job+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_batch_create_batch_job+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_batch_create_batch_job+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_batch_create_batch_job+200+application-json">
 
 OK
 
-#### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_at\}
+<Section variant="fields">
 
-#### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_requests\}
+<div>
 
-#### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+created_at\}
+#### Fields \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+fields\}
 
-#### endpoint \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+endpoint\}
+</div>
 
-#### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+error_file\}
+<SectionEntry variant="fields">
 
-#### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+errors\}
+#### completed\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### completed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_requests\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+created_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### endpoint <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+endpoint\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### error\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+error_file\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### errors <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">BatchError</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+errors\}
 
 <ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">
 
-##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+count\}
+<SectionEntry variant="fields">
+
+#### count <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+count\}
 
 _Default Value:_ `1`
 
-##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+message\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### message <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+message\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+failed_requests\}
+</SectionEntry>
 
-#### id \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+id\}
+<SectionEntry variant="fields">
 
-#### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+input_files\}
+#### failed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+failed_requests\}
 
-#### metadata: <code>map&lt;any&gt; | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+metadata\}
+</SectionEntry>
 
-#### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+model\}
+<SectionEntry variant="fields">
 
-#### object: <code>"batch"</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+object\}
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+input_files\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### metadata <Pill variant="info">map&lt;any&gt; | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+metadata\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"batch"</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+object\}
 
 _Default Value:_ `"batch"`
 
-#### output\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+output_file\}
+</SectionEntry>
 
-#### started\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+started_at\}
+<SectionEntry variant="fields">
 
-#### status \(required\) \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+status\}
+#### output\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+output_file\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| "QUEUED"
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### started\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+started_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+status\}
+
+<Code text={`| "QUEUED"
 | "RUNNING"
 | "SUCCESS"
 | "FAILED"
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
-| "CANCELLED"</p>
-</code>
-</pre>
+| "CANCELLED"`} />
 
-#### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+succeeded_requests\}
+</SectionEntry>
 
-#### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+total_requests\}
+<SectionEntry variant="fields">
+
+#### succeeded_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+succeeded_requests\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### total_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+total_requests\}
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## GET /v1/batch/jobs/\{job\_id\} \{#operation-jobs_api_routes_batch_get_batch_job\}
+## <Pill variant="primary"><b>GET</b></Pill> /v1/batch/jobs/\{job\_id\} \{#operation-jobs_api_routes_batch_get_batch_job\}
 
 _Get Batch Job_
 
 Get a batch job details by its UUID.
 
-<Section title="Security" id="operation-jobs_api_routes_batch_get_batch_job+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_batch_get_batch_job+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_batch_get_batch_job+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-jobs_api_routes_batch_get_batch_job+parameters">
-
-#### job\_id \(required\) \{#operation-jobs_api_routes_batch_get_batch_job+parameters+job_id\}
-
-#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+parameters+Security\}
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_batch_get_batch_job+try-it-now">
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-jobs_api_routes_batch_get_batch_job+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### job\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_batch_get_batch_job+parameters+job_id\}
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_batch_get_batch_job+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+parameters+Security\}
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_batch_get_batch_job+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -319,104 +658,249 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_batch_get_batch_job+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_batch_get_batch_job+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_batch_get_batch_job+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_batch_get_batch_job+200+application-json">
 
 OK
 
-#### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_at\}
+<Section variant="fields">
 
-#### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_requests\}
+<div>
 
-#### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+created_at\}
+#### Fields \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+fields\}
 
-#### endpoint \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+endpoint\}
+</div>
 
-#### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+error_file\}
+<SectionEntry variant="fields">
 
-#### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+errors\}
+#### completed\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### completed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_requests\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+created_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### endpoint <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+endpoint\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### error\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+error_file\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### errors <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">BatchError</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+errors\}
 
 <ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">
 
-##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+count\}
+<SectionEntry variant="fields">
+
+#### count <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+count\}
 
 _Default Value:_ `1`
 
-##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+message\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### message <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+message\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+failed_requests\}
+</SectionEntry>
 
-#### id \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+id\}
+<SectionEntry variant="fields">
 
-#### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+input_files\}
+#### failed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+failed_requests\}
 
-#### metadata: <code>map&lt;any&gt; | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+metadata\}
+</SectionEntry>
 
-#### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+model\}
+<SectionEntry variant="fields">
 
-#### object: <code>"batch"</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+object\}
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+input_files\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### metadata <Pill variant="info">map&lt;any&gt; | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+metadata\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"batch"</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+object\}
 
 _Default Value:_ `"batch"`
 
-#### output\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+output_file\}
+</SectionEntry>
 
-#### started\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+started_at\}
+<SectionEntry variant="fields">
 
-#### status \(required\) \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+status\}
+#### output\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+output_file\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| "QUEUED"
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### started\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+started_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+status\}
+
+<Code text={`| "QUEUED"
 | "RUNNING"
 | "SUCCESS"
 | "FAILED"
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
-| "CANCELLED"</p>
-</code>
-</pre>
+| "CANCELLED"`} />
 
-#### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+succeeded_requests\}
+</SectionEntry>
 
-#### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+total_requests\}
+<SectionEntry variant="fields">
+
+#### succeeded_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+succeeded_requests\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### total_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+total_requests\}
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/batch/jobs/\{job\_id\}/cancel \{#operation-jobs_api_routes_batch_cancel_batch_job\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/batch/jobs/\{job\_id\}/cancel \{#operation-jobs_api_routes_batch_cancel_batch_job\}
 
 _Cancel Batch Job_
 
 Request the cancellation of a batch job.
 
-<Section title="Security" id="operation-jobs_api_routes_batch_cancel_batch_job+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_batch_cancel_batch_job+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_batch_cancel_batch_job+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-jobs_api_routes_batch_cancel_batch_job+parameters">
-
-#### job\_id \(required\) \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+job_id\}
-
-#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+Security\}
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_batch_cancel_batch_job+try-it-now">
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### job\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+job_id\}
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+Security\}
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_batch_cancel_batch_job+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -438,78 +922,167 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_batch_cancel_batch_job+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_batch_cancel_batch_job+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json">
 
 OK
 
-#### completed\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_at\}
+<Section variant="fields">
 
-#### completed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_requests\}
+<div>
 
-#### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+created_at\}
+#### Fields \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+fields\}
 
-#### endpoint \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+endpoint\}
+</div>
 
-#### error\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+error_file\}
+<SectionEntry variant="fields">
 
-#### errors \(required\): <code>array&lt;<a href="#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">BatchError</a>&gt;</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+errors\}
+#### completed\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### completed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_requests\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+created_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### endpoint <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+endpoint\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### error\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+error_file\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### errors <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">BatchError</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+errors\}
 
 <ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">
 
-##### count: <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+count\}
+<SectionEntry variant="fields">
+
+#### count <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+count\}
 
 _Default Value:_ `1`
 
-##### message \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+message\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### message <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+message\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### failed\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+failed_requests\}
+</SectionEntry>
 
-#### id \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+id\}
+<SectionEntry variant="fields">
 
-#### input\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+input_files\}
+#### failed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+failed_requests\}
 
-#### metadata: <code>map&lt;any&gt; | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+metadata\}
+</SectionEntry>
 
-#### model \(required\): <code>string</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+model\}
+<SectionEntry variant="fields">
 
-#### object: <code>"batch"</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+object\}
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+input_files\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### metadata <Pill variant="info">map&lt;any&gt; | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+metadata\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"batch"</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+object\}
 
 _Default Value:_ `"batch"`
 
-#### output\_file: <code>string | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+output_file\}
+</SectionEntry>
 
-#### started\_at: <code>integer | null</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+started_at\}
+<SectionEntry variant="fields">
 
-#### status \(required\) \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+status\}
+#### output\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+output_file\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| "QUEUED"
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### started\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+started_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+status\}
+
+<Code text={`| "QUEUED"
 | "RUNNING"
 | "SUCCESS"
 | "FAILED"
 | "TIMEOUT_EXCEEDED"
 | "CANCELLATION_REQUESTED"
-| "CANCELLED"</p>
-</code>
-</pre>
+| "CANCELLED"`} />
 
-#### succeeded\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+succeeded_requests\}
+</SectionEntry>
 
-#### total\_requests \(required\): <code>integer</code> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+total_requests\}
+<SectionEntry variant="fields">
+
+#### succeeded_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+succeeded_requests\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### total_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+total_requests\}
+
+</SectionEntry>
+
+</Section>
 
 </div>
 

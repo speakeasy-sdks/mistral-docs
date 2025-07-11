@@ -3,37 +3,114 @@ sidebar_position: 2.2
 sidebar_label: beta/agents
 ---
 
-import { Section, TryItNow, TabbedSection, ExpandableSection, SideBarTrigger, SideBar } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionEntry, TryItNow, TabbedSection, ExpandableSection, SideBarTrigger, SideBar, Code } from "@speakeasy-api/docs-md/docusaurus";
 import EmbedJsonSchema from "../../../../src/components/speakeasy/embeds/JsonSchema.mdx";
 
 
+
+
+<SideBar />
 # beta/agents
 
-## GET /v1/agents \{#operation-agents_api_v1_agents_list\}
+## <Pill variant="primary"><b>GET</b></Pill> /v1/agents \{#operation-agents_api_v1_agents_list\}
 
 _List agent entities._
 
 Retrieve a list of agent entities sorted by creation time.
 
-<Section title="Security" id="operation-agents_api_v1_agents_list+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_list+security+ApiKey\}
+<div>
+
+### Security \{#operation-agents_api_v1_agents_list+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_list+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_list+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-agents_api_v1_agents_list+parameters">
+</SectionEntry>
+
+</Section>
+
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-agents_api_v1_agents_list+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
 
 #### page \{#operation-agents_api_v1_agents_list+parameters+page\}
 
-#### Security \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_list+parameters+Security\}
+<Section variant="fields">
 
-#### page\_size \{#operation-agents_api_v1_agents_list+parameters+page_size\}
+<div>
 
-#### Security \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_list+parameters+Security\}
+#### Fields \{#operation-agents_api_v1_agents_list+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_api_v1_agents_list+parameters+Security\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-agents_api_v1_agents_list+try-it-now">
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### page\_size \{#operation-agents_api_v1_agents_list+parameters+page_size\}
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_list+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_api_v1_agents_list+parameters+Security\}
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-agents_api_v1_agents_list+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -53,61 +130,161 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-agents_api_v1_agents_list+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
 
-Successful Response
-
-#### Response Body \(required\): <code>array&lt;<a href="#operation-agents_api_v1_agents_list+200+application-json+Agent">Agent</a>&gt;</code> \{#operation-agents_api_v1_agents_list+200+application-json+Response Body\}
-
-Successful Response
+## Responses \{#operation-agents_api_v1_agents_list+responses\}
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-agents_api_v1_agents_list+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_list+200+application-json">
+
+Successful Response
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_list+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Response Body <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-agents_api_v1_agents_list+200+application-json+Agent">Agent</a>&gt;</Pill> \{#operation-agents_api_v1_agents_list+200+application-json+Response Body\}
+
+Successful Response
+
+</SectionEntry>
+
+</Section>
+
+</div>
+
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-agents_api_v1_agents_list+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_list+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_list+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_list+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_list+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_list+422+application-json+Security">Security</a></Pill> \{#operation-agents_api_v1_agents_list+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-agents_api_v1_agents_list+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_list+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_list+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_list+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_list+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-agents_api_v1_agents_list+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-agents_api_v1_agents_list+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-agents_api_v1_agents_list+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_list+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_agents_list+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-agents_api_v1_agents_list+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_list+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_list+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_list+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/agents \{#operation-agents_api_v1_agents_create\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/agents \{#operation-agents_api_v1_agents_create\}
 
 _Create a agent that can be used within a conversation._
 
 Create a new agent giving it instructions, tools, description. The agent is then available to be used as a regular assistant in a conversation or as part of an agent pool from which it can be used.
 
-<Section title="Security" id="operation-agents_api_v1_agents_create+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+security+ApiKey\}
+<div>
+
+### Security \{#operation-agents_api_v1_agents_create+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_create+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-agents_api_v1_agents_create+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-agents_api_v1_agents_create+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -130,43 +307,95 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-agents_api_v1_agents_create+request">
+<Section variant="section">
 
-#### completion\_args: <code><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_create+request+completion_args\}
+<div>
+
+## Request Body \{#operation-agents_api_v1_agents_create+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_create+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### completion\_args <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs">CompletionArgs</a></Pill> \{#operation-agents_api_v1_agents_create+request+completion_args\}
 
 White-listed arguments from the completion API
 
 <ExpandableSection title="CompletionArgs" id="operation-agents_api_v1_agents_create+request+CompletionArgs">
 
-##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+frequency_penalty\}
+<SectionEntry variant="fields">
 
-##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+max_tokens\}
+#### frequency\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+frequency_penalty\}
 
-##### prediction: <code><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+prediction\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### max\_tokens <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+max_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prediction <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction">Prediction</a> | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+prediction\}
 
 <ExpandableSection title="Prediction" id="operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction">
 
-##### content: <code>string</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: <code>string</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+Prediction+type\}
 
 _Default Value:_ `"content"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+presence_penalty\}
+</SectionEntry>
 
-##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+random_seed\}
+<SectionEntry variant="fields">
 
-##### response\_format: <code><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+response_format\}
+#### presence\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+presence_penalty\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### random\_seed <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+random_seed\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### response\_format <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+response_format\}
 
 <ExpandableSection title="ResponseFormat" id="operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat">
 
-##### json\_schema: <code><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+json_schema\}
+<SectionEntry variant="fields">
+
+#### json\_schema <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger cta="View JsonSchema Details" title="JsonSchema Details">
@@ -174,165 +403,310 @@ _Default Value:_ `"content"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+stop\}
+</SectionEntry>
 
-##### temperature: <code>number</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+temperature\}
+<SectionEntry variant="fields">
+
+#### stop <Pill variant="info">string | array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+stop\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### temperature <Pill variant="info">number</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+temperature\}
 
 _Default Value:_ `0.3`
 
-##### tool\_choice: <code>"auto" | "none" | "any" | "required"</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+tool_choice\}
+</SectionEntry>
 
-##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+top_p\}
+<SectionEntry variant="fields">
+
+#### tool\_choice <Pill variant="info">"auto" | "none" | "any" | "required"</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+tool_choice\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### top\_p <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+top_p\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### description: <code>string | null</code> \{#operation-agents_api_v1_agents_create+request+description\}
+</SectionEntry>
 
-#### handoffs: <code>array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_create+request+handoffs\}
+<SectionEntry variant="fields">
 
-#### instructions: <code>string | null</code> \{#operation-agents_api_v1_agents_create+request+instructions\}
+#### description <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_create+request+description\}
 
-#### model \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+request+model\}
+</SectionEntry>
 
-#### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+request+name\}
+<SectionEntry variant="fields">
+
+#### handoffs <Pill variant="info">array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_create+request+handoffs\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### instructions <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_create+request+instructions\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+request+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+request+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
 
 #### tools \{#operation-agents_api_v1_agents_create+request+tools\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>array&lt;
+<Code text={`array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;</p>
-</code>
-</pre>
+&gt;`} />
 
 List of tools which are available to the model during the conversation.
 
 <ExpandableSection title="FunctionTool" id="operation-agents_api_v1_agents_create+request+FunctionTool">
 
-##### function \(required\): <code><a href="#operation-agents_api_v1_agents_create+request+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+request+FunctionTool+Function">Function</a></Pill> \{#operation-agents_api_v1_agents_create+request+FunctionTool+function\}
 
 <ExpandableSection title="Function" id="operation-agents_api_v1_agents_create+request+FunctionTool+Function">
 
-##### description: <code>string</code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+name\}
+#### description <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+description\}
 
-##### parameters \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+parameters\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### parameters <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+parameters\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-agents_api_v1_agents_create+request+FunctionTool+Function+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_create+request+FunctionTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-agents_api_v1_agents_create+request+FunctionTool+type\}
 
 _Default Value:_ `"function"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchTool" id="operation-agents_api_v1_agents_create+request+WebSearchTool">
 
-##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_create+request+WebSearchTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search"</Pill> \{#operation-agents_api_v1_agents_create+request+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_create+request+WebSearchPremiumTool">
 
-##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_create+request+WebSearchPremiumTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search_premium"</Pill> \{#operation-agents_api_v1_agents_create+request+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="CodeInterpreterTool" id="operation-agents_api_v1_agents_create+request+CodeInterpreterTool">
 
-##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_create+request+CodeInterpreterTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"code_interpreter"</Pill> \{#operation-agents_api_v1_agents_create+request+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageGenerationTool" id="operation-agents_api_v1_agents_create+request+ImageGenerationTool">
 
-##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_create+request+ImageGenerationTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_generation"</Pill> \{#operation-agents_api_v1_agents_create+request+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentLibraryTool" id="operation-agents_api_v1_agents_create+request+DocumentLibraryTool">
 
-##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_create+request+DocumentLibraryTool+library_ids\}
+<SectionEntry variant="fields">
+
+#### library_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-agents_api_v1_agents_create+request+DocumentLibraryTool+library_ids\}
 
 Ids of the library in which to search.
 
-##### type: <code>"document_library"</code> \{#operation-agents_api_v1_agents_create+request+DocumentLibraryTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_library"</Pill> \{#operation-agents_api_v1_agents_create+request+DocumentLibraryTool+type\}
 
 _Default Value:_ `"document_library"`
 
+</SectionEntry>
+
 </ExpandableSection>
+
+</SectionEntry>
 
 </Section>
 
-<TabbedSection title="Response" id="operation-agents_api_v1_agents_create+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-agents_api_v1_agents_create+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-agents_api_v1_agents_create+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_create+200+application-json">
 
 Successful Response
 
-#### completion\_args: <code><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_create+200+application-json+completion_args\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_create+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### completion\_args <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs">CompletionArgs</a></Pill> \{#operation-agents_api_v1_agents_create+200+application-json+completion_args\}
 
 White-listed arguments from the completion API
 
 <ExpandableSection title="CompletionArgs" id="operation-agents_api_v1_agents_create+200+application-json+CompletionArgs">
 
-##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+frequency_penalty\}
+<SectionEntry variant="fields">
 
-##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+max_tokens\}
+#### frequency\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+frequency_penalty\}
 
-##### prediction: <code><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+prediction\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### max\_tokens <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+max_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prediction <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+prediction\}
 
 <ExpandableSection title="Prediction" id="operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction">
 
-##### content: <code>string</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: <code>string</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+Prediction+type\}
 
 _Default Value:_ `"content"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+presence_penalty\}
+</SectionEntry>
 
-##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+random_seed\}
+<SectionEntry variant="fields">
 
-##### response\_format: <code><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+response_format\}
+#### presence\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+presence_penalty\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### random\_seed <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+random_seed\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### response\_format <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+response_format\}
 
 <ExpandableSection title="ResponseFormat" id="operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat">
 
-##### json\_schema: <code><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
+<SectionEntry variant="fields">
+
+#### json\_schema <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger cta="View JsonSchema Details" title="JsonSchema Details">
@@ -340,187 +714,392 @@ _Default Value:_ `"content"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+stop\}
+</SectionEntry>
 
-##### temperature: <code>number</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+temperature\}
+<SectionEntry variant="fields">
+
+#### stop <Pill variant="info">string | array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+stop\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### temperature <Pill variant="info">number</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+temperature\}
 
 _Default Value:_ `0.3`
 
-##### tool\_choice: <code>"auto" | "none" | "any" | "required"</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+tool_choice\}
+</SectionEntry>
 
-##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+top_p\}
+<SectionEntry variant="fields">
+
+#### tool\_choice <Pill variant="info">"auto" | "none" | "any" | "required"</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+tool_choice\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### top\_p <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CompletionArgs+top_p\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### created\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_create+200+application-json+created_at\}
+</SectionEntry>
 
-#### description: <code>string | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+description\}
+<SectionEntry variant="fields">
 
-#### handoffs: <code>array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+handoffs\}
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">date-time</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+created_at\}
 
-#### id \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+200+application-json+id\}
+</SectionEntry>
 
-#### instructions: <code>string | null</code> \{#operation-agents_api_v1_agents_create+200+application-json+instructions\}
+<SectionEntry variant="fields">
 
-#### model \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+200+application-json+model\}
+#### description <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+description\}
 
-#### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+200+application-json+name\}
+</SectionEntry>
 
-#### object: <code>"agent"</code> \{#operation-agents_api_v1_agents_create+200+application-json+object\}
+<SectionEntry variant="fields">
+
+#### handoffs <Pill variant="info">array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+handoffs\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### instructions <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+instructions\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"agent"</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+object\}
 
 _Default Value:_ `"agent"`
 
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
 #### tools \{#operation-agents_api_v1_agents_create+200+application-json+tools\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>array&lt;
+<Code text={`array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;</p>
-</code>
-</pre>
+&gt;`} />
 
 List of tools which are available to the model during the conversation.
 
 <ExpandableSection title="FunctionTool" id="operation-agents_api_v1_agents_create+200+application-json+FunctionTool">
 
-##### function \(required\): <code><a href="#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function">Function</a></Pill> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+function\}
 
 <ExpandableSection title="Function" id="operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function">
 
-##### description: <code>string</code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+name\}
+#### description <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+description\}
 
-##### parameters \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+parameters\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### parameters <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+parameters\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+Function+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+FunctionTool+type\}
 
 _Default Value:_ `"function"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchTool" id="operation-agents_api_v1_agents_create+200+application-json+WebSearchTool">
 
-##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_create+200+application-json+WebSearchTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search"</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_create+200+application-json+WebSearchPremiumTool">
 
-##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_create+200+application-json+WebSearchPremiumTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search_premium"</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="CodeInterpreterTool" id="operation-agents_api_v1_agents_create+200+application-json+CodeInterpreterTool">
 
-##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_create+200+application-json+CodeInterpreterTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"code_interpreter"</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageGenerationTool" id="operation-agents_api_v1_agents_create+200+application-json+ImageGenerationTool">
 
-##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_create+200+application-json+ImageGenerationTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_generation"</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentLibraryTool" id="operation-agents_api_v1_agents_create+200+application-json+DocumentLibraryTool">
 
-##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_create+200+application-json+DocumentLibraryTool+library_ids\}
+<SectionEntry variant="fields">
+
+#### library_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+DocumentLibraryTool+library_ids\}
 
 Ids of the library in which to search.
 
-##### type: <code>"document_library"</code> \{#operation-agents_api_v1_agents_create+200+application-json+DocumentLibraryTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_library"</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+DocumentLibraryTool+type\}
 
 _Default Value:_ `"document_library"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### updated\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_create+200+application-json+updated_at\}
+</SectionEntry>
 
-#### version \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_create+200+application-json+version\}
+<SectionEntry variant="fields">
+
+#### updated_at <Pill variant="warning">required</Pill> <Pill variant="info">date-time</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+updated_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### version <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_api_v1_agents_create+200+application-json+version\}
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-agents_api_v1_agents_create+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_create+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_create+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_create+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_create+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_create+422+application-json+Security">Security</a></Pill> \{#operation-agents_api_v1_agents_create+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-agents_api_v1_agents_create+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_create+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_create+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-agents_api_v1_agents_create+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-agents_api_v1_agents_create+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-agents_api_v1_agents_create+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_create+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-agents_api_v1_agents_create+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_create+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## GET /v1/agents/\{agent\_id\} \{#operation-agents_api_v1_agents_get\}
+## <Pill variant="primary"><b>GET</b></Pill> /v1/agents/\{agent\_id\} \{#operation-agents_api_v1_agents_get\}
 
 _Retrieve an agent entity._
 
 Given an agent retrieve an agent entity with its attributes.
 
-<Section title="Security" id="operation-agents_api_v1_agents_get+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+security+ApiKey\}
+<div>
+
+### Security \{#operation-agents_api_v1_agents_get+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_get+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-agents_api_v1_agents_get+parameters">
-
-#### agent\_id \(required\) \{#operation-agents_api_v1_agents_get+parameters+agent_id\}
-
-#### Security \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+parameters+Security\}
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-agents_api_v1_agents_get+try-it-now">
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-agents_api_v1_agents_get+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### agent\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-agents_api_v1_agents_get+parameters+agent_id\}
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_get+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+parameters+Security\}
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-agents_api_v1_agents_get+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -542,47 +1121,103 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-agents_api_v1_agents_get+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-agents_api_v1_agents_get+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-agents_api_v1_agents_get+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_get+200+application-json">
 
 Successful Response
 
-#### completion\_args: <code><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_get+200+application-json+completion_args\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_get+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### completion\_args <Pill variant="info"><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs">CompletionArgs</a></Pill> \{#operation-agents_api_v1_agents_get+200+application-json+completion_args\}
 
 White-listed arguments from the completion API
 
 <ExpandableSection title="CompletionArgs" id="operation-agents_api_v1_agents_get+200+application-json+CompletionArgs">
 
-##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+frequency_penalty\}
+<SectionEntry variant="fields">
 
-##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+max_tokens\}
+#### frequency\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+frequency_penalty\}
 
-##### prediction: <code><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+prediction\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### max\_tokens <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+max_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prediction <Pill variant="info"><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+prediction\}
 
 <ExpandableSection title="Prediction" id="operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction">
 
-##### content: <code>string</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: <code>string</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+Prediction+type\}
 
 _Default Value:_ `"content"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+presence_penalty\}
+</SectionEntry>
 
-##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+random_seed\}
+<SectionEntry variant="fields">
 
-##### response\_format: <code><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+response_format\}
+#### presence\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+presence_penalty\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### random\_seed <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+random_seed\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### response\_format <Pill variant="info"><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+response_format\}
 
 <ExpandableSection title="ResponseFormat" id="operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat">
 
-##### json\_schema: <code><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
+<SectionEntry variant="fields">
+
+#### json\_schema <Pill variant="info"><a href="#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger cta="View JsonSchema Details" title="JsonSchema Details">
@@ -590,187 +1225,392 @@ _Default Value:_ `"content"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+stop\}
+</SectionEntry>
 
-##### temperature: <code>number</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+temperature\}
+<SectionEntry variant="fields">
+
+#### stop <Pill variant="info">string | array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+stop\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### temperature <Pill variant="info">number</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+temperature\}
 
 _Default Value:_ `0.3`
 
-##### tool\_choice: <code>"auto" | "none" | "any" | "required"</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+tool_choice\}
+</SectionEntry>
 
-##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+top_p\}
+<SectionEntry variant="fields">
+
+#### tool\_choice <Pill variant="info">"auto" | "none" | "any" | "required"</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+tool_choice\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### top\_p <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CompletionArgs+top_p\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### created\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_get+200+application-json+created_at\}
+</SectionEntry>
 
-#### description: <code>string | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+description\}
+<SectionEntry variant="fields">
 
-#### handoffs: <code>array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+handoffs\}
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">date-time</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+created_at\}
 
-#### id \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+200+application-json+id\}
+</SectionEntry>
 
-#### instructions: <code>string | null</code> \{#operation-agents_api_v1_agents_get+200+application-json+instructions\}
+<SectionEntry variant="fields">
 
-#### model \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+200+application-json+model\}
+#### description <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+description\}
 
-#### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+200+application-json+name\}
+</SectionEntry>
 
-#### object: <code>"agent"</code> \{#operation-agents_api_v1_agents_get+200+application-json+object\}
+<SectionEntry variant="fields">
+
+#### handoffs <Pill variant="info">array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+handoffs\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### instructions <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+instructions\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"agent"</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+object\}
 
 _Default Value:_ `"agent"`
 
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
 #### tools \{#operation-agents_api_v1_agents_get+200+application-json+tools\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>array&lt;
+<Code text={`array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;</p>
-</code>
-</pre>
+&gt;`} />
 
 List of tools which are available to the model during the conversation.
 
 <ExpandableSection title="FunctionTool" id="operation-agents_api_v1_agents_get+200+application-json+FunctionTool">
 
-##### function \(required\): <code><a href="#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function">Function</a></Pill> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+function\}
 
 <ExpandableSection title="Function" id="operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function">
 
-##### description: <code>string</code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+name\}
+#### description <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+description\}
 
-##### parameters \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+parameters\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### parameters <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+parameters\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+Function+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+FunctionTool+type\}
 
 _Default Value:_ `"function"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchTool" id="operation-agents_api_v1_agents_get+200+application-json+WebSearchTool">
 
-##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_get+200+application-json+WebSearchTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search"</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_get+200+application-json+WebSearchPremiumTool">
 
-##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_get+200+application-json+WebSearchPremiumTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search_premium"</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="CodeInterpreterTool" id="operation-agents_api_v1_agents_get+200+application-json+CodeInterpreterTool">
 
-##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_get+200+application-json+CodeInterpreterTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"code_interpreter"</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageGenerationTool" id="operation-agents_api_v1_agents_get+200+application-json+ImageGenerationTool">
 
-##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_get+200+application-json+ImageGenerationTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_generation"</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentLibraryTool" id="operation-agents_api_v1_agents_get+200+application-json+DocumentLibraryTool">
 
-##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_get+200+application-json+DocumentLibraryTool+library_ids\}
+<SectionEntry variant="fields">
+
+#### library_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+DocumentLibraryTool+library_ids\}
 
 Ids of the library in which to search.
 
-##### type: <code>"document_library"</code> \{#operation-agents_api_v1_agents_get+200+application-json+DocumentLibraryTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_library"</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+DocumentLibraryTool+type\}
 
 _Default Value:_ `"document_library"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### updated\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_get+200+application-json+updated_at\}
+</SectionEntry>
 
-#### version \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_get+200+application-json+version\}
+<SectionEntry variant="fields">
+
+#### updated_at <Pill variant="warning">required</Pill> <Pill variant="info">date-time</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+updated_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### version <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_api_v1_agents_get+200+application-json+version\}
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-agents_api_v1_agents_get+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_get+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_get+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_get+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_get+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_get+422+application-json+Security">Security</a></Pill> \{#operation-agents_api_v1_agents_get+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-agents_api_v1_agents_get+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_get+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_get+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-agents_api_v1_agents_get+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-agents_api_v1_agents_get+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-agents_api_v1_agents_get+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_get+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-agents_api_v1_agents_get+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_get+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_get+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## PATCH /v1/agents/\{agent\_id\} \{#operation-agents_api_v1_agents_update\}
+## <Pill variant="primary"><b>PATCH</b></Pill> /v1/agents/\{agent\_id\} \{#operation-agents_api_v1_agents_update\}
 
 _Update an agent entity._
 
 Update an agent attributes and create a new version.
 
-<Section title="Security" id="operation-agents_api_v1_agents_update+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+security+ApiKey\}
+<div>
+
+### Security \{#operation-agents_api_v1_agents_update+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-agents_api_v1_agents_update+parameters">
-
-#### agent\_id \(required\) \{#operation-agents_api_v1_agents_update+parameters+agent_id\}
-
-#### Security \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+parameters+Security\}
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-agents_api_v1_agents_update+try-it-now">
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-agents_api_v1_agents_update+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### agent\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-agents_api_v1_agents_update+parameters+agent_id\}
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+parameters+Security\}
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-agents_api_v1_agents_update+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -793,43 +1633,95 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-agents_api_v1_agents_update+request">
+<Section variant="section">
 
-#### completion\_args: <code><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_update+request+completion_args\}
+<div>
+
+## Request Body \{#operation-agents_api_v1_agents_update+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### completion\_args <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs">CompletionArgs</a></Pill> \{#operation-agents_api_v1_agents_update+request+completion_args\}
 
 White-listed arguments from the completion API
 
 <ExpandableSection title="CompletionArgs" id="operation-agents_api_v1_agents_update+request+CompletionArgs">
 
-##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+frequency_penalty\}
+<SectionEntry variant="fields">
 
-##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+max_tokens\}
+#### frequency\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+frequency_penalty\}
 
-##### prediction: <code><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+prediction\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### max\_tokens <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+max_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prediction <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction">Prediction</a> | null</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+prediction\}
 
 <ExpandableSection title="Prediction" id="operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction">
 
-##### content: <code>string</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: <code>string</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+Prediction+type\}
 
 _Default Value:_ `"content"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+presence_penalty\}
+</SectionEntry>
 
-##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+random_seed\}
+<SectionEntry variant="fields">
 
-##### response\_format: <code><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+response_format\}
+#### presence\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+presence_penalty\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### random\_seed <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+random_seed\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### response\_format <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+response_format\}
 
 <ExpandableSection title="ResponseFormat" id="operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat">
 
-##### json\_schema: <code><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat+json_schema\}
+<SectionEntry variant="fields">
+
+#### json\_schema <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger cta="View JsonSchema Details" title="JsonSchema Details">
@@ -837,165 +1729,310 @@ _Default Value:_ `"content"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+stop\}
+</SectionEntry>
 
-##### temperature: <code>number</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+temperature\}
+<SectionEntry variant="fields">
+
+#### stop <Pill variant="info">string | array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+stop\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### temperature <Pill variant="info">number</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+temperature\}
 
 _Default Value:_ `0.3`
 
-##### tool\_choice: <code>"auto" | "none" | "any" | "required"</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+tool_choice\}
+</SectionEntry>
 
-##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+top_p\}
+<SectionEntry variant="fields">
+
+#### tool\_choice <Pill variant="info">"auto" | "none" | "any" | "required"</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+tool_choice\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### top\_p <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_update+request+CompletionArgs+top_p\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### description: <code>string | null</code> \{#operation-agents_api_v1_agents_update+request+description\}
+</SectionEntry>
 
-#### handoffs: <code>array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_update+request+handoffs\}
+<SectionEntry variant="fields">
 
-#### instructions: <code>string | null</code> \{#operation-agents_api_v1_agents_update+request+instructions\}
+#### description <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_update+request+description\}
 
-#### model: <code>string | null</code> \{#operation-agents_api_v1_agents_update+request+model\}
+</SectionEntry>
 
-#### name: <code>string | null</code> \{#operation-agents_api_v1_agents_update+request+name\}
+<SectionEntry variant="fields">
+
+#### handoffs <Pill variant="info">array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_update+request+handoffs\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### instructions <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_update+request+instructions\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_update+request+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### name <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_update+request+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
 
 #### tools \{#operation-agents_api_v1_agents_update+request+tools\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>array&lt;
+<Code text={`array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;</p>
-</code>
-</pre>
+&gt;`} />
 
 List of tools which are available to the model during the conversation.
 
 <ExpandableSection title="FunctionTool" id="operation-agents_api_v1_agents_update+request+FunctionTool">
 
-##### function \(required\): <code><a href="#operation-agents_api_v1_agents_update+request+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+request+FunctionTool+Function">Function</a></Pill> \{#operation-agents_api_v1_agents_update+request+FunctionTool+function\}
 
 <ExpandableSection title="Function" id="operation-agents_api_v1_agents_update+request+FunctionTool+Function">
 
-##### description: <code>string</code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+name\}
+#### description <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+description\}
 
-##### parameters \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+parameters\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### parameters <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+parameters\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-agents_api_v1_agents_update+request+FunctionTool+Function+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_update+request+FunctionTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-agents_api_v1_agents_update+request+FunctionTool+type\}
 
 _Default Value:_ `"function"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchTool" id="operation-agents_api_v1_agents_update+request+WebSearchTool">
 
-##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_update+request+WebSearchTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search"</Pill> \{#operation-agents_api_v1_agents_update+request+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_update+request+WebSearchPremiumTool">
 
-##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_update+request+WebSearchPremiumTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search_premium"</Pill> \{#operation-agents_api_v1_agents_update+request+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="CodeInterpreterTool" id="operation-agents_api_v1_agents_update+request+CodeInterpreterTool">
 
-##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_update+request+CodeInterpreterTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"code_interpreter"</Pill> \{#operation-agents_api_v1_agents_update+request+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageGenerationTool" id="operation-agents_api_v1_agents_update+request+ImageGenerationTool">
 
-##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_update+request+ImageGenerationTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_generation"</Pill> \{#operation-agents_api_v1_agents_update+request+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentLibraryTool" id="operation-agents_api_v1_agents_update+request+DocumentLibraryTool">
 
-##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_update+request+DocumentLibraryTool+library_ids\}
+<SectionEntry variant="fields">
+
+#### library_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-agents_api_v1_agents_update+request+DocumentLibraryTool+library_ids\}
 
 Ids of the library in which to search.
 
-##### type: <code>"document_library"</code> \{#operation-agents_api_v1_agents_update+request+DocumentLibraryTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_library"</Pill> \{#operation-agents_api_v1_agents_update+request+DocumentLibraryTool+type\}
 
 _Default Value:_ `"document_library"`
 
+</SectionEntry>
+
 </ExpandableSection>
+
+</SectionEntry>
 
 </Section>
 
-<TabbedSection title="Response" id="operation-agents_api_v1_agents_update+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-agents_api_v1_agents_update+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-agents_api_v1_agents_update+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_update+200+application-json">
 
 Successful Response
 
-#### completion\_args: <code><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_update+200+application-json+completion_args\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### completion\_args <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs">CompletionArgs</a></Pill> \{#operation-agents_api_v1_agents_update+200+application-json+completion_args\}
 
 White-listed arguments from the completion API
 
 <ExpandableSection title="CompletionArgs" id="operation-agents_api_v1_agents_update+200+application-json+CompletionArgs">
 
-##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+frequency_penalty\}
+<SectionEntry variant="fields">
 
-##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+max_tokens\}
+#### frequency\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+frequency_penalty\}
 
-##### prediction: <code><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+prediction\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### max\_tokens <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+max_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prediction <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+prediction\}
 
 <ExpandableSection title="Prediction" id="operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction">
 
-##### content: <code>string</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: <code>string</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+Prediction+type\}
 
 _Default Value:_ `"content"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+presence_penalty\}
+</SectionEntry>
 
-##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+random_seed\}
+<SectionEntry variant="fields">
 
-##### response\_format: <code><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+response_format\}
+#### presence\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+presence_penalty\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### random\_seed <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+random_seed\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### response\_format <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+response_format\}
 
 <ExpandableSection title="ResponseFormat" id="operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat">
 
-##### json\_schema: <code><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
+<SectionEntry variant="fields">
+
+#### json\_schema <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger cta="View JsonSchema Details" title="JsonSchema Details">
@@ -1003,191 +2040,414 @@ _Default Value:_ `"content"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+stop\}
+</SectionEntry>
 
-##### temperature: <code>number</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+temperature\}
+<SectionEntry variant="fields">
+
+#### stop <Pill variant="info">string | array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+stop\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### temperature <Pill variant="info">number</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+temperature\}
 
 _Default Value:_ `0.3`
 
-##### tool\_choice: <code>"auto" | "none" | "any" | "required"</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+tool_choice\}
+</SectionEntry>
 
-##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+top_p\}
+<SectionEntry variant="fields">
+
+#### tool\_choice <Pill variant="info">"auto" | "none" | "any" | "required"</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+tool_choice\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### top\_p <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CompletionArgs+top_p\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### created\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_update+200+application-json+created_at\}
+</SectionEntry>
 
-#### description: <code>string | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+description\}
+<SectionEntry variant="fields">
 
-#### handoffs: <code>array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+handoffs\}
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">date-time</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+created_at\}
 
-#### id \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+200+application-json+id\}
+</SectionEntry>
 
-#### instructions: <code>string | null</code> \{#operation-agents_api_v1_agents_update+200+application-json+instructions\}
+<SectionEntry variant="fields">
 
-#### model \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+200+application-json+model\}
+#### description <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+description\}
 
-#### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+200+application-json+name\}
+</SectionEntry>
 
-#### object: <code>"agent"</code> \{#operation-agents_api_v1_agents_update+200+application-json+object\}
+<SectionEntry variant="fields">
+
+#### handoffs <Pill variant="info">array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+handoffs\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### instructions <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+instructions\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"agent"</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+object\}
 
 _Default Value:_ `"agent"`
 
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
 #### tools \{#operation-agents_api_v1_agents_update+200+application-json+tools\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>array&lt;
+<Code text={`array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;</p>
-</code>
-</pre>
+&gt;`} />
 
 List of tools which are available to the model during the conversation.
 
 <ExpandableSection title="FunctionTool" id="operation-agents_api_v1_agents_update+200+application-json+FunctionTool">
 
-##### function \(required\): <code><a href="#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function">Function</a></Pill> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+function\}
 
 <ExpandableSection title="Function" id="operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function">
 
-##### description: <code>string</code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+name\}
+#### description <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+description\}
 
-##### parameters \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+parameters\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### parameters <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+parameters\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+Function+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+FunctionTool+type\}
 
 _Default Value:_ `"function"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchTool" id="operation-agents_api_v1_agents_update+200+application-json+WebSearchTool">
 
-##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_update+200+application-json+WebSearchTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search"</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_update+200+application-json+WebSearchPremiumTool">
 
-##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_update+200+application-json+WebSearchPremiumTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search_premium"</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="CodeInterpreterTool" id="operation-agents_api_v1_agents_update+200+application-json+CodeInterpreterTool">
 
-##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_update+200+application-json+CodeInterpreterTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"code_interpreter"</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageGenerationTool" id="operation-agents_api_v1_agents_update+200+application-json+ImageGenerationTool">
 
-##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_update+200+application-json+ImageGenerationTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_generation"</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentLibraryTool" id="operation-agents_api_v1_agents_update+200+application-json+DocumentLibraryTool">
 
-##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_update+200+application-json+DocumentLibraryTool+library_ids\}
+<SectionEntry variant="fields">
+
+#### library_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+DocumentLibraryTool+library_ids\}
 
 Ids of the library in which to search.
 
-##### type: <code>"document_library"</code> \{#operation-agents_api_v1_agents_update+200+application-json+DocumentLibraryTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_library"</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+DocumentLibraryTool+type\}
 
 _Default Value:_ `"document_library"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### updated\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_update+200+application-json+updated_at\}
+</SectionEntry>
 
-#### version \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_update+200+application-json+version\}
+<SectionEntry variant="fields">
+
+#### updated_at <Pill variant="warning">required</Pill> <Pill variant="info">date-time</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+updated_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### version <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_api_v1_agents_update+200+application-json+version\}
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-agents_api_v1_agents_update+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_update+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_update+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_update+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_update+422+application-json+Security">Security</a></Pill> \{#operation-agents_api_v1_agents_update+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-agents_api_v1_agents_update+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_update+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_update+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-agents_api_v1_agents_update+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-agents_api_v1_agents_update+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-agents_api_v1_agents_update+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_update+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-agents_api_v1_agents_update+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## PATCH /v1/agents/\{agent\_id\}/version \{#operation-agents_api_v1_agents_update_version\}
+## <Pill variant="primary"><b>PATCH</b></Pill> /v1/agents/\{agent\_id\}/version \{#operation-agents_api_v1_agents_update_version\}
 
 _Update an agent version._
 
 Switch the version of an agent.
 
-<Section title="Security" id="operation-agents_api_v1_agents_update_version+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+security+ApiKey\}
+<div>
+
+### Security \{#operation-agents_api_v1_agents_update_version+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update_version+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-agents_api_v1_agents_update_version+parameters">
-
-#### agent\_id \(required\) \{#operation-agents_api_v1_agents_update_version+parameters+agent_id\}
-
-#### Security \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+parameters+Security\}
-
-#### version \(required\) \{#operation-agents_api_v1_agents_update_version+parameters+version\}
-
-#### Security \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_update_version+parameters+Security\}
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-agents_api_v1_agents_update_version+try-it-now">
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-agents_api_v1_agents_update_version+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### agent\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-agents_api_v1_agents_update_version+parameters+agent_id\}
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update_version+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+parameters+Security\}
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### version \<Pill variant="warning"\>required\</Pill\> \{#operation-agents_api_v1_agents_update_version+parameters+version\}
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update_version+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_api_v1_agents_update_version+parameters+Security\}
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-agents_api_v1_agents_update_version+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -1210,47 +2470,103 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-agents_api_v1_agents_update_version+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-agents_api_v1_agents_update_version+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-agents_api_v1_agents_update_version+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_update_version+200+application-json">
 
 Successful Response
 
-#### completion\_args: <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs">CompletionArgs</a></code> \{#operation-agents_api_v1_agents_update_version+200+application-json+completion_args\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update_version+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### completion\_args <Pill variant="info"><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs">CompletionArgs</a></Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+completion_args\}
 
 White-listed arguments from the completion API
 
 <ExpandableSection title="CompletionArgs" id="operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs">
 
-##### frequency\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+frequency_penalty\}
+<SectionEntry variant="fields">
 
-##### max\_tokens: <code>integer | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+max_tokens\}
+#### frequency\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+frequency_penalty\}
 
-##### prediction: <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+prediction\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### max\_tokens <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+max_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prediction <Pill variant="info"><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction">Prediction</a> | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+prediction\}
 
 <ExpandableSection title="Prediction" id="operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction">
 
-##### content: <code>string</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: <code>string</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+Prediction+type\}
 
 _Default Value:_ `"content"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### presence\_penalty: <code>number | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+presence_penalty\}
+</SectionEntry>
 
-##### random\_seed: <code>integer | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+random_seed\}
+<SectionEntry variant="fields">
 
-##### response\_format: <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+response_format\}
+#### presence\_penalty <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+presence_penalty\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### random\_seed <Pill variant="info">integer | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+random_seed\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### response\_format <Pill variant="info"><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+response_format\}
 
 <ExpandableSection title="ResponseFormat" id="operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat">
 
-##### json\_schema: <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
+<SectionEntry variant="fields">
+
+#### json\_schema <Pill variant="info"><a href="#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat+json_schema\}
 
 <p>
     <SideBarTrigger cta="View JsonSchema Details" title="JsonSchema Details">
@@ -1258,164 +2574,311 @@ _Default Value:_ `"content"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### stop: <code>string | array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+stop\}
+</SectionEntry>
 
-##### temperature: <code>number</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+temperature\}
+<SectionEntry variant="fields">
+
+#### stop <Pill variant="info">string | array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+stop\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### temperature <Pill variant="info">number</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+temperature\}
 
 _Default Value:_ `0.3`
 
-##### tool\_choice: <code>"auto" | "none" | "any" | "required"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+tool_choice\}
+</SectionEntry>
 
-##### top\_p: <code>number | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+top_p\}
+<SectionEntry variant="fields">
+
+#### tool\_choice <Pill variant="info">"auto" | "none" | "any" | "required"</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+tool_choice\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### top\_p <Pill variant="info">number | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CompletionArgs+top_p\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### created\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+created_at\}
+</SectionEntry>
 
-#### description: <code>string | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+description\}
+<SectionEntry variant="fields">
 
-#### handoffs: <code>array&lt;string&gt; | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+handoffs\}
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">date-time</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+created_at\}
 
-#### id \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+id\}
+</SectionEntry>
 
-#### instructions: <code>string | null</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+instructions\}
+<SectionEntry variant="fields">
 
-#### model \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+model\}
+#### description <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+description\}
 
-#### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+name\}
+</SectionEntry>
 
-#### object: <code>"agent"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+object\}
+<SectionEntry variant="fields">
+
+#### handoffs <Pill variant="info">array&lt;string&gt; | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+handoffs\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### instructions <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+instructions\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"agent"</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+object\}
 
 _Default Value:_ `"agent"`
 
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
 #### tools \{#operation-agents_api_v1_agents_update_version+200+application-json+tools\}
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>array&lt;
+<Code text={`array&lt;
  | FunctionTool
  | WebSearchTool
  | WebSearchPremiumTool
  | CodeInterpreterTool
  | ImageGenerationTool
  | DocumentLibraryTool
-&gt;</p>
-</code>
-</pre>
+&gt;`} />
 
 List of tools which are available to the model during the conversation.
 
 <ExpandableSection title="FunctionTool" id="operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool">
 
-##### function \(required\): <code><a href="#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function">Function</a></code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function">Function</a></Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+function\}
 
 <ExpandableSection title="Function" id="operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function">
 
-##### description: <code>string</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+name\}
+#### description <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+description\}
 
-##### parameters \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+parameters\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### parameters <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+parameters\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+Function+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"function"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+FunctionTool+type\}
 
 _Default Value:_ `"function"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchTool" id="operation-agents_api_v1_agents_update_version+200+application-json+WebSearchTool">
 
-##### type: <code>"web_search"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+WebSearchTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search"</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+WebSearchTool+type\}
 
 _Default Value:_ `"web_search"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="WebSearchPremiumTool" id="operation-agents_api_v1_agents_update_version+200+application-json+WebSearchPremiumTool">
 
-##### type: <code>"web_search_premium"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+WebSearchPremiumTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"web_search_premium"</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+WebSearchPremiumTool+type\}
 
 _Default Value:_ `"web_search_premium"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="CodeInterpreterTool" id="operation-agents_api_v1_agents_update_version+200+application-json+CodeInterpreterTool">
 
-##### type: <code>"code_interpreter"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+CodeInterpreterTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"code_interpreter"</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+CodeInterpreterTool+type\}
 
 _Default Value:_ `"code_interpreter"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageGenerationTool" id="operation-agents_api_v1_agents_update_version+200+application-json+ImageGenerationTool">
 
-##### type: <code>"image_generation"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+ImageGenerationTool+type\}
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_generation"</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+ImageGenerationTool+type\}
 
 _Default Value:_ `"image_generation"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentLibraryTool" id="operation-agents_api_v1_agents_update_version+200+application-json+DocumentLibraryTool">
 
-##### library\_ids \(required\): <code>array&lt;string&gt;</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+DocumentLibraryTool+library_ids\}
+<SectionEntry variant="fields">
+
+#### library_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+DocumentLibraryTool+library_ids\}
 
 Ids of the library in which to search.
 
-##### type: <code>"document_library"</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+DocumentLibraryTool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_library"</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+DocumentLibraryTool+type\}
 
 _Default Value:_ `"document_library"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### updated\_at \(required\): <code>date-time</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+updated_at\}
+</SectionEntry>
 
-#### version \(required\): <code>integer</code> \{#operation-agents_api_v1_agents_update_version+200+application-json+version\}
+<SectionEntry variant="fields">
+
+#### updated_at <Pill variant="warning">required</Pill> <Pill variant="info">date-time</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+updated_at\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### version <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_api_v1_agents_update_version+200+application-json+version\}
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-agents_api_v1_agents_update_version+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_api_v1_agents_update_version+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-agents_api_v1_agents_update_version+422+application-json+Security">Security</a></code> \{#operation-agents_api_v1_agents_update_version+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_api_v1_agents_update_version+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_api_v1_agents_update_version+422+application-json+Security">Security</a></Pill> \{#operation-agents_api_v1_agents_update_version+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-agents_api_v1_agents_update_version+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-agents_api_v1_agents_update_version+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-agents_api_v1_agents_update_version+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_update_version+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
-
-<SideBar />

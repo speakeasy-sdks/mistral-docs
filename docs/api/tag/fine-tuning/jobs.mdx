@@ -3,24 +3,56 @@ sidebar_position: 2.9
 sidebar_label: fine-tuning/jobs
 ---
 
-import { Section, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionEntry, TryItNow, TabbedSection, ExpandableSection, Code } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # fine-tuning/jobs
 
-## GET /v1/fine\_tuning/jobs \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs\}
+## <Pill variant="primary"><b>GET</b></Pill> /v1/fine\_tuning/jobs \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs\}
 
 _Get Fine Tuning Jobs_
 
 Get a list of fine-tuning jobs for your organization and user.
 
-<Section title="Security" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -40,144 +72,305 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json">
 
 OK
 
-#### data: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut">CompletionJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut">ClassifierJobOut</a>&gt;</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+data\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### data <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut">CompletionJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut">ClassifierJobOut</a>&gt;</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+data\}
 
 <ExpandableSection title="CompletionJobOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut">
 
-##### auto\_start \(required\): <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+auto_start\}
+<SectionEntry variant="fields">
 
-##### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+created_at\}
+#### auto_start <Pill variant="warning">required</Pill> <Pill variant="info">boolean</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+auto_start\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+created_at\}
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
-##### fine\_tuned\_model: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+fine_tuned_model\}
+</SectionEntry>
 
-##### hyperparameters \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters">CompletionTrainingParameters</a></code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+hyperparameters\}
+<SectionEntry variant="fields">
+
+#### fine\_tuned\_model <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+fine_tuned_model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### hyperparameters <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters">CompletionTrainingParameters</a></Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+hyperparameters\}
 
 <ExpandableSection title="CompletionTrainingParameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters">
 
-##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+epochs\}
+<SectionEntry variant="fields">
 
-##### fim\_ratio: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+fim_ratio\}
+#### epochs <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+epochs\}
 
-##### learning\_rate: <code>number</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+learning_rate\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### fim\_ratio <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+fim_ratio\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### learning\_rate <Pill variant="info">number</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+learning_rate\}
 
 _Default Value:_ `0.0001`
 
-##### seq\_len: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+seq_len\}
+</SectionEntry>
 
-##### training\_steps: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+training_steps\}
+<SectionEntry variant="fields">
 
-##### warmup\_fraction: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+warmup_fraction\}
+#### seq\_len <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+seq_len\}
 
-##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+weight_decay\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### training\_steps <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+training_steps\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### warmup\_fraction <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+warmup_fraction\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### weight\_decay <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+CompletionTrainingParameters+weight_decay\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+id\}
 
 The ID of the job.
 
-##### integrations: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+integrations\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### integrations <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+integrations\}
 
 <ExpandableSection title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">
 
-##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+name\}
+<SectionEntry variant="fields">
 
-##### project \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+project\}
+#### name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### project <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+project\}
 
 The name of the project that the new run will be created under.
 
-##### run\_name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+run_name\}
+</SectionEntry>
 
-##### type: <code>"wandb"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+type\}
+<SectionEntry variant="fields">
+
+#### run\_name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+run_name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"wandb"</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+type\}
 
 _Default Value:_ `"wandb"`
 
-##### url: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+url\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### url <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+url\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### job\_type: <code>"completion"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+job_type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### job\_type <Pill variant="info">"completion"</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+job_type\}
 
 The type of job (`FT` for fine-tuning).
 
 _Default Value:_ `"completion"`
 
-##### metadata: <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut">JobMetadataOut</a> | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+metadata\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### metadata <Pill variant="info"><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut">JobMetadataOut</a> | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+metadata\}
 
 <ExpandableSection title="JobMetadataOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut">
 
-##### cost: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+cost\}
+<SectionEntry variant="fields">
 
-##### cost\_currency: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+cost_currency\}
+#### cost <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+cost\}
 
-##### data\_tokens: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+data_tokens\}
+</SectionEntry>
 
-##### estimated\_start\_time: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+estimated_start_time\}
+<SectionEntry variant="fields">
 
-##### expected\_duration\_seconds: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+expected_duration_seconds\}
+#### cost\_currency <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+cost_currency\}
 
-##### train\_tokens: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+train_tokens\}
+</SectionEntry>
 
-##### train\_tokens\_per\_step: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+train_tokens_per_step\}
+<SectionEntry variant="fields">
+
+#### data\_tokens <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+data_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### estimated\_start\_time <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+estimated_start_time\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### expected\_duration\_seconds <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+expected_duration_seconds\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### train\_tokens <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+train_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### train\_tokens\_per\_step <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+JobMetadataOut+train_tokens_per_step\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### model \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+model\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+model\}
 
 The name of the model to fine-tune.
 
-##### modified\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+modified_at\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### modified_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+modified_at\}
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
-##### object: <code>"job"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+object\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"job"</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+object\}
 
 The object type of the fine-tuning job.
 
 _Default Value:_ `"job"`
 
-##### repositories: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+repositories\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### repositories <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+repositories\}
 
 <ExpandableSection title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut">
 
-##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+name\}
+<SectionEntry variant="fields">
 
-##### project \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+project\}
+#### name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### project <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+project\}
 
 The name of the project that the new run will be created under.
 
-##### run\_name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+run_name\}
+</SectionEntry>
 
-##### type: <code>"wandb"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+type\}
+<SectionEntry variant="fields">
+
+#### run\_name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+run_name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"wandb"</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+type\}
 
 _Default Value:_ `"wandb"`
 
-##### url: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+url\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### url <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+WandbIntegrationOut+url\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### status \(required\) \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+status\}
+</SectionEntry>
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| "QUEUED"
+<SectionEntry variant="fields">
+
+#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+status\}
+
+<Code text={`| "QUEUED"
 | "STARTED"
 | "VALIDATING"
 | "VALIDATED"
@@ -186,130 +379,255 @@ _Default Value:_ `"wandb"`
 | "FAILED"
 | "SUCCESS"
 | "CANCELLED"
-| "CANCELLATION_REQUESTED"</p>
-</code>
-</pre>
+| "CANCELLATION_REQUESTED"`} />
 
 The current status of the fine-tuning job.
 
-##### suffix: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+suffix\}
+</SectionEntry>
 
-##### trained\_tokens: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+trained_tokens\}
+<SectionEntry variant="fields">
 
-##### training\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+training_files\}
+#### suffix <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+suffix\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### trained\_tokens <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+trained_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### training_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+training_files\}
 
 A list containing the IDs of uploaded files that contain training data.
 
-##### validation\_files: <code>array&lt;string&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+validation_files\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### validation\_files <Pill variant="info">array&lt;string&gt; | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+CompletionJobOut+validation_files\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ClassifierJobOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut">
 
-##### auto\_start \(required\): <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+auto_start\}
+<SectionEntry variant="fields">
 
-##### created\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+created_at\}
+#### auto_start <Pill variant="warning">required</Pill> <Pill variant="info">boolean</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+auto_start\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+created_at\}
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was created.
 
-##### fine\_tuned\_model: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+fine_tuned_model\}
+</SectionEntry>
 
-##### hyperparameters \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters">ClassifierTrainingParameters</a></code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+hyperparameters\}
+<SectionEntry variant="fields">
+
+#### fine\_tuned\_model <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+fine_tuned_model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### hyperparameters <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters">ClassifierTrainingParameters</a></Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+hyperparameters\}
 
 <ExpandableSection title="ClassifierTrainingParameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters">
 
-##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+epochs\}
+<SectionEntry variant="fields">
 
-##### learning\_rate: <code>number</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+learning_rate\}
+#### epochs <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+epochs\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### learning\_rate <Pill variant="info">number</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+learning_rate\}
 
 _Default Value:_ `0.0001`
 
-##### seq\_len: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+seq_len\}
+</SectionEntry>
 
-##### training\_steps: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+training_steps\}
+<SectionEntry variant="fields">
 
-##### warmup\_fraction: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+warmup_fraction\}
+#### seq\_len <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+seq_len\}
 
-##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+weight_decay\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### training\_steps <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+training_steps\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### warmup\_fraction <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+warmup_fraction\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### weight\_decay <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+ClassifierTrainingParameters+weight_decay\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+id\}
 
 The ID of the job.
 
-##### integrations: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+integrations\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### integrations <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut">WandbIntegrationOut</a>&gt; | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+integrations\}
 
 <ExpandableSection title="WandbIntegrationOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut">
 
-##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+name\}
+<SectionEntry variant="fields">
 
-##### project \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+project\}
+#### name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### project <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+project\}
 
 The name of the project that the new run will be created under.
 
-##### run\_name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+run_name\}
+</SectionEntry>
 
-##### type: <code>"wandb"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+type\}
+<SectionEntry variant="fields">
+
+#### run\_name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+run_name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"wandb"</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+type\}
 
 _Default Value:_ `"wandb"`
 
-##### url: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+url\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### url <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+WandbIntegrationOut+url\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### job\_type: <code>"classifier"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+job_type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### job\_type <Pill variant="info">"classifier"</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+job_type\}
 
 The type of job (`FT` for fine-tuning).
 
 _Default Value:_ `"classifier"`
 
-##### metadata: <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut">JobMetadataOut</a> | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+metadata\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### metadata <Pill variant="info"><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut">JobMetadataOut</a> | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+metadata\}
 
 <ExpandableSection title="JobMetadataOut" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut">
 
-##### cost: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+cost\}
+<SectionEntry variant="fields">
 
-##### cost\_currency: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+cost_currency\}
+#### cost <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+cost\}
 
-##### data\_tokens: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+data_tokens\}
+</SectionEntry>
 
-##### estimated\_start\_time: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+estimated_start_time\}
+<SectionEntry variant="fields">
 
-##### expected\_duration\_seconds: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+expected_duration_seconds\}
+#### cost\_currency <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+cost_currency\}
 
-##### train\_tokens: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+train_tokens\}
+</SectionEntry>
 
-##### train\_tokens\_per\_step: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+train_tokens_per_step\}
+<SectionEntry variant="fields">
+
+#### data\_tokens <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+data_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### estimated\_start\_time <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+estimated_start_time\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### expected\_duration\_seconds <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+expected_duration_seconds\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### train\_tokens <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+train_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### train\_tokens\_per\_step <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+JobMetadataOut+train_tokens_per_step\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### model \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+model\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+model\}
 
 The name of the model to fine-tune.
 
-##### modified\_at \(required\): <code>integer</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+modified_at\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### modified_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+modified_at\}
 
 The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
 
-##### object: <code>"job"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+object\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"job"</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+object\}
 
 The object type of the fine-tuning job.
 
 _Default Value:_ `"job"`
 
-##### status \(required\) \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+status\}
+</SectionEntry>
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| "QUEUED"
+<SectionEntry variant="fields">
+
+#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+status\}
+
+<Code text={`| "QUEUED"
 | "STARTED"
 | "VALIDATING"
 | "VALIDATED"
@@ -318,47 +636,107 @@ _Default Value:_ `"job"`
 | "FAILED"
 | "SUCCESS"
 | "CANCELLED"
-| "CANCELLATION_REQUESTED"</p>
-</code>
-</pre>
+| "CANCELLATION_REQUESTED"`} />
 
 The current status of the fine-tuning job.
 
-##### suffix: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+suffix\}
+</SectionEntry>
 
-##### trained\_tokens: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+trained_tokens\}
+<SectionEntry variant="fields">
 
-##### training\_files \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+training_files\}
+#### suffix <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+suffix\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### trained\_tokens <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+trained_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### training_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+training_files\}
 
 A list containing the IDs of uploaded files that contain training data.
 
-##### validation\_files: <code>array&lt;string&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+validation_files\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### validation\_files <Pill variant="info">array&lt;string&gt; | null</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+ClassifierJobOut+validation_files\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### object: <code>"list"</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+object\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"list"</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+object\}
 
 _Default Value:_ `"list"`
 
-#### total \(required\): <code>integer</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+total\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### total <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_jobs+200+application-json+total\}
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/fine\_tuning/jobs \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/fine\_tuning/jobs \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job\}
 
 _Create Fine Tuning Job_
 
 Create a new fine-tuning job, it will be queued for processing.
 
-<Section title="Security" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -383,211 +761,453 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request">
+<Section variant="section">
 
-#### auto\_start: <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+auto_start\}
+<div>
+
+## Request Body \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### auto\_start <Pill variant="info">boolean</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+auto_start\}
 
 This field will be required in a future release.
 
-#### classifier\_targets: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn">ClassifierTargetIn</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+classifier_targets\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### classifier\_targets <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn">ClassifierTargetIn</a>&gt; | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+classifier_targets\}
 
 <ExpandableSection title="ClassifierTargetIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn">
 
-##### labels \(required\): <code>array&lt;string&gt;</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+labels\}
+<SectionEntry variant="fields">
 
-##### loss\_function: <code>"single_class" | "multi_class"</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+loss_function\}
+#### labels <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+labels\}
 
-##### name \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+name\}
+</SectionEntry>
 
-##### weight: <code>number</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+weight\}
+<SectionEntry variant="fields">
+
+#### loss\_function <Pill variant="info">"single_class" | "multi_class"</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+loss_function\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### weight <Pill variant="info">number</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTargetIn+weight\}
 
 _Default Value:_ `1`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### hyperparameters \(required\) \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+hyperparameters\}
+</SectionEntry>
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}><a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn">CompletionTrainingParametersIn</a> | <a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn">ClassifierTrainingParametersIn</a></p>
-</code>
-</pre>
+<SectionEntry variant="fields">
+
+#### hyperparameters <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+hyperparameters\}
+
+<Code text={`<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn">CompletionTrainingParametersIn</a> | <a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn">ClassifierTrainingParametersIn</a>`} />
 
 <ExpandableSection title="CompletionTrainingParametersIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn">
 
-##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+epochs\}
+<SectionEntry variant="fields">
 
-##### fim\_ratio: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+fim_ratio\}
+#### epochs <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+epochs\}
 
-##### learning\_rate: <code>number</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+learning_rate\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### fim\_ratio <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+fim_ratio\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### learning\_rate <Pill variant="info">number</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+learning_rate\}
 
 A parameter describing how much to adjust the pre-trained model's weights in response to the estimated error each time the weights are updated during the fine-tuning process.
 
 _Default Value:_ `0.0001`
 
-##### seq\_len: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+seq_len\}
+</SectionEntry>
 
-##### training\_steps: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+training_steps\}
+<SectionEntry variant="fields">
 
-##### warmup\_fraction: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+warmup_fraction\}
+#### seq\_len <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+seq_len\}
 
-##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+weight_decay\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### training\_steps <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+training_steps\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### warmup\_fraction <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+warmup_fraction\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### weight\_decay <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+CompletionTrainingParametersIn+weight_decay\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ClassifierTrainingParametersIn" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn">
 
-##### epochs: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+epochs\}
+<SectionEntry variant="fields">
 
-##### learning\_rate: <code>number</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+learning_rate\}
+#### epochs <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+epochs\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### learning\_rate <Pill variant="info">number</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+learning_rate\}
 
 A parameter describing how much to adjust the pre-trained model's weights in response to the estimated error each time the weights are updated during the fine-tuning process.
 
 _Default Value:_ `0.0001`
 
-##### seq\_len: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+seq_len\}
+</SectionEntry>
 
-##### training\_steps: <code>integer | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+training_steps\}
+<SectionEntry variant="fields">
 
-##### warmup\_fraction: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+warmup_fraction\}
+#### seq\_len <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+seq_len\}
 
-##### weight\_decay: <code>number | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+weight_decay\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### training\_steps <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+training_steps\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### warmup\_fraction <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+warmup_fraction\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### weight\_decay <Pill variant="info">number | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+ClassifierTrainingParametersIn+weight_decay\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### integrations: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">WandbIntegration</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+integrations\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### integrations <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">WandbIntegration</a>&gt; | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+integrations\}
 
 <ExpandableSection title="WandbIntegration" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">
 
-##### api\_key \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+api_key\}
+<SectionEntry variant="fields">
+
+#### api_key <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+api_key\}
 
 The WandB API key to use for authentication.
 
-##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+name\}
+</SectionEntry>
 
-##### project \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+project\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### project <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+project\}
 
 The name of the project that the new run will be created under.
 
-##### run\_name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+run_name\}
+</SectionEntry>
 
-##### type: <code>"wandb"</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+type\}
+<SectionEntry variant="fields">
+
+#### run\_name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+run_name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"wandb"</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+type\}
 
 _Default Value:_ `"wandb"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### invalid\_sample\_skip\_percentage: <code>number</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+invalid_sample_skip_percentage\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### invalid\_sample\_skip\_percentage <Pill variant="info">number</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+invalid_sample_skip_percentage\}
 
 _Default Value:_ `0`
 
-#### job\_type: <code>"completion" | "classifier"</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+job_type\}
+</SectionEntry>
 
-#### model \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+model\}
+<SectionEntry variant="fields">
+
+#### job\_type <Pill variant="info">"completion" | "classifier"</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+job_type\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+model\}
 
 The name of the model to fine-tune.
 
-#### repositories: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">WandbIntegration</a>&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+repositories\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### repositories <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">WandbIntegration</a>&gt; | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+repositories\}
 
 <ExpandableSection title="WandbIntegration" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration">
 
-##### api\_key \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+api_key\}
+<SectionEntry variant="fields">
+
+#### api_key <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+api_key\}
 
 The WandB API key to use for authentication.
 
-##### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+name\}
+</SectionEntry>
 
-##### project \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+project\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### project <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+project\}
 
 The name of the project that the new run will be created under.
 
-##### run\_name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+run_name\}
+</SectionEntry>
 
-##### type: <code>"wandb"</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+type\}
+<SectionEntry variant="fields">
+
+#### run\_name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+run_name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"wandb"</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+WandbIntegration+type\}
 
 _Default Value:_ `"wandb"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### suffix: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+suffix\}
+</SectionEntry>
 
-#### training\_files: <code>array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile">TrainingFile</a>&gt;</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+training_files\}
+<SectionEntry variant="fields">
+
+#### suffix <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+suffix\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### training\_files <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile">TrainingFile</a>&gt;</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+training_files\}
 
 <ExpandableSection title="TrainingFile" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile">
 
-##### file\_id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile+file_id\}
+<SectionEntry variant="fields">
 
-##### weight: <code>number</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile+weight\}
+#### file_id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile+file_id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### weight <Pill variant="info">number</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+TrainingFile+weight\}
 
 _Default Value:_ `1`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### validation\_files: <code>array&lt;string&gt; | null</code> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+validation_files\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### validation\_files <Pill variant="info">array&lt;string&gt; | null</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+request+validation_files\}
+
+</SectionEntry>
 
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json">
 
 OK
 
-#### Response Body \(required\) \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+Response Body\}
+<Section variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}><a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+CompletionJobOut">CompletionJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+ClassifierJobOut">ClassifierJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+LegacyJobMetadataOut">LegacyJobMetadataOut</a></p>
-</code>
-</pre>
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Response Body <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+Response Body\}
+
+<Code text={`<a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+CompletionJobOut">CompletionJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+ClassifierJobOut">ClassifierJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_create_fine_tuning_job+200+application-json+LegacyJobMetadataOut">LegacyJobMetadataOut</a>`} />
 
 OK
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## GET /v1/fine\_tuning/jobs/\{job\_id\} \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job\}
+## <Pill variant="primary"><b>GET</b></Pill> /v1/fine\_tuning/jobs/\{job\_id\} \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job\}
 
 _Get Fine Tuning Job_
 
 Get a fine-tuned job details by its UUID.
 
-<Section title="Security" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters">
-
-#### job\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters+job_id\}
-
-The ID of the job to analyse.
-
-#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters+Security\}
-
-The ID of the job to analyse.
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+try-it-now">
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### job\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters+job_id\}
+
+The ID of the job to analyse.
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+parameters+Security\}
+
+The ID of the job to analyse.
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -609,47 +1229,131 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json">
 
 OK
 
-#### Response Body \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></code> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+Response Body\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Response Body <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></Pill> \{#operation-jobs_api_routes_fine_tuning_get_fine_tuning_job+200+application-json+Response Body\}
 
 OK
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/fine\_tuning/jobs/\{job\_id\}/cancel \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/fine\_tuning/jobs/\{job\_id\}/cancel \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job\}
 
 _Cancel Fine Tuning Job_
 
 Request the cancellation of a fine tuning job.
 
-<Section title="Security" id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters">
-
-#### job\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters+job_id\}
-
-The ID of the job to cancel.
-
-#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters+Security\}
-
-The ID of the job to cancel.
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+try-it-now">
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### job\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters+job_id\}
+
+The ID of the job to cancel.
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+parameters+Security\}
+
+The ID of the job to cancel.
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -671,43 +1375,127 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json">
 
 OK
 
-#### Response Body \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></code> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+Response Body\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Response Body <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></Pill> \{#operation-jobs_api_routes_fine_tuning_cancel_fine_tuning_job+200+application-json+Response Body\}
 
 OK
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/fine\_tuning/jobs/\{job\_id\}/start \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/fine\_tuning/jobs/\{job\_id\}/start \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job\}
 
 _Start Fine Tuning Job_
 
 Request the start of a validated fine tuning job.
 
-<Section title="Security" id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters">
-
-#### job\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters+job_id\}
-
-#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters+Security\}
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+try-it-now">
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### job\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters+job_id\}
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+parameters+Security\}
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -729,17 +1517,45 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json">
 
 OK
 
-#### Response Body \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></code> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+Response Body\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Response Body <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+CompletionDetailedJobOut">CompletionDetailedJobOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+ClassifierDetailedJobOut">ClassifierDetailedJobOut</a></Pill> \{#operation-jobs_api_routes_fine_tuning_start_fine_tuning_job+200+application-json+Response Body\}
 
 OK
+
+</SectionEntry>
+
+</Section>
 
 </div>
 

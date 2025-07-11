@@ -3,7 +3,7 @@ sidebar_position: 2.0
 sidebar_label: agents
 ---
 
-import { Section, TryItNow, ExpandableSection, SideBarTrigger, SideBar, TabbedSection } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionEntry, TryItNow, Code, ExpandableSection, SideBarTrigger, SideBar, TabbedSection } from "@speakeasy-api/docs-md/docusaurus";
 import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
 import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
 import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
@@ -13,19 +13,54 @@ import EmbedReferenceChunk from "../../../src/components/speakeasy/embeds/Refere
 import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx";
 
 
+
+
+<SideBar />
 # agents
 
-## POST /v1/agents/completions \{#operation-agents_completion_v1_agents_completions_post\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/agents/completions \{#operation-agents_completion_v1_agents_completions_post\}
 
 Agents Completion
 
-<Section title="Security" id="operation-agents_completion_v1_agents_completions_post+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+security+ApiKey\}
+<div>
+
+### Security \{#operation-agents_completion_v1_agents_completions_post+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_completion_v1_agents_completions_post+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-agents_completion_v1_agents_completions_post+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-agents_completion_v1_agents_completions_post+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -53,89 +88,127 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-agents_completion_v1_agents_completions_post+request">
+<Section variant="section">
 
-#### agent\_id \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+agent_id\}
+<div>
+
+## Request Body \{#operation-agents_completion_v1_agents_completions_post+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_completion_v1_agents_completions_post+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### agent_id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+agent_id\}
 
 The ID of the agent to use for this completion.
 
-#### frequency\_penalty: <code>number</code> \{#operation-agents_completion_v1_agents_completions_post+request+frequency_penalty\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### frequency\_penalty <Pill variant="info">number</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+frequency_penalty\}
 
 frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.
 
-#### max\_tokens: <code>integer | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+max_tokens\}
+</SectionEntry>
 
-#### messages \(required\) \{#operation-agents_completion_v1_agents_completions_post+request+messages\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+SystemMessage">SystemMessage</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+UserMessage">UserMessage</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage">AssistantMessage</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+ToolMessage">ToolMessage</a>&gt;</p>
-</code>
-</pre>
+#### max\_tokens <Pill variant="info">integer | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+max_tokens\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### messages <Pill variant="warning">required</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+messages\}
+
+<Code text={`array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+SystemMessage">SystemMessage</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+UserMessage">UserMessage</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage">AssistantMessage</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+ToolMessage">ToolMessage</a>&gt;`} />
 
 The prompt(s) to generate completions for, encoded as a list of dict with role and content.
 
 <ExpandableSection title="SystemMessage" id="operation-agents_completion_v1_agents_completions_post+request+SystemMessage">
 
-##### content \(required\): <code>string | array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+TextChunk">TextChunk</a>&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="warning">required</Pill> <Pill variant="info">string | array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+TextChunk">TextChunk</a>&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+content\}
 
 <ExpandableSection title="TextChunk" id="operation-agents_completion_v1_agents_completions_post+request+SystemMessage+TextChunk">
 
-##### text \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+TextChunk+text\}
+<SectionEntry variant="fields">
 
-##### type: <code>"text"</code> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+TextChunk+type\}
+#### text <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+TextChunk+text\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### role: <code>"system"</code> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"system"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+SystemMessage+role\}
 
 _Default Value:_ `"system"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="UserMessage" id="operation-agents_completion_v1_agents_completions_post+request+UserMessage">
 
-##### content \(required\) \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content <Pill variant="warning">required</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+UserMessage+TextChunk">TextChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <ExpandableSection title="TextChunk" id="operation-agents_completion_v1_agents_completions_post+request+UserMessage+TextChunk">
 
-##### text \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+TextChunk+text\}
+<SectionEntry variant="fields">
 
-##### type: <code>"text"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+TextChunk+type\}
+#### text <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+TextChunk+text\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageURLChunk" id="operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk">
 
-##### image\_url \(required\): <code><a href="#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+image_url\}
+<SectionEntry variant="fields">
+
+#### image_url <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger cta="View ImageURL Details" title="ImageURL Details">
@@ -143,72 +216,105 @@ _Default Value:_ `"text"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"image_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_url"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentURLChunk" id="operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk">
 
-##### document\_name: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk+document_name\}
+<SectionEntry variant="fields">
 
-##### document\_url \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk+document_url\}
+#### document\_name <Pill variant="info">string | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk+document_name\}
 
-##### type: <code>"document_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### document_url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk+document_url\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_url"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ReferenceChunk" id="operation-agents_completion_v1_agents_completions_post+request+UserMessage+ReferenceChunk">
 
-##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ReferenceChunk+reference_ids\}
+<SectionEntry variant="fields">
 
-##### type: <code>"reference"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ReferenceChunk+type\}
+#### reference_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;integer&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ReferenceChunk+reference_ids\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"reference"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### role: <code>"user"</code> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"user"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+role\}
 
 _Default Value:_ `"user"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="AssistantMessage" id="operation-agents_completion_v1_agents_completions_post+request+AssistantMessage">
 
-##### content \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+TextChunk">TextChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <ExpandableSection title="TextChunk" id="operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+TextChunk">
 
-##### text \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+TextChunk+text\}
+<SectionEntry variant="fields">
 
-##### type: <code>"text"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+TextChunk+type\}
+#### text <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+TextChunk+text\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageURLChunk" id="operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk">
 
-##### image\_url \(required\): <code><a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+image_url\}
+<SectionEntry variant="fields">
+
+#### image_url <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger cta="View ImageURL Details" title="ImageURL Details">
@@ -216,49 +322,89 @@ _Default Value:_ `"text"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"image_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_url"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentURLChunk" id="operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk">
 
-##### document\_name: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk+document_name\}
+<SectionEntry variant="fields">
 
-##### document\_url \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk+document_url\}
+#### document\_name <Pill variant="info">string | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk+document_name\}
 
-##### type: <code>"document_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### document_url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk+document_url\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_url"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ReferenceChunk" id="operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ReferenceChunk">
 
-##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ReferenceChunk+reference_ids\}
+<SectionEntry variant="fields">
 
-##### type: <code>"reference"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ReferenceChunk+type\}
+#### reference_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;integer&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ReferenceChunk+reference_ids\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"reference"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### prefix: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+prefix\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prefix <Pill variant="info">boolean</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+prefix\}
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-##### role: <code>"assistant"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"assistant"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+role\}
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: <code>array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+tool_calls\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### tool\_calls <Pill variant="info">array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+tool_calls\}
 
 <ExpandableSection title="ToolCall" id="operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall">
 
-##### function \(required\): <code><a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall">FunctionCall</a></code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall">FunctionCall</a></Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+function\}
 
 <p>
     <SideBarTrigger cta="View FunctionCall Details" title="FunctionCall Details">
@@ -266,52 +412,69 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger>
   </p>
 
-##### id: <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+id\}
 
 _Default Value:_ `"null"`
 
-##### index: <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+index\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### index <Pill variant="info">integer</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+index\}
 
 _Default Value:_ `0`
 
-##### type: <code>"function"</code> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ToolMessage" id="operation-agents_completion_v1_agents_completions_post+request+ToolMessage">
 
-##### content \(required\) \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content <Pill variant="warning">required</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+TextChunk">TextChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <ExpandableSection title="TextChunk" id="operation-agents_completion_v1_agents_completions_post+request+ToolMessage+TextChunk">
 
-##### text \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+TextChunk+text\}
+<SectionEntry variant="fields">
 
-##### type: <code>"text"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+TextChunk+type\}
+#### text <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+TextChunk+text\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+TextChunk+type\}
 
 _Default Value:_ `"text"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageURLChunk" id="operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk">
 
-##### image\_url \(required\): <code><a href="#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+image_url\}
+<SectionEntry variant="fields">
+
+#### image_url <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+ImageURL">ImageURL</a> | string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+image_url\}
 
 <p>
     <SideBarTrigger cta="View ImageURL Details" title="ImageURL Details">
@@ -319,170 +482,341 @@ _Default Value:_ `"text"`
     </SideBarTrigger>
   </p>
 
-##### type: <code>"image_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_url"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="DocumentURLChunk" id="operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk">
 
-##### document\_name: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk+document_name\}
+<SectionEntry variant="fields">
 
-##### document\_url \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk+document_url\}
+#### document\_name <Pill variant="info">string | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk+document_name\}
 
-##### type: <code>"document_url"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### document_url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk+document_url\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_url"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ReferenceChunk" id="operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ReferenceChunk">
 
-##### reference\_ids \(required\): <code>array&lt;integer&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ReferenceChunk+reference_ids\}
+<SectionEntry variant="fields">
 
-##### type: <code>"reference"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ReferenceChunk+type\}
+#### reference_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;integer&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ReferenceChunk+reference_ids\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"reference"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ReferenceChunk+type\}
 
 _Default Value:_ `"reference"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### name: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+name\}
+</SectionEntry>
 
-##### role: <code>"tool"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+role\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="info">string | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"tool"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+role\}
 
 _Default Value:_ `"tool"`
 
-##### tool\_call\_id: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+tool_call_id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### tool\_call\_id <Pill variant="info">string | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+tool_call_id\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### n: <code>integer | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+n\}
+</SectionEntry>
 
-#### parallel\_tool\_calls: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+parallel_tool_calls\}
+<SectionEntry variant="fields">
 
-#### prediction: <code><a href="#operation-agents_completion_v1_agents_completions_post+request+Prediction">Prediction</a> | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+prediction\}
+#### n <Pill variant="info">integer | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+n\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### parallel\_tool\_calls <Pill variant="info">boolean</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+parallel_tool_calls\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prediction <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+Prediction">Prediction</a> | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+prediction\}
 
 <ExpandableSection title="Prediction" id="operation-agents_completion_v1_agents_completions_post+request+Prediction">
 
-##### content: <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+Prediction+content\}
+<SectionEntry variant="fields">
+
+#### content <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+Prediction+content\}
 
 _Default Value:_ `""`
 
-##### type: <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+Prediction+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+Prediction+type\}
 
 _Default Value:_ `"content"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### presence\_penalty: <code>number</code> \{#operation-agents_completion_v1_agents_completions_post+request+presence_penalty\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### presence\_penalty <Pill variant="info">number</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+presence_penalty\}
 
 presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.
 
-#### prompt\_mode: <code>"reasoning"</code> \{#operation-agents_completion_v1_agents_completions_post+request+prompt_mode\}
+</SectionEntry>
 
-#### random\_seed: <code>integer | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+random_seed\}
+<SectionEntry variant="fields">
 
-#### response\_format: <code><a href="#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+response_format\}
+#### prompt\_mode <Pill variant="info">"reasoning"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+prompt_mode\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### random\_seed <Pill variant="info">integer | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+random_seed\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### response\_format <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+response_format\}
 
 <ExpandableSection title="ResponseFormat" id="operation-agents_completion_v1_agents_completions_post+request+ResponseFormat">
 
-##### json\_schema: <code><a href="#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+json_schema\}
+<SectionEntry variant="fields">
+
+#### json\_schema <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+json_schema\}
 
 <ExpandableSection title="JsonSchema" id="operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema">
 
-##### description: <code>string | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+name\}
+#### description <Pill variant="info">string | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+description\}
 
-##### schema\_definition \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+schema_definition\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### schema_definition <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+schema_definition\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+JsonSchema+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### stop: <code>string | array&lt;string&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+stop\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### stop <Pill variant="info">string | array&lt;string&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+stop\}
 
 Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
 
-#### stream: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+stream\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### stream <Pill variant="info">boolean</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+stream\}
 
 Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
 
 _Default Value:_ `false`
 
-#### tool\_choice: <code><a href="#operation-agents_completion_v1_agents_completions_post+request+ToolChoice">ToolChoice</a> | "auto" | "none" | "any" | "required"</code> \{#operation-agents_completion_v1_agents_completions_post+request+tool_choice\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### tool\_choice <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+ToolChoice">ToolChoice</a> | "auto" | "none" | "any" | "required"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+tool_choice\}
 
 <ExpandableSection title="ToolChoice" id="operation-agents_completion_v1_agents_completions_post+request+ToolChoice">
 
-##### function \(required\): <code><a href="#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+FunctionName">FunctionName</a></code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+FunctionName">FunctionName</a></Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+function\}
 
 this restriction of `Function` is used to select a specific function to call
 
 <ExpandableSection title="FunctionName" id="operation-agents_completion_v1_agents_completions_post+request+ToolChoice+FunctionName">
 
-##### name \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+FunctionName+name\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+FunctionName+name\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"function"</code> \{#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+ToolChoice+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### tools: <code>array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+Tool">Tool</a>&gt; | null</code> \{#operation-agents_completion_v1_agents_completions_post+request+tools\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### tools <Pill variant="info">array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+request+Tool">Tool</a>&gt; | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+tools\}
 
 <ExpandableSection title="Tool" id="operation-agents_completion_v1_agents_completions_post+request+Tool">
 
-##### function \(required\): <code><a href="#operation-agents_completion_v1_agents_completions_post+request+Tool+Function">Function</a></code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+function\}
+<SectionEntry variant="fields">
+
+#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+request+Tool+Function">Function</a></Pill> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+function\}
 
 <ExpandableSection title="Function" id="operation-agents_completion_v1_agents_completions_post+request+Tool+Function">
 
-##### description: <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+name\}
+#### description <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+description\}
 
-##### parameters \(required\): <code>map&lt;any&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+parameters\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### parameters <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+parameters\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+Function+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"function"</code> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"function"</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+Tool+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
 
 </Section>
 
-<TabbedSection title="Response" id="operation-agents_completion_v1_agents_completions_post+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-agents_completion_v1_agents_completions_post+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-agents_completion_v1_agents_completions_post+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_completion_v1_agents_completions_post+200+application-json">
 
 Successful Response
 
-#### choices \(required\): <code>array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice">ChatCompletionChoice</a>&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+choices\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_completion_v1_agents_completions_post+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### choices <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice">ChatCompletionChoice</a>&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+choices\}
 
 <ExpandableSection title="ChatCompletionChoice" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice">
 
-##### finish\_reason \(required\) \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+finish_reason\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>"stop" | "length" | "model_length" | "error" | "tool_calls"</p>
-</code>
-</pre>
+#### finish_reason <Pill variant="warning">required</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+finish_reason\}
+
+<Code text={`"stop" | "length" | "model_length" | "error" | "tool_calls"`} />
 
 _Example:_
 
@@ -490,7 +824,11 @@ _Example:_
 stop
 ```
 
-##### index \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+index\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### index <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+index\}
 
 _Example:_
 
@@ -498,26 +836,21 @@ _Example:_
 0
 ```
 
-##### message \(required\): <code><a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">AssistantMessage</a></code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+message\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### message <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">AssistantMessage</a></Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+message\}
 
 <ExpandableSection title="AssistantMessage" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage">
 
-##### content \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+content\}
+<SectionEntry variant="fields">
 
-<pre style={{
-  backgroundColor: "var(--ifm-code-background)",
-  border: "0.1rem solid rgba(0, 0, 0, 0.1)",
-  borderRadius: "var(--ifm-code-border-radius)",
-  fontFamily: "var(--ifm-font-family-monospace)",
-  fontSize: "var(--ifm-code-font-size)",
-  verticalAlign: "middle",
-}}>
-<code>
-<p style={{ margin: "0" }}>| string
+#### content \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+content\}
+
+<Code text={`| string
 | array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk">TextChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk">ImageURLChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk">ReferenceChunk</a>&gt;
-| null</p>
-</code>
-</pre>
+| null`} />
 
 <p>
     <SideBarTrigger cta="View TextChunk Details" title="TextChunk Details">
@@ -543,17 +876,29 @@ _Example:_
     </SideBarTrigger>
   </p>
 
-##### prefix: <code>boolean</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+prefix\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prefix <Pill variant="info">boolean</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+prefix\}
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
 _Default Value:_ `false`
 
-##### role: <code>"assistant"</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+role\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### role <Pill variant="info">"assistant"</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+role\}
 
 _Default Value:_ `"assistant"`
 
-##### tool\_calls: <code>array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### tool\_calls <Pill variant="info">array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall">ToolCall</a>&gt; | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
 
 <p>
     <SideBarTrigger cta="View ToolCall Details" title="ToolCall Details">
@@ -561,11 +906,19 @@ _Default Value:_ `"assistant"`
     </SideBarTrigger>
   </p>
 
-</ExpandableSection>
+</SectionEntry>
 
 </ExpandableSection>
 
-#### created \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+created\}
+</SectionEntry>
+
+</ExpandableSection>
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### created <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+created\}
 
 _Example:_
 
@@ -573,7 +926,11 @@ _Example:_
 1702256327
 ```
 
-#### id \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+id\}
 
 _Example:_
 
@@ -581,7 +938,11 @@ _Example:_
 cmpl-e5cc70bb28c444948073e77776eb30ef
 ```
 
-#### model \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+model\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+model\}
 
 _Example:_
 
@@ -589,7 +950,11 @@ _Example:_
 mistral-small-latest
 ```
 
-#### object \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+object\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+object\}
 
 _Example:_
 
@@ -597,11 +962,17 @@ _Example:_
 chat.completion
 ```
 
-#### usage \(required\): <code><a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo">UsageInfo</a></code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+usage\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### usage <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo">UsageInfo</a></Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+usage\}
 
 <ExpandableSection title="UsageInfo" id="operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo">
 
-##### completion\_tokens \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo+completion_tokens\}
+<SectionEntry variant="fields">
+
+#### completion_tokens <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo+completion_tokens\}
 
 _Example:_
 
@@ -609,7 +980,11 @@ _Example:_
 34
 ```
 
-##### prompt\_tokens \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo+prompt_tokens\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### prompt_tokens <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo+prompt_tokens\}
 
 _Example:_
 
@@ -617,7 +992,11 @@ _Example:_
 16
 ```
 
-##### total\_tokens \(required\): <code>integer</code> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo+total_tokens\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### total_tokens <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+UsageInfo+total_tokens\}
 
 _Example:_
 
@@ -625,36 +1004,80 @@ _Example:_
 50
 ```
 
+</SectionEntry>
+
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-agents_completion_v1_agents_completions_post+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-agents_completion_v1_agents_completions_post+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-agents_completion_v1_agents_completions_post+422+application-json+Security">Security</a></code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-agents_completion_v1_agents_completions_post+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+422+application-json+Security">Security</a></Pill> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-agents_completion_v1_agents_completions_post+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
-
-<SideBar />

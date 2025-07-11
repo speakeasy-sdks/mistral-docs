@@ -3,22 +3,54 @@ sidebar_position: 2.11
 sidebar_label: ocr
 ---
 
-import { Section, TryItNow, ExpandableSection, TabbedSection } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionEntry, TryItNow, ExpandableSection, TabbedSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # ocr
 
-## POST /v1/ocr \{#operation-ocr_v1_ocr_post\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/ocr \{#operation-ocr_v1_ocr_post\}
 
 OCR
 
-<Section title="Security" id="operation-ocr_v1_ocr_post+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+security+ApiKey\}
+<div>
+
+### Security \{#operation-ocr_v1_ocr_post+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-ocr_v1_ocr_post+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-ocr_v1_ocr_post+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-ocr_v1_ocr_post+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -46,213 +78,489 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Request Body" id="operation-ocr_v1_ocr_post+request">
+<Section variant="section">
 
-#### bbox\_annotation\_format: <code><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format\}
+<div>
+
+## Request Body \{#operation-ocr_v1_ocr_post+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-ocr_v1_ocr_post+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### bbox\_annotation\_format <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format\}
 
 <ExpandableSection title="ResponseFormat" id="operation-ocr_v1_ocr_post+request+ResponseFormat">
 
-##### json\_schema: <code><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
+<SectionEntry variant="fields">
+
+#### json\_schema <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
 
 <ExpandableSection title="JsonSchema" id="operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">
 
-##### description: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
+#### description <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
 
-##### schema\_definition \(required\): <code>map&lt;any&gt;</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### schema_definition <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### document \(required\): <code><a href="#operation-ocr_v1_ocr_post+request+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-ocr_v1_ocr_post+request+ImageURLChunk">ImageURLChunk</a></code> \{#operation-ocr_v1_ocr_post+request+document\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### document <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-ocr_v1_ocr_post+request+ImageURLChunk">ImageURLChunk</a></Pill> \{#operation-ocr_v1_ocr_post+request+document\}
 
 Document to run OCR on
 
 <ExpandableSection title="DocumentURLChunk" id="operation-ocr_v1_ocr_post+request+DocumentURLChunk">
 
-##### document\_name: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_name\}
+<SectionEntry variant="fields">
 
-##### document\_url \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_url\}
+#### document\_name <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_name\}
 
-##### type: <code>"document_url"</code> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### document_url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_url\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"document_url"</Pill> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+type\}
 
 _Default Value:_ `"document_url"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageURLChunk" id="operation-ocr_v1_ocr_post+request+ImageURLChunk">
 
-##### image\_url \(required\): <code><a href="#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL">ImageURL</a> | string</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+image_url\}
+<SectionEntry variant="fields">
+
+#### image_url <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL">ImageURL</a> | string</Pill> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+image_url\}
 
 <ExpandableSection title="ImageURL" id="operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL">
 
-##### detail: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+detail\}
+<SectionEntry variant="fields">
 
-##### url \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+url\}
+#### detail <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+detail\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+url\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"image_url"</code> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"image_url"</Pill> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+type\}
 
 _Default Value:_ `"image_url"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### document\_annotation\_format: <code><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat">ResponseFormat</a> | null</code> \{#operation-ocr_v1_ocr_post+request+document_annotation_format\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### document\_annotation\_format <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-ocr_v1_ocr_post+request+document_annotation_format\}
 
 <ExpandableSection title="ResponseFormat" id="operation-ocr_v1_ocr_post+request+ResponseFormat">
 
-##### json\_schema: <code><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
+<SectionEntry variant="fields">
+
+#### json\_schema <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
 
 <ExpandableSection title="JsonSchema" id="operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">
 
-##### description: <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
+<SectionEntry variant="fields">
 
-##### name \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
+#### description <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
 
-##### schema\_definition \(required\): <code>map&lt;any&gt;</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
+</SectionEntry>
 
-##### strict: <code>boolean</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### schema_definition <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### strict <Pill variant="info">boolean</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### type: <code>"text" | "json_object" | "json_schema"</code> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### id: <code>string</code> \{#operation-ocr_v1_ocr_post+request+id\}
+</SectionEntry>
 
-#### image\_limit: <code>integer | null</code> \{#operation-ocr_v1_ocr_post+request+image_limit\}
+<SectionEntry variant="fields">
 
-#### image\_min\_size: <code>integer | null</code> \{#operation-ocr_v1_ocr_post+request+image_min_size\}
+#### id <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+id\}
 
-#### include\_image\_base64: <code>boolean | null</code> \{#operation-ocr_v1_ocr_post+request+include_image_base64\}
+</SectionEntry>
 
-#### model \(required\): <code>string | null</code> \{#operation-ocr_v1_ocr_post+request+model\}
+<SectionEntry variant="fields">
 
-#### pages: <code>array&lt;integer&gt; | null</code> \{#operation-ocr_v1_ocr_post+request+pages\}
+#### image\_limit <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+request+image_limit\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### image\_min\_size <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+request+image_min_size\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### include\_image\_base64 <Pill variant="info">boolean | null</Pill> \{#operation-ocr_v1_ocr_post+request+include_image_base64\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+model\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### pages <Pill variant="info">array&lt;integer&gt; | null</Pill> \{#operation-ocr_v1_ocr_post+request+pages\}
+
+</SectionEntry>
 
 </Section>
 
-<TabbedSection title="Response" id="operation-ocr_v1_ocr_post+responses" baseHeadingLevel="3">
+</SectionEntry>
 
-<div title="200" tooltip="200 (application/json)">
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-ocr_v1_ocr_post+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-ocr_v1_ocr_post+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-ocr_v1_ocr_post+200+application-json">
 
 Successful Response
 
-#### document\_annotation: <code>string | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+document_annotation\}
+<Section variant="fields">
 
-#### model \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+200+application-json+model\}
+<div>
+
+#### Fields \{#operation-ocr_v1_ocr_post+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### document\_annotation <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+document_annotation\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+model\}
 
 The model used to generate the OCR.
 
-#### pages \(required\): <code>array&lt;<a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject">OCRPageObject</a>&gt;</code> \{#operation-ocr_v1_ocr_post+200+application-json+pages\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### pages <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject">OCRPageObject</a>&gt;</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+pages\}
 
 List of OCR info for pages.
 
 <ExpandableSection title="OCRPageObject" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject">
 
-##### dimensions \(required\): <code><a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions">OCRPageDimensions</a> | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+dimensions\}
+<SectionEntry variant="fields">
+
+#### dimensions <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions">OCRPageDimensions</a> | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+dimensions\}
 
 <ExpandableSection title="OCRPageDimensions" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions">
 
-##### dpi \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+dpi\}
+<SectionEntry variant="fields">
+
+#### dpi <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+dpi\}
 
 Dots per inch of the page-image
 
-##### height \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+height\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### height <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+height\}
 
 Height of the image in pixels
 
-##### width \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+width\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### width <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+width\}
 
 Width of the image in pixels
 
+</SectionEntry>
+
 </ExpandableSection>
 
-##### images \(required\): <code>array&lt;<a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject">OCRImageObject</a>&gt;</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+images\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### images <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject">OCRImageObject</a>&gt;</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+images\}
 
 List of all extracted images in the page
 
 <ExpandableSection title="OCRImageObject" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject">
 
-##### bottom\_right\_x \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_x\}
+<SectionEntry variant="fields">
 
-##### bottom\_right\_y \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_y\}
+#### bottom_right_x <Pill variant="warning">required</Pill> <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_x\}
 
-##### id \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### bottom_right_y <Pill variant="warning">required</Pill> <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_y\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+id\}
 
 Image ID for extracted image in a page
 
-##### image\_annotation: <code>string | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_annotation\}
+</SectionEntry>
 
-##### image\_base64: <code>string | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_base64\}
+<SectionEntry variant="fields">
 
-##### top\_left\_x \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_x\}
+#### image\_annotation <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_annotation\}
 
-##### top\_left\_y \(required\): <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_y\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### image\_base64 <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_base64\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### top_left_x <Pill variant="warning">required</Pill> <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_x\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### top_left_y <Pill variant="warning">required</Pill> <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_y\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### index \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+index\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### index <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+index\}
 
 The page index in a pdf document starting from 0
 
-##### markdown \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+markdown\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### markdown <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+markdown\}
 
 The markdown string response of the page
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### usage\_info \(required\): <code><a href="#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo">OCRUsageInfo</a></code> \{#operation-ocr_v1_ocr_post+200+application-json+usage_info\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### usage_info <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo">OCRUsageInfo</a></Pill> \{#operation-ocr_v1_ocr_post+200+application-json+usage_info\}
 
 <ExpandableSection title="OCRUsageInfo" id="operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo">
 
-##### doc\_size\_bytes: <code>integer | null</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+doc_size_bytes\}
+<SectionEntry variant="fields">
 
-##### pages\_processed \(required\): <code>integer</code> \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+pages_processed\}
+#### doc\_size\_bytes <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+doc_size_bytes\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### pages_processed <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+pages_processed\}
 
 Number of pages processed
 
+</SectionEntry>
+
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-ocr_v1_ocr_post+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-ocr_v1_ocr_post+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-ocr_v1_ocr_post+422+application-json+Security">Security</a></code> \{#operation-ocr_v1_ocr_post+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-ocr_v1_ocr_post+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+422+application-json+Security">Security</a></Pill> \{#operation-ocr_v1_ocr_post+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-ocr_v1_ocr_post+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-ocr_v1_ocr_post+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-ocr_v1_ocr_post+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-ocr_v1_ocr_post+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-ocr_v1_ocr_post+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 

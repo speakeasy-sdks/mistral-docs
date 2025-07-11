@@ -3,24 +3,56 @@ sidebar_position: 2.10
 sidebar_label: models
 ---
 
-import { Section, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionEntry, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # models
 
-## GET /v1/models \{#operation-list_models_v1_models_get\}
+## <Pill variant="primary"><b>GET</b></Pill> /v1/models \{#operation-list_models_v1_models_get\}
 
 _List Models_
 
 List all models available to the user.
 
-<Section title="Security" id="operation-list_models_v1_models_get+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-list_models_v1_models_get+security+ApiKey\}
+<div>
+
+### Security \{#operation-list_models_v1_models_get+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-list_models_v1_models_get+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Try it Now" id="operation-list_models_v1_models_get+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-list_models_v1_models_get+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -40,197 +72,459 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-list_models_v1_models_get+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-list_models_v1_models_get+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-list_models_v1_models_get+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-list_models_v1_models_get+200+application-json">
 
 Successful Response
 
-#### data: <code>array&lt;<a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard">BaseModelCard</a> | <a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard">FTModelCard</a>&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+data\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-list_models_v1_models_get+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### data <Pill variant="info">array&lt;<a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard">BaseModelCard</a> | <a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard">FTModelCard</a>&gt;</Pill> \{#operation-list_models_v1_models_get+200+application-json+data\}
 
 <ExpandableSection title="BaseModelCard" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard">
 
-##### aliases: <code>array&lt;string&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+aliases\}
+<SectionEntry variant="fields">
 
-##### capabilities \(required\): <code><a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">ModelCapabilities</a></code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+capabilities\}
+#### aliases <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+aliases\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### capabilities <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">ModelCapabilities</a></Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+capabilities\}
 
 <ExpandableSection title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">
 
-##### completion\_chat: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_chat\}
+<SectionEntry variant="fields">
+
+#### completion\_chat <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_chat\}
 
 _Default Value:_ `true`
 
-##### completion\_fim: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_fim\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### completion\_fim <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_fim\}
 
 _Default Value:_ `false`
 
-##### fine\_tuning: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+fine_tuning\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### fine\_tuning <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+fine_tuning\}
 
 _Default Value:_ `false`
 
-##### function\_calling: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+function_calling\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### function\_calling <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+function_calling\}
 
 _Default Value:_ `true`
 
-##### vision: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+vision\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### vision <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+vision\}
 
 _Default Value:_ `false`
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### created: <code>integer</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+created\}
+</SectionEntry>
 
-##### default\_model\_temperature: <code>number | null</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+default_model_temperature\}
+<SectionEntry variant="fields">
 
-##### deprecation: <code>date-time | null</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+deprecation\}
+#### created <Pill variant="info">integer</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+created\}
 
-##### description: <code>string | null</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+description\}
+</SectionEntry>
 
-##### id \(required\): <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+id\}
+<SectionEntry variant="fields">
 
-##### max\_context\_length: <code>integer</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+max_context_length\}
+#### default\_model\_temperature <Pill variant="info">number | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+default_model_temperature\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### deprecation <Pill variant="info">date-time | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+deprecation\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### description <Pill variant="info">string | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+description\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### max\_context\_length <Pill variant="info">integer</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+max_context_length\}
 
 _Default Value:_ `32768`
 
-##### name: <code>string | null</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+name\}
+</SectionEntry>
 
-##### object: <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+object\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="info">string | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+object\}
 
 _Default Value:_ `"model"`
 
-##### owned\_by: <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+owned_by\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### owned\_by <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+owned_by\}
 
 _Default Value:_ `"mistralai"`
 
-##### type: <code>"base"</code> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"base"</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+type\}
 
 _Default Value:_ `"base"`
+
+</SectionEntry>
 
 </ExpandableSection>
 
 <ExpandableSection title="FTModelCard" id="operation-list_models_v1_models_get+200+application-json+FTModelCard">
 
-##### aliases: <code>array&lt;string&gt;</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+aliases\}
+<SectionEntry variant="fields">
 
-##### archived: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+archived\}
+#### aliases <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+aliases\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### archived <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+archived\}
 
 _Default Value:_ `false`
 
-##### capabilities \(required\): <code><a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">ModelCapabilities</a></code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+capabilities\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### capabilities <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">ModelCapabilities</a></Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+capabilities\}
 
 <ExpandableSection title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">
 
-##### completion\_chat: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_chat\}
+<SectionEntry variant="fields">
+
+#### completion\_chat <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_chat\}
 
 _Default Value:_ `true`
 
-##### completion\_fim: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_fim\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### completion\_fim <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_fim\}
 
 _Default Value:_ `false`
 
-##### fine\_tuning: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+fine_tuning\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### fine\_tuning <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+fine_tuning\}
 
 _Default Value:_ `false`
 
-##### function\_calling: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+function_calling\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### function\_calling <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+function_calling\}
 
 _Default Value:_ `true`
 
-##### vision: <code>boolean</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+vision\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### vision <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+vision\}
 
 _Default Value:_ `false`
+
+</SectionEntry>
 
 </ExpandableSection>
 
-##### created: <code>integer</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+created\}
+</SectionEntry>
 
-##### default\_model\_temperature: <code>number | null</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+default_model_temperature\}
+<SectionEntry variant="fields">
 
-##### deprecation: <code>date-time | null</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+deprecation\}
+#### created <Pill variant="info">integer</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+created\}
 
-##### description: <code>string | null</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+description\}
+</SectionEntry>
 
-##### id \(required\): <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+id\}
+<SectionEntry variant="fields">
 
-##### job \(required\): <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+job\}
+#### default\_model\_temperature <Pill variant="info">number | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+default_model_temperature\}
 
-##### max\_context\_length: <code>integer</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+max_context_length\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### deprecation <Pill variant="info">date-time | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+deprecation\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### description <Pill variant="info">string | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+description\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### job <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+job\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### max\_context\_length <Pill variant="info">integer</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+max_context_length\}
 
 _Default Value:_ `32768`
 
-##### name: <code>string | null</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+name\}
+</SectionEntry>
 
-##### object: <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+object\}
+<SectionEntry variant="fields">
+
+#### name <Pill variant="info">string | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+name\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+object\}
 
 _Default Value:_ `"model"`
 
-##### owned\_by: <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+owned_by\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### owned\_by <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+owned_by\}
 
 _Default Value:_ `"mistralai"`
 
-##### root \(required\): <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+root\}
+</SectionEntry>
 
-##### type: <code>"fine-tuned"</code> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+type\}
+<SectionEntry variant="fields">
+
+#### root <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+root\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="info">"fine-tuned"</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+type\}
 
 _Default Value:_ `"fine-tuned"`
 
+</SectionEntry>
+
 </ExpandableSection>
 
-#### object: <code>string</code> \{#operation-list_models_v1_models_get+200+application-json+object\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+object\}
 
 _Default Value:_ `"list"`
 
+</SectionEntry>
+
+</Section>
+
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-list_models_v1_models_get+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-list_models_v1_models_get+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-list_models_v1_models_get+422+application-json+Security">Security</a></code> \{#operation-list_models_v1_models_get+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-list_models_v1_models_get+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-list_models_v1_models_get+422+application-json+Security">Security</a></Pill> \{#operation-list_models_v1_models_get+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-list_models_v1_models_get+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-list_models_v1_models_get+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-list_models_v1_models_get+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-list_models_v1_models_get+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-list_models_v1_models_get+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-list_models_v1_models_get+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-list_models_v1_models_get+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## GET /v1/models/\{model\_id\} \{#operation-retrieve_model_v1_models_model_id_get\}
+## <Pill variant="primary"><b>GET</b></Pill> /v1/models/\{model\_id\} \{#operation-retrieve_model_v1_models_model_id_get\}
 
 _Retrieve Model_
 
 Retrieve a model information.
 
-<Section title="Security" id="operation-retrieve_model_v1_models_model_id_get+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+security+ApiKey\}
+<div>
+
+### Security \{#operation-retrieve_model_v1_models_model_id_get+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-retrieve_model_v1_models_model_id_get+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-retrieve_model_v1_models_model_id_get+parameters">
+</SectionEntry>
 
-#### model\_id \(required\) \{#operation-retrieve_model_v1_models_model_id_get+parameters+model_id\}
+</Section>
+
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-retrieve_model_v1_models_model_id_get+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-retrieve_model_v1_models_model_id_get+parameters+model_id\}
 
 The ID of the model to retrieve.
 
-#### Security \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+parameters+Security\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-retrieve_model_v1_models_model_id_get+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+parameters+Security\}
 
 The ID of the model to retrieve.
 
@@ -240,9 +534,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Try it Now" id="operation-retrieve_model_v1_models_model_id_get+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-retrieve_model_v1_models_model_id_get+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -264,67 +572,177 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-retrieve_model_v1_models_model_id_get+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
 
-Successful Response
-
-#### Response Body \(required\): <code><a href="#operation-retrieve_model_v1_models_model_id_get+200+application-json+BaseModelCard">BaseModelCard</a> | <a href="#operation-retrieve_model_v1_models_model_id_get+200+application-json+FTModelCard">FTModelCard</a></code> \{#operation-retrieve_model_v1_models_model_id_get+200+application-json+Response Body\}
-
-Successful Response
+## Responses \{#operation-retrieve_model_v1_models_model_id_get+responses\}
 
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-retrieve_model_v1_models_model_id_get+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-retrieve_model_v1_models_model_id_get+200+application-json">
+
+Successful Response
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-retrieve_model_v1_models_model_id_get+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Response Body <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-retrieve_model_v1_models_model_id_get+200+application-json+BaseModelCard">BaseModelCard</a> | <a href="#operation-retrieve_model_v1_models_model_id_get+200+application-json+FTModelCard">FTModelCard</a></Pill> \{#operation-retrieve_model_v1_models_model_id_get+200+application-json+Response Body\}
+
+Successful Response
+
+</SectionEntry>
+
+</Section>
+
+</div>
+
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-retrieve_model_v1_models_model_id_get+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-retrieve_model_v1_models_model_id_get+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">Security</a></code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">Security</a></Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## DELETE /v1/models/\{model\_id\} \{#operation-delete_model_v1_models_model_id_delete\}
+## <Pill variant="primary"><b>DELETE</b></Pill> /v1/models/\{model\_id\} \{#operation-delete_model_v1_models_model_id_delete\}
 
 _Delete Model_
 
 Delete a fine-tuned model.
 
-<Section title="Security" id="operation-delete_model_v1_models_model_id_delete+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+security+ApiKey\}
+<div>
+
+### Security \{#operation-delete_model_v1_models_model_id_delete+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-delete_model_v1_models_model_id_delete+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-delete_model_v1_models_model_id_delete+parameters">
+</SectionEntry>
 
-#### model\_id \(required\) \{#operation-delete_model_v1_models_model_id_delete+parameters+model_id\}
+</Section>
+
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-delete_model_v1_models_model_id_delete+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-delete_model_v1_models_model_id_delete+parameters+model_id\}
 
 The ID of the model to delete.
 
-#### Security \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+parameters+Security\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-delete_model_v1_models_model_id_delete+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+parameters+Security\}
 
 The ID of the model to delete.
 
@@ -334,9 +752,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Try it Now" id="operation-delete_model_v1_models_model_id_delete+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-delete_model_v1_models_model_id_delete+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -358,15 +790,39 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-delete_model_v1_models_model_id_delete+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-delete_model_v1_models_model_id_delete+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-delete_model_v1_models_model_id_delete+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-delete_model_v1_models_model_id_delete+200+application-json">
 
 Successful Response
 
-#### deleted: <code>boolean</code> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+deleted\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-delete_model_v1_models_model_id_delete+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### deleted <Pill variant="info">boolean</Pill> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+deleted\}
 
 The deletion status
 
@@ -378,7 +834,11 @@ true
 
 _Default Value:_ `true`
 
-#### id \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+id\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+id\}
 
 The ID of the deleted model.
 
@@ -388,61 +848,151 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-#### object: <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+object\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+object\}
 
 The object type that was deleted
 
 _Default Value:_ `"model"`
 
+</SectionEntry>
+
+</Section>
+
 </div>
 
-<div title="422" tooltip="422 (application/json)">
+<div slot="tab" title="422 (application/json)" data-tab-id="operation-delete_model_v1_models_model_id_delete+422+application-json">
+
+422
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-delete_model_v1_models_model_id_delete+422+application-json">
 
 Validation Error
 
-#### HttpMeta \(required\): <code><a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+Security">Security</a></code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+HttpMeta\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-delete_model_v1_models_model_id_delete+422+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+Security">Security</a></Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+HttpMeta\}
 
 <ExpandableSection title="Security" id="operation-delete_model_v1_models_model_id_delete+422+application-json+Security">
 
-##### ApiKey \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+Security+ApiKey\}
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+Security+ApiKey\}
+
+</SectionEntry>
 
 </ExpandableSection>
 
-#### detail: <code>array&lt;<a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">ValidationError</a>&gt;</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+detail\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### detail <Pill variant="info">array&lt;<a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+detail\}
 
 <ExpandableSection title="ValidationError" id="operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">
 
-##### loc \(required\): <code>array&lt;string | integer&gt;</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+loc\}
+<SectionEntry variant="fields">
 
-##### msg \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+msg\}
+#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+loc\}
 
-##### type \(required\): <code>string</code> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+type\}
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+msg\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+type\}
+
+</SectionEntry>
 
 </ExpandableSection>
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## PATCH /v1/fine\_tuning/models/\{model\_id\} \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model\}
+## <Pill variant="primary"><b>PATCH</b></Pill> /v1/fine\_tuning/models/\{model\_id\} \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model\}
 
 _Update Fine Tuned Model_
 
 Update a model name or description.
 
-<Section title="Security" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters">
+</SectionEntry>
 
-#### model\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+model_id\}
+</Section>
+
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+model_id\}
 
 The ID of the model to update.
 
-#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+Security\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+Security\}
 
 The ID of the model to update.
 
@@ -452,9 +1002,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -477,49 +1041,147 @@ async function run() {
 run();`}
 />
 
-</Section>
-
-<Section title="Request Body" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request">
-
-#### description: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+description\}
-
-#### name: <code>string | null</code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+name\}
+</SectionEntry>
 
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+responses" baseHeadingLevel="3">
+<Section variant="section">
 
-<div title="200" tooltip="200 (application/json)">
+<div>
+
+## Request Body \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### description <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+description\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+name\}
+
+</SectionEntry>
+
+</Section>
+
+</SectionEntry>
+
+</Section>
+
+<TabbedSection>
+
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json">
 
 OK
 
-#### Response Body \(required\): <code><a href="#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+CompletionFTModelOut">CompletionFTModelOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+ClassifierFTModelOut">ClassifierFTModelOut</a></code> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+Response Body\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Response Body <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+CompletionFTModelOut">CompletionFTModelOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+ClassifierFTModelOut">ClassifierFTModelOut</a></Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+Response Body\}
 
 OK
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## POST /v1/fine\_tuning/models/\{model\_id\}/archive \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model\}
+## <Pill variant="primary"><b>POST</b></Pill> /v1/fine\_tuning/models/\{model\_id\}/archive \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model\}
 
 _Archive Fine Tuned Model_
 
 Archive a fine-tuned model.
 
-<Section title="Security" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters">
+</SectionEntry>
 
-#### model\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+model_id\}
+</Section>
+
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+model_id\}
 
 The ID of the model to archive.
 
-#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+Security\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+Security\}
 
 The ID of the model to archive.
 
@@ -529,9 +1191,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -553,47 +1229,125 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json">
 
 OK
 
-#### archived: <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+archived\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### archived <Pill variant="info">boolean</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+archived\}
 
 _Default Value:_ `true`
 
-#### id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+id\}
+</SectionEntry>
 
-#### object: <code>"model"</code> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+object\}
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"model"</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+object\}
 
 _Default Value:_ `"model"`
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
 </TabbedSection>
 
-## DELETE /v1/fine\_tuning/models/\{model\_id\}/archive \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model\}
+## <Pill variant="primary"><b>DELETE</b></Pill> /v1/fine\_tuning/models/\{model\_id\}/archive \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model\}
 
 _Unarchive Fine Tuned Model_
 
 Un-archive a fine-tuned model.
 
-<Section title="Security" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security">
+<Section variant="section">
 
-#### ApiKey \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security+ApiKey\}
+<div>
+
+### Security \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security\}
+
+</div>
+
+<SectionEntry variant="section">
+
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security+ApiKey\}
+
+</SectionEntry>
 
 </Section>
 
-<Section title="Parameters" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters">
+</SectionEntry>
 
-#### model\_id \(required\) \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+model_id\}
+</Section>
+
+<Section variant="fields">
+
+<div>
+
+### Parameters \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+model_id\}
 
 The ID of the model to unarchive.
 
-#### Security \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+Security\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+Security\}
 
 The ID of the model to unarchive.
 
@@ -603,9 +1357,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
+</SectionEntry>
+
 </Section>
 
-<Section title="Try it Now" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+try-it-now">
+</SectionEntry>
+
+</Section>
+
+<Section variant="section">
+
+<div>
+
+## Try it Now \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+try-it-now\}
+
+</div>
+
+<SectionEntry variant="section">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -627,23 +1395,59 @@ async function run() {
 run();`}
 />
 
+</SectionEntry>
+
 </Section>
 
-<TabbedSection title="Response" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+responses" baseHeadingLevel="3">
+<TabbedSection>
 
-<div title="200" tooltip="200 (application/json)">
+<div slot="title">
+
+## Responses \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+responses\}
+
+</div>
+
+<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json">
+
+200
+
+</div>
+
+<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json">
 
 OK
 
-#### archived: <code>boolean</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+archived\}
+<Section variant="fields">
+
+<div>
+
+#### Fields \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+fields\}
+
+</div>
+
+<SectionEntry variant="fields">
+
+#### archived <Pill variant="info">boolean</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+archived\}
 
 _Default Value:_ `false`
 
-#### id \(required\): <code>string</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+id\}
+</SectionEntry>
 
-#### object: <code>"model"</code> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+object\}
+<SectionEntry variant="fields">
+
+#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+id\}
+
+</SectionEntry>
+
+<SectionEntry variant="fields">
+
+#### object <Pill variant="info">"model"</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+object\}
 
 _Default Value:_ `"model"`
+
+</SectionEntry>
+
+</Section>
 
 </div>
 
