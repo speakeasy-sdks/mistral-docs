@@ -1,12 +1,13 @@
 ---
 sidebar_position: 2.1
-sidebar_label: batch/jobs
+sidebar_label: Batch Jobs
 ---
 
-import { Pill, Section, SectionEntry, TryItNow, TabbedSection, ExpandableSection, Code } from "@speakeasy-api/docs-md/docusaurus";
+import "@speakeasy-api/docs-md/docusaurus.css";
+import { Pill, Section, SectionTitle, SectionContent, Property, TryItNow, TabbedSection, SectionTab, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
-# batch/jobs
+# Batch Jobs Operations \{#batch/jobs\}
 
 ## <Pill variant="primary"><b>GET</b></Pill> /v1/batch/jobs \{#operation-jobs_api_routes_batch_get_batch_jobs\}
 
@@ -14,45 +15,49 @@ _Get Batch Jobs_
 
 Get a list of batch jobs for your organization and user.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-jobs_api_routes_batch_get_batch_jobs+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_get_batch_jobs+security+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_get_batch_jobs+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-jobs_api_routes_batch_get_batch_jobs+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-jobs_api_routes_batch_get_batch_jobs+try-it-now\}
+### Try it Now \{#operation-jobs_api_routes_batch_get_batch_jobs+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -70,195 +75,280 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-jobs_api_routes_batch_get_batch_jobs+responses\}
+### Responses \{#operation-jobs_api_routes_batch_get_batch_jobs+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json">
+<SectionTab slot="tab" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json">
 
 OK
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### data <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">BatchJobOut</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+data\}
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut\">BatchJobOut</a>","children":[{"label":"BatchJobOut","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut\">BatchJobOut</a>","children":[],"breakoutSubTypes":[{"label":"BatchJobOut","schema":{"type":"object","description":null,"examples":[],"properties":{"completed_at":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"completed_requests":{"type":"integer","description":null,"examples":[],"defaultValue":null},"created_at":{"type":"integer","description":null,"examples":[],"defaultValue":null},"endpoint":{"type":"string","description":null,"examples":[],"defaultValue":null},"error_file":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"errors":{"type":"chunk","chunkId":"$230"},"failed_requests":{"type":"integer","description":null,"examples":[],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"input_files":{"type":"chunk","chunkId":"$228"},"metadata":{"type":"chunk","chunkId":"$229"},"model":{"type":"string","description":null,"examples":[],"defaultValue":null},"object":{"type":"enum","description":null,"examples":[],"values":["batch"],"defaultValue":"\"batch\""},"output_file":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"started_at":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"status":{"type":"enum","description":null,"examples":[],"values":["QUEUED","RUNNING","SUCCESS","FAILED","TIMEOUT_EXCEEDED","CANCELLATION_REQUESTED","CANCELLED"],"defaultValue":null},"succeeded_requests":{"type":"integer","description":null,"examples":[],"defaultValue":null},"total_requests":{"type":"integer","description":null,"examples":[],"defaultValue":null}},"required":["id","input_files","endpoint","model","errors","status","created_at","total_requests","completed_requests","succeeded_requests","failed_requests"],"name":"BatchJobOut","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"BatchJobOut","schema":{"type":"object","description":null,"examples":[],"properties":{"completed_at":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"completed_requests":{"type":"integer","description":null,"examples":[],"defaultValue":null},"created_at":{"type":"integer","description":null,"examples":[],"defaultValue":null},"endpoint":{"type":"string","description":null,"examples":[],"defaultValue":null},"error_file":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"errors":{"type":"chunk","chunkId":"$230"},"failed_requests":{"type":"integer","description":null,"examples":[],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"input_files":{"type":"chunk","chunkId":"$228"},"metadata":{"type":"chunk","chunkId":"$229"},"model":{"type":"string","description":null,"examples":[],"defaultValue":null},"object":{"type":"enum","description":null,"examples":[],"values":["batch"],"defaultValue":"\"batch\""},"output_file":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"started_at":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"status":{"type":"enum","description":null,"examples":[],"values":["QUEUED","RUNNING","SUCCESS","FAILED","TIMEOUT_EXCEEDED","CANCELLATION_REQUESTED","CANCELLED"],"defaultValue":null},"succeeded_requests":{"type":"integer","description":null,"examples":[],"defaultValue":null},"total_requests":{"type":"integer","description":null,"examples":[],"defaultValue":null}},"required":["id","input_files","endpoint","model","errors","status","created_at","total_requests","completed_requests","succeeded_requests","failed_requests"],"name":"BatchJobOut","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### data \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+data\}
+
+</Property>
 
 <ExpandableSection title="BatchJobOut" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+properties\}
 
-#### completed\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_at\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### completed_at \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_at\}
 
-#### completed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_requests\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+created_at\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### completed_requests \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+completed_requests\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### endpoint <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+endpoint\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### error\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+error_file\}
+##### created_at \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+created_at\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### errors <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">BatchError</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+errors\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### endpoint \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+endpoint\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### error_file \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+error_file\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError\">BatchError</a>","children":[{"label":"BatchError","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError\">BatchError</a>","children":[],"breakoutSubTypes":[{"label":"BatchError","schema":{"type":"object","description":null,"examples":[],"properties":{"count":{"type":"integer","description":null,"examples":[],"defaultValue":"1"},"message":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["message"],"name":"BatchError","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"BatchError","schema":{"type":"object","description":null,"examples":[],"properties":{"count":{"type":"integer","description":null,"examples":[],"defaultValue":"1"},"message":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["message"],"name":"BatchError","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### errors \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+errors\}
+
+</Property>
 
 <ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+properties\}
 
-#### count <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+count\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### count \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+count\}
+
+</Property>
 
 _Default Value:_ `1`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### message <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+message\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### message \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+BatchError+message\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### failed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+failed_requests\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### failed_requests \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+failed_requests\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+id\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+input_files\}
+##### id \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+id\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### metadata <Pill variant="info">map&lt;any&gt; | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+metadata\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### input_files \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+input_files\}
 
-#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+model\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### object <Pill variant="info">"batch"</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+object\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### metadata \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+metadata\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### model \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+model\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+object\}
+
+</Property>
 
 _Default Value:_ `"batch"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### output\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+output_file\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### output_file \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+output_file\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### started\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+started_at\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+status\}
+##### started_at \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+started_at\}
 
-<Code text={`| "QUEUED"
-| "RUNNING"
-| "SUCCESS"
-| "FAILED"
-| "TIMEOUT_EXCEEDED"
-| "CANCELLATION_REQUESTED"
-| "CANCELLED"`} />
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### succeeded_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+succeeded_requests\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"QUEUED\"","linkedLabel":"\"QUEUED\"","children":[],"breakoutSubTypes":[]},{"label":"\"RUNNING\"","linkedLabel":"\"RUNNING\"","children":[],"breakoutSubTypes":[]},{"label":"\"SUCCESS\"","linkedLabel":"\"SUCCESS\"","children":[],"breakoutSubTypes":[]},{"label":"\"FAILED\"","linkedLabel":"\"FAILED\"","children":[],"breakoutSubTypes":[]},{"label":"\"TIMEOUT_EXCEEDED\"","linkedLabel":"\"TIMEOUT_EXCEEDED\"","children":[],"breakoutSubTypes":[]},{"label":"\"CANCELLATION_REQUESTED\"","linkedLabel":"\"CANCELLATION_REQUESTED\"","children":[],"breakoutSubTypes":[]},{"label":"\"CANCELLED\"","linkedLabel":"\"CANCELLED\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### status \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+status\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### total_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+total_requests\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### succeeded_requests \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+succeeded_requests\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### total_requests \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+BatchJobOut+total_requests\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### object <Pill variant="info">"list"</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+object\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"list\"","linkedLabel":"\"list\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+object\}
+
+</Property>
 
 _Default Value:_ `"list"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### total <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+total\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### total \{#operation-jobs_api_routes_batch_get_batch_jobs+200+application-json+total\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>
 
@@ -268,45 +358,49 @@ _Create Batch Job_
 
 Create a new batch job, it will be queued for processing.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-jobs_api_routes_batch_create_batch_job+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_create_batch_job+security+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_create_batch_job+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-jobs_api_routes_batch_create_batch_job+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-jobs_api_routes_batch_create_batch_job+try-it-now\}
+### Try it Now \{#operation-jobs_api_routes_batch_create_batch_job+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -330,233 +424,318 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Request Body \{#operation-jobs_api_routes_batch_create_batch_job+request\}
+### Request Body \{#operation-jobs_api_routes_batch_create_batch_job+request\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_create_batch_job+request+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_create_batch_job+request+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### endpoint <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+endpoint\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"/v1/chat/completions\"","linkedLabel":"\"/v1/chat/completions\"","children":[],"breakoutSubTypes":[]},{"label":"\"/v1/embeddings\"","linkedLabel":"\"/v1/embeddings\"","children":[],"breakoutSubTypes":[]},{"label":"\"/v1/fim/completions\"","linkedLabel":"\"/v1/fim/completions\"","children":[],"breakoutSubTypes":[]},{"label":"\"/v1/moderations\"","linkedLabel":"\"/v1/moderations\"","children":[],"breakoutSubTypes":[]},{"label":"\"/v1/chat/moderations\"","linkedLabel":"\"/v1/chat/moderations\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<Code text={`| "/v1/chat/completions"
-| "/v1/embeddings"
-| "/v1/fim/completions"
-| "/v1/moderations"
-| "/v1/chat/moderations"`} />
+##### endpoint \{#operation-jobs_api_routes_batch_create_batch_job+request+endpoint\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+input_files\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### input_files \{#operation-jobs_api_routes_batch_create_batch_job+request+input_files\}
 
-#### metadata <Pill variant="info">map&lt;string&gt; | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+metadata\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+model\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### metadata \{#operation-jobs_api_routes_batch_create_batch_job+request+metadata\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### timeout\_hours <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+request+timeout_hours\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### model \{#operation-jobs_api_routes_batch_create_batch_job+request+model\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### timeout_hours \{#operation-jobs_api_routes_batch_create_batch_job+request+timeout_hours\}
+
+</Property>
 
 _Default Value:_ `24`
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-jobs_api_routes_batch_create_batch_job+responses\}
+### Responses \{#operation-jobs_api_routes_batch_create_batch_job+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_batch_create_batch_job+200+application-json">
+<SectionTab slot="tab" id="operation-jobs_api_routes_batch_create_batch_job+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-jobs_api_routes_batch_create_batch_job+200+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-jobs_api_routes_batch_create_batch_job+200+application-json">
 
 OK
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### completed\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_at\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### completed_at \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_at\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### completed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_requests\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+created_at\}
+##### completed_requests \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+completed_requests\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### endpoint <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+endpoint\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### created_at \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+created_at\}
 
-#### error\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+error_file\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### errors <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">BatchError</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+errors\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### endpoint \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+endpoint\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### error_file \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+error_file\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError\">BatchError</a>","children":[{"label":"BatchError","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError\">BatchError</a>","children":[],"breakoutSubTypes":[{"label":"BatchError","schema":{"type":"object","description":null,"examples":[],"properties":{"count":{"type":"integer","description":null,"examples":[],"defaultValue":"1"},"message":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["message"],"name":"BatchError","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"BatchError","schema":{"type":"object","description":null,"examples":[],"properties":{"count":{"type":"integer","description":null,"examples":[],"defaultValue":"1"},"message":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["message"],"name":"BatchError","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### errors \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+errors\}
+
+</Property>
 
 <ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+properties\}
 
-#### count <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+count\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### count \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+count\}
+
+</Property>
 
 _Default Value:_ `1`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### message <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+message\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### message \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+BatchError+message\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### failed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+failed_requests\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### failed_requests \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+failed_requests\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+id\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+input_files\}
+##### id \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+id\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### metadata <Pill variant="info">map&lt;any&gt; | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+metadata\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### input_files \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+input_files\}
 
-#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+model\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### object <Pill variant="info">"batch"</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+object\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### metadata \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+metadata\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### model \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+model\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+object\}
+
+</Property>
 
 _Default Value:_ `"batch"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### output\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+output_file\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### output_file \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+output_file\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### started\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+started_at\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+status\}
+##### started_at \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+started_at\}
 
-<Code text={`| "QUEUED"
-| "RUNNING"
-| "SUCCESS"
-| "FAILED"
-| "TIMEOUT_EXCEEDED"
-| "CANCELLATION_REQUESTED"
-| "CANCELLED"`} />
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### succeeded_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+succeeded_requests\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"QUEUED\"","linkedLabel":"\"QUEUED\"","children":[],"breakoutSubTypes":[]},{"label":"\"RUNNING\"","linkedLabel":"\"RUNNING\"","children":[],"breakoutSubTypes":[]},{"label":"\"SUCCESS\"","linkedLabel":"\"SUCCESS\"","children":[],"breakoutSubTypes":[]},{"label":"\"FAILED\"","linkedLabel":"\"FAILED\"","children":[],"breakoutSubTypes":[]},{"label":"\"TIMEOUT_EXCEEDED\"","linkedLabel":"\"TIMEOUT_EXCEEDED\"","children":[],"breakoutSubTypes":[]},{"label":"\"CANCELLATION_REQUESTED\"","linkedLabel":"\"CANCELLATION_REQUESTED\"","children":[],"breakoutSubTypes":[]},{"label":"\"CANCELLED\"","linkedLabel":"\"CANCELLED\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### status \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+status\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### total_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+total_requests\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### succeeded_requests \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+succeeded_requests\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### total_requests \{#operation-jobs_api_routes_batch_create_batch_job+200+application-json+total_requests\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>
 
@@ -566,77 +745,85 @@ _Get Batch Job_
 
 Get a batch job details by its UUID.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-jobs_api_routes_batch_get_batch_job+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_get_batch_job+security+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_get_batch_job+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-jobs_api_routes_batch_get_batch_job+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Parameters \{#operation-jobs_api_routes_batch_get_batch_job+parameters\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### job\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_batch_get_batch_job+parameters+job_id\}
+##### job\_id <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+parameters+job_id\}
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_get_batch_job+parameters+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_get_batch_job+parameters+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+parameters+Security\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### Security \{#operation-jobs_api_routes_batch_get_batch_job+parameters+Security\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-jobs_api_routes_batch_get_batch_job+try-it-now\}
+### Try it Now \{#operation-jobs_api_routes_batch_get_batch_job+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -656,171 +843,242 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-jobs_api_routes_batch_get_batch_job+responses\}
+### Responses \{#operation-jobs_api_routes_batch_get_batch_job+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_batch_get_batch_job+200+application-json">
+<SectionTab slot="tab" id="operation-jobs_api_routes_batch_get_batch_job+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-jobs_api_routes_batch_get_batch_job+200+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-jobs_api_routes_batch_get_batch_job+200+application-json">
 
 OK
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### completed\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_at\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### completed_at \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_at\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### completed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_requests\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+created_at\}
+##### completed_requests \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+completed_requests\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### endpoint <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+endpoint\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### created_at \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+created_at\}
 
-#### error\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+error_file\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### errors <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">BatchError</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+errors\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### endpoint \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+endpoint\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### error_file \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+error_file\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError\">BatchError</a>","children":[{"label":"BatchError","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError\">BatchError</a>","children":[],"breakoutSubTypes":[{"label":"BatchError","schema":{"type":"object","description":null,"examples":[],"properties":{"count":{"type":"integer","description":null,"examples":[],"defaultValue":"1"},"message":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["message"],"name":"BatchError","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"BatchError","schema":{"type":"object","description":null,"examples":[],"properties":{"count":{"type":"integer","description":null,"examples":[],"defaultValue":"1"},"message":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["message"],"name":"BatchError","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### errors \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+errors\}
+
+</Property>
 
 <ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+properties\}
 
-#### count <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+count\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### count \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+count\}
+
+</Property>
 
 _Default Value:_ `1`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### message <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+message\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### message \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+BatchError+message\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### failed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+failed_requests\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### failed_requests \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+failed_requests\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+id\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+input_files\}
+##### id \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+id\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### metadata <Pill variant="info">map&lt;any&gt; | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+metadata\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### input_files \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+input_files\}
 
-#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+model\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### object <Pill variant="info">"batch"</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+object\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### metadata \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+metadata\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### model \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+model\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+object\}
+
+</Property>
 
 _Default Value:_ `"batch"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### output\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+output_file\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### output_file \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+output_file\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### started\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+started_at\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+status\}
+##### started_at \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+started_at\}
 
-<Code text={`| "QUEUED"
-| "RUNNING"
-| "SUCCESS"
-| "FAILED"
-| "TIMEOUT_EXCEEDED"
-| "CANCELLATION_REQUESTED"
-| "CANCELLED"`} />
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### succeeded_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+succeeded_requests\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"QUEUED\"","linkedLabel":"\"QUEUED\"","children":[],"breakoutSubTypes":[]},{"label":"\"RUNNING\"","linkedLabel":"\"RUNNING\"","children":[],"breakoutSubTypes":[]},{"label":"\"SUCCESS\"","linkedLabel":"\"SUCCESS\"","children":[],"breakoutSubTypes":[]},{"label":"\"FAILED\"","linkedLabel":"\"FAILED\"","children":[],"breakoutSubTypes":[]},{"label":"\"TIMEOUT_EXCEEDED\"","linkedLabel":"\"TIMEOUT_EXCEEDED\"","children":[],"breakoutSubTypes":[]},{"label":"\"CANCELLATION_REQUESTED\"","linkedLabel":"\"CANCELLATION_REQUESTED\"","children":[],"breakoutSubTypes":[]},{"label":"\"CANCELLED\"","linkedLabel":"\"CANCELLED\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### status \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+status\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### total_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+total_requests\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### succeeded_requests \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+succeeded_requests\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### total_requests \{#operation-jobs_api_routes_batch_get_batch_job+200+application-json+total_requests\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>
 
@@ -830,77 +1088,85 @@ _Cancel Batch Job_
 
 Request the cancellation of a batch job.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-jobs_api_routes_batch_cancel_batch_job+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_cancel_batch_job+security+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_cancel_batch_job+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-jobs_api_routes_batch_cancel_batch_job+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Parameters \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### job\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+job_id\}
+##### job\_id <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+job_id\}
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+Security\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### Security \{#operation-jobs_api_routes_batch_cancel_batch_job+parameters+Security\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-jobs_api_routes_batch_cancel_batch_job+try-it-now\}
+### Try it Now \{#operation-jobs_api_routes_batch_cancel_batch_job+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -920,170 +1186,241 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-jobs_api_routes_batch_cancel_batch_job+responses\}
+### Responses \{#operation-jobs_api_routes_batch_cancel_batch_job+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json">
+<SectionTab slot="tab" id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json">
 
 OK
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+fields\}
+#### Properties \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### completed\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_at\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### completed_at \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_at\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### completed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_requests\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### created_at <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+created_at\}
+##### completed_requests \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+completed_requests\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### endpoint <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+endpoint\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### created_at \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+created_at\}
 
-#### error\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+error_file\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### errors <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">BatchError</a>&gt;</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+errors\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### endpoint \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+endpoint\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### error_file \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+error_file\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError\">BatchError</a>","children":[{"label":"BatchError","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError\">BatchError</a>","children":[],"breakoutSubTypes":[{"label":"BatchError","schema":{"type":"object","description":null,"examples":[],"properties":{"count":{"type":"integer","description":null,"examples":[],"defaultValue":"1"},"message":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["message"],"name":"BatchError","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"BatchError","schema":{"type":"object","description":null,"examples":[],"properties":{"count":{"type":"integer","description":null,"examples":[],"defaultValue":"1"},"message":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["message"],"name":"BatchError","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### errors \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+errors\}
+
+</Property>
 
 <ExpandableSection title="BatchError" id="operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+properties\}
 
-#### count <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+count\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### count \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+count\}
+
+</Property>
 
 _Default Value:_ `1`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### message <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+message\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### message \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+BatchError+message\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### failed_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+failed_requests\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### failed_requests \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+failed_requests\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+id\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### input_files <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+input_files\}
+##### id \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+id\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### metadata <Pill variant="info">map&lt;any&gt; | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+metadata\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### input_files \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+input_files\}
 
-#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+model\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### object <Pill variant="info">"batch"</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+object\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### metadata \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+metadata\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### model \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+model\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+object\}
+
+</Property>
 
 _Default Value:_ `"batch"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### output\_file <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+output_file\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### output_file \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+output_file\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### started\_at <Pill variant="info">integer | null</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+started_at\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-#### status <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+status\}
+##### started_at \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+started_at\}
 
-<Code text={`| "QUEUED"
-| "RUNNING"
-| "SUCCESS"
-| "FAILED"
-| "TIMEOUT_EXCEEDED"
-| "CANCELLATION_REQUESTED"
-| "CANCELLED"`} />
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### succeeded_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+succeeded_requests\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"QUEUED\"","linkedLabel":"\"QUEUED\"","children":[],"breakoutSubTypes":[]},{"label":"\"RUNNING\"","linkedLabel":"\"RUNNING\"","children":[],"breakoutSubTypes":[]},{"label":"\"SUCCESS\"","linkedLabel":"\"SUCCESS\"","children":[],"breakoutSubTypes":[]},{"label":"\"FAILED\"","linkedLabel":"\"FAILED\"","children":[],"breakoutSubTypes":[]},{"label":"\"TIMEOUT_EXCEEDED\"","linkedLabel":"\"TIMEOUT_EXCEEDED\"","children":[],"breakoutSubTypes":[]},{"label":"\"CANCELLATION_REQUESTED\"","linkedLabel":"\"CANCELLATION_REQUESTED\"","children":[],"breakoutSubTypes":[]},{"label":"\"CANCELLED\"","linkedLabel":"\"CANCELLED\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### status \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+status\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### total_requests <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+total_requests\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### succeeded_requests \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+succeeded_requests\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### total_requests \{#operation-jobs_api_routes_batch_cancel_batch_job+200+application-json+total_requests\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>

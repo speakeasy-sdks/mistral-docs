@@ -1,28 +1,36 @@
-import { Section, SectionEntry, Pill } from "@speakeasy-api/docs-md/docusaurus";
+import { Section, SectionTitle, SectionContent, Property } from "@speakeasy-api/docs-md/docusaurus";
 
 
 ### ReferenceChunk
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+fields\}
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### reference_ids <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;integer&gt;</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+reference_ids\}
+<Property typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### reference_ids \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+reference_ids\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### type <Pill variant="info">"reference"</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+type\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+type\}
+
+</Property>
 
 _Default Value:_ `"reference"`
 
-</SectionEntry>
+</SectionContent>
 
 </Section>

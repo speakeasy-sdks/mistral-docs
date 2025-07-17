@@ -1,56 +1,61 @@
 ---
 sidebar_position: 2.11
-sidebar_label: ocr
+sidebar_label: Ocr
 ---
 
-import { Pill, Section, SectionEntry, TryItNow, ExpandableSection, TabbedSection } from "@speakeasy-api/docs-md/docusaurus";
+import "@speakeasy-api/docs-md/docusaurus.css";
+import { Pill, Section, SectionTitle, SectionContent, Property, TryItNow, ExpandableSection, TabbedSection, SectionTab } from "@speakeasy-api/docs-md/docusaurus";
 
 
-# ocr
+# Ocr Operations \{#ocr\}
 
 ## <Pill variant="primary"><b>POST</b></Pill> /v1/ocr \{#operation-ocr_v1_ocr_post\}
 
 OCR
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-ocr_v1_ocr_post+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-ocr_v1_ocr_post+security+fields\}
+#### Properties \{#operation-ocr_v1_ocr_post+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-ocr_v1_ocr_post+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-ocr_v1_ocr_post+try-it-now\}
+### Try it Now \{#operation-ocr_v1_ocr_post+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -76,492 +81,739 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Request Body \{#operation-ocr_v1_ocr_post+request\}
+### Request Body \{#operation-ocr_v1_ocr_post+request\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-ocr_v1_ocr_post+request+fields\}
+#### Properties \{#operation-ocr_v1_ocr_post+request+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### bbox\_annotation\_format <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ResponseFormat\">ResponseFormat</a>","children":[],"breakoutSubTypes":[{"label":"ResponseFormat","schema":{"type":"object","description":null,"examples":[],"properties":{"json_schema":{"type":"chunk","chunkId":"$63"},"type":{"type":"enum","description":"An object specifying the format that the model must output. Setting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.","examples":[],"values":["text","json_object","json_schema"],"defaultValue":null}},"required":[],"name":"ResponseFormat","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"ResponseFormat","schema":{"type":"object","description":null,"examples":[],"properties":{"json_schema":{"type":"chunk","chunkId":"$63"},"type":{"type":"enum","description":"An object specifying the format that the model must output. Setting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.","examples":[],"values":["text","json_object","json_schema"],"defaultValue":null}},"required":[],"name":"ResponseFormat","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### bbox_annotation_format \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format\}
+
+</Property>
 
 <ExpandableSection title="ResponseFormat" id="operation-ocr_v1_ocr_post+request+ResponseFormat">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+request+ResponseFormat+properties\}
 
-#### json\_schema <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema\">JsonSchema</a>","children":[],"breakoutSubTypes":[{"label":"JsonSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"name":{"type":"string","description":null,"examples":[],"defaultValue":null},"schema_definition":{"type":"chunk","chunkId":"$64"},"strict":{"type":"boolean","description":null,"examples":[],"defaultValue":null}},"required":["name","schema_definition"],"name":"JsonSchema","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"JsonSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"name":{"type":"string","description":null,"examples":[],"defaultValue":null},"schema_definition":{"type":"chunk","chunkId":"$64"},"strict":{"type":"boolean","description":null,"examples":[],"defaultValue":null}},"required":["name","schema_definition"],"name":"JsonSchema","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### json_schema \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
+
+</Property>
 
 <ExpandableSection title="JsonSchema" id="operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+properties\}
 
-#### description <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### description \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
 
-#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### schema_definition <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### name \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### strict <Pill variant="info">boolean</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### schema_definition \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### strict \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":[]},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":[]},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
+
+</Property>
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</SectionEntry>
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### document <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+DocumentURLChunk">DocumentURLChunk</a> | <a href="#operation-ocr_v1_ocr_post+request+ImageURLChunk">ImageURLChunk</a></Pill> \{#operation-ocr_v1_ocr_post+request+document\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+DocumentURLChunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":[{"label":"DocumentURLChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"document_name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"The filename of the document","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"document_url":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["document_url"],"defaultValue":"\"document_url\""}},"required":["document_url"],"name":"DocumentURLChunk","defaultValue":null}}]},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ImageURLChunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":[{"label":"ImageURLChunk","schema":{"type":"object","description":"{\"type\":\"image_url\",\"image_url\":{\"url\":\"data:image/png;base64,iVBORw0","examples":[],"properties":{"image_url":{"type":"chunk","chunkId":"$77"},"type":{"type":"enum","description":null,"examples":[],"values":["image_url"],"defaultValue":"\"image_url\""}},"required":["image_url"],"name":"ImageURLChunk","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"DocumentURLChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"document_name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"The filename of the document","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"document_url":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["document_url"],"defaultValue":"\"document_url\""}},"required":["document_url"],"name":"DocumentURLChunk","defaultValue":null}},{"label":"ImageURLChunk","schema":{"type":"object","description":"{\"type\":\"image_url\",\"image_url\":{\"url\":\"data:image/png;base64,iVBORw0","examples":[],"properties":{"image_url":{"type":"chunk","chunkId":"$77"},"type":{"type":"enum","description":null,"examples":[],"values":["image_url"],"defaultValue":"\"image_url\""}},"required":["image_url"],"name":"ImageURLChunk","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### document \{#operation-ocr_v1_ocr_post+request+document\}
+
+</Property>
 
 Document to run OCR on
 
 <ExpandableSection title="DocumentURLChunk" id="operation-ocr_v1_ocr_post+request+DocumentURLChunk">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+properties\}
 
-#### document\_name <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_name\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### document_name \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_name\}
 
-#### document_url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_url\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="info">"document_url"</Pill> \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+type\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### document_url \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_url\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+type\}
+
+</Property>
 
 _Default Value:_ `"document_url"`
 
-</SectionEntry>
+</SectionContent>
 
 </ExpandableSection>
 
 <ExpandableSection title="ImageURLChunk" id="operation-ocr_v1_ocr_post+request+ImageURLChunk">
 
-<SectionEntry variant="fields">
+\{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
-#### image_url <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL">ImageURL</a> | string</Pill> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+image_url\}
+#### Properties \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL\">ImageURL</a>","children":[],"breakoutSubTypes":[{"label":"ImageURL","schema":{"type":"object","description":null,"examples":[],"properties":{"detail":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"url":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["url"],"name":"ImageURL","defaultValue":null}}]},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"ImageURL","schema":{"type":"object","description":null,"examples":[],"properties":{"detail":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"url":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["url"],"name":"ImageURL","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### image_url \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+image_url\}
+
+</Property>
 
 <ExpandableSection title="ImageURL" id="operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+properties\}
 
-#### detail <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+detail\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### detail \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+detail\}
 
-#### url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+url\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### url \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+url\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="info">"image_url"</Pill> \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+type\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+type\}
+
+</Property>
 
 _Default Value:_ `"image_url"`
 
-</SectionEntry>
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### document\_annotation\_format <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat">ResponseFormat</a> | null</Pill> \{#operation-ocr_v1_ocr_post+request+document_annotation_format\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ResponseFormat\">ResponseFormat</a>","children":[],"breakoutSubTypes":[{"label":"ResponseFormat","schema":{"type":"object","description":null,"examples":[],"properties":{"json_schema":{"type":"chunk","chunkId":"$63"},"type":{"type":"enum","description":"An object specifying the format that the model must output. Setting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.","examples":[],"values":["text","json_object","json_schema"],"defaultValue":null}},"required":[],"name":"ResponseFormat","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"ResponseFormat","schema":{"type":"object","description":null,"examples":[],"properties":{"json_schema":{"type":"chunk","chunkId":"$63"},"type":{"type":"enum","description":"An object specifying the format that the model must output. Setting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.","examples":[],"values":["text","json_object","json_schema"],"defaultValue":null}},"required":[],"name":"ResponseFormat","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### document_annotation_format \{#operation-ocr_v1_ocr_post+request+document_annotation_format\}
+
+</Property>
 
 <ExpandableSection title="ResponseFormat" id="operation-ocr_v1_ocr_post+request+ResponseFormat">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+request+ResponseFormat+properties\}
 
-#### json\_schema <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">JsonSchema</a> | null</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema\">JsonSchema</a>","children":[],"breakoutSubTypes":[{"label":"JsonSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"name":{"type":"string","description":null,"examples":[],"defaultValue":null},"schema_definition":{"type":"chunk","chunkId":"$64"},"strict":{"type":"boolean","description":null,"examples":[],"defaultValue":null}},"required":["name","schema_definition"],"name":"JsonSchema","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"JsonSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"name":{"type":"string","description":null,"examples":[],"defaultValue":null},"schema_definition":{"type":"chunk","chunkId":"$64"},"strict":{"type":"boolean","description":null,"examples":[],"defaultValue":null}},"required":["name","schema_definition"],"name":"JsonSchema","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### json_schema \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
+
+</Property>
 
 <ExpandableSection title="JsonSchema" id="operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+properties\}
 
-#### description <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### description \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
 
-#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### schema_definition <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### name \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### strict <Pill variant="info">boolean</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### schema_definition \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### strict \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="info">"text" | "json_object" | "json_schema"</Pill> \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":[]},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":[]},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
+
+</Property>
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-</SectionEntry>
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### id <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+request+id\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### id \{#operation-ocr_v1_ocr_post+request+id\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### image\_limit <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+request+image_limit\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-#### image\_min\_size <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+request+image_min_size\}
+##### image_limit \{#operation-ocr_v1_ocr_post+request+image_limit\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### include\_image\_base64 <Pill variant="info">boolean | null</Pill> \{#operation-ocr_v1_ocr_post+request+include_image_base64\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### image_min_size \{#operation-ocr_v1_ocr_post+request+image_min_size\}
 
-#### model <Pill variant="warning">required</Pill> <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+request+model\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### pages <Pill variant="info">array&lt;integer&gt; | null</Pill> \{#operation-ocr_v1_ocr_post+request+pages\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### include_image_base64 \{#operation-ocr_v1_ocr_post+request+include_image_base64\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### model \{#operation-ocr_v1_ocr_post+request+model\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### pages \{#operation-ocr_v1_ocr_post+request+pages\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-ocr_v1_ocr_post+responses\}
+### Responses \{#operation-ocr_v1_ocr_post+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-ocr_v1_ocr_post+200+application-json">
+<SectionTab slot="tab" id="operation-ocr_v1_ocr_post+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-ocr_v1_ocr_post+200+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-ocr_v1_ocr_post+200+application-json">
 
 Successful Response
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-ocr_v1_ocr_post+200+application-json+fields\}
+#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### document\_annotation <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+document_annotation\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### document_annotation \{#operation-ocr_v1_ocr_post+200+application-json+document_annotation\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### model <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+model\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### model \{#operation-ocr_v1_ocr_post+200+application-json+model\}
+
+</Property>
 
 The model used to generate the OCR.
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### pages <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject">OCRPageObject</a>&gt;</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+pages\}
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject\">OCRPageObject</a>","children":[{"label":"OCRPageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject\">OCRPageObject</a>","children":[],"breakoutSubTypes":[{"label":"OCRPageObject","schema":{"type":"object","description":null,"examples":[],"properties":{"dimensions":{"type":"chunk","chunkId":"$334"},"images":{"type":"chunk","chunkId":"$332"},"index":{"type":"integer","description":"The page index in a pdf document starting from 0","examples":[],"defaultValue":null},"markdown":{"type":"string","description":"The markdown string response of the page","examples":[],"defaultValue":null}},"required":["index","markdown","images","dimensions"],"name":"OCRPageObject","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"OCRPageObject","schema":{"type":"object","description":null,"examples":[],"properties":{"dimensions":{"type":"chunk","chunkId":"$334"},"images":{"type":"chunk","chunkId":"$332"},"index":{"type":"integer","description":"The page index in a pdf document starting from 0","examples":[],"defaultValue":null},"markdown":{"type":"string","description":"The markdown string response of the page","examples":[],"defaultValue":null}},"required":["index","markdown","images","dimensions"],"name":"OCRPageObject","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### pages \{#operation-ocr_v1_ocr_post+200+application-json+pages\}
+
+</Property>
 
 List of OCR info for pages.
 
 <ExpandableSection title="OCRPageObject" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+properties\}
 
-#### dimensions <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions">OCRPageDimensions</a> | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+dimensions\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"OCRPageDimensions","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions\">OCRPageDimensions</a>","children":[],"breakoutSubTypes":[{"label":"OCRPageDimensions","schema":{"type":"object","description":"The dimensions of the PDF Page's screenshot image","examples":[],"properties":{"dpi":{"type":"integer","description":"Dots per inch of the page-image","examples":[],"defaultValue":null},"height":{"type":"integer","description":"Height of the image in pixels","examples":[],"defaultValue":null},"width":{"type":"integer","description":"Width of the image in pixels","examples":[],"defaultValue":null}},"required":["dpi","height","width"],"name":"OCRPageDimensions","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"OCRPageDimensions","schema":{"type":"object","description":"The dimensions of the PDF Page's screenshot image","examples":[],"properties":{"dpi":{"type":"integer","description":"Dots per inch of the page-image","examples":[],"defaultValue":null},"height":{"type":"integer","description":"Height of the image in pixels","examples":[],"defaultValue":null},"width":{"type":"integer","description":"Width of the image in pixels","examples":[],"defaultValue":null}},"required":["dpi","height","width"],"name":"OCRPageDimensions","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### dimensions \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+dimensions\}
+
+</Property>
 
 <ExpandableSection title="OCRPageDimensions" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions">
 
-<SectionEntry variant="fields">
+The dimensions of the PDF Page's screenshot image
 
-#### dpi <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+dpi\}
+#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### dpi \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+dpi\}
+
+</Property>
 
 Dots per inch of the page-image
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### height <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+height\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### height \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+height\}
+
+</Property>
 
 Height of the image in pixels
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### width <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+width\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### width \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+width\}
+
+</Property>
 
 Width of the image in pixels
 
-</SectionEntry>
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### images <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;<a href="#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject">OCRImageObject</a>&gt;</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+images\}
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject\">OCRImageObject</a>","children":[{"label":"OCRImageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject\">OCRImageObject</a>","children":[],"breakoutSubTypes":[{"label":"OCRImageObject","schema":{"type":"object","description":null,"examples":[],"properties":{"bottom_right_x":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"X coordinate of bottom-right corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"bottom_right_y":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Y coordinate of bottom-right corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":"Image ID for extracted image in a page","examples":[],"defaultValue":null},"image_annotation":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"Annotation of the extracted image in json str","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"image_base64":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"Base64 string of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"top_left_x":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"X coordinate of top-left corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"top_left_y":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Y coordinate of top-left corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null}},"required":["id","top_left_x","top_left_y","bottom_right_x","bottom_right_y"],"name":"OCRImageObject","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"OCRImageObject","schema":{"type":"object","description":null,"examples":[],"properties":{"bottom_right_x":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"X coordinate of bottom-right corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"bottom_right_y":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Y coordinate of bottom-right corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":"Image ID for extracted image in a page","examples":[],"defaultValue":null},"image_annotation":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"Annotation of the extracted image in json str","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"image_base64":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"Base64 string of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"top_left_x":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"X coordinate of top-left corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"top_left_y":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Y coordinate of top-left corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null}},"required":["id","top_left_x","top_left_y","bottom_right_x","bottom_right_y"],"name":"OCRImageObject","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### images \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+images\}
+
+</Property>
 
 List of all extracted images in the page
 
 <ExpandableSection title="OCRImageObject" id="operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+properties\}
 
-#### bottom_right_x <Pill variant="warning">required</Pill> <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_x\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### bottom_right_x \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_x\}
 
-#### bottom_right_y <Pill variant="warning">required</Pill> <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_y\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+id\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### bottom_right_y \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_y\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### id \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+id\}
+
+</Property>
 
 Image ID for extracted image in a page
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### image\_annotation <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_annotation\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### image_annotation \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_annotation\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### image\_base64 <Pill variant="info">string | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_base64\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-#### top_left_x <Pill variant="warning">required</Pill> <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_x\}
+##### image_base64 \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_base64\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### top_left_y <Pill variant="warning">required</Pill> <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_y\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### top_left_x \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_x\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### top_left_y \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_y\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### index <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+index\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### index \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+index\}
+
+</Property>
 
 The page index in a pdf document starting from 0
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### markdown <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+markdown\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### markdown \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+markdown\}
+
+</Property>
 
 The markdown string response of the page
 
-</SectionEntry>
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### usage_info <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo">OCRUsageInfo</a></Pill> \{#operation-ocr_v1_ocr_post+200+application-json+usage_info\}
+<Property typeInfo={{"label":"OCRUsageInfo","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo\">OCRUsageInfo</a>","children":[],"breakoutSubTypes":[{"label":"OCRUsageInfo","schema":{"type":"object","description":null,"examples":[],"properties":{"doc_size_bytes":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Document size in bytes","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"pages_processed":{"type":"integer","description":"Number of pages processed","examples":[],"defaultValue":null}},"required":["pages_processed"],"name":"OCRUsageInfo","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### usage_info \{#operation-ocr_v1_ocr_post+200+application-json+usage_info\}
+
+</Property>
 
 <ExpandableSection title="OCRUsageInfo" id="operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+properties\}
 
-#### doc\_size\_bytes <Pill variant="info">integer | null</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+doc_size_bytes\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### doc_size_bytes \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+doc_size_bytes\}
 
-#### pages_processed <Pill variant="warning">required</Pill> <Pill variant="info">integer</Pill> \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+pages_processed\}
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### pages_processed \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+pages_processed\}
+
+</Property>
 
 Number of pages processed
 
-</SectionEntry>
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
-<div slot="tab" title="422 (application/json)" data-tab-id="operation-ocr_v1_ocr_post+422+application-json">
+<SectionTab slot="tab" id="operation-ocr_v1_ocr_post+422+application-json">
 
 422
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-ocr_v1_ocr_post+422+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-ocr_v1_ocr_post+422+application-json">
 
 Validation Error
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-ocr_v1_ocr_post+422+application-json+fields\}
+#### Properties \{#operation-ocr_v1_ocr_post+422+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-ocr_v1_ocr_post+422+application-json+Security">Security</a></Pill> \{#operation-ocr_v1_ocr_post+422+application-json+HttpMeta\}
+<Property typeInfo={{"label":"Security","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+422+application-json+Security\">Security</a>","children":[],"breakoutSubTypes":[{"label":"Security","schema":{"type":"object","description":null,"examples":[],"properties":{"ApiKey":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["ApiKey"],"name":"Security","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### HttpMeta \{#operation-ocr_v1_ocr_post+422+application-json+HttpMeta\}
+
+</Property>
 
 <ExpandableSection title="Security" id="operation-ocr_v1_ocr_post+422+application-json+Security">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+422+application-json+Security+properties\}
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+Security+ApiKey\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### ApiKey \{#operation-ocr_v1_ocr_post+422+application-json+Security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### detail <Pill variant="info">array&lt;<a href="#operation-ocr_v1_ocr_post+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+detail\}
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+422+application-json+ValidationError\">ValidationError</a>","children":[{"label":"ValidationError","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+422+application-json+ValidationError\">ValidationError</a>","children":[],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### detail \{#operation-ocr_v1_ocr_post+422+application-json+detail\}
+
+</Property>
 
 <ExpandableSection title="ValidationError" id="operation-ocr_v1_ocr_post+422+application-json+ValidationError">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+properties\}
 
-#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+loc\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### loc \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+loc\}
 
-#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+msg\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+type\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### msg \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+msg\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### type \{#operation-ocr_v1_ocr_post+422+application-json+ValidationError+type\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>

@@ -1,26 +1,34 @@
-import { Section, SectionEntry, Pill } from "@speakeasy-api/docs-md/docusaurus";
+import { Section, SectionTitle, SectionContent, Property } from "@speakeasy-api/docs-md/docusaurus";
 
 
 ### ImageURL
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL+fields\}
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### detail <Pill variant="info">string | null</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL+detail\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### detail \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL+detail\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### url <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL+url\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### url \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL+url\}
+
+</Property>
+
+</SectionContent>
 
 </Section>

@@ -1,38 +1,54 @@
-import { Section, SectionEntry, Pill } from "@speakeasy-api/docs-md/docusaurus";
+import { Section, SectionTitle, SectionContent, Property } from "@speakeasy-api/docs-md/docusaurus";
 
 
 ### JsonSchema
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+fields\}
+#### Properties \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### description <Pill variant="info">string | null</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+description\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### description \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+description\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+name\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### schema_definition <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt;</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+schema_definition\}
+##### name \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+name\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### strict <Pill variant="info">boolean</Pill> \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+strict\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### schema_definition \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+schema_definition\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### strict \{#operation-agents_api_v1_agents_create+request+CompletionArgs+ResponseFormat+JsonSchema+strict\}
+
+</Property>
+
+</SectionContent>
 
 </Section>

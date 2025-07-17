@@ -1,26 +1,34 @@
-import { Section, SectionEntry, Pill } from "@speakeasy-api/docs-md/docusaurus";
+import { Section, SectionTitle, SectionContent, Property } from "@speakeasy-api/docs-md/docusaurus";
 
 
 ### FunctionCall
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall+fields\}
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### arguments <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt; | string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall+arguments\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### arguments \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall+arguments\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall+name\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### name \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall+name\}
+
+</Property>
+
+</SectionContent>
 
 </Section>

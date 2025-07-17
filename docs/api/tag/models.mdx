@@ -1,12 +1,13 @@
 ---
 sidebar_position: 2.10
-sidebar_label: models
+sidebar_label: Models
 ---
 
-import { Pill, Section, SectionEntry, TryItNow, TabbedSection, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
+import "@speakeasy-api/docs-md/docusaurus.css";
+import { Pill, Section, SectionTitle, SectionContent, Property, TryItNow, TabbedSection, SectionTab, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
-# models
+# Models Operations \{#models\}
 
 ## <Pill variant="primary"><b>GET</b></Pill> /v1/models \{#operation-list_models_v1_models_get\}
 
@@ -14,45 +15,49 @@ _List Models_
 
 List all models available to the user.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-list_models_v1_models_get+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-list_models_v1_models_get+security+fields\}
+#### Properties \{#operation-list_models_v1_models_get+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-list_models_v1_models_get+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-list_models_v1_models_get+try-it-now\}
+### Try it Now \{#operation-list_models_v1_models_get+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -70,397 +75,592 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-list_models_v1_models_get+responses\}
+### Responses \{#operation-list_models_v1_models_get+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-list_models_v1_models_get+200+application-json">
+<SectionTab slot="tab" id="operation-list_models_v1_models_get+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-list_models_v1_models_get+200+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-list_models_v1_models_get+200+application-json">
 
 Successful Response
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-list_models_v1_models_get+200+application-json+fields\}
+#### Properties \{#operation-list_models_v1_models_get+200+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### data <Pill variant="info">array&lt;<a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard">BaseModelCard</a> | <a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard">FTModelCard</a>&gt;</Pill> \{#operation-list_models_v1_models_get+200+application-json+data\}
+<Property typeInfo={{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"BaseModelCard","linkedLabel":"<a href=\"#operation-list_models_v1_models_get+200+application-json+BaseModelCard\">BaseModelCard</a>","children":[],"breakoutSubTypes":[{"label":"BaseModelCard","schema":{"type":"object","description":null,"examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$9"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"type":{"type":"enum","description":null,"examples":[],"values":["base"],"defaultValue":"\"base\""}},"required":["id","capabilities"],"name":"BaseModelCard","defaultValue":null}}]},{"label":"FTModelCard","linkedLabel":"<a href=\"#operation-list_models_v1_models_get+200+application-json+FTModelCard\">FTModelCard</a>","children":[],"breakoutSubTypes":[{"label":"FTModelCard","schema":{"type":"object","description":"Extra fields for fine-tuned models.","examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$11"},"archived":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"job":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"root":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["fine-tuned"],"defaultValue":"\"fine-tuned\""}},"required":["id","capabilities","job","root"],"name":"FTModelCard","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"BaseModelCard","schema":{"type":"object","description":null,"examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$9"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"type":{"type":"enum","description":null,"examples":[],"values":["base"],"defaultValue":"\"base\""}},"required":["id","capabilities"],"name":"BaseModelCard","defaultValue":null}},{"label":"FTModelCard","schema":{"type":"object","description":"Extra fields for fine-tuned models.","examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$11"},"archived":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"job":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"root":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["fine-tuned"],"defaultValue":"\"fine-tuned\""}},"required":["id","capabilities","job","root"],"name":"FTModelCard","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"BaseModelCard","schema":{"type":"object","description":null,"examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$9"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"type":{"type":"enum","description":null,"examples":[],"values":["base"],"defaultValue":"\"base\""}},"required":["id","capabilities"],"name":"BaseModelCard","defaultValue":null}},{"label":"FTModelCard","schema":{"type":"object","description":"Extra fields for fine-tuned models.","examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$11"},"archived":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"job":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"root":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["fine-tuned"],"defaultValue":"\"fine-tuned\""}},"required":["id","capabilities","job","root"],"name":"FTModelCard","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### data \{#operation-list_models_v1_models_get+200+application-json+data\}
+
+</Property>
 
 <ExpandableSection title="BaseModelCard" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+properties\}
 
-#### aliases <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+aliases\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### aliases \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+aliases\}
 
-#### capabilities <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">ModelCapabilities</a></Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+capabilities\}
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"ModelCapabilities","linkedLabel":"<a href=\"#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities\">ModelCapabilities</a>","children":[],"breakoutSubTypes":[{"label":"ModelCapabilities","schema":{"type":"object","description":null,"examples":[],"properties":{"completion_chat":{"type":"boolean","description":null,"examples":[],"defaultValue":"true"},"completion_fim":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"},"fine_tuning":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"},"function_calling":{"type":"boolean","description":null,"examples":[],"defaultValue":"true"},"vision":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"}},"required":[],"name":"ModelCapabilities","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### capabilities \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+capabilities\}
+
+</Property>
 
 <ExpandableSection title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+properties\}
 
-#### completion\_chat <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_chat\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-_Default Value:_ `true`
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### completion_chat \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_chat\}
 
-<SectionEntry variant="fields">
-
-#### completion\_fim <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_fim\}
-
-_Default Value:_ `false`
-
-</SectionEntry>
-
-<SectionEntry variant="fields">
-
-#### fine\_tuning <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+fine_tuning\}
-
-_Default Value:_ `false`
-
-</SectionEntry>
-
-<SectionEntry variant="fields">
-
-#### function\_calling <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+function_calling\}
+</Property>
 
 _Default Value:_ `true`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### vision <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+vision\}
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### completion_fim \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+completion_fim\}
+
+</Property>
 
 _Default Value:_ `false`
 
-</SectionEntry>
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### fine_tuning \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+fine_tuning\}
+
+</Property>
+
+_Default Value:_ `false`
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### function_calling \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+function_calling\}
+
+</Property>
+
+_Default Value:_ `true`
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### vision \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+ModelCapabilities+vision\}
+
+</Property>
+
+_Default Value:_ `false`
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### created <Pill variant="info">integer</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+created\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### created \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+created\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### default\_model\_temperature <Pill variant="info">number | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+default_model_temperature\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-#### deprecation <Pill variant="info">date-time | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+deprecation\}
+##### default_model_temperature \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+default_model_temperature\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### description <Pill variant="info">string | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+description\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"date-time","linkedLabel":"date-time","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### deprecation \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+deprecation\}
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+id\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### max\_context\_length <Pill variant="info">integer</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+max_context_length\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### description \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+description\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### id \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+id\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### max_context_length \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+max_context_length\}
+
+</Property>
 
 _Default Value:_ `32768`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### name <Pill variant="info">string | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+name\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### name \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+name\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### object <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+object\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+object\}
+
+</Property>
 
 _Default Value:_ `"model"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### owned\_by <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+owned_by\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### owned_by \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+owned_by\}
+
+</Property>
 
 _Default Value:_ `"mistralai"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="info">"base"</Pill> \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+type\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"base\"","linkedLabel":"\"base\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-list_models_v1_models_get+200+application-json+BaseModelCard+type\}
+
+</Property>
 
 _Default Value:_ `"base"`
 
-</SectionEntry>
+</SectionContent>
 
 </ExpandableSection>
 
 <ExpandableSection title="FTModelCard" id="operation-list_models_v1_models_get+200+application-json+FTModelCard">
 
-<SectionEntry variant="fields">
+Extra fields for fine-tuned models.
 
-#### aliases <Pill variant="info">array&lt;string&gt;</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+aliases\}
+#### Properties \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+properties\}
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-#### archived <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+archived\}
+##### aliases \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+aliases\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### archived \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+archived\}
+
+</Property>
 
 _Default Value:_ `false`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### capabilities <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">ModelCapabilities</a></Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+capabilities\}
+<Property typeInfo={{"label":"ModelCapabilities","linkedLabel":"<a href=\"#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities\">ModelCapabilities</a>","children":[],"breakoutSubTypes":[{"label":"ModelCapabilities","schema":{"type":"object","description":null,"examples":[],"properties":{"completion_chat":{"type":"boolean","description":null,"examples":[],"defaultValue":"true"},"completion_fim":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"},"fine_tuning":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"},"function_calling":{"type":"boolean","description":null,"examples":[],"defaultValue":"true"},"vision":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"}},"required":[],"name":"ModelCapabilities","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### capabilities \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+capabilities\}
+
+</Property>
 
 <ExpandableSection title="ModelCapabilities" id="operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+properties\}
 
-#### completion\_chat <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_chat\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-_Default Value:_ `true`
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### completion_chat \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_chat\}
 
-<SectionEntry variant="fields">
-
-#### completion\_fim <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_fim\}
-
-_Default Value:_ `false`
-
-</SectionEntry>
-
-<SectionEntry variant="fields">
-
-#### fine\_tuning <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+fine_tuning\}
-
-_Default Value:_ `false`
-
-</SectionEntry>
-
-<SectionEntry variant="fields">
-
-#### function\_calling <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+function_calling\}
+</Property>
 
 _Default Value:_ `true`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### vision <Pill variant="info">boolean</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+vision\}
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### completion_fim \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+completion_fim\}
+
+</Property>
 
 _Default Value:_ `false`
 
-</SectionEntry>
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### fine_tuning \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+fine_tuning\}
+
+</Property>
+
+_Default Value:_ `false`
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### function_calling \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+function_calling\}
+
+</Property>
+
+_Default Value:_ `true`
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### vision \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+ModelCapabilities+vision\}
+
+</Property>
+
+_Default Value:_ `false`
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### created <Pill variant="info">integer</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+created\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### created \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+created\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### default\_model\_temperature <Pill variant="info">number | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+default_model_temperature\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<SectionEntry variant="fields">
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-#### deprecation <Pill variant="info">date-time | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+deprecation\}
+##### default_model_temperature \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+default_model_temperature\}
 
-</SectionEntry>
+</Property>
 
-<SectionEntry variant="fields">
+</SectionContent>
 
-#### description <Pill variant="info">string | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+description\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"date-time","linkedLabel":"date-time","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-<SectionEntry variant="fields">
+##### deprecation \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+deprecation\}
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+id\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### job <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+job\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### description \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+description\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### max\_context\_length <Pill variant="info">integer</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+max_context_length\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### id \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+id\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### job \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+job\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### max_context_length \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+max_context_length\}
+
+</Property>
 
 _Default Value:_ `32768`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### name <Pill variant="info">string | null</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+name\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### name \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+name\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### object <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+object\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+object\}
+
+</Property>
 
 _Default Value:_ `"model"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### owned\_by <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+owned_by\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### owned_by \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+owned_by\}
+
+</Property>
 
 _Default Value:_ `"mistralai"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### root <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+root\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### root \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+root\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### type <Pill variant="info">"fine-tuned"</Pill> \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+type\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tuned\"","linkedLabel":"\"fine-tuned\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-list_models_v1_models_get+200+application-json+FTModelCard+type\}
+
+</Property>
 
 _Default Value:_ `"fine-tuned"`
 
-</SectionEntry>
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### object <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+200+application-json+object\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-list_models_v1_models_get+200+application-json+object\}
+
+</Property>
 
 _Default Value:_ `"list"`
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
-<div slot="tab" title="422 (application/json)" data-tab-id="operation-list_models_v1_models_get+422+application-json">
+<SectionTab slot="tab" id="operation-list_models_v1_models_get+422+application-json">
 
 422
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-list_models_v1_models_get+422+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-list_models_v1_models_get+422+application-json">
 
 Validation Error
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-list_models_v1_models_get+422+application-json+fields\}
+#### Properties \{#operation-list_models_v1_models_get+422+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-list_models_v1_models_get+422+application-json+Security">Security</a></Pill> \{#operation-list_models_v1_models_get+422+application-json+HttpMeta\}
+<Property typeInfo={{"label":"Security","linkedLabel":"<a href=\"#operation-list_models_v1_models_get+422+application-json+Security\">Security</a>","children":[],"breakoutSubTypes":[{"label":"Security","schema":{"type":"object","description":null,"examples":[],"properties":{"ApiKey":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["ApiKey"],"name":"Security","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### HttpMeta \{#operation-list_models_v1_models_get+422+application-json+HttpMeta\}
+
+</Property>
 
 <ExpandableSection title="Security" id="operation-list_models_v1_models_get+422+application-json+Security">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-list_models_v1_models_get+422+application-json+Security+properties\}
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+422+application-json+Security+ApiKey\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### ApiKey \{#operation-list_models_v1_models_get+422+application-json+Security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### detail <Pill variant="info">array&lt;<a href="#operation-list_models_v1_models_get+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-list_models_v1_models_get+422+application-json+detail\}
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-list_models_v1_models_get+422+application-json+ValidationError\">ValidationError</a>","children":[{"label":"ValidationError","linkedLabel":"<a href=\"#operation-list_models_v1_models_get+422+application-json+ValidationError\">ValidationError</a>","children":[],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### detail \{#operation-list_models_v1_models_get+422+application-json+detail\}
+
+</Property>
 
 <ExpandableSection title="ValidationError" id="operation-list_models_v1_models_get+422+application-json+ValidationError">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-list_models_v1_models_get+422+application-json+ValidationError+properties\}
 
-#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+loc\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### loc \{#operation-list_models_v1_models_get+422+application-json+ValidationError+loc\}
 
-#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+msg\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-list_models_v1_models_get+422+application-json+ValidationError+type\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### msg \{#operation-list_models_v1_models_get+422+application-json+ValidationError+msg\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### type \{#operation-list_models_v1_models_get+422+application-json+ValidationError+type\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>
 
@@ -470,61 +670,69 @@ _Retrieve Model_
 
 Retrieve a model information.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-retrieve_model_v1_models_model_id_get+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-retrieve_model_v1_models_model_id_get+security+fields\}
+#### Properties \{#operation-retrieve_model_v1_models_model_id_get+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-retrieve_model_v1_models_model_id_get+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Parameters \{#operation-retrieve_model_v1_models_model_id_get+parameters\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-retrieve_model_v1_models_model_id_get+parameters+model_id\}
+##### model\_id <Pill variant="warning">required</Pill> \{#operation-retrieve_model_v1_models_model_id_get+parameters+model_id\}
 
 The ID of the model to retrieve.
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-retrieve_model_v1_models_model_id_get+parameters+fields\}
+#### Properties \{#operation-retrieve_model_v1_models_model_id_get+parameters+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+parameters+Security\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### Security \{#operation-retrieve_model_v1_models_model_id_get+parameters+Security\}
+
+</Property>
 
 The ID of the model to retrieve.
 
@@ -534,23 +742,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-retrieve_model_v1_models_model_id_get+try-it-now\}
+### Try it Now \{#operation-retrieve_model_v1_models_model_id_get+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -570,115 +778,148 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-retrieve_model_v1_models_model_id_get+responses\}
+### Responses \{#operation-retrieve_model_v1_models_model_id_get+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-retrieve_model_v1_models_model_id_get+200+application-json">
+<SectionTab slot="tab" id="operation-retrieve_model_v1_models_model_id_get+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-retrieve_model_v1_models_model_id_get+200+application-json">
-
-Successful Response
-
-<Section variant="fields">
-
-<div>
-
-#### Fields \{#operation-retrieve_model_v1_models_model_id_get+200+application-json+fields\}
-
-</div>
-
-<SectionEntry variant="fields">
-
-#### Response Body <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-retrieve_model_v1_models_model_id_get+200+application-json+BaseModelCard">BaseModelCard</a> | <a href="#operation-retrieve_model_v1_models_model_id_get+200+application-json+FTModelCard">FTModelCard</a></Pill> \{#operation-retrieve_model_v1_models_model_id_get+200+application-json+Response Body\}
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-retrieve_model_v1_models_model_id_get+200+application-json">
 
 Successful Response
 
-</SectionEntry>
+<Section>
+
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
+
+#### Properties \{#operation-retrieve_model_v1_models_model_id_get+200+application-json+properties\}
+
+</SectionTitle>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"BaseModelCard","linkedLabel":"<a href=\"#operation-retrieve_model_v1_models_model_id_get+200+application-json+BaseModelCard\">BaseModelCard</a>","children":[],"breakoutSubTypes":[{"label":"BaseModelCard","schema":{"type":"object","description":null,"examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$9"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"type":{"type":"enum","description":null,"examples":[],"values":["base"],"defaultValue":"\"base\""}},"required":["id","capabilities"],"name":"BaseModelCard","defaultValue":null}}]},{"label":"FTModelCard","linkedLabel":"<a href=\"#operation-retrieve_model_v1_models_model_id_get+200+application-json+FTModelCard\">FTModelCard</a>","children":[],"breakoutSubTypes":[{"label":"FTModelCard","schema":{"type":"object","description":"Extra fields for fine-tuned models.","examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$11"},"archived":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"job":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"root":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["fine-tuned"],"defaultValue":"\"fine-tuned\""}},"required":["id","capabilities","job","root"],"name":"FTModelCard","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"BaseModelCard","schema":{"type":"object","description":null,"examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$9"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"type":{"type":"enum","description":null,"examples":[],"values":["base"],"defaultValue":"\"base\""}},"required":["id","capabilities"],"name":"BaseModelCard","defaultValue":null}},{"label":"FTModelCard","schema":{"type":"object","description":"Extra fields for fine-tuned models.","examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$11"},"archived":{"type":"boolean","description":null,"examples":[],"defaultValue":"false"},"capabilities":{"type":"chunk","chunkId":"$8"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"default_model_temperature":{"type":"union","description":null,"examples":[],"values":[{"type":"number","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"deprecation":{"type":"union","description":null,"examples":[],"values":[{"type":"date-time","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"job":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":null,"examples":[],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":"\"mistralai\""},"root":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["fine-tuned"],"defaultValue":"\"fine-tuned\""}},"required":["id","capabilities","job","root"],"name":"FTModelCard","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### Response Body \{#operation-retrieve_model_v1_models_model_id_get+200+application-json+Response Body\}
+
+</Property>
+
+Successful Response
+
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
-<div slot="tab" title="422 (application/json)" data-tab-id="operation-retrieve_model_v1_models_model_id_get+422+application-json">
+<SectionTab slot="tab" id="operation-retrieve_model_v1_models_model_id_get+422+application-json">
 
 422
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-retrieve_model_v1_models_model_id_get+422+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-retrieve_model_v1_models_model_id_get+422+application-json">
 
 Validation Error
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+fields\}
+#### Properties \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">Security</a></Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+HttpMeta\}
+<Property typeInfo={{"label":"Security","linkedLabel":"<a href=\"#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security\">Security</a>","children":[],"breakoutSubTypes":[{"label":"Security","schema":{"type":"object","description":null,"examples":[],"properties":{"ApiKey":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["ApiKey"],"name":"Security","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### HttpMeta \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+HttpMeta\}
+
+</Property>
 
 <ExpandableSection title="Security" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+Security">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security+properties\}
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security+ApiKey\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### ApiKey \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+Security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### detail <Pill variant="info">array&lt;<a href="#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+detail\}
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError\">ValidationError</a>","children":[{"label":"ValidationError","linkedLabel":"<a href=\"#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError\">ValidationError</a>","children":[],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### detail \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+detail\}
+
+</Property>
 
 <ExpandableSection title="ValidationError" id="operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+properties\}
 
-#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+loc\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### loc \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+loc\}
 
-#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+msg\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+type\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### msg \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+msg\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### type \{#operation-retrieve_model_v1_models_model_id_get+422+application-json+ValidationError+type\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>
 
@@ -688,61 +929,69 @@ _Delete Model_
 
 Delete a fine-tuned model.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-delete_model_v1_models_model_id_delete+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-delete_model_v1_models_model_id_delete+security+fields\}
+#### Properties \{#operation-delete_model_v1_models_model_id_delete+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-delete_model_v1_models_model_id_delete+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Parameters \{#operation-delete_model_v1_models_model_id_delete+parameters\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-delete_model_v1_models_model_id_delete+parameters+model_id\}
+##### model\_id <Pill variant="warning">required</Pill> \{#operation-delete_model_v1_models_model_id_delete+parameters+model_id\}
 
 The ID of the model to delete.
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-delete_model_v1_models_model_id_delete+parameters+fields\}
+#### Properties \{#operation-delete_model_v1_models_model_id_delete+parameters+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+parameters+Security\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### Security \{#operation-delete_model_v1_models_model_id_delete+parameters+Security\}
+
+</Property>
 
 The ID of the model to delete.
 
@@ -752,23 +1001,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-delete_model_v1_models_model_id_delete+try-it-now\}
+### Try it Now \{#operation-delete_model_v1_models_model_id_delete+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -788,41 +1037,46 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-delete_model_v1_models_model_id_delete+responses\}
+### Responses \{#operation-delete_model_v1_models_model_id_delete+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-delete_model_v1_models_model_id_delete+200+application-json">
+<SectionTab slot="tab" id="operation-delete_model_v1_models_model_id_delete+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-delete_model_v1_models_model_id_delete+200+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-delete_model_v1_models_model_id_delete+200+application-json">
 
 Successful Response
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-delete_model_v1_models_model_id_delete+200+application-json+fields\}
+#### Properties \{#operation-delete_model_v1_models_model_id_delete+200+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### deleted <Pill variant="info">boolean</Pill> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+deleted\}
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### deleted \{#operation-delete_model_v1_models_model_id_delete+200+application-json+deleted\}
+
+</Property>
 
 The deletion status
 
@@ -834,11 +1088,15 @@ true
 
 _Default Value:_ `true`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+id\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### id \{#operation-delete_model_v1_models_model_id_delete+200+application-json+id\}
+
+</Property>
 
 The ID of the deleted model.
 
@@ -848,87 +1106,119 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### object <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+200+application-json+object\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-delete_model_v1_models_model_id_delete+200+application-json+object\}
+
+</Property>
 
 The object type that was deleted
 
 _Default Value:_ `"model"`
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
-<div slot="tab" title="422 (application/json)" data-tab-id="operation-delete_model_v1_models_model_id_delete+422+application-json">
+<SectionTab slot="tab" id="operation-delete_model_v1_models_model_id_delete+422+application-json">
 
 422
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-delete_model_v1_models_model_id_delete+422+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-delete_model_v1_models_model_id_delete+422+application-json">
 
 Validation Error
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-delete_model_v1_models_model_id_delete+422+application-json+fields\}
+#### Properties \{#operation-delete_model_v1_models_model_id_delete+422+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### HttpMeta <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+Security">Security</a></Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+HttpMeta\}
+<Property typeInfo={{"label":"Security","linkedLabel":"<a href=\"#operation-delete_model_v1_models_model_id_delete+422+application-json+Security\">Security</a>","children":[],"breakoutSubTypes":[{"label":"Security","schema":{"type":"object","description":null,"examples":[],"properties":{"ApiKey":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["ApiKey"],"name":"Security","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### HttpMeta \{#operation-delete_model_v1_models_model_id_delete+422+application-json+HttpMeta\}
+
+</Property>
 
 <ExpandableSection title="Security" id="operation-delete_model_v1_models_model_id_delete+422+application-json+Security">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-delete_model_v1_models_model_id_delete+422+application-json+Security+properties\}
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+Security+ApiKey\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### ApiKey \{#operation-delete_model_v1_models_model_id_delete+422+application-json+Security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### detail <Pill variant="info">array&lt;<a href="#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">ValidationError</a>&gt;</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+detail\}
+<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError\">ValidationError</a>","children":[{"label":"ValidationError","linkedLabel":"<a href=\"#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError\">ValidationError</a>","children":[],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}} typeAnnotations={[]}>
+
+##### detail \{#operation-delete_model_v1_models_model_id_delete+422+application-json+detail\}
+
+</Property>
 
 <ExpandableSection title="ValidationError" id="operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+properties\}
 
-#### loc <Pill variant="warning">required</Pill> <Pill variant="info">array&lt;string | integer&gt;</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+loc\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### loc \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+loc\}
 
-#### msg <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+msg\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+type\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### msg \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+msg\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### type \{#operation-delete_model_v1_models_model_id_delete+422+application-json+ValidationError+type\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>
 
@@ -938,61 +1228,69 @@ _Update Fine Tuned Model_
 
 Update a model name or description.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security+fields\}
+#### Properties \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Parameters \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+model_id\}
+##### model\_id <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+model_id\}
 
 The ID of the model to update.
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+fields\}
+#### Properties \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+Security\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### Security \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+parameters+Security\}
+
+</Property>
 
 The ID of the model to update.
 
@@ -1002,23 +1300,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+try-it-now\}
+### Try it Now \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -1039,85 +1337,98 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Request Body \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request\}
+### Request Body \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+fields\}
+#### Properties \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### description <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+description\}
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### description \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+description\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### name <Pill variant="info">string | null</Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+name\}
+</SectionContent>
 
-</SectionEntry>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### name \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+request+name\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+responses\}
+### Responses \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json">
+<SectionTab slot="tab" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json">
-
-OK
-
-<Section variant="fields">
-
-<div>
-
-#### Fields \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+fields\}
-
-</div>
-
-<SectionEntry variant="fields">
-
-#### Response Body <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+CompletionFTModelOut">CompletionFTModelOut</a> | <a href="#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+ClassifierFTModelOut">ClassifierFTModelOut</a></Pill> \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+Response Body\}
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json">
 
 OK
 
-</SectionEntry>
+<Section>
+
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
+
+#### Properties \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+properties\}
+
+</SectionTitle>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"CompletionFTModelOut","linkedLabel":"<a href=\"#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+CompletionFTModelOut\">CompletionFTModelOut</a>","children":[],"breakoutSubTypes":[{"label":"CompletionFTModelOut","schema":{"type":"object","description":null,"examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$29"},"archived":{"type":"boolean","description":null,"examples":[],"defaultValue":null},"capabilities":{"type":"chunk","chunkId":"$28"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"job":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"model_type":{"type":"enum","description":null,"examples":[],"values":["completion"],"defaultValue":"\"completion\""},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"enum","description":null,"examples":[],"values":["model"],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":null},"root":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["id","created","owned_by","root","archived","capabilities","job"],"name":"CompletionFTModelOut","defaultValue":null}}]},{"label":"ClassifierFTModelOut","linkedLabel":"<a href=\"#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+ClassifierFTModelOut\">ClassifierFTModelOut</a>","children":[],"breakoutSubTypes":[{"label":"ClassifierFTModelOut","schema":{"type":"object","description":null,"examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$31"},"archived":{"type":"boolean","description":null,"examples":[],"defaultValue":null},"capabilities":{"type":"chunk","chunkId":"$28"},"classifier_targets":{"type":"chunk","chunkId":"$32"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"job":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"model_type":{"type":"enum","description":null,"examples":[],"values":["classifier"],"defaultValue":"\"classifier\""},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"enum","description":null,"examples":[],"values":["model"],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":null},"root":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["id","created","owned_by","root","archived","capabilities","job","classifier_targets"],"name":"ClassifierFTModelOut","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"CompletionFTModelOut","schema":{"type":"object","description":null,"examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$29"},"archived":{"type":"boolean","description":null,"examples":[],"defaultValue":null},"capabilities":{"type":"chunk","chunkId":"$28"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"job":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"model_type":{"type":"enum","description":null,"examples":[],"values":["completion"],"defaultValue":"\"completion\""},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"enum","description":null,"examples":[],"values":["model"],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":null},"root":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["id","created","owned_by","root","archived","capabilities","job"],"name":"CompletionFTModelOut","defaultValue":null}},{"label":"ClassifierFTModelOut","schema":{"type":"object","description":null,"examples":[],"properties":{"aliases":{"type":"chunk","chunkId":"$31"},"archived":{"type":"boolean","description":null,"examples":[],"defaultValue":null},"capabilities":{"type":"chunk","chunkId":"$28"},"classifier_targets":{"type":"chunk","chunkId":"$32"},"created":{"type":"integer","description":null,"examples":[],"defaultValue":null},"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":null,"examples":[],"defaultValue":null},"job":{"type":"string","description":null,"examples":[],"defaultValue":null},"max_context_length":{"type":"integer","description":null,"examples":[],"defaultValue":"32768"},"model_type":{"type":"enum","description":null,"examples":[],"values":["classifier"],"defaultValue":"\"classifier\""},"name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"enum","description":null,"examples":[],"values":["model"],"defaultValue":"\"model\""},"owned_by":{"type":"string","description":null,"examples":[],"defaultValue":null},"root":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["id","created","owned_by","root","archived","capabilities","job","classifier_targets"],"name":"ClassifierFTModelOut","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### Response Body \{#operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+200+application-json+Response Body\}
+
+</Property>
+
+OK
+
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>
 
@@ -1127,61 +1438,69 @@ _Archive Fine Tuned Model_
 
 Archive a fine-tuned model.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security+fields\}
+#### Properties \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Parameters \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+model_id\}
+##### model\_id <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+model_id\}
 
 The ID of the model to archive.
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+fields\}
+#### Properties \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+Security\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### Security \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+parameters+Security\}
+
+</Property>
 
 The ID of the model to archive.
 
@@ -1191,23 +1510,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+try-it-now\}
+### Try it Now \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -1227,63 +1546,76 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+responses\}
+### Responses \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json">
+<SectionTab slot="tab" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json">
 
 OK
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+fields\}
+#### Properties \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### archived <Pill variant="info">boolean</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+archived\}
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### archived \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+archived\}
+
+</Property>
 
 _Default Value:_ `true`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+id\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### id \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+id\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### object <Pill variant="info">"model"</Pill> \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+object\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"model\"","linkedLabel":"\"model\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+200+application-json+object\}
+
+</Property>
 
 _Default Value:_ `"model"`
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>
 
@@ -1293,61 +1625,69 @@ _Unarchive Fine Tuned Model_
 
 Un-archive a fine-tuned model.
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Security \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security+fields\}
+#### Properties \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### ApiKey <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security+ApiKey\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### ApiKey \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+security+ApiKey\}
+
+</Property>
+
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
 ### Parameters \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### model\_id \<Pill variant="warning"\>required\</Pill\> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+model_id\}
+##### model\_id <Pill variant="warning">required</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+model_id\}
 
 The ID of the model to unarchive.
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+fields\}
+#### Properties \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### Security <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+Security\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### Security \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+parameters+Security\}
+
+</Property>
 
 The ID of the model to unarchive.
 
@@ -1357,23 +1697,23 @@ _Example:_
 ft:open-mistral-7b:587a6b29:20240514:7e773925
 ```
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-<Section variant="section">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
 
-## Try it Now \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+try-it-now\}
+### Try it Now \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+try-it-now\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="section">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -1393,62 +1733,75 @@ async function run() {
 }
 
 run();`}
+ 
 />
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
 <TabbedSection>
 
-<div slot="title">
+<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-## Responses \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+responses\}
+### Responses \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+responses\}
 
-</div>
+</SectionTitle>
 
-<div slot="tab" title="200 (application/json)" data-tab-id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json">
+<SectionTab slot="tab" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json">
 
 200
 
-</div>
+</SectionTab>
 
-<div slot="content" data-tab-content-id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json">
+<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json">
 
 OK
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+fields\}
+#### Properties \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### archived <Pill variant="info">boolean</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+archived\}
+<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### archived \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+archived\}
+
+</Property>
 
 _Default Value:_ `false`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### id <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+id\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### id \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+id\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### object <Pill variant="info">"model"</Pill> \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+object\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"model\"","linkedLabel":"\"model\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### object \{#operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+200+application-json+object\}
+
+</Property>
 
 _Default Value:_ `"model"`
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
 
-</div>
+</SectionContent>
 
 </TabbedSection>

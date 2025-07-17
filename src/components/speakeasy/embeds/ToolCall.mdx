@@ -1,58 +1,84 @@
-import { Section, SectionEntry, Pill, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
+import { Section, SectionTitle, SectionContent, Property, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
 
 
 ### ToolCall
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+fields\}
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### function <Pill variant="warning">required</Pill> <Pill variant="info"><a href="#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall">FunctionCall</a></Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+function\}
+<Property typeInfo={{"label":"FunctionCall","linkedLabel":"<a href=\"#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall\">FunctionCall</a>","children":[],"breakoutSubTypes":[{"label":"FunctionCall","schema":{"type":"object","description":null,"examples":[],"properties":{"arguments":{"type":"chunk","chunkId":"$260"},"name":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["name","arguments"],"name":"FunctionCall","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### function \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+function\}
+
+</Property>
 
 <ExpandableSection title="FunctionCall" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall">
 
-<SectionEntry variant="fields">
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+properties\}
 
-#### arguments <Pill variant="warning">required</Pill> <Pill variant="info">map&lt;any&gt; | string</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+arguments\}
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-</SectionEntry>
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-<SectionEntry variant="fields">
+##### arguments \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+arguments\}
 
-#### name <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+name\}
+</Property>
 
-</SectionEntry>
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### name \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+name\}
+
+</Property>
+
+</SectionContent>
 
 </ExpandableSection>
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### id <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+id\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### id \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+id\}
+
+</Property>
 
 _Default Value:_ `"null"`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### index <Pill variant="info">integer</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+index\}
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### index \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+index\}
+
+</Property>
 
 _Default Value:_ `0`
 
-</SectionEntry>
+</SectionContent>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### type <Pill variant="info">"function"</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+type\}
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
 
-</SectionEntry>
+##### type \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+type\}
+
+</Property>
+
+</SectionContent>
 
 </Section>

@@ -1,28 +1,36 @@
-import { Section, SectionEntry, Pill } from "@speakeasy-api/docs-md/docusaurus";
+import { Section, SectionTitle, SectionContent, Property } from "@speakeasy-api/docs-md/docusaurus";
 
 
 ### TextChunk
 
-<Section variant="fields">
+<Section>
 
-<div>
+<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
 
-#### Fields \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+fields\}
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+properties\}
 
-</div>
+</SectionTitle>
 
-<SectionEntry variant="fields">
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-#### text <Pill variant="warning">required</Pill> <Pill variant="info">string</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+text\}
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionEntry>
+##### text \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+text\}
 
-<SectionEntry variant="fields">
+</Property>
 
-#### type <Pill variant="info">"text"</Pill> \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+type\}
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+type\}
+
+</Property>
 
 _Default Value:_ `"text"`
 
-</SectionEntry>
+</SectionContent>
 
 </Section>
