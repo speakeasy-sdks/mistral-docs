@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start --host 0.0.0.0 --port 3030",
-    "build-api-docs": "docs-md",
+    "build-api-docs": "docs-md && docs-md -c ./speakeasy.debug.config.mjs",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -21,7 +21,7 @@
     "@docusaurus/theme-common": "3.5.2",
     "@easyops-cn/docusaurus-search-local": "^0.44.5",
     "@mdx-js/react": "^3.0.1",
-    "@speakeasy-api/docs-md": "^0.1.14",
+    "@speakeasy-api/docs-md": "^0.1.15",
     "clsx": "^1.2.1",
     "docusaurus-lunr-search": "^3.4.0",
     "lunr": "^2.3.9",
