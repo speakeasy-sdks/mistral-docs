@@ -6,7 +6,7 @@ export default {
     framework: "docusaurus",
   },
   display: {
-    maxSchemaNesting: 2,
+    visibleResponses: "success",
   },
   tryItNow: {
     npmPackageName: "@mistralai/mistralai",

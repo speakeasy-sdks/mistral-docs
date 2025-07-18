@@ -4,19 +4,9 @@ sidebar_label: Agents
 ---
 
 import "@speakeasy-api/docs-md/docusaurus.css";
-import { Pill, Section, SectionTitle, SectionContent, TryItNow, Property, ExpandableSection, SideBarTrigger, SideBar, TabbedSection, SectionTab } from "@speakeasy-api/docs-md/docusaurus";
-import EmbedImageURL from "../../../src/components/speakeasy/embeds/ImageURL.mdx";
-import EmbedFunctionCall from "../../../src/components/speakeasy/embeds/FunctionCall.mdx";
-import EmbedTextChunk from "../../../src/components/speakeasy/embeds/TextChunk.mdx";
-import EmbedImageURLChunk from "../../../src/components/speakeasy/embeds/ImageURLChunk.mdx";
-import EmbedDocumentURLChunk from "../../../src/components/speakeasy/embeds/DocumentURLChunk.mdx";
-import EmbedReferenceChunk from "../../../src/components/speakeasy/embeds/ReferenceChunk.mdx";
-import EmbedToolCall from "../../../src/components/speakeasy/embeds/ToolCall.mdx";
+import { Pill, Section, SectionTitle, SectionContent, TryItNow, Property, ExpandableSection, TabbedSection, SectionTab } from "@speakeasy-api/docs-md/docusaurus";
 
 
-
-
-<SideBar />
 # Agents Operations \{#agents\}
 
 ## <Pill variant="primary"><b>POST</b></Pill> /v1/agents/completions \{#operation-agents_completion_v1_agents_completions_post\}
@@ -236,11 +226,31 @@ _Default Value:_ `"text"`
 
 </Property>
 
-<p>
-    <SideBarTrigger cta="View ImageURL Details" title="ImageURL Details">
-      <EmbedImageURL />
-    </SideBarTrigger>
-  </p>
+<ExpandableSection title="ImageURL" id="operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL">
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### detail \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL+detail\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### url \{#operation-agents_completion_v1_agents_completions_post+request+UserMessage+ImageURLChunk+ImageURL+url\}
+
+</Property>
+
+</SectionContent>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -394,11 +404,31 @@ _Default Value:_ `"text"`
 
 </Property>
 
-<p>
-    <SideBarTrigger cta="View ImageURL Details" title="ImageURL Details">
-      <EmbedImageURL />
-    </SideBarTrigger>
-  </p>
+<ExpandableSection title="ImageURL" id="operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+ImageURL">
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+ImageURL+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### detail \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+ImageURL+detail\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### url \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ImageURLChunk+ImageURL+url\}
+
+</Property>
+
+</SectionContent>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -530,11 +560,31 @@ _Default Value:_ `"assistant"`
 
 </Property>
 
-<p>
-    <SideBarTrigger cta="View FunctionCall Details" title="FunctionCall Details">
-      <EmbedFunctionCall />
-    </SideBarTrigger>
-  </p>
+<ExpandableSection title="FunctionCall" id="operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall">
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### arguments \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall+arguments\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### name \{#operation-agents_completion_v1_agents_completions_post+request+AssistantMessage+ToolCall+FunctionCall+name\}
+
+</Property>
+
+</SectionContent>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -632,11 +682,31 @@ _Default Value:_ `"text"`
 
 </Property>
 
-<p>
-    <SideBarTrigger cta="View ImageURL Details" title="ImageURL Details">
-      <EmbedImageURL />
-    </SideBarTrigger>
-  </p>
+<ExpandableSection title="ImageURL" id="operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+ImageURL">
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+ImageURL+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### detail \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+ImageURL+detail\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### url \{#operation-agents_completion_v1_agents_completions_post+request+ToolMessage+ImageURLChunk+ImageURL+url\}
+
+</Property>
+
+</SectionContent>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -1110,7 +1180,7 @@ this restriction of `Function` is used to select a specific function to call
 
 <SectionTitle slot="title" borderVariant="none" paddingVariant="none">
 
-### Responses \{#operation-agents_completion_v1_agents_completions_post+responses\}
+### Response \{#operation-agents_completion_v1_agents_completions_post+responses\}
 
 </SectionTitle>
 
@@ -1196,29 +1266,155 @@ _Example:_
 
 </Property>
 
-<p>
-    <SideBarTrigger cta="View TextChunk Details" title="TextChunk Details">
-      <EmbedTextChunk />
-    </SideBarTrigger>
-  </p>
+<ExpandableSection title="TextChunk" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk">
 
-<p>
-    <SideBarTrigger cta="View ImageURLChunk Details" title="ImageURLChunk Details">
-      <EmbedImageURLChunk />
-    </SideBarTrigger>
-  </p>
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+properties\}
 
-<p>
-    <SideBarTrigger cta="View DocumentURLChunk Details" title="DocumentURLChunk Details">
-      <EmbedDocumentURLChunk />
-    </SideBarTrigger>
-  </p>
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
 
-<p>
-    <SideBarTrigger cta="View ReferenceChunk Details" title="ReferenceChunk Details">
-      <EmbedReferenceChunk />
-    </SideBarTrigger>
-  </p>
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### text \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+text\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+type\}
+
+</Property>
+
+_Default Value:_ `"text"`
+
+</SectionContent>
+
+</ExpandableSection>
+
+<ExpandableSection title="ImageURLChunk" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk">
+
+\{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL\">ImageURL</a>","children":[],"breakoutSubTypes":[{"label":"ImageURL","schema":{"type":"object","description":null,"examples":[],"properties":{"detail":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"url":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["url"],"name":"ImageURL","defaultValue":null}}]},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"ImageURL","schema":{"type":"object","description":null,"examples":[],"properties":{"detail":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"url":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["url"],"name":"ImageURL","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### image_url \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+image_url\}
+
+</Property>
+
+<ExpandableSection title="ImageURL" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL">
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### detail \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL+detail\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### url \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL+url\}
+
+</Property>
+
+</SectionContent>
+
+</ExpandableSection>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+type\}
+
+</Property>
+
+_Default Value:_ `"image_url"`
+
+</SectionContent>
+
+</ExpandableSection>
+
+<ExpandableSection title="DocumentURLChunk" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk">
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### document_name \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk+document_name\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### document_url \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk+document_url\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk+type\}
+
+</Property>
+
+_Default Value:_ `"document_url"`
+
+</SectionContent>
+
+</ExpandableSection>
+
+<ExpandableSection title="ReferenceChunk" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk">
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### reference_ids \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+reference_ids\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+type\}
+
+</Property>
+
+_Default Value:_ `"reference"`
+
+</SectionContent>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -1256,11 +1452,81 @@ _Default Value:_ `"assistant"`
 
 </Property>
 
-<p>
-    <SideBarTrigger cta="View ToolCall Details" title="ToolCall Details">
-      <EmbedToolCall />
-    </SideBarTrigger>
-  </p>
+<ExpandableSection title="ToolCall" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall">
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"FunctionCall","linkedLabel":"<a href=\"#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall\">FunctionCall</a>","children":[],"breakoutSubTypes":[{"label":"FunctionCall","schema":{"type":"object","description":null,"examples":[],"properties":{"arguments":{"type":"chunk","chunkId":"$260"},"name":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["name","arguments"],"name":"FunctionCall","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### function \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+function\}
+
+</Property>
+
+<ExpandableSection title="FunctionCall" id="operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall">
+
+#### Properties \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+properties\}
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### arguments \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+arguments\}
+
+</Property>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+##### name \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+name\}
+
+</Property>
+
+</SectionContent>
+
+</ExpandableSection>
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### id \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+id\}
+
+</Property>
+
+_Default Value:_ `"null"`
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### index \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+index\}
+
+</Property>
+
+_Default Value:_ `0`
+
+</SectionContent>
+
+<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+
+<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+
+##### type \{#operation-agents_completion_v1_agents_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+type\}
+
+</Property>
+
+</SectionContent>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -1393,100 +1659,6 @@ _Example:_
 ```
 50
 ```
-
-</SectionContent>
-
-</ExpandableSection>
-
-</SectionContent>
-
-</Section>
-
-</SectionContent>
-
-<SectionTab slot="tab" id="operation-agents_completion_v1_agents_completions_post+422+application-json">
-
-422
-
-</SectionTab>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-agents_completion_v1_agents_completions_post+422+application-json">
-
-Validation Error
-
-<Section>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-agents_completion_v1_agents_completions_post+422+application-json+properties\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"Security","linkedLabel":"<a href=\"#operation-agents_completion_v1_agents_completions_post+422+application-json+Security\">Security</a>","children":[],"breakoutSubTypes":[{"label":"Security","schema":{"type":"object","description":null,"examples":[],"properties":{"ApiKey":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["ApiKey"],"name":"Security","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### HttpMeta \{#operation-agents_completion_v1_agents_completions_post+422+application-json+HttpMeta\}
-
-</Property>
-
-<ExpandableSection title="Security" id="operation-agents_completion_v1_agents_completions_post+422+application-json+Security">
-
-#### Properties \{#operation-agents_completion_v1_agents_completions_post+422+application-json+Security+properties\}
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### ApiKey \{#operation-agents_completion_v1_agents_completions_post+422+application-json+Security+ApiKey\}
-
-</Property>
-
-</SectionContent>
-
-</ExpandableSection>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError\">ValidationError</a>","children":[{"label":"ValidationError","linkedLabel":"<a href=\"#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError\">ValidationError</a>","children":[],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"ValidationError","schema":{"type":"object","description":null,"examples":[],"properties":{"loc":{"type":"chunk","chunkId":"$15"},"msg":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["loc","msg","type"],"name":"ValidationError","defaultValue":null}}]}} typeAnnotations={[]}>
-
-##### detail \{#operation-agents_completion_v1_agents_completions_post+422+application-json+detail\}
-
-</Property>
-
-<ExpandableSection title="ValidationError" id="operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError">
-
-#### Properties \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+properties\}
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### loc \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+loc\}
-
-</Property>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### msg \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+msg\}
-
-</Property>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### type \{#operation-agents_completion_v1_agents_completions_post+422+application-json+ValidationError+type\}
-
-</Property>
 
 </SectionContent>
 
