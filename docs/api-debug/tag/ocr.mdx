@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2.11
+sidebar_position: 3.11
 sidebar_label: Ocr
 ---
 
 import "@speakeasy-api/docs-md/docusaurus.css";
-import { Pill, DebugPlaceholder, Section, SectionTitle, SectionContent, TryItNow, Property, ExpandableSection, TabbedSection, SectionTab } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, DebugPlaceholder, Section, SectionTitle, SectionContent, TryItNow, ExpandableSection, ExpandableProperty, ExpandableBreakout, TabbedSection, SectionTab } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # Ocr Operations \{#ocr\}
@@ -19,15 +19,15 @@ No description provided
 
 </DebugPlaceholder>
 
-<Section contentBorderVariant="default">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Try it Now \{#operation-ocr_v1_ocr_post+try-it-now\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -60,15 +60,15 @@ run();`}
 
 </Section>
 
-<Section contentBorderVariant="default">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Request Body \{#operation-ocr_v1_ocr_post+request\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <DebugPlaceholder>
 
@@ -76,21 +76,33 @@ No description provided
 
 </DebugPlaceholder>
 
-<Section contentBorderVariant="all">
+<DebugPlaceholder>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
+No examples provided
 
-#### Properties \{#operation-ocr_v1_ocr_post+request+properties\}
+</DebugPlaceholder>
 
-</SectionTitle>
+<DebugPlaceholder>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+No default value provided
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ResponseFormat\">ResponseFormat</a>","children":[],"breakoutSubTypes":[{"label":"ResponseFormat","schema":{"type":"object","description":null,"examples":[],"properties":{"json_schema":{"type":"chunk","chunkId":"$63"},"type":{"type":"enum","description":"An object specifying the format that the model must output. Setting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.","examples":[],"values":["text","json_object","json_schema"],"defaultValue":null}},"required":[],"name":"ResponseFormat","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"ResponseFormat","schema":{"type":"object","description":null,"examples":[],"properties":{"json_schema":{"type":"chunk","chunkId":"$63"},"type":{"type":"enum","description":"An object specifying the format that the model must output. Setting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.","examples":[],"values":["text","json_object","json_schema"],"defaultValue":null}},"required":[],"name":"ResponseFormat","defaultValue":null}}]}} typeAnnotations={[]}>
+</DebugPlaceholder>
+
+<ExpandableSection>
+
+<ExpandableProperty
+  slot="entry"
+  id="bbox_annotation_format"
+  headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat\">ResponseFormat</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### bbox_annotation_format \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -110,43 +122,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-<ExpandableSection>
+</div>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+</ExpandableProperty>
 
-#### ResponseFormat \{#operation-ocr_v1_ocr_post+request+ResponseFormat\}
+<ExpandableBreakout slot="entry" id="bbox_annotation_format_ResponseFormat" headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat" parentId="bbox_annotation_format">
 
-</SectionTitle>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+#### ResponseFormat \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-#### Properties \{#operation-ocr_v1_ocr_post+request+ResponseFormat+properties\}
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema\">JsonSchema</a>","children":[],"breakoutSubTypes":[{"label":"JsonSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"name":{"type":"string","description":null,"examples":[],"defaultValue":null},"schema_definition":{"type":"chunk","chunkId":"$64"},"strict":{"type":"boolean","description":null,"examples":[],"defaultValue":null}},"required":["name","schema_definition"],"name":"JsonSchema","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"JsonSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"name":{"type":"string","description":null,"examples":[],"defaultValue":null},"schema_definition":{"type":"chunk","chunkId":"$64"},"strict":{"type":"boolean","description":null,"examples":[],"defaultValue":null}},"required":["name","schema_definition"],"name":"JsonSchema","defaultValue":null}}]}} typeAnnotations={[]}>
-
-##### json_schema \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -166,43 +154,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-<ExpandableSection>
+</div>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+</ExpandableBreakout>
 
-#### JsonSchema \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema\}
+<ExpandableProperty
+  slot="entry"
+  id="bbox_annotation_format_ResponseFormat_json_schema"
+  headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema"
+  parentId="bbox_annotation_format_ResponseFormat"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema\">JsonSchema</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-</SectionTitle>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+##### json_schema \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-#### Properties \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+properties\}
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
-
-##### description \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -222,43 +191,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableBreakout slot="entry" id="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema" headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema" parentId="bbox_annotation_format_ResponseFormat_json_schema">
 
-##### name \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
+<div slot="title">
 
-</Property>
+#### JsonSchema \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### schema_definition \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -278,15 +223,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema_description"
+  headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+description"
+  parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### strict \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+<div slot="title">
 
-</Property>
+##### description \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+description\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -306,21 +260,137 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema_name"
+  headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+name"
+  parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionContent>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+##### name \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+name\}
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":[]},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":[]},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+</div>
 
-##### type \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
+<div slot="content">
 
-</Property>
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema_schema_definition"
+  headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+schema_definition"
+  parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
+  typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### schema_definition \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+schema_definition\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema_strict"
+  headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+strict"
+  parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
+  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### strict \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+strict\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="bbox_annotation_format_ResponseFormat_type"
+  headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+type"
+  parentId="bbox_annotation_format_ResponseFormat"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### type \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+type\}
+
+</div>
+
+<div slot="content">
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
@@ -336,45 +406,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="document"
+  headingId="operation-ocr_v1_ocr_post+request+document"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+DocumentURLChunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":[{"label":"DocumentURLChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"document_name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"The filename of the document","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"document_url":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["document_url"],"defaultValue":"\"document_url\""}},"required":["document_url"],"name":"DocumentURLChunk","defaultValue":null}}]},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ImageURLChunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":[{"label":"ImageURLChunk","schema":{"type":"object","description":"{\"type\":\"image_url\",\"image_url\":{\"url\":\"data:image/png;base64,iVBORw0","examples":[],"properties":{"image_url":{"type":"chunk","chunkId":"$77"},"type":{"type":"enum","description":null,"examples":[],"values":["image_url"],"defaultValue":"\"image_url\""}},"required":["image_url"],"name":"ImageURLChunk","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"DocumentURLChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"document_name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"The filename of the document","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"document_url":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["document_url"],"defaultValue":"\"document_url\""}},"required":["document_url"],"name":"DocumentURLChunk","defaultValue":null}},{"label":"ImageURLChunk","schema":{"type":"object","description":"{\"type\":\"image_url\",\"image_url\":{\"url\":\"data:image/png;base64,iVBORw0","examples":[],"properties":{"image_url":{"type":"chunk","chunkId":"$77"},"type":{"type":"enum","description":null,"examples":[],"values":["image_url"],"defaultValue":"\"image_url\""}},"required":["image_url"],"name":"ImageURLChunk","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<div slot="title">
 
 ##### document \{#operation-ocr_v1_ocr_post+request+document\}
 
-</Property>
+</div>
 
-Document to run OCR on
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### DocumentURLChunk \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -394,43 +443,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableBreakout slot="entry" id="document_DocumentURLChunk" headingId="operation-ocr_v1_ocr_post+request+document+documenturlchunk" parentId="document">
 
-##### document_name \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_name\}
+<div slot="title">
 
-</Property>
+#### DocumentURLChunk \{#operation-ocr_v1_ocr_post+request+document+documenturlchunk\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### document_url \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+document_url\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -450,15 +475,99 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="document_DocumentURLChunk_document_name"
+  headingId="operation-ocr_v1_ocr_post+request+document+documenturlchunk+document_name"
+  parentId="document_DocumentURLChunk"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### type \{#operation-ocr_v1_ocr_post+request+DocumentURLChunk+type\}
+<div slot="title">
 
-</Property>
+##### document_name \{#operation-ocr_v1_ocr_post+request+document+documenturlchunk+document_name\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="document_DocumentURLChunk_document_url"
+  headingId="operation-ocr_v1_ocr_post+request+document+documenturlchunk+document_url"
+  parentId="document_DocumentURLChunk"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### document_url \{#operation-ocr_v1_ocr_post+request+document+documenturlchunk+document_url\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="document_DocumentURLChunk_type"
+  headingId="operation-ocr_v1_ocr_post+request+document+documenturlchunk+type"
+  parentId="document_DocumentURLChunk"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### type \{#operation-ocr_v1_ocr_post+request+document+documenturlchunk+type\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -474,21 +583,19 @@ No examples provided
 
 _Default Value:_ `"document_url"`
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableBreakout slot="entry" id="document_ImageURLChunk" headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk" parentId="document">
 
-<ExpandableSection>
+<div slot="title">
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+#### ImageURLChunk \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk\}
 
-#### ImageURLChunk \{#operation-ocr_v1_ocr_post+request+ImageURLChunk\}
+</div>
 
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 \{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
@@ -504,43 +611,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL\">ImageURL</a>","children":[],"breakoutSubTypes":[{"label":"ImageURL","schema":{"type":"object","description":null,"examples":[],"properties":{"detail":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"url":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["url"],"name":"ImageURL","defaultValue":null}}]},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"ImageURL","schema":{"type":"object","description":null,"examples":[],"properties":{"detail":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"url":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["url"],"name":"ImageURL","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="document_ImageURLChunk_image_url"
+  headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url"
+  parentId="document_ImageURLChunk"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### image_url \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+image_url\}
+<div slot="title">
 
-</Property>
+##### image_url \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### ImageURL \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -560,43 +649,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableBreakout slot="entry" id="document_ImageURLChunk_image_url_ImageURL" headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl" parentId="document_ImageURLChunk_image_url">
 
-##### detail \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+detail\}
+<div slot="title">
 
-</Property>
+#### ImageURL \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### url \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+ImageURL+url\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -616,21 +681,99 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableBreakout>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="document_ImageURLChunk_image_url_ImageURL_detail"
+  headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl+detail"
+  parentId="document_ImageURLChunk_image_url_ImageURL"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-</SectionContent>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+##### detail \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl+detail\}
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+</div>
 
-##### type \{#operation-ocr_v1_ocr_post+request+ImageURLChunk+type\}
+<div slot="content">
 
-</Property>
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="document_ImageURLChunk_image_url_ImageURL_url"
+  headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl+url"
+  parentId="document_ImageURLChunk_image_url_ImageURL"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### url \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl+url\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="document_ImageURLChunk_type"
+  headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk+type"
+  parentId="document_ImageURLChunk"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### type \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk+type\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -646,21 +789,23 @@ No examples provided
 
 _Default Value:_ `"image_url"`
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="document_annotation_format"
+  headingId="operation-ocr_v1_ocr_post+request+document_annotation_format"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat\">ResponseFormat</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ResponseFormat\">ResponseFormat</a>","children":[],"breakoutSubTypes":[{"label":"ResponseFormat","schema":{"type":"object","description":null,"examples":[],"properties":{"json_schema":{"type":"chunk","chunkId":"$63"},"type":{"type":"enum","description":"An object specifying the format that the model must output. Setting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.","examples":[],"values":["text","json_object","json_schema"],"defaultValue":null}},"required":[],"name":"ResponseFormat","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"ResponseFormat","schema":{"type":"object","description":null,"examples":[],"properties":{"json_schema":{"type":"chunk","chunkId":"$63"},"type":{"type":"enum","description":"An object specifying the format that the model must output. Setting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.","examples":[],"values":["text","json_object","json_schema"],"defaultValue":null}},"required":[],"name":"ResponseFormat","defaultValue":null}}]}} typeAnnotations={[]}>
+<div slot="title">
 
 ##### document_annotation_format \{#operation-ocr_v1_ocr_post+request+document_annotation_format\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -680,43 +825,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-<ExpandableSection>
+</div>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+</ExpandableProperty>
 
-#### ResponseFormat \{#operation-ocr_v1_ocr_post+request+ResponseFormat\}
+<ExpandableBreakout slot="entry" id="document_annotation_format_ResponseFormat" headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat" parentId="document_annotation_format">
 
-</SectionTitle>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+#### ResponseFormat \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-#### Properties \{#operation-ocr_v1_ocr_post+request+ResponseFormat+properties\}
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema\">JsonSchema</a>","children":[],"breakoutSubTypes":[{"label":"JsonSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"name":{"type":"string","description":null,"examples":[],"defaultValue":null},"schema_definition":{"type":"chunk","chunkId":"$64"},"strict":{"type":"boolean","description":null,"examples":[],"defaultValue":null}},"required":["name","schema_definition"],"name":"JsonSchema","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"JsonSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"description":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"name":{"type":"string","description":null,"examples":[],"defaultValue":null},"schema_definition":{"type":"chunk","chunkId":"$64"},"strict":{"type":"boolean","description":null,"examples":[],"defaultValue":null}},"required":["name","schema_definition"],"name":"JsonSchema","defaultValue":null}}]}} typeAnnotations={[]}>
-
-##### json_schema \{#operation-ocr_v1_ocr_post+request+ResponseFormat+json_schema\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -736,43 +857,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-<ExpandableSection>
+</div>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+</ExpandableBreakout>
 
-#### JsonSchema \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema\}
+<ExpandableProperty
+  slot="entry"
+  id="document_annotation_format_ResponseFormat_json_schema"
+  headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema"
+  parentId="document_annotation_format_ResponseFormat"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema\">JsonSchema</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-</SectionTitle>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+##### json_schema \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-#### Properties \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+properties\}
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
-
-##### description \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+description\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -792,43 +894,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableBreakout slot="entry" id="document_annotation_format_ResponseFormat_json_schema_JsonSchema" headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema" parentId="document_annotation_format_ResponseFormat_json_schema">
 
-##### name \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+name\}
+<div slot="title">
 
-</Property>
+#### JsonSchema \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### schema_definition \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+schema_definition\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -848,15 +926,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="document_annotation_format_ResponseFormat_json_schema_JsonSchema_description"
+  headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+description"
+  parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### strict \{#operation-ocr_v1_ocr_post+request+ResponseFormat+JsonSchema+strict\}
+<div slot="title">
 
-</Property>
+##### description \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+description\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -876,21 +963,137 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="document_annotation_format_ResponseFormat_json_schema_JsonSchema_name"
+  headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+name"
+  parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionContent>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+##### name \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+name\}
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":[]},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":[]},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+</div>
 
-##### type \{#operation-ocr_v1_ocr_post+request+ResponseFormat+type\}
+<div slot="content">
 
-</Property>
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="document_annotation_format_ResponseFormat_json_schema_JsonSchema_schema_definition"
+  headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+schema_definition"
+  parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
+  typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### schema_definition \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+schema_definition\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="document_annotation_format_ResponseFormat_json_schema_JsonSchema_strict"
+  headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+strict"
+  parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
+  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### strict \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+strict\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="document_annotation_format_ResponseFormat_type"
+  headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+type"
+  parentId="document_annotation_format_ResponseFormat"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### type \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+type\}
+
+</div>
+
+<div slot="content">
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
@@ -906,21 +1109,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="id"
+  headingId="operation-ocr_v1_ocr_post+request+id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}>
 
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<div slot="title">
 
 ##### id \{#operation-ocr_v1_ocr_post+request+id\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -940,15 +1145,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="image_limit"
+  headingId="operation-ocr_v1_ocr_post+request+image_limit"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### image_limit \{#operation-ocr_v1_ocr_post+request+image_limit\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -968,15 +1181,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="image_min_size"
+  headingId="operation-ocr_v1_ocr_post+request+image_min_size"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### image_min_size \{#operation-ocr_v1_ocr_post+request+image_min_size\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -996,15 +1217,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="include_image_base64"
+  headingId="operation-ocr_v1_ocr_post+request+include_image_base64"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### include_image_base64 \{#operation-ocr_v1_ocr_post+request+include_image_base64\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1024,15 +1253,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="model"
+  headingId="operation-ocr_v1_ocr_post+request+model"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
 
 ##### model \{#operation-ocr_v1_ocr_post+request+model\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1052,15 +1290,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="pages"
+  headingId="operation-ocr_v1_ocr_post+request+pages"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### pages \{#operation-ocr_v1_ocr_post+request+pages\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1080,9 +1326,11 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</Section>
+</ExpandableProperty>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -1090,37 +1338,21 @@ No default value provided
 
 <TabbedSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<SectionTitle slot="title" variant="default">
 
-### Response \{#operation-ocr_v1_ocr_post+responses\}
+### Responses \{#operation-ocr_v1_ocr_post+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-ocr_v1_ocr_post+200+application-json">
+<SectionTab slot="tab" id="operation-ocr_v1_ocr_post+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-ocr_v1_ocr_post+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-ocr_v1_ocr_post+responses+200+application-json">
 
 Successful Response
-
-<Section contentBorderVariant="all">
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+properties\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
-
-##### document_annotation \{#operation-ocr_v1_ocr_post+200+application-json+document_annotation\}
-
-</Property>
 
 <DebugPlaceholder>
 
@@ -1140,15 +1372,58 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+<ExpandableSection>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+<ExpandableProperty
+  slot="entry"
+  id="document_annotation"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+document_annotation"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<div slot="title">
 
-##### model \{#operation-ocr_v1_ocr_post+200+application-json+model\}
+##### document_annotation \{#operation-ocr_v1_ocr_post+responses+200+application-json+document_annotation\}
 
-</Property>
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="model"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+model"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### model \{#operation-ocr_v1_ocr_post+responses+200+application-json+model\}
+
+</div>
+
+<div slot="content">
 
 The model used to generate the OCR.
 
@@ -1164,39 +1439,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject\">OCRPageObject</a>","children":[{"label":"OCRPageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject\">OCRPageObject</a>","children":[],"breakoutSubTypes":[{"label":"OCRPageObject","schema":{"type":"object","description":null,"examples":[],"properties":{"dimensions":{"type":"chunk","chunkId":"$334"},"images":{"type":"chunk","chunkId":"$332"},"index":{"type":"integer","description":"The page index in a pdf document starting from 0","examples":[],"defaultValue":null},"markdown":{"type":"string","description":"The markdown string response of the page","examples":[],"defaultValue":null}},"required":["index","markdown","images","dimensions"],"name":"OCRPageObject","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"OCRPageObject","schema":{"type":"object","description":null,"examples":[],"properties":{"dimensions":{"type":"chunk","chunkId":"$334"},"images":{"type":"chunk","chunkId":"$332"},"index":{"type":"integer","description":"The page index in a pdf document starting from 0","examples":[],"defaultValue":null},"markdown":{"type":"string","description":"The markdown string response of the page","examples":[],"defaultValue":null}},"required":["index","markdown","images","dimensions"],"name":"OCRPageObject","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="pages"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages"
+  typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject\">OCRPageObject</a>","children":[{"label":"OCRPageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject\">OCRPageObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### pages \{#operation-ocr_v1_ocr_post+200+application-json+pages\}
+<div slot="title">
 
-</Property>
+##### pages \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages\}
 
-List of OCR info for pages.
+</div>
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### OCRPageObject \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1216,15 +1476,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"OCRPageDimensions","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions\">OCRPageDimensions</a>","children":[],"breakoutSubTypes":[{"label":"OCRPageDimensions","schema":{"type":"object","description":"The dimensions of the PDF Page's screenshot image","examples":[],"properties":{"dpi":{"type":"integer","description":"Dots per inch of the page-image","examples":[],"defaultValue":null},"height":{"type":"integer","description":"Height of the image in pixels","examples":[],"defaultValue":null},"width":{"type":"integer","description":"Width of the image in pixels","examples":[],"defaultValue":null}},"required":["dpi","height","width"],"name":"OCRPageDimensions","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"OCRPageDimensions","schema":{"type":"object","description":"The dimensions of the PDF Page's screenshot image","examples":[],"properties":{"dpi":{"type":"integer","description":"Dots per inch of the page-image","examples":[],"defaultValue":null},"height":{"type":"integer","description":"Height of the image in pixels","examples":[],"defaultValue":null},"width":{"type":"integer","description":"Width of the image in pixels","examples":[],"defaultValue":null}},"required":["dpi","height","width"],"name":"OCRPageDimensions","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableBreakout slot="entry" id="pages_OCRPageObject" headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject" parentId="pages">
 
-##### dimensions \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+dimensions\}
+<div slot="title">
 
-</Property>
+#### OCRPageObject \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1244,15 +1508,57 @@ No default value provided
 
 </DebugPlaceholder>
 
-<ExpandableSection>
+</div>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+</ExpandableBreakout>
 
-#### OCRPageDimensions \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions\}
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_dimensions"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions"
+  parentId="pages_OCRPageObject"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"OCRPageDimensions","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions\">OCRPageDimensions</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionTitle>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+##### dimensions \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableBreakout slot="entry" id="pages_OCRPageObject_dimensions_OCRPageDimensions" headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions" parentId="pages_OCRPageObject_dimensions">
+
+<div slot="title">
+
+#### OCRPageDimensions \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions\}
+
+</div>
+
+<div slot="content">
 
 The dimensions of the PDF Page's screenshot image
 
@@ -1268,15 +1574,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_dimensions_OCRPageDimensions_dpi"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions+dpi"
+  parentId="pages_OCRPageObject_dimensions_OCRPageDimensions"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### dpi \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+dpi\}
+<div slot="title">
 
-</Property>
+##### dpi \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions+dpi\}
+
+</div>
+
+<div slot="content">
 
 Dots per inch of the page-image
 
@@ -1292,15 +1608,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_dimensions_OCRPageDimensions_height"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions+height"
+  parentId="pages_OCRPageObject_dimensions_OCRPageDimensions"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### height \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+height\}
+<div slot="title">
 
-</Property>
+##### height \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions+height\}
+
+</div>
+
+<div slot="content">
 
 Height of the image in pixels
 
@@ -1316,15 +1642,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_dimensions_OCRPageDimensions_width"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions+width"
+  parentId="pages_OCRPageObject_dimensions_OCRPageDimensions"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### width \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRPageDimensions+width\}
+<div slot="title">
 
-</Property>
+##### width \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions+width\}
+
+</div>
+
+<div slot="content">
 
 Width of the image in pixels
 
@@ -1340,45 +1676,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_images"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images"
+  parentId="pages_OCRPageObject"
+  typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject\">OCRImageObject</a>","children":[{"label":"OCRImageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject\">OCRImageObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionContent>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+##### images \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images\}
 
-<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject\">OCRImageObject</a>","children":[{"label":"OCRImageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject\">OCRImageObject</a>","children":[],"breakoutSubTypes":[{"label":"OCRImageObject","schema":{"type":"object","description":null,"examples":[],"properties":{"bottom_right_x":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"X coordinate of bottom-right corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"bottom_right_y":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Y coordinate of bottom-right corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":"Image ID for extracted image in a page","examples":[],"defaultValue":null},"image_annotation":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"Annotation of the extracted image in json str","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"image_base64":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"Base64 string of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"top_left_x":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"X coordinate of top-left corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"top_left_y":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Y coordinate of top-left corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null}},"required":["id","top_left_x","top_left_y","bottom_right_x","bottom_right_y"],"name":"OCRImageObject","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"OCRImageObject","schema":{"type":"object","description":null,"examples":[],"properties":{"bottom_right_x":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"X coordinate of bottom-right corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"bottom_right_y":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Y coordinate of bottom-right corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"id":{"type":"string","description":"Image ID for extracted image in a page","examples":[],"defaultValue":null},"image_annotation":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"Annotation of the extracted image in json str","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"image_base64":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"Base64 string of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"top_left_x":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"X coordinate of top-left corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"top_left_y":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Y coordinate of top-left corner of the extracted image","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null}},"required":["id","top_left_x","top_left_y","bottom_right_x","bottom_right_y"],"name":"OCRImageObject","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+</div>
 
-##### images \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+images\}
-
-</Property>
-
-List of all extracted images in the page
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### OCRImageObject \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1398,43 +1714,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableBreakout slot="entry" id="pages_OCRPageObject_images_OCRImageObject" headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject" parentId="pages_OCRPageObject_images">
 
-##### bottom_right_x \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_x\}
+<div slot="title">
 
-</Property>
+#### OCRImageObject \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### bottom_right_y \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+bottom_right_y\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1454,15 +1746,101 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_images_OCRImageObject_bottom_right_x"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+bottom_right_x"
+  parentId="pages_OCRPageObject_images_OCRImageObject"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### id \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+id\}
+<div slot="title">
 
-</Property>
+##### bottom_right_x \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+bottom_right_x\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_images_OCRImageObject_bottom_right_y"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+bottom_right_y"
+  parentId="pages_OCRPageObject_images_OCRImageObject"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### bottom_right_y \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+bottom_right_y\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_images_OCRImageObject_id"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+id"
+  parentId="pages_OCRPageObject_images_OCRImageObject"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### id \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+id\}
+
+</div>
+
+<div slot="content">
 
 Image ID for extracted image in a page
 
@@ -1478,43 +1856,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_images_OCRImageObject_image_annotation"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_annotation"
+  parentId="pages_OCRPageObject_images_OCRImageObject"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### image_annotation \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_annotation\}
+<div slot="title">
 
-</Property>
+##### image_annotation \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_annotation\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
-
-##### image_base64 \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+image_base64\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1534,43 +1893,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_images_OCRImageObject_image_base64"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_base64"
+  parentId="pages_OCRPageObject_images_OCRImageObject"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### top_left_x \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_x\}
+<div slot="title">
 
-</Property>
+##### image_base64 \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_base64\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### top_left_y \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+OCRImageObject+top_left_y\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1590,21 +1930,101 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_images_OCRImageObject_top_left_x"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+top_left_x"
+  parentId="pages_OCRPageObject_images_OCRImageObject"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionContent>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+##### top_left_x \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+top_left_x\}
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+</div>
 
-##### index \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+index\}
+<div slot="content">
 
-</Property>
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_images_OCRImageObject_top_left_y"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+top_left_y"
+  parentId="pages_OCRPageObject_images_OCRImageObject"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### top_left_y \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+top_left_y\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_index"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+index"
+  parentId="pages_OCRPageObject"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### index \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+index\}
+
+</div>
+
+<div slot="content">
 
 The page index in a pdf document starting from 0
 
@@ -1620,15 +2040,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="pages_OCRPageObject_markdown"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+markdown"
+  parentId="pages_OCRPageObject"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### markdown \{#operation-ocr_v1_ocr_post+200+application-json+OCRPageObject+markdown\}
+<div slot="title">
 
-</Property>
+##### markdown \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+markdown\}
+
+</div>
+
+<div slot="content">
 
 The markdown string response of the page
 
@@ -1644,49 +2074,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="usage_info"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info"
+  typeInfo={{"label":"OCRUsageInfo","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo\">OCRUsageInfo</a>","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionContent>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+##### usage_info \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info\}
 
-<Property typeInfo={{"label":"OCRUsageInfo","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo\">OCRUsageInfo</a>","children":[],"breakoutSubTypes":[{"label":"OCRUsageInfo","schema":{"type":"object","description":null,"examples":[],"properties":{"doc_size_bytes":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":"Document size in bytes","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"pages_processed":{"type":"integer","description":"Number of pages processed","examples":[],"defaultValue":null}},"required":["pages_processed"],"name":"OCRUsageInfo","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+</div>
 
-##### usage_info \{#operation-ocr_v1_ocr_post+200+application-json+usage_info\}
-
-</Property>
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### OCRUsageInfo \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1706,15 +2111,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableBreakout slot="entry" id="usage_info_OCRUsageInfo" headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo" parentId="usage_info">
 
-##### doc_size_bytes \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+doc_size_bytes\}
+<div slot="title">
 
-</Property>
+#### OCRUsageInfo \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1734,15 +2143,62 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="usage_info_OCRUsageInfo_doc_size_bytes"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo+doc_size_bytes"
+  parentId="usage_info_OCRUsageInfo"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### pages_processed \{#operation-ocr_v1_ocr_post+200+application-json+OCRUsageInfo+pages_processed\}
+<div slot="title">
 
-</Property>
+##### doc_size_bytes \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo+doc_size_bytes\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="usage_info_OCRUsageInfo_pages_processed"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo+pages_processed"
+  parentId="usage_info_OCRUsageInfo"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### pages_processed \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo+pages_processed\}
+
+</div>
+
+<div slot="content">
 
 Number of pages processed
 
@@ -1758,15 +2214,11 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
 </ExpandableSection>
-
-</SectionContent>
-
-</Section>
 
 </SectionContent>
 

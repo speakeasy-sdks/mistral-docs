@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2.7
+sidebar_position: 3.7
 sidebar_label: Files
 ---
 
 import "@speakeasy-api/docs-md/docusaurus.css";
-import { Pill, Section, SectionTitle, SectionContent, TryItNow, TabbedSection, SectionTab, Property, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionTitle, SectionContent, TryItNow, TabbedSection, SectionTab, ExpandableSection, ExpandableProperty, ExpandableBreakout, FrontMatterDisplayType } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # Files Operations \{#files\}
@@ -15,15 +15,15 @@ _List Files_
 
 Returns a list of files that belong to the user's organization.
 
-<Section contentBorderVariant="default">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Try it Now \{#operation-files_api_routes_list_files+try-it-now\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -50,57 +50,64 @@ run();`}
 
 <TabbedSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<SectionTitle slot="title" variant="default">
 
-### Response \{#operation-files_api_routes_list_files+responses\}
+### Responses \{#operation-files_api_routes_list_files+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_list_files+200+application-json">
+<SectionTab slot="tab" id="operation-files_api_routes_list_files+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-files_api_routes_list_files+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+responses+200+application-json">
 
 OK
 
-<Section contentBorderVariant="all">
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-files_api_routes_list_files+200+application-json+properties\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-files_api_routes_list_files+200+application-json+FileSchema\">FileSchema</a>","children":[{"label":"FileSchema","linkedLabel":"<a href=\"#operation-files_api_routes_list_files+200+application-json+FileSchema\">FileSchema</a>","children":[],"breakoutSubTypes":[{"label":"FileSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"created_at":{"type":"integer","description":"The UNIX timestamp (in seconds) of the event.","examples":["1716963433"],"defaultValue":null},"filename":{"type":"string","description":"The name of the uploaded file.","examples":["files_upload.jsonl"],"defaultValue":null},"id":{"type":"string","description":"The unique identifier of the file.","examples":["497f6eca-6276-4993-bfeb-53cbbbba6f09"],"defaultValue":null},"num_lines":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":"The object type, which is always \"file\".","examples":["file"],"defaultValue":null},"purpose":{"type":"enum","description":null,"examples":[],"values":["fine-tune","batch","ocr"],"defaultValue":null},"sample_type":{"type":"enum","description":null,"examples":[],"values":["pretrain","instruct","batch_request","batch_result","batch_error"],"defaultValue":null},"size_bytes":{"type":"integer","description":"The size of the file, in bytes.","examples":["13000"],"defaultValue":null},"source":{"type":"enum","description":null,"examples":[],"values":["upload","repository","mistral"],"defaultValue":null}},"required":["id","object","size_bytes","created_at","filename","purpose","sample_type","source"],"name":"FileSchema","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"FileSchema","schema":{"type":"object","description":null,"examples":[],"properties":{"created_at":{"type":"integer","description":"The UNIX timestamp (in seconds) of the event.","examples":["1716963433"],"defaultValue":null},"filename":{"type":"string","description":"The name of the uploaded file.","examples":["files_upload.jsonl"],"defaultValue":null},"id":{"type":"string","description":"The unique identifier of the file.","examples":["497f6eca-6276-4993-bfeb-53cbbbba6f09"],"defaultValue":null},"num_lines":{"type":"union","description":null,"examples":[],"values":[{"type":"integer","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"object":{"type":"string","description":"The object type, which is always \"file\".","examples":["file"],"defaultValue":null},"purpose":{"type":"enum","description":null,"examples":[],"values":["fine-tune","batch","ocr"],"defaultValue":null},"sample_type":{"type":"enum","description":null,"examples":[],"values":["pretrain","instruct","batch_request","batch_result","batch_error"],"defaultValue":null},"size_bytes":{"type":"integer","description":"The size of the file, in bytes.","examples":["13000"],"defaultValue":null},"source":{"type":"enum","description":null,"examples":[],"values":["upload","repository","mistral"],"defaultValue":null}},"required":["id","object","size_bytes","created_at","filename","purpose","sample_type","source"],"name":"FileSchema","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### data \{#operation-files_api_routes_list_files+200+application-json+data\}
-
-</Property>
-
 <ExpandableSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<ExpandableProperty
+  slot="entry"
+  id="data"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data"
+  typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema\">FileSchema</a>","children":[{"label":"FileSchema","linkedLabel":"<a href=\"#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema\">FileSchema</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### FileSchema \{#operation-files_api_routes_list_files+200+application-json+FileSchema\}
+<div slot="title">
 
-</SectionTitle>
+##### data \{#operation-files_api_routes_list_files+responses+200+application-json+data\}
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+</div>
 
-#### Properties \{#operation-files_api_routes_list_files+200+application-json+FileSchema+properties\}
+</ExpandableProperty>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+<ExpandableBreakout slot="entry" id="data_FileSchema" headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema" parentId="data">
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<div slot="title">
 
-##### created_at \{#operation-files_api_routes_list_files+200+application-json+FileSchema+created_at\}
+#### FileSchema \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema\}
 
-</Property>
+</div>
+
+</ExpandableBreakout>
+
+<ExpandableProperty
+  slot="entry"
+  id="data_FileSchema_created_at"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+created_at"
+  parentId="data_FileSchema"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### created_at \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+created_at\}
+
+</div>
+
+<div slot="content">
 
 The UNIX timestamp (in seconds) of the event.
 
@@ -110,15 +117,25 @@ _Example:_
 1716963433
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="data_FileSchema_filename"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+filename"
+  parentId="data_FileSchema"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### filename \{#operation-files_api_routes_list_files+200+application-json+FileSchema+filename\}
+<div slot="title">
 
-</Property>
+##### filename \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+filename\}
+
+</div>
+
+<div slot="content">
 
 The name of the uploaded file.
 
@@ -128,15 +145,25 @@ _Example:_
 files_upload.jsonl
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="data_FileSchema_id"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+id"
+  parentId="data_FileSchema"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### id \{#operation-files_api_routes_list_files+200+application-json+FileSchema+id\}
+<div slot="title">
 
-</Property>
+##### id \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+id\}
+
+</div>
+
+<div slot="content">
 
 The unique identifier of the file.
 
@@ -146,25 +173,40 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="data_FileSchema_num_lines"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+num_lines"
+  parentId="data_FileSchema"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### num_lines \{#operation-files_api_routes_list_files+200+application-json+FileSchema+num_lines\}
+<div slot="title">
 
-</Property>
+##### num_lines \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+num_lines\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="data_FileSchema_object"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+object"
+  parentId="data_FileSchema"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### object \{#operation-files_api_routes_list_files+200+application-json+FileSchema+object\}
+<div slot="title">
 
-</Property>
+##### object \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+object\}
+
+</div>
+
+<div slot="content">
 
 The object type, which is always "file".
 
@@ -174,35 +216,57 @@ _Example:_
 file
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":[]},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="data_FileSchema_purpose"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+purpose"
+  parentId="data_FileSchema"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":{}},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### purpose \{#operation-files_api_routes_list_files+200+application-json+FileSchema+purpose\}
+<div slot="title">
 
-</Property>
+##### purpose \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+purpose\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"pretrain\"","linkedLabel":"\"pretrain\"","children":[],"breakoutSubTypes":[]},{"label":"\"instruct\"","linkedLabel":"\"instruct\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch_request\"","linkedLabel":"\"batch_request\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch_result\"","linkedLabel":"\"batch_result\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch_error\"","linkedLabel":"\"batch_error\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="data_FileSchema_sample_type"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+sample_type"
+  parentId="data_FileSchema"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"pretrain\"","linkedLabel":"\"pretrain\"","children":[],"breakoutSubTypes":{}},{"label":"\"instruct\"","linkedLabel":"\"instruct\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_request\"","linkedLabel":"\"batch_request\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_result\"","linkedLabel":"\"batch_result\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_error\"","linkedLabel":"\"batch_error\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### sample_type \{#operation-files_api_routes_list_files+200+application-json+FileSchema+sample_type\}
+<div slot="title">
 
-</Property>
+##### sample_type \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+sample_type\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="data_FileSchema_size_bytes"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+size_bytes"
+  parentId="data_FileSchema"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### size_bytes \{#operation-files_api_routes_list_files+200+application-json+FileSchema+size_bytes\}
+<div slot="title">
 
-</Property>
+##### size_bytes \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+size_bytes\}
+
+</div>
+
+<div slot="content">
 
 The size of the file, in bytes.
 
@@ -212,45 +276,57 @@ _Example:_
 13000
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"upload\"","linkedLabel":"\"upload\"","children":[],"breakoutSubTypes":[]},{"label":"\"repository\"","linkedLabel":"\"repository\"","children":[],"breakoutSubTypes":[]},{"label":"\"mistral\"","linkedLabel":"\"mistral\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="data_FileSchema_source"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+source"
+  parentId="data_FileSchema"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"upload\"","linkedLabel":"\"upload\"","children":[],"breakoutSubTypes":{}},{"label":"\"repository\"","linkedLabel":"\"repository\"","children":[],"breakoutSubTypes":{}},{"label":"\"mistral\"","linkedLabel":"\"mistral\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### source \{#operation-files_api_routes_list_files+200+application-json+FileSchema+source\}
+<div slot="title">
 
-</Property>
+##### source \{#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema+source\}
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="object"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+object"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### object \{#operation-files_api_routes_list_files+responses+200+application-json+object\}
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="total"
+  headingId="operation-files_api_routes_list_files+responses+200+application-json+total"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### total \{#operation-files_api_routes_list_files+responses+200+application-json+total\}
+
+</div>
+
+</ExpandableProperty>
 
 </ExpandableSection>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### object \{#operation-files_api_routes_list_files+200+application-json+object\}
-
-</Property>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### total \{#operation-files_api_routes_list_files+200+application-json+total\}
-
-</Property>
-
-</SectionContent>
-
-</Section>
 
 </SectionContent>
 
@@ -266,15 +342,15 @@ The size of individual files can be a maximum of 512 MB. The Fine-tuning API onl
 
 Please contact us if you need to increase these storage limits.
 
-<Section contentBorderVariant="default">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Try it Now \{#operation-files_api_routes_upload_file+try-it-now\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -302,51 +378,42 @@ run();`}
 
 </Section>
 
-<Section contentBorderVariant="default">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
-### Request Body \{#operation-files_api_routes_upload_file+request\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
-
-<Section contentBorderVariant="all">
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-files_api_routes_upload_file+request+properties\}
+### Request Body \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"File","linkedLabel":"<a href=\"#operation-files_api_routes_upload_file+request+File\">File</a>","children":[],"breakoutSubTypes":[{"label":"File","schema":{"type":"object","description":"The File object (not file name) to be uploaded.\n To upload a file and specify a custom file name you should format your request as such:\n ```bash\n file=@path/to/your/file.jsonl;filename=custom_name.jsonl\n ```\n Otherwise, you can just keep the original file name:\n ```bash\n file=@path/to/your/file.jsonl\n ```","examples":[],"properties":{"content":{"type":"binary","description":null,"examples":[],"defaultValue":null},"fileName":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["fileName","content"],"name":"File","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### file \{#operation-files_api_routes_upload_file+request+file\}
-
-</Property>
-
-The File object (not file name) to be uploaded.
- To upload a file and specify a custom file name you should format your request as such:
- ```bash
- file=@path/to/your/file.jsonl;filename=custom_name.jsonl
- ```
- Otherwise, you can just keep the original file name:
- ```bash
- file=@path/to/your/file.jsonl
- ```
+<SectionContent slot="content" variant="top-level">
 
 <ExpandableSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<ExpandableProperty
+  slot="entry"
+  id="file"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file"
+  typeInfo={{"label":"File","linkedLabel":"<a href=\"#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+file\">File</a>","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### File \{#operation-files_api_routes_upload_file+request+File\}
+<div slot="title">
 
-</SectionTitle>
+##### file \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file\}
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+</div>
+
+</ExpandableProperty>
+
+<ExpandableBreakout slot="entry" id="file_File" headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+file" parentId="file">
+
+<div slot="title">
+
+#### File \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+file\}
+
+</div>
+
+<div slot="content">
 
 The File object (not file name) to be uploaded.
  To upload a file and specify a custom file name you should format your request as such:
@@ -358,45 +425,57 @@ The File object (not file name) to be uploaded.
  file=@path/to/your/file.jsonl
  ```
 
-#### Properties \{#operation-files_api_routes_upload_file+request+File+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"binary","linkedLabel":"binary","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="file_File_content"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+file+content"
+  parentId="file_File"
+  typeInfo={{"label":"binary","linkedLabel":"binary","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### content \{#operation-files_api_routes_upload_file+request+File+content\}
+<div slot="title">
 
-</Property>
+##### content \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+file+content\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="file_File_fileName"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+file+filename"
+  parentId="file_File"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### fileName \{#operation-files_api_routes_upload_file+request+File+fileName\}
+<div slot="title">
 
-</Property>
+##### fileName \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+file+filename\}
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="purpose"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+purpose"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":{}},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### purpose \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+purpose\}
+
+</div>
+
+</ExpandableProperty>
 
 </ExpandableSection>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":[]},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
-
-##### purpose \{#operation-files_api_routes_upload_file+request+purpose\}
-
-</Property>
-
-</SectionContent>
-
-</Section>
 
 </SectionContent>
 
@@ -404,37 +483,38 @@ The File object (not file name) to be uploaded.
 
 <TabbedSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<SectionTitle slot="title" variant="default">
 
-### Response \{#operation-files_api_routes_upload_file+responses\}
+### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_upload_file+200+application-json">
+<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-files_api_routes_upload_file+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json">
 
 OK
 
-<Section contentBorderVariant="all">
+<ExpandableSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
+<ExpandableProperty
+  slot="entry"
+  id="created_at"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+created_at"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### Properties \{#operation-files_api_routes_upload_file+200+application-json+properties\}
+<div slot="title">
 
-</SectionTitle>
+##### created_at \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+created_at\}
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</div>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### created_at \{#operation-files_api_routes_upload_file+200+application-json+created_at\}
-
-</Property>
+<div slot="content">
 
 The UNIX timestamp (in seconds) of the event.
 
@@ -444,15 +524,24 @@ _Example:_
 1716963433
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="filename"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+filename"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### filename \{#operation-files_api_routes_upload_file+200+application-json+filename\}
+<div slot="title">
 
-</Property>
+##### filename \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+filename\}
+
+</div>
+
+<div slot="content">
 
 The name of the uploaded file.
 
@@ -462,15 +551,24 @@ _Example:_
 files_upload.jsonl
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="id"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### id \{#operation-files_api_routes_upload_file+200+application-json+id\}
+<div slot="title">
 
-</Property>
+##### id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+id\}
+
+</div>
+
+<div slot="content">
 
 The unique identifier of the file.
 
@@ -480,25 +578,38 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="num_lines"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+num_lines"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### num_lines \{#operation-files_api_routes_upload_file+200+application-json+num_lines\}
+<div slot="title">
 
-</Property>
+##### num_lines \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+num_lines\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="object"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+object"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### object \{#operation-files_api_routes_upload_file+200+application-json+object\}
+<div slot="title">
 
-</Property>
+##### object \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+object\}
+
+</div>
+
+<div slot="content">
 
 The object type, which is always "file".
 
@@ -508,35 +619,54 @@ _Example:_
 file
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":[]},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="purpose"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+purpose"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":{}},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### purpose \{#operation-files_api_routes_upload_file+200+application-json+purpose\}
+<div slot="title">
 
-</Property>
+##### purpose \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+purpose\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"pretrain\"","linkedLabel":"\"pretrain\"","children":[],"breakoutSubTypes":[]},{"label":"\"instruct\"","linkedLabel":"\"instruct\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch_request\"","linkedLabel":"\"batch_request\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch_result\"","linkedLabel":"\"batch_result\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch_error\"","linkedLabel":"\"batch_error\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="sample_type"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+sample_type"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"pretrain\"","linkedLabel":"\"pretrain\"","children":[],"breakoutSubTypes":{}},{"label":"\"instruct\"","linkedLabel":"\"instruct\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_request\"","linkedLabel":"\"batch_request\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_result\"","linkedLabel":"\"batch_result\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_error\"","linkedLabel":"\"batch_error\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### sample_type \{#operation-files_api_routes_upload_file+200+application-json+sample_type\}
+<div slot="title">
 
-</Property>
+##### sample_type \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+sample_type\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="size_bytes"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+size_bytes"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### size_bytes \{#operation-files_api_routes_upload_file+200+application-json+size_bytes\}
+<div slot="title">
 
-</Property>
+##### size_bytes \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+size_bytes\}
+
+</div>
+
+<div slot="content">
 
 The size of the file, in bytes.
 
@@ -546,19 +676,26 @@ _Example:_
 13000
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"upload\"","linkedLabel":"\"upload\"","children":[],"breakoutSubTypes":[]},{"label":"\"repository\"","linkedLabel":"\"repository\"","children":[],"breakoutSubTypes":[]},{"label":"\"mistral\"","linkedLabel":"\"mistral\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="source"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+source"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"upload\"","linkedLabel":"\"upload\"","children":[],"breakoutSubTypes":{}},{"label":"\"repository\"","linkedLabel":"\"repository\"","children":[],"breakoutSubTypes":{}},{"label":"\"mistral\"","linkedLabel":"\"mistral\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### source \{#operation-files_api_routes_upload_file+200+application-json+source\}
+<div slot="title">
 
-</Property>
+##### source \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+source\}
 
-</SectionContent>
+</div>
 
-</Section>
+</ExpandableProperty>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -570,51 +707,48 @@ _Retrieve File_
 
 Returns information about a specific file.
 
-<Section contentBorderVariant="all">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
-### Parameters \{#operation-files_api_routes_retrieve_file+parameters\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-##### file\_id <Pill variant="warning">required</Pill> \{#operation-files_api_routes_retrieve_file+parameters+file_id\}
-
-<Section contentBorderVariant="all">
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-files_api_routes_retrieve_file+parameters+properties\}
+### Parameters \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+parameters\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableSection>
 
-##### Security \{#operation-files_api_routes_retrieve_file+parameters+Security\}
+<ExpandableProperty
+  slot="entry"
+  id="file_id"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+parameters+file_id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}>
 
-</Property>
+<div slot="title">
+
+##### file_id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+parameters+file_id\}
+
+</div>
+
+</ExpandableProperty>
+
+</ExpandableSection>
 
 </SectionContent>
 
 </Section>
 
-</SectionContent>
+<Section variant="top-level">
 
-</Section>
-
-<Section contentBorderVariant="default">
-
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Try it Now \{#operation-files_api_routes_retrieve_file+try-it-now\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -643,37 +777,38 @@ run();`}
 
 <TabbedSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<SectionTitle slot="title" variant="default">
 
-### Response \{#operation-files_api_routes_retrieve_file+responses\}
+### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_retrieve_file+200+application-json">
+<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-files_api_routes_retrieve_file+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json">
 
 OK
 
-<Section contentBorderVariant="all">
+<ExpandableSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
+<ExpandableProperty
+  slot="entry"
+  id="created_at"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+created_at"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### Properties \{#operation-files_api_routes_retrieve_file+200+application-json+properties\}
+<div slot="title">
 
-</SectionTitle>
+##### created_at \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+created_at\}
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</div>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### created_at \{#operation-files_api_routes_retrieve_file+200+application-json+created_at\}
-
-</Property>
+<div slot="content">
 
 The UNIX timestamp (in seconds) of the event.
 
@@ -683,25 +818,39 @@ _Example:_
 1716963433
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="deleted"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+deleted"
+  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### deleted \{#operation-files_api_routes_retrieve_file+200+application-json+deleted\}
+<div slot="title">
 
-</Property>
+##### deleted \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+deleted\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="filename"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+filename"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### filename \{#operation-files_api_routes_retrieve_file+200+application-json+filename\}
+<div slot="title">
 
-</Property>
+##### filename \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+filename\}
+
+</div>
+
+<div slot="content">
 
 The name of the uploaded file.
 
@@ -711,15 +860,24 @@ _Example:_
 files_upload.jsonl
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="id"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### id \{#operation-files_api_routes_retrieve_file+200+application-json+id\}
+<div slot="title">
 
-</Property>
+##### id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+id\}
+
+</div>
+
+<div slot="content">
 
 The unique identifier of the file.
 
@@ -729,25 +887,38 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="num_lines"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+num_lines"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### num_lines \{#operation-files_api_routes_retrieve_file+200+application-json+num_lines\}
+<div slot="title">
 
-</Property>
+##### num_lines \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+num_lines\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="object"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+object"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### object \{#operation-files_api_routes_retrieve_file+200+application-json+object\}
+<div slot="title">
 
-</Property>
+##### object \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+object\}
+
+</div>
+
+<div slot="content">
 
 The object type, which is always "file".
 
@@ -757,35 +928,54 @@ _Example:_
 file
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":[]},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="purpose"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+purpose"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":{}},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### purpose \{#operation-files_api_routes_retrieve_file+200+application-json+purpose\}
+<div slot="title">
 
-</Property>
+##### purpose \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+purpose\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"pretrain\"","linkedLabel":"\"pretrain\"","children":[],"breakoutSubTypes":[]},{"label":"\"instruct\"","linkedLabel":"\"instruct\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch_request\"","linkedLabel":"\"batch_request\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch_result\"","linkedLabel":"\"batch_result\"","children":[],"breakoutSubTypes":[]},{"label":"\"batch_error\"","linkedLabel":"\"batch_error\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="sample_type"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+sample_type"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"pretrain\"","linkedLabel":"\"pretrain\"","children":[],"breakoutSubTypes":{}},{"label":"\"instruct\"","linkedLabel":"\"instruct\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_request\"","linkedLabel":"\"batch_request\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_result\"","linkedLabel":"\"batch_result\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_error\"","linkedLabel":"\"batch_error\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### sample_type \{#operation-files_api_routes_retrieve_file+200+application-json+sample_type\}
+<div slot="title">
 
-</Property>
+##### sample_type \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+sample_type\}
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="size_bytes"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+size_bytes"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### size_bytes \{#operation-files_api_routes_retrieve_file+200+application-json+size_bytes\}
+<div slot="title">
 
-</Property>
+##### size_bytes \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+size_bytes\}
+
+</div>
+
+<div slot="content">
 
 The size of the file, in bytes.
 
@@ -795,19 +985,26 @@ _Example:_
 13000
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"upload\"","linkedLabel":"\"upload\"","children":[],"breakoutSubTypes":[]},{"label":"\"repository\"","linkedLabel":"\"repository\"","children":[],"breakoutSubTypes":[]},{"label":"\"mistral\"","linkedLabel":"\"mistral\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="source"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+source"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"upload\"","linkedLabel":"\"upload\"","children":[],"breakoutSubTypes":{}},{"label":"\"repository\"","linkedLabel":"\"repository\"","children":[],"breakoutSubTypes":{}},{"label":"\"mistral\"","linkedLabel":"\"mistral\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### source \{#operation-files_api_routes_retrieve_file+200+application-json+source\}
+<div slot="title">
 
-</Property>
+##### source \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+source\}
 
-</SectionContent>
+</div>
 
-</Section>
+</ExpandableProperty>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -819,51 +1016,48 @@ _Delete File_
 
 Delete a file.
 
-<Section contentBorderVariant="all">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
-### Parameters \{#operation-files_api_routes_delete_file+parameters\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-##### file\_id <Pill variant="warning">required</Pill> \{#operation-files_api_routes_delete_file+parameters+file_id\}
-
-<Section contentBorderVariant="all">
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-files_api_routes_delete_file+parameters+properties\}
+### Parameters \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+parameters\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableSection>
 
-##### Security \{#operation-files_api_routes_delete_file+parameters+Security\}
+<ExpandableProperty
+  slot="entry"
+  id="file_id"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+parameters+file_id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}>
 
-</Property>
+<div slot="title">
+
+##### file_id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+parameters+file_id\}
+
+</div>
+
+</ExpandableProperty>
+
+</ExpandableSection>
 
 </SectionContent>
 
 </Section>
 
-</SectionContent>
+<Section variant="top-level">
 
-</Section>
-
-<Section contentBorderVariant="default">
-
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Try it Now \{#operation-files_api_routes_delete_file+try-it-now\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -892,37 +1086,38 @@ run();`}
 
 <TabbedSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<SectionTitle slot="title" variant="default">
 
-### Response \{#operation-files_api_routes_delete_file+responses\}
+### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_delete_file+200+application-json">
+<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-files_api_routes_delete_file+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json">
 
 OK
 
-<Section contentBorderVariant="all">
+<ExpandableSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
+<ExpandableProperty
+  slot="entry"
+  id="deleted"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+deleted"
+  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### Properties \{#operation-files_api_routes_delete_file+200+application-json+properties\}
+<div slot="title">
 
-</SectionTitle>
+##### deleted \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+deleted\}
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</div>
 
-<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### deleted \{#operation-files_api_routes_delete_file+200+application-json+deleted\}
-
-</Property>
+<div slot="content">
 
 The deletion status.
 
@@ -932,15 +1127,24 @@ _Example:_
 false
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="id"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### id \{#operation-files_api_routes_delete_file+200+application-json+id\}
+<div slot="title">
 
-</Property>
+##### id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+id\}
+
+</div>
+
+<div slot="content">
 
 The ID of the deleted file.
 
@@ -950,15 +1154,24 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="object"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+object"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### object \{#operation-files_api_routes_delete_file+200+application-json+object\}
+<div slot="title">
 
-</Property>
+##### object \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+object\}
+
+</div>
+
+<div slot="content">
 
 The object type that was deleted
 
@@ -968,9 +1181,11 @@ _Example:_
 file
 ```
 
-</SectionContent>
+</div>
 
-</Section>
+</ExpandableProperty>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -982,51 +1197,48 @@ _Download File_
 
 Download a file
 
-<Section contentBorderVariant="all">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
-### Parameters \{#operation-files_api_routes_download_file+parameters\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-##### file\_id <Pill variant="warning">required</Pill> \{#operation-files_api_routes_download_file+parameters+file_id\}
-
-<Section contentBorderVariant="all">
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-files_api_routes_download_file+parameters+properties\}
+### Parameters \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+parameters\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableSection>
 
-##### Security \{#operation-files_api_routes_download_file+parameters+Security\}
+<ExpandableProperty
+  slot="entry"
+  id="file_id"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+parameters+file_id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}>
 
-</Property>
+<div slot="title">
+
+##### file_id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+parameters+file_id\}
+
+</div>
+
+</ExpandableProperty>
+
+</ExpandableSection>
 
 </SectionContent>
 
 </Section>
 
-</SectionContent>
+<Section variant="top-level">
 
-</Section>
-
-<Section contentBorderVariant="default">
-
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Try it Now \{#operation-files_api_routes_download_file+try-it-now\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -1055,43 +1267,29 @@ run();`}
 
 <TabbedSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<SectionTitle slot="title" variant="default">
 
-### Response \{#operation-files_api_routes_download_file+responses\}
+### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_download_file+200+application-octet-stream">
+<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+responses+200+application-octet-stream">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-files_api_routes_download_file+200+application-octet-stream">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+responses+200+application-octet-stream">
+
+<FrontMatterDisplayType typeInfo={{"label":"binary","linkedLabel":"binary","children":[],"breakoutSubTypes":{}}} />
 
 OK
 
-<Section contentBorderVariant="all">
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-files_api_routes_download_file+200+application-octet-stream+properties\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"binary","linkedLabel":"binary","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### Response Body \{#operation-files_api_routes_download_file+200+application-octet-stream+Response Body\}
-
-</Property>
-
 OK
 
-</SectionContent>
+<ExpandableSection>
 
-</Section>
+</ExpandableSection>
 
 </SectionContent>
 
@@ -1101,81 +1299,69 @@ OK
 
 Get Signed Url
 
-<Section contentBorderVariant="all">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
-### Parameters \{#operation-files_api_routes_get_signed_url+parameters\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-##### file\_id <Pill variant="warning">required</Pill> \{#operation-files_api_routes_get_signed_url+parameters+file_id\}
-
-<Section contentBorderVariant="all">
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-files_api_routes_get_signed_url+parameters+properties\}
+### Parameters \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableSection>
 
-##### Security \{#operation-files_api_routes_get_signed_url+parameters+Security\}
+<ExpandableProperty
+  slot="entry"
+  id="file_id"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters+file_id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}>
 
-</Property>
+<div slot="title">
 
-</SectionContent>
+##### file_id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters+file_id\}
 
-</Section>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+<ExpandableProperty
+  slot="entry"
+  id="expiry"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters+expiry"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"query","variant":"info"}]}>
 
-##### expiry \{#operation-files_api_routes_get_signed_url+parameters+expiry\}
+<div slot="title">
+
+##### expiry \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters+expiry\}
+
+</div>
+
+<div slot="content">
 
 Number of hours before the url becomes invalid. Defaults to 24h
 
-<Section contentBorderVariant="all">
+</div>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
+</ExpandableProperty>
 
-#### Properties \{#operation-files_api_routes_get_signed_url+parameters+properties\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### Security \{#operation-files_api_routes_get_signed_url+parameters+Security\}
-
-</Property>
-
-Number of hours before the url becomes invalid. Defaults to 24h
+</ExpandableSection>
 
 </SectionContent>
 
 </Section>
 
-</SectionContent>
+<Section variant="top-level">
 
-</Section>
-
-<Section contentBorderVariant="default">
-
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Try it Now \{#operation-files_api_routes_get_signed_url+try-it-now\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -1204,41 +1390,40 @@ run();`}
 
 <TabbedSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<SectionTitle slot="title" variant="default">
 
-### Response \{#operation-files_api_routes_get_signed_url+responses\}
+### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_get_signed_url+200+application-json">
+<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-files_api_routes_get_signed_url+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses+200+application-json">
 
 OK
 
-<Section contentBorderVariant="all">
+<ExpandableSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
+<ExpandableProperty
+  slot="entry"
+  id="url"
+  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses+200+application-json+url"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### Properties \{#operation-files_api_routes_get_signed_url+200+application-json+properties\}
+<div slot="title">
 
-</SectionTitle>
+##### url \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses+200+application-json+url\}
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</div>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+</ExpandableProperty>
 
-##### url \{#operation-files_api_routes_get_signed_url+200+application-json+url\}
-
-</Property>
-
-</SectionContent>
-
-</Section>
+</ExpandableSection>
 
 </SectionContent>
 

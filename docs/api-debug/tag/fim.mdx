@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2.8
+sidebar_position: 3.8
 sidebar_label: Fim
 ---
 
 import "@speakeasy-api/docs-md/docusaurus.css";
-import { Pill, Section, SectionTitle, SectionContent, TryItNow, DebugPlaceholder, Property, TabbedSection, SectionTab, ExpandableSection } from "@speakeasy-api/docs-md/docusaurus";
+import { Pill, Section, SectionTitle, SectionContent, TryItNow, DebugPlaceholder, ExpandableSection, ExpandableProperty, TabbedSection, SectionTab, ExpandableBreakout } from "@speakeasy-api/docs-md/docusaurus";
 
 
 # Fim Operations \{#fim\}
@@ -15,15 +15,15 @@ _Fim Completion_
 
 FIM completion.
 
-<Section contentBorderVariant="default">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Try it Now \{#operation-fim_completion_v1_fim_completions_post+try-it-now\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <TryItNow
  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -52,15 +52,15 @@ run();`}
 
 </Section>
 
-<Section contentBorderVariant="default">
+<Section variant="top-level">
 
-<SectionTitle slot="title" borderVariant="default" paddingVariant="default">
+<SectionTitle slot="title" variant="top-level">
 
 ### Request Body \{#operation-fim_completion_v1_fim_completions_post+request\}
 
 </SectionTitle>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<SectionContent slot="content" variant="top-level">
 
 <DebugPlaceholder>
 
@@ -68,21 +68,33 @@ No description provided
 
 </DebugPlaceholder>
 
-<Section contentBorderVariant="all">
+<DebugPlaceholder>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
+No examples provided
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+request+properties\}
+</DebugPlaceholder>
 
-</SectionTitle>
+<DebugPlaceholder>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+No default value provided
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+</DebugPlaceholder>
+
+<ExpandableSection>
+
+<ExpandableProperty
+  slot="entry"
+  id="max_tokens"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+max_tokens"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### max_tokens \{#operation-fim_completion_v1_fim_completions_post+request+max_tokens\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -102,15 +114,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="min_tokens"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+min_tokens"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### min_tokens \{#operation-fim_completion_v1_fim_completions_post+request+min_tokens\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -130,15 +150,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="model"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+model"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
 
 ##### model \{#operation-fim_completion_v1_fim_completions_post+request+model\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 ID of the model to use. Only compatible for now with:
   - `codestral-2405`
@@ -156,15 +185,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="prompt"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+prompt"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
 
 ##### prompt \{#operation-fim_completion_v1_fim_completions_post+request+prompt\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 The text/code to complete.
 
@@ -180,15 +218,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="random_seed"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+random_seed"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### random_seed \{#operation-fim_completion_v1_fim_completions_post+request+random_seed\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -208,17 +254,29 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="stop"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+stop"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### stop \{#operation-fim_completion_v1_fim_completions_post+request+stop\}
 
-</Property>
+</div>
 
-Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
 
 <DebugPlaceholder>
 
@@ -232,15 +290,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="stream"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+stream"
+  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### stream \{#operation-fim_completion_v1_fim_completions_post+request+stream\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.
 
@@ -252,15 +318,23 @@ No examples provided
 
 _Default Value:_ `false`
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="suffix"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+suffix"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### suffix \{#operation-fim_completion_v1_fim_completions_post+request+suffix\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -280,15 +354,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="temperature"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+temperature"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### temperature \{#operation-fim_completion_v1_fim_completions_post+request+temperature\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -308,15 +390,23 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="top_p"
+  headingId="operation-fim_completion_v1_fim_completions_post+request+top_p"
+  typeInfo={{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}}>
+
+<div slot="title">
 
 ##### top_p \{#operation-fim_completion_v1_fim_completions_post+request+top_p\}
 
-</Property>
+</div>
+
+<div slot="content">
 
 Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.
 
@@ -328,9 +418,11 @@ No examples provided
 
 _Default Value:_ `1`
 
-</SectionContent>
+</div>
 
-</Section>
+</ExpandableProperty>
+
+</ExpandableSection>
 
 </SectionContent>
 
@@ -338,37 +430,21 @@ _Default Value:_ `1`
 
 <TabbedSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<SectionTitle slot="title" variant="default">
 
-### Response \{#operation-fim_completion_v1_fim_completions_post+responses\}
+### Responses \{#operation-fim_completion_v1_fim_completions_post+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-fim_completion_v1_fim_completions_post+200+application-json">
+<SectionTab slot="tab" id="operation-fim_completion_v1_fim_completions_post+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default" id="operation-fim_completion_v1_fim_completions_post+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-fim_completion_v1_fim_completions_post+responses+200+application-json">
 
 Successful Response
-
-<Section contentBorderVariant="all">
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="default">
-
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+properties\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice\">ChatCompletionChoice</a>","children":[{"label":"ChatCompletionChoice","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice\">ChatCompletionChoice</a>","children":[],"breakoutSubTypes":[{"label":"ChatCompletionChoice","schema":{"type":"object","description":null,"examples":[],"properties":{"finish_reason":{"type":"enum","description":null,"examples":["stop"],"values":["stop","length","model_length","error","tool_calls"],"defaultValue":null},"index":{"type":"integer","description":null,"examples":["0"],"defaultValue":null},"message":{"type":"chunk","chunkId":"$255"}},"required":["index","message","finish_reason"],"name":"ChatCompletionChoice","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"ChatCompletionChoice","schema":{"type":"object","description":null,"examples":[],"properties":{"finish_reason":{"type":"enum","description":null,"examples":["stop"],"values":["stop","length","model_length","error","tool_calls"],"defaultValue":null},"index":{"type":"integer","description":null,"examples":["0"],"defaultValue":null},"message":{"type":"chunk","chunkId":"$255"}},"required":["index","message","finish_reason"],"name":"ChatCompletionChoice","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### choices \{#operation-fim_completion_v1_fim_completions_post+200+application-json+choices\}
-
-</Property>
 
 <DebugPlaceholder>
 
@@ -390,13 +466,20 @@ No default value provided
 
 <ExpandableSection>
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+<ExpandableProperty
+  slot="entry"
+  id="choices"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices"
+  typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice\">ChatCompletionChoice</a>","children":[{"label":"ChatCompletionChoice","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice\">ChatCompletionChoice</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-#### ChatCompletionChoice \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice\}
+<div slot="title">
 
-</SectionTitle>
+##### choices \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices\}
 
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -416,15 +499,57 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"stop\"","linkedLabel":"\"stop\"","children":[],"breakoutSubTypes":[]},{"label":"\"length\"","linkedLabel":"\"length\"","children":[],"breakoutSubTypes":[]},{"label":"\"model_length\"","linkedLabel":"\"model_length\"","children":[],"breakoutSubTypes":[]},{"label":"\"error\"","linkedLabel":"\"error\"","children":[],"breakoutSubTypes":[]},{"label":"\"tool_calls\"","linkedLabel":"\"tool_calls\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableBreakout slot="entry" id="choices_ChatCompletionChoice" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice" parentId="choices">
 
-##### finish_reason \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+finish_reason\}
+<div slot="title">
 
-</Property>
+#### ChatCompletionChoice \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableBreakout>
+
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_finish_reason"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+finish_reason"
+  parentId="choices_ChatCompletionChoice"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"stop\"","linkedLabel":"\"stop\"","children":[],"breakoutSubTypes":{}},{"label":"\"length\"","linkedLabel":"\"length\"","children":[],"breakoutSubTypes":{}},{"label":"\"model_length\"","linkedLabel":"\"model_length\"","children":[],"breakoutSubTypes":{}},{"label":"\"error\"","linkedLabel":"\"error\"","children":[],"breakoutSubTypes":{}},{"label":"\"tool_calls\"","linkedLabel":"\"tool_calls\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### finish_reason \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+finish_reason\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -444,15 +569,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_index"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+index"
+  parentId="choices_ChatCompletionChoice"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### index \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+index\}
+<div slot="title">
 
-</Property>
+##### index \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+index\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -472,43 +607,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"AssistantMessage","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage\">AssistantMessage</a>","children":[],"breakoutSubTypes":[{"label":"AssistantMessage","schema":{"type":"object","description":null,"examples":[],"properties":{"content":{"type":"chunk","chunkId":"$256"},"prefix":{"type":"boolean","description":"Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.","examples":[],"defaultValue":"false"},"role":{"type":"enum","description":null,"examples":[],"values":["assistant"],"defaultValue":"\"assistant\""},"tool_calls":{"type":"chunk","chunkId":"$257"}},"required":[],"name":"AssistantMessage","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message"
+  parentId="choices_ChatCompletionChoice"
+  typeInfo={{"label":"AssistantMessage","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage\">AssistantMessage</a>","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### message \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+message\}
+<div slot="title">
 
-</Property>
+##### message \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### AssistantMessage \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -528,43 +645,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk\">TextChunk</a>","children":[],"breakoutSubTypes":[{"label":"TextChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"text":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["text"],"defaultValue":"\"text\""}},"required":["text"],"name":"TextChunk","defaultValue":null}}]},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":[{"label":"ImageURLChunk","schema":{"type":"object","description":"{\"type\":\"image_url\",\"image_url\":{\"url\":\"data:image/png;base64,iVBORw0","examples":[],"properties":{"image_url":{"type":"chunk","chunkId":"$77"},"type":{"type":"enum","description":null,"examples":[],"values":["image_url"],"defaultValue":"\"image_url\""}},"required":["image_url"],"name":"ImageURLChunk","defaultValue":null}}]},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":[{"label":"DocumentURLChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"document_name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"The filename of the document","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"document_url":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["document_url"],"defaultValue":"\"document_url\""}},"required":["document_url"],"name":"DocumentURLChunk","defaultValue":null}}]},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":[{"label":"ReferenceChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"reference_ids":{"type":"chunk","chunkId":"$254"},"type":{"type":"enum","description":null,"examples":[],"values":["reference"],"defaultValue":"\"reference\""}},"required":["reference_ids"],"name":"ReferenceChunk","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"TextChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"text":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["text"],"defaultValue":"\"text\""}},"required":["text"],"name":"TextChunk","defaultValue":null}},{"label":"ImageURLChunk","schema":{"type":"object","description":"{\"type\":\"image_url\",\"image_url\":{\"url\":\"data:image/png;base64,iVBORw0","examples":[],"properties":{"image_url":{"type":"chunk","chunkId":"$77"},"type":{"type":"enum","description":null,"examples":[],"values":["image_url"],"defaultValue":"\"image_url\""}},"required":["image_url"],"name":"ImageURLChunk","defaultValue":null}},{"label":"DocumentURLChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"document_name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"The filename of the document","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"document_url":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["document_url"],"defaultValue":"\"document_url\""}},"required":["document_url"],"name":"DocumentURLChunk","defaultValue":null}},{"label":"ReferenceChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"reference_ids":{"type":"chunk","chunkId":"$254"},"type":{"type":"enum","description":null,"examples":[],"values":["reference"],"defaultValue":"\"reference\""}},"required":["reference_ids"],"name":"ReferenceChunk","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"TextChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"text":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["text"],"defaultValue":"\"text\""}},"required":["text"],"name":"TextChunk","defaultValue":null}},{"label":"ImageURLChunk","schema":{"type":"object","description":"{\"type\":\"image_url\",\"image_url\":{\"url\":\"data:image/png;base64,iVBORw0","examples":[],"properties":{"image_url":{"type":"chunk","chunkId":"$77"},"type":{"type":"enum","description":null,"examples":[],"values":["image_url"],"defaultValue":"\"image_url\""}},"required":["image_url"],"name":"ImageURLChunk","defaultValue":null}},{"label":"DocumentURLChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"document_name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"The filename of the document","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"document_url":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["document_url"],"defaultValue":"\"document_url\""}},"required":["document_url"],"name":"DocumentURLChunk","defaultValue":null}},{"label":"ReferenceChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"reference_ids":{"type":"chunk","chunkId":"$254"},"type":{"type":"enum","description":null,"examples":[],"values":["reference"],"defaultValue":"\"reference\""}},"required":["reference_ids"],"name":"ReferenceChunk","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"TextChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"text":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["text"],"defaultValue":"\"text\""}},"required":["text"],"name":"TextChunk","defaultValue":null}},{"label":"ImageURLChunk","schema":{"type":"object","description":"{\"type\":\"image_url\",\"image_url\":{\"url\":\"data:image/png;base64,iVBORw0","examples":[],"properties":{"image_url":{"type":"chunk","chunkId":"$77"},"type":{"type":"enum","description":null,"examples":[],"values":["image_url"],"defaultValue":"\"image_url\""}},"required":["image_url"],"name":"ImageURLChunk","defaultValue":null}},{"label":"DocumentURLChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"document_name":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":"The filename of the document","examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"document_url":{"type":"string","description":null,"examples":[],"defaultValue":null},"type":{"type":"enum","description":null,"examples":[],"values":["document_url"],"defaultValue":"\"document_url\""}},"required":["document_url"],"name":"DocumentURLChunk","defaultValue":null}},{"label":"ReferenceChunk","schema":{"type":"object","description":null,"examples":[],"properties":{"reference_ids":{"type":"chunk","chunkId":"$254"},"type":{"type":"enum","description":null,"examples":[],"values":["reference"],"defaultValue":"\"reference\""}},"required":["reference_ids"],"name":"ReferenceChunk","defaultValue":null}}]}} typeAnnotations={[]}>
+<ExpandableBreakout slot="entry" id="choices_ChatCompletionChoice_message_AssistantMessage" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage" parentId="choices_ChatCompletionChoice_message">
 
-##### content \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+content\}
+<div slot="title">
 
-</Property>
+#### AssistantMessage \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### TextChunk \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -584,15 +677,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### text \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+text\}
+<div slot="title">
 
-</Property>
+##### content \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -612,15 +714,94 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableBreakout slot="entry" id="choices_ChatCompletionChoice_message_AssistantMessage_content_TextChunk" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+textchunk" parentId="choices_ChatCompletionChoice_message_AssistantMessage_content">
 
-##### type \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+TextChunk+type\}
+<div slot="title">
 
-</Property>
+#### TextChunk \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+textchunk\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableBreakout>
+
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_TextChunk_text"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+textchunk+text"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_TextChunk"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### text \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+textchunk+text\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_TextChunk_type"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+textchunk+type"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_TextChunk"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### type \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+textchunk+type\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -636,21 +817,19 @@ No examples provided
 
 _Default Value:_ `"text"`
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableBreakout slot="entry" id="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk" parentId="choices_ChatCompletionChoice_message_AssistantMessage_content">
 
-<ExpandableSection>
+<div slot="title">
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+#### ImageURLChunk \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk\}
 
-#### ImageURLChunk \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk\}
+</div>
 
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 \{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
@@ -666,43 +845,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL\">ImageURL</a>","children":[],"breakoutSubTypes":[{"label":"ImageURL","schema":{"type":"object","description":null,"examples":[],"properties":{"detail":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"url":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["url"],"name":"ImageURL","defaultValue":null}}]},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"ImageURL","schema":{"type":"object","description":null,"examples":[],"properties":{"detail":{"type":"union","description":null,"examples":[],"values":[{"type":"string","description":null,"examples":[],"defaultValue":null},{"type":"null","description":null,"examples":[],"defaultValue":null}],"defaultValue":null},"url":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["url"],"name":"ImageURL","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk_image_url"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+image_url"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### image_url \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+image_url\}
+<div slot="title">
 
-</Property>
+##### image_url \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+image_url\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### ImageURL \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -722,43 +883,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableBreakout slot="entry" id="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk_image_url_ImageURL" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+image_url+imageurl" parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk_image_url">
 
-##### detail \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL+detail\}
+<div slot="title">
 
-</Property>
+#### ImageURL \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+image_url+imageurl\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### url \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+ImageURL+url\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -778,21 +915,99 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableBreakout>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk_image_url_ImageURL_detail"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+image_url+imageurl+detail"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-</SectionContent>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+##### detail \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+image_url+imageurl+detail\}
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+</div>
 
-##### type \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ImageURLChunk+type\}
+<div slot="content">
 
-</Property>
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk_image_url_ImageURL_url"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+image_url+imageurl+url"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### url \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+image_url+imageurl+url\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk_type"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+type"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_ImageURLChunk"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### type \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+imageurlchunk+type\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -808,21 +1023,19 @@ No examples provided
 
 _Default Value:_ `"image_url"`
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableBreakout slot="entry" id="choices_ChatCompletionChoice_message_AssistantMessage_content_DocumentURLChunk" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+documenturlchunk" parentId="choices_ChatCompletionChoice_message_AssistantMessage_content">
 
-<ExpandableSection>
+<div slot="title">
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+#### DocumentURLChunk \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+documenturlchunk\}
 
-#### DocumentURLChunk \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk\}
+</div>
 
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -842,43 +1055,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_DocumentURLChunk_document_name"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+documenturlchunk+document_name"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_DocumentURLChunk"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### document_name \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk+document_name\}
+<div slot="title">
 
-</Property>
+##### document_name \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+documenturlchunk+document_name\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### document_url \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk+document_url\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -898,15 +1092,62 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_DocumentURLChunk_document_url"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+documenturlchunk+document_url"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_DocumentURLChunk"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### type \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+DocumentURLChunk+type\}
+<div slot="title">
 
-</Property>
+##### document_url \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+documenturlchunk+document_url\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_DocumentURLChunk_type"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+documenturlchunk+type"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_DocumentURLChunk"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### type \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+documenturlchunk+type\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -922,21 +1163,19 @@ No examples provided
 
 _Default Value:_ `"document_url"`
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableBreakout slot="entry" id="choices_ChatCompletionChoice_message_AssistantMessage_content_ReferenceChunk" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+referencechunk" parentId="choices_ChatCompletionChoice_message_AssistantMessage_content">
 
-<ExpandableSection>
+<div slot="title">
 
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
+#### ReferenceChunk \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+referencechunk\}
 
-#### ReferenceChunk \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk\}
+</div>
 
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -956,15 +1195,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_ReferenceChunk_reference_ids"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+referencechunk+reference_ids"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_ReferenceChunk"
+  typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### reference_ids \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+reference_ids\}
+<div slot="title">
 
-</Property>
+##### reference_ids \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+referencechunk+reference_ids\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -984,15 +1233,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_content_ReferenceChunk_type"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+referencechunk+type"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_content_ReferenceChunk"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### type \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ReferenceChunk+type\}
+<div slot="title">
 
-</Property>
+##### type \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+content+referencechunk+type\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1008,21 +1266,24 @@ No examples provided
 
 _Default Value:_ `"reference"`
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_prefix"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+prefix"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage"
+  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}>
 
-</SectionContent>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+##### prefix \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+prefix\}
 
-<Property typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+</div>
 
-##### prefix \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+prefix\}
-
-</Property>
+<div slot="content">
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
@@ -1034,15 +1295,24 @@ No examples provided
 
 _Default Value:_ `false`
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_role"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+role"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### role \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+role\}
+<div slot="title">
 
-</Property>
+##### role \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+role\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1058,43 +1328,24 @@ No examples provided
 
 _Default Value:_ `"assistant"`
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall\">ToolCall</a>","children":[],"breakoutSubTypes":[{"label":"ToolCall","schema":{"type":"object","description":null,"examples":[],"properties":{"function":{"type":"chunk","chunkId":"$259"},"id":{"type":"string","description":null,"examples":[],"defaultValue":"\"null\""},"index":{"type":"integer","description":null,"examples":[],"defaultValue":"0"},"type":{"type":"enum","description":null,"examples":[],"values":["function"],"defaultValue":null}},"required":["function"],"name":"ToolCall","defaultValue":null}}]}],"breakoutSubTypes":[{"label":"ToolCall","schema":{"type":"object","description":null,"examples":[],"properties":{"function":{"type":"chunk","chunkId":"$259"},"id":{"type":"string","description":null,"examples":[],"defaultValue":"\"null\""},"index":{"type":"integer","description":null,"examples":[],"defaultValue":"0"},"type":{"type":"enum","description":null,"examples":[],"values":["function"],"defaultValue":null}},"required":["function"],"name":"ToolCall","defaultValue":null}}]},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[{"label":"ToolCall","schema":{"type":"object","description":null,"examples":[],"properties":{"function":{"type":"chunk","chunkId":"$259"},"id":{"type":"string","description":null,"examples":[],"defaultValue":"\"null\""},"index":{"type":"integer","description":null,"examples":[],"defaultValue":"0"},"type":{"type":"enum","description":null,"examples":[],"values":["function"],"defaultValue":null}},"required":["function"],"name":"ToolCall","defaultValue":null}}]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### tool_calls \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+tool_calls\}
+<div slot="title">
 
-</Property>
+##### tool_calls \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### ToolCall \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1114,43 +1365,19 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"FunctionCall","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall\">FunctionCall</a>","children":[],"breakoutSubTypes":[{"label":"FunctionCall","schema":{"type":"object","description":null,"examples":[],"properties":{"arguments":{"type":"chunk","chunkId":"$260"},"name":{"type":"string","description":null,"examples":[],"defaultValue":null}},"required":["name","arguments"],"name":"FunctionCall","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableBreakout slot="entry" id="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall" parentId="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls">
 
-##### function \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+function\}
+<div slot="title">
 
-</Property>
+#### ToolCall \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### FunctionCall \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1170,43 +1397,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableBreakout>
 
-<Property typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_function"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+function"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall"
+  typeInfo={{"label":"FunctionCall","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+function+functioncall\">FunctionCall</a>","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### arguments \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+arguments\}
+<div slot="title">
 
-</Property>
+##### function \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+function\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### name \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+FunctionCall+name\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1226,21 +1435,132 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableBreakout slot="entry" id="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_function_FunctionCall" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+function+functioncall" parentId="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_function">
 
-</SectionContent>
+<div slot="title">
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+#### FunctionCall \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+function+functioncall\}
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+</div>
 
-##### id \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+id\}
+<div slot="content">
 
-</Property>
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableBreakout>
+
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_arguments"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+function+functioncall+arguments"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### arguments \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+function+functioncall+arguments\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_name"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+function+functioncall+name"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### name \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+function+functioncall+name\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_id"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+id"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}>
+
+<div slot="title">
+
+##### id \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+id\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1256,15 +1576,24 @@ No examples provided
 
 _Default Value:_ `"null"`
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_index"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+index"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}>
 
-##### index \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+index\}
+<div slot="title">
 
-</Property>
+##### index \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+index\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1280,15 +1609,24 @@ No examples provided
 
 _Default Value:_ `0`
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":[]}],"breakoutSubTypes":[]}} typeAnnotations={[]}>
+<ExpandableProperty
+  slot="entry"
+  id="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall_type"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+type"
+  parentId="choices_ChatCompletionChoice_message_AssistantMessage_tool_calls_ToolCall"
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
 
-##### type \{#operation-fim_completion_v1_fim_completions_post+200+application-json+ChatCompletionChoice+AssistantMessage+ToolCall+type\}
+<div slot="title">
 
-</Property>
+##### type \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+choices+chatcompletionchoice+message+assistantmessage+tool_calls+toolcall+type\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1308,33 +1646,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
-</ExpandableSection>
+<ExpandableProperty
+  slot="entry"
+  id="created"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+created"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-</SectionContent>
+<div slot="title">
 
-</SectionContent>
+##### created \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+created\}
 
-</ExpandableSection>
+</div>
 
-</SectionContent>
-
-</SectionContent>
-
-</ExpandableSection>
-
-</SectionContent>
-
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
-
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
-
-##### created \{#operation-fim_completion_v1_fim_completions_post+200+application-json+created\}
-
-</Property>
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1354,15 +1683,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="id"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### id \{#operation-fim_completion_v1_fim_completions_post+200+application-json+id\}
+<div slot="title">
 
-</Property>
+##### id \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+id\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1382,15 +1720,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="model"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+model"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### model \{#operation-fim_completion_v1_fim_completions_post+200+application-json+model\}
+<div slot="title">
 
-</Property>
+##### model \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+model\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1410,15 +1757,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="object"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+object"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### object \{#operation-fim_completion_v1_fim_completions_post+200+application-json+object\}
+<div slot="title">
 
-</Property>
+##### object \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+object\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1438,43 +1794,24 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"UsageInfo","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo\">UsageInfo</a>","children":[],"breakoutSubTypes":[{"label":"UsageInfo","schema":{"type":"object","description":null,"examples":[],"properties":{"completion_tokens":{"type":"integer","description":null,"examples":["34"],"defaultValue":null},"prompt_tokens":{"type":"integer","description":null,"examples":["16"],"defaultValue":null},"total_tokens":{"type":"integer","description":null,"examples":["50"],"defaultValue":null}},"required":["prompt_tokens","completion_tokens","total_tokens"],"name":"UsageInfo","defaultValue":null}}]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="usage"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage"
+  typeInfo={{"label":"UsageInfo","linkedLabel":"<a href=\"#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage+usageinfo\">UsageInfo</a>","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### usage \{#operation-fim_completion_v1_fim_completions_post+200+application-json+usage\}
+<div slot="title">
 
-</Property>
+##### usage \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage\}
 
-<DebugPlaceholder>
+</div>
 
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-<ExpandableSection>
-
-<SectionTitle slot="title" borderVariant="none" paddingVariant="none">
-
-#### UsageInfo \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo\}
-
-</SectionTitle>
-
-<SectionContent slot="content" borderVariant="default" paddingVariant="default">
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1494,15 +1831,57 @@ No default value provided
 
 </DebugPlaceholder>
 
-#### Properties \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo+properties\}
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableBreakout slot="entry" id="usage_UsageInfo" headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage+usageinfo" parentId="usage">
 
-##### completion_tokens \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo+completion_tokens\}
+<div slot="title">
 
-</Property>
+#### UsageInfo \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage+usageinfo\}
+
+</div>
+
+<div slot="content">
+
+<DebugPlaceholder>
+
+No description provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No examples provided
+
+</DebugPlaceholder>
+
+<DebugPlaceholder>
+
+No default value provided
+
+</DebugPlaceholder>
+
+</div>
+
+</ExpandableBreakout>
+
+<ExpandableProperty
+  slot="entry"
+  id="usage_UsageInfo_completion_tokens"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage+usageinfo+completion_tokens"
+  parentId="usage_UsageInfo"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+
+<div slot="title">
+
+##### completion_tokens \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage+usageinfo+completion_tokens\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1522,15 +1901,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="usage_UsageInfo_prompt_tokens"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage+usageinfo+prompt_tokens"
+  parentId="usage_UsageInfo"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### prompt_tokens \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo+prompt_tokens\}
+<div slot="title">
 
-</Property>
+##### prompt_tokens \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage+usageinfo+prompt_tokens\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1550,15 +1939,25 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-<SectionContent slot="content" borderVariant="all" paddingVariant="default">
+</ExpandableProperty>
 
-<Property typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":[]}} typeAnnotations={[{"title":"required","variant":"warning"}]}>
+<ExpandableProperty
+  slot="entry"
+  id="usage_UsageInfo_total_tokens"
+  headingId="operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage+usageinfo+total_tokens"
+  parentId="usage_UsageInfo"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}>
 
-##### total_tokens \{#operation-fim_completion_v1_fim_completions_post+200+application-json+UsageInfo+total_tokens\}
+<div slot="title">
 
-</Property>
+##### total_tokens \{#operation-fim_completion_v1_fim_completions_post+responses+200+application-json+usage+usageinfo+total_tokens\}
+
+</div>
+
+<div slot="content">
 
 <DebugPlaceholder>
 
@@ -1578,15 +1977,11 @@ No default value provided
 
 </DebugPlaceholder>
 
-</SectionContent>
+</div>
 
-</SectionContent>
+</ExpandableProperty>
 
 </ExpandableSection>
-
-</SectionContent>
-
-</Section>
 
 </SectionContent>
 
