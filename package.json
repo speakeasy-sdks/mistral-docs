@@ -21,7 +21,7 @@
     "@docusaurus/theme-common": "3.5.2",
     "@easyops-cn/docusaurus-search-local": "^0.44.5",
     "@mdx-js/react": "^3.0.1",
-    "@speakeasy-api/docs-md": "^0.1.19",
+    "@speakeasy-api/docs-md": "^0.1.20",
     "clsx": "^1.2.1",
     "docusaurus-lunr-search": "^3.4.0",
     "lunr": "^2.3.9",

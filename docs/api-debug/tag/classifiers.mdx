@@ -93,7 +93,9 @@ No default value provided
   id="inputs"
   headingId="operation-moderations_v1_moderations_post+request+inputs"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -103,11 +105,7 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
+Text to classify.
 
 <DebugPlaceholder>
 
@@ -130,7 +128,9 @@ No default value provided
   id="model"
   headingId="operation-moderations_v1_moderations_post+request+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -207,7 +207,9 @@ No default value provided
   id="id"
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -244,7 +246,9 @@ No default value provided
   id="model"
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -281,7 +285,9 @@ No default value provided
   id="results"
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject\">ModerationObject</a>","children":[{"label":"ModerationObject","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject\">ModerationObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -313,7 +319,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="results_ModerationObject" headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject" parentId="results">
+<ExpandableBreakout
+  slot="entry"
+  id="results_ModerationObject"
+  headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject" parentId="results"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -350,7 +361,9 @@ No default value provided
   id="results_ModerationObject_categories"
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject+categories"
   parentId="results_ModerationObject"
-  typeInfo={{"label":"map","linkedLabel":"boolean","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"map","linkedLabel":"boolean","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -360,11 +373,7 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
+Moderation result thresholds
 
 <DebugPlaceholder>
 
@@ -387,7 +396,9 @@ No default value provided
   id="results_ModerationObject_category_scores"
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject+category_scores"
   parentId="results_ModerationObject"
-  typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -397,11 +408,7 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
+Moderation result
 
 <DebugPlaceholder>
 
@@ -528,7 +535,9 @@ No default value provided
   id="inputs"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"SystemMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage\">SystemMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"UserMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage\">UserMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"AssistantMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage\">AssistantMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"ToolMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage\">ToolMessage</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"SystemMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage\">SystemMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"UserMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage\">UserMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"AssistantMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage\">AssistantMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"ToolMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage\">ToolMessage</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -538,11 +547,7 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
+Chat to classify
 
 <DebugPlaceholder>
 
@@ -560,7 +565,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_SystemMessage" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage" parentId="inputs">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_SystemMessage"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage" parentId="inputs"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -598,7 +608,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content"
   parentId="inputs_SystemMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk\">TextChunk</a>","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -630,7 +642,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_SystemMessage_content_TextChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk" parentId="inputs_SystemMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_SystemMessage_content_TextChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk" parentId="inputs_SystemMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -668,7 +685,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk+text"
   parentId="inputs_SystemMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -705,7 +724,9 @@ No default value provided
   id="inputs_SystemMessage_content_TextChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk+type"
   parentId="inputs_SystemMessage_content_TextChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -738,7 +759,9 @@ _Default Value:_ `"text"`
   id="inputs_SystemMessage_role"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+role"
   parentId="inputs_SystemMessage"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"system\"","linkedLabel":"\"system\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"system\"","linkedLabel":"\"system\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -766,7 +789,12 @@ _Default Value:_ `"system"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_UserMessage" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage" parentId="inputs">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_UserMessage"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage" parentId="inputs"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -804,7 +832,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content"
   parentId="inputs_UserMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -836,7 +866,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_UserMessage_content_TextChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk" parentId="inputs_UserMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_UserMessage_content_TextChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk" parentId="inputs_UserMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -874,7 +909,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk+text"
   parentId="inputs_UserMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -911,7 +948,9 @@ No default value provided
   id="inputs_UserMessage_content_TextChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk+type"
   parentId="inputs_UserMessage_content_TextChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -939,7 +978,12 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_UserMessage_content_ImageURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk" parentId="inputs_UserMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_UserMessage_content_ImageURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk" parentId="inputs_UserMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -973,7 +1017,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url"
   parentId="inputs_UserMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1005,7 +1051,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_UserMessage_content_ImageURLChunk_image_url">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_UserMessage_content_ImageURLChunk_image_url"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1042,7 +1093,9 @@ No default value provided
   id="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL_detail"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1080,7 +1133,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl+url"
   parentId="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1117,7 +1172,9 @@ No default value provided
   id="inputs_UserMessage_content_ImageURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+type"
   parentId="inputs_UserMessage_content_ImageURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1145,7 +1202,12 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_UserMessage_content_DocumentURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk" parentId="inputs_UserMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_UserMessage_content_DocumentURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk" parentId="inputs_UserMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1182,7 +1244,9 @@ No default value provided
   id="inputs_UserMessage_content_DocumentURLChunk_document_name"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk+document_name"
   parentId="inputs_UserMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1220,7 +1284,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk+document_url"
   parentId="inputs_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1257,7 +1323,9 @@ No default value provided
   id="inputs_UserMessage_content_DocumentURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk+type"
   parentId="inputs_UserMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1285,7 +1353,12 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_UserMessage_content_ReferenceChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk" parentId="inputs_UserMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_UserMessage_content_ReferenceChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk" parentId="inputs_UserMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1323,7 +1396,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk+reference_ids"
   parentId="inputs_UserMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1360,7 +1435,9 @@ No default value provided
   id="inputs_UserMessage_content_ReferenceChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk+type"
   parentId="inputs_UserMessage_content_ReferenceChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1393,7 +1470,9 @@ _Default Value:_ `"reference"`
   id="inputs_UserMessage_role"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+role"
   parentId="inputs_UserMessage"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"user\"","linkedLabel":"\"user\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"user\"","linkedLabel":"\"user\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1421,7 +1500,12 @@ _Default Value:_ `"user"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_AssistantMessage" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage" parentId="inputs">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_AssistantMessage"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage" parentId="inputs"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1458,7 +1542,9 @@ No default value provided
   id="inputs_AssistantMessage_content"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content"
   parentId="inputs_AssistantMessage"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1490,7 +1576,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_AssistantMessage_content_TextChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk" parentId="inputs_AssistantMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_AssistantMessage_content_TextChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk" parentId="inputs_AssistantMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1528,7 +1619,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk+text"
   parentId="inputs_AssistantMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1565,7 +1658,9 @@ No default value provided
   id="inputs_AssistantMessage_content_TextChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk+type"
   parentId="inputs_AssistantMessage_content_TextChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1593,7 +1688,12 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_AssistantMessage_content_ImageURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk" parentId="inputs_AssistantMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_AssistantMessage_content_ImageURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk" parentId="inputs_AssistantMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1627,7 +1727,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url"
   parentId="inputs_AssistantMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1659,7 +1761,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1696,7 +1803,9 @@ No default value provided
   id="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL_detail"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1734,7 +1843,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl+url"
   parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1771,7 +1882,9 @@ No default value provided
   id="inputs_AssistantMessage_content_ImageURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+type"
   parentId="inputs_AssistantMessage_content_ImageURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1799,7 +1912,12 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_AssistantMessage_content_DocumentURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk" parentId="inputs_AssistantMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_AssistantMessage_content_DocumentURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk" parentId="inputs_AssistantMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1836,7 +1954,9 @@ No default value provided
   id="inputs_AssistantMessage_content_DocumentURLChunk_document_name"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk+document_name"
   parentId="inputs_AssistantMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1874,7 +1994,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk+document_url"
   parentId="inputs_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1911,7 +2033,9 @@ No default value provided
   id="inputs_AssistantMessage_content_DocumentURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk+type"
   parentId="inputs_AssistantMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1939,7 +2063,12 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_AssistantMessage_content_ReferenceChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk" parentId="inputs_AssistantMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_AssistantMessage_content_ReferenceChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk" parentId="inputs_AssistantMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -1977,7 +2106,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk+reference_ids"
   parentId="inputs_AssistantMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2014,7 +2145,9 @@ No default value provided
   id="inputs_AssistantMessage_content_ReferenceChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk+type"
   parentId="inputs_AssistantMessage_content_ReferenceChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2047,7 +2180,9 @@ _Default Value:_ `"reference"`
   id="inputs_AssistantMessage_prefix"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+prefix"
   parentId="inputs_AssistantMessage"
-  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2076,7 +2211,9 @@ _Default Value:_ `false`
   id="inputs_AssistantMessage_role"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+role"
   parentId="inputs_AssistantMessage"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2109,7 +2246,9 @@ _Default Value:_ `"assistant"`
   id="inputs_AssistantMessage_tool_calls"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls"
   parentId="inputs_AssistantMessage"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2141,7 +2280,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_AssistantMessage_tool_calls_ToolCall" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall" parentId="inputs_AssistantMessage_tool_calls">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_AssistantMessage_tool_calls_ToolCall"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall" parentId="inputs_AssistantMessage_tool_calls"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2179,7 +2323,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function"
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"FunctionCall","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall\">FunctionCall</a>","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2211,49 +2357,19 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall" parentId="inputs_AssistantMessage_tool_calls_ToolCall_function">
-
-<div slot="title">
-
-#### FunctionCall \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</div>
-
-</ExpandableBreakout>
-
 <ExpandableProperty
   slot="entry"
-  id="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_arguments"
-  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall+arguments"
-  parentId="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
+  id="inputs_AssistantMessage_tool_calls_ToolCall_function_arguments"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+arguments"
+  parentId="inputs_AssistantMessage_tool_calls_ToolCall_function"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
-##### arguments \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall+arguments\}
+##### arguments \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+arguments\}
 
 </div>
 
@@ -2283,15 +2399,17 @@ No default value provided
 
 <ExpandableProperty
   slot="entry"
-  id="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_name"
-  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall+name"
-  parentId="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
+  id="inputs_AssistantMessage_tool_calls_ToolCall_function_name"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+name"
+  parentId="inputs_AssistantMessage_tool_calls_ToolCall_function"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
-##### name \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall+name\}
+##### name \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+name\}
 
 </div>
 
@@ -2324,7 +2442,9 @@ No default value provided
   id="inputs_AssistantMessage_tool_calls_ToolCall_id"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+id"
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
-  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2357,7 +2477,9 @@ _Default Value:_ `"null"`
   id="inputs_AssistantMessage_tool_calls_ToolCall_index"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+index"
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
-  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2390,7 +2512,9 @@ _Default Value:_ `0`
   id="inputs_AssistantMessage_tool_calls_ToolCall_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+type"
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2422,7 +2546,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_ToolMessage" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage" parentId="inputs">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_ToolMessage"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage" parentId="inputs"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2460,7 +2589,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content"
   parentId="inputs_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2492,7 +2623,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_ToolMessage_content_TextChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk" parentId="inputs_ToolMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_ToolMessage_content_TextChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk" parentId="inputs_ToolMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2530,7 +2666,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk+text"
   parentId="inputs_ToolMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2567,7 +2705,9 @@ No default value provided
   id="inputs_ToolMessage_content_TextChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk+type"
   parentId="inputs_ToolMessage_content_TextChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2595,7 +2735,12 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_ToolMessage_content_ImageURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk" parentId="inputs_ToolMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_ToolMessage_content_ImageURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk" parentId="inputs_ToolMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2629,7 +2774,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url"
   parentId="inputs_ToolMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2661,7 +2808,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_ToolMessage_content_ImageURLChunk_image_url">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_ToolMessage_content_ImageURLChunk_image_url"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2698,7 +2850,9 @@ No default value provided
   id="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL_detail"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2736,7 +2890,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl+url"
   parentId="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2773,7 +2929,9 @@ No default value provided
   id="inputs_ToolMessage_content_ImageURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+type"
   parentId="inputs_ToolMessage_content_ImageURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2801,7 +2959,12 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_ToolMessage_content_DocumentURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk" parentId="inputs_ToolMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_ToolMessage_content_DocumentURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk" parentId="inputs_ToolMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2838,7 +3001,9 @@ No default value provided
   id="inputs_ToolMessage_content_DocumentURLChunk_document_name"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk+document_name"
   parentId="inputs_ToolMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2876,7 +3041,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk+document_url"
   parentId="inputs_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2913,7 +3080,9 @@ No default value provided
   id="inputs_ToolMessage_content_DocumentURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk+type"
   parentId="inputs_ToolMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2941,7 +3110,12 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_ToolMessage_content_ReferenceChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk" parentId="inputs_ToolMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_ToolMessage_content_ReferenceChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk" parentId="inputs_ToolMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -2979,7 +3153,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk+reference_ids"
   parentId="inputs_ToolMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3016,7 +3192,9 @@ No default value provided
   id="inputs_ToolMessage_content_ReferenceChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk+type"
   parentId="inputs_ToolMessage_content_ReferenceChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3049,7 +3227,9 @@ _Default Value:_ `"reference"`
   id="inputs_ToolMessage_name"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+name"
   parentId="inputs_ToolMessage"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3086,7 +3266,9 @@ No default value provided
   id="inputs_ToolMessage_role"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+role"
   parentId="inputs_ToolMessage"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"tool\"","linkedLabel":"\"tool\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"tool\"","linkedLabel":"\"tool\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3119,7 +3301,9 @@ _Default Value:_ `"tool"`
   id="inputs_ToolMessage_tool_call_id"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+tool_call_id"
   parentId="inputs_ToolMessage"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3156,7 +3340,9 @@ No default value provided
   id="model"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+request+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3237,7 +3423,9 @@ No default value provided
   id="id"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3274,7 +3462,9 @@ No default value provided
   id="model"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3311,7 +3501,9 @@ No default value provided
   id="results"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject\">ModerationObject</a>","children":[{"label":"ModerationObject","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject\">ModerationObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3343,7 +3535,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="results_ModerationObject" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject" parentId="results">
+<ExpandableBreakout
+  slot="entry"
+  id="results_ModerationObject"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject" parentId="results"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3380,7 +3577,9 @@ No default value provided
   id="results_ModerationObject_categories"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject+categories"
   parentId="results_ModerationObject"
-  typeInfo={{"label":"map","linkedLabel":"boolean","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"map","linkedLabel":"boolean","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3390,11 +3589,7 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
+Moderation result thresholds
 
 <DebugPlaceholder>
 
@@ -3417,7 +3612,9 @@ No default value provided
   id="results_ModerationObject_category_scores"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject+category_scores"
   parentId="results_ModerationObject"
-  typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3427,11 +3624,7 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
+Moderation result
 
 <DebugPlaceholder>
 
@@ -3538,7 +3731,9 @@ No default value provided
   id="inputs"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+request+inputs"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3548,11 +3743,7 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
+Text to classify.
 
 <DebugPlaceholder>
 
@@ -3575,7 +3766,9 @@ No default value provided
   id="model"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+request+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3652,7 +3845,9 @@ No default value provided
   id="id"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3689,7 +3884,9 @@ No default value provided
   id="model"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3726,7 +3923,9 @@ No default value provided
   id="results"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+responses+200+application-json+results"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[{"label":"map","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[{"label":"ClassificationTargetResult","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3758,7 +3957,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="results_ClassificationTargetResult" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult" parentId="results">
+<ExpandableBreakout
+  slot="entry"
+  id="results_ClassificationTargetResult"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult" parentId="results"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3796,7 +4000,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult+scores"
   parentId="results_ClassificationTargetResult"
   typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3940,7 +4146,9 @@ No default value provided
   id="inputs"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"inputs","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+inputs\">inputs</a>","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest\">InstructRequest</a>","children":[{"label":"InstructRequest","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest\">InstructRequest</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -3950,11 +4158,7 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
+Chat to classify
 
 <DebugPlaceholder>
 
@@ -3972,7 +4176,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest" parentId="inputs">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest" parentId="inputs"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4010,7 +4219,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages"
   parentId="inputs_InstructRequest"
   typeInfo={{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"SystemMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage\">SystemMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"UserMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage\">UserMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"AssistantMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage\">AssistantMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"ToolMessage","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage\">ToolMessage</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4042,7 +4253,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_SystemMessage" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage" parentId="inputs_InstructRequest_messages">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_SystemMessage"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage" parentId="inputs_InstructRequest_messages"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4080,7 +4296,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content"
   parentId="inputs_InstructRequest_messages_SystemMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk\">TextChunk</a>","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4112,7 +4330,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_SystemMessage_content_TextChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk" parentId="inputs_InstructRequest_messages_SystemMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_SystemMessage_content_TextChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk" parentId="inputs_InstructRequest_messages_SystemMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4150,7 +4373,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk+text"
   parentId="inputs_InstructRequest_messages_SystemMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4187,7 +4412,9 @@ No default value provided
   id="inputs_InstructRequest_messages_SystemMessage_content_TextChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk+type"
   parentId="inputs_InstructRequest_messages_SystemMessage_content_TextChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4220,7 +4447,9 @@ _Default Value:_ `"text"`
   id="inputs_InstructRequest_messages_SystemMessage_role"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+role"
   parentId="inputs_InstructRequest_messages_SystemMessage"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"system\"","linkedLabel":"\"system\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"system\"","linkedLabel":"\"system\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4248,7 +4477,12 @@ _Default Value:_ `"system"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_UserMessage" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage" parentId="inputs_InstructRequest_messages">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_UserMessage"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage" parentId="inputs_InstructRequest_messages"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4286,7 +4520,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content"
   parentId="inputs_InstructRequest_messages_UserMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4318,7 +4554,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_UserMessage_content_TextChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk" parentId="inputs_InstructRequest_messages_UserMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_UserMessage_content_TextChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk" parentId="inputs_InstructRequest_messages_UserMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4356,7 +4597,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk+text"
   parentId="inputs_InstructRequest_messages_UserMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4393,7 +4636,9 @@ No default value provided
   id="inputs_InstructRequest_messages_UserMessage_content_TextChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk+type"
   parentId="inputs_InstructRequest_messages_UserMessage_content_TextChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4421,7 +4666,12 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk" parentId="inputs_InstructRequest_messages_UserMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk" parentId="inputs_InstructRequest_messages_UserMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4455,7 +4705,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4487,7 +4739,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4524,7 +4781,9 @@ No default value provided
   id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL_detail"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4562,7 +4821,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl+url"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4599,7 +4860,9 @@ No default value provided
   id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+type"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4627,7 +4890,12 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk" parentId="inputs_InstructRequest_messages_UserMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk" parentId="inputs_InstructRequest_messages_UserMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4664,7 +4932,9 @@ No default value provided
   id="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk_document_name"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk+document_name"
   parentId="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4702,7 +4972,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk+document_url"
   parentId="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4739,7 +5011,9 @@ No default value provided
   id="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk+type"
   parentId="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4767,7 +5041,12 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk" parentId="inputs_InstructRequest_messages_UserMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk" parentId="inputs_InstructRequest_messages_UserMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4805,7 +5084,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk+reference_ids"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4842,7 +5123,9 @@ No default value provided
   id="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk+type"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4875,7 +5158,9 @@ _Default Value:_ `"reference"`
   id="inputs_InstructRequest_messages_UserMessage_role"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+role"
   parentId="inputs_InstructRequest_messages_UserMessage"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"user\"","linkedLabel":"\"user\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"user\"","linkedLabel":"\"user\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4903,7 +5188,12 @@ _Default Value:_ `"user"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_AssistantMessage" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage" parentId="inputs_InstructRequest_messages">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_AssistantMessage"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage" parentId="inputs_InstructRequest_messages"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4940,7 +5230,9 @@ No default value provided
   id="inputs_InstructRequest_messages_AssistantMessage_content"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content"
   parentId="inputs_InstructRequest_messages_AssistantMessage"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -4972,7 +5264,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5010,7 +5307,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk+text"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5047,7 +5346,9 @@ No default value provided
   id="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5075,7 +5376,12 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5109,7 +5415,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5141,7 +5449,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5178,7 +5491,9 @@ No default value provided
   id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL_detail"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5216,7 +5531,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl+url"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5253,7 +5570,9 @@ No default value provided
   id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5281,7 +5600,12 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5318,7 +5642,9 @@ No default value provided
   id="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk_document_name"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk+document_name"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5356,7 +5682,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk+document_url"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5393,7 +5721,9 @@ No default value provided
   id="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5421,7 +5751,12 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5459,7 +5794,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk+reference_ids"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5496,7 +5833,9 @@ No default value provided
   id="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5529,7 +5868,9 @@ _Default Value:_ `"reference"`
   id="inputs_InstructRequest_messages_AssistantMessage_prefix"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+prefix"
   parentId="inputs_InstructRequest_messages_AssistantMessage"
-  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5558,7 +5899,9 @@ _Default Value:_ `false`
   id="inputs_InstructRequest_messages_AssistantMessage_role"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+role"
   parentId="inputs_InstructRequest_messages_AssistantMessage"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5591,7 +5934,9 @@ _Default Value:_ `"assistant"`
   id="inputs_InstructRequest_messages_AssistantMessage_tool_calls"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls"
   parentId="inputs_InstructRequest_messages_AssistantMessage"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5623,7 +5968,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall" parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall" parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5661,7 +6011,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function"
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"FunctionCall","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall\">FunctionCall</a>","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5693,49 +6045,19 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall" parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function">
-
-<div slot="title">
-
-#### FunctionCall \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
-</div>
-
-</ExpandableBreakout>
-
 <ExpandableProperty
   slot="entry"
-  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_arguments"
-  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall+arguments"
-  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
+  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_arguments"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+arguments"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
-##### arguments \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall+arguments\}
+##### arguments \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+arguments\}
 
 </div>
 
@@ -5765,15 +6087,17 @@ No default value provided
 
 <ExpandableProperty
   slot="entry"
-  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_name"
-  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall+name"
-  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
+  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_name"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+name"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
-##### name \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall+name\}
+##### name \{#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+name\}
 
 </div>
 
@@ -5806,7 +6130,9 @@ No default value provided
   id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_id"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+id"
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
-  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5839,7 +6165,9 @@ _Default Value:_ `"null"`
   id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_index"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+index"
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
-  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5872,7 +6200,9 @@ _Default Value:_ `0`
   id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5904,7 +6234,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_ToolMessage" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage" parentId="inputs_InstructRequest_messages">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_ToolMessage"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage" parentId="inputs_InstructRequest_messages"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5942,7 +6277,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content"
   parentId="inputs_InstructRequest_messages_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -5974,7 +6311,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_ToolMessage_content_TextChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk" parentId="inputs_InstructRequest_messages_ToolMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_ToolMessage_content_TextChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk" parentId="inputs_InstructRequest_messages_ToolMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6012,7 +6354,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk+text"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6049,7 +6393,9 @@ No default value provided
   id="inputs_InstructRequest_messages_ToolMessage_content_TextChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk+type"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_TextChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6077,7 +6423,12 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk" parentId="inputs_InstructRequest_messages_ToolMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk" parentId="inputs_InstructRequest_messages_ToolMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6111,7 +6462,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6143,7 +6496,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6180,7 +6538,9 @@ No default value provided
   id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL_detail"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6218,7 +6578,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl+url"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6255,7 +6617,9 @@ No default value provided
   id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+type"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6283,7 +6647,12 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk" parentId="inputs_InstructRequest_messages_ToolMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk" parentId="inputs_InstructRequest_messages_ToolMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6320,7 +6689,9 @@ No default value provided
   id="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk_document_name"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk+document_name"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6358,7 +6729,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk+document_url"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6395,7 +6768,9 @@ No default value provided
   id="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk+type"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6423,7 +6798,12 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk" parentId="inputs_InstructRequest_messages_ToolMessage_content">
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk" parentId="inputs_InstructRequest_messages_ToolMessage_content"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6461,7 +6841,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk+reference_ids"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6498,7 +6880,9 @@ No default value provided
   id="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk_type"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk+type"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6531,7 +6915,9 @@ _Default Value:_ `"reference"`
   id="inputs_InstructRequest_messages_ToolMessage_name"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+name"
   parentId="inputs_InstructRequest_messages_ToolMessage"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6568,7 +6954,9 @@ No default value provided
   id="inputs_InstructRequest_messages_ToolMessage_role"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+role"
   parentId="inputs_InstructRequest_messages_ToolMessage"
-  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"tool\"","linkedLabel":"\"tool\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"tool\"","linkedLabel":"\"tool\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6601,7 +6989,9 @@ _Default Value:_ `"tool"`
   id="inputs_InstructRequest_messages_ToolMessage_tool_call_id"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+tool_call_id"
   parentId="inputs_InstructRequest_messages_ToolMessage"
-  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}>
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6638,7 +7028,9 @@ No default value provided
   id="model"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+request+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6719,7 +7111,9 @@ No default value provided
   id="id"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6756,7 +7150,9 @@ No default value provided
   id="model"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6793,7 +7189,9 @@ No default value provided
   id="results"
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[{"label":"map","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[{"label":"ClassificationTargetResult","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6825,7 +7223,12 @@ No default value provided
 
 </ExpandableProperty>
 
-<ExpandableBreakout slot="entry" id="results_ClassificationTargetResult" headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult" parentId="results">
+<ExpandableBreakout
+  slot="entry"
+  id="results_ClassificationTargetResult"
+  headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult" parentId="results"
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
@@ -6863,7 +7266,9 @@ No default value provided
   headingId="operation-moderations_v1_moderations_post+operation-chat_moderations_v1_chat_moderations_post+operation-classifications_v1_classifications_post+operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult+scores"
   parentId="results_ClassificationTargetResult"
   typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}>
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasFrontMatter={true}
+>
 
 <div slot="title">
 
