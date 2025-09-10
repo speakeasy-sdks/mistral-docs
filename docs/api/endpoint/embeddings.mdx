@@ -4,10 +4,14 @@ sidebar_label: Embeddings
 ---
 
 import "@speakeasy-api/docs-md/docusaurus.css";
-import { Pill, Section, SectionTitle, SectionContent, TryItNow, DebugPlaceholder, ExpandableSection, ExpandableProperty, TabbedSection, SectionTab, ExpandableBreakout } from "@speakeasy-api/docs-md/docusaurus";
+import { Operation, OperationFrontMatterSection, Pill, OperationTryItNowSection, TryItNow, Section, SectionTitle, SectionContent, OperationRequestBodySection, ExpandableSection, ExpandableProperty, OperationResponseBodySection, TabbedSection, SectionTab, ExpandableBreakout } from "@speakeasy-api/docs-md/react";
 
 
 # Embeddings Operations \{#embeddings\}
+
+<Operation>
+
+<OperationFrontMatterSection slot="front-matter">
 
 ## <Pill variant="primary"><b>POST</b></Pill> /v1/embeddings \{#operation-embeddings_v1_embeddings_post\}
 
@@ -15,19 +19,23 @@ _Embeddings_
 
 Embeddings
 
+</OperationFrontMatterSection>
+
+<OperationTryItNowSection slot="try-it-now">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Try it Now \{#operation-embeddings_v1_embeddings_post+try-it-now\}
+### Try it Now \{#operation-embeddings_v1_embeddings_post\}
 
 </SectionTitle>
 
 <SectionContent slot="content" variant="top-level">
 
 <TryItNow
- externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
- defaultValue={`import { Mistral } from "@mistralai/mistralai";
+  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -47,12 +55,15 @@ async function run() {
 }
 
 run();`}
- 
 />
 
 </SectionContent>
 
 </Section>
+
+</OperationTryItNowSection>
+
+<OperationRequestBodySection slot="request-body">
 
 <Section variant="top-level">
 
@@ -64,24 +75,6 @@ run();`}
 
 <SectionContent slot="content" variant="top-level">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 <ExpandableSection>
 
 <ExpandableProperty
@@ -91,6 +84,7 @@ No default value provided
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={true}
 >
 
 <div slot="title">
@@ -103,18 +97,6 @@ No default value provided
 
 Text to embed.
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -126,6 +108,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={true}
 >
 
 <div slot="title">
@@ -144,12 +127,6 @@ _Example:_
 mistral-embed
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -159,34 +136,13 @@ No default value provided
   id="output_dimension"
   headingId="operation-embeddings_v1_embeddings_post+request+output_dimension"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### output_dimension \{#operation-embeddings_v1_embeddings_post+request+output_dimension\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -197,34 +153,13 @@ No default value provided
   id="output_dtype"
   headingId="operation-embeddings_v1_embeddings_post+request+output_dtype"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"float\"","linkedLabel":"\"float\"","children":[],"breakoutSubTypes":{}},{"label":"\"int8\"","linkedLabel":"\"int8\"","children":[],"breakoutSubTypes":{}},{"label":"\"uint8\"","linkedLabel":"\"uint8\"","children":[],"breakoutSubTypes":{}},{"label":"\"binary\"","linkedLabel":"\"binary\"","children":[],"breakoutSubTypes":{}},{"label":"\"ubinary\"","linkedLabel":"\"ubinary\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### output_dtype \{#operation-embeddings_v1_embeddings_post+request+output_dtype\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -235,6 +170,10 @@ No default value provided
 </SectionContent>
 
 </Section>
+
+</OperationRequestBodySection>
+
+<OperationResponseBodySection slot="response-body">
 
 <TabbedSection>
 
@@ -254,24 +193,6 @@ No default value provided
 
 Successful Response
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 <ExpandableSection>
 
 <ExpandableProperty
@@ -280,34 +201,13 @@ No default value provided
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+data"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-embeddings_v1_embeddings_post+responses+200+application-json+data+embeddingresponsedata\">EmbeddingResponseData</a>","children":[{"label":"EmbeddingResponseData","linkedLabel":"<a href=\"#operation-embeddings_v1_embeddings_post+responses+200+application-json+data+embeddingresponsedata\">EmbeddingResponseData</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### data \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+data\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -317,34 +217,13 @@ No default value provided
   slot="entry"
   id="data_EmbeddingResponseData"
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+data+embeddingresponsedata" parentId="data"
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 #### EmbeddingResponseData \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+data+embeddingresponsedata\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -356,34 +235,13 @@ No default value provided
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+data+embeddingresponsedata+embedding"
   parentId="data_EmbeddingResponseData"
   typeInfo={{"label":"array","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### embedding \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+data+embeddingresponsedata+embedding\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -396,6 +254,7 @@ No default value provided
   parentId="data_EmbeddingResponseData"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -406,23 +265,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
 _Example:_
 
 ```
 0
 ```
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -435,6 +282,7 @@ No default value provided
   parentId="data_EmbeddingResponseData"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -445,23 +293,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
 _Example:_
 
 ```
 embedding
 ```
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -474,6 +310,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={true}
 >
 
 <div slot="title">
@@ -484,23 +321,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
 _Example:_
 
 ```
 cmpl-e5cc70bb28c444948073e77776eb30ef
 ```
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -513,6 +338,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={true}
 >
 
 <div slot="title">
@@ -523,23 +349,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
 _Example:_
 
 ```
 mistral-small-latest
 ```
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -552,6 +366,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={true}
 >
 
 <div slot="title">
@@ -562,23 +377,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
 _Example:_
 
 ```
 chat.completion
 ```
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -590,34 +393,13 @@ No default value provided
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+usage"
   typeInfo={{"label":"UsageInfo","linkedLabel":"<a href=\"#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo\">UsageInfo</a>","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### usage \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -631,6 +413,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -641,23 +424,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
 _Example:_
 
 ```
 34
 ```
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -671,6 +442,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -681,23 +453,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
 _Example:_
 
 ```
 16
 ```
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -711,6 +471,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -721,23 +482,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
 _Example:_
 
 ```
 50
 ```
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -748,3 +497,7 @@ No default value provided
 </SectionContent>
 
 </TabbedSection>
+
+</OperationResponseBodySection>
+
+</Operation>

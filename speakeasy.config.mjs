@@ -7,6 +7,7 @@ export default {
   },
   display: {
     visibleResponses: "success",
+    expandTopLevelPropertiesOnPageLoad: true,
   },
   tryItNow: {
     npmPackageName: "@mistralai/mistralai",

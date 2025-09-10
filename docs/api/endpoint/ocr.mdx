@@ -4,34 +4,36 @@ sidebar_label: Ocr
 ---
 
 import "@speakeasy-api/docs-md/docusaurus.css";
-import { Pill, DebugPlaceholder, Section, SectionTitle, SectionContent, TryItNow, ExpandableSection, ExpandableProperty, ExpandableBreakout, TabbedSection, SectionTab } from "@speakeasy-api/docs-md/docusaurus";
+import { Operation, OperationFrontMatterSection, Pill, OperationTryItNowSection, TryItNow, Section, SectionTitle, SectionContent, OperationRequestBodySection, ExpandableSection, ExpandableProperty, ExpandableBreakout, OperationResponseBodySection, TabbedSection, SectionTab } from "@speakeasy-api/docs-md/react";
 
 
 # Ocr Operations \{#ocr\}
+
+<Operation>
+
+<OperationFrontMatterSection slot="front-matter">
 
 ## <Pill variant="primary"><b>POST</b></Pill> /v1/ocr \{#operation-ocr_v1_ocr_post\}
 
 OCR
 
-<DebugPlaceholder>
+</OperationFrontMatterSection>
 
-No description provided
-
-</DebugPlaceholder>
+<OperationTryItNowSection slot="try-it-now">
 
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Try it Now \{#operation-ocr_v1_ocr_post+try-it-now\}
+### Try it Now \{#operation-ocr_v1_ocr_post\}
 
 </SectionTitle>
 
 <SectionContent slot="content" variant="top-level">
 
 <TryItNow
- externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
- defaultValue={`import { Mistral } from "@mistralai/mistralai";
+  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -53,12 +55,15 @@ async function run() {
 }
 
 run();`}
- 
 />
 
 </SectionContent>
 
 </Section>
+
+</OperationTryItNowSection>
+
+<OperationRequestBodySection slot="request-body">
 
 <Section variant="top-level">
 
@@ -70,24 +75,6 @@ run();`}
 
 <SectionContent slot="content" variant="top-level">
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 <ExpandableSection>
 
 <ExpandableProperty
@@ -95,34 +82,13 @@ No default value provided
   id="bbox_annotation_format"
   headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat\">ResponseFormat</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### bbox_annotation_format \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -132,34 +98,13 @@ No default value provided
   slot="entry"
   id="bbox_annotation_format_ResponseFormat"
   headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat" parentId="bbox_annotation_format"
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 #### ResponseFormat \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -171,34 +116,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema"
   parentId="bbox_annotation_format_ResponseFormat"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema\">JsonSchema</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### json_schema \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -208,34 +132,13 @@ No default value provided
   slot="entry"
   id="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema" parentId="bbox_annotation_format_ResponseFormat_json_schema"
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 #### JsonSchema \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -247,34 +150,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+description"
   parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### description \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+description\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -287,34 +169,13 @@ No default value provided
   parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### name \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+name\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -327,34 +188,13 @@ No default value provided
   parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### schema_definition \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+schema_definition\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -366,34 +206,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+strict"
   parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### strict \{#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema+strict\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -406,6 +225,7 @@ No default value provided
   parentId="bbox_annotation_format_ResponseFormat"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -418,18 +238,6 @@ No default value provided
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -441,6 +249,7 @@ No default value provided
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={true}
 >
 
 <div slot="title">
@@ -453,18 +262,6 @@ No default value provided
 
 Document to run OCR on
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -473,34 +270,13 @@ No default value provided
   slot="entry"
   id="document_DocumentURLChunk"
   headingId="operation-ocr_v1_ocr_post+request+document+documenturlchunk" parentId="document"
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 #### DocumentURLChunk \{#operation-ocr_v1_ocr_post+request+document+documenturlchunk\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -512,34 +288,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+request+document+documenturlchunk+document_name"
   parentId="document_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### document_name \{#operation-ocr_v1_ocr_post+request+document+documenturlchunk+document_name\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -552,34 +307,13 @@ No default value provided
   parentId="document_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### document_url \{#operation-ocr_v1_ocr_post+request+document+documenturlchunk+document_url\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -592,6 +326,7 @@ No default value provided
   parentId="document_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -601,18 +336,6 @@ No default value provided
 </div>
 
 <div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
 
 _Default Value:_ `"document_url"`
 
@@ -625,6 +348,7 @@ _Default Value:_ `"document_url"`
   id="document_ImageURLChunk"
   headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk" parentId="document"
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -637,18 +361,6 @@ _Default Value:_ `"document_url"`
 
 \{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableBreakout>
@@ -660,34 +372,13 @@ No default value provided
   parentId="document_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### image_url \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -697,34 +388,13 @@ No default value provided
   slot="entry"
   id="document_ImageURLChunk_image_url_ImageURL"
   headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl" parentId="document_ImageURLChunk_image_url"
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 #### ImageURL \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -736,34 +406,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl+detail"
   parentId="document_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### detail \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl+detail\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -776,34 +425,13 @@ No default value provided
   parentId="document_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### url \{#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl+url\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -816,6 +444,7 @@ No default value provided
   parentId="document_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -825,18 +454,6 @@ No default value provided
 </div>
 
 <div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
 
 _Default Value:_ `"image_url"`
 
@@ -849,34 +466,13 @@ _Default Value:_ `"image_url"`
   id="document_annotation_format"
   headingId="operation-ocr_v1_ocr_post+request+document_annotation_format"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat\">ResponseFormat</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### document_annotation_format \{#operation-ocr_v1_ocr_post+request+document_annotation_format\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -886,34 +482,13 @@ No default value provided
   slot="entry"
   id="document_annotation_format_ResponseFormat"
   headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat" parentId="document_annotation_format"
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 #### ResponseFormat \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -925,34 +500,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema"
   parentId="document_annotation_format_ResponseFormat"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema\">JsonSchema</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### json_schema \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -962,34 +516,13 @@ No default value provided
   slot="entry"
   id="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema" parentId="document_annotation_format_ResponseFormat_json_schema"
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 #### JsonSchema \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1001,34 +534,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+description"
   parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### description \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+description\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1041,34 +553,13 @@ No default value provided
   parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### name \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+name\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1081,34 +572,13 @@ No default value provided
   parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### schema_definition \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+schema_definition\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1120,34 +590,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+strict"
   parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### strict \{#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema+strict\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1160,6 +609,7 @@ No default value provided
   parentId="document_annotation_format_ResponseFormat"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -1172,18 +622,6 @@ No default value provided
 
 An object specifying the format that the model must output. Setting to `\{ "type": "json_object" \}` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -1193,34 +631,13 @@ No default value provided
   id="id"
   headingId="operation-ocr_v1_ocr_post+request+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### id \{#operation-ocr_v1_ocr_post+request+id\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1231,34 +648,13 @@ No default value provided
   id="image_limit"
   headingId="operation-ocr_v1_ocr_post+request+image_limit"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### image_limit \{#operation-ocr_v1_ocr_post+request+image_limit\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1269,34 +665,13 @@ No default value provided
   id="image_min_size"
   headingId="operation-ocr_v1_ocr_post+request+image_min_size"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### image_min_size \{#operation-ocr_v1_ocr_post+request+image_min_size\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1307,34 +682,13 @@ No default value provided
   id="include_image_base64"
   headingId="operation-ocr_v1_ocr_post+request+include_image_base64"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### include_image_base64 \{#operation-ocr_v1_ocr_post+request+include_image_base64\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1346,34 +700,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+request+model"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### model \{#operation-ocr_v1_ocr_post+request+model\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1384,34 +717,13 @@ No default value provided
   id="pages"
   headingId="operation-ocr_v1_ocr_post+request+pages"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### pages \{#operation-ocr_v1_ocr_post+request+pages\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1422,6 +734,10 @@ No default value provided
 </SectionContent>
 
 </Section>
+
+</OperationRequestBodySection>
+
+<OperationResponseBodySection slot="response-body">
 
 <TabbedSection>
 
@@ -1441,24 +757,6 @@ No default value provided
 
 Successful Response
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 <ExpandableSection>
 
 <ExpandableProperty
@@ -1466,34 +764,13 @@ No default value provided
   id="document_annotation"
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+document_annotation"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### document_annotation \{#operation-ocr_v1_ocr_post+responses+200+application-json+document_annotation\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1506,6 +783,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={true}
 >
 
 <div slot="title">
@@ -1518,18 +796,6 @@ No default value provided
 
 The model used to generate the OCR.
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -1541,6 +807,7 @@ No default value provided
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject\">OCRPageObject</a>","children":[{"label":"OCRPageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject\">OCRPageObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={true}
 >
 
 <div slot="title">
@@ -1553,18 +820,6 @@ No default value provided
 
 List of OCR info for pages.
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -1573,34 +828,13 @@ No default value provided
   slot="entry"
   id="pages_OCRPageObject"
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject" parentId="pages"
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 #### OCRPageObject \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1613,34 +847,13 @@ No default value provided
   parentId="pages_OCRPageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"OCRPageDimensions","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions\">OCRPageDimensions</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### dimensions \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1651,6 +864,7 @@ No default value provided
   id="pages_OCRPageObject_dimensions_OCRPageDimensions"
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions" parentId="pages_OCRPageObject_dimensions"
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -1662,18 +876,6 @@ No default value provided
 <div slot="content">
 
 The dimensions of the PDF Page's screenshot image
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1687,6 +889,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -1698,18 +901,6 @@ No default value provided
 <div slot="content">
 
 Dots per inch of the page-image
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1723,6 +914,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -1734,18 +926,6 @@ No default value provided
 <div slot="content">
 
 Height of the image in pixels
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1759,6 +939,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -1770,18 +951,6 @@ No default value provided
 <div slot="content">
 
 Width of the image in pixels
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1795,6 +964,7 @@ No default value provided
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject\">OCRImageObject</a>","children":[{"label":"OCRImageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject\">OCRImageObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -1807,18 +977,6 @@ No default value provided
 
 List of all extracted images in the page
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -1827,34 +985,13 @@ No default value provided
   slot="entry"
   id="pages_OCRPageObject_images_OCRImageObject"
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject" parentId="pages_OCRPageObject_images"
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 #### OCRImageObject \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1867,34 +1004,13 @@ No default value provided
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### bottom_right_x \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+bottom_right_x\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1907,34 +1023,13 @@ No default value provided
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### bottom_right_y \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+bottom_right_y\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -1948,6 +1043,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -1960,18 +1056,6 @@ No default value provided
 
 Image ID for extracted image in a page
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -1982,34 +1066,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_annotation"
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### image_annotation \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_annotation\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -2021,34 +1084,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_base64"
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### image_base64 \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_base64\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -2061,34 +1103,13 @@ No default value provided
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### top_left_x \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+top_left_x\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -2101,34 +1122,13 @@ No default value provided
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### top_left_y \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+top_left_y\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -2142,6 +1142,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -2153,18 +1154,6 @@ No default value provided
 <div slot="content">
 
 The page index in a pdf document starting from 0
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -2178,6 +1167,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -2190,18 +1180,6 @@ No default value provided
 
 The markdown string response of the page
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -2212,34 +1190,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info"
   typeInfo={{"label":"OCRUsageInfo","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo\">OCRUsageInfo</a>","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={true}
 >
 
 <div slot="title">
 
 ##### usage_info \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -2251,34 +1208,13 @@ No default value provided
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+doc_size_bytes"
   parentId="usage_info"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  hasFrontMatter={true}
+  hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
 ##### doc_size_bytes \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+doc_size_bytes\}
-
-</div>
-
-<div slot="content">
-
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
 
 </div>
 
@@ -2292,6 +1228,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -2304,18 +1241,6 @@ No default value provided
 
 Number of pages processed
 
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
-
 </div>
 
 </ExpandableProperty>
@@ -2325,3 +1250,7 @@ No default value provided
 </SectionContent>
 
 </TabbedSection>
+
+</OperationResponseBodySection>
+
+</Operation>

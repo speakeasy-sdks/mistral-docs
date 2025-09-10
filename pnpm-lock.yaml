@@ -24,8 +24,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1(@types/react@18.3.5)(react@18.3.1)
       '@speakeasy-api/docs-md':
-        specifier: ^0.1.20
-        version: 0.1.20(@docusaurus/theme-common@3.5.2(@docusaurus/plugin-content-docs@3.5.2(@mdx-js/react@3.0.1(@types/react@18.3.5)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@docusaurus/types@3.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@types/react@18.3.5)(jquery@3.7.1)(next-themes@0.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.1.27
+        version: 0.1.27(@types/react@18.3.5)(jquery@3.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -1321,12 +1321,9 @@ packages:
   '@slorber/remark-comment@1.0.0':
     resolution: {integrity: sha512-RCE24n7jsOj1M0UPvIQCHTe7fI0sFL4S2nwKVWwHyVr/wI/H8GosgsJGyhnsZoGFnD/P2hLf1mSbrrgSLN93NA==}
 
-  '@speakeasy-api/docs-md@0.1.20':
-    resolution: {integrity: sha512-/KsOV0pF+yrGM8PEWcVZYO/GdziPmVHBx6ou9lf8eRUptjCUvWHwBLvb9NHgz5Z5eGLYKEyyspcmV26UrIXIxw==}
+  '@speakeasy-api/docs-md@0.1.27':
+    resolution: {integrity: sha512-GC39kFPEd7uGoMgnaN0h3vq7imtgF6v1vJdidnx9/uBVq9B5BOBpkFycXwUXc1DTZYSFw447Q7uL2T6l8ySZWg==}
     hasBin: true
-    peerDependencies:
-      '@docusaurus/theme-common': ^3.0.0
-      next-themes: ^0.4.6
 
   '@stitches/core@1.2.8':
     resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
@@ -4030,12 +4027,6 @@ packages:
 
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
-
-  next-themes@0.4.6:
-    resolution: {integrity: sha512-pZvgD5L0IEvX5/9GWyHMf3m8BKiVQwsCMHfoFosXtXBMnaS0ZnIJ9ST4b4NqLVKDEm8QBxoNNGNaBv2JNF6XNA==}
-    peerDependencies:
-      react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
-      react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
   next-tick@1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
@@ -7900,12 +7891,12 @@ snapshots:
       micromark-util-character: 1.2.0
       micromark-util-symbol: 1.1.0
 
-  '@speakeasy-api/docs-md@0.1.20(@docusaurus/theme-common@3.5.2(@docusaurus/plugin-content-docs@3.5.2(@mdx-js/react@3.0.1(@types/react@18.3.5)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@docusaurus/types@3.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@types/react@18.3.5)(jquery@3.7.1)(next-themes@0.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@speakeasy-api/docs-md@0.1.27(@types/react@18.3.5)(jquery@3.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@codesandbox/sandpack-client': 2.19.8
       '@codesandbox/sandpack-react': 2.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@docusaurus/theme-common': 3.5.2(@docusaurus/plugin-content-docs@3.5.2(@mdx-js/react@3.0.1(@types/react@18.3.5)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@docusaurus/types@3.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       arg: 5.0.2
+      chalk: 5.3.0
       change-case: 5.4.4
       clsx: 2.1.1
       console-feed: 3.8.0(jquery@3.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7913,7 +7904,6 @@ snapshots:
       jotai: 2.12.5(@types/react@18.3.5)(react@18.3.1)
       js-yaml: 4.1.0
       lucide-react: 0.525.0(react@18.3.1)
-      next-themes: 0.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-use-measure: 2.1.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       zod: 3.25.67
     transitivePeerDependencies:
@@ -11216,11 +11206,6 @@ snapshots:
   negotiator@0.6.3: {}
 
   neo-async@2.6.2: {}
-
-  next-themes@0.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   next-tick@1.1.0: {}
 

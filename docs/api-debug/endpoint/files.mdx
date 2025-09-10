@@ -4,10 +4,14 @@ sidebar_label: Files
 ---
 
 import "@speakeasy-api/docs-md/docusaurus.css";
-import { Pill, Section, SectionTitle, SectionContent, TryItNow, TabbedSection, SectionTab, DebugPlaceholder, ExpandableSection, ExpandableProperty, ExpandableBreakout, FrontMatterDisplayType } from "@speakeasy-api/docs-md/docusaurus";
+import { Operation, OperationFrontMatterSection, Pill, OperationTryItNowSection, TryItNow, Section, SectionTitle, SectionContent, OperationResponseBodySection, TabbedSection, SectionTab, DebugPlaceholder, ExpandableSection, ExpandableProperty, ExpandableBreakout, OperationRequestBodySection, OperationParametersSection, FrontMatterDisplayType } from "@speakeasy-api/docs-md/react";
 
 
 # Files Operations \{#files\}
+
+<Operation>
+
+<OperationFrontMatterSection slot="front-matter">
 
 ## <Pill variant="primary"><b>GET</b></Pill> /v1/files \{#operation-files_api_routes_list_files\}
 
@@ -15,19 +19,23 @@ _List Files_
 
 Returns a list of files that belong to the user's organization.
 
+</OperationFrontMatterSection>
+
+<OperationTryItNowSection slot="try-it-now">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Try it Now \{#operation-files_api_routes_list_files+try-it-now\}
+### Try it Now \{#operation-files_api_routes_list_files\}
 
 </SectionTitle>
 
 <SectionContent slot="content" variant="top-level">
 
 <TryItNow
- externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
- defaultValue={`import { Mistral } from "@mistralai/mistralai";
+  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -41,12 +49,15 @@ async function run() {
 }
 
 run();`}
- 
 />
 
 </SectionContent>
 
 </Section>
+
+</OperationTryItNowSection>
+
+<OperationResponseBodySection slot="response-body">
 
 <TabbedSection>
 
@@ -66,23 +77,11 @@ run();`}
 
 OK
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 <ExpandableSection>
 
@@ -93,6 +92,7 @@ No default value provided
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema\">FileSchema</a>","children":[{"label":"FileSchema","linkedLabel":"<a href=\"#operation-files_api_routes_list_files+responses+200+application-json+data+fileschema\">FileSchema</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -103,23 +103,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -130,6 +118,7 @@ No default value provided
   id="data_FileSchema"
   headingId="operation-files_api_routes_list_files+responses+200+application-json+data+fileschema" parentId="data"
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -140,23 +129,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -170,6 +147,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -188,11 +166,7 @@ _Example:_
 1716963433
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -206,6 +180,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -224,11 +199,7 @@ _Example:_
 files_upload.jsonl
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -242,6 +213,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -260,11 +232,7 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -277,6 +245,7 @@ No default value provided
   parentId="data_FileSchema"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -287,23 +256,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -317,6 +274,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -335,11 +293,7 @@ _Example:_
 file
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -353,6 +307,7 @@ No default value provided
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":{}},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -363,23 +318,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -393,6 +336,7 @@ No default value provided
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"pretrain\"","linkedLabel":"\"pretrain\"","children":[],"breakoutSubTypes":{}},{"label":"\"instruct\"","linkedLabel":"\"instruct\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_request\"","linkedLabel":"\"batch_request\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_result\"","linkedLabel":"\"batch_result\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_error\"","linkedLabel":"\"batch_error\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -403,23 +347,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -433,6 +365,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -451,11 +384,7 @@ _Example:_
 13000
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -469,6 +398,7 @@ No default value provided
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"upload\"","linkedLabel":"\"upload\"","children":[],"breakoutSubTypes":{}},{"label":"\"repository\"","linkedLabel":"\"repository\"","children":[],"breakoutSubTypes":{}},{"label":"\"mistral\"","linkedLabel":"\"mistral\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -479,23 +409,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -508,6 +426,7 @@ No default value provided
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -518,23 +437,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -547,6 +454,7 @@ No default value provided
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
@@ -557,23 +465,11 @@ No default value provided
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -585,6 +481,14 @@ No default value provided
 
 </TabbedSection>
 
+</OperationResponseBodySection>
+
+</Operation>
+
+<Operation>
+
+<OperationFrontMatterSection slot="front-matter">
+
 ## <Pill variant="primary"><b>POST</b></Pill> /v1/files \{#operation-files_api_routes_upload_file\}
 
 _Upload File_
@@ -595,19 +499,23 @@ The size of individual files can be a maximum of 512 MB. The Fine-tuning API onl
 
 Please contact us if you need to increase these storage limits.
 
+</OperationFrontMatterSection>
+
+<OperationTryItNowSection slot="try-it-now">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Try it Now \{#operation-files_api_routes_upload_file+try-it-now\}
+### Try it Now \{#operation-files_api_routes_upload_file\}
 
 </SectionTitle>
 
 <SectionContent slot="content" variant="top-level">
 
 <TryItNow
- externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
- defaultValue={`import { Mistral } from "@mistralai/mistralai";
+  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 import { openAsBlob } from "node:fs";
 
 const mistral = new Mistral({
@@ -624,55 +532,47 @@ async function run() {
 }
 
 run();`}
- 
 />
 
 </SectionContent>
 
 </Section>
 
+</OperationTryItNowSection>
+
+<OperationRequestBodySection slot="request-body">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Request Body \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request\}
+### Request Body \{#operation-files_api_routes_upload_file+request\}
 
 </SectionTitle>
 
 <SectionContent slot="content" variant="top-level">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 <ExpandableSection>
 
 <ExpandableProperty
   slot="entry"
   id="file"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file"
-  typeInfo={{"label":"File","linkedLabel":"<a href=\"#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+file\">File</a>","children":[],"breakoutSubTypes":{}}}
+  headingId="operation-files_api_routes_upload_file+request+file"
+  typeInfo={{"label":"File","linkedLabel":"<a href=\"#operation-files_api_routes_upload_file+request+file+file\">File</a>","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### file \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file\}
+##### file \{#operation-files_api_routes_upload_file+request+file\}
 
 </div>
 
@@ -688,17 +588,9 @@ The File object (not file name) to be uploaded.
  file=@path/to/your/file.jsonl
  ```
 
-<DebugPlaceholder>
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -707,38 +599,27 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="file_content"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+content"
+  headingId="operation-files_api_routes_upload_file+request+file+content"
   parentId="file"
   typeInfo={{"label":"binary","linkedLabel":"binary","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### content \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+content\}
+##### content \{#operation-files_api_routes_upload_file+request+file+content\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -747,38 +628,27 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="file_fileName"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+filename"
+  headingId="operation-files_api_routes_upload_file+request+file+filename"
   parentId="file"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### fileName \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+file+filename\}
+##### fileName \{#operation-files_api_routes_upload_file+request+file+filename\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -787,36 +657,25 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="purpose"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+purpose"
+  headingId="operation-files_api_routes_upload_file+request+purpose"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":{}},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### purpose \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+request+purpose\}
+##### purpose \{#operation-files_api_routes_upload_file+request+purpose\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -828,56 +687,49 @@ No default value provided
 
 </Section>
 
+</OperationRequestBodySection>
+
+<OperationResponseBodySection slot="response-body">
+
 <TabbedSection>
 
 <SectionTitle slot="title" variant="default">
 
-### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses\}
+### Responses \{#operation-files_api_routes_upload_file+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json">
+<SectionTab slot="tab" id="operation-files_api_routes_upload_file+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_upload_file+responses+200+application-json">
 
 OK
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 <ExpandableSection>
 
 <ExpandableProperty
   slot="entry"
   id="created_at"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+created_at"
+  headingId="operation-files_api_routes_upload_file+responses+200+application-json+created_at"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### created_at \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+created_at\}
+##### created_at \{#operation-files_api_routes_upload_file+responses+200+application-json+created_at\}
 
 </div>
 
@@ -891,11 +743,7 @@ _Example:_
 1716963433
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -904,15 +752,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="filename"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+filename"
+  headingId="operation-files_api_routes_upload_file+responses+200+application-json+filename"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### filename \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+filename\}
+##### filename \{#operation-files_api_routes_upload_file+responses+200+application-json+filename\}
 
 </div>
 
@@ -926,11 +775,7 @@ _Example:_
 files_upload.jsonl
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -939,15 +784,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="id"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+id"
+  headingId="operation-files_api_routes_upload_file+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+id\}
+##### id \{#operation-files_api_routes_upload_file+responses+200+application-json+id\}
 
 </div>
 
@@ -961,11 +807,7 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -974,36 +816,25 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="num_lines"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+num_lines"
+  headingId="operation-files_api_routes_upload_file+responses+200+application-json+num_lines"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### num_lines \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+num_lines\}
+##### num_lines \{#operation-files_api_routes_upload_file+responses+200+application-json+num_lines\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1012,15 +843,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="object"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+object"
+  headingId="operation-files_api_routes_upload_file+responses+200+application-json+object"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### object \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+object\}
+##### object \{#operation-files_api_routes_upload_file+responses+200+application-json+object\}
 
 </div>
 
@@ -1034,11 +866,7 @@ _Example:_
 file
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1047,37 +875,26 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="purpose"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+purpose"
+  headingId="operation-files_api_routes_upload_file+responses+200+application-json+purpose"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":{}},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### purpose \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+purpose\}
+##### purpose \{#operation-files_api_routes_upload_file+responses+200+application-json+purpose\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1086,37 +903,26 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="sample_type"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+sample_type"
+  headingId="operation-files_api_routes_upload_file+responses+200+application-json+sample_type"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"pretrain\"","linkedLabel":"\"pretrain\"","children":[],"breakoutSubTypes":{}},{"label":"\"instruct\"","linkedLabel":"\"instruct\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_request\"","linkedLabel":"\"batch_request\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_result\"","linkedLabel":"\"batch_result\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_error\"","linkedLabel":"\"batch_error\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### sample_type \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+sample_type\}
+##### sample_type \{#operation-files_api_routes_upload_file+responses+200+application-json+sample_type\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1125,15 +931,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="size_bytes"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+size_bytes"
+  headingId="operation-files_api_routes_upload_file+responses+200+application-json+size_bytes"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### size_bytes \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+size_bytes\}
+##### size_bytes \{#operation-files_api_routes_upload_file+responses+200+application-json+size_bytes\}
 
 </div>
 
@@ -1147,11 +954,7 @@ _Example:_
 13000
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1160,37 +963,26 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="source"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+source"
+  headingId="operation-files_api_routes_upload_file+responses+200+application-json+source"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"upload\"","linkedLabel":"\"upload\"","children":[],"breakoutSubTypes":{}},{"label":"\"repository\"","linkedLabel":"\"repository\"","children":[],"breakoutSubTypes":{}},{"label":"\"mistral\"","linkedLabel":"\"mistral\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### source \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+responses+200+application-json+source\}
+##### source \{#operation-files_api_routes_upload_file+responses+200+application-json+source\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1202,17 +994,29 @@ No default value provided
 
 </TabbedSection>
 
+</OperationResponseBodySection>
+
+</Operation>
+
+<Operation>
+
+<OperationFrontMatterSection slot="front-matter">
+
 ## <Pill variant="primary"><b>GET</b></Pill> /v1/files/\{file\_id\} \{#operation-files_api_routes_retrieve_file\}
 
 _Retrieve File_
 
 Returns information about a specific file.
 
+</OperationFrontMatterSection>
+
+<OperationParametersSection slot="parameters">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Parameters \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+parameters\}
+### Parameters \{#operation-files_api_routes_retrieve_file+parameters\}
 
 </SectionTitle>
 
@@ -1223,15 +1027,16 @@ Returns information about a specific file.
 <ExpandableProperty
   slot="entry"
   id="file_id"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+parameters+file_id"
+  headingId="operation-files_api_routes_retrieve_file+parameters+file_id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
   hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### file_id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+parameters+file_id\}
+##### file_id \{#operation-files_api_routes_retrieve_file+parameters+file_id\}
 
 </div>
 
@@ -1243,19 +1048,23 @@ Returns information about a specific file.
 
 </Section>
 
+</OperationParametersSection>
+
+<OperationTryItNowSection slot="try-it-now">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Try it Now \{#operation-files_api_routes_retrieve_file+try-it-now\}
+### Try it Now \{#operation-files_api_routes_retrieve_file\}
 
 </SectionTitle>
 
 <SectionContent slot="content" variant="top-level">
 
 <TryItNow
- externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
- defaultValue={`import { Mistral } from "@mistralai/mistralai";
+  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1271,63 +1080,55 @@ async function run() {
 }
 
 run();`}
- 
 />
 
 </SectionContent>
 
 </Section>
 
+</OperationTryItNowSection>
+
+<OperationResponseBodySection slot="response-body">
+
 <TabbedSection>
 
 <SectionTitle slot="title" variant="default">
 
-### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses\}
+### Responses \{#operation-files_api_routes_retrieve_file+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json">
+<SectionTab slot="tab" id="operation-files_api_routes_retrieve_file+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_retrieve_file+responses+200+application-json">
 
 OK
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 <ExpandableSection>
 
 <ExpandableProperty
   slot="entry"
   id="created_at"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+created_at"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+created_at"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### created_at \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+created_at\}
+##### created_at \{#operation-files_api_routes_retrieve_file+responses+200+application-json+created_at\}
 
 </div>
 
@@ -1341,11 +1142,7 @@ _Example:_
 1716963433
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1354,37 +1151,26 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="deleted"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+deleted"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+deleted"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### deleted \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+deleted\}
+##### deleted \{#operation-files_api_routes_retrieve_file+responses+200+application-json+deleted\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1393,15 +1179,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="filename"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+filename"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+filename"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### filename \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+filename\}
+##### filename \{#operation-files_api_routes_retrieve_file+responses+200+application-json+filename\}
 
 </div>
 
@@ -1415,11 +1202,7 @@ _Example:_
 files_upload.jsonl
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1428,15 +1211,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="id"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+id"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+id\}
+##### id \{#operation-files_api_routes_retrieve_file+responses+200+application-json+id\}
 
 </div>
 
@@ -1450,11 +1234,7 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1463,36 +1243,25 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="num_lines"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+num_lines"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+num_lines"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### num_lines \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+num_lines\}
+##### num_lines \{#operation-files_api_routes_retrieve_file+responses+200+application-json+num_lines\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1501,15 +1270,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="object"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+object"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+object"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### object \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+object\}
+##### object \{#operation-files_api_routes_retrieve_file+responses+200+application-json+object\}
 
 </div>
 
@@ -1523,11 +1293,7 @@ _Example:_
 file
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1536,37 +1302,26 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="purpose"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+purpose"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+purpose"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"fine-tune\"","linkedLabel":"\"fine-tune\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch\"","linkedLabel":"\"batch\"","children":[],"breakoutSubTypes":{}},{"label":"\"ocr\"","linkedLabel":"\"ocr\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### purpose \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+purpose\}
+##### purpose \{#operation-files_api_routes_retrieve_file+responses+200+application-json+purpose\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1575,37 +1330,26 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="sample_type"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+sample_type"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+sample_type"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"pretrain\"","linkedLabel":"\"pretrain\"","children":[],"breakoutSubTypes":{}},{"label":"\"instruct\"","linkedLabel":"\"instruct\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_request\"","linkedLabel":"\"batch_request\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_result\"","linkedLabel":"\"batch_result\"","children":[],"breakoutSubTypes":{}},{"label":"\"batch_error\"","linkedLabel":"\"batch_error\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### sample_type \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+sample_type\}
+##### sample_type \{#operation-files_api_routes_retrieve_file+responses+200+application-json+sample_type\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1614,15 +1358,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="size_bytes"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+size_bytes"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+size_bytes"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### size_bytes \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+size_bytes\}
+##### size_bytes \{#operation-files_api_routes_retrieve_file+responses+200+application-json+size_bytes\}
 
 </div>
 
@@ -1636,11 +1381,7 @@ _Example:_
 13000
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1649,37 +1390,26 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="source"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+source"
+  headingId="operation-files_api_routes_retrieve_file+responses+200+application-json+source"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"upload\"","linkedLabel":"\"upload\"","children":[],"breakoutSubTypes":{}},{"label":"\"repository\"","linkedLabel":"\"repository\"","children":[],"breakoutSubTypes":{}},{"label":"\"mistral\"","linkedLabel":"\"mistral\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### source \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+responses+200+application-json+source\}
+##### source \{#operation-files_api_routes_retrieve_file+responses+200+application-json+source\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1691,17 +1421,29 @@ No default value provided
 
 </TabbedSection>
 
+</OperationResponseBodySection>
+
+</Operation>
+
+<Operation>
+
+<OperationFrontMatterSection slot="front-matter">
+
 ## <Pill variant="primary"><b>DELETE</b></Pill> /v1/files/\{file\_id\} \{#operation-files_api_routes_delete_file\}
 
 _Delete File_
 
 Delete a file.
 
+</OperationFrontMatterSection>
+
+<OperationParametersSection slot="parameters">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Parameters \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+parameters\}
+### Parameters \{#operation-files_api_routes_delete_file+parameters\}
 
 </SectionTitle>
 
@@ -1712,15 +1454,16 @@ Delete a file.
 <ExpandableProperty
   slot="entry"
   id="file_id"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+parameters+file_id"
+  headingId="operation-files_api_routes_delete_file+parameters+file_id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
   hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### file_id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+parameters+file_id\}
+##### file_id \{#operation-files_api_routes_delete_file+parameters+file_id\}
 
 </div>
 
@@ -1732,19 +1475,23 @@ Delete a file.
 
 </Section>
 
+</OperationParametersSection>
+
+<OperationTryItNowSection slot="try-it-now">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Try it Now \{#operation-files_api_routes_delete_file+try-it-now\}
+### Try it Now \{#operation-files_api_routes_delete_file\}
 
 </SectionTitle>
 
 <SectionContent slot="content" variant="top-level">
 
 <TryItNow
- externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
- defaultValue={`import { Mistral } from "@mistralai/mistralai";
+  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1760,63 +1507,55 @@ async function run() {
 }
 
 run();`}
- 
 />
 
 </SectionContent>
 
 </Section>
 
+</OperationTryItNowSection>
+
+<OperationResponseBodySection slot="response-body">
+
 <TabbedSection>
 
 <SectionTitle slot="title" variant="default">
 
-### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses\}
+### Responses \{#operation-files_api_routes_delete_file+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json">
+<SectionTab slot="tab" id="operation-files_api_routes_delete_file+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_delete_file+responses+200+application-json">
 
 OK
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 <ExpandableSection>
 
 <ExpandableProperty
   slot="entry"
   id="deleted"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+deleted"
+  headingId="operation-files_api_routes_delete_file+responses+200+application-json+deleted"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### deleted \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+deleted\}
+##### deleted \{#operation-files_api_routes_delete_file+responses+200+application-json+deleted\}
 
 </div>
 
@@ -1830,11 +1569,7 @@ _Example:_
 false
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1843,15 +1578,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="id"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+id"
+  headingId="operation-files_api_routes_delete_file+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+id\}
+##### id \{#operation-files_api_routes_delete_file+responses+200+application-json+id\}
 
 </div>
 
@@ -1865,11 +1601,7 @@ _Example:_
 497f6eca-6276-4993-bfeb-53cbbbba6f09
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1878,15 +1610,16 @@ No default value provided
 <ExpandableProperty
   slot="entry"
   id="object"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+object"
+  headingId="operation-files_api_routes_delete_file+responses+200+application-json+object"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### object \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+responses+200+application-json+object\}
+##### object \{#operation-files_api_routes_delete_file+responses+200+application-json+object\}
 
 </div>
 
@@ -1900,11 +1633,7 @@ _Example:_
 file
 ```
 
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -1916,17 +1645,29 @@ No default value provided
 
 </TabbedSection>
 
+</OperationResponseBodySection>
+
+</Operation>
+
+<Operation>
+
+<OperationFrontMatterSection slot="front-matter">
+
 ## <Pill variant="primary"><b>GET</b></Pill> /v1/files/\{file\_id\}/content \{#operation-files_api_routes_download_file\}
 
 _Download File_
 
 Download a file
 
+</OperationFrontMatterSection>
+
+<OperationParametersSection slot="parameters">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Parameters \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+parameters\}
+### Parameters \{#operation-files_api_routes_download_file+parameters\}
 
 </SectionTitle>
 
@@ -1937,15 +1678,16 @@ Download a file
 <ExpandableProperty
   slot="entry"
   id="file_id"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+parameters+file_id"
+  headingId="operation-files_api_routes_download_file+parameters+file_id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
   hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### file_id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+parameters+file_id\}
+##### file_id \{#operation-files_api_routes_download_file+parameters+file_id\}
 
 </div>
 
@@ -1957,19 +1699,23 @@ Download a file
 
 </Section>
 
+</OperationParametersSection>
+
+<OperationTryItNowSection slot="try-it-now">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Try it Now \{#operation-files_api_routes_download_file+try-it-now\}
+### Try it Now \{#operation-files_api_routes_download_file\}
 
 </SectionTitle>
 
 <SectionContent slot="content" variant="top-level">
 
 <TryItNow
- externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
- defaultValue={`import { Mistral } from "@mistralai/mistralai";
+  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1985,28 +1731,31 @@ async function run() {
 }
 
 run();`}
- 
 />
 
 </SectionContent>
 
 </Section>
 
+</OperationTryItNowSection>
+
+<OperationResponseBodySection slot="response-body">
+
 <TabbedSection>
 
 <SectionTitle slot="title" variant="default">
 
-### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+responses\}
+### Responses \{#operation-files_api_routes_download_file+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+responses+200+application-octet-stream">
+<SectionTab slot="tab" id="operation-files_api_routes_download_file+responses+200+application-octet-stream">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+responses+200+application-octet-stream">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_download_file+responses+200+application-octet-stream">
 
 <FrontMatterDisplayType typeInfo={{"label":"binary","linkedLabel":"binary","children":[],"breakoutSubTypes":{}}} />
 
@@ -2014,17 +1763,9 @@ OK
 
 OK
 
-<DebugPlaceholder>
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 <ExpandableSection>
 
@@ -2034,21 +1775,29 @@ No default value provided
 
 </TabbedSection>
 
+</OperationResponseBodySection>
+
+</Operation>
+
+<Operation>
+
+<OperationFrontMatterSection slot="front-matter">
+
 ## <Pill variant="primary"><b>GET</b></Pill> /v1/files/\{file\_id\}/url \{#operation-files_api_routes_get_signed_url\}
 
 Get Signed Url
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+</OperationFrontMatterSection>
 
-</DebugPlaceholder>
+<OperationParametersSection slot="parameters">
 
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Parameters \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters\}
+### Parameters \{#operation-files_api_routes_get_signed_url+parameters\}
 
 </SectionTitle>
 
@@ -2059,15 +1808,16 @@ No description provided
 <ExpandableProperty
   slot="entry"
   id="file_id"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters+file_id"
+  headingId="operation-files_api_routes_get_signed_url+parameters+file_id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
   hasFrontMatter={false}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### file_id \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters+file_id\}
+##### file_id \{#operation-files_api_routes_get_signed_url+parameters+file_id\}
 
 </div>
 
@@ -2076,15 +1826,16 @@ No description provided
 <ExpandableProperty
   slot="entry"
   id="expiry"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters+expiry"
+  headingId="operation-files_api_routes_get_signed_url+parameters+expiry"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"query","variant":"info"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### expiry \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+parameters+expiry\}
+##### expiry \{#operation-files_api_routes_get_signed_url+parameters+expiry\}
 
 </div>
 
@@ -2092,11 +1843,7 @@ No description provided
 
 Number of hours before the url becomes invalid. Defaults to 24h
 
-<DebugPlaceholder>
-
-No description provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
 </div>
 
@@ -2108,19 +1855,23 @@ No description provided
 
 </Section>
 
+</OperationParametersSection>
+
+<OperationTryItNowSection slot="try-it-now">
+
 <Section variant="top-level">
 
 <SectionTitle slot="title" variant="top-level">
 
-### Try it Now \{#operation-files_api_routes_get_signed_url+try-it-now\}
+### Try it Now \{#operation-files_api_routes_get_signed_url\}
 
 </SectionTitle>
 
 <SectionContent slot="content" variant="top-level">
 
 <TryItNow
- externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
- defaultValue={`import { Mistral } from "@mistralai/mistralai";
+  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
+  defaultValue={`import { Mistral } from "@mistralai/mistralai";
 
 const mistral = new Mistral({
   apiKey: "<YOUR_BEARER_TOKEN_HERE>",
@@ -2136,85 +1887,65 @@ async function run() {
 }
 
 run();`}
- 
 />
 
 </SectionContent>
 
 </Section>
 
+</OperationTryItNowSection>
+
+<OperationResponseBodySection slot="response-body">
+
 <TabbedSection>
 
 <SectionTitle slot="title" variant="default">
 
-### Responses \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses\}
+### Responses \{#operation-files_api_routes_get_signed_url+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses+200+application-json">
+<SectionTab slot="tab" id="operation-files_api_routes_get_signed_url+responses+200+application-json">
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses+200+application-json">
+<SectionContent slot="content" variant="top-level" id="operation-files_api_routes_get_signed_url+responses+200+application-json">
 
 OK
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 <ExpandableSection>
 
 <ExpandableProperty
   slot="entry"
   id="url"
-  headingId="operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses+200+application-json+url"
+  headingId="operation-files_api_routes_get_signed_url+responses+200+application-json+url"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
   hasFrontMatter={true}
+  expandByDefault={false}
 >
 
 <div slot="title">
 
-##### url \{#operation-files_api_routes_list_files+operation-files_api_routes_upload_file+operation-files_api_routes_retrieve_file+operation-files_api_routes_delete_file+operation-files_api_routes_download_file+operation-files_api_routes_get_signed_url+responses+200+application-json+url\}
+##### url \{#operation-files_api_routes_get_signed_url+responses+200+application-json+url\}
 
 </div>
 
 <div slot="content">
 
-<DebugPlaceholder>
+<DebugPlaceholder>No description provided</DebugPlaceholder>
 
-No description provided
+<DebugPlaceholder>No examples provided</DebugPlaceholder>
 
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No examples provided
-
-</DebugPlaceholder>
-
-<DebugPlaceholder>
-
-No default value provided
-
-</DebugPlaceholder>
+<DebugPlaceholder>No default value provided</DebugPlaceholder>
 
 </div>
 
@@ -2225,3 +1956,7 @@ No default value provided
 </SectionContent>
 
 </TabbedSection>
+
+</OperationResponseBodySection>
+
+</Operation>
