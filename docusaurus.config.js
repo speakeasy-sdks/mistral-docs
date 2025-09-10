@@ -92,7 +92,6 @@ const config = {
             activeBaseRegex: "^/(?!api)",
           },
           { to: "/api", label: "API", position: "left" },
-          { to: "/api-debug", label: "API (debug)", position: "left" },
           {
             href: "https://github.com/mistralai/",
             label: "GitHub",
