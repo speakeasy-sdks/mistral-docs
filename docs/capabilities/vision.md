@@ -1,14 +1,16 @@
 ---
 id: vision
 title: Vision
-sidebar_position: 2.21
+sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Our latest Mistral Small and our Pixtral models possess vision capabilities, enabling them to analyze images and provide insights based on visual content in addition to text. This multimodal approach opens up new possibilities for applications that require both textual and visual understanding.
+Vision capabilities enable models to analyze images and provide insights based on visual content in addition to text. This multimodal approach opens up new possibilities for applications that require both textual and visual understanding.
 
-## Models with Vision Capacilities:
+For more specific use cases regarding document parsing and data extraction we recommend taking a look at our Document AI stack [here](../document_ai/document_ai_overview).
+
+## Models with Vision Capabilities:
 - Pixtral 12B (`pixtral-12b-latest`)
 - Pixtral Large 2411 (`pixtral-large-latest`)
 - Mistral Medium 2505 (`mistral-medium-latest`)
@@ -388,7 +390,7 @@ Model output:
 
 
 <details>
-<summary><b>Transcribe old documents</b></summary>
+<summary><b>OCR old documents</b></summary>
 
 ![](https://ciir.cs.umass.edu/irdemo/hw-demo/page_example.jpg)
 
@@ -490,26 +492,25 @@ Model output:
 
 - **What is the price per image?**
 
-    The price is calculated using the same pricing as input tokens.
-  
-    **Pixtral:**
-  
-    For both Pixtral models, each image will be divided into batches of 16x16 pixels, with each batch converted to a token. As a rule of thumb, an image with a resolution of "ResolutionX"x"ResolutionY" will consume approximately `(ResolutionX/16) * (ResolutionY/16)` tokens.
-    For example, a 720x512 image will consume approximately `(720/16) * (512/16)` ≈ 1440 tokens.
-    Note that all images with a resolution higher than 1024x1024 will be downscaled while maintaining the same aspect ratio. For instance, a 1436x962 image will be downscaled to approximately 1024x686, consuming around `(1024/16) * (686/16)` ≈ 2600 tokens.
-  
-    Final Formula: `N of tokens ≈ (ResolutionX * ResolutionY) / 256`
-  
-    **Small / Medium:**
-  
-    Small is similar; however, instead of batches of 16, it will be batched in 14 pixels. Instead of a maximum resolution of 1024x1024, it has a maximum resolution of 1540x1540.
-    Due to its slightly different architecture, it also only uses 1/4 of that number of tokens as input to the text decoder. This means that in total, you can summarize the consumption approximately as `(ResolutionX/14) * (ResolutionY/14) * 1/4`, which is approximately 3x less than Pixtral models, making it use fewer tokens and be more efficient.
+    The price is calculated using the same pricing as input tokens per image, with each image being tokenized.
 
-    Final Formula: `N of tokens ≈ (ResolutionX * ResolutionY) / 784`
-  
+- **How many tokens correspond to an image and/or what is the maximum resolution?**
+
+    Depending on the model and resolution, an image will be tokenized differently. Below is a summary.
+
+    | Model | Max Resolution | ≈ Formula | ≈ N Max Tokens |
+    | - | - | - | - |
+    | Mistral Small 3.2 | 1540x1540 | `≈ (ResolutionX * ResolutionY) / 784` | ≈ 3025 |
+    | Mistral Medium 3 | 1540x1540 | `≈ (ResolutionX * ResolutionY) / 784` | ≈ 3025 |
+    | Mistral Small 3.1 | 1540x1540 | `≈ (ResolutionX * ResolutionY) / 784` | ≈ 3025 |
+    | Pixtral Large | 1024x1024 | `≈ (ResolutionX * ResolutionY) / 256` | ≈ 4096 |
+    | Pixtral 12B | 1024x1024 | `≈ (ResolutionX * ResolutionY) / 256` | ≈ 4096 |
+
+    If the resolution of the image sent is higher than the maximum resolution of the model, the image will be downscaled to its maximum resolution. An error will be sent if the resolution is higher than **10000x10000**.
+
 - **Can I fine-tune the image capabilities?**
 
-    No, we do not currently support fine-tuning the image capabilities.
+    Yes, you can fine-tune pixtral-12b.
 
 - **Can I use them to generate images?**
 
