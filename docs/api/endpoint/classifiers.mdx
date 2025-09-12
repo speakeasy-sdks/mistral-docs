@@ -3,33 +3,76 @@ sidebar_position: 3.5
 sidebar_label: Classifiers
 ---
 
-import "@speakeasy-api/docs-md/docusaurus.css";
-import { Operation, OperationFrontMatterSection, Pill, OperationTryItNowSection, TryItNow, Section, SectionTitle, SectionContent, OperationRequestBodySection, ExpandableSection, ExpandableProperty, OperationResponseBodySection, TabbedSection, SectionTab, ExpandableBreakout } from "@speakeasy-api/docs-md/react";
+import "@speakeasy-api/docs-md-react/docusaurus.css";
 
+import {
+  CodeSample,
+  ExpandableBreakout,
+  ExpandableBreakoutDefaultValue,
+  ExpandableBreakoutDescription,
+  ExpandableBreakoutExamples,
+  ExpandableBreakoutTitle,
+  ExpandableProperty,
+  ExpandablePropertyDefaultValue,
+  ExpandablePropertyDescription,
+  ExpandablePropertyExamples,
+  ExpandablePropertyTitle,
+  ExpandableSection,
+  Operation,
+  OperationCodeSamplesSection,
+  OperationRequestBodySection,
+  OperationResponseBodyDescriptionSection,
+  OperationResponseBodySection,
+  OperationSummarySection,
+  OperationTitleSection,
+  Pill,
+  Section,
+  SectionContent,
+  SectionTab,
+  SectionTitle,
+  TabbedSection,
+  TryItNow
+} from "@speakeasy-api/docs-md-react";
 
 # Classifiers Operations \{#classifiers\}
 
 <Operation>
 
-<OperationFrontMatterSection slot="front-matter">
+<OperationTitleSection slot="title">
 
 ## <Pill variant="primary"><b>POST</b></Pill> /v1/moderations \{#operation-moderations_v1_moderations_post\}
 
+</OperationTitleSection>
+
+<OperationSummarySection slot="summary">
+
 Moderations
 
-</OperationFrontMatterSection>
+</OperationSummarySection>
 
-<OperationTryItNowSection slot="try-it-now">
+<OperationCodeSamplesSection slot="code-samples">
 
-<Section variant="top-level">
+<TabbedSection>
 
-<SectionTitle slot="title" variant="top-level">
+<SectionTitle slot="title">
 
-### Try it Now \{#operation-moderations_v1_moderations_post\}
+### Code Samples \{#operation-moderations_v1_moderations_post+code-samples\}
 
 </SectionTitle>
 
-<SectionContent slot="content" variant="top-level">
+<SectionTab
+  slot="tab"
+  id="operation-moderations_v1_moderations_post+code-samples+typescript"
+>
+
+TypeScript
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-moderations_v1_moderations_post+code-samples+typescript"
+>
 
 <TryItNow
   externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -57,21 +100,55 @@ run();`}
 
 </SectionContent>
 
-</Section>
+<SectionTab slot="tab" id="operation-moderations_v1_moderations_post+code-samples+python">
 
-</OperationTryItNowSection>
+Python
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-moderations_v1_moderations_post+code-samples+python"
+>
+
+<CodeSample>
+
+```python
+from mistralai import Mistral
+
+
+with Mistral(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+) as mistral:
+
+    res = mistral.classifiers.moderate(model="Durango", inputs=[
+        "<value 1>",
+        "<value 2>",
+    ])
+
+    # Handle response
+    print(res)
+```
+
+</CodeSample>
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationCodeSamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
-<Section variant="top-level">
+<Section>
 
-<SectionTitle slot="title" variant="top-level">
+<SectionTitle slot="title">
 
 ### Request Body \{#operation-moderations_v1_moderations_post+request\}
 
 </SectionTitle>
 
-<SectionContent slot="content" variant="top-level">
+<SectionContent slot="content">
 
 <ExpandableSection>
 
@@ -85,17 +162,17 @@ run();`}
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### inputs \{#operation-moderations_v1_moderations_post+request+inputs\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Text to classify.
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -109,17 +186,17 @@ Text to classify.
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### model \{#operation-moderations_v1_moderations_post+request+model\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 ID of the model to use.
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -135,21 +212,31 @@ ID of the model to use.
 
 <TabbedSection>
 
-<SectionTitle slot="title" variant="default">
+<SectionTitle slot="title">
 
 ### Responses \{#operation-moderations_v1_moderations_post+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-moderations_v1_moderations_post+responses+200+application-json">
+<SectionTab
+  slot="tab"
+  id="operation-moderations_v1_moderations_post+responses+200+application-json"
+>
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" variant="top-level" id="operation-moderations_v1_moderations_post+responses+200+application-json">
+<SectionContent
+  slot="content"
+  id="operation-moderations_v1_moderations_post+responses+200+application-json"
+>
+
+<OperationResponseBodyDescriptionSection slot="response-body-description">
 
 Successful Response
+
+</OperationResponseBodyDescriptionSection>
 
 <ExpandableSection>
 
@@ -163,13 +250,13 @@ Successful Response
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### id \{#operation-moderations_v1_moderations_post+responses+200+application-json+id\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyExamples slot="examples">
 
 _Example:_
 
@@ -177,7 +264,7 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-</div>
+</ExpandablePropertyExamples>
 
 </ExpandableProperty>
 
@@ -191,11 +278,11 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### model \{#operation-moderations_v1_moderations_post+responses+200+application-json+model\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -209,27 +296,40 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### results \{#operation-moderations_v1_moderations_post+responses+200+application-json+results\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="results_ModerationObject"
-  headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject" parentId="results"
+  headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject"
+  parentId="results"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ModerationObject \{#operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -239,21 +339,22 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject+categories"
   parentId="results_ModerationObject"
   typeInfo={{"label":"map","linkedLabel":"boolean","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### categories \{#operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject+categories\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Moderation result thresholds
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -263,21 +364,22 @@ Moderation result thresholds
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject+category_scores"
   parentId="results_ModerationObject"
   typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### category_scores \{#operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject+category_scores\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Moderation result
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -293,25 +395,41 @@ Moderation result
 
 <Operation>
 
-<OperationFrontMatterSection slot="front-matter">
+<OperationTitleSection slot="title">
 
 ## <Pill variant="primary"><b>POST</b></Pill> /v1/chat/moderations \{#operation-chat_moderations_v1_chat_moderations_post\}
 
+</OperationTitleSection>
+
+<OperationSummarySection slot="summary">
+
 Chat Moderations
 
-</OperationFrontMatterSection>
+</OperationSummarySection>
 
-<OperationTryItNowSection slot="try-it-now">
+<OperationCodeSamplesSection slot="code-samples">
 
-<Section variant="top-level">
+<TabbedSection>
 
-<SectionTitle slot="title" variant="top-level">
+<SectionTitle slot="title">
 
-### Try it Now \{#operation-chat_moderations_v1_chat_moderations_post\}
+### Code Samples \{#operation-chat_moderations_v1_chat_moderations_post+code-samples\}
 
 </SectionTitle>
 
-<SectionContent slot="content" variant="top-level">
+<SectionTab
+  slot="tab"
+  id="operation-chat_moderations_v1_chat_moderations_post+code-samples+typescript"
+>
+
+TypeScript
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_moderations_v1_chat_moderations_post+code-samples+typescript"
+>
 
 <TryItNow
   externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -358,21 +476,77 @@ run();`}
 
 </SectionContent>
 
-</Section>
+<SectionTab
+  slot="tab"
+  id="operation-chat_moderations_v1_chat_moderations_post+code-samples+python"
+>
 
-</OperationTryItNowSection>
+Python
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_moderations_v1_chat_moderations_post+code-samples+python"
+>
+
+<CodeSample>
+
+```python
+from mistralai import Mistral, models
+
+
+with Mistral(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+) as mistral:
+
+    res = mistral.classifiers.moderate_chat(inputs=[
+        {
+            "content": "<value>",
+            "role": models.ToolMessageRole.TOOL,
+        },
+        {
+            "content": [
+                {
+                    "document_url": "https://limited-merit.com",
+                    "type": models.DocumentURLChunkType.DOCUMENT_URL,
+                },
+                {
+                    "document_url": "https://deep-governance.com/",
+                    "type": models.DocumentURLChunkType.DOCUMENT_URL,
+                },
+                {
+                    "text": "<value>",
+                    "type": models.TextChunkType.TEXT,
+                },
+            ],
+            "role": models.ToolMessageRole.TOOL,
+        },
+    ], model="Jetta")
+
+    # Handle response
+    print(res)
+```
+
+</CodeSample>
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationCodeSamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
-<Section variant="top-level">
+<Section>
 
-<SectionTitle slot="title" variant="top-level">
+<SectionTitle slot="title">
 
 ### Request Body \{#operation-chat_moderations_v1_chat_moderations_post+request\}
 
 </SectionTitle>
 
-<SectionContent slot="content" variant="top-level">
+<SectionContent slot="content">
 
 <ExpandableSection>
 
@@ -386,33 +560,46 @@ run();`}
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### inputs \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Chat to classify
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_SystemMessage"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage" parentId="inputs"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage"
+  parentId="inputs"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### SystemMessage \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -427,27 +614,40 @@ Chat to classify
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### content \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_SystemMessage_content_TextChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk" parentId="inputs_SystemMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk"
+  parentId="inputs_SystemMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### TextChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -462,11 +662,11 @@ Chat to classify
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### text \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk+text\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -476,21 +676,22 @@ Chat to classify
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk+type"
   parentId="inputs_SystemMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"text"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -500,37 +701,51 @@ _Default Value:_ `"text"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+role"
   parentId="inputs_SystemMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"system\"","linkedLabel":"\"system\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### role \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+role\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"system"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage" parentId="inputs"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage"
+  parentId="inputs"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### UserMessage \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -545,27 +760,40 @@ _Default Value:_ `"system"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### content \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_TextChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk" parentId="inputs_UserMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk"
+  parentId="inputs_UserMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### TextChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -580,11 +808,11 @@ _Default Value:_ `"system"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### text \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk+text\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -594,43 +822,53 @@ _Default Value:_ `"system"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk+type"
   parentId="inputs_UserMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"text"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_ImageURLChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk" parentId="inputs_UserMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk"
+  parentId="inputs_UserMessage_content"
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURLChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
 
-<div slot="content">
+<ExpandableBreakoutDescription slot="description">
 
 \{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
-</div>
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -645,27 +883,40 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### image_url \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_UserMessage_content_ImageURLChunk_image_url"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl"
+  parentId="inputs_UserMessage_content_ImageURLChunk_image_url"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURL \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -675,15 +926,16 @@ _Default Value:_ `"text"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### detail \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl+detail\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -698,11 +950,11 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### url \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl+url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -712,37 +964,51 @@ _Default Value:_ `"text"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+type"
   parentId="inputs_UserMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"image_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_DocumentURLChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk" parentId="inputs_UserMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk"
+  parentId="inputs_UserMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### DocumentURLChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -752,15 +1018,16 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk+document_name"
   parentId="inputs_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk+document_name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -775,11 +1042,11 @@ _Default Value:_ `"image_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_url \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk+document_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -789,37 +1056,51 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk+type"
   parentId="inputs_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"document_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_ReferenceChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk" parentId="inputs_UserMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk"
+  parentId="inputs_UserMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ReferenceChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -834,11 +1115,11 @@ _Default Value:_ `"document_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### reference_ids \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk+reference_ids\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -848,21 +1129,22 @@ _Default Value:_ `"document_url"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk+type"
   parentId="inputs_UserMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"reference"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -872,37 +1154,51 @@ _Default Value:_ `"reference"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+role"
   parentId="inputs_UserMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"user\"","linkedLabel":"\"user\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### role \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+role\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"user"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage" parentId="inputs"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage"
+  parentId="inputs"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### AssistantMessage \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -912,31 +1208,45 @@ _Default Value:_ `"user"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content"
   parentId="inputs_AssistantMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### content \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_TextChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk" parentId="inputs_AssistantMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk"
+  parentId="inputs_AssistantMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### TextChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -951,11 +1261,11 @@ _Default Value:_ `"user"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### text \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk+text\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -965,43 +1275,53 @@ _Default Value:_ `"user"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk+type"
   parentId="inputs_AssistantMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"text"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_ImageURLChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk" parentId="inputs_AssistantMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk"
+  parentId="inputs_AssistantMessage_content"
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURLChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
 
-<div slot="content">
+<ExpandableBreakoutDescription slot="description">
 
 \{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
-</div>
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1016,27 +1336,40 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### image_url \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl"
+  parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURL \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1046,15 +1379,16 @@ _Default Value:_ `"text"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### detail \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl+detail\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1069,11 +1403,11 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### url \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl+url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1083,37 +1417,51 @@ _Default Value:_ `"text"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+type"
   parentId="inputs_AssistantMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"image_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_DocumentURLChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk" parentId="inputs_AssistantMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk"
+  parentId="inputs_AssistantMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### DocumentURLChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1123,15 +1471,16 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk+document_name"
   parentId="inputs_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk+document_name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1146,11 +1495,11 @@ _Default Value:_ `"image_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_url \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk+document_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1160,37 +1509,51 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk+type"
   parentId="inputs_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"document_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_ReferenceChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk" parentId="inputs_AssistantMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk"
+  parentId="inputs_AssistantMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ReferenceChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1205,11 +1568,11 @@ _Default Value:_ `"document_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### reference_ids \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk+reference_ids\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1219,21 +1582,22 @@ _Default Value:_ `"document_url"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk+type"
   parentId="inputs_AssistantMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"reference"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -1243,23 +1607,28 @@ _Default Value:_ `"reference"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+prefix"
   parentId="inputs_AssistantMessage"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### prefix \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+prefix\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
+</ExpandablePropertyDescription>
+
+<ExpandablePropertyDefaultValue slot="defaultValue">
+
 _Default Value:_ `false`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -1269,21 +1638,22 @@ _Default Value:_ `false`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+role"
   parentId="inputs_AssistantMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### role \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+role\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"assistant"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -1293,31 +1663,45 @@ _Default Value:_ `"assistant"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls"
   parentId="inputs_AssistantMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### tool_calls \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_tool_calls_ToolCall"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall" parentId="inputs_AssistantMessage_tool_calls"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall"
+  parentId="inputs_AssistantMessage_tool_calls"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ToolCall \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1332,11 +1716,11 @@ _Default Value:_ `"assistant"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### function \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1351,11 +1735,11 @@ _Default Value:_ `"assistant"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### arguments \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+arguments\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1370,11 +1754,11 @@ _Default Value:_ `"assistant"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1384,21 +1768,22 @@ _Default Value:_ `"assistant"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+id"
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### id \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+id\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"null"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -1408,21 +1793,22 @@ _Default Value:_ `"null"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+index"
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### index \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+index\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `0`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -1432,31 +1818,45 @@ _Default Value:_ `0`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+type"
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage" parentId="inputs"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage"
+  parentId="inputs"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ToolMessage \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1471,27 +1871,40 @@ _Default Value:_ `0`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### content \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_TextChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk" parentId="inputs_ToolMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk"
+  parentId="inputs_ToolMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### TextChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1506,11 +1919,11 @@ _Default Value:_ `0`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### text \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk+text\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1520,43 +1933,53 @@ _Default Value:_ `0`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk+type"
   parentId="inputs_ToolMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"text"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_ImageURLChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk" parentId="inputs_ToolMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk"
+  parentId="inputs_ToolMessage_content"
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURLChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
 
-<div slot="content">
+<ExpandableBreakoutDescription slot="description">
 
 \{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
-</div>
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1571,27 +1994,40 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### image_url \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_ToolMessage_content_ImageURLChunk_image_url"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl"
+  parentId="inputs_ToolMessage_content_ImageURLChunk_image_url"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURL \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1601,15 +2037,16 @@ _Default Value:_ `"text"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### detail \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl+detail\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1624,11 +2061,11 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### url \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl+url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1638,37 +2075,51 @@ _Default Value:_ `"text"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+type"
   parentId="inputs_ToolMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"image_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_DocumentURLChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk" parentId="inputs_ToolMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk"
+  parentId="inputs_ToolMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### DocumentURLChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1678,15 +2129,16 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk+document_name"
   parentId="inputs_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk+document_name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1701,11 +2153,11 @@ _Default Value:_ `"image_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_url \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk+document_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1715,37 +2167,51 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk+type"
   parentId="inputs_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"document_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_ReferenceChunk"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk" parentId="inputs_ToolMessage_content"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk"
+  parentId="inputs_ToolMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ReferenceChunk \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1760,11 +2226,11 @@ _Default Value:_ `"document_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### reference_ids \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk+reference_ids\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1774,21 +2240,22 @@ _Default Value:_ `"document_url"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk+type"
   parentId="inputs_ToolMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"reference"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -1798,15 +2265,16 @@ _Default Value:_ `"reference"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+name"
   parentId="inputs_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1816,21 +2284,22 @@ _Default Value:_ `"reference"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+role"
   parentId="inputs_ToolMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"tool\"","linkedLabel":"\"tool\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### role \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+role\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"tool"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -1840,15 +2309,16 @@ _Default Value:_ `"tool"`
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+tool_call_id"
   parentId="inputs_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### tool_call_id \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+tool_call_id\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1862,11 +2332,11 @@ _Default Value:_ `"tool"`
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### model \{#operation-chat_moderations_v1_chat_moderations_post+request+model\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1882,21 +2352,31 @@ _Default Value:_ `"tool"`
 
 <TabbedSection>
 
-<SectionTitle slot="title" variant="default">
+<SectionTitle slot="title">
 
 ### Responses \{#operation-chat_moderations_v1_chat_moderations_post+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json">
+<SectionTab
+  slot="tab"
+  id="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json"
+>
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" variant="top-level" id="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json">
+<SectionContent
+  slot="content"
+  id="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json"
+>
+
+<OperationResponseBodyDescriptionSection slot="response-body-description">
 
 Successful Response
+
+</OperationResponseBodyDescriptionSection>
 
 <ExpandableSection>
 
@@ -1910,13 +2390,13 @@ Successful Response
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### id \{#operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+id\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyExamples slot="examples">
 
 _Example:_
 
@@ -1924,7 +2404,7 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-</div>
+</ExpandablePropertyExamples>
 
 </ExpandableProperty>
 
@@ -1938,11 +2418,11 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### model \{#operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+model\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -1956,27 +2436,40 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### results \{#operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="results_ModerationObject"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject" parentId="results"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject"
+  parentId="results"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ModerationObject \{#operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -1986,21 +2479,22 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject+categories"
   parentId="results_ModerationObject"
   typeInfo={{"label":"map","linkedLabel":"boolean","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### categories \{#operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject+categories\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Moderation result thresholds
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -2010,21 +2504,22 @@ Moderation result thresholds
   headingId="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject+category_scores"
   parentId="results_ModerationObject"
   typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### category_scores \{#operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject+category_scores\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Moderation result
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -2040,25 +2535,41 @@ Moderation result
 
 <Operation>
 
-<OperationFrontMatterSection slot="front-matter">
+<OperationTitleSection slot="title">
 
 ## <Pill variant="primary"><b>POST</b></Pill> /v1/classifications \{#operation-classifications_v1_classifications_post\}
 
+</OperationTitleSection>
+
+<OperationSummarySection slot="summary">
+
 Classifications
 
-</OperationFrontMatterSection>
+</OperationSummarySection>
 
-<OperationTryItNowSection slot="try-it-now">
+<OperationCodeSamplesSection slot="code-samples">
 
-<Section variant="top-level">
+<TabbedSection>
 
-<SectionTitle slot="title" variant="top-level">
+<SectionTitle slot="title">
 
-### Try it Now \{#operation-classifications_v1_classifications_post\}
+### Code Samples \{#operation-classifications_v1_classifications_post+code-samples\}
 
 </SectionTitle>
 
-<SectionContent slot="content" variant="top-level">
+<SectionTab
+  slot="tab"
+  id="operation-classifications_v1_classifications_post+code-samples+typescript"
+>
+
+TypeScript
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-classifications_v1_classifications_post+code-samples+typescript"
+>
 
 <TryItNow
   externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -2085,21 +2596,57 @@ run();`}
 
 </SectionContent>
 
-</Section>
+<SectionTab
+  slot="tab"
+  id="operation-classifications_v1_classifications_post+code-samples+python"
+>
 
-</OperationTryItNowSection>
+Python
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-classifications_v1_classifications_post+code-samples+python"
+>
+
+<CodeSample>
+
+```python
+from mistralai import Mistral
+
+
+with Mistral(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+) as mistral:
+
+    res = mistral.classifiers.classify(model="Silverado", inputs=[
+        "<value 1>",
+    ])
+
+    # Handle response
+    print(res)
+```
+
+</CodeSample>
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationCodeSamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
-<Section variant="top-level">
+<Section>
 
-<SectionTitle slot="title" variant="top-level">
+<SectionTitle slot="title">
 
 ### Request Body \{#operation-classifications_v1_classifications_post+request\}
 
 </SectionTitle>
 
-<SectionContent slot="content" variant="top-level">
+<SectionContent slot="content">
 
 <ExpandableSection>
 
@@ -2113,17 +2660,17 @@ run();`}
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### inputs \{#operation-classifications_v1_classifications_post+request+inputs\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Text to classify.
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -2137,17 +2684,17 @@ Text to classify.
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### model \{#operation-classifications_v1_classifications_post+request+model\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 ID of the model to use.
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -2163,21 +2710,31 @@ ID of the model to use.
 
 <TabbedSection>
 
-<SectionTitle slot="title" variant="default">
+<SectionTitle slot="title">
 
 ### Responses \{#operation-classifications_v1_classifications_post+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-classifications_v1_classifications_post+responses+200+application-json">
+<SectionTab
+  slot="tab"
+  id="operation-classifications_v1_classifications_post+responses+200+application-json"
+>
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" variant="top-level" id="operation-classifications_v1_classifications_post+responses+200+application-json">
+<SectionContent
+  slot="content"
+  id="operation-classifications_v1_classifications_post+responses+200+application-json"
+>
+
+<OperationResponseBodyDescriptionSection slot="response-body-description">
 
 Successful Response
+
+</OperationResponseBodyDescriptionSection>
 
 <ExpandableSection>
 
@@ -2191,13 +2748,13 @@ Successful Response
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### id \{#operation-classifications_v1_classifications_post+responses+200+application-json+id\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyExamples slot="examples">
 
 _Example:_
 
@@ -2205,7 +2762,7 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-</div>
+</ExpandablePropertyExamples>
 
 </ExpandableProperty>
 
@@ -2219,11 +2776,11 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### model \{#operation-classifications_v1_classifications_post+responses+200+application-json+model\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -2237,27 +2794,40 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### results \{#operation-classifications_v1_classifications_post+responses+200+application-json+results\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="results_ClassificationTargetResult"
-  headingId="operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult" parentId="results"
+  headingId="operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult"
+  parentId="results"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ClassificationTargetResult \{#operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2272,11 +2842,11 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### scores \{#operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult+scores\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -2292,25 +2862,41 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 <Operation>
 
-<OperationFrontMatterSection slot="front-matter">
+<OperationTitleSection slot="title">
 
 ## <Pill variant="primary"><b>POST</b></Pill> /v1/chat/classifications \{#operation-chat_classifications_v1_chat_classifications_post\}
 
+</OperationTitleSection>
+
+<OperationSummarySection slot="summary">
+
 Chat Classifications
 
-</OperationFrontMatterSection>
+</OperationSummarySection>
 
-<OperationTryItNowSection slot="try-it-now">
+<OperationCodeSamplesSection slot="code-samples">
 
-<Section variant="top-level">
+<TabbedSection>
 
-<SectionTitle slot="title" variant="top-level">
+<SectionTitle slot="title">
 
-### Try it Now \{#operation-chat_classifications_v1_chat_classifications_post\}
+### Code Samples \{#operation-chat_classifications_v1_chat_classifications_post+code-samples\}
 
 </SectionTitle>
 
-<SectionContent slot="content" variant="top-level">
+<SectionTab
+  slot="tab"
+  id="operation-chat_classifications_v1_chat_classifications_post+code-samples+typescript"
+>
+
+TypeScript
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_classifications_v1_chat_classifications_post+code-samples+typescript"
+>
 
 <TryItNow
   externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
@@ -2360,21 +2946,80 @@ run();`}
 
 </SectionContent>
 
-</Section>
+<SectionTab
+  slot="tab"
+  id="operation-chat_classifications_v1_chat_classifications_post+code-samples+python"
+>
 
-</OperationTryItNowSection>
+Python
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_classifications_v1_chat_classifications_post+code-samples+python"
+>
+
+<CodeSample>
+
+```python
+from mistralai import Mistral, models
+
+
+with Mistral(
+    api_key="<YOUR_BEARER_TOKEN_HERE>",
+) as mistral:
+
+    res = mistral.classifiers.classify_chat(model="Camry", inputs=[
+        {
+            "messages": [
+                {
+                    "content": "<value>",
+                    "role": models.SystemMessageRole.SYSTEM,
+                },
+                {
+                    "prefix": False,
+                    "role": models.AssistantMessageRole.ASSISTANT,
+                },
+            ],
+        },
+        {
+            "messages": [
+                {
+                    "content": "<value>",
+                    "role": models.SystemMessageRole.SYSTEM,
+                },
+                {
+                    "prefix": False,
+                    "role": models.AssistantMessageRole.ASSISTANT,
+                },
+            ],
+        },
+    ])
+
+    # Handle response
+    print(res)
+```
+
+</CodeSample>
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationCodeSamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
-<Section variant="top-level">
+<Section>
 
-<SectionTitle slot="title" variant="top-level">
+<SectionTitle slot="title">
 
 ### Request Body \{#operation-chat_classifications_v1_chat_classifications_post+request\}
 
 </SectionTitle>
 
-<SectionContent slot="content" variant="top-level">
+<SectionContent slot="content">
 
 <ExpandableSection>
 
@@ -2388,33 +3033,46 @@ run();`}
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### inputs \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Chat to classify
 
-</div>
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest" parentId="inputs"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest"
+  parentId="inputs"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### InstructRequest \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2429,27 +3087,40 @@ Chat to classify
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### messages \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_SystemMessage"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage" parentId="inputs_InstructRequest_messages"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage"
+  parentId="inputs_InstructRequest_messages"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### SystemMessage \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2464,27 +3135,40 @@ Chat to classify
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### content \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_SystemMessage_content_TextChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk" parentId="inputs_InstructRequest_messages_SystemMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk"
+  parentId="inputs_InstructRequest_messages_SystemMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### TextChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2499,11 +3183,11 @@ Chat to classify
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### text \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk+text\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -2513,21 +3197,22 @@ Chat to classify
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk+type"
   parentId="inputs_InstructRequest_messages_SystemMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"text"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -2537,37 +3222,51 @@ _Default Value:_ `"text"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+role"
   parentId="inputs_InstructRequest_messages_SystemMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"system\"","linkedLabel":"\"system\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### role \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+role\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"system"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage" parentId="inputs_InstructRequest_messages"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage"
+  parentId="inputs_InstructRequest_messages"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### UserMessage \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2582,27 +3281,40 @@ _Default Value:_ `"system"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### content \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_TextChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk" parentId="inputs_InstructRequest_messages_UserMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk"
+  parentId="inputs_InstructRequest_messages_UserMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### TextChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2617,11 +3329,11 @@ _Default Value:_ `"system"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### text \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk+text\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -2631,43 +3343,53 @@ _Default Value:_ `"system"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk+type"
   parentId="inputs_InstructRequest_messages_UserMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"text"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk" parentId="inputs_InstructRequest_messages_UserMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk"
+  parentId="inputs_InstructRequest_messages_UserMessage_content"
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURLChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
 
-<div slot="content">
+<ExpandableBreakoutDescription slot="description">
 
 \{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
-</div>
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2682,27 +3404,40 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### image_url \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl"
+  parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURL \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2712,15 +3447,16 @@ _Default Value:_ `"text"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### detail \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl+detail\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -2735,11 +3471,11 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### url \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl+url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -2749,37 +3485,51 @@ _Default Value:_ `"text"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+type"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"image_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk" parentId="inputs_InstructRequest_messages_UserMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk"
+  parentId="inputs_InstructRequest_messages_UserMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### DocumentURLChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2789,15 +3539,16 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk+document_name"
   parentId="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk+document_name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -2812,11 +3563,11 @@ _Default Value:_ `"image_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_url \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk+document_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -2826,37 +3577,51 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk+type"
   parentId="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"document_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk" parentId="inputs_InstructRequest_messages_UserMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk"
+  parentId="inputs_InstructRequest_messages_UserMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ReferenceChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2871,11 +3636,11 @@ _Default Value:_ `"document_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### reference_ids \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk+reference_ids\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -2885,21 +3650,22 @@ _Default Value:_ `"document_url"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk+type"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"reference"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -2909,37 +3675,51 @@ _Default Value:_ `"reference"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+role"
   parentId="inputs_InstructRequest_messages_UserMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"user\"","linkedLabel":"\"user\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### role \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+role\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"user"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage" parentId="inputs_InstructRequest_messages"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage"
+  parentId="inputs_InstructRequest_messages"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### AssistantMessage \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2949,31 +3729,45 @@ _Default Value:_ `"user"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content"
   parentId="inputs_InstructRequest_messages_AssistantMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### content \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### TextChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -2988,11 +3782,11 @@ _Default Value:_ `"user"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### text \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk+text\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3002,43 +3796,53 @@ _Default Value:_ `"user"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"text"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_content"
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURLChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
 
-<div slot="content">
+<ExpandableBreakoutDescription slot="description">
 
 \{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
-</div>
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3053,27 +3857,40 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### image_url \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURL \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3083,15 +3900,16 @@ _Default Value:_ `"text"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### detail \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl+detail\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3106,11 +3924,11 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### url \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl+url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3120,37 +3938,51 @@ _Default Value:_ `"text"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"image_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### DocumentURLChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3160,15 +3992,16 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk+document_name"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk+document_name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3183,11 +4016,11 @@ _Default Value:_ `"image_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_url \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk+document_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3197,37 +4030,51 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"document_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk" parentId="inputs_InstructRequest_messages_AssistantMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ReferenceChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3242,11 +4089,11 @@ _Default Value:_ `"document_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### reference_ids \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk+reference_ids\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3256,21 +4103,22 @@ _Default Value:_ `"document_url"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"reference"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -3280,23 +4128,28 @@ _Default Value:_ `"reference"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+prefix"
   parentId="inputs_InstructRequest_messages_AssistantMessage"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### prefix \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+prefix\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDescription slot="description">
 
 Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.
 
+</ExpandablePropertyDescription>
+
+<ExpandablePropertyDefaultValue slot="defaultValue">
+
 _Default Value:_ `false`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -3306,21 +4159,22 @@ _Default Value:_ `false`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+role"
   parentId="inputs_InstructRequest_messages_AssistantMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### role \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+role\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"assistant"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -3330,31 +4184,45 @@ _Default Value:_ `"assistant"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls"
   parentId="inputs_InstructRequest_messages_AssistantMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### tool_calls \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall" parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ToolCall \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3369,11 +4237,11 @@ _Default Value:_ `"assistant"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### function \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3388,11 +4256,11 @@ _Default Value:_ `"assistant"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### arguments \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+arguments\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3407,11 +4275,11 @@ _Default Value:_ `"assistant"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3421,21 +4289,22 @@ _Default Value:_ `"assistant"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+id"
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### id \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+id\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"null"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -3445,21 +4314,22 @@ _Default Value:_ `"null"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+index"
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### index \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+index\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `0`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -3469,31 +4339,45 @@ _Default Value:_ `0`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+type"
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage" parentId="inputs_InstructRequest_messages"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage"
+  parentId="inputs_InstructRequest_messages"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ToolMessage \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3508,27 +4392,40 @@ _Default Value:_ `0`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### content \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_TextChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk" parentId="inputs_InstructRequest_messages_ToolMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk"
+  parentId="inputs_InstructRequest_messages_ToolMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### TextChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3543,11 +4440,11 @@ _Default Value:_ `0`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### text \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk+text\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3557,43 +4454,53 @@ _Default Value:_ `0`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk+type"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"text"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk" parentId="inputs_InstructRequest_messages_ToolMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk"
+  parentId="inputs_InstructRequest_messages_ToolMessage_content"
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURLChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
 
-<div slot="content">
+<ExpandableBreakoutDescription slot="description">
 
 \{"type":"image_url","image_url":\{"url":"data:image/png;base64,iVBORw0
 
-</div>
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3608,27 +4515,40 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### image_url \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl" parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl"
+  parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ImageURL \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3638,15 +4558,16 @@ _Default Value:_ `"text"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl+detail"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### detail \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl+detail\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3661,11 +4582,11 @@ _Default Value:_ `"text"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### url \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl+url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3675,37 +4596,51 @@ _Default Value:_ `"text"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+type"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"image_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk" parentId="inputs_InstructRequest_messages_ToolMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk"
+  parentId="inputs_InstructRequest_messages_ToolMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### DocumentURLChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3715,15 +4650,16 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk+document_name"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk+document_name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3738,11 +4674,11 @@ _Default Value:_ `"image_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### document_url \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk+document_url\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3752,37 +4688,51 @@ _Default Value:_ `"image_url"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk+type"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"document_url"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk" parentId="inputs_InstructRequest_messages_ToolMessage_content"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk"
+  parentId="inputs_InstructRequest_messages_ToolMessage_content"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ReferenceChunk \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -3797,11 +4747,11 @@ _Default Value:_ `"document_url"`
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### reference_ids \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk+reference_ids\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3811,21 +4761,22 @@ _Default Value:_ `"document_url"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk+type"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### type \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk+type\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"reference"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -3835,15 +4786,16 @@ _Default Value:_ `"reference"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+name"
   parentId="inputs_InstructRequest_messages_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+name\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3853,21 +4805,22 @@ _Default Value:_ `"reference"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+role"
   parentId="inputs_InstructRequest_messages_ToolMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"tool\"","linkedLabel":"\"tool\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### role \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+role\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyDefaultValue slot="defaultValue">
 
 _Default Value:_ `"tool"`
 
-</div>
+</ExpandablePropertyDefaultValue>
 
 </ExpandableProperty>
 
@@ -3877,15 +4830,16 @@ _Default Value:_ `"tool"`
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+tool_call_id"
   parentId="inputs_InstructRequest_messages_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### tool_call_id \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+tool_call_id\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3899,11 +4853,11 @@ _Default Value:_ `"tool"`
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### model \{#operation-chat_classifications_v1_chat_classifications_post+request+model\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3919,21 +4873,31 @@ _Default Value:_ `"tool"`
 
 <TabbedSection>
 
-<SectionTitle slot="title" variant="default">
+<SectionTitle slot="title">
 
 ### Responses \{#operation-chat_classifications_v1_chat_classifications_post+responses\}
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json">
+<SectionTab
+  slot="tab"
+  id="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json"
+>
 
 200
 
 </SectionTab>
 
-<SectionContent slot="content" variant="top-level" id="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json">
+<SectionContent
+  slot="content"
+  id="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json"
+>
+
+<OperationResponseBodyDescriptionSection slot="response-body-description">
 
 Successful Response
+
+</OperationResponseBodyDescriptionSection>
 
 <ExpandableSection>
 
@@ -3947,13 +4911,13 @@ Successful Response
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### id \{#operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+id\}
 
-</div>
+</ExpandablePropertyTitle>
 
-<div slot="content">
+<ExpandablePropertyExamples slot="examples">
 
 _Example:_
 
@@ -3961,7 +4925,7 @@ _Example:_
 mod-e5cc70bb28c444948073e77776eb30ef
 ```
 
-</div>
+</ExpandablePropertyExamples>
 
 </ExpandableProperty>
 
@@ -3975,11 +4939,11 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### model \{#operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+model\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
@@ -3993,27 +4957,40 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={true}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### results \{#operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
 <ExpandableBreakout
   slot="entry"
   id="results_ClassificationTargetResult"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult" parentId="results"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult"
+  parentId="results"
   hasFrontMatter={false}
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandableBreakoutTitle slot="title">
 
 #### ClassificationTargetResult \{#operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult\}
 
-</div>
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutDescription slot="description">
+
+</ExpandableBreakoutDescription>
+
+<ExpandableBreakoutExamples slot="examples">
+
+</ExpandableBreakoutExamples>
+
+<ExpandableBreakoutDefaultValue slot="defaultValue">
+
+</ExpandableBreakoutDefaultValue>
 
 </ExpandableBreakout>
 
@@ -4028,11 +5005,11 @@ mod-e5cc70bb28c444948073e77776eb30ef
   expandByDefault={false}
 >
 
-<div slot="title">
+<ExpandablePropertyTitle slot="title">
 
 ##### scores \{#operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult+scores\}
 
-</div>
+</ExpandablePropertyTitle>
 
 </ExpandableProperty>
 
