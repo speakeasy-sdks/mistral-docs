@@ -59,64 +59,6 @@ Retrieve a list of agent entities sorted by creation time.
 
 </OperationDescriptionSection>
 
-<OperationParametersSection slot="parameters">
-
-<Section>
-
-<SectionTitle slot="title">
-
-### Parameters \{#operation-agents_api_v1_agents_list+parameters\}
-
-</SectionTitle>
-
-<SectionContent slot="content">
-
-<ExpandableSection>
-
-<ExpandableProperty
-  slot="entry"
-  id="page"
-  headingId="operation-agents_api_v1_agents_list+parameters+page"
-  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"query","variant":"info"}]}
-  hasFrontMatter={false}
-  expandByDefault={true}
->
-
-<ExpandablePropertyTitle slot="title">
-
-##### page \{#operation-agents_api_v1_agents_list+parameters+page\}
-
-</ExpandablePropertyTitle>
-
-</ExpandableProperty>
-
-<ExpandableProperty
-  slot="entry"
-  id="page_size"
-  headingId="operation-agents_api_v1_agents_list+parameters+page_size"
-  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"query","variant":"info"}]}
-  hasFrontMatter={false}
-  expandByDefault={true}
->
-
-<ExpandablePropertyTitle slot="title">
-
-##### page_size \{#operation-agents_api_v1_agents_list+parameters+page_size\}
-
-</ExpandablePropertyTitle>
-
-</ExpandableProperty>
-
-</ExpandableSection>
-
-</SectionContent>
-
-</Section>
-
-</OperationParametersSection>
-
 <OperationCodeSamplesSection slot="code-samples">
 
 <TabbedSection>
@@ -186,6 +128,64 @@ with Mistral(
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationParametersSection slot="parameters">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Parameters \{#operation-agents_api_v1_agents_list+parameters\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+<ExpandableSection>
+
+<ExpandableProperty
+  slot="entry"
+  id="page"
+  headingId="operation-agents_api_v1_agents_list+parameters+page"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"query","variant":"info"}]}
+  hasFrontMatter={false}
+  expandByDefault={true}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### page \{#operation-agents_api_v1_agents_list+parameters+page\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="page_size"
+  headingId="operation-agents_api_v1_agents_list+parameters+page_size"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"query","variant":"info"}]}
+  hasFrontMatter={false}
+  expandByDefault={true}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### page_size \{#operation-agents_api_v1_agents_list+parameters+page_size\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+</ExpandableSection>
+
+</SectionContent>
+
+</Section>
+
+</OperationParametersSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -676,7 +676,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-agents_api_v1_agents_list+responses+200+application-json+agent+completion_args+temperature"
   parentId="Agent_completion_args"
   typeInfo={{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[]}
+  typeAnnotations={[{"title":"Min: 0","variant":"warning"},{"title":"Max: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -1316,7 +1316,7 @@ _Default Value:_ `"image_generation"`
   headingId="operation-agents_api_v1_agents_list+responses+200+application-json+agent+tools+documentlibrarytool+library_ids"
   parentId="Agent_tools_DocumentLibraryTool"
   typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min Items: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -1938,7 +1938,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-agents_api_v1_agents_create+request+completion_args+temperature"
   parentId="completion_args"
   typeInfo={{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[]}
+  typeAnnotations={[{"title":"Min: 0","variant":"warning"},{"title":"Max: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -2509,7 +2509,7 @@ _Default Value:_ `"image_generation"`
   headingId="operation-agents_api_v1_agents_create+request+tools+documentlibrarytool+library_ids"
   parentId="tools_DocumentLibraryTool"
   typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min Items: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -3013,7 +3013,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-agents_api_v1_agents_create+responses+200+application-json+completion_args+temperature"
   parentId="completion_args"
   typeInfo={{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[]}
+  typeAnnotations={[{"title":"Min: 0","variant":"warning"},{"title":"Max: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -3644,7 +3644,7 @@ _Default Value:_ `"image_generation"`
   headingId="operation-agents_api_v1_agents_create+responses+200+application-json+tools+documentlibrarytool+library_ids"
   parentId="tools_DocumentLibraryTool"
   typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min Items: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -3754,46 +3754,6 @@ Given an agent retrieve an agent entity with its attributes.
 
 </OperationDescriptionSection>
 
-<OperationParametersSection slot="parameters">
-
-<Section>
-
-<SectionTitle slot="title">
-
-### Parameters \{#operation-agents_api_v1_agents_get+parameters\}
-
-</SectionTitle>
-
-<SectionContent slot="content">
-
-<ExpandableSection>
-
-<ExpandableProperty
-  slot="entry"
-  id="agent_id"
-  headingId="operation-agents_api_v1_agents_get+parameters+agent_id"
-  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
-  expandByDefault={true}
->
-
-<ExpandablePropertyTitle slot="title">
-
-##### agent_id \{#operation-agents_api_v1_agents_get+parameters+agent_id\}
-
-</ExpandablePropertyTitle>
-
-</ExpandableProperty>
-
-</ExpandableSection>
-
-</SectionContent>
-
-</Section>
-
-</OperationParametersSection>
-
 <OperationCodeSamplesSection slot="code-samples">
 
 <TabbedSection>
@@ -3865,6 +3825,46 @@ with Mistral(
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationParametersSection slot="parameters">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Parameters \{#operation-agents_api_v1_agents_get+parameters\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+<ExpandableSection>
+
+<ExpandableProperty
+  slot="entry"
+  id="agent_id"
+  headingId="operation-agents_api_v1_agents_get+parameters+agent_id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
+  hasFrontMatter={false}
+  expandByDefault={true}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### agent_id \{#operation-agents_api_v1_agents_get+parameters+agent_id\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+</ExpandableSection>
+
+</SectionContent>
+
+</Section>
+
+</OperationParametersSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -4318,7 +4318,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-agents_api_v1_agents_get+responses+200+application-json+completion_args+temperature"
   parentId="completion_args"
   typeInfo={{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[]}
+  typeAnnotations={[{"title":"Min: 0","variant":"warning"},{"title":"Max: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -4949,7 +4949,7 @@ _Default Value:_ `"image_generation"`
   headingId="operation-agents_api_v1_agents_get+responses+200+application-json+tools+documentlibrarytool+library_ids"
   parentId="tools_DocumentLibraryTool"
   typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min Items: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -5059,46 +5059,6 @@ Update an agent attributes and create a new version.
 
 </OperationDescriptionSection>
 
-<OperationParametersSection slot="parameters">
-
-<Section>
-
-<SectionTitle slot="title">
-
-### Parameters \{#operation-agents_api_v1_agents_update+parameters\}
-
-</SectionTitle>
-
-<SectionContent slot="content">
-
-<ExpandableSection>
-
-<ExpandableProperty
-  slot="entry"
-  id="agent_id"
-  headingId="operation-agents_api_v1_agents_update+parameters+agent_id"
-  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
-  expandByDefault={true}
->
-
-<ExpandablePropertyTitle slot="title">
-
-##### agent_id \{#operation-agents_api_v1_agents_update+parameters+agent_id\}
-
-</ExpandablePropertyTitle>
-
-</ExpandableProperty>
-
-</ExpandableSection>
-
-</SectionContent>
-
-</Section>
-
-</OperationParametersSection>
-
 <OperationCodeSamplesSection slot="code-samples">
 
 <TabbedSection>
@@ -5174,6 +5134,46 @@ with Mistral(
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationParametersSection slot="parameters">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Parameters \{#operation-agents_api_v1_agents_update+parameters\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+<ExpandableSection>
+
+<ExpandableProperty
+  slot="entry"
+  id="agent_id"
+  headingId="operation-agents_api_v1_agents_update+parameters+agent_id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
+  hasFrontMatter={false}
+  expandByDefault={true}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### agent_id \{#operation-agents_api_v1_agents_update+parameters+agent_id\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+</ExpandableSection>
+
+</SectionContent>
+
+</Section>
+
+</OperationParametersSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -5609,7 +5609,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-agents_api_v1_agents_update+request+completion_args+temperature"
   parentId="completion_args"
   typeInfo={{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[]}
+  typeAnnotations={[{"title":"Min: 0","variant":"warning"},{"title":"Max: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -6180,7 +6180,7 @@ _Default Value:_ `"image_generation"`
   headingId="operation-agents_api_v1_agents_update+request+tools+documentlibrarytool+library_ids"
   parentId="tools_DocumentLibraryTool"
   typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min Items: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -6684,7 +6684,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-agents_api_v1_agents_update+responses+200+application-json+completion_args+temperature"
   parentId="completion_args"
   typeInfo={{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[]}
+  typeAnnotations={[{"title":"Min: 0","variant":"warning"},{"title":"Max: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -7315,7 +7315,7 @@ _Default Value:_ `"image_generation"`
   headingId="operation-agents_api_v1_agents_update+responses+200+application-json+tools+documentlibrarytool+library_ids"
   parentId="tools_DocumentLibraryTool"
   typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min Items: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -7425,64 +7425,6 @@ Switch the version of an agent.
 
 </OperationDescriptionSection>
 
-<OperationParametersSection slot="parameters">
-
-<Section>
-
-<SectionTitle slot="title">
-
-### Parameters \{#operation-agents_api_v1_agents_update_version+parameters\}
-
-</SectionTitle>
-
-<SectionContent slot="content">
-
-<ExpandableSection>
-
-<ExpandableProperty
-  slot="entry"
-  id="agent_id"
-  headingId="operation-agents_api_v1_agents_update_version+parameters+agent_id"
-  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
-  expandByDefault={true}
->
-
-<ExpandablePropertyTitle slot="title">
-
-##### agent_id \{#operation-agents_api_v1_agents_update_version+parameters+agent_id\}
-
-</ExpandablePropertyTitle>
-
-</ExpandableProperty>
-
-<ExpandableProperty
-  slot="entry"
-  id="version"
-  headingId="operation-agents_api_v1_agents_update_version+parameters+version"
-  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"query","variant":"info"},{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
-  expandByDefault={true}
->
-
-<ExpandablePropertyTitle slot="title">
-
-##### version \{#operation-agents_api_v1_agents_update_version+parameters+version\}
-
-</ExpandablePropertyTitle>
-
-</ExpandableProperty>
-
-</ExpandableSection>
-
-</SectionContent>
-
-</Section>
-
-</OperationParametersSection>
-
 <OperationCodeSamplesSection slot="code-samples">
 
 <TabbedSection>
@@ -7567,6 +7509,64 @@ with Mistral(
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationParametersSection slot="parameters">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Parameters \{#operation-agents_api_v1_agents_update_version+parameters\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+<ExpandableSection>
+
+<ExpandableProperty
+  slot="entry"
+  id="agent_id"
+  headingId="operation-agents_api_v1_agents_update_version+parameters+agent_id"
+  typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"path","variant":"info"},{"title":"required","variant":"warning"}]}
+  hasFrontMatter={false}
+  expandByDefault={true}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### agent_id \{#operation-agents_api_v1_agents_update_version+parameters+agent_id\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="version"
+  headingId="operation-agents_api_v1_agents_update_version+parameters+version"
+  typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"query","variant":"info"},{"title":"required","variant":"warning"}]}
+  hasFrontMatter={false}
+  expandByDefault={true}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### version \{#operation-agents_api_v1_agents_update_version+parameters+version\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+</ExpandableSection>
+
+</SectionContent>
+
+</Section>
+
+</OperationParametersSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -8020,7 +8020,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-agents_api_v1_agents_update_version+responses+200+application-json+completion_args+temperature"
   parentId="completion_args"
   typeInfo={{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}}
-  typeAnnotations={[]}
+  typeAnnotations={[{"title":"Min: 0","variant":"warning"},{"title":"Max: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
@@ -8651,7 +8651,7 @@ _Default Value:_ `"image_generation"`
   headingId="operation-agents_api_v1_agents_update_version+responses+200+application-json+tools+documentlibrarytool+library_ids"
   parentId="tools_DocumentLibraryTool"
   typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min Items: 1","variant":"warning"}]}
   hasFrontMatter={true}
   expandByDefault={false}
 >
