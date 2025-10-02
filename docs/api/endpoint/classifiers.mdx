@@ -8,11 +8,11 @@ import "@speakeasy-api/docs-md-react/docusaurus.css";
 import {
   CodeSample,
   ExpandableBreakout,
-  ExpandableBreakoutDefaultValue,
   ExpandableBreakoutDescription,
-  ExpandableBreakoutExamples,
+  ExpandableBreakoutProperties,
   ExpandableBreakoutTitle,
   ExpandableProperty,
+  ExpandablePropertyBreakouts,
   ExpandablePropertyDefaultValue,
   ExpandablePropertyDescription,
   ExpandablePropertyExamples,
@@ -71,12 +71,6 @@ Moderations
 
 <TabbedSection>
 
-<SectionTitle slot="title">
-
-### Code Samples \{#operation-moderations_v1_moderations_post+code-samples\}
-
-</SectionTitle>
-
 <SectionTab
   slot="tab"
   id="operation-moderations_v1_moderations_post+code-samples+typescript"
@@ -92,27 +86,8 @@ TypeScript
 >
 
 <TryItNow
-  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
-  defaultValue={`import { Mistral } from "@mistralai/mistralai";
-
-const mistral = new Mistral({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await mistral.classifiers.moderate({
-    model: "Durango",
-    inputs: [
-      "<value 1>",
-      "<value 2>",
-    ],
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();`}
+  dependencyBundleUrl="/try-it-now/deps.js"
+  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.classifiers.moderate({\n    model: \"Durango\",\n    inputs: [\n      \"<value 1>\",\n      \"<value 2>\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
 />
 
 </SectionContent>
@@ -132,10 +107,11 @@ Python
 
 ```python
 from mistralai import Mistral
+import os
 
 
 with Mistral(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
     res = mistral.classifiers.moderate(model="Durango", inputs=[
@@ -145,6 +121,8 @@ with Mistral(
 
     # Handle response
     print(res)
+
+
 ```
 
 </CodeSample>
@@ -175,7 +153,7 @@ with Mistral(
   headingId="operation-moderations_v1_moderations_post+request+inputs"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -199,7 +177,7 @@ Text to classify.
   headingId="operation-moderations_v1_moderations_post+request+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -263,7 +241,7 @@ Successful Response
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -291,7 +269,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={true}
 >
 
@@ -309,7 +287,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject\">ModerationObject</a>","children":[{"label":"ModerationObject","linkedLabel":"<a href=\"#operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject\">ModerationObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -319,14 +297,14 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="results_ModerationObject"
   headingId="operation-moderations_v1_moderations_post+responses+200+application-json+results+moderationobject"
   parentId="results"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -336,19 +314,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -357,7 +323,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   parentId="results_ModerationObject"
   typeInfo={{"label":"map","linkedLabel":"boolean","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -382,7 +348,7 @@ Moderation result thresholds
   parentId="results_ModerationObject"
   typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -397,6 +363,14 @@ Moderation result thresholds
 Moderation result
 
 </ExpandablePropertyDescription>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 
@@ -428,12 +402,6 @@ Chat Moderations
 
 <TabbedSection>
 
-<SectionTitle slot="title">
-
-### Code Samples \{#operation-chat_moderations_v1_chat_moderations_post+code-samples\}
-
-</SectionTitle>
-
 <SectionTab
   slot="tab"
   id="operation-chat_moderations_v1_chat_moderations_post+code-samples+typescript"
@@ -449,46 +417,8 @@ TypeScript
 >
 
 <TryItNow
-  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
-  defaultValue={`import { Mistral } from "@mistralai/mistralai";
-
-const mistral = new Mistral({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await mistral.classifiers.moderateChat({
-    inputs: [
-      {
-        content: "<value>",
-        role: "tool",
-      },
-      {
-        content: [
-          {
-            documentUrl: "https://limited-merit.com",
-            type: "document_url",
-          },
-          {
-            documentUrl: "https://deep-governance.com/",
-            type: "document_url",
-          },
-          {
-            text: "<value>",
-            type: "text",
-          },
-        ],
-        role: "tool",
-      },
-    ],
-    model: "Jetta",
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();`}
+  dependencyBundleUrl="/try-it-now/deps.js"
+  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.classifiers.moderateChat({\n    inputs: [\n      {\n        content: \"<value>\",\n        role: \"tool\",\n      },\n    ],\n    model: \"LeBaron\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
 />
 
 </SectionContent>
@@ -510,39 +440,25 @@ Python
 <CodeSample>
 
 ```python
-from mistralai import Mistral, models
+from mistralai import Mistral
+import os
 
 
 with Mistral(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
     res = mistral.classifiers.moderate_chat(inputs=[
         {
             "content": "<value>",
-            "role": models.ToolMessageRole.TOOL,
+            "role": "tool",
         },
-        {
-            "content": [
-                {
-                    "document_url": "https://limited-merit.com",
-                    "type": models.DocumentURLChunkType.DOCUMENT_URL,
-                },
-                {
-                    "document_url": "https://deep-governance.com/",
-                    "type": models.DocumentURLChunkType.DOCUMENT_URL,
-                },
-                {
-                    "text": "<value>",
-                    "type": models.TextChunkType.TEXT,
-                },
-            ],
-            "role": models.ToolMessageRole.TOOL,
-        },
-    ], model="Jetta")
+    ], model="LeBaron")
 
     # Handle response
     print(res)
+
+
 ```
 
 </CodeSample>
@@ -573,7 +489,7 @@ with Mistral(
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"SystemMessage","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage\">SystemMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"UserMessage","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage\">UserMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"AssistantMessage","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage\">AssistantMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"ToolMessage","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage\">ToolMessage</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"SystemMessage","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage\">SystemMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"UserMessage","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage\">UserMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"AssistantMessage","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage\">AssistantMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"ToolMessage","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage\">ToolMessage</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -589,14 +505,14 @@ Chat to classify
 
 </ExpandablePropertyDescription>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_SystemMessage"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage"
   parentId="inputs"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -606,19 +522,7 @@ Chat to classify
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -627,7 +531,7 @@ Chat to classify
   parentId="inputs_SystemMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk\">TextChunk</a>","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -637,14 +541,14 @@ Chat to classify
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_SystemMessage_content_TextChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+systemmessage+content+textchunk"
   parentId="inputs_SystemMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -654,19 +558,7 @@ Chat to classify
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -675,7 +567,7 @@ Chat to classify
   parentId="inputs_SystemMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -694,7 +586,7 @@ Chat to classify
   parentId="inputs_SystemMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -712,6 +604,14 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_SystemMessage_role"
@@ -719,7 +619,7 @@ _Default Value:_ `"text"`
   parentId="inputs_SystemMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"system\"","linkedLabel":"\"system\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -737,12 +637,16 @@ _Default Value:_ `"system"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage"
   parentId="inputs"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -752,19 +656,7 @@ _Default Value:_ `"system"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -773,7 +665,7 @@ _Default Value:_ `"system"`
   parentId="inputs_UserMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -783,14 +675,14 @@ _Default Value:_ `"system"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_TextChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+textchunk"
   parentId="inputs_UserMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -800,19 +692,7 @@ _Default Value:_ `"system"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -821,7 +701,7 @@ _Default Value:_ `"system"`
   parentId="inputs_UserMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -840,7 +720,7 @@ _Default Value:_ `"system"`
   parentId="inputs_UserMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -858,12 +738,16 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_ImageURLChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk"
   parentId="inputs_UserMessage_content"
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -879,15 +763,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutDescription>
 
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -896,7 +772,7 @@ _Default Value:_ `"text"`
   parentId="inputs_UserMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -906,14 +782,14 @@ _Default Value:_ `"text"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+imageurlchunk+image_url+imageurl"
   parentId="inputs_UserMessage_content_ImageURLChunk_image_url"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -923,19 +799,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -944,7 +808,7 @@ _Default Value:_ `"text"`
   parentId="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -963,7 +827,7 @@ _Default Value:_ `"text"`
   parentId="inputs_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -975,6 +839,14 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_UserMessage_content_ImageURLChunk_type"
@@ -982,7 +854,7 @@ _Default Value:_ `"text"`
   parentId="inputs_UserMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1000,12 +872,16 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_DocumentURLChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk"
   parentId="inputs_UserMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1015,19 +891,7 @@ _Default Value:_ `"image_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1036,7 +900,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1045,6 +909,12 @@ _Default Value:_ `"image_url"`
 ##### document_name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+documenturlchunk+document_name\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+The filename of the document
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -1055,7 +925,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -1074,7 +944,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1092,12 +962,16 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_UserMessage_content_ReferenceChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+usermessage+content+referencechunk"
   parentId="inputs_UserMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1107,19 +981,7 @@ _Default Value:_ `"document_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1128,7 +990,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_UserMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -1147,7 +1009,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_UserMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1165,6 +1027,14 @@ _Default Value:_ `"reference"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_UserMessage_role"
@@ -1172,7 +1042,7 @@ _Default Value:_ `"reference"`
   parentId="inputs_UserMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"user\"","linkedLabel":"\"user\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1190,12 +1060,16 @@ _Default Value:_ `"user"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage"
   parentId="inputs"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1205,19 +1079,7 @@ _Default Value:_ `"user"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1226,7 +1088,7 @@ _Default Value:_ `"user"`
   parentId="inputs_AssistantMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1236,14 +1098,14 @@ _Default Value:_ `"user"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_TextChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+textchunk"
   parentId="inputs_AssistantMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1253,19 +1115,7 @@ _Default Value:_ `"user"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1274,7 +1124,7 @@ _Default Value:_ `"user"`
   parentId="inputs_AssistantMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -1293,7 +1143,7 @@ _Default Value:_ `"user"`
   parentId="inputs_AssistantMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1311,12 +1161,16 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_ImageURLChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk"
   parentId="inputs_AssistantMessage_content"
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1332,15 +1186,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutDescription>
 
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1349,7 +1195,7 @@ _Default Value:_ `"text"`
   parentId="inputs_AssistantMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1359,14 +1205,14 @@ _Default Value:_ `"text"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+imageurlchunk+image_url+imageurl"
   parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1376,19 +1222,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1397,7 +1231,7 @@ _Default Value:_ `"text"`
   parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -1416,7 +1250,7 @@ _Default Value:_ `"text"`
   parentId="inputs_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -1428,6 +1262,14 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_AssistantMessage_content_ImageURLChunk_type"
@@ -1435,7 +1277,7 @@ _Default Value:_ `"text"`
   parentId="inputs_AssistantMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1453,12 +1295,16 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_DocumentURLChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk"
   parentId="inputs_AssistantMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1468,19 +1314,7 @@ _Default Value:_ `"image_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1489,7 +1323,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1498,6 +1332,12 @@ _Default Value:_ `"image_url"`
 ##### document_name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+documenturlchunk+document_name\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+The filename of the document
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -1508,7 +1348,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -1527,7 +1367,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1545,12 +1385,16 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_content_ReferenceChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+content+referencechunk"
   parentId="inputs_AssistantMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1560,19 +1404,7 @@ _Default Value:_ `"document_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1581,7 +1413,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_AssistantMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -1600,7 +1432,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_AssistantMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1618,6 +1450,14 @@ _Default Value:_ `"reference"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_AssistantMessage_prefix"
@@ -1625,7 +1465,7 @@ _Default Value:_ `"reference"`
   parentId="inputs_AssistantMessage"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1656,7 +1496,7 @@ _Default Value:_ `false`
   parentId="inputs_AssistantMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1681,7 +1521,7 @@ _Default Value:_ `"assistant"`
   parentId="inputs_AssistantMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1691,14 +1531,14 @@ _Default Value:_ `"assistant"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_AssistantMessage_tool_calls_ToolCall"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall"
   parentId="inputs_AssistantMessage_tool_calls"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1708,19 +1548,7 @@ _Default Value:_ `"assistant"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1729,7 +1557,7 @@ _Default Value:_ `"assistant"`
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"FunctionCall","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall\">FunctionCall</a>","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1739,22 +1567,39 @@ _Default Value:_ `"assistant"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
+
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall"
+  parentId="inputs_AssistantMessage_tool_calls_ToolCall_function"
+  hasExpandableContent={true}
+  expandByDefault={false}
+>
+
+<ExpandableBreakoutTitle slot="title">
+
+#### FunctionCall \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall\}
+
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
-  id="inputs_AssistantMessage_tool_calls_ToolCall_function_arguments"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+arguments"
-  parentId="inputs_AssistantMessage_tool_calls_ToolCall_function"
+  id="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_arguments"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall+arguments"
+  parentId="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
 <ExpandablePropertyTitle slot="title">
 
-##### arguments \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+arguments\}
+##### arguments \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall+arguments\}
 
 </ExpandablePropertyTitle>
 
@@ -1762,20 +1607,28 @@ _Default Value:_ `"assistant"`
 
 <ExpandableProperty
   slot="entry"
-  id="inputs_AssistantMessage_tool_calls_ToolCall_function_name"
-  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+name"
-  parentId="inputs_AssistantMessage_tool_calls_ToolCall_function"
+  id="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_name"
+  headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall+name"
+  parentId="inputs_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
 <ExpandablePropertyTitle slot="title">
 
-##### name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+name\}
+##### name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+assistantmessage+tool_calls+toolcall+function+functioncall+name\}
 
 </ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 
@@ -1786,7 +1639,7 @@ _Default Value:_ `"assistant"`
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1811,7 +1664,7 @@ _Default Value:_ `"null"`
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1836,7 +1689,7 @@ _Default Value:_ `0`
   parentId="inputs_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -1848,12 +1701,24 @@ _Default Value:_ `0`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage"
   parentId="inputs"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1863,19 +1728,7 @@ _Default Value:_ `0`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1884,7 +1737,7 @@ _Default Value:_ `0`
   parentId="inputs_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1894,14 +1747,14 @@ _Default Value:_ `0`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_TextChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+textchunk"
   parentId="inputs_ToolMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1911,19 +1764,7 @@ _Default Value:_ `0`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1932,7 +1773,7 @@ _Default Value:_ `0`
   parentId="inputs_ToolMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -1951,7 +1792,7 @@ _Default Value:_ `0`
   parentId="inputs_ToolMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1969,12 +1810,16 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_ImageURLChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk"
   parentId="inputs_ToolMessage_content"
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1990,15 +1835,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutDescription>
 
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -2007,7 +1844,7 @@ _Default Value:_ `"text"`
   parentId="inputs_ToolMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2017,14 +1854,14 @@ _Default Value:_ `"text"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+imageurlchunk+image_url+imageurl"
   parentId="inputs_ToolMessage_content_ImageURLChunk_image_url"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2034,19 +1871,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -2055,7 +1880,7 @@ _Default Value:_ `"text"`
   parentId="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -2074,7 +1899,7 @@ _Default Value:_ `"text"`
   parentId="inputs_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -2086,6 +1911,14 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_ToolMessage_content_ImageURLChunk_type"
@@ -2093,7 +1926,7 @@ _Default Value:_ `"text"`
   parentId="inputs_ToolMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2111,12 +1944,16 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_DocumentURLChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk"
   parentId="inputs_ToolMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2126,19 +1963,7 @@ _Default Value:_ `"image_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -2147,7 +1972,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2156,6 +1981,12 @@ _Default Value:_ `"image_url"`
 ##### document_name \{#operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+documenturlchunk+document_name\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+The filename of the document
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -2166,7 +1997,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -2185,7 +2016,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2203,12 +2034,16 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_ToolMessage_content_ReferenceChunk"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+inputs+toolmessage+content+referencechunk"
   parentId="inputs_ToolMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2218,19 +2053,7 @@ _Default Value:_ `"document_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -2239,7 +2062,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_ToolMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -2258,7 +2081,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_ToolMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2276,6 +2099,14 @@ _Default Value:_ `"reference"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_ToolMessage_name"
@@ -2283,7 +2114,7 @@ _Default Value:_ `"reference"`
   parentId="inputs_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -2302,7 +2133,7 @@ _Default Value:_ `"reference"`
   parentId="inputs_ToolMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"tool\"","linkedLabel":"\"tool\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2327,7 +2158,7 @@ _Default Value:_ `"tool"`
   parentId="inputs_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -2339,13 +2170,21 @@ _Default Value:_ `"tool"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="model"
   headingId="operation-chat_moderations_v1_chat_moderations_post+request+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={true}
 >
 
@@ -2403,7 +2242,7 @@ Successful Response
   headingId="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -2431,7 +2270,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={true}
 >
 
@@ -2449,7 +2288,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject\">ModerationObject</a>","children":[{"label":"ModerationObject","linkedLabel":"<a href=\"#operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject\">ModerationObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -2459,14 +2298,14 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="results_ModerationObject"
   headingId="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json+results+moderationobject"
   parentId="results"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2476,19 +2315,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -2497,7 +2324,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   parentId="results_ModerationObject"
   typeInfo={{"label":"map","linkedLabel":"boolean","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2522,7 +2349,7 @@ Moderation result thresholds
   parentId="results_ModerationObject"
   typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2537,6 +2364,14 @@ Moderation result thresholds
 Moderation result
 
 </ExpandablePropertyDescription>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 
@@ -2568,12 +2403,6 @@ Classifications
 
 <TabbedSection>
 
-<SectionTitle slot="title">
-
-### Code Samples \{#operation-classifications_v1_classifications_post+code-samples\}
-
-</SectionTitle>
-
 <SectionTab
   slot="tab"
   id="operation-classifications_v1_classifications_post+code-samples+typescript"
@@ -2589,26 +2418,8 @@ TypeScript
 >
 
 <TryItNow
-  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
-  defaultValue={`import { Mistral } from "@mistralai/mistralai";
-
-const mistral = new Mistral({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await mistral.classifiers.classify({
-    model: "Silverado",
-    inputs: [
-      "<value 1>",
-    ],
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();`}
+  dependencyBundleUrl="/try-it-now/deps.js"
+  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.classifiers.classify({\n    model: \"Silverado\",\n    inputs: [\n      \"<value 1>\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
 />
 
 </SectionContent>
@@ -2631,10 +2442,11 @@ Python
 
 ```python
 from mistralai import Mistral
+import os
 
 
 with Mistral(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
     res = mistral.classifiers.classify(model="Silverado", inputs=[
@@ -2643,6 +2455,8 @@ with Mistral(
 
     # Handle response
     print(res)
+
+
 ```
 
 </CodeSample>
@@ -2673,7 +2487,7 @@ with Mistral(
   headingId="operation-classifications_v1_classifications_post+request+inputs"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -2697,7 +2511,7 @@ Text to classify.
   headingId="operation-classifications_v1_classifications_post+request+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -2761,7 +2575,7 @@ Successful Response
   headingId="operation-classifications_v1_classifications_post+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -2789,7 +2603,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-classifications_v1_classifications_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={true}
 >
 
@@ -2807,7 +2621,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-classifications_v1_classifications_post+responses+200+application-json+results"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[{"label":"map","linkedLabel":"<a href=\"#operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[{"label":"ClassificationTargetResult","linkedLabel":"<a href=\"#operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -2817,14 +2631,14 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="results_ClassificationTargetResult"
   headingId="operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult"
   parentId="results"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -2834,19 +2648,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -2855,7 +2657,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   parentId="results_ClassificationTargetResult"
   typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -2864,6 +2666,14 @@ mod-e5cc70bb28c444948073e77776eb30ef
 ##### scores \{#operation-classifications_v1_classifications_post+responses+200+application-json+results+classificationtargetresult+scores\}
 
 </ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 
@@ -2895,12 +2705,6 @@ Chat Classifications
 
 <TabbedSection>
 
-<SectionTitle slot="title">
-
-### Code Samples \{#operation-chat_classifications_v1_chat_classifications_post+code-samples\}
-
-</SectionTitle>
-
 <SectionTab
   slot="tab"
   id="operation-chat_classifications_v1_chat_classifications_post+code-samples+typescript"
@@ -2916,49 +2720,8 @@ TypeScript
 >
 
 <TryItNow
-  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
-  defaultValue={`import { Mistral } from "@mistralai/mistralai";
-
-const mistral = new Mistral({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await mistral.classifiers.classifyChat({
-    model: "Camry",
-    inputs: [
-      {
-        messages: [
-          {
-            content: "<value>",
-            role: "system",
-          },
-          {
-            prefix: false,
-            role: "assistant",
-          },
-        ],
-      },
-      {
-        messages: [
-          {
-            content: "<value>",
-            role: "system",
-          },
-          {
-            prefix: false,
-            role: "assistant",
-          },
-        ],
-      },
-    ],
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();`}
+  dependencyBundleUrl="/try-it-now/deps.js"
+  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.classifiers.classifyChat({\n    model: \"Camry\",\n    inputs: [\n      {\n        messages: [\n          {\n            content: \"<value>\",\n            role: \"system\",\n          },\n        ],\n      },\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
 />
 
 </SectionContent>
@@ -2980,11 +2743,12 @@ Python
 <CodeSample>
 
 ```python
-from mistralai import Mistral, models
+from mistralai import Mistral
+import os
 
 
 with Mistral(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
     res = mistral.classifiers.classify_chat(model="Camry", inputs=[
@@ -2992,23 +2756,7 @@ with Mistral(
             "messages": [
                 {
                     "content": "<value>",
-                    "role": models.SystemMessageRole.SYSTEM,
-                },
-                {
-                    "prefix": False,
-                    "role": models.AssistantMessageRole.ASSISTANT,
-                },
-            ],
-        },
-        {
-            "messages": [
-                {
-                    "content": "<value>",
-                    "role": models.SystemMessageRole.SYSTEM,
-                },
-                {
-                    "prefix": False,
-                    "role": models.AssistantMessageRole.ASSISTANT,
+                    "role": "system",
                 },
             ],
         },
@@ -3016,6 +2764,8 @@ with Mistral(
 
     # Handle response
     print(res)
+
+
 ```
 
 </CodeSample>
@@ -3046,7 +2796,7 @@ with Mistral(
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"inputs","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+inputs\">inputs</a>","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest\">InstructRequest</a>","children":[{"label":"InstructRequest","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest\">InstructRequest</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -3062,14 +2812,14 @@ Chat to classify
 
 </ExpandablePropertyDescription>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest"
   parentId="inputs"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3079,19 +2829,7 @@ Chat to classify
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3100,7 +2838,7 @@ Chat to classify
   parentId="inputs_InstructRequest"
   typeInfo={{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"SystemMessage","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage\">SystemMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"UserMessage","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage\">UserMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"AssistantMessage","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage\">AssistantMessage</a>","children":[],"breakoutSubTypes":{}},{"label":"ToolMessage","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage\">ToolMessage</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3110,14 +2848,14 @@ Chat to classify
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_SystemMessage"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage"
   parentId="inputs_InstructRequest_messages"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3127,19 +2865,7 @@ Chat to classify
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3148,7 +2874,7 @@ Chat to classify
   parentId="inputs_InstructRequest_messages_SystemMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk\">TextChunk</a>","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3158,14 +2884,14 @@ Chat to classify
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_SystemMessage_content_TextChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+systemmessage+content+textchunk"
   parentId="inputs_InstructRequest_messages_SystemMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3175,19 +2901,7 @@ Chat to classify
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3196,7 +2910,7 @@ Chat to classify
   parentId="inputs_InstructRequest_messages_SystemMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -3215,7 +2929,7 @@ Chat to classify
   parentId="inputs_InstructRequest_messages_SystemMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3233,6 +2947,14 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_InstructRequest_messages_SystemMessage_role"
@@ -3240,7 +2962,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_SystemMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"system\"","linkedLabel":"\"system\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3258,12 +2980,16 @@ _Default Value:_ `"system"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage"
   parentId="inputs_InstructRequest_messages"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3273,19 +2999,7 @@ _Default Value:_ `"system"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3294,7 +3008,7 @@ _Default Value:_ `"system"`
   parentId="inputs_InstructRequest_messages_UserMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3304,14 +3018,14 @@ _Default Value:_ `"system"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_TextChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+textchunk"
   parentId="inputs_InstructRequest_messages_UserMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3321,19 +3035,7 @@ _Default Value:_ `"system"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3342,7 +3044,7 @@ _Default Value:_ `"system"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -3361,7 +3063,7 @@ _Default Value:_ `"system"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3379,12 +3081,16 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk"
   parentId="inputs_InstructRequest_messages_UserMessage_content"
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3400,15 +3106,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutDescription>
 
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3417,7 +3115,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3427,14 +3125,14 @@ _Default Value:_ `"text"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+imageurlchunk+image_url+imageurl"
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3444,19 +3142,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3465,7 +3151,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -3484,7 +3170,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -3496,6 +3182,14 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk_type"
@@ -3503,7 +3197,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3521,12 +3215,16 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk"
   parentId="inputs_InstructRequest_messages_UserMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3536,19 +3234,7 @@ _Default Value:_ `"image_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3557,7 +3243,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3566,6 +3252,12 @@ _Default Value:_ `"image_url"`
 ##### document_name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+documenturlchunk+document_name\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+The filename of the document
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -3576,7 +3268,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -3595,7 +3287,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3613,12 +3305,16 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+usermessage+content+referencechunk"
   parentId="inputs_InstructRequest_messages_UserMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3628,19 +3324,7 @@ _Default Value:_ `"document_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3649,7 +3333,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -3668,7 +3352,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_InstructRequest_messages_UserMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3686,6 +3370,14 @@ _Default Value:_ `"reference"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_InstructRequest_messages_UserMessage_role"
@@ -3693,7 +3385,7 @@ _Default Value:_ `"reference"`
   parentId="inputs_InstructRequest_messages_UserMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"user\"","linkedLabel":"\"user\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3711,12 +3403,16 @@ _Default Value:_ `"user"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage"
   parentId="inputs_InstructRequest_messages"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3726,19 +3422,7 @@ _Default Value:_ `"user"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3747,7 +3431,7 @@ _Default Value:_ `"user"`
   parentId="inputs_InstructRequest_messages_AssistantMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3757,14 +3441,14 @@ _Default Value:_ `"user"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+textchunk"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3774,19 +3458,7 @@ _Default Value:_ `"user"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3795,7 +3467,7 @@ _Default Value:_ `"user"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -3814,7 +3486,7 @@ _Default Value:_ `"user"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3832,12 +3504,16 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content"
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3853,15 +3529,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutDescription>
 
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3870,7 +3538,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3880,14 +3548,14 @@ _Default Value:_ `"text"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+imageurlchunk+image_url+imageurl"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3897,19 +3565,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -3918,7 +3574,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -3937,7 +3593,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -3949,6 +3605,14 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk_type"
@@ -3956,7 +3620,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3974,12 +3638,16 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -3989,19 +3657,7 @@ _Default Value:_ `"image_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -4010,7 +3666,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4019,6 +3675,12 @@ _Default Value:_ `"image_url"`
 ##### document_name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+documenturlchunk+document_name\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+The filename of the document
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -4029,7 +3691,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4048,7 +3710,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4066,12 +3728,16 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+content+referencechunk"
   parentId="inputs_InstructRequest_messages_AssistantMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4081,19 +3747,7 @@ _Default Value:_ `"document_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -4102,7 +3756,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4121,7 +3775,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4139,6 +3793,14 @@ _Default Value:_ `"reference"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_prefix"
@@ -4146,7 +3808,7 @@ _Default Value:_ `"reference"`
   parentId="inputs_InstructRequest_messages_AssistantMessage"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4177,7 +3839,7 @@ _Default Value:_ `false`
   parentId="inputs_InstructRequest_messages_AssistantMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"assistant\"","linkedLabel":"\"assistant\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4202,7 +3864,7 @@ _Default Value:_ `"assistant"`
   parentId="inputs_InstructRequest_messages_AssistantMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[{"label":"ToolCall","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall\">ToolCall</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4212,14 +3874,14 @@ _Default Value:_ `"assistant"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall"
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4229,19 +3891,7 @@ _Default Value:_ `"assistant"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -4250,7 +3900,7 @@ _Default Value:_ `"assistant"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"FunctionCall","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall\">FunctionCall</a>","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4260,22 +3910,39 @@ _Default Value:_ `"assistant"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
+
+<ExpandableBreakout
+  slot="entry"
+  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function"
+  hasExpandableContent={true}
+  expandByDefault={false}
+>
+
+<ExpandableBreakoutTitle slot="title">
+
+#### FunctionCall \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall\}
+
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
-  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_arguments"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+arguments"
-  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function"
+  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_arguments"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall+arguments"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
 <ExpandablePropertyTitle slot="title">
 
-##### arguments \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+arguments\}
+##### arguments \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall+arguments\}
 
 </ExpandablePropertyTitle>
 
@@ -4283,20 +3950,28 @@ _Default Value:_ `"assistant"`
 
 <ExpandableProperty
   slot="entry"
-  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_name"
-  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+name"
-  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function"
+  id="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall_name"
+  headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall+name"
+  parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall_function_FunctionCall"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
 <ExpandablePropertyTitle slot="title">
 
-##### name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+name\}
+##### name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+assistantmessage+tool_calls+toolcall+function+functioncall+name\}
 
 </ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 
@@ -4307,7 +3982,7 @@ _Default Value:_ `"assistant"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4332,7 +4007,7 @@ _Default Value:_ `"null"`
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4357,7 +4032,7 @@ _Default Value:_ `0`
   parentId="inputs_InstructRequest_messages_AssistantMessage_tool_calls_ToolCall"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"function\"","linkedLabel":"\"function\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4369,12 +4044,24 @@ _Default Value:_ `0`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage"
   parentId="inputs_InstructRequest_messages"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4384,19 +4071,7 @@ _Default Value:_ `0`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -4405,7 +4080,7 @@ _Default Value:_ `0`
   parentId="inputs_InstructRequest_messages_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"union","children":[{"label":"union","linkedLabel":"union","children":[{"label":"TextChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk\">TextChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ReferenceChunk","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk\">ReferenceChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4415,14 +4090,14 @@ _Default Value:_ `0`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_TextChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+textchunk"
   parentId="inputs_InstructRequest_messages_ToolMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4432,19 +4107,7 @@ _Default Value:_ `0`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -4453,7 +4116,7 @@ _Default Value:_ `0`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_TextChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4472,7 +4135,7 @@ _Default Value:_ `0`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_TextChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4490,12 +4153,16 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk"
   parentId="inputs_InstructRequest_messages_ToolMessage_content"
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4511,15 +4178,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutDescription>
 
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -4528,7 +4187,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4538,14 +4197,14 @@ _Default Value:_ `"text"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+imageurlchunk+image_url+imageurl"
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4555,19 +4214,7 @@ _Default Value:_ `"text"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -4576,7 +4223,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4595,7 +4242,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4607,6 +4254,14 @@ _Default Value:_ `"text"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk_type"
@@ -4614,7 +4269,7 @@ _Default Value:_ `"text"`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4632,12 +4287,16 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk"
   parentId="inputs_InstructRequest_messages_ToolMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4647,19 +4306,7 @@ _Default Value:_ `"image_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -4668,7 +4315,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4677,6 +4324,12 @@ _Default Value:_ `"image_url"`
 ##### document_name \{#operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+documenturlchunk+document_name\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+The filename of the document
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -4687,7 +4340,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4706,7 +4359,7 @@ _Default Value:_ `"image_url"`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4724,12 +4377,16 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+inputs+instructrequest+messages+toolmessage+content+referencechunk"
   parentId="inputs_InstructRequest_messages_ToolMessage_content"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4739,19 +4396,7 @@ _Default Value:_ `"document_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -4760,7 +4405,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk"
   typeInfo={{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4779,7 +4424,7 @@ _Default Value:_ `"document_url"`
   parentId="inputs_InstructRequest_messages_ToolMessage_content_ReferenceChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"reference\"","linkedLabel":"\"reference\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4797,6 +4442,14 @@ _Default Value:_ `"reference"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="inputs_InstructRequest_messages_ToolMessage_name"
@@ -4804,7 +4457,7 @@ _Default Value:_ `"reference"`
   parentId="inputs_InstructRequest_messages_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4823,7 +4476,7 @@ _Default Value:_ `"reference"`
   parentId="inputs_InstructRequest_messages_ToolMessage"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"tool\"","linkedLabel":"\"tool\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4848,7 +4501,7 @@ _Default Value:_ `"tool"`
   parentId="inputs_InstructRequest_messages_ToolMessage"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -4860,13 +4513,29 @@ _Default Value:_ `"tool"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="model"
   headingId="operation-chat_classifications_v1_chat_classifications_post+request+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={true}
 >
 
@@ -4924,7 +4593,7 @@ Successful Response
   headingId="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -4952,7 +4621,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={true}
 >
 
@@ -4970,7 +4639,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[{"label":"map","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[{"label":"ClassificationTargetResult","linkedLabel":"<a href=\"#operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult\">ClassificationTargetResult</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -4980,14 +4649,14 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="results_ClassificationTargetResult"
   headingId="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult"
   parentId="results"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -4997,19 +4666,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -5018,7 +4675,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
   parentId="results_ClassificationTargetResult"
   typeInfo={{"label":"map","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -5027,6 +4684,14 @@ mod-e5cc70bb28c444948073e77776eb30ef
 ##### scores \{#operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json+results+classificationtargetresult+scores\}
 
 </ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 

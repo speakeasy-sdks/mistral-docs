@@ -8,11 +8,10 @@ import "@speakeasy-api/docs-md-react/docusaurus.css";
 import {
   CodeSample,
   ExpandableBreakout,
-  ExpandableBreakoutDefaultValue,
-  ExpandableBreakoutDescription,
-  ExpandableBreakoutExamples,
+  ExpandableBreakoutProperties,
   ExpandableBreakoutTitle,
   ExpandableProperty,
+  ExpandablePropertyBreakouts,
   ExpandablePropertyDescription,
   ExpandablePropertyExamples,
   ExpandablePropertyTitle,
@@ -77,12 +76,6 @@ Embeddings
 
 <TabbedSection>
 
-<SectionTitle slot="title">
-
-### Code Samples \{#operation-embeddings_v1_embeddings_post+code-samples\}
-
-</SectionTitle>
-
 <SectionTab slot="tab" id="operation-embeddings_v1_embeddings_post+code-samples+typescript">
 
 TypeScript
@@ -95,27 +88,8 @@ TypeScript
 >
 
 <TryItNow
-  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
-  defaultValue={`import { Mistral } from "@mistralai/mistralai";
-
-const mistral = new Mistral({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await mistral.embeddings.create({
-    model: "mistral-embed",
-    inputs: [
-      "Embed this sentence.",
-      "As well as this one.",
-    ],
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();`}
+  dependencyBundleUrl="/try-it-now/deps.js"
+  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.embeddings.create({\n    model: \"mistral-embed\",\n    inputs: [\n      \"Embed this sentence.\",\n      \"As well as this one.\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
 />
 
 </SectionContent>
@@ -132,10 +106,11 @@ Python
 
 ```python
 from mistralai import Mistral
+import os
 
 
 with Mistral(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
     res = mistral.embeddings.create(model="mistral-embed", inputs=[
@@ -145,6 +120,8 @@ with Mistral(
 
     # Handle response
     print(res)
+
+
 ```
 
 </CodeSample>
@@ -175,7 +152,7 @@ with Mistral(
   headingId="operation-embeddings_v1_embeddings_post+request+inputs"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -199,7 +176,7 @@ Text to embed.
   headingId="operation-embeddings_v1_embeddings_post+request+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -233,7 +210,7 @@ mistral-embed
   headingId="operation-embeddings_v1_embeddings_post+request+output_dimension"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -243,6 +220,12 @@ mistral-embed
 
 </ExpandablePropertyTitle>
 
+<ExpandablePropertyDescription slot="description">
+
+The dimension of the output embeddings.
+
+</ExpandablePropertyDescription>
+
 </ExpandableProperty>
 
 <ExpandableProperty
@@ -251,7 +234,7 @@ mistral-embed
   headingId="operation-embeddings_v1_embeddings_post+request+output_dtype"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"float\"","linkedLabel":"\"float\"","children":[],"breakoutSubTypes":{}},{"label":"\"int8\"","linkedLabel":"\"int8\"","children":[],"breakoutSubTypes":{}},{"label":"\"uint8\"","linkedLabel":"\"uint8\"","children":[],"breakoutSubTypes":{}},{"label":"\"binary\"","linkedLabel":"\"binary\"","children":[],"breakoutSubTypes":{}},{"label":"\"ubinary\"","linkedLabel":"\"ubinary\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={true}
 >
 
@@ -309,7 +292,7 @@ Successful Response
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+data"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-embeddings_v1_embeddings_post+responses+200+application-json+data+embeddingresponsedata\">EmbeddingResponseData</a>","children":[{"label":"EmbeddingResponseData","linkedLabel":"<a href=\"#operation-embeddings_v1_embeddings_post+responses+200+application-json+data+embeddingresponsedata\">EmbeddingResponseData</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -319,14 +302,14 @@ Successful Response
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="data_EmbeddingResponseData"
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+data+embeddingresponsedata"
   parentId="data"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -336,19 +319,7 @@ Successful Response
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -357,7 +328,7 @@ Successful Response
   parentId="data_EmbeddingResponseData"
   typeInfo={{"label":"array","linkedLabel":"number","children":[{"label":"number","linkedLabel":"number","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -376,7 +347,7 @@ Successful Response
   parentId="data_EmbeddingResponseData"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -405,7 +376,7 @@ _Example:_
   parentId="data_EmbeddingResponseData"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -427,13 +398,21 @@ embedding
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="id"
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -461,7 +440,7 @@ cmpl-e5cc70bb28c444948073e77776eb30ef
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -489,7 +468,7 @@ mistral-small-latest
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+object"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -517,7 +496,7 @@ chat.completion
   headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+usage"
   typeInfo={{"label":"UsageInfo","linkedLabel":"<a href=\"#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo\">UsageInfo</a>","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -527,22 +506,39 @@ chat.completion
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
+
+<ExpandableBreakout
+  slot="entry"
+  id="usage_UsageInfo"
+  headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo"
+  parentId="usage"
+  hasExpandableContent={true}
+  expandByDefault={false}
+>
+
+<ExpandableBreakoutTitle slot="title">
+
+#### UsageInfo \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo\}
+
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
-  id="usage_completion_tokens"
-  headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+completion_tokens"
-  parentId="usage"
+  id="usage_UsageInfo_completion_tokens"
+  headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo+completion_tokens"
+  parentId="usage_UsageInfo"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
 <ExpandablePropertyTitle slot="title">
 
-##### completion_tokens \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+completion_tokens\}
+##### completion_tokens \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo+completion_tokens\}
 
 </ExpandablePropertyTitle>
 
@@ -560,18 +556,18 @@ _Example:_
 
 <ExpandableProperty
   slot="entry"
-  id="usage_prompt_tokens"
-  headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+prompt_tokens"
-  parentId="usage"
+  id="usage_UsageInfo_prompt_tokens"
+  headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo+prompt_tokens"
+  parentId="usage_UsageInfo"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
 <ExpandablePropertyTitle slot="title">
 
-##### prompt_tokens \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+prompt_tokens\}
+##### prompt_tokens \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo+prompt_tokens\}
 
 </ExpandablePropertyTitle>
 
@@ -589,18 +585,18 @@ _Example:_
 
 <ExpandableProperty
   slot="entry"
-  id="usage_total_tokens"
-  headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+total_tokens"
-  parentId="usage"
+  id="usage_UsageInfo_total_tokens"
+  headingId="operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo+total_tokens"
+  parentId="usage_UsageInfo"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
 <ExpandablePropertyTitle slot="title">
 
-##### total_tokens \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+total_tokens\}
+##### total_tokens \{#operation-embeddings_v1_embeddings_post+responses+200+application-json+usage+usageinfo+total_tokens\}
 
 </ExpandablePropertyTitle>
 
@@ -613,6 +609,14 @@ _Example:_
 ```
 
 </ExpandablePropertyExamples>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 

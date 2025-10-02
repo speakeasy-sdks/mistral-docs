@@ -10,14 +10,15 @@ export default {
   codeSamples: [
     {
       language: "typescript",
-      sdkClassName: "Mistral",
-      packageName: "@mistralai/mistralai",
-      enableTryItNow: true,
+      sdkTarballPath: "./sdks/mistral-typescript.tar.gz",
+      tryItNow: {
+        bundlePath: "./static/try-it-now/deps.js",
+        bundleUrl: "/try-it-now/deps.js",
+      },
     },
     {
       language: "python",
-      sdkClassName: "Mistral",
-      packageName: "mistralai",
+      sdkTarballPath: "./sdks/mistral-python.tar.gz",
     },
   ],
 };

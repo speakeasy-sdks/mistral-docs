@@ -8,11 +8,11 @@ import "@speakeasy-api/docs-md-react/docusaurus.css";
 import {
   CodeSample,
   ExpandableBreakout,
-  ExpandableBreakoutDefaultValue,
   ExpandableBreakoutDescription,
-  ExpandableBreakoutExamples,
+  ExpandableBreakoutProperties,
   ExpandableBreakoutTitle,
   ExpandableProperty,
+  ExpandablePropertyBreakouts,
   ExpandablePropertyDefaultValue,
   ExpandablePropertyDescription,
   ExpandablePropertyTitle,
@@ -70,12 +70,6 @@ OCR
 
 <TabbedSection>
 
-<SectionTitle slot="title">
-
-### Code Samples \{#operation-ocr_v1_ocr_post+code-samples\}
-
-</SectionTitle>
-
 <SectionTab slot="tab" id="operation-ocr_v1_ocr_post+code-samples+typescript">
 
 TypeScript
@@ -85,29 +79,8 @@ TypeScript
 <SectionContent slot="content" id="operation-ocr_v1_ocr_post+code-samples+typescript">
 
 <TryItNow
-  externalDependencies={{"zod":"^3.25.64","@mistralai/mistralai":"latest"}}
-  defaultValue={`import { Mistral } from "@mistralai/mistralai";
-
-const mistral = new Mistral({
-  apiKey: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await mistral.ocr.process({
-    model: "CX-9",
-    document: {
-      imageUrl: {
-        url: "https://measly-scrap.com",
-      },
-      type: "image_url",
-    },
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();`}
+  dependencyBundleUrl="/try-it-now/deps.js"
+  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.ocr.process({\n    model: \"CX-9\",\n    document: {\n      documentUrl: \"https://upset-labourer.net/\",\n      type: \"document_url\",\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
 />
 
 </SectionContent>
@@ -123,22 +96,25 @@ Python
 <CodeSample>
 
 ```python
-from mistralai import Mistral, models
+from mistralai import Mistral
+import os
 
 
 with Mistral(
-    api_key="<YOUR_BEARER_TOKEN_HERE>",
+    api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
     res = mistral.ocr.process(model="CX-9", document={
         "image_url": {
             "url": "https://measly-scrap.com",
         },
-        "type": models.ImageURLChunkType.IMAGE_URL,
+        "type": "image_url",
     })
 
     # Handle response
     print(res)
+
+
 ```
 
 </CodeSample>
@@ -169,7 +145,7 @@ with Mistral(
   headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat\">ResponseFormat</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -179,14 +155,14 @@ with Mistral(
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="bbox_annotation_format_ResponseFormat"
   headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat"
   parentId="bbox_annotation_format"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -196,19 +172,7 @@ with Mistral(
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -217,7 +181,7 @@ with Mistral(
   parentId="bbox_annotation_format_ResponseFormat"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema\">JsonSchema</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -227,14 +191,14 @@ with Mistral(
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   headingId="operation-ocr_v1_ocr_post+request+bbox_annotation_format+responseformat+json_schema+jsonschema"
   parentId="bbox_annotation_format_ResponseFormat_json_schema"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -244,19 +208,7 @@ with Mistral(
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -265,7 +217,7 @@ with Mistral(
   parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -284,7 +236,7 @@ with Mistral(
   parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -303,7 +255,7 @@ with Mistral(
   parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -322,7 +274,7 @@ with Mistral(
   parentId="bbox_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -334,6 +286,14 @@ with Mistral(
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="bbox_annotation_format_ResponseFormat_type"
@@ -341,7 +301,7 @@ with Mistral(
   parentId="bbox_annotation_format_ResponseFormat"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -359,13 +319,21 @@ An object specifying the format that the model must output. Setting to `\{ "type
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="document"
   headingId="operation-ocr_v1_ocr_post+request+document"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"DocumentURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document+documenturlchunk\">DocumentURLChunk</a>","children":[],"breakoutSubTypes":{}},{"label":"ImageURLChunk","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document+imageurlchunk\">ImageURLChunk</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -381,14 +349,14 @@ Document to run OCR on
 
 </ExpandablePropertyDescription>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="document_DocumentURLChunk"
   headingId="operation-ocr_v1_ocr_post+request+document+documenturlchunk"
   parentId="document"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -398,19 +366,7 @@ Document to run OCR on
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -419,7 +375,7 @@ Document to run OCR on
   parentId="document_DocumentURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -428,6 +384,12 @@ Document to run OCR on
 ##### document_name \{#operation-ocr_v1_ocr_post+request+document+documenturlchunk+document_name\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+The filename of the document
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -438,7 +400,7 @@ Document to run OCR on
   parentId="document_DocumentURLChunk"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -457,7 +419,7 @@ Document to run OCR on
   parentId="document_DocumentURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"document_url\"","linkedLabel":"\"document_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -475,12 +437,16 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
 <ExpandableBreakout
   slot="entry"
   id="document_ImageURLChunk"
   headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk"
   parentId="document"
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -496,15 +462,7 @@ _Default Value:_ `"document_url"`
 
 </ExpandableBreakoutDescription>
 
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -513,7 +471,7 @@ _Default Value:_ `"document_url"`
   parentId="document_ImageURLChunk"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ImageURL","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl\">ImageURL</a>","children":[],"breakoutSubTypes":{}},{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -523,14 +481,14 @@ _Default Value:_ `"document_url"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="document_ImageURLChunk_image_url_ImageURL"
   headingId="operation-ocr_v1_ocr_post+request+document+imageurlchunk+image_url+imageurl"
   parentId="document_ImageURLChunk_image_url"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -540,19 +498,7 @@ _Default Value:_ `"document_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -561,7 +507,7 @@ _Default Value:_ `"document_url"`
   parentId="document_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -580,7 +526,7 @@ _Default Value:_ `"document_url"`
   parentId="document_ImageURLChunk_image_url_ImageURL"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -592,6 +538,14 @@ _Default Value:_ `"document_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="document_ImageURLChunk_type"
@@ -599,7 +553,7 @@ _Default Value:_ `"document_url"`
   parentId="document_ImageURLChunk"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"image_url\"","linkedLabel":"\"image_url\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -617,13 +571,21 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="document_annotation_format"
   headingId="operation-ocr_v1_ocr_post+request+document_annotation_format"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"ResponseFormat","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat\">ResponseFormat</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -633,14 +595,14 @@ _Default Value:_ `"image_url"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="document_annotation_format_ResponseFormat"
   headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat"
   parentId="document_annotation_format"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -650,19 +612,7 @@ _Default Value:_ `"image_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -671,7 +621,7 @@ _Default Value:_ `"image_url"`
   parentId="document_annotation_format_ResponseFormat"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"JsonSchema","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema\">JsonSchema</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -681,14 +631,14 @@ _Default Value:_ `"image_url"`
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   headingId="operation-ocr_v1_ocr_post+request+document_annotation_format+responseformat+json_schema+jsonschema"
   parentId="document_annotation_format_ResponseFormat_json_schema"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -698,19 +648,7 @@ _Default Value:_ `"image_url"`
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -719,7 +657,7 @@ _Default Value:_ `"image_url"`
   parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -738,7 +676,7 @@ _Default Value:_ `"image_url"`
   parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -757,7 +695,7 @@ _Default Value:_ `"image_url"`
   parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -776,7 +714,7 @@ _Default Value:_ `"image_url"`
   parentId="document_annotation_format_ResponseFormat_json_schema_JsonSchema"
   typeInfo={{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={false}
 >
 
@@ -788,6 +726,14 @@ _Default Value:_ `"image_url"`
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="document_annotation_format_ResponseFormat_type"
@@ -795,7 +741,7 @@ _Default Value:_ `"image_url"`
   parentId="document_annotation_format_ResponseFormat"
   typeInfo={{"label":"enum","linkedLabel":"enum","children":[{"label":"\"text\"","linkedLabel":"\"text\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_object\"","linkedLabel":"\"json_object\"","children":[],"breakoutSubTypes":{}},{"label":"\"json_schema\"","linkedLabel":"\"json_schema\"","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -813,13 +759,21 @@ An object specifying the format that the model must output. Setting to `\{ "type
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="id"
   headingId="operation-ocr_v1_ocr_post+request+id"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={true}
 >
 
@@ -837,7 +791,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-ocr_v1_ocr_post+request+image_limit"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -847,6 +801,12 @@ An object specifying the format that the model must output. Setting to `\{ "type
 
 </ExpandablePropertyTitle>
 
+<ExpandablePropertyDescription slot="description">
+
+Max images to extract
+
+</ExpandablePropertyDescription>
+
 </ExpandableProperty>
 
 <ExpandableProperty
@@ -855,7 +815,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-ocr_v1_ocr_post+request+image_min_size"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -865,6 +825,12 @@ An object specifying the format that the model must output. Setting to `\{ "type
 
 </ExpandablePropertyTitle>
 
+<ExpandablePropertyDescription slot="description">
+
+Minimum height and width of image to extract
+
+</ExpandablePropertyDescription>
+
 </ExpandableProperty>
 
 <ExpandableProperty
@@ -873,7 +839,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-ocr_v1_ocr_post+request+include_image_base64"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -883,6 +849,12 @@ An object specifying the format that the model must output. Setting to `\{ "type
 
 </ExpandablePropertyTitle>
 
+<ExpandablePropertyDescription slot="description">
+
+Include image URLs in response
+
+</ExpandablePropertyDescription>
+
 </ExpandableProperty>
 
 <ExpandableProperty
@@ -891,7 +863,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-ocr_v1_ocr_post+request+model"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={false}
   expandByDefault={true}
 >
 
@@ -909,7 +881,7 @@ An object specifying the format that the model must output. Setting to `\{ "type
   headingId="operation-ocr_v1_ocr_post+request+pages"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"integer","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -918,6 +890,12 @@ An object specifying the format that the model must output. Setting to `\{ "type
 ##### pages \{#operation-ocr_v1_ocr_post+request+pages\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -961,7 +939,7 @@ Successful Response
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+document_annotation"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -971,6 +949,12 @@ Successful Response
 
 </ExpandablePropertyTitle>
 
+<ExpandablePropertyDescription slot="description">
+
+Formatted response in the request_format if provided in json str
+
+</ExpandablePropertyDescription>
+
 </ExpandableProperty>
 
 <ExpandableProperty
@@ -979,7 +963,7 @@ Successful Response
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+model"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -1003,7 +987,7 @@ The model used to generate the OCR.
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject\">OCRPageObject</a>","children":[{"label":"OCRPageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject\">OCRPageObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -1019,14 +1003,14 @@ List of OCR info for pages.
 
 </ExpandablePropertyDescription>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="pages_OCRPageObject"
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject"
   parentId="pages"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1036,19 +1020,7 @@ List of OCR info for pages.
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1057,7 +1029,7 @@ List of OCR info for pages.
   parentId="pages_OCRPageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"OCRPageDimensions","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions\">OCRPageDimensions</a>","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1067,14 +1039,20 @@ List of OCR info for pages.
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyDescription slot="description">
+
+The dimensions of the PDF Page's screenshot image
+
+</ExpandablePropertyDescription>
+
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="pages_OCRPageObject_dimensions_OCRPageDimensions"
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+dimensions+ocrpagedimensions"
   parentId="pages_OCRPageObject_dimensions"
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1090,15 +1068,7 @@ The dimensions of the PDF Page's screenshot image
 
 </ExpandableBreakoutDescription>
 
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1107,7 +1077,7 @@ The dimensions of the PDF Page's screenshot image
   parentId="pages_OCRPageObject_dimensions_OCRPageDimensions"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min: 0","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1132,7 +1102,7 @@ Dots per inch of the page-image
   parentId="pages_OCRPageObject_dimensions_OCRPageDimensions"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min: 0","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1157,7 +1127,7 @@ Height of the image in pixels
   parentId="pages_OCRPageObject_dimensions_OCRPageDimensions"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min: 0","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1175,6 +1145,14 @@ Width of the image in pixels
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="pages_OCRPageObject_images"
@@ -1182,7 +1160,7 @@ Width of the image in pixels
   parentId="pages_OCRPageObject"
   typeInfo={{"label":"array","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject\">OCRImageObject</a>","children":[{"label":"OCRImageObject","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject\">OCRImageObject</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1198,14 +1176,14 @@ List of all extracted images in the page
 
 </ExpandablePropertyDescription>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
 
 <ExpandableBreakout
   slot="entry"
   id="pages_OCRPageObject_images_OCRImageObject"
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject"
   parentId="pages_OCRPageObject_images"
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1215,19 +1193,7 @@ List of all extracted images in the page
 
 </ExpandableBreakoutTitle>
 
-<ExpandableBreakoutDescription slot="description">
-
-</ExpandableBreakoutDescription>
-
-<ExpandableBreakoutExamples slot="examples">
-
-</ExpandableBreakoutExamples>
-
-<ExpandableBreakoutDefaultValue slot="defaultValue">
-
-</ExpandableBreakoutDefaultValue>
-
-</ExpandableBreakout>
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
@@ -1236,7 +1202,7 @@ List of all extracted images in the page
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1245,6 +1211,12 @@ List of all extracted images in the page
 ##### bottom_right_x \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+bottom_right_x\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+X coordinate of bottom-right corner of the extracted image
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -1255,7 +1227,7 @@ List of all extracted images in the page
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1264,6 +1236,12 @@ List of all extracted images in the page
 ##### bottom_right_y \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+bottom_right_y\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+Y coordinate of bottom-right corner of the extracted image
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -1274,7 +1252,7 @@ List of all extracted images in the page
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1299,7 +1277,7 @@ Image ID for extracted image in a page
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1308,6 +1286,12 @@ Image ID for extracted image in a page
 ##### image_annotation \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_annotation\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+Annotation of the extracted image in json str
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -1318,7 +1302,7 @@ Image ID for extracted image in a page
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1327,6 +1311,12 @@ Image ID for extracted image in a page
 ##### image_base64 \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+image_base64\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+Base64 string of the extracted image
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -1337,7 +1327,7 @@ Image ID for extracted image in a page
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1346,6 +1336,12 @@ Image ID for extracted image in a page
 ##### top_left_x \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+top_left_x\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+X coordinate of top-left corner of the extracted image
+
+</ExpandablePropertyDescription>
 
 </ExpandableProperty>
 
@@ -1356,7 +1352,7 @@ Image ID for extracted image in a page
   parentId="pages_OCRPageObject_images_OCRImageObject"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1365,6 +1361,20 @@ Image ID for extracted image in a page
 ##### top_left_y \{#operation-ocr_v1_ocr_post+responses+200+application-json+pages+ocrpageobject+images+ocrimageobject+top_left_y\}
 
 </ExpandablePropertyTitle>
+
+<ExpandablePropertyDescription slot="description">
+
+Y coordinate of top-left corner of the extracted image
+
+</ExpandablePropertyDescription>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 
@@ -1375,7 +1385,7 @@ Image ID for extracted image in a page
   parentId="pages_OCRPageObject"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min: 0","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1400,7 +1410,7 @@ The page index in a pdf document starting from 0
   parentId="pages_OCRPageObject"
   typeInfo={{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
@@ -1418,13 +1428,21 @@ The markdown string response of the page
 
 </ExpandableProperty>
 
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
+
+</ExpandableProperty>
+
 <ExpandableProperty
   slot="entry"
   id="usage_info"
   headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info"
   typeInfo={{"label":"OCRUsageInfo","linkedLabel":"<a href=\"#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo\">OCRUsageInfo</a>","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"}]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={true}
 >
 
@@ -1434,41 +1452,64 @@ The markdown string response of the page
 
 </ExpandablePropertyTitle>
 
-</ExpandableProperty>
+<ExpandablePropertyBreakouts slot="breakouts">
+
+<ExpandableBreakout
+  slot="entry"
+  id="usage_info_OCRUsageInfo"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo"
+  parentId="usage_info"
+  hasExpandableContent={true}
+  expandByDefault={false}
+>
+
+<ExpandableBreakoutTitle slot="title">
+
+#### OCRUsageInfo \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo\}
+
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutProperties slot="properties">
 
 <ExpandableProperty
   slot="entry"
-  id="usage_info_doc_size_bytes"
-  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+doc_size_bytes"
-  parentId="usage_info"
+  id="usage_info_OCRUsageInfo_doc_size_bytes"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo+doc_size_bytes"
+  parentId="usage_info_OCRUsageInfo"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
   typeAnnotations={[]}
-  hasFrontMatter={false}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
 <ExpandablePropertyTitle slot="title">
 
-##### doc_size_bytes \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+doc_size_bytes\}
+##### doc_size_bytes \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo+doc_size_bytes\}
 
 </ExpandablePropertyTitle>
 
+<ExpandablePropertyDescription slot="description">
+
+Document size in bytes
+
+</ExpandablePropertyDescription>
+
 </ExpandableProperty>
 
 <ExpandableProperty
   slot="entry"
-  id="usage_info_pages_processed"
-  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+pages_processed"
-  parentId="usage_info"
+  id="usage_info_OCRUsageInfo_pages_processed"
+  headingId="operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo+pages_processed"
+  parentId="usage_info_OCRUsageInfo"
   typeInfo={{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}}}
   typeAnnotations={[{"title":"required","variant":"warning"},{"title":"Min: 0","variant":"warning"}]}
-  hasFrontMatter={true}
+  hasExpandableContent={true}
   expandByDefault={false}
 >
 
 <ExpandablePropertyTitle slot="title">
 
-##### pages_processed \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+pages_processed\}
+##### pages_processed \{#operation-ocr_v1_ocr_post+responses+200+application-json+usage_info+ocrusageinfo+pages_processed\}
 
 </ExpandablePropertyTitle>
 
@@ -1477,6 +1518,14 @@ The markdown string response of the page
 Number of pages processed
 
 </ExpandablePropertyDescription>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 
