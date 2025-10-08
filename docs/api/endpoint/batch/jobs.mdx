@@ -19,8 +19,10 @@ import {
   OperationCodeSamplesSection,
   OperationDescriptionSection,
   OperationParametersSection,
+  OperationRequestBodyExamplesSection,
   OperationRequestBodySection,
   OperationResponseBodyDescriptionSection,
+  OperationResponseBodyExamplesSection,
   OperationResponseBodySection,
   OperationSummarySection,
   OperationTitleSection,
@@ -84,8 +86,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.batch.jobs.list({});\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.batch.jobs.list({});&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -127,9 +130,71 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab
+  slot="tab"
+  id="operation-jobs_api_routes_batch_get_batch_jobs+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-jobs_api_routes_batch_get_batch_jobs+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/batch/jobs \
+ -X GET \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-jobs_api_routes_batch_get_batch_jobs+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-jobs_api_routes_batch_get_batch_jobs+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-jobs_api_routes_batch_get_batch_jobs+responses+200+application-json"
+>
+
+```json
+{
+  "total": 87
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -695,8 +760,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.batch.jobs.create({\n    inputFiles: [\n      \"fe3343a2-3b8d-404b-ba32-a78dede2614a\",\n    ],\n    endpoint: \"/v1/classifications\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.batch.jobs.create({&NewLine;    inputFiles: [&NewLine;      &quot;fe3343a2-3b8d-404b-ba32-a78dede2614a&quot;,&NewLine;    ],&NewLine;    endpoint: &quot;/v1/classifications&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -740,9 +806,70 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab
+  slot="tab"
+  id="operation-jobs_api_routes_batch_create_batch_job+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-jobs_api_routes_batch_create_batch_job+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/batch/jobs \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "endpoint": "/v1/chat/completions",
+  "input_files": [
+    "ipsum eiusmod"
+  ],
+  "model": "consequat do"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-jobs_api_routes_batch_create_batch_job+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "endpoint": "/v1/chat/completions",
+  "input_files": [
+    "ipsum eiusmod"
+  ],
+  "model": "consequat do"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -861,6 +988,58 @@ _Default Value:_ `24`
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-jobs_api_routes_batch_create_batch_job+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-jobs_api_routes_batch_create_batch_job+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-jobs_api_routes_batch_create_batch_job+responses+200+application-json"
+>
+
+```json
+{
+  "completed_requests": 87,
+  "created_at": 14,
+  "endpoint": "ipsum eiusmod",
+  "errors": [
+    {
+      "message": "consequat do"
+    }
+  ],
+  "failed_requests": 56,
+  "id": "reprehenderit ut dolore",
+  "input_files": [
+    "occaecat dolor sit"
+  ],
+  "model": "nostrud",
+  "status": "QUEUED",
+  "succeeded_requests": 91,
+  "total_requests": 32
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -1324,8 +1503,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.batch.jobs.get({\n    jobId: \"4017dc9f-b629-42f4-9700-8c681b9e7f0f\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.batch.jobs.get({&NewLine;    jobId: &quot;4017dc9f-b629-42f4-9700-8c681b9e7f0f&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -1361,6 +1541,29 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-jobs_api_routes_batch_get_batch_job+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-jobs_api_routes_batch_get_batch_job+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/batch/jobs/{job_id} \
+ -X GET \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
 ```
 
 </CodeSample>
@@ -1410,6 +1613,58 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-jobs_api_routes_batch_get_batch_job+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-jobs_api_routes_batch_get_batch_job+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-jobs_api_routes_batch_get_batch_job+responses+200+application-json"
+>
+
+```json
+{
+  "completed_requests": 87,
+  "created_at": 14,
+  "endpoint": "ipsum eiusmod",
+  "errors": [
+    {
+      "message": "consequat do"
+    }
+  ],
+  "failed_requests": 56,
+  "id": "reprehenderit ut dolore",
+  "input_files": [
+    "occaecat dolor sit"
+  ],
+  "model": "nostrud",
+  "status": "QUEUED",
+  "succeeded_requests": 91,
+  "total_requests": 32
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -1873,8 +2128,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.batch.jobs.cancel({\n    jobId: \"4fb29d1c-535b-4f0a-a1cb-2167f86da569\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.batch.jobs.cancel({&NewLine;    jobId: &quot;4fb29d1c-535b-4f0a-a1cb-2167f86da569&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -1910,6 +2166,32 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab
+  slot="tab"
+  id="operation-jobs_api_routes_batch_cancel_batch_job+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-jobs_api_routes_batch_cancel_batch_job+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/batch/jobs/{job_id}/cancel \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
 ```
 
 </CodeSample>
@@ -1959,6 +2241,58 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-jobs_api_routes_batch_cancel_batch_job+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-jobs_api_routes_batch_cancel_batch_job+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-jobs_api_routes_batch_cancel_batch_job+responses+200+application-json"
+>
+
+```json
+{
+  "completed_requests": 87,
+  "created_at": 14,
+  "endpoint": "ipsum eiusmod",
+  "errors": [
+    {
+      "message": "consequat do"
+    }
+  ],
+  "failed_requests": 56,
+  "id": "reprehenderit ut dolore",
+  "input_files": [
+    "occaecat dolor sit"
+  ],
+  "model": "nostrud",
+  "status": "QUEUED",
+  "succeeded_requests": 91,
+  "total_requests": 32
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 

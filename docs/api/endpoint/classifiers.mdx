@@ -20,8 +20,10 @@ import {
   ExpandableSection,
   Operation,
   OperationCodeSamplesSection,
+  OperationRequestBodyExamplesSection,
   OperationRequestBodySection,
   OperationResponseBodyDescriptionSection,
+  OperationResponseBodyExamplesSection,
   OperationResponseBodySection,
   OperationSummarySection,
   OperationTitleSection,
@@ -86,8 +88,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.classifiers.moderate({\n    model: \"Durango\",\n    inputs: [\n      \"<value 1>\",\n      \"<value 2>\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.classifiers.moderate({&NewLine;    model: &quot;Durango&quot;,&NewLine;    inputs: [&NewLine;      &quot;&lt;value 1&gt;&quot;,&NewLine;      &quot;&lt;value 2&gt;&quot;,&NewLine;    ],&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -129,9 +132,58 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab slot="tab" id="operation-moderations_v1_moderations_post+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent slot="content" id="operation-moderations_v1_moderations_post+code-samples+curl">
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/moderations \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "inputs": "ipsum eiusmod",
+  "model": "consequat do"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-moderations_v1_moderations_post+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "inputs": "ipsum eiusmod",
+  "model": "consequat do"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -202,6 +254,46 @@ ID of the model to use.
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-moderations_v1_moderations_post+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-moderations_v1_moderations_post+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-moderations_v1_moderations_post+responses+200+application-json"
+>
+
+```json
+{
+  "id": "mod-e5cc70bb28c444948073e77776eb30ef",
+  "model": "consequat do",
+  "results": [
+    {}
+  ]
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -417,8 +509,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.classifiers.moderateChat({\n    inputs: [\n      {\n        content: \"<value>\",\n        role: \"tool\",\n      },\n    ],\n    model: \"LeBaron\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.classifiers.moderateChat({&NewLine;    inputs: [&NewLine;      {&NewLine;        content: &quot;&lt;value&gt;&quot;,&NewLine;        role: &quot;tool&quot;,&NewLine;      },&NewLine;    ],&NewLine;    model: &quot;LeBaron&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -465,9 +558,72 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab
+  slot="tab"
+  id="operation-chat_moderations_v1_chat_moderations_post+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_moderations_v1_chat_moderations_post+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/chat/moderations \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "inputs": [
+    {
+      "content": "ipsum eiusmod"
+    }
+  ],
+  "model": "consequat do"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-chat_moderations_v1_chat_moderations_post+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "inputs": [
+    {
+      "content": "ipsum eiusmod"
+    }
+  ],
+  "model": "consequat do"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -2204,6 +2360,46 @@ _Default Value:_ `"tool"`
 
 </OperationRequestBodySection>
 
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-chat_moderations_v1_chat_moderations_post+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json"
+>
+
+```json
+{
+  "id": "mod-e5cc70bb28c444948073e77776eb30ef",
+  "model": "consequat do",
+  "results": [
+    {}
+  ]
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
+
 <OperationResponseBodySection slot="response-body">
 
 <TabbedSection>
@@ -2418,8 +2614,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.classifiers.classify({\n    model: \"Silverado\",\n    inputs: [\n      \"<value 1>\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.classifiers.classify({&NewLine;    model: &quot;Silverado&quot;,&NewLine;    inputs: [&NewLine;      &quot;&lt;value 1&gt;&quot;,&NewLine;    ],&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -2463,9 +2660,64 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab
+  slot="tab"
+  id="operation-classifications_v1_classifications_post+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-classifications_v1_classifications_post+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/classifications \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "inputs": "ipsum eiusmod",
+  "model": "consequat do"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-classifications_v1_classifications_post+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "inputs": "ipsum eiusmod",
+  "model": "consequat do"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -2536,6 +2788,52 @@ ID of the model to use.
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-classifications_v1_classifications_post+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-classifications_v1_classifications_post+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-classifications_v1_classifications_post+responses+200+application-json"
+>
+
+```json
+{
+  "id": "mod-e5cc70bb28c444948073e77776eb30ef",
+  "model": "consequat do",
+  "results": [
+    [
+      {
+        "scores": [
+          87
+        ]
+      }
+    ]
+  ]
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -2720,8 +3018,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.classifiers.classifyChat({\n    model: \"Camry\",\n    inputs: [\n      {\n        messages: [\n          {\n            content: \"<value>\",\n            role: \"system\",\n          },\n        ],\n      },\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.classifiers.classifyChat({&NewLine;    model: &quot;Camry&quot;,&NewLine;    inputs: [&NewLine;      {&NewLine;        messages: [&NewLine;          {&NewLine;            content: &quot;&lt;value&gt;&quot;,&NewLine;            role: &quot;system&quot;,&NewLine;          },&NewLine;        ],&NewLine;      },&NewLine;    ],&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -2772,9 +3071,76 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab
+  slot="tab"
+  id="operation-chat_classifications_v1_chat_classifications_post+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_classifications_v1_chat_classifications_post+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/chat/classifications \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "inputs": {
+    "messages": [
+      {
+        "content": "ipsum eiusmod"
+      }
+    ]
+  },
+  "model": "consequat do"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-chat_classifications_v1_chat_classifications_post+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "inputs": {
+    "messages": [
+      {
+        "content": "ipsum eiusmod"
+      }
+    ]
+  },
+  "model": "consequat do"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -4554,6 +4920,52 @@ _Default Value:_ `"tool"`
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-chat_classifications_v1_chat_classifications_post+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json"
+>
+
+```json
+{
+  "id": "mod-e5cc70bb28c444948073e77776eb30ef",
+  "model": "consequat do",
+  "results": [
+    [
+      {
+        "scores": [
+          87
+        ]
+      }
+    ]
+  ]
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 

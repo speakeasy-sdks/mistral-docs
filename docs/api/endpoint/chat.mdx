@@ -22,9 +22,11 @@ import {
   Operation,
   OperationCodeSamplesSection,
   OperationDescriptionSection,
+  OperationRequestBodyExamplesSection,
   OperationRequestBodySection,
   OperationResponseBodyDescriptionSection,
   OperationResponseBodyDisplayTypeSection,
+  OperationResponseBodyExamplesSection,
   OperationResponseBodySection,
   OperationSummarySection,
   OperationTitleSection,
@@ -89,8 +91,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.chat.complete({\n    model: \"mistral-small-latest\",\n    messages: [\n      {\n        content: \"Who is the best French painter? Answer in one short sentence.\",\n        role: \"user\",\n      },\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.chat.complete({&NewLine;    model: &quot;mistral-small-latest&quot;,&NewLine;    messages: [&NewLine;      {&NewLine;        content: &quot;Who is the best French painter? Answer in one short sentence.&quot;,&NewLine;        role: &quot;user&quot;,&NewLine;      },&NewLine;    ],&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -137,9 +140,72 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab
+  slot="tab"
+  id="operation-chat_completion_v1_chat_completions_post+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_completion_v1_chat_completions_post+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/chat/completions \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "messages": [
+    {
+      "content": "ipsum eiusmod"
+    }
+  ],
+  "model": "mistral-small-latest"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-chat_completion_v1_chat_completions_post+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "messages": [
+    {
+      "content": "ipsum eiusmod"
+    }
+  ],
+  "model": "mistral-small-latest"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -2780,6 +2846,57 @@ Nucleus sampling, where the model considers the results of the tokens with `top_
 
 </OperationRequestBodySection>
 
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-chat_completion_v1_chat_completions_post+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-chat_completion_v1_chat_completions_post+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-chat_completion_v1_chat_completions_post+responses+200+application-json"
+>
+
+```json
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": "0",
+      "message": {}
+    }
+  ],
+  "created": "1702256327",
+  "id": "cmpl-e5cc70bb28c444948073e77776eb30ef",
+  "model": "mistral-small-latest",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": "34",
+    "prompt_tokens": "16",
+    "total_tokens": "50"
+  }
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
+
 <OperationResponseBodySection slot="response-body">
 
 <TabbedSection>
@@ -3870,8 +3987,9 @@ TypeScript
 <SectionContent slot="content" id="operation-stream_chat+code-samples+typescript">
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.chat.stream({\n    model: \"mistral-small-latest\",\n    messages: [\n      {\n        content: \"Who is the best French painter? Answer in one short sentence.\",\n        role: \"user\",\n      },\n    ],\n  });\n\n  for await (const event of result) {\n    // Handle the event\n    console.log(event);\n  }\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.chat.stream({&NewLine;    model: &quot;mistral-small-latest&quot;,&NewLine;    messages: [&NewLine;      {&NewLine;        content: &quot;Who is the best French painter? Answer in one short sentence.&quot;,&NewLine;        role: &quot;user&quot;,&NewLine;      },&NewLine;    ],&NewLine;  });&NewLine;&NewLine;  for await (const event of result) {&NewLine;    // Handle the event&NewLine;    console.log(event);&NewLine;  }&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -3914,9 +4032,66 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab slot="tab" id="operation-stream_chat+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent slot="content" id="operation-stream_chat+code-samples+curl">
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/chat/completions#stream \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "messages": [
+    {
+      "content": "ipsum eiusmod"
+    }
+  ],
+  "model": "mistral-small-latest"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-stream_chat+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "messages": [
+    {
+      "content": "ipsum eiusmod"
+    }
+  ],
+  "model": "mistral-small-latest"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -6550,6 +6725,34 @@ Nucleus sampling, where the model considers the results of the tokens with `top_
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-stream_chat+responses\}
+
+</SectionTitle>
+
+<SectionTab slot="tab" id="operation-stream_chat+responses+200+text-event-stream">
+
+200
+
+</SectionTab>
+
+<SectionContent slot="content" id="operation-stream_chat+responses+200+text-event-stream">
+
+```json
+null
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 

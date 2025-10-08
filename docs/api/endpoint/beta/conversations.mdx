@@ -23,9 +23,11 @@ import {
   OperationDescriptionSection,
   OperationParametersSection,
   OperationRequestBodyDescriptionSection,
+  OperationRequestBodyExamplesSection,
   OperationRequestBodySection,
   OperationResponseBodyDescriptionSection,
   OperationResponseBodyDisplayTypeSection,
+  OperationResponseBodyExamplesSection,
   OperationResponseBodySection,
   OperationSummarySection,
   OperationTitleSection,
@@ -96,8 +98,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.list({});\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.list({});&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -130,6 +133,29 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-agents_api_v1_conversations_list+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_list+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations \
+ -X GET \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
 ```
 
 </CodeSample>
@@ -197,6 +223,47 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_list+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_list+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_list+responses+200+application-json"
+>
+
+```json
+[
+  {
+    "created_at": "2025-10-07T20:56:01.974Z",
+    "id": "ipsum eiusmod",
+    "model": "consequat do",
+    "updated_at": "2025-10-07T20:56:01.974Z"
+  }
+]
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -1601,8 +1668,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.start({\n    inputs: \"<value>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.start({&NewLine;    inputs: &quot;&lt;value&gt;&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -1641,9 +1709,59 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab slot="tab" id="operation-agents_api_v1_conversations_start+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_start+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "inputs": "ipsum eiusmod"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-agents_api_v1_conversations_start+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "inputs": "ipsum eiusmod"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -3531,6 +3649,48 @@ _Default Value:_ `"document_library"`
 
 </OperationRequestBodySection>
 
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_start+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_start+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_start+responses+200+application-json"
+>
+
+```json
+{
+  "conversation_id": "ipsum eiusmod",
+  "outputs": [
+    {
+      "content": "consequat do"
+    }
+  ],
+  "usage": {}
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
+
 <OperationResponseBodySection slot="response-body">
 
 <TabbedSection>
@@ -5134,8 +5294,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.get({\n    conversationId: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.get({&NewLine;    conversationId: &quot;&lt;id&gt;&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -5168,6 +5329,26 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-agents_api_v1_conversations_get+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent slot="content" id="operation-agents_api_v1_conversations_get+code-samples+curl">
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations/{conversation_id} \
+ -X GET \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
 ```
 
 </CodeSample>
@@ -5217,6 +5398,45 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_get+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_get+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_get+responses+200+application-json"
+>
+
+```json
+{
+  "created_at": "2025-10-07T20:56:01.974Z",
+  "id": "ipsum eiusmod",
+  "model": "consequat do",
+  "updated_at": "2025-10-07T20:56:01.974Z"
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -6621,8 +6841,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.append({\n    conversationId: \"<id>\",\n    conversationAppendRequest: {\n      inputs: [],\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.append({&NewLine;    conversationId: &quot;&lt;id&gt;&quot;,&NewLine;    conversationAppendRequest: {&NewLine;      inputs: [],&NewLine;    },&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -6658,6 +6879,32 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-agents_api_v1_conversations_append+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_append+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations/{conversation_id} \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "inputs": "ipsum eiusmod"
+}'
 ```
 
 </CodeSample>
@@ -6713,6 +6960,30 @@ ID of the conversation to which we append entries.
 </Section>
 
 </OperationParametersSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-agents_api_v1_conversations_append+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "inputs": "ipsum eiusmod"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -8084,6 +8355,48 @@ _Default Value:_ `false`
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_append+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_append+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_append+responses+200+application-json"
+>
+
+```json
+{
+  "conversation_id": "ipsum eiusmod",
+  "outputs": [
+    {
+      "content": "consequat do"
+    }
+  ],
+  "usage": {}
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -9688,8 +10001,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.getHistory({\n    conversationId: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.getHistory({&NewLine;    conversationId: &quot;&lt;id&gt;&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -9725,6 +10039,29 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-agents_api_v1_conversations_history+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_history+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations/{conversation_id}/history \
+ -X GET \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
 ```
 
 </CodeSample>
@@ -9774,6 +10111,48 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_history+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_history+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_history+responses+200+application-json"
+>
+
+```json
+{
+  "conversation_id": "ipsum eiusmod",
+  "entries": [
+    {
+      "content": "consequat do",
+      "role": "assistant"
+    }
+  ]
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -11975,8 +12354,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.getMessages({\n    conversationId: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.getMessages({&NewLine;    conversationId: &quot;&lt;id&gt;&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -12012,6 +12392,32 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_messages+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_messages+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations/{conversation_id}/messages \
+ -X GET \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
 ```
 
 </CodeSample>
@@ -12061,6 +12467,48 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_messages+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_messages+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_messages+responses+200+application-json"
+>
+
+```json
+{
+  "conversation_id": "ipsum eiusmod",
+  "messages": [
+    {
+      "content": "consequat do",
+      "role": "assistant"
+    }
+  ]
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -13541,8 +13989,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.restart({\n    conversationId: \"<id>\",\n    conversationRestartRequest: {\n      inputs: \"<value>\",\n      fromEntryId: \"<id>\",\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.restart({&NewLine;    conversationId: &quot;&lt;id&gt;&quot;,&NewLine;    conversationRestartRequest: {&NewLine;      inputs: &quot;&lt;value&gt;&quot;,&NewLine;      fromEntryId: &quot;&lt;id&gt;&quot;,&NewLine;    },&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -13578,6 +14027,33 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-agents_api_v1_conversations_restart+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_restart+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations/{conversation_id}/restart \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "from_entry_id": "ipsum eiusmod",
+  "inputs": "consequat do"
+}'
 ```
 
 </CodeSample>
@@ -13627,6 +14103,31 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-agents_api_v1_conversations_restart+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "from_entry_id": "ipsum eiusmod",
+  "inputs": "consequat do"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -15022,6 +15523,48 @@ _Default Value:_ `false`
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_restart+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_restart+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_restart+responses+200+application-json"
+>
+
+```json
+{
+  "conversation_id": "ipsum eiusmod",
+  "outputs": [
+    {
+      "content": "consequat do"
+    }
+  ],
+  "usage": {}
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -16626,8 +17169,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.startStream({\n    inputs: [\n      {\n        object: \"entry\",\n        type: \"agent.handoff\",\n        previousAgentId: \"<id>\",\n        previousAgentName: \"<value>\",\n        nextAgentId: \"<id>\",\n        nextAgentName: \"<value>\",\n      },\n    ],\n  });\n\n  for await (const event of result) {\n    // Handle the event\n    console.log(event);\n  }\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.startStream({&NewLine;    inputs: [&NewLine;      {&NewLine;        object: &quot;entry&quot;,&NewLine;        type: &quot;agent.handoff&quot;,&NewLine;        previousAgentId: &quot;&lt;id&gt;&quot;,&NewLine;        previousAgentName: &quot;&lt;value&gt;&quot;,&NewLine;        nextAgentId: &quot;&lt;id&gt;&quot;,&NewLine;        nextAgentName: &quot;&lt;value&gt;&quot;,&NewLine;      },&NewLine;    ],&NewLine;  });&NewLine;&NewLine;  for await (const event of result) {&NewLine;    // Handle the event&NewLine;    console.log(event);&NewLine;  }&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -16678,9 +17222,62 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_start_stream+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_start_stream+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations#stream \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "inputs": "ipsum eiusmod"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-agents_api_v1_conversations_start_stream+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "inputs": "ipsum eiusmod"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -18567,6 +19164,40 @@ _Default Value:_ `"document_library"`
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_start_stream+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_start_stream+responses+200+text-event-stream"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_start_stream+responses+200+text-event-stream"
+>
+
+```json
+null
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -20622,8 +21253,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.appendStream({\n    conversationId: \"<id>\",\n    conversationAppendStreamRequest: {\n      inputs: \"<value>\",\n    },\n  });\n\n  for await (const event of result) {\n    // Handle the event\n    console.log(event);\n  }\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.appendStream({&NewLine;    conversationId: &quot;&lt;id&gt;&quot;,&NewLine;    conversationAppendStreamRequest: {&NewLine;      inputs: &quot;&lt;value&gt;&quot;,&NewLine;    },&NewLine;  });&NewLine;&NewLine;  for await (const event of result) {&NewLine;    // Handle the event&NewLine;    console.log(event);&NewLine;  }&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -20661,6 +21293,35 @@ with Mistral(
             print(event, flush=True)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_append_stream+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_append_stream+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations/{conversation_id}#stream \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "inputs": "ipsum eiusmod"
+}'
 ```
 
 </CodeSample>
@@ -20716,6 +21377,30 @@ ID of the conversation to which we append entries.
 </Section>
 
 </OperationParametersSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-agents_api_v1_conversations_append_stream+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "inputs": "ipsum eiusmod"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -22087,6 +22772,40 @@ _Default Value:_ `true`
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_append_stream+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_append_stream+responses+200+text-event-stream"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_append_stream+responses+200+text-event-stream"
+>
+
+```json
+null
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -24142,8 +24861,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.conversations.restartStream({\n    conversationId: \"<id>\",\n    conversationRestartStreamRequest: {\n      inputs: [\n        {\n          object: \"entry\",\n          type: \"message.input\",\n          role: \"assistant\",\n          content: \"<value>\",\n          prefix: false,\n        },\n      ],\n      fromEntryId: \"<id>\",\n    },\n  });\n\n  for await (const event of result) {\n    // Handle the event\n    console.log(event);\n  }\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.conversations.restartStream({&NewLine;    conversationId: &quot;&lt;id&gt;&quot;,&NewLine;    conversationRestartStreamRequest: {&NewLine;      inputs: [&NewLine;        {&NewLine;          object: &quot;entry&quot;,&NewLine;          type: &quot;message.input&quot;,&NewLine;          role: &quot;assistant&quot;,&NewLine;          content: &quot;&lt;value&gt;&quot;,&NewLine;          prefix: false,&NewLine;        },&NewLine;      ],&NewLine;      fromEntryId: &quot;&lt;id&gt;&quot;,&NewLine;    },&NewLine;  });&NewLine;&NewLine;  for await (const event of result) {&NewLine;    // Handle the event&NewLine;    console.log(event);&NewLine;  }&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -24195,6 +24915,36 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_restart_stream+code-samples+curl"
+>
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_restart_stream+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/conversations/{conversation_id}/restart#stream \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "from_entry_id": "ipsum eiusmod",
+  "inputs": "consequat do"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
@@ -24238,6 +24988,31 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-agents_api_v1_conversations_restart_stream+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "from_entry_id": "ipsum eiusmod",
+  "inputs": "consequat do"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -25633,6 +26408,40 @@ _Default Value:_ `true`
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_conversations_restart_stream+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_restart_stream+responses+200+text-event-stream"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_conversations_restart_stream+responses+200+text-event-stream"
+>
+
+```json
+null
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 

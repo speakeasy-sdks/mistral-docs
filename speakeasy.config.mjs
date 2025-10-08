@@ -12,13 +12,16 @@ export default {
       language: "typescript",
       sdkTarballPath: "./sdks/mistral-typescript.tar.gz",
       tryItNow: {
-        bundlePath: "./static/try-it-now/deps.js",
-        bundleUrl: "/try-it-now/deps.js",
+        outDir: "./static/try-it-now/deps.js",
+        urlPrefix: "/try-it-now/deps.js",
       },
     },
     {
       language: "python",
       sdkTarballPath: "./sdks/mistral-python.tar.gz",
+    },
+    {
+      language: "curl",
     },
   ],
 };

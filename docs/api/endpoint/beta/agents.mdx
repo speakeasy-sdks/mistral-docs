@@ -22,9 +22,11 @@ import {
   OperationCodeSamplesSection,
   OperationDescriptionSection,
   OperationParametersSection,
+  OperationRequestBodyExamplesSection,
   OperationRequestBodySection,
   OperationResponseBodyDescriptionSection,
   OperationResponseBodyDisplayTypeSection,
+  OperationResponseBodyExamplesSection,
   OperationResponseBodySection,
   OperationSummarySection,
   OperationTitleSection,
@@ -89,8 +91,9 @@ TypeScript
 <SectionContent slot="content" id="operation-agents_api_v1_agents_list+code-samples+typescript">
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.agents.list({});\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.agents.list({});&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -120,6 +123,26 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-agents_api_v1_agents_list+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent slot="content" id="operation-agents_api_v1_agents_list+code-samples+curl">
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/agents \
+ -X GET \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
 ```
 
 </CodeSample>
@@ -187,6 +210,49 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_agents_list+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_agents_list+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_agents_list+responses+200+application-json"
+>
+
+```json
+[
+  {
+    "created_at": "2025-10-07T20:56:01.974Z",
+    "id": "ipsum eiusmod",
+    "model": "consequat do",
+    "name": "reprehenderit ut dolore",
+    "updated_at": "2025-10-07T20:56:01.974Z",
+    "version": 87
+  }
+]
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -1443,8 +1509,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.agents.create({\n    model: \"LeBaron\",\n    name: \"<value>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.agents.create({&NewLine;    model: &quot;LeBaron&quot;,&NewLine;    name: &quot;&lt;value&gt;&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -1480,9 +1547,58 @@ with Mistral(
 
 </SectionContent>
 
+<SectionTab slot="tab" id="operation-agents_api_v1_agents_create+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent slot="content" id="operation-agents_api_v1_agents_create+code-samples+curl">
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/agents \
+ -X POST \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{
+  "model": "ipsum eiusmod",
+  "name": "consequat do"
+}'
+```
+
+</CodeSample>
+
+</SectionContent>
+
 </TabbedSection>
 
 </OperationCodeSamplesSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-agents_api_v1_agents_create+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{
+  "model": "ipsum eiusmod",
+  "name": "consequat do"
+}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -2546,6 +2662,47 @@ _Default Value:_ `"document_library"`
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_agents_create+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_agents_create+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_agents_create+responses+200+application-json"
+>
+
+```json
+{
+  "created_at": "2025-10-07T20:56:01.974Z",
+  "id": "ipsum eiusmod",
+  "model": "consequat do",
+  "name": "reprehenderit ut dolore",
+  "updated_at": "2025-10-07T20:56:01.974Z",
+  "version": 87
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -3759,8 +3916,9 @@ TypeScript
 <SectionContent slot="content" id="operation-agents_api_v1_agents_get+code-samples+typescript">
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.agents.get({\n    agentId: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.agents.get({&NewLine;    agentId: &quot;&lt;id&gt;&quot;,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -3790,6 +3948,26 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-agents_api_v1_agents_get+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent slot="content" id="operation-agents_api_v1_agents_get+code-samples+curl">
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/agents/{agent_id} \
+ -X GET \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
 ```
 
 </CodeSample>
@@ -3839,6 +4017,47 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_agents_get+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_agents_get+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_agents_get+responses+200+application-json"
+>
+
+```json
+{
+  "created_at": "2025-10-07T20:56:01.974Z",
+  "id": "ipsum eiusmod",
+  "model": "consequat do",
+  "name": "reprehenderit ut dolore",
+  "updated_at": "2025-10-07T20:56:01.974Z",
+  "version": 87
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -5055,8 +5274,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.agents.update({\n    agentId: \"<id>\",\n    agentUpdateRequest: {},\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.agents.update({&NewLine;    agentId: &quot;&lt;id&gt;&quot;,&NewLine;    agentUpdateRequest: {},&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -5086,6 +5306,27 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-agents_api_v1_agents_update+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent slot="content" id="operation-agents_api_v1_agents_update+code-samples+curl">
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/agents/{agent_id} \
+ -X PATCH \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
+ -d '{}'
 ```
 
 </CodeSample>
@@ -5135,6 +5376,28 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationRequestBodyExamplesSection slot="request-body-examples">
+
+<Section>
+
+<SectionTitle slot="title">
+
+### Request Example \{#operation-agents_api_v1_agents_update+request-examples\}
+
+</SectionTitle>
+
+<SectionContent slot="content">
+
+```json
+{}
+```
+
+</SectionContent>
+
+</Section>
+
+</OperationRequestBodyExamplesSection>
 
 <OperationRequestBodySection slot="request-body">
 
@@ -6198,6 +6461,47 @@ _Default Value:_ `"document_library"`
 </Section>
 
 </OperationRequestBodySection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_agents_update+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_agents_update+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_agents_update+responses+200+application-json"
+>
+
+```json
+{
+  "created_at": "2025-10-07T20:56:01.974Z",
+  "id": "ipsum eiusmod",
+  "model": "consequat do",
+  "name": "reprehenderit ut dolore",
+  "updated_at": "2025-10-07T20:56:01.974Z",
+  "version": 87
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
@@ -7417,8 +7721,9 @@ TypeScript
 >
 
 <TryItNow
-  dependencyBundleUrl="/try-it-now/deps.js"
-  defaultValue={`import { Mistral } from \"@mistralai/mistralai\";\n\nconst mistral = new Mistral({\n  apiKey: \"MISTRAL_API_KEY\",\n});\n\nasync function run() {\n  const result = await mistral.beta.agents.updateVersion({\n    agentId: \"<id>\",\n    version: 157995,\n  });\n\n  console.log(result);\n}\n\nrun();\n`}
+  dependencyUrlPrefix="/try-it-now/deps.js"
+  defaultValue="import { Mistral } from &quot;@mistralai/mistralai&quot;;&NewLine;&NewLine;const mistral = new Mistral({&NewLine;  apiKey: &quot;MISTRAL_API_KEY&quot;,&NewLine;});&NewLine;&NewLine;async function run() {&NewLine;  const result = await mistral.beta.agents.updateVersion({&NewLine;    agentId: &quot;&lt;id&gt;&quot;,&NewLine;    version: 157995,&NewLine;  });&NewLine;&NewLine;  console.log(result);&NewLine;}&NewLine;&NewLine;run();&NewLine;"
+  packageName="@mistralai/mistralai"
 />
 
 </SectionContent>
@@ -7454,6 +7759,29 @@ with Mistral(
     print(res)
 
 
+```
+
+</CodeSample>
+
+</SectionContent>
+
+<SectionTab slot="tab" id="operation-agents_api_v1_agents_update_version+code-samples+curl">
+
+cURL
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_agents_update_version+code-samples+curl"
+>
+
+<CodeSample>
+
+```curl
+curl https://api.mistral.ai/v1/agents/{agent_id}/version \
+ -X PATCH \
+ -H 'Authorization: Bearer YOUR_APIKEY_HERE'
 ```
 
 </CodeSample>
@@ -7521,6 +7849,47 @@ with Mistral(
 </Section>
 
 </OperationParametersSection>
+
+<OperationResponseBodyExamplesSection slot="response-body-examples">
+
+<TabbedSection>
+
+<SectionTitle slot="title">
+
+### Responses Examples \{#operation-agents_api_v1_agents_update_version+responses\}
+
+</SectionTitle>
+
+<SectionTab
+  slot="tab"
+  id="operation-agents_api_v1_agents_update_version+responses+200+application-json"
+>
+
+200
+
+</SectionTab>
+
+<SectionContent
+  slot="content"
+  id="operation-agents_api_v1_agents_update_version+responses+200+application-json"
+>
+
+```json
+{
+  "created_at": "2025-10-07T20:56:01.974Z",
+  "id": "ipsum eiusmod",
+  "model": "consequat do",
+  "name": "reprehenderit ut dolore",
+  "updated_at": "2025-10-07T20:56:01.974Z",
+  "version": 87
+}
+```
+
+</SectionContent>
+
+</TabbedSection>
+
+</OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
