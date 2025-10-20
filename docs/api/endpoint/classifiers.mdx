@@ -7,6 +7,8 @@ import "@speakeasy-api/docs-md-react/docusaurus.css";
 
 import {
   CodeSample,
+  CodeSampleTab,
+  CodeSampleTabbedSection,
   ExpandableBreakout,
   ExpandableBreakoutDescription,
   ExpandableBreakoutProperties,
@@ -28,11 +30,13 @@ import {
   OperationSummarySection,
   OperationTitleSection,
   Pill,
+  ResponseExamplesTab,
+  ResponseExamplesTabbedSection,
+  ResponseTab,
+  ResponseTabbedSection,
   Section,
   SectionContent,
-  SectionTab,
   SectionTitle,
-  TabbedSection,
   Tag,
   TagDescription,
   TagTitle,
@@ -71,16 +75,17 @@ Moderations
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-moderations_v1_moderations_post+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -95,11 +100,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-moderations_v1_moderations_post+code-samples+python">
+<CodeSampleTab
+  slot="tab"
+  id="operation-moderations_v1_moderations_post+code-samples+python"
+  tags={{"codeSample":"python"}}
+>
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -132,11 +141,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-moderations_v1_moderations_post+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-moderations_v1_moderations_post+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-moderations_v1_moderations_post+code-samples+curl">
 
@@ -156,7 +169,7 @@ curl https://api.mistral.ai/v1/moderations \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -257,7 +270,7 @@ ID of the model to use.
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -265,14 +278,15 @@ ID of the model to use.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-moderations_v1_moderations_post+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -291,13 +305,13 @@ ID of the model to use.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -305,14 +319,15 @@ ID of the model to use.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-moderations_v1_moderations_post+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -470,7 +485,7 @@ Moderation result
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -492,16 +507,17 @@ Chat Moderations
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-chat_moderations_v1_chat_moderations_post+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -516,14 +532,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-chat_moderations_v1_chat_moderations_post+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -558,14 +575,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-chat_moderations_v1_chat_moderations_post+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -592,7 +610,7 @@ curl https://api.mistral.ai/v1/chat/moderations \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -2362,7 +2380,7 @@ _Default Value:_ `"tool"`
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2370,14 +2388,15 @@ _Default Value:_ `"tool"`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -2396,13 +2415,13 @@ _Default Value:_ `"tool"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2410,14 +2429,15 @@ _Default Value:_ `"tool"`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-chat_moderations_v1_chat_moderations_post+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -2575,7 +2595,7 @@ Moderation result
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -2597,16 +2617,17 @@ Classifications
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-classifications_v1_classifications_post+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -2621,14 +2642,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-classifications_v1_classifications_post+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -2660,14 +2682,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-classifications_v1_classifications_post+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -2690,7 +2713,7 @@ curl https://api.mistral.ai/v1/classifications \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -2791,7 +2814,7 @@ ID of the model to use.
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2799,14 +2822,15 @@ ID of the model to use.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-classifications_v1_classifications_post+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -2831,13 +2855,13 @@ ID of the model to use.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2845,14 +2869,15 @@ ID of the model to use.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-classifications_v1_classifications_post+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -2979,7 +3004,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -3001,16 +3026,17 @@ Chat Classifications
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-chat_classifications_v1_chat_classifications_post+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -3025,14 +3051,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-chat_classifications_v1_chat_classifications_post+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -3071,14 +3098,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-chat_classifications_v1_chat_classifications_post+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -3107,7 +3135,7 @@ curl https://api.mistral.ai/v1/chat/classifications \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -4923,7 +4951,7 @@ _Default Value:_ `"tool"`
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -4931,14 +4959,15 @@ _Default Value:_ `"tool"`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -4963,13 +4992,13 @@ _Default Value:_ `"tool"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -4977,14 +5006,15 @@ _Default Value:_ `"tool"`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-chat_classifications_v1_chat_classifications_post+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -5111,7 +5141,7 @@ mod-e5cc70bb28c444948073e77776eb30ef
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 

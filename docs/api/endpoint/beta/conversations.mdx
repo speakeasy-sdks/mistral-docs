@@ -7,6 +7,8 @@ import "@speakeasy-api/docs-md-react/docusaurus.css";
 
 import {
   CodeSample,
+  CodeSampleTab,
+  CodeSampleTabbedSection,
   ExpandableBreakout,
   ExpandableBreakoutDescription,
   ExpandableBreakoutProperties,
@@ -32,11 +34,13 @@ import {
   OperationSummarySection,
   OperationTitleSection,
   Pill,
+  ResponseExamplesTab,
+  ResponseExamplesTabbedSection,
+  ResponseTab,
+  ResponseTabbedSection,
   Section,
   SectionContent,
-  SectionTab,
   SectionTitle,
-  TabbedSection,
   Tag,
   TagDescription,
   TagTitle,
@@ -81,16 +85,17 @@ Retrieve a list of conversation entities sorted by creation time.
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_list+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -105,11 +110,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-agents_api_v1_conversations_list+code-samples+python">
+<CodeSampleTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_list+code-samples+python"
+  tags={{"codeSample":"python"}}
+>
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -139,11 +148,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-agents_api_v1_conversations_list+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_list+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -162,7 +175,7 @@ curl https://api.mistral.ai/v1/conversations \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -226,7 +239,7 @@ curl https://api.mistral.ai/v1/conversations \
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -234,14 +247,15 @@ curl https://api.mistral.ai/v1/conversations \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_list+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -261,13 +275,13 @@ curl https://api.mistral.ai/v1/conversations \
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -275,14 +289,15 @@ curl https://api.mistral.ai/v1/conversations \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_list+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -1623,7 +1638,7 @@ _Default Value:_ `"conversation"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -1651,16 +1666,17 @@ Create a new conversation, using a base model or an agent and append entries. Co
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_start+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -1675,11 +1691,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-agents_api_v1_conversations_start+code-samples+python">
+<CodeSampleTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_start+code-samples+python"
+  tags={{"codeSample":"python"}}
+>
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -1709,11 +1729,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-agents_api_v1_conversations_start+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_start+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -1735,7 +1759,7 @@ curl https://api.mistral.ai/v1/conversations \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -3651,7 +3675,7 @@ _Default Value:_ `"document_library"`
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -3659,14 +3683,15 @@ _Default Value:_ `"document_library"`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_start+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -3687,13 +3712,13 @@ _Default Value:_ `"document_library"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -3701,14 +3726,15 @@ _Default Value:_ `"document_library"`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_start+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -5249,7 +5275,7 @@ _Default Value:_ `0`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -5277,16 +5303,17 @@ Given a conversation_id retrieve a conversation entity with its attributes.
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_get+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -5301,11 +5328,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-agents_api_v1_conversations_get+code-samples+python">
+<CodeSampleTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_get+code-samples+python"
+  tags={{"codeSample":"python"}}
+>
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -5335,11 +5366,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-agents_api_v1_conversations_get+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_get+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-agents_api_v1_conversations_get+code-samples+curl">
 
@@ -5355,7 +5390,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id} \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -5401,7 +5436,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id} \
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -5409,14 +5444,15 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id} \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_get+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -5434,13 +5470,13 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id} \
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -5448,14 +5484,15 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id} \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_get+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -6796,7 +6833,7 @@ _Default Value:_ `"conversation"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -6824,16 +6861,17 @@ Run completion on the history of the conversation and the user entries. Return t
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_append+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -6848,14 +6886,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_append+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -6885,11 +6924,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-agents_api_v1_conversations_append+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_append+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -6911,7 +6954,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id} \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -8358,7 +8401,7 @@ _Default Value:_ `false`
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -8366,14 +8409,15 @@ _Default Value:_ `false`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_append+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -8394,13 +8438,13 @@ _Default Value:_ `false`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -8408,14 +8452,15 @@ _Default Value:_ `false`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_append+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -9956,7 +10001,7 @@ _Default Value:_ `0`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -9984,16 +10029,17 @@ Given a conversation_id retrieve all the entries belonging to that conversation.
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_history+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -10008,14 +10054,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_history+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -10045,11 +10092,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-agents_api_v1_conversations_history+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_history+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -10068,7 +10119,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/history \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -10114,7 +10165,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/history \
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -10122,14 +10173,15 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/history \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_history+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -10150,13 +10202,13 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/history \
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -10164,14 +10216,15 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/history \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_history+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -12309,7 +12362,7 @@ _Default Value:_ `"conversation.history"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -12337,16 +12390,17 @@ Given a conversation_id retrieve all the messages belonging to that conversation
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_messages+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -12361,14 +12415,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_messages+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -12398,14 +12453,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_messages+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -12424,7 +12480,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/messages \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -12470,7 +12526,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/messages \
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -12478,14 +12534,15 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/messages \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_messages+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -12506,13 +12563,13 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/messages \
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -12520,14 +12577,15 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/messages \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_messages+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -13944,7 +14002,7 @@ _Default Value:_ `"conversation.messages"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -13972,16 +14030,17 @@ Given a conversation_id and an id, recreate a conversation from this point and r
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_restart+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -13996,14 +14055,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_restart+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -14033,11 +14093,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-agents_api_v1_conversations_restart+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-agents_api_v1_conversations_restart+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -14060,7 +14124,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/restart \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -15526,7 +15590,7 @@ _Default Value:_ `false`
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -15534,14 +15598,15 @@ _Default Value:_ `false`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_restart+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -15562,13 +15627,13 @@ _Default Value:_ `false`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -15576,14 +15641,15 @@ _Default Value:_ `false`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_restart+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -17124,7 +17190,7 @@ _Default Value:_ `0`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -17152,16 +17218,17 @@ Create a new conversation, using a base model or an agent and append entries. Co
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_start_stream+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -17176,14 +17243,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_start_stream+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -17222,14 +17290,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_start_stream+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -17251,7 +17320,7 @@ curl https://api.mistral.ai/v1/conversations#stream \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -19167,7 +19236,7 @@ _Default Value:_ `"document_library"`
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -19175,14 +19244,15 @@ _Default Value:_ `"document_library"`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_start_stream+responses+200+text-event-stream"
+  tags={{"responseExample":"200:text/event-stream"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -19195,13 +19265,13 @@ null
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -19209,14 +19279,15 @@ null
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_start_stream+responses+200+text-event-stream"
+  tags={{"response":"200:text/event-stream"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -21208,7 +21279,7 @@ Server side events sent when streaming a conversation response.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -21236,16 +21307,17 @@ Run completion on the history of the conversation and the user entries. Return t
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_append_stream+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -21260,14 +21332,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_append_stream+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -21299,14 +21372,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_append_stream+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -21328,7 +21402,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}#stream \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -22775,7 +22849,7 @@ _Default Value:_ `true`
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -22783,14 +22857,15 @@ _Default Value:_ `true`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_append_stream+responses+200+text-event-stream"
+  tags={{"responseExample":"200:text/event-stream"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -22803,13 +22878,13 @@ null
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -22817,14 +22892,15 @@ null
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_append_stream+responses+200+text-event-stream"
+  tags={{"response":"200:text/event-stream"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -24816,7 +24892,7 @@ Server side events sent when streaming a conversation response.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -24844,16 +24920,17 @@ Given a conversation_id and an id, recreate a conversation from this point and r
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_restart_stream+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -24868,14 +24945,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_restart_stream+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -24915,14 +24993,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_api_v1_conversations_restart_stream+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -24945,7 +25024,7 @@ curl https://api.mistral.ai/v1/conversations/{conversation_id}/restart#stream \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -26411,7 +26490,7 @@ _Default Value:_ `true`
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -26419,14 +26498,15 @@ _Default Value:_ `true`
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_api_v1_conversations_restart_stream+responses+200+text-event-stream"
+  tags={{"responseExample":"200:text/event-stream"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -26439,13 +26519,13 @@ null
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -26453,14 +26533,15 @@ null
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_api_v1_conversations_restart_stream+responses+200+text-event-stream"
+  tags={{"response":"200:text/event-stream"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -28452,7 +28533,7 @@ Server side events sent when streaming a conversation response.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 

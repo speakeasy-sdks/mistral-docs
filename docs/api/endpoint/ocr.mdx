@@ -7,6 +7,8 @@ import "@speakeasy-api/docs-md-react/docusaurus.css";
 
 import {
   CodeSample,
+  CodeSampleTab,
+  CodeSampleTabbedSection,
   ExpandableBreakout,
   ExpandableBreakoutDescription,
   ExpandableBreakoutProperties,
@@ -27,11 +29,13 @@ import {
   OperationSummarySection,
   OperationTitleSection,
   Pill,
+  ResponseExamplesTab,
+  ResponseExamplesTabbedSection,
+  ResponseTab,
+  ResponseTabbedSection,
   Section,
   SectionContent,
-  SectionTab,
   SectionTitle,
-  TabbedSection,
   Tag,
   TagDescription,
   TagTitle,
@@ -70,13 +74,17 @@ OCR
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab slot="tab" id="operation-ocr_v1_ocr_post+code-samples+typescript">
+<CodeSampleTab
+  slot="tab"
+  id="operation-ocr_v1_ocr_post+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
+>
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-ocr_v1_ocr_post+code-samples+typescript">
 
@@ -88,11 +96,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-ocr_v1_ocr_post+code-samples+python">
+<CodeSampleTab
+  slot="tab"
+  id="operation-ocr_v1_ocr_post+code-samples+python"
+  tags={{"codeSample":"python"}}
+>
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-ocr_v1_ocr_post+code-samples+python">
 
@@ -124,11 +136,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-ocr_v1_ocr_post+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-ocr_v1_ocr_post+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-ocr_v1_ocr_post+code-samples+curl">
 
@@ -150,7 +166,7 @@ curl https://api.mistral.ai/v1/ocr \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -965,7 +981,7 @@ Specific pages user wants to process in various formats: single number, range, o
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -973,11 +989,15 @@ Specific pages user wants to process in various formats: single number, range, o
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-ocr_v1_ocr_post+responses+200+application-json">
+<ResponseExamplesTab
+  slot="tab"
+  id="operation-ocr_v1_ocr_post+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
+>
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent slot="content" id="operation-ocr_v1_ocr_post+responses+200+application-json">
 
@@ -1008,13 +1028,13 @@ Specific pages user wants to process in various formats: single number, range, o
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -1022,11 +1042,15 @@ Specific pages user wants to process in various formats: single number, range, o
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-ocr_v1_ocr_post+responses+200+application-json">
+<ResponseTab
+  slot="tab"
+  id="operation-ocr_v1_ocr_post+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
+>
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent slot="content" id="operation-ocr_v1_ocr_post+responses+200+application-json">
 
@@ -1638,7 +1662,7 @@ Number of pages processed
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 

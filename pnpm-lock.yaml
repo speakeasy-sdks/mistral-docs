@@ -24,11 +24,11 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1(@types/react@18.3.5)(react@18.3.1)
       '@speakeasy-api/docs-md':
-        specifier: ^0.2.31
-        version: 0.2.31(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/node@22.5.4)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+        specifier: ^0.2.34
+        version: 0.2.34(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/node@22.5.4)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       '@speakeasy-api/docs-md-react':
-        specifier: ^0.2.31
-        version: 0.2.31(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+        specifier: ^0.2.34
+        version: 0.2.34(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -1492,14 +1492,14 @@ packages:
   '@slorber/remark-comment@1.0.0':
     resolution: {integrity: sha512-RCE24n7jsOj1M0UPvIQCHTe7fI0sFL4S2nwKVWwHyVr/wI/H8GosgsJGyhnsZoGFnD/P2hLf1mSbrrgSLN93NA==}
 
-  '@speakeasy-api/docs-md-react@0.2.31':
-    resolution: {integrity: sha512-Z/1fFtROuLROalV5YfsaKeDWV3SeGiY7E1vrWeYcCu7TBI9howB3h2QfdLsnvbXcQTgNK/kFhMsqu8zR1Vbe0g==}
+  '@speakeasy-api/docs-md-react@0.2.34':
+    resolution: {integrity: sha512-2RsdIvLgp8yojV+2hRonlIFXh7uA1zrQ1u/UIXwe0Mk72P7aS+sOwi0i5VTsJ6GhV9oN/Jm71wHHC82RamUk6g==}
 
-  '@speakeasy-api/docs-md-shared@0.2.31':
-    resolution: {integrity: sha512-x/MKW+QxmHyEavjeGKALz1Fsr3mIKehhn4cRpwUa5YAeFtT8cDJTSUvZTRbHZcRIldS8C5RGbn4bzPgHsHRDKg==}
+  '@speakeasy-api/docs-md-shared@0.2.34':
+    resolution: {integrity: sha512-gEbru5rCSpm31Ibjs9V4leARahsYSDtcGd/rF3vLX8ox0A7Tr5NQWoff1x6riVBCWkN4v9B1WaPh4VuX7b5Apg==}
 
-  '@speakeasy-api/docs-md@0.2.31':
-    resolution: {integrity: sha512-BVgYhdsCL2VB6h1Ey7JOqjIqRr64X7sG/7OmiLVPDMRvgDYWktjORink4r0hWJOUaQEIen/tZVcrcU1O04VsZA==}
+  '@speakeasy-api/docs-md@0.2.34':
+    resolution: {integrity: sha512-zRTeRMObh/okPLWu3BJyuvhEEpMaZydLbfPz5dk8eWvteDwCNWlLGs+6FCHE9B76PoCHctNV4YZTVbRXVtS90g==}
     hasBin: true
 
   '@svgr/babel-plugin-add-jsx-attribute@8.0.0':
@@ -8585,10 +8585,10 @@ snapshots:
       micromark-util-character: 1.2.0
       micromark-util-symbol: 1.1.0
 
-  '@speakeasy-api/docs-md-react@0.2.31(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
+  '@speakeasy-api/docs-md-react@0.2.34(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
     dependencies:
       '@monaco-editor/react': 4.7.0(monaco-editor@0.53.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@speakeasy-api/docs-md-shared': 0.2.31(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(typescript@5.5.4)
+      '@speakeasy-api/docs-md-shared': 0.2.34(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(typescript@5.5.4)
       clsx: 2.1.1
       jotai: 2.14.0(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/react@18.3.5)(react@18.3.1)
       monaco-editor: 0.53.0
@@ -8623,7 +8623,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@speakeasy-api/docs-md-shared@0.2.31(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(typescript@5.5.4)':
+  '@speakeasy-api/docs-md-shared@0.2.34(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(typescript@5.5.4)':
     dependencies:
       '@eslint/compat': 1.3.2(eslint@9.35.0(jiti@1.21.6))
       '@eslint/js': 9.35.0
@@ -8666,11 +8666,11 @@ snapshots:
       - supports-color
       - typescript
 
-  '@speakeasy-api/docs-md@0.2.31(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/node@22.5.4)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
+  '@speakeasy-api/docs-md@0.2.34(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/node@22.5.4)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
     dependencies:
       '@microsoft/api-extractor': 7.53.1(@types/node@22.5.4)
-      '@speakeasy-api/docs-md-react': 0.2.31(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
-      '@speakeasy-api/docs-md-shared': 0.2.31(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(typescript@5.5.4)
+      '@speakeasy-api/docs-md-react': 0.2.34(@babel/core@7.25.2)(@babel/template@7.25.0)(@types/react@18.3.5)(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+      '@speakeasy-api/docs-md-shared': 0.2.34(@typescript-eslint/eslint-plugin@8.43.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.35.0(jiti@1.21.6))(typescript@5.5.4))(jiti@1.21.6)(typescript@5.5.4)
       arg: 5.0.2
       chalk: 5.3.0
       change-case: 5.4.4
@@ -9858,7 +9858,7 @@ snapshots:
       debounce: 2.2.0
       debug: 4.3.7
       duplexer: 0.1.2
-      fs-extra: 11.2.0
+      fs-extra: 11.3.2
       glob: 11.0.3
       glob2base: 0.0.12
       ignore: 6.0.2

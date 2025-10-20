@@ -7,6 +7,8 @@ import "@speakeasy-api/docs-md-react/docusaurus.css";
 
 import {
   CodeSample,
+  CodeSampleTab,
+  CodeSampleTabbedSection,
   ExpandableBreakout,
   ExpandableBreakoutProperties,
   ExpandableBreakoutTitle,
@@ -27,11 +29,13 @@ import {
   OperationSummarySection,
   OperationTitleSection,
   Pill,
+  ResponseExamplesTab,
+  ResponseExamplesTabbedSection,
+  ResponseTab,
+  ResponseTabbedSection,
   Section,
   SectionContent,
-  SectionTab,
   SectionTitle,
-  TabbedSection,
   Tag,
   TagDescription,
   TagTitle,
@@ -76,13 +80,17 @@ Embeddings
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab slot="tab" id="operation-embeddings_v1_embeddings_post+code-samples+typescript">
+<CodeSampleTab
+  slot="tab"
+  id="operation-embeddings_v1_embeddings_post+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
+>
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -97,11 +105,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-embeddings_v1_embeddings_post+code-samples+python">
+<CodeSampleTab
+  slot="tab"
+  id="operation-embeddings_v1_embeddings_post+code-samples+python"
+  tags={{"codeSample":"python"}}
+>
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-embeddings_v1_embeddings_post+code-samples+python">
 
@@ -131,11 +143,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-embeddings_v1_embeddings_post+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-embeddings_v1_embeddings_post+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-embeddings_v1_embeddings_post+code-samples+curl">
 
@@ -155,7 +171,7 @@ curl https://api.mistral.ai/v1/embeddings \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -308,7 +324,7 @@ The dimension of the output embeddings.
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -316,14 +332,15 @@ The dimension of the output embeddings.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-embeddings_v1_embeddings_post+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -348,13 +365,13 @@ The dimension of the output embeddings.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -362,14 +379,15 @@ The dimension of the output embeddings.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-embeddings_v1_embeddings_post+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -722,7 +740,7 @@ _Example:_
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 

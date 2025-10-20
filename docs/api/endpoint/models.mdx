@@ -7,6 +7,8 @@ import "@speakeasy-api/docs-md-react/docusaurus.css";
 
 import {
   CodeSample,
+  CodeSampleTab,
+  CodeSampleTabbedSection,
   ExpandableBreakout,
   ExpandableBreakoutDescription,
   ExpandableBreakoutProperties,
@@ -32,11 +34,13 @@ import {
   OperationSummarySection,
   OperationTitleSection,
   Pill,
+  ResponseExamplesTab,
+  ResponseExamplesTabbedSection,
+  ResponseTab,
+  ResponseTabbedSection,
   Section,
   SectionContent,
-  SectionTab,
   SectionTitle,
-  TabbedSection,
   Tag,
   TagDescription,
   TagTitle,
@@ -81,13 +85,17 @@ List all models available to the user.
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab slot="tab" id="operation-list_models_v1_models_get+code-samples+typescript">
+<CodeSampleTab
+  slot="tab"
+  id="operation-list_models_v1_models_get+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
+>
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-list_models_v1_models_get+code-samples+typescript">
 
@@ -99,11 +107,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-list_models_v1_models_get+code-samples+python">
+<CodeSampleTab
+  slot="tab"
+  id="operation-list_models_v1_models_get+code-samples+python"
+  tags={{"codeSample":"python"}}
+>
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-list_models_v1_models_get+code-samples+python">
 
@@ -130,11 +142,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-list_models_v1_models_get+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-list_models_v1_models_get+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-list_models_v1_models_get+code-samples+curl">
 
@@ -150,13 +166,13 @@ curl https://api.mistral.ai/v1/models \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -164,14 +180,15 @@ curl https://api.mistral.ai/v1/models \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-list_models_v1_models_get+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -184,13 +201,13 @@ curl https://api.mistral.ai/v1/models \
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -198,14 +215,15 @@ curl https://api.mistral.ai/v1/models \
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-list_models_v1_models_get+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -1185,7 +1203,7 @@ _Default Value:_ `"list"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -1213,16 +1231,17 @@ Retrieve a model information.
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-retrieve_model_v1_models_model_id_get+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -1237,14 +1256,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-retrieve_model_v1_models_model_id_get+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -1274,14 +1294,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-retrieve_model_v1_models_model_id_get+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -1300,7 +1321,7 @@ curl https://api.mistral.ai/v1/models/{model_id} \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -1352,7 +1373,7 @@ The ID of the model to retrieve.
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -1360,14 +1381,15 @@ The ID of the model to retrieve.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-retrieve_model_v1_models_model_id_get+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -1383,13 +1405,13 @@ The ID of the model to retrieve.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -1397,14 +1419,15 @@ The ID of the model to retrieve.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-retrieve_model_v1_models_model_id_get+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -2344,7 +2367,7 @@ _Default Value:_ `"fine-tuned"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -2372,16 +2395,17 @@ Delete a fine-tuned model.
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-delete_model_v1_models_model_id_delete+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -2396,14 +2420,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-delete_model_v1_models_model_id_delete+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -2433,14 +2458,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-delete_model_v1_models_model_id_delete+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -2459,7 +2485,7 @@ curl https://api.mistral.ai/v1/models/{model_id} \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -2511,7 +2537,7 @@ The ID of the model to delete.
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2519,14 +2545,15 @@ The ID of the model to delete.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-delete_model_v1_models_model_id_delete+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -2541,13 +2568,13 @@ The ID of the model to delete.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2555,14 +2582,15 @@ The ID of the model to delete.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-delete_model_v1_models_model_id_delete+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -2685,7 +2713,7 @@ _Default Value:_ `"model"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -2713,16 +2741,17 @@ Update a model name or description.
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -2737,14 +2766,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -2774,14 +2804,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -2801,7 +2832,7 @@ curl https://api.mistral.ai/v1/fine_tuning/models/{model_id} \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -2933,7 +2964,7 @@ The ID of the model to update.
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2941,14 +2972,15 @@ The ID of the model to update.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -2969,13 +3001,13 @@ The ID of the model to update.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2983,14 +3015,15 @@ The ID of the model to update.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_update_fine_tuned_model+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -4007,7 +4040,7 @@ _Default Value:_ `"model"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -4035,16 +4068,17 @@ Archive a fine-tuned model.
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -4059,14 +4093,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -4096,14 +4131,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -4122,7 +4158,7 @@ curl https://api.mistral.ai/v1/fine_tuning/models/{model_id}/archive \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -4174,7 +4210,7 @@ The ID of the model to archive.
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -4182,14 +4218,15 @@ The ID of the model to archive.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -4204,13 +4241,13 @@ The ID of the model to archive.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -4218,14 +4255,15 @@ The ID of the model to archive.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_archive_fine_tuned_model+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -4310,7 +4348,7 @@ _Default Value:_ `"model"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -4338,16 +4376,17 @@ Un-archive a fine-tuned model.
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -4362,14 +4401,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -4399,14 +4439,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -4425,7 +4466,7 @@ curl https://api.mistral.ai/v1/fine_tuning/models/{model_id}/archive \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -4477,7 +4518,7 @@ The ID of the model to unarchive.
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -4485,14 +4526,15 @@ The ID of the model to unarchive.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -4507,13 +4549,13 @@ The ID of the model to unarchive.
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -4521,14 +4563,15 @@ The ID of the model to unarchive.
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-jobs_api_routes_fine_tuning_unarchive_fine_tuned_model+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -4613,7 +4656,7 @@ _Default Value:_ `"model"`
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 

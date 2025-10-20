@@ -7,6 +7,8 @@ import "@speakeasy-api/docs-md-react/docusaurus.css";
 
 import {
   CodeSample,
+  CodeSampleTab,
+  CodeSampleTabbedSection,
   ExpandableBreakout,
   ExpandableBreakoutDescription,
   ExpandableBreakoutProperties,
@@ -31,11 +33,13 @@ import {
   OperationSummarySection,
   OperationTitleSection,
   Pill,
+  ResponseExamplesTab,
+  ResponseExamplesTabbedSection,
+  ResponseTab,
+  ResponseTabbedSection,
   Section,
   SectionContent,
-  SectionTab,
   SectionTitle,
-  TabbedSection,
   Tag,
   TagDescription,
   TagTitle,
@@ -74,16 +78,17 @@ Agents Completion
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_completion_v1_agents_completions_post+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
 >
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -98,14 +103,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_completion_v1_agents_completions_post+code-samples+python"
+  tags={{"codeSample":"python"}}
 >
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -140,14 +146,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab
+<CodeSampleTab
   slot="tab"
   id="operation-agents_completion_v1_agents_completions_post+code-samples+curl"
+  tags={{"codeSample":"curl"}}
 >
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent
   slot="content"
@@ -174,7 +181,7 @@ curl https://api.mistral.ai/v1/agents/completions \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -2766,7 +2773,7 @@ this restriction of `Function` is used to select a specific function to call
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2774,14 +2781,15 @@ this restriction of `Function` is used to select a specific function to call
 
 </SectionTitle>
 
-<SectionTab
+<ResponseExamplesTab
   slot="tab"
   id="operation-agents_completion_v1_agents_completions_post+responses+200+application-json"
+  tags={{"responseExample":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent
   slot="content"
@@ -2811,13 +2819,13 @@ this restriction of `Function` is used to select a specific function to call
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -2825,14 +2833,15 @@ this restriction of `Function` is used to select a specific function to call
 
 </SectionTitle>
 
-<SectionTab
+<ResponseTab
   slot="tab"
   id="operation-agents_completion_v1_agents_completions_post+responses+200+application-json"
+  tags={{"response":"200:application/json"}}
 >
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent
   slot="content"
@@ -3866,7 +3875,7 @@ _Example:_
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
@@ -3894,13 +3903,17 @@ Mistral AI provides the ability to stream responses back to a client in order to
 
 <OperationCodeSamplesSection slot="code-samples">
 
-<TabbedSection>
+<CodeSampleTabbedSection>
 
-<SectionTab slot="tab" id="operation-stream_agents+code-samples+typescript">
+<CodeSampleTab
+  slot="tab"
+  id="operation-stream_agents+code-samples+typescript"
+  tags={{"codeSample":"typescript"}}
+>
 
 TypeScript
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-stream_agents+code-samples+typescript">
 
@@ -3912,11 +3925,15 @@ TypeScript
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-stream_agents+code-samples+python">
+<CodeSampleTab
+  slot="tab"
+  id="operation-stream_agents+code-samples+python"
+  tags={{"codeSample":"python"}}
+>
 
 Python
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-stream_agents+code-samples+python">
 
@@ -3950,11 +3967,15 @@ with Mistral(
 
 </SectionContent>
 
-<SectionTab slot="tab" id="operation-stream_agents+code-samples+curl">
+<CodeSampleTab
+  slot="tab"
+  id="operation-stream_agents+code-samples+curl"
+  tags={{"codeSample":"curl"}}
+>
 
 cURL
 
-</SectionTab>
+</CodeSampleTab>
 
 <SectionContent slot="content" id="operation-stream_agents+code-samples+curl">
 
@@ -3978,7 +3999,7 @@ curl https://api.mistral.ai/v1/agents/completions#stream \
 
 </SectionContent>
 
-</TabbedSection>
+</CodeSampleTabbedSection>
 
 </OperationCodeSamplesSection>
 
@@ -6564,7 +6585,7 @@ this restriction of `Function` is used to select a specific function to call
 
 <OperationResponseBodyExamplesSection slot="response-body-examples">
 
-<TabbedSection>
+<ResponseExamplesTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -6572,11 +6593,15 @@ this restriction of `Function` is used to select a specific function to call
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-stream_agents+responses+200+text-event-stream">
+<ResponseExamplesTab
+  slot="tab"
+  id="operation-stream_agents+responses+200+text-event-stream"
+  tags={{"responseExample":"200:text/event-stream"}}
+>
 
 200
 
-</SectionTab>
+</ResponseExamplesTab>
 
 <SectionContent slot="content" id="operation-stream_agents+responses+200+text-event-stream">
 
@@ -6586,13 +6611,13 @@ null
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseExamplesTabbedSection>
 
 </OperationResponseBodyExamplesSection>
 
 <OperationResponseBodySection slot="response-body">
 
-<TabbedSection>
+<ResponseTabbedSection>
 
 <SectionTitle slot="title">
 
@@ -6600,11 +6625,15 @@ null
 
 </SectionTitle>
 
-<SectionTab slot="tab" id="operation-stream_agents+responses+200+text-event-stream">
+<ResponseTab
+  slot="tab"
+  id="operation-stream_agents+responses+200+text-event-stream"
+  tags={{"response":"200:text/event-stream"}}
+>
 
 200
 
-</SectionTab>
+</ResponseTab>
 
 <SectionContent slot="content" id="operation-stream_agents+responses+200+text-event-stream">
 
@@ -7616,7 +7645,7 @@ _Example:_
 
 </SectionContent>
 
-</TabbedSection>
+</ResponseTabbedSection>
 
 </OperationResponseBodySection>
 
